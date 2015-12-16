@@ -41,12 +41,12 @@ Bone = [
 
 
 Sprite = [
-	'tween', 'animLoop', 'shake'
+	'cjsMC','tween', 'animLoop', 'shake'
 ]
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ' - '
-	html += $js('both', Web.deps, Web.lib, Box, Stage, Sprite, Nok, Jet, Bone
+	html += $js('both', Web.deps, Web.lib,  Stage,Sprite, Box, Nok, Jet, Bone
 	)
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)

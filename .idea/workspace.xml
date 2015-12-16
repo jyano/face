@@ -21,16 +21,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/$routes$.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <element signature="e#691#812#0" expanded="true" />
+                <element signature="e#1095#1136#0" expanded="true" />
+                <element signature="e#1171#1398#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="box.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/box/box.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14173229">
-              <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.33294663">
+              <caret line="141" column="3" selection-start-line="141" selection-start-column="3" selection-end-line="141" selection-end-column="3" />
               <folding>
-                <element signature="e#3035#3049#0" expanded="false" />
-                <element signature="e#3168#3195#0" expanded="false" />
-                <element signature="e#3241#3268#0" expanded="false" />
-                <element signature="e#3575#3600#0" expanded="false" />
+                <element signature="e#2091#2994#0" expanded="true" />
+                <element signature="e#2112#2651#0" expanded="true" />
+                <element signature="e#2914#2928#0" expanded="false" />
+                <element signature="n#!!block;n#_pre#0" expanded="true" />
+                <element signature="e#3075#3102#0" expanded="false" />
+                <element signature="e#3148#3175#0" expanded="false" />
+                <element signature="e#3482#3507#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -287,11 +304,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/box/contact.js" />
         <option value="$PROJECT_DIR$/box/boxMath.js" />
         <option value="$PROJECT_DIR$/box/makeWorld.js" />
         <option value="$PROJECT_DIR$/box/joints.js" />
         <option value="$PROJECT_DIR$/prototypes.js" />
+        <option value="$PROJECT_DIR$/$routes$.js" />
         <option value="$PROJECT_DIR$/box/box.js" />
       </list>
     </option>
@@ -362,7 +379,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="box" />
+              <option name="myItemId" value="sprite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sprite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_deps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -708,15 +743,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/$routes$.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#691#812#0" expanded="true" />
+            <element signature="e#1095#1136#0" expanded="true" />
+            <element signature="e#1171#1398#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/box/box.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14173229">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.33294663">
+          <caret line="141" column="3" selection-start-line="141" selection-start-column="3" selection-end-line="141" selection-end-column="3" />
           <folding>
-            <element signature="e#3035#3049#0" expanded="false" />
-            <element signature="e#3168#3195#0" expanded="false" />
-            <element signature="e#3241#3268#0" expanded="false" />
-            <element signature="e#3575#3600#0" expanded="false" />
+            <element signature="e#2091#2994#0" expanded="true" />
+            <element signature="e#2112#2651#0" expanded="true" />
+            <element signature="e#2914#2928#0" expanded="false" />
+            <element signature="n#!!block;n#_pre#0" expanded="true" />
+            <element signature="e#3075#3102#0" expanded="false" />
+            <element signature="e#3148#3175#0" expanded="false" />
+            <element signature="e#3482#3507#0" expanded="false" />
           </folding>
         </state>
       </provider>

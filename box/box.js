@@ -16,7 +16,7 @@ b2d.JD = b2d.JtD = b2d.jointDef = bJD = b2d.Joints.b2JointDef = b2d.jointDef = b
 //////
 b2d.DJD = b2d.Joints.b2DistanceJointDef
 b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint
-b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint
+ 
 b2d.DJ = b2d.distanceJoint = b2d.Js.b2DistanceJoint
 b2d.MJD = b2d.MouseJointDef = b2d.Js.b2MouseJointDef
 b2d.MJ = b2d.MouseJoint = b2d.Js.b2MouseJoint
@@ -26,7 +26,7 @@ b2d.MouseJointDef = b2d.Joints.b2MouseJointDef
 b2d.MouseJoint = b2d.Joints.b2MouseJoint
 b2d.MJ = b2MouseJointDef = b2d.D.Joints.b2MouseJointDef
 b2d.mouseJointDef = b2MouseJointDef = b2d.D.Joints.b2MouseJointDef
-b2d.mouseJointDef = b2MouseJointDef = b2d.D.Joints.b2MouseJointDef
+b2Vec2 = b2d.Common.Math.b2Vec2 
 b2d.MJD = b2d.mouseJointDef = b2MouseJointDef = b2d.Js.b2MouseJointDef
 b2d.PrismaticJointDef = b2d.Joints.b2PrismaticJointDef
 b2d.PJD = b2d.PrismaticJointDef = b2d.Js.b2PrismaticJointDef
@@ -52,7 +52,7 @@ $PT = function () {
 		l = b2d.D.b2ContactListener.prototype
 		flDa = b2d.D.b2FilterData.prototype
 		pH = b2d.PolygonShape.prototype
-		v = b2d.Common.Math.b2Vec2.prototype
+		
 		w = b2d.World.prototype
 	}
 	dD = $pt.dD
@@ -80,6 +80,7 @@ $PT = function () {
 	mJD = $pt.mJD
 	mJ = $pt.mJ
 }
+b2d.Cos = b2d.D.Controllers
 function _pre() {
 	_pt = function (a) {
 		if (O(a)) {
@@ -114,45 +115,31 @@ $pt.xGr = CanvasGradient.prototype
 //stage
 $pt.ct = cjs.Container.prototype
 $pt.dO = $pt.i = cjs.DisplayObject.prototype
-$pt.dO = i = cjs.DisplayObject.prototype
 $pt.eD = cjs.EventDispatcher.prototype
-$pt.eD = cjs.EventDispatcher.prototype
-$pt.gx = cjs.Graphics.prototype$
 $pt.gx = cjs.Graphics.prototype
 $pt.h = cjs.Shape.prototype
-$pt.h = cjs.Shape.prototype
 $pt.st = s = cjs.Stage.prototype
-$pt.st = s = cjs.Stage.prototype
-$pt.t = cjs.Text.prototype
 $pt.t = cjs.Text.prototype
 $pt.q = cjs.LoadQueue.prototype
 // stage anim ///
 $pt.sS = ss = cjs.SpriteSheet.prototype
-$pt.sSB = cjs.SpriteSheetBuilder.prototype
 $pt.sp = s = cjs.Sprite.prototype
-$pt.tl = cjs.Timeline.prototype
-$pt.tw = cjs.Tween.prototype
-$pt.sS = ss = cjs.SpriteSheet.prototype
 $pt.sSB = cjs.SpriteSheetBuilder.prototype
-$pt.sp = s = cjs.Sprite.prototype
 $pt.tw = cjs.Tween.prototype
-$pt.mc = cjs.MovieClip.prototype
 $pt.mc = cjs.MovieClip.prototype
 $pt.tl = cjs.Timeline.prototype
 //// BOX BOX BOX ///////
 $pt.w = b2d.W.prototype //= b2d.World.prototype
-$pt.dD = $pt.dd = b2d.D.b2DebugDraw.prototype
+dD=dd = $pt.dD = $pt.dd = b2d.D.b2DebugDraw.prototype
 $pt.bH = b2d.Hs.b2Shape.prototype;
 $pt.cH = b2d.CircleShape.prototype
 $pt.pH = b2d.PolygonShape.prototype
-$pt.pH = b2d.PolygonShape.prototype
-$pt.cH = b2d.CircleShape.prototype
 $pt.f = b2d.D.b2Fixture.prototype //b2d.F.prototype// b2d.Fixture.prototype
 $pt.fD = $pt.fd = b2d.D.b2FixtureDef.prototype // b2d.FD.prototype
 $pt.b = b2d.Body.prototype //= b2.D.b2Body.prototype
 $pt.bD = b2d.D.b2BodyDef.prototype // b2d.BD.prototype
 $pt.v = b2d.Common.Math.b2Vec2.prototype
-$pt.ab = b2d.Collision.b2AABB.prototype
+ab=$pt.ab = b2d.Collision.b2AABB.prototype
 $pt.flDa = b2d.D.b2FilterData.prototype
 $pt.l = $pt.cL = b2d.D.b2ContactListener.prototype // = b2d.CL.prototype
 $pt.cx = b2d.D.Contacts.b2Contact.prototype
@@ -163,15 +150,12 @@ $pt.dJ = b2d.Joints.b2Joint.prototype
 $pt.dJD = jd = b2d.Joints.b2DistanceJointDef.prototype
 $pt.dJ = b2d.Joints.b2DistanceJoint.prototype
 $pt.dJD = b2d.Joints.b2DistanceJointDef.prototype
-$pt.dJD = b2d.Joints.b2DistanceJointDef.prototype
 $pt.mJD = b2d.MouseJointDef.prototype
 $pt.mJ = b2d.MouseJoint.prototype
-$pt.mJ = b2d.Joints.b2MouseJoint.prototype
 $pt.mJD = b2d.Joints.b2MouseJointDef.prototype
 $pt.mJD = $pt.mD = b2d.MJD.prototype
 $pt.mJ = b2d.MJ.prototype
 $pt.mJ = b2d.Joints.b2MouseJoint.prototype
-$pt.mJD = b2d.Joints.b2MouseJointDef.prototype
 //
 $pt.rJD = b2d.RevoluteJointDef.prototype
 $pt.rJ = b2d.RevoluteJoint.prototype
@@ -187,26 +171,21 @@ $pt.wJD = b2d.Joints.b2WeldJointDef
 $pt.wJ = b2d.Joints.b2WeldJoint
 $pt.wJD = b2d.Js.b2WeldJointDef
 $pt.wJ = b2d.Js.b2WeldJoint
-
 $pt.co = b2d.D.Controllers.b2Controller.prototype //b2d.Co.prototype  // b2d.Cos.b2Controller.prototype
-$pt.aCo = b2d.CAC.prototype
-$pt.aCo = b2d.D.Controllers.b2ConstantAccelController.prototype
+//$pt.aCo = b2d.CAC.prototype
 $pt.aCo = b2d.D.Controllers.b2ConstantAccelController.prototype
 $pt.aCo = b2d.Cos.b2ConstantAccelController.prototype
 $pt.bCo = b2d.BuoyancyController = b2d.D.Controllers.b2BuoyancyController
 $pt.bCo = b2d.D.Controllers.b2BuoyancyController.prototype
-$pt.bCo = b2d.BC.prototype
+//$pt.bCo = b2d.BC.prototype
 $pt.bCo = b2d.Cos.b2BuoyancyController.prototype//bCo = b2d.BuoyancyController= b2d.Cos.b2BuoyancyController
 $pt.bCo = b2d.D.Controllers.b2BuoyancyController.prototype
-$pt.fCo = b2d.CFC.prototype
+//$pt.fCo = b2d.CFC.prototype
 $pt.fCo = b2d.D.Controllers.b2ConstantForceController.prototype
 $pt.fCo = b2d.Cos.b2ConstantForceController.prototype
-$pt.fCo = b2d.D.Controllers.b2ConstantForceController.prototype
-$pt.gCo = b2d.D.Controllers.b2GravityController.prototype
 $pt.gCo = b2d.Cos.b2GravityController.prototype
 $pt.gCo = b2d.D.Controllers.b2GravityController.prototype
-$pt.gCo = b2d.GC.prototype
+//$pt.gCo = b2d.GC.prototype
 $pt.tCo = b2d.Cos.b2TensorDampingController.prototype
-$pt.tCo = b2d.D.Controllers.b2TensorDampingController.prototype
-$pt.tCo = b2d.TDC.prototype
+//$pt.tCo = b2d.TDC.prototype
 $pt.tCo = b2d.D.Controllers.b2TensorDampingController.prototype
