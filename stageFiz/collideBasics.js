@@ -1,0 +1,49 @@
+function collission() {
+	b2d.Collision.b2Simplex
+	b2d.Collision.b2Bound
+	b2d.Collision.b2AABB
+	b2d.Collision.b2BoundValues
+	b2d.Collision.b2ContactID
+	b2d.Collision.b2ContactPoint
+	b2d.Collision.b2Distance
+	b2d.Collision.b2DistanceInput
+	b2d.Collision.b2DistanceOutput
+	b2d.Collision.b2DistanceProxy
+	b2d.Collision.b2DynamicTree
+	b2d.Collision.b2DynamicTreeNode
+	b2d.Collision.b2DynamicTreePair
+	b2d.Collision.b2RayCastInput
+	b2d.Collision.b2RayCastOutput
+//  b2d.Dynamics.Controllers.b2ControllerEdge
+	b2d.Collision.b2Simplex
+	b2d.Collision.b2Bound
+	b2d.Collision.b2AABB
+	b2d.Collision.b2BoundValues
+	b2d.Collision.b2ContactID
+	b2d.Collision.b2ContactPoint
+	b2d.Collision.b2Distance
+	b2d.Collision.b2DistanceInput
+	b2d.Collision.b2DistanceOutput
+	b2d.Collision.b2DistanceProxy
+	b2d.Collision.b2DynamicTree
+	b2d.Collision.b2DynamicTreeNode
+	b2d.Collision.b2DynamicTreePair
+	b2d.Collision.b2RayCastInput
+	b2d.Collision.b2RayCastOutput
+}
+function b2dC() {
+	b2d.C.b2Simplex
+	b2d.C.b2Bound
+	b2d.C.b2BoundValues
+	b2d.C.b2ContactID
+	b2d.C.b2ContactPoint
+	b2d.C.b2Distance
+	b2d.C.b2DistanceInput
+	b2d.C.b2DistanceOutput
+	b2d.C.b2DistanceProxy
+	b2d.C.b2DynamicTree
+	b2d.C.b2DynamicTreeNode
+	b2d.C.b2DynamicTreePair
+	b2d.C.b2RayCastInput
+	b2d.C.b2RayCastOutput
+};
