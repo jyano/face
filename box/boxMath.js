@@ -1,6 +1,82 @@
+b2d.iV = b2d.isV = function (v) {
+	if (v) {
+		return v.constructor.name == "b2Vec2"
+	}
+}
+b2d.iH = function (h) {
+	var typ
+	if (O(h)) {
+		typ = h.constructor.name
+		return (typ == "b2PolygonShape") || (typ == "b2CircleShape") || (typ == "b2AShape")
+	}
+}
+b2d.iBD = b2d.isBDef = function (bd) {
+	return O(bd) && F(bd.b2BodyDef)
+}
+b2d.iB = b2d.isB = b2d.isBody = isBody = function (b) {
+	if (O(b)) {
+		return b.constructor.name == 'b2Body'
+	}
+}
+b2d.iFD = b2d.isFD = b2d.isFixtDef = function (fD) {
+	return O(fD) && fD.b2FixtureDef
+}
+b2d.iF = b2d.isFixt = function (f) {
+	if (!f) {
+		return false
+	}
+	return f.constructor.name == "b2Fixture"
+}
+b2d.iV = b2d.isV = function (v) {
+	if (v) {
+		return v.constructor.name == "b2Vec2"
+	}
+}
+b2d.iH = b2d.isShape = function (h) {
+	if (!O(h)) {
+		return
+	}
+	var ty = h.constructor.name
+	return ty == "b2PolygonShape" ? 'p' :
+			ty == "b2CircleShape" ? 'c' :
+					ty == "b2AShape" ? 'a' : false
+	alt = function (h) {
+		var typ
+		if (O(h)) {
+			typ = h.constructor.name
+			return (typ == "b2PolygonShape") || (typ == "b2CircleShape") || (typ == "b2AShape")
+		}
+	}
+}
+b2d.iPH = b2d.iP = function () {
+	return this.iH() == 'p'
+}
+b2d.iCH = b2d.iC = function () {
+	return this.iH() == 'c'
+}
+b2d.iAH = b2d.iA = function () {
+	return this.iH() == 'a'
+}
+b2d.tA = function (vs) {
+	return _.m(vs, function (v) {
+		return v.tA(v)
+	})
+}
+b2d.tB = b2d.toBody = function (b) {
+	return b2d.iB(b) ? b :
+			b2d.iF(b) ? b.B() :
+					null
+	b2d.toBodyAlt = function (fixtOrBody) {
+		if (b2d.isBody(fixtOrBody)) {
+			return fixtOrBody
+		}
+		if (b2d.isFixt(fixtOrBody)) {
+			return fixtOrBody.body()
+		}
+		return false
+	}
+}
  
-v = b2d.Common.Math.b2Vec2.prototype
-ab = b2d.Collision.b2AABB.prototype
 v.mult = function (num) {
 	num = N(num) ? num : 30
 	var v = _.clone(this)

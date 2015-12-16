@@ -72,7 +72,7 @@ controllers = function () {
 		var co = new b2d.Dynamics.Controllers.b2GravityController()
 		return co
 	}
-	co = b2d.Dynamics.Controllers.b2Controller.prototype
+ 
 	co.body = function (onOrMoreBodies) {
 		var co = this
 		_.each(arguments, function (b) {
@@ -97,15 +97,13 @@ controllers = function () {
 		this.step();
 		return this
 	}
-//acc
-	aCo = b2d.Dynamics.Controllers.b2ConstantAccelController.prototype
 	aCo.V = function (x, y) {//getter is a waste!  counterproductive... think about it! :).. but for consistency..??? nah i can do better
 		//applies 'gravity' by default
 		this.A = U(x) ? V(0, 10) : V(x, y)
 		return this
 	}
 //buoy
-	bCo = b2d.Dynamics.Controllers.b2BuoyancyController.prototype
+//acc 
 	bCo.norm = function (x, y) {
 		this.normal.Set(x, y);
 		return this
@@ -137,22 +135,20 @@ controllers = function () {
 	bCo.drag = function (lD, aD) {
 		return this.linDrag(lD).angDrag(aD)
 	}
-//force
-	fCo = b2d.Dynamics.Controllers.b2ConstantForceController.prototype
 	fCo.V = function (x, y) {
 		//applies 'gravity' by default
 		this.F = U(x) ? V(0, 10) : V(x, y)
 		return this
 	}
 //tensor
-	tCo = b2d.Dynamics.Controllers.b2TensorDampingController.prototype
+ 
+	
 	tCo.axis = function (axis) {
 		this.SetAxisAligned(axis)
 		return this
 	}
 //grav
-	gCo = b2d.Dynamics.Controllers.b2GravityController.prototype
-	gCo.g = gCo.grav = gCo.V = function (g) {//applies 'gravity' by default
+ gCo.g = gCo.grav = gCo.V = function (g) {//applies 'gravity' by default
 		this.G = N(g) ? g : 1
 		return this
 	}

@@ -1,5 +1,4 @@
-b2DebugDraw = b2d.DD = b2d.DebugDraw = b2d.DebugDraw = b2d.D.b2DebugDraw
-dd = dD = b2d.Dynamics.b2DebugDraw.prototype
+ 
 dd.cx = dd.spr = dd.i = dd.sprite = function (spr) {
 	var dd = this  //it is looking for  a context?
 	if (U(spr)) {

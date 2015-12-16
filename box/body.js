@@ -1,6 +1,6 @@
 def()
  function def(){
-	 bD = bd = d = b2.Dynamics.b2BodyDef.prototype //SuperBodyDef= sBdD=function(a){return a|| b2.bodyDef() }
+	 bD = bd = d = b2d.Dynamics.b2BodyDef.prototype //SuperBodyDef= sBdD=function(a){return a|| b2d.bodyDef() }
 	 bd.XY = d.p = d.ps = d.xy = function (x, y) {
 		 var args = G(arguments)
 		 args[0] = x;
@@ -309,7 +309,7 @@ def()
 		 return bD
 	 }
  }
-b = b2.Dynamics.b2Body.prototype
+b = b2d.Dynamics.b2Body.prototype
 b.rt = b.rot = function (angle, ms) {
 	var b = this, g = G(arguments), r = g[0], ms = g[1],
 			a = Math.toDegrees(b.GetAngle()) //currAng

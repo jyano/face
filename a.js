@@ -1,11 +1,13 @@
-console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n');
+console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
 require('./core/both')
-$l(' - face - \n');
+$l(' - face - \n')
 require('./core/$superNode$')
 $stc = function () {
+
 	_.e(arguments, function (arg) {
 		A(arg) ? _.e(arg, $stc) : Use(arg)
 	})
+
 	function Use(arg) {
 		use(name(arg))
 		use(name(arg + '/_pre'))
@@ -22,7 +24,6 @@ $stc = function () {
 		function name(dir) {
 			return __dirname + '/' + dir
 		}
-		
 		function use(dir) {
 			$a.use($e.static(dir))
 		}
@@ -30,16 +31,14 @@ $stc = function () {
 }
 require('./core/$xap$')
 require('./core/$goo$')
-$l(' - routing.. - \n');
 require('./$mw$')
 $a.g('/', function (q, p) {
 	p.send('it worked jason..')
 })
 require('./$routes$')
-$l(' - servering..')
 $htSv = httpServer = $h.createServer($a)
 $htSv.listen(80, lsFn)
 require('./socket/$kets$')
 function lsFn() {$l('\nserver listening on port 80 \n')}
-$l(' - trying to listen- \n');
+ 
   

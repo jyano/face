@@ -1,4 +1,4 @@
-$L()
+ 
 function jointDef(){
 	jd.A = function (a) {
 		this.bodyA = a;
@@ -349,8 +349,7 @@ function jointDef(){
 		 */
 	}
 	
-	function tor() {
-	}
+ 
 	
 	jD.sRA = function (an) {
 		this.referenceAngle = an
@@ -680,7 +679,7 @@ function jointDef(){
 	}
 	
 	function limits() {
-		j = b2d.J
+	 
 		j.eL = j.EL = function (eL) {
 			this.EnableLimit(eL ? true : false)
 			return this
@@ -887,7 +886,7 @@ function jointDef(){
 	}
 }
 function jointPt() {
-	j = b2d.Joints.b2Joint.prototype
+ 
 	j.W = function () {
 		return this.A().W()
 	}
@@ -1241,54 +1240,9 @@ b.rmJts = b.destroyJoints = b.dsJts = b.destroyAllJoints = function () {
 	})
 	return this
 }
-function _pre(){
-	b2Joint = Box2D.Dynamics.Joints.b2Joint
-	b2MouseJointDef = Box2D.Dynamics.Joints.b2MouseJointDef
-	b2d.Js = b2d.Jts = b2d.Joints = b2d.D.Joints
-	b2d.Joints = BXJ = b2d.Dynamics.Joints
-	b2d.joint = bJ = b2d.Joints.b2Joint
-	b2d.jointDef = bJD = b2d.Joints.b2JointDef
-	b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint
-	b2d.mouseJointDef = b2MouseJointDef = b2d.Dynamics.Joints.b2MouseJointDef
-	b2d.JD = b2d.jointDef = bJD = b2d.Js.b2JointDef
-	b2d.J = b2d.Joint = b2d.joint = bJ = b2d.Js.b2Joint
-	b2d.PJD = b2d.PrismaticJointDef = b2d.Js.b2PrismaticJointDef
-	b2d.RJD = b2d.RevoluteJointDef = b2d.Js.b2RevoluteJointDef
-	b2d.MJD = b2d.mouseJointDef = b2MouseJointDef = b2d.Js.b2MouseJointDef
-	b2d.RJ = b2d.RevoluteJoint = b2d.Js.b2RevoluteJoint
-	b2d.DJ = b2d.distanceJoint = bDJ = b2d.Js.b2DistanceJoint
-	b2d.joint = bJ = b2d.Joints.b2Joint
-	b2d.jointDef = bJD = b2d.Joints.b2JointDef
-	b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint
-	b2d.mouseJointDef = b2MouseJointDef = b2d.Dynamics.Joints.b2MouseJointDef
-	b2d.PrismaticJointDef = b2d.Joints.b2PrismaticJointDef
-	b2d.RevoluteJointDef = b2d.Joints.b2RevoluteJointDef
-	b2d.RevoluteJoint = b2d.Joints.b2RevoluteJoint
-	b2d.Js = b2d.Joints = b2d.D.Joints
-	b2d.Joints = BXJ = b2d.Dynamics.Joints
-	b2d.JD = b2d.JtD = b2d.JointDef = b2d.Js.b2JointDef
-	b2d.J = b2d.Jt = b2d.Joint = b2d.Js.b2Joint
-	b2d.DJ = b2d.distanceJoint = b2d.Js.b2DistanceJoint
-	b2d.MJD = b2d.MouseJointDef = b2d.Js.b2MouseJointDef
-	b2d.MJ = b2d.MouseJoint = b2d.Js.b2MouseJoint
-	b2d.Joints = BXJ = b2d.Dynamics.Joints
-	b2d.joint = b2d.Joints.b2Joint
-	b2d.jointDef = b2d.Joints.b2JointDef
-	b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint
-	b2d.mouseJointDef = b2MouseJointDef = b2d.Dynamics.Joints.b2MouseJointDef
-	b2d.bodyDef = b2BodyDef = b2d.Dynamics.b2BodyDef
-	b2d.DJD = b2d.Joints.b2DistanceJointDef
-	jD = jd = b2d.Joints.b2JointDef.prototype
-	j = b2d.Joints.b2Joint.prototype
-	dJD = jd = b2d.Joints.b2DistanceJointDef.prototype
-	dJ = b2d.Joints.b2DistanceJoint.prototype
-	j = b2d.J.prototype
-	j = jd = b2d.Joints.b2JointDef.prototype
-}
+ 
 function mouseJt(){
-	function joint() {
-		b2MouseJointDef = b2d.MJ
-	}
+ 
 	
 	def()
 	function def() {
@@ -1502,7 +1456,7 @@ function mouseJt(){
 		})
 	}
 	function createMouse(e) {
-		$l('createMouse')
+	 
 		var body = GetBodyAtMouse()
 		if (body) {
 			$l('found body')
@@ -1692,7 +1646,7 @@ function mouseJt(){
 	}
 	
 	function mouseJts() {
-		$L()
+	 
 		mJD.setTarg = function (x, y) {
 			var v = V(x, y)
 			this.target = v.d()
@@ -1927,16 +1881,11 @@ function mouseJt(){
 			}
 		}
 	}
-	
-	function _pre() {
+	 
 		w.ground = function () {
 			return this.GetGroundBody()
 		}
-		b2d.MouseJointDef = b2d.Joints.b2MouseJointDef
-		b2d.MouseJoint = b2d.Joints.b2MouseJoint
-		mJD = b2d.MouseJointDef.prototype
-		mJ = b2d.MouseJoint.prototype
-	}
+ 
 	
 	function alpha() {
 

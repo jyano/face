@@ -1,4 +1,4 @@
-cx =   b2d.Dynamics.Contacts.b2Contact.prototype
+ 
 cx.A = function () {
 	return this.GetFixtureA()
 }
