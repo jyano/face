@@ -276,6 +276,7 @@ fD.getClasses = fD.getClass = function () {
 	return ks
 }
 //	function klass() {
+
 _.e([fD, f, bD, b, j, co], function (o) {
 	help(o)
 	o.K = function () {
@@ -384,6 +385,7 @@ _.e([fD, f, bD, b, j, co], function (o) {
 		}
 	}
 })
+
 f.of = function (k) {
 	var f = this, b = f.B();
 	return f._of(k) || b.of(k)
@@ -424,7 +426,9 @@ KTX = function () {
 	};
 	wire()
 }
+
 //function more() {
+
 _$klass = function () {//o._K = _.wo(o._K, k) //double protection:
 	o.rpK_ = function (k, k1) {
 		var o = this
@@ -481,6 +485,7 @@ alpha = function () {
 //_.y = function (tru) {return tru != -1}
 // g._1 (length is at least one)
 }
+
 old = function () {
 //alternative f.has: //return ks.indexOf('player') != -1 // !k || _.ct(this._K || [], k.trim())
 	ksA = function () {
@@ -556,6 +561,7 @@ old = function () {
 	 }
 	 */
 }
+
 b.uD = b.data = b.userData = function (d) {
 	if (U(d)) {
 		return this.GetUserData()
@@ -682,26 +688,7 @@ b.K = function () {
 	})
 	return this
 }
-b2d.F = function (k) {
-	var arr = []
-	w.each(function (b) {
-		b.each(function (f) {
-			if (f.is(k)) {
-				arr.push(f)
-			}
-		})
-	})
-	return arr
-}
-b2d.B = function (k) {
-	var arr = []
-	w.each(function (b) {
-		if (b.of(k)) {
-			arr.push(b)
-		}
-	})
-	return arr
-}
+
 //classes = function () {
 f.classCount = function () {
 	if (!A(this.classes)) {
@@ -827,7 +814,7 @@ f.D = f.data = function (data) {
 	this.SetUserData(data);
 	return this
 }
-function klass() {
+
 	w.with = w.collWith = function (a, b, c) {
 		var w = this
 		w.beg(function (cx) {
@@ -859,7 +846,8 @@ function klass() {
 	w.K = function () {
 		return this.B.apply(this, arguments).kin()
 	}
-}
+
+
 b.fixtClass = function (clas) {
 	var f = this.fixt()
 	if (U(clas)) {

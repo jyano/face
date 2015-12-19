@@ -1,41 +1,50 @@
 $L()
- 
- 
-b2CircleShape =b2d.CS = b2d.CH =  b2d.Hs.b2CircleShape
-b2PolygonShape = b2d.PgSh =b2d.PH = b2d.Hs.b2PolygonShape
- 
-
-b2MassData =b2d.MD = b2d.Hs.b2MassData = b2d.Hs.b2MassData
-
+b2d.W = b2World  = b2d.D.b2World //= b2d.World
+b2d.FD = b2FixtureDef  = b2d.D.b2FixtureDef //= b2d.FixtureDef
+b2d.F = b2Fixture =b2d.D.b2Fixture // = b2d.D.Fixture = b2d.Fixture = b2d.fixture = 
+b2d.BD = b2BodyDef  = b2d.D.b2BodyDef //= b2d.BodyDef
+b2d.B = b2Body = b2d.D.b2Body // = b2B = b2d.Body = b2d.D.Body
+b2d.DD = b2DebugDraw = b2d.D.b2DebugDraw //= b2d.DebugDraw 
+b2d.Hs = b2d.C.Hs = b2d.Shapes = b2d.C.Shapes
+b2d.CS =  b2d.CH = b2CircleShape = b2d.C.Hs.b2CircleShape //b2d.CircleShape = b2d.Hs.b2CircleShape = 
+b2d.PH = b2PolygonShape = b2d.C.Hs.b2PolygonShape // b2d.PolygonShape  =  = b2d.Hs.b2PolygonShape
+b2d.MD = b2MassData = b2d.Hs.b2MassData = b2d.C.Hs.b2MassData //b2d.massData = 
+b2d.H = b2Shape = b2d.Hs.b2Shape = b2d.C.Shapes.b2Shape //b2d.Shape =
 b2Vec2 = b2d.Common.Math.b2Vec2
- 
-function jts() {
- 	b2d.DJD = b2d.Jts.b2DistanceJointDef
-	b2d.DJ = bDJ = b2d.distanceJoint = b2d.distanceJoint = bDJ = b2d.Jts.b2DistanceJoint //=b2d.Js.b2DistanceJoint
-	b2d.DJ = b2d.distanceJoint = bDJ = b2d.Js.b2DistanceJoint
-	b2d.MJD = b2MouseJointDef = b2d.MouseJointDef = b2d.Js.b2MouseJointDef // b2d.D.Jts.b2MouseJointDef = b2d.Jts.b2MouseJointDef
-	b2d.MJD = b2d.mouseJointDef = b2MouseJointDef = b2d.Js.b2MouseJointDef
-	b2d.MJ = b2d.MouseJoint = b2d.Jts.b2MouseJoint // = b2d.Js.b2MouseJoint
-	b2d.RJD = b2d.RevoluteJointDef = b2d.Js.b2RevoluteJointDef
-	b2d.RJ = b2d.RevoluteJoint = b2d.Js.b2RevoluteJoint
-	b2d.RevoluteJointDef = b2d.Jts.b2RevoluteJointDef
-	b2d.RevoluteJoint = b2d.Jts.b2RevoluteJoint
-	b2d.PrismaticJointDef = b2d.Jts.b2PrismaticJointDef
-	b2d.PJD = b2d.PrismaticJointDef = b2d.Js.b2PrismaticJointDef
-}
+b2d.DD= b2d.D.b2DebugDraw 
+
+b2d.Jts = b2d.Js =b2d.D.Joints // BXJ = b2d.Joints = 
+b2d.Cos = b2d.D.Controllers
+
+function jts(){
+	b2d.Jt = b2d.J = b2d.D.Joints.b2Joint //= b2d.Joints.b2Joint = b2d.Joint = b2d.joint = bJ 
+	b2d.JD = b2d.JtD = b2d.Joints.b2JointDef //= bJD   = b2d.jointDef = bJD = b2d.jointDef =
+	b2d.DJD = b2d.Joints.b2DistanceJointDef
+b2d.DJ = bDJ = b2d.distanceJoint = b2d.distanceJoint = bDJ = b2d.Joints.b2DistanceJoint //=b2d.Js.b2DistanceJoint
+b2d.DJ = b2d.distanceJoint = bDJ = b2d.Js.b2DistanceJoint
+b2d.MJD = b2MouseJointDef = b2d.MouseJointDef = b2d.Js.b2MouseJointDef // b2d.D.Joints.b2MouseJointDef = b2d.Joints.b2MouseJointDef
+b2d.MJD = b2d.mouseJointDef = b2MouseJointDef = b2d.Js.b2MouseJointDef
+b2d.MJ = b2d.MouseJoint = b2d.Joints.b2MouseJoint // = b2d.Js.b2MouseJoint
+b2d.RJD = b2d.RevoluteJointDef = b2d.Js.b2RevoluteJointDef
+b2d.RJ = b2d.RevoluteJoint = b2d.Js.b2RevoluteJoint
+b2d.RevoluteJointDef = b2d.Joints.b2RevoluteJointDef
+b2d.RevoluteJoint = b2d.Joints.b2RevoluteJoint
+b2d.PrismaticJointDef = b2d.Joints.b2PrismaticJointDef
+b2d.PJD = b2d.PrismaticJointDef = b2d.Js.b2PrismaticJointDef
+
+	
+	}
+
 jts()
-b2d.f = function (k) {
-	var arr = []
+
+
+b2d.f = function (k){var arr = []
 	w.each(function (b) {
 		b.each(function (f) {
-			if (f.is(k)) {
-				arr.push(f)
-			}
-		})
-	})
+			if (f.is(k)) {arr.push(f)}})})
 	return arr
-}
-b2d.b = function (k) {
+} //b2d.F
+b2d.b = function (k){
 	var arr = []
 	w.each(function (b) {
 		if (b.of(k)) {
@@ -43,21 +52,22 @@ b2d.b = function (k) {
 		}
 	})
 	return arr
-}
+} //b2d.B
+
+
 //http://www.createjs.com/tutorials/Inheritance/
 //http://www.createjs.com/tutorials/Mouse%20Interaction/
-function protos(){
 $PT = function () {
 	_PT = function () {
 		h = b2d.Shapes.b2Shape.prototype
 		bH = b2d.Shape.prototype
 		pH = b2d.PolygonShape.prototype
-		cH = b2d.CH.prototype
+		cH = b2d.CircleShape.prototype
 		b = b2d.Body.prototype
 		bD = b2d.BD.prototype
 		cx = b2d.D.Contacts.b2Contact.prototype
 		cxI = b2d.D.b2ContactImpulse.prototype
-	 
+		cH = b2d.CircleShape.prototype
 		dd = b2d.D.b2DebugDraw.prototype
 		f = b2d.Fixture.prototype
 		fd = fD = b2d.FixtureDef.prototype
@@ -91,7 +101,23 @@ $PT = function () {
 	mJD = $pt.mJD
 	mJ = $pt.mJ
 }
- 
+function _pre() {
+	_pt = function (a) {
+		if (O(a)) {
+			return a.prototype
+		}
+	}
+	_bPt = function (a) {
+		if (a && b2d[a]) {
+			return _pt(b2d[a])
+		}
+	}
+	b2d = Box2D // = b2
+	b2d.C = b2d.Collision
+	b2d.D = b2d.Dynamics
+	b2d.Cm = b2d.Common
+	b2d.M = b2d.Math = b2d.Cm.Math
+}
 $pt = {
 	dD: _pt(b2d.DD),
 	v: _pt(b2d.Vec2),
@@ -130,7 +156,7 @@ $pt.tl = cjs.Tl.prototype
 $pt.w = b2d.W.prototype //= b2d.World.prototype
 $pt.dD = $pt.dd = b2d.D.b2DebugDraw.prototype
 $pt.H = $pt.bH = b2d.Hs.b2Shape.prototype;
-$pt.cH = b2d.CH.prototype
+$pt.cH = b2d.CircleShape.prototype
 $pt.pH = b2d.PgSh.prototype
 $pt.f = b2d.D.b2Fx.prototype //b2d.F.prototype// b2d.Fixture.prototype
 $pt.fD = $pt.fd = b2d.D.b2FixtureDef.prototype // b2d.FD.prototype
@@ -144,14 +170,14 @@ $pt.cx = b2d.D.Cxs.Cx.prototype
 $pt.cxI = b2d.D.b2ContactImpulse.prototype
 $pt.jD = $pt.jtD = b2d.Jts.b2JtD.prototype //b2d.JD.prototype
 $pt.j = $pt.jt = b2d.Jts.b2Jt.prototype //$pt.j = b2d.J.prototype
-$pt.dJD = jd = b2d.Jts.b2DistanceJointDef.prototype //$pt.dJD = b2d.Jts.b2DistanceJointDef.prototype
-$pt.dJ = b2d.Jts.DJt.prototype //$pt.dJ = b2d.Jts.b2Joint.prototype
+$pt.dJD = jd = b2d.Jts.b2DistanceJointDef.prototype //$pt.dJD = b2d.Joints.b2DistanceJointDef.prototype
+$pt.dJ = b2d.Jts.DJt.prototype //$pt.dJ = b2d.Joints.b2Joint.prototype
 $pt.mJtD = b2d.Jts.MJtD.prototype //$pt.mJD = $pt.mD = b2d.MJD.prototype // $pt.mJD = b2d.MouseJointDef.prototype
-$pt.mJt = b2d.MJ.prototype //$pt.mJ = b2d.Jts.b2MouseJoint.prototype$pt.mJ = b2d.MouseJoint.prototype
+$pt.mJt = b2d.MJ.prototype //$pt.mJ = b2d.Joints.b2MouseJoint.prototype$pt.mJ = b2d.MouseJoint.prototype
 $pt.rJtD = b2d.RJtD.prototype
 $pt.rJt = b2d.RJt.prototype
 $pt.pJt = b2d.Jts.b2PJt.prototype //$pt.pJ = b2d.Js.b2PrismaticJoint.prototype
-$pt.pJtD = pd = b2d.Js.b2PrJtD.prototype //$pt.pJD = pd = b2d.Jts.b2PrismaticJointDef.prototype
+$pt.pJtD = pd = b2d.Js.b2PrJtD.prototype //$pt.pJD = pd = b2d.Joints.b2PrismaticJointDef.prototype
 $pt.wJtD = b2d.Jts.b2WJtD // = b2d.Js.b2WeldJointDef
 $pt.wJt = b2d.WedJt //$pt.wJ = b2d.Js.b2WeldJoint
 $pt.co = b2d.Cos.b2Co.prototype //b2d.Co.prototype  // b2d.Cos.b2Controller.prototype
@@ -165,41 +191,3 @@ $pt.bCo = b2d.Cos.b2BuoyancyController.prototype//bCo = b2d.BuoyancyController= 
 $pt.fCo = b2d.D.Controllers.b2ConstantForceController.prototype //$pt.fCo = b2d.Cos.b2ConstantForceController.prototype
 $pt.gCo = b2d.Cos.GCo.prototype //$pt.gCo = b2d.D.Controllers.b2GravityController.prototype//$pt.gCo = b2d.GC.prototype
 $pt.tCo = b2d.Cos.TCo.prototype//$pt.tCo = b2d.TDC.prototype //$pt.tCo = b2d.D.Controllers.b2TensorDampingController.prototype
-}
-function _pre() {
-	_pt = function (a) {
-		if (O(a)) {
-			return a.prototype
-		}
-	}
-	_bPt = function (a) {
-		if (a && b2d[a]) {
-			return _pt(b2d[a])
-		}
-	}
-	b2d = Box2D // = b2
-	b2d.C = b2d.Collision
-	b2d.D = b2d.Dynamics
-	b2d.Cm = b2d.Common
-	b2d.M = b2d.Math = b2d.Cm.Math
-	b2World = b2d.W = b2d.D.b2World
-	b2FixtureDef = b2d.FD = b2d.D.b2FixtureDef
-	b2Fixture = b2d.F = b2d.D.b2Fixture
-	b2BodyDef = b2d.BD = b2d.D.b2BodyDef
-	b2Body = b2d.B = b2d.D.b2Body
-	b2d.DD = b2DebugDraw = b2d.D.b2DebugDraw
-	b2d.Hs = b2d.C.Shapes
-	b2Shape = b2d.H = b2d.Hs.b2Shape
-	b2d.Jts = b2d.Js = b2d.D.Joints
-	b2d.Jt = b2d.J = b2d.Jts.b2Joint
-	b2d.JD = b2d.JtD = b2d.Jts.b2JointDef
-	b2d.Cos = b2d.D.Controllers
-cjs.ED=	cjs.EventDispatcher
-cjs.H=cjs.Sh = cjs.Shape
-cjs.LQ=cjs.LoadQueue
-	cjs.SS= cjs.SpriteSheet
-	cjs.MC= cjs.MovieClip
-cjs.Sp=cjs.Sprite
-	cjs.SSB=cjs.SpriteSheetBuilder
-	cjs.Tl = cjs.Timeline
-}

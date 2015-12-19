@@ -1,4 +1,4 @@
-w = b2d.World.prototype // = b2d.D.b2World.prototype
+w = b2d.W.prototype // = b2d.D.b2World.prototype
 f=b2d.F.prototype
 
 w.G = function (x, y) {

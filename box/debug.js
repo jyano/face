@@ -1,3 +1,4 @@
+dd = dD = b2d.DD.prototype
  
 dd.cx = dd.spr = dd.i = dd.sprite = function (spr) {
 	var dd = this  //it is looking for  a context?

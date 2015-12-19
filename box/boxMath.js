@@ -76,7 +76,7 @@ b2d.tB = b2d.toBody = function (b) {
 		return false
 	}
 }
- 
+ab = b2d.C.b2AABB.prototype
 v.mult = function (num) {
 	num = N(num) ? num : 30
 	var v = _.clone(this)

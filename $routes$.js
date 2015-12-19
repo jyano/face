@@ -14,6 +14,8 @@ $stc('',
 		'front', 'front/bone',
 		'front/nok',
 		'front/jetUI',
+		'jetUI',
+		'wid',
 		//wappy
 		'wappy', 'login', 'muggy')
 Web = {
@@ -32,7 +34,8 @@ Stage = ['toSort',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official'
 ]
 Nok = ['ko','nok']// 'koCore', 'koApps', 'knock']
-Jet = ['jqui', 'jquiCore', 'wid', 'jquiApps']
+Jet = ['jqui', 'jquiCore', 'cbw','jqIPApps','navApps',
+ 'wid', 'jquiApps','calc','multi','progBar','slides','capt','sDialog','widFilt']
 
 Bone = [
 		'bb', 'bone', 'bbViews', 'bbRouter','bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect' , 'bbAvail',

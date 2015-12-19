@@ -1,6 +1,6 @@
-bH = b2d.Shape.prototype
-cH = b2d.CircleShape.prototype
-pH = b2d.PolygonShape.prototype
+bH = b2d.H.prototype
+cH = b2d.CH.prototype
+pH = b2d.PH.prototype
 bH.ty = function () {
 	return b2d.iH(this)
 	bH.GT = function () {
