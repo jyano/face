@@ -14,6 +14,154 @@ bD.act = bD.setActive = function (isActive) {
 	this.active = isActive ? true : false
 	return this
 }
+Array.prototype.sensor = function (kind) {
+	this.isSensor = kind || true
+	return this
+}
+f.kin = function () {
+	var b = this.B();
+	b.kin.apply(b, arguments);
+	return this
+}
+f.stat = function () {
+	var b = this.B();
+	b.stat.apply(b, arguments);
+	return this
+}
+f.isStat = function () {
+	return this.B().isStat()
+}
+f.isDyn = function () {
+	return this.B().isDyn()
+}
+f.isKin = function () {
+	return this.B().isKin()
+}
+f.bType = function () {
+	return this.B().GetType()
+}
+//f.getType = f.gT = function(someType){var b=this.B(), t=b.GetType(); return  D(someType)?(someType==t):t}
+f.isBType = f.isType = function (t) {
+	if (t) {
+		return this.bType() == t
+	}
+}
+f.rot = function (rot, g) {
+	return this.B().rot(rot, g)
+}
+f.killBody = function () {
+	this.B().kill()
+}
+function query() {
+	f.GN = f.N = f.next = function () {
+		return this.GetNext()
+	}
+	f.$ = function (fn) {
+		var f = this, b = f.B(), w = b.W()
+		w.$(function (o) {
+			w.q(o.x, o.y, function (fx) {
+				//w.q is hack
+				if (f == fx) {
+					_.b(fn, f)(o)
+				}
+			})
+		})
+		return f
+	}
+	f.N = f.next = function () {
+		return this.GetNext()
+	}
+	f.$ = function (fn) {
+		var f = this, b = f.B(), w = b.W()
+		w.$(function (o) {
+			w.q(o.x, o.y, function (fx) {
+				if (f == fx) {
+					_.b(fn, f)(o)
+				}
+			})
+		})
+		return f
+	}
+	f.next = function () {
+		return this.GetNext()
+	}
+}
+f.area = function () {
+	return Math.poly(this.V()).getArea()
+}
+f.cent = f.center = function () {
+	var bounds = this.GetAABB()
+	return Math.lineCenter(bounds.lowerBound, bounds.upperBound).mult()
+}//center point of its BOUNDING BOX
+f.test = f.hit = function (pt, y) {//=f.testPoint= f.tP
+	var f = this, b = f.body(), w = b.wor(),
+			g = G(arguments), v = V(g[0], g[1]),
+			res = f.H().testPoint(b.transform(), v.div())
+	if (g.p) {
+		b.wor().dot(v)
+	}
+	return res
+}//is a point within the fixture // very accurate
+fD.sSAPOld = fD.setShapeAsAPolyOld = function () {
+	return this.H(b2d.polyShape())
+}
+fD.vrt = fD.verts = function () {
+	var h = this.H()
+	var verts = h.vs()
+	return [vs[0].m(), vs[1].m(), vs[2].m(), vs[3].m()]
+	function alt() {
+		fD.vrt = fD.verts = function () {
+			var shape = this.shape,
+					verts = shape.m_vertices,
+					verts = [
+						verts[0].mult(),
+						verts[1].mult(),
+						verts[2].mult(),
+						verts[3].mult()]
+			return $l(verts)
+		}
+	}
+}
+f.killB = f.kB = f.xB = f.xX = f.XX = function () {
+	if (this && this.B()) {
+		this.B().kill()
+	}
+}
+w.S = function (x, y) {
+	var w = this,
+			g = G(arguments),
+			x = g[0], y = g[1],
+			bd, b, fixts, clas
+	if (S(_.last(g))) {
+		clas = g.pop()
+	}
+	if (N(x)) {
+		bd = b2d.stat(x, y)
+		fixts = _.rest(g, 2)
+	}
+	else {
+		if (b2d.isBDef(x)) {
+			bd = x
+		}
+		else {
+			x = V(x);
+			bd = b2d.stat(x.x, x.y)
+		}
+		fixts = _.rest(g)
+	}
+	b = w.CreateBody(bd)
+	if (fixts.length) {
+		b.H.apply(b,
+				fixts
+				//   _.map(fixts, function(f){   return A(f)?f:[f]  })
+		)
+	}
+	if (clas) {
+		b.K(clas)
+	}
+	return b
+}
+ 
 b.$$ = funb.$ = function (fn) {
 	var b = this, w = b.W()
 	w.$(function (o) {
@@ -367,6 +515,9 @@ b.hit = function (x, y, dot) {
 }
 
 function kinematic(){
+	w.K = function () {
+		return this.B.apply(this, arguments).kin()
+	}
 	function kin() {
 		bD.kin = function () {
 			return this.T(1)
@@ -474,4 +625,132 @@ function alpha() {
 		this.lD(l).aD(a)
 		return this
 	}
+}
+function fiz() {
+	bH.tP = bH.tPt = function (tf, v, y) {
+		var bH = this
+		//bH.test = h.point =
+		function alt() {
+			bH.testPoint = h.tP = function (tf, vec) {
+				return this.TestPoint(tf, vec)
+			}
+			bH.TP = function (x, y) {
+				return this.TestPoint(x, y)
+			}
+			bH.tPt = bH.tP = function (x, y) {
+				var bH = this
+				alert('bH.tPt tP')
+				return bH.TP(x / 30, y / 30)
+			}
+		}
+		
+		return this.TestPoint(tf, V(v, y).div())
+	}
+	bH.C = function () {
+		return this.Copy()
+	}
+	bH.vs = function () {
+		return this.m_vertices
+	}
+	bH.seg = h.segment = function (xf, lamb, norm, seg, maxLamb) {//Perform a ray cast against this shape.
+		return this.TestSegment(xf,
+				lamb,//:Array, returns the hit fraction.
+				// You can use this to compute the contact point p = (1 - lambda) segment.p1
+				// + lambda segment.p2.
+				norm,//:b2Vec2, returns the normal at the contact point.
+				// If there is no intersection, the normal is not set.
+				seg,//:b2Segment, defines the begin and end point of the ray cast
+				maxLamb//:Numbera number typically in the range [0,1]
+		)
+	}
+	bH.RC = function (fn, p1, p2) {
+		return this.RayCast(fn, p1, p2)
+	}
+	bH.CAB = function (v1, v2) {
+		var bH = this;
+		return bH.ComputeAABB()
+	}
+	bH.CM = function (mass) {
+		var bH = this;
+		return bH.ComputeMass()
+	}
+	bH.CSA = function () {
+		var bH = this
+		var area = bH.ComputeSubmergedArea()
+		return area
+	}
+	pH.vs = pH.verts = function () {
+		var verts = this.m_vertices
+		return _.m(verts, function (v) {
+			return [v.x * 30, v.y * 30]
+		})
+		function alt() {
+			pH.vs = pH.vertsx = function () {
+				alert('pH.vs. see boxShapes.js')
+				var pH = this
+				return _.m(pH.m_vertices, function (v) {
+					return [v.x * 30, v.y * 30]
+				})
+			}
+		}
+	}
+	pH.vec = pH.setAsVec = function (v, sc) {
+		var pH = this //used by SepLib
+		pH.SetAsVector(_.m(v, function (v) {
+			return V(v).d(N(sc, 30))
+		}))
+		return pH
+		function alt() {
+			pH.setAsVec = function (vec, scale) {
+				scale = N(scale) ? scale : 30
+				vec = _.map(vec, function (v) {
+					return V(v).div(scale)
+				})
+				this.SetAsVector(vec)
+				return this
+			}
+		}
+	}
+}
+bH.GT = function () {
+	return this.GetType()
+}
+bH.ty = function () {
+	return b2d.iH(this)
+}
+bH.iP = function () {
+	return b2d.iP(this)
+}
+bH.iC = function () {
+	return b2d.iC(this)
+}
+bH.iA = function () {
+	return b2d.iA(this)
+}
+bH.rad = function (r) {
+	var bH = this;
+	bH.GR = function () {
+		return this.GetRadius()
+	}
+	bH.SR = function (rad) {
+		this.SetRadius(rad);
+		return this
+	}
+	bH.sRad = function (r) {
+		var bH = this
+		if (bH.ty() == 'c') {
+			return bH.SR(r / 30)
+		}
+		bH.m_radius = r / 30
+		return bH
+	}
+	bH.gRad = function () {
+		var bH = this
+		return bH.ty() == 'c' ? bH.GR() * 30 :
+		bH.m_radius * 30
+	}
+	return U(r) ? bH.gRad() : bH.sRad(r)
+}
+b.GWC = function () {
+	return this.GetWorldCenter()
 }

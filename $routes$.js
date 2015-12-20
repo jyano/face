@@ -36,7 +36,8 @@ Stage = ['toSort',
 	'cjs', 'stage', 'dob', 'stageDraw', 'solve', 'iso',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official'
 ]
-Box = ['bx', 'box',   'boxBods', 'boxApps']
+
+Box = ['bx', 'box0', 'box',  'superBox', 'boxApps']
  
  
 

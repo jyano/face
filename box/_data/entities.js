@@ -17,7 +17,6 @@ $eM.pFs = function () {
 		$pF(10, 300)
 	])
 }
-
 $eM.compound = b2d.compoundShape = function () {
 	return w.A($dB(300, 200), [
 		$rF(50, 10),
@@ -26,7 +25,6 @@ $eM.compound = b2d.compoundShape = function () {
 		$rF(60, 10, 0, 50, 60),
 		$rF(84, 10, 15, 80, -120)])
 }
-
 $eM.compound2 = b2d.compoundShape2 = function () {
 	return w.A($dB(300, 200), [
 		$rF(50, 10),
@@ -115,35 +113,6 @@ b2d.fluffy = function () {
 	)
 }
 verts = [[-100, 0], [0, -100], [100, -20], [50, 20]]
-maze = [
-	[1, 0, 1, 1, 1, 1, 1, 1, 1],
-	[1, 0, 0, 0, 0, 0, 0, 0, 1],
-	[1, 1, 1, 1, 1, 1, 1, 0, 1],
-	[1, 0, 0, 0, 1, 0, 0, 0, 1],
-	[1, 0, 1, 0, 1, 0, 1, 1, 1],
-	[1, 0, 1, 0, 1, 0, 0, 0, 1],
-	[1, 0, 1, 1, 1, 1, 1, 0, 1],
-	[1, 0, 0, 0, 0, 0, 0, 0, 1],
-	[1, 1, 1, 1, 1, 1, 1, 1, 1]]
 guyInBed = [[30], [20, 30, 30], [100, 30]]
 dick = [[50, 300, 0, -100], [50, 100, 150], [50, -100, 150]] //[b2d.poly(50, 300, 0,-100), b2d.circ(50, 100, 150), b2d.circ(50, -100, 150)]
-w.grid = w.drawGrid = function (gd, x, y, l, spa) {
-	var w = this //spacing
-	var b = w.D(x, y)
-	_.t(_.z(gd), function (rw) {
-		_.t(_.z(_.f(gd)), function (c) {
-			if (gd[c][rw]) {
-				b.pF(l, l, rw * spa, c * spa);
-			}
-		})
-	})
-	return b.K('grid')
-}
-yA = yAr = yanofski = ['y', 'a', 'n', 'o', 'f', 's', 'k', 'i']
-uA = usAr = users = [{'id': 1, 'name': 'Bob', 'last': 'Brown'},
-	{'id': 2, 'name': 'Ted', 'last': 'White'},
-	{'id': 3, 'name': 'Frank', 'last': 'James'},
-	{'id': 4, 'name': 'Ted', 'last': 'Jones'}
-]
-	 
-	
+ 

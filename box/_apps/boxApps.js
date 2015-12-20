@@ -1,37 +1,33 @@
-w.D = function (x, y) {
-	return this.cB($dB(x, y))
-}
-b.fD = b.fxD = function (fD) {
-	return this.cF( $fD(fD) )
-}
-
+ 
 CIR = function () {
 	$box()
-
 	
-	cH = $cH(34)
-	//pass a shapeDef to a fixtDef, and pass the fixtDef to b.f
-	w.D(350, 200).f($fD($cH(80), '-'))
-
-	//pass a shapeDef to b.fD
-	w.D(150, 300).fD($cH(30))
 	
-	// call b.cF
-	w.D(450, 200).cF(80)
+ 	w.D(350, 200).f($fD($cH(80), '-'))
+ 	w.D(150, 300).fD($cH(30))
+	w.D(450, 200).cir(80)
+	function later(){
 	//use w.ball
 	//w.ball(650, 300, 100).cF(100, 20, 20)
 	//w.ship()
+	}
 }
+
+
+ 
+
+tx = function (x, y) {
+	var b = w.D(x, y);
+	b.f($fD($cH(4)))
+	return function () {
+		b.fD($pH().box(arguments))
+	}
+}
+
 SAB = function () {
 	$box()
 	//pH.sAB handles both box and oriented box!
-	tx = function (x, y) {
-		var b = w.D(x, y);
-		b.f( $fD($cH(4)))
-		return function () {
-			b.fD($pH().box(arguments))
-		}
-	}
+
 	tx(100, 100)()
 	tx(100, 200)(20)// rt
 	tx(100, 300)(20, 20) //w, h (as box)
@@ -57,13 +53,7 @@ RAD = function () {
 			drp()
 		}
 	})
-	function drp() {
-		var b = w.D(350, 200).aV(2).lV(1, 1)
-		R() ? b.fD($rH(120, 80)).rad(n *= 1.3) :
-				b.fD($cH(n *= 1.3))
-		$l('n:' + n)
-	}
-	
+
 	y = w.Y()
 	r = w.S(220, 500).f($fD($rH(20, 400)))
 	l = w.S(670, 500).f($fD($rH(20, 400)))
@@ -72,22 +62,31 @@ RAD = function () {
 	w.S(500, 500).f($fD($rH(40, 10)))
 	w.S(600, 500).f($fD($rH(40, 10)))
 }
-SAA = function () {
-	W()
-	w.D(150, 200).f($fD($aH(
-			[-100, 0], [0, -100],
-			[100, -20], [50, 20]
-	)))
-	w.D(240, 300).f(
-			$fD($aH(verts))
-	)
-	w.D(434, 400).f($aF((verts)))
+function drp() {
+	var b = w.D(350, 200).aV(2).lV(1, 1)
+	R() ? b.fD($rH(120, 80)).rad(n *= 1.3) :
+			b.fD($cH(n *= 1.3))
+	$l('n:' + n)
+}
+SAAA = function () {
+	$box()
+	
+	 aH = $aH([-100, 0], [0, -100], [100, -20], [50, 20])
+	
+	//fD = $fD(aH)
+	
+//	w.D(150, 200).f(fD)
+	
+//	w.D(240, 300).f($fD($aH(verts)))
+//	w.D(434, 400).f($aF((verts)))
+	return
 	w.D(534, 300).aF(verts)
 	w.bag(700, 200, verts, '-')
 	w.rock(600, 400, verts)
 }
+
 TRI = function () {
-	W()
+	$box()
 	//long way
 	w.D(400, 400).f($fD($aH(verts)))
 	//short way
@@ -167,7 +166,7 @@ BOX = function () {
 				new b2Vec2(-1, 0),
 				new b2Vec2(0, -1),
 				new b2Vec2(1, 0)], 3
-	); //triangle shape
+	) 
 	var bodyDef = new b2BodyDef;
 	bodyDef.type = b2Body.b2_staticBody;
 	bodyDef.position.Set(7, 7);
@@ -181,7 +180,7 @@ BOX = function () {
 				new b2Vec2(-1, 0),
 				new b2Vec2(0, -1),
 				new b2Vec2(1, 0)], 3
-	); //triangle shape
+	) 
 	var bodyDef = new b2BodyDef;
 	bodyDef.type = b2Body.b2_staticBody;
 	bodyDef.position.Set(4, 6);
@@ -208,6 +207,65 @@ BOX = function () {
 		world.ClearForces();
 	}, 1000 / 60);
 }
+BOX = function () {
+	$('<canvas id="playground" width="500" height="200" ></canvas>').A()
+	world = $_W(0, 10)
+	
+	var fixDef = new b2FixtureDef;
+	fixDef.shape = new b2PolygonShape;
+	fixDef.density = 1.0;
+	fixDef.friction = 0.5;
+	fixDef.restitution = 1.5;
+	fixDef.shape.SetAsArray([
+				new b2Vec2(-1, 0),
+				new b2Vec2(0, -1),
+				new b2Vec2(1, 0)], 3
+	)
+	var bodyDef = new b2BodyDef;
+	bodyDef.type = b2Body.b2_staticBody;
+	bodyDef.position.Set(7, 7);
+	world.CreateBody(bodyDef).CreateFixture(fixDef);
+	fixDef = new b2FixtureDef;
+	fixDef.shape = new b2PolygonShape;
+	fixDef.density = 1.0;
+	fixDef.friction = 0.5;
+	fixDef.restitution = 1.5;
+	
+	fixDef.shape.SetAsArray([
+				new b2Vec2(-1, 0),
+				new b2Vec2(0, -1),
+				new b2Vec2(1, 0)], 3
+	)
+	
+	var bodyDef = new b2BodyDef;
+	bodyDef.type = b2Body.b2_staticBody;
+	bodyDef.position.Set(4, 6);
+	world.CreateBody(bodyDef).CreateFixture(fixDef);
+	var debugDraw = new b2DebugDraw();
+	debugDraw.SetSprite(document.getElementById("playground").getContext("2d"));
+	debugDraw.SetDrawScale(20.0);
+	debugDraw.SetFillAlpha(0.5);
+	debugDraw.SetLineThickness(1.0);
+	debugDraw.SetFlags(b2DebugDraw.e_shapeBit);
+	world.SetDebugDraw(debugDraw);
+	bodyDef.type = b2Body.b2_dynamicBody;
+	var i = 0;
+	setInterval(function () {
+		fixDef.shape = new b2CircleShape(1.5); //circle shape
+		bodyDef.position.Set(7, 0);
+		var body = world.CreateBody(bodyDef);
+		body.CreateFixture(fixDef);
+		body.ApplyImpulse(new b2Vec2(i++ % 2 ? 0.5 : -0.5, 0), body.GetWorldCenter()); //Push the shape slightly
+	}, 100);
+	
+	setInterval(function () {
+		world.Step(1 / 60, 10, 10);
+		world.DrawDebugData();
+		world.ClearForces();
+	}, 1000 / 60);
+}
+
+
 BOX1 = function () {
 	$box()
 	w.tri(4, 6)
