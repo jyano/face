@@ -37,7 +37,7 @@ Stage = ['toSort',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official'
 ]
 
-Box = ['bx', 'box0', 'box',  'superBox', 'boxApps']
+Box = ['bx', 'box0', 'box', 'boxCx', 'filtering','listen', 'asBox', 'asCir', 'asPol', 'superBox', 'duperBox', 'boxApps']
  
  
 

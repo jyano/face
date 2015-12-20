@@ -1,123 +1,71 @@
-w.b = w.bg = w.beg = function () {
-
-//ADDS one or more handlers to beginHandlers array
+ 
+// *** function preSolve(){
+w.preCl = function () {
 	var w = this, g = G(arguments)
-	_.e(g, function (fn) {
-		w.BG.push(fn)
+	w.pre(function (cx) {
+		cx.w.apply(cx, g)
 	})
 	return w
 }
-w.pre = function () {
-	var w = this, g = G(arguments)
-	_.e(g, function (fn) {
-		w.PRE.push(fn)
-	})
-	return w
+//	w.tanFuture = cx.t = function () {}//what about tangent?
+//presolve
+//do any of these get used? i think filterData does
+b2d.manager = b2d.contactManager = b2d.cM = function () {//used?
+	var m = new BXD.b2ContactManager
+	m.c = m.cl = m.Collide
+	m.a = m.aP = m.AddPair
+	m.f = m.fNC = m.FindNewContacts
+	m.d = m.ds = m.Destroy
+	return m
 }
-w.po = w.post = function () {
-	var w = this, g = G(arguments)
-	_.e(g, function (fn) {
-		w.PO.push(fn)
-	})
-	return w
+b2d.cxFilt = b2d.filter = b2d.f = function () {//used?
+	var f = new BXD.b2ContactFilter
+	f.rC = f.RayCollide
+	f.sC = f.ShouldCollide
+	return f
 }
-w.end = function () {
-	var w = this, g = G(arguments)
-	_.e(g, function (fn) {
-		w.END.push(fn)
-	})
-	return w
-}
-w.bE = w.begEnd = function (bFn, eFn) {
-	var w = this
-	w.b(bFn)
-	w.end(eFn)
-	return w
-}
-w.onBeg = w.beg = w.b = function () {
-	var w = this, g = G(arguments), o, fn
-	if (g.u) {
-		return this.GetBodyList()
-	} /// polymorphism here??? wow.. super cryptic!!!!
-	//ADDS one or more handlers to beginHandlers array
-	//most common use, usually just need one func.
-	// would i ever need more?lVWs
-	//it just puts each item into bH arr
-	fn = F(g.t) ? function (cx) {
-		if (cx.w(g.f, g.s)) {
-			g.t(cx)
+b2d.filt = b2d.filterData = function () {
+	var d = new b2d.Dynamics.b2FilterData()
+	d.gI = function (a) {
+		if (U(a)) {
+			return d.groupIndex
 		}
-	} :
-			F(g.s) ? function (cx) {
-				if (cx.w(g.f)) {
-					g.s(cx)
-				}
-			} :
-					g.f //fn=$.mo(.2,fn)
-	w.bH.push(fn)
-	return w
-}
-w.end = function () {
-	var w = this, g = G(arguments)
-	if (g.F_) {
-		g.e(function (fn) {
-			w.eH.push(fn)
-		})
+		d.groupIndex = a;
+		return d
 	}
-	else if (F(g.s)) {
-		w.eH.push(function (cx) {
-			cx.w(g.f, g.s)
-		})
-	}
-	else if (F(g.t)) {
-		w.eH.push(function (cx) {
-			cx.w(g.f, g.s, g.t)
-		})
-	}
-	return w
-}
-w.onPre = w.pre = function (fn) {
-	var w = this, g = G(arguments)
-	//fn = $.mo(.2,fn )
-	w.pH.push(fn)
-	return w
-}
-w.pre = function () {
-	var w = this, g = G(arguments), o, fn
-	if (F(g.t)) {
-		fn = function (cx, i) {
-			if (cx.w(g.f, g.s)) {
-				g.t(cx)
-			}
+	d.cat = function (a) {
+		if (U(a)) {
+			return d.categoryBits
 		}
+		d.categoryBits = a;
+		return d
 	}
-	else if (F(g.s)) {
-		fn = function (cx, i) {
-			cx.w(g.f, function (f) {
-				_.b(g.s, this)(f, cx, i)
-			})
-		} //this good
+	d.mask = function (a) {
+		if (U(a)) {
+			return d.maskBits
+		}
+		d.maskBits = a;
+		return d
 	}
-	else {
-		fn = g.f
-	}
-	//fn=$.mo(.2,fn) //this will break it!!
-	w.pH.push(fn)
-	return w
+	return d
 }
-w.post = w.po = function () {
-	var w = this, g = G(arguments)
-	g.e(function (fn) {
-		w.PH.push(
-				function (cx, I) {
-					var i = _.m(I.normalImpulses, M.fl)[0],
-							t = _.m(I.tangentImpulses, M.fl)[0]
-					return fn(
-							cx, i, t)
-				})
-	})
-	return w
+b2d.superManifold = function (m) {//used????
+	m.lPN = m.m_localPlaneNormal
+	m.lP = m.m_localPoint
+	m.pC = m.m_pointCount
+	m.p = m.m_points
+	m.t = m.m_type
+	return m
 }
+b2d.man = b2d.manifold = b2d.worldManifold = function () {
+	return new b2d.Collision.b2WorldManifold()
+}
+//linVelFromWorPt()
+b.lVW = function () {
+	var b = this, g = G(arguments);
+	return b.GetLinearVelocityFromWorldPoint(V(g.f, g.s))
+}   // return  b.GetLinearVelocityFromWorldPoint(V(g.f, g.s).d()).m()
+//////////
 w.collide = w.cl = function () {
 	var w = this, g = G(arguments)
 	if (g.F) {
@@ -313,7 +261,7 @@ b.wayYouAppearToBePointingOnTheScreen = b.rtDir = b.lVFLcPt = b.linVelFromLocPt 
 //i think this is your rotation direction?
 // the way you appear to be pointing on the screen
 }
-function flag(){
+function flag() {
 	b.trig = b.trg = function (k, fn) {
 		var b = this
 		w.begEnd(
@@ -943,3 +891,240 @@ function flag(){
 		return f
 	}
 }
+//cx.excludes=function(u){return !this.includes(u)}
+//b2d create contacts  to manage collision btwn 2 fs (If f has children (chainH),
+// cxs exist for each relevant child)
+// There are different kinds of contacts, derived from b2Contact,
+// for managing contact between different kinds of fixtures
+// (contact class for managing polygon-polygon collision ,  
+// another contact class for managing circle-circle collision)
+ 
+cx.ds = cx.destroy = cx.destroyBoth = function () {
+	this.a().K('destroy')
+	this.b().K('destroy')
+	return this
+}
+cx.destroy = cx.destroyBoth = function () {
+	this.a().setDestroy()
+	this.b().setDestroy()
+	return this
+}
+cx.destroyIf = function (kind) {
+	this.a().setDestroyIf(kind);
+	this.b().setDestroyIf(kind)
+}
+cx.destroyOtherIf = function (kind) {
+	var a = this.a(), b = this.b()
+	if (a.is(kind)) {
+		b.setDestroy()
+	}
+	else if (b.is(kind)) {
+		a.setDestroy()
+	}
+}
+// zero :
+cx.ofThis = cx.anyWith = cx.in = cx.inc = cx.includes = cx.includes = cx.eitherOf = function (k, fn) {
+	var cx = this
+	var a = cx.fA()
+	var b = cx.fB()
+	if (a.of(k)) {
+		if (fn) {
+			_.b(fn, a)(b, cx);
+			return cx
+		}
+		return [a, b]
+	}
+	if (b.of(k)) {
+		if (fn) {
+			_.b(fn, b)(a, cx);
+			return cx
+		}
+		return [b, a]
+	}
+}
+cx.ofThese0 = cx.these0 = function (p1, p2, fn) {
+	$l('these0')
+	var cx = this
+	var a = cx.fA()
+	var b = cx.fB()
+	if (a.of(p1) && b.of(p2)) {
+		if (fn) {
+			_.in(0, function () {
+				_.b(fn, a)(b, cx)
+			})
+			return cx
+		}
+		return [a, b]
+	}
+	if (b.of(p1) && a.of(p2)) {
+		if (fn) {
+			_.in(0, function () {
+				_.b(fn, b)(a, cx)
+			})
+			return cx
+		}
+		return [b, a]
+	}
+}
+cx.f1 = function () {
+	return function () {
+	}
+}
+cx.ofThis0 = cx.this0 = function (k, fn) {
+	// a lot:$l('this0')
+	var cx = this
+	var a = cx.fA()
+	var b = cx.fB()
+	var g = G(arguments)
+	if (!a || !b) {
+		$l('!a || !b');
+		return cx
+	}
+	if (a.of(g.f)) {
+		if (F(g.s)) {
+			_.in(0, function () {
+				_.b(g.s, a)(b, cx)
+			})
+			return cx
+		}
+		return [a, b]
+	}
+	else if (b.of(g.f)) {
+		if (g.s) {
+			_.in(0, function () {
+				_.b(g.s, b)(a, cx)
+			})
+			return cx
+		}
+		return [b, a]
+	}
+}
+cx.of0 = cx.w0 = cx.with0 = function () {
+	var cx = this,
+			g = G(arguments), o
+	o = F(g.t) || g.s && !F(g.s) ?
+	{k: g.f, k1: g.s, fn: g.t} : {k: g.f, fn: g.s}
+	return o.k1 ? cx.these0(o.k, o.k1, o.fn) :
+			cx.this0(o.k, o.fn)
+}
+ function ultimate(){
+	 _.mbIn = function () {
+		 return function (fn) {
+			 var g = G(arguments)
+			 g.p ? fn.apply(null, g) :
+					 _.in(0, function () {
+						 fn.apply(null, g)
+					 })
+		 }
+	 }
+//if there is a fn i'll run it, binding to b, (a, cx) and even pass in the g.o, return cx
+//otherwise its sync, so just pass back array [b,a,cx,g.o]
+	 _.fst = function (f, s, t, fn) {
+		 var o = G(arguments).o
+		 if (fn) {
+			 _.b(fn, f)(s, t, o);
+			 return t
+		 }
+		 return [f, s, t, o]
+	 }
+	 cx.a$ = function () {
+		 return _.fst(this.fA(), this.fB(), this, G(arguments).o)
+	 }
+	 cx.b$ = function () {
+		 return _.fst(this.fB(), this.fA(), this, G(arguments).o)
+	 }
+	 cx.$$ = function () {
+		 var cx = this, g = G(arguments), a = cx.fA(), b = cx.fB(), o //k,fn
+		 o = F(g.t) ? {k1: g.f, k2: g.s, fn: g.t} :
+				 F(g.s) ? {k: g.f, fn: g.s} :
+				 {k1: g.f, k2: g.s}
+		 return o.k1 ?
+				 (
+						 a.of(o.k1) && b.of(o.k2) ? cx.a$(o.fn)
+								 :
+								 b.of(o.k1) && a.of(o.k2) ? cx.b$(o.fn)
+										 :
+										 cx
+				 )
+				 :
+				 (
+						 a.of(o.k) ? cx.a$(o.fn)
+								 :
+								 b.of(o.k) ? cx.b$(o.fn)
+										 :
+										 cx
+				 )
+	 }
+	 function moreTries() {
+		 cx.ab = function (k, fn) {
+			 var cx = this
+			 return function (k, fn) {
+				 var that = this
+				 if (cx.fA().of(k)) {
+					 if (fn) {
+						 _.b(fn, cx.fA())(cx.fB(), cx);
+						 return that
+					 }
+					 return [cx.fA(), cx.fB()]
+				 }
+				 else if (cx.fB().of(k)) {
+					 if (fn) {
+						 _.b(fn, cx.fB())(cx.fA(), cx);
+						 return that
+					 }
+					 return [cx.fB(), cx.fA()]
+				 }
+			 }
+		 }
+		 cx.aOrB1 = function (fn) {
+			 var g = G(arguments)
+			 //var cx = this, g = G(arguments), fA = cx.fA(), fB = cx.fB()
+			 return function (f) {
+				 if (fA.of(f)) {
+					 fn(f, cx)
+				 }
+				 else if (fB.of(g.f)) {
+				 }
+			 }
+		 }
+		 cx.cxFn = function (txMatFn, sucMatFn) {
+			 var cx = this
+			 var a = cx.fA()
+			 var b = cx.fB()
+			 return function (cx) {
+				 var cx = this
+				 var res = txMatFn(cx)
+				 if (res) {
+					 if (sucMatfn) {
+						 _.b(sucMatFn, res[0])(res[1], cx);
+						 return cx
+					 }
+					 return [res[0], res[1], cx]
+				 }
+			 }
+		 }
+		 cx.mbFn = function () {
+			 var g = G(arguments), o
+			 o = F(g.t) ? {a: g.f, b: g.s, fn: g.t} :
+					 F(g.s) ? {a: g.f, fn: g.s} :
+					 {a: g.f, b: g.s}
+			 var cx = this,
+					 a = cx.fA(),
+					 b = cx.fB()
+			 if (o.fn) {
+				 _.b(o.fn, a)(b, cx);
+				 return cx
+			 }
+			 return [a, b]
+		 }
+		 cx.a$ = function (fn) {
+			 var cx = this, g = G(arguments), a = cx.fA(), b = cx.fB()
+			 if (fn) {
+				 _.b(fn, a)(b, cx, g.o);
+				 return cx
+			 }
+			 return [a, b, cx, g.o]
+		 }
+	 }
+ }
+ 

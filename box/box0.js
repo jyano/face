@@ -635,3 +635,6 @@ b2d.tB = b2d.toBody = function (b) {
 		return false
 	}
 }
+b2d.Cxs = b2d.D.Contacts
+b2d.Cx = b2d.Cxs.b2Contact
+ 
