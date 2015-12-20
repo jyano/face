@@ -1,64 +1,41 @@
-$aF = function () {
-//but looks like $aF uses $aH to do all the work
-	return $fD($aH.apply(null, arguments))
-}
-$aF = function () {
-	var g = G(arguments)
-	return $fD(
-			$aH.apply(null, g)
-	)
-}
-$ar = $arr = $aH = function (arr) {
-//return $pF().polA(arguments)
-	var g = G(arguments)
-	arr = g.s ? arguments : g.f
-	return $pH().arr(arr)
-}
-_$bD = function () {
-	return new b2d.BD()
-}
-$bD = function (x, y) {
-	return U(x) ? _$bD() : _$bD().XY(x, y)
-}
-$cF = function () {
-	var g = G(arguments)
-	var cH = $cH(g.f, g.s, g.t)
-	var f = $fD(cH)
-	if (g.n) {
-		f.isSensor = true
+$sB = $bD = function (x, y) {
+	//return $bD(x, y).ty(0)
+	var v = V(x, y)
+	var bD = new b2d.BD()
+	bD.XY(N(v.x, 0), N(v.y, 0))
+//	x = N(x) ? x : 300
+//	y = N(y) ? y : 300
+	return bD
+	// = $dBD=b2d.D = b2d.bD = b2d.BD = b2d.dBD = b2d.dD = b2d.dyn
+//b2d.staticDef = b2d.staticBodyDef =StaticBodyDef=sBD=
+
+function alt(){
+	$bD = function (x, y) {
+		_$bD = function () {
+			return new b2d.BD()
+		}
+		return U(x) ? _$bD() : _$bD().XY(x, y)
 	}
-	return f
+}
 }
 $dB = function (x, y) {
-	return $bD(x, y).T(2) //.dyn()
+
+//return $bD(x, y).ty(2)
+	//aside: interesting that dyn comes after kin
+	return $bD(x, y).T(2)
+	//.dyn()
 	//$dBD =   b2d.bD =   b2d.dBD =
 }
-$dB = $bD2 = function (x, y) {
-	return $bD(x, y).ty(2)
-	//aside: interesting that dyn comes after kin
-}
-$eF = function (a, b, c, d) {
-	var f = $fD()
-	f.shape = $eH(a, b, c, d)
-	return f
-}
-$fD = function (h) {
+$fD = function () {
 	var g = G(arguments)
-	var fD = new b2d.FixtureDef()
+	var fD = new b2d.FD()
 	if (b2d.iH(h)) {
 		fD.shape = h
 	}
 	if (g.n) {
 		fD.isSensor = true
 	}
-	return fD.de(1)
-}
-$fD = function () {
-	var g = G(arguments)
-	var fD = new b2d.FD
-	if (g.n) {
-		fD.isSensor = true
-	}
+	fD.de(1)
 	//if (b2d.isShape(shape)) {f.shape = shape}
 	if (O(g.f)) {
 		fD.shape = g.f
@@ -69,38 +46,39 @@ $fD = function () {
 	return fD
 	// = b2d.fD = b2d.f
 }
-$pF = function (wd, ht, xy, ang, ang2) {
+$cH = function () {
+	$_cH = function (r) {
+		return new b2d.CH(r)
+	}
+	//r, x, y
 	var g = G(arguments)
-	wd = g[0];
-	ht = g[1];
-	xy = g[2];
-	ang = g[3];
-	ang2 = g[4]
-	if (A(wd)) {
-		return $aF.apply(null, arguments)
+	var o = {}
+	var cH = $_cH(N(g.f, 50) / 30)
+	if (g.s) {
+		cH.XY(g.s, g.t)
 	}
-	//if(b2d.isShape(wd)){fixt.shape = wd; return shape}
-	//you can make a poly
-	wd = wd || 100
-	ht = N(ht) ? ht : wd
-	var f = $fD($pH(wd, ht, xy, ang, ang2)).fr(.2).re(.2)//.de(1)
-	if (g.n) {
-		f.isSensor = true
+	return cH
+	//	if (N(x) && N(y)) {h.XY(x, y)}
+	// cH.lP(g.s, g.t)
+}
+$aH = $ar = $arr = function () {
+	var g = G(arguments)
+	return $pH().arr(g.s ? g : g.f)
+	//alt: return $pF().polA(g)
+}
+$pH = function (W, H, x, y, a) {
+	_$pH = function () {
+		$pH_ = function (g, o) {
+			var pH = _$pH()
+			return g.OO_ ? $a(pH, 'arr', g) :
+					g.N_ ? //pH.box(g.f, g.s, g.t, g.fo, g.fi) :
+							pH.SAOB(o.w, o.h, o.xy, o.rt) :
+							pH
+			// this is all you need for all cases (thanks to pH.set) //pH.set.apply(pol, g)
+		}
+		return new b2d.PH()
 	}
-	return f
-}
-_$pH = function () {
-	return new b2d.PH()
-}
-$pH_ = function (g, o) {
-	var pH = _$pH()
-	return g.OO_ ? $a(pH, 'arr', g) :
-			g.N_ ? //pH.box(g.f, g.s, g.t, g.fo, g.fi) :
-					pH.SAOB(o.w, o.h, o.xy, o.rt) :
-					pH
-	// this is all you need for all cases (thanks to pH.set) //pH.set.apply(pol, g)
-}
-$pH = function (W, H, x, y, a) {//  OR (wd, ht, xy, ang, ang2)
+//  OR (wd, ht, xy, ang, ang2)
 	var g = G(arguments), o
 	o = O(g.t) ?
 	{w: g.f, h: g.s, xy: g.t, ang: g.fo, ang2: g.fi} :
@@ -110,6 +88,142 @@ $pH = function (W, H, x, y, a) {//  OR (wd, ht, xy, ang, ang2)
 	o.xy = V(o.xy / 30, o.ang / 30)
 	o.rt = M.tR(o.ang2 || 0)
 	return $pH_(g, o)
+}
+$rH = function (a, b, c, d, e) {
+	var g = G(arguments)
+	var pH = _$pH()
+	//return pH.sAB.apply(pH, g)
+	pH.box(a, b, c, d, e)
+	return pH
+	function alt() {
+		$rH = function () {
+			var pH = $pH()
+			pH.sAOB.apply(pH, arguments)
+			return pH
+		}
+	}
+}
+$aF = function () {
+//but looks like $aF uses $aH to do all the work
+	var g = G(arguments)
+	return $fD($aH.apply(null, g))
+}
+$cF = function () {
+	var g = G(arguments)
+	var cH = $cH(g.f, g.s, g.t)
+	var f = $fD(cH)
+	if (g.n) {
+		f.isSensor = true
+	}
+	return f
+	function alt(){
+		$cF = function () { //r,x,y
+			var g = G(arguments)
+			var cH = $cH(g.f)
+			return $fD(cH, g.s, g.t)
+			function alt() {
+				$cirF = function (rad, x, y, den) {
+					var g = G(arguments)
+					var o = G.boxCir(g)
+					var cH = $cH(o.r, o.x, o.y)
+					var fD = $fD(cH, g.o)
+					fD.den(o.d)
+					return fD
+//make a circ fixture
+// neg-> sensor
+					var g = G(arguments),
+							rad = N(g[0]) ? g[0] : 50,
+							x = N(g[1]) ? g[1] : 0,
+							y = N(g[2]) ? g[2] : 0,
+							den = N(den) ? den : 1
+					fixt = b2d.fixt(b2d.circH(rad).xy(x, y)).den(den)
+					if (g.n) {
+						fixt.isSensor = true
+					}
+					$cF6 = function (rad, x, y) {
+						var g = G(arguments), f
+						rad = g[0];
+						x = g[1];
+						y = g[2];
+						rad = rad || M.r() + .1
+						x = N(x) ? x : 0
+						y = N(y) ? y : x
+						var cir = $cH(rad)
+						cir.lP(V(x, y, '-'))
+						f = $fD(cir)
+						if (g.n) {
+							f.isSensor = true
+						}
+						return f
+					}
+					return fixt
+					//hmm.. fixt doesnt have a rel loc.. its shape does
+					//what if u want to change 'shape' of shape, but keep its rel loc?
+				}
+			}
+		}
+	}
+}
+$rF = function () {
+	$_rF = function (wd, ht, xy, ang, ang2) {
+		var f = $fD($pH(wd, ht, xy, ang, ang2))
+		if (g.n) {
+			f.isSensor = true
+		}
+		return f
+		$rF1 = function (wd, ht, xy, ang, ang2) {// (wd, ht, x, y, rot) 
+			var g = G(arguments), o
+			if (O(g.t)) {
+				o = {}
+			}
+			else {
+				o = {}
+			}
+//make a rec (or orientedRec) fixture
+			wd = N(g[0]) ? g[0] : 50
+			ht = N(g[1]) ? g[1] : 50
+			x = N(g[2]) ? g[2] : 0
+			y = N(g[3]) ? g[3] : 0
+			rot = N(g[4]) ? g[4] : 0
+			wd = g.f
+			ht = g.s
+			xy = g.t
+			ang = g.fo
+			ang2 = g.fi
+			wd = wd || 100
+			ht = N(ht) ? ht : wd
+			var fD = $fD($pH(wd, ht, xy, ang, ang2))
+			var rec = $pH(wd, ht, x, y, rot)
+			var fD = $fD(rec)
+			if (g.OO_) {
+				rec.arr(g)
+			}
+			//b2d.cant make multiple recs at once anyway.. so this must mean VERTS!
+			else {
+				o = g.O ? g.f :
+				{w: g.f, h: g.s, x: g.t, y: g[3], a: g[4], d: g[5]}
+				rec.box(o)
+			}
+			fD = $fD(rec).d(N(o.d, .5))
+			if (g.n) {
+				fD.isSensor = true
+			}
+			return fD
+		}
+	}
+	var g = G(arguments)
+	var f = $fD($rH.apply(null, arguments))
+	if (g.n) {
+		f.isSensor = true
+	}
+	return f
+	function alt(){
+	 $rF = function () {
+			var pH = $pH()
+			pH.sAOB.apply(pH, arguments)
+			return $fD(pH)
+		}
+	}
 }
 $pF = function (wd, ht, x, y, rt) {
 	//makes a fixture using b2d.polyH
@@ -122,109 +236,55 @@ $pF = function (wd, ht, x, y, rt) {
 		f.isSensor = true
 	}
 	return f
-}
-$pF_ = function (kind) {
-	var pF = $pF.apply(null, _.r(arguments))
-	pF.sensor(true).K(kind)
-	return pF
-}
-$pSn = $pS = $pSF = b2d.polySens = function (k) {
-	var g = G(arguments)
-	var pF = $pF.apply(null, _.r(arguments)).s1()
-	pF.K(k || 'polySens')
-	return pF
-}
-$rH = function (a, b, c, d, e) {
-	var g = G(arguments)
-	var pH = _$pH()
-	//return pH.sAB.apply(pH, g)
-	pH.box(a, b, c, d, e)
-	return pH
-}
-$_rF = function (wd, ht, xy, ang, ang2) {
-	var f = $fD($pH(wd, ht, xy, ang, ang2))
-	if (g.n) {
-		f.isSensor = true
+	function alt() {
+		$pF = function (wd, ht, xy, ang, ang2) {
+			var g = G(arguments)
+			wd = g[0];
+			ht = g[1];
+			xy = g[2];
+			ang = g[3];
+			ang2 = g[4]
+			if (A(wd)) {
+				return $aF.apply(null, arguments)
+			}
+			//if(b2d.isShape(wd)){fixt.shape = wd; return shape}
+			//you can make a poly
+			wd = wd || 100
+			ht = N(ht) ? ht : wd
+			var f = $fD($pH(wd, ht, xy, ang, ang2)).fr(.2).re(.2)//.de(1)
+			if (g.n) {
+				f.isSensor = true
+			}
+			return f
+		}
 	}
+	
+	$pF_ = function (kind) {
+		var pF = $pF.apply(null, _.r(arguments))
+		pF.sensor(true).K(kind)
+		return pF
+	}
+}
+$eF = function (a, b, c, d) {
+	var f = $fD()
+	f.shape = $eH(a, b, c, d)
 	return f
 }
-$rF1 = function (wd, ht, xy, ang, ang2) {// (wd, ht, x, y, rot) 
-	var g = G(arguments), o
-	if (O(g.t)) {
-		o = {}
+function alpha(){
+	$pSn = $pS = $pSF = function (k) {
+		var g = G(arguments)
+		var pF = $pF.apply(null, _.r(arguments)).s1()
+		pF.K(k || 'polySens')
+		return pF
 	}
-	else {
-		o = {}
+	$sqF = function () {
+		var g = G(arguments)
+		var f = $fD($sqH.apply(null, arguments))
+		if (g.n) {
+			f.isSensor = true
+		}
+		return f
 	}
-//make a rec (or orientedRec) fixture
-	wd = N(g[0]) ? g[0] : 50
-	ht = N(g[1]) ? g[1] : 50
-	x = N(g[2]) ? g[2] : 0
-	y = N(g[3]) ? g[3] : 0
-	rot = N(g[4]) ? g[4] : 0
-	wd = g.f
-	ht = g.s
-	xy = g.t
-	ang = g.fo
-	ang2 = g.fi
-	wd = wd || 100
-	ht = N(ht) ? ht : wd
-	var fD = $fD($pH(wd, ht, xy, ang, ang2))
-	var rec = $pH(wd, ht, x, y, rot)
-	var fD = $fD(rec)
-	if (g.OO_) {
-		rec.arr(g)
-	}
-	//b2d.cant make multiple recs at once anyway.. so this must mean VERTS!
-	else {
-		o = g.O ? g.f :
-		{w: g.f, h: g.s, x: g.t, y: g[3], a: g[4], d: g[5]}
-		rec.box(o)
-	}
-	fD = $fD(rec).d(N(o.d, .5))
-	if (g.n) {
-		fD.isSensor = true
-	}
-	return fD
-}
-$rF = function () {
-	var g = G(arguments)
-	var f = $fD($rH.apply(null, arguments))
-	if (g.n) {
-		f.isSensor = true
-	}
-	return f
-}
-$rF = function () {
-	var pH = $pH()
-	pH.sAOB.apply(pH, arguments)
-	return $fD(pH)
-}
-$rH = function () {
-	var pH = $pH()
-	pH.sAOB.apply(pH, arguments)
-	return pH
-}
-$sqF = function () {
-	var g = G(arguments)
-	var f = $fD($sqH.apply(null, arguments))
-	if (g.n) {
-		f.isSensor = true
-	}
-	return f
-}
-$sB = $bD0 = function (x, y) {
-	return $bD(x, y).ty(0)
-}
-$sB = $bD = function (x, y) {
-	var v = V(x, y)
-	var bD = new b2d.BD()
-	bD.XY(N(v.x, 0), N(v.y, 0))
-//	x = N(x) ? x : 300
-//	y = N(y) ? y : 300
-	return bD
-	// = $dBD=b2d.D = b2d.bD = b2d.BD = b2d.dBD = b2d.dD = b2d.dyn
-//b2d.staticDef = b2d.staticBodyDef =StaticBodyDef=sBD=
 }
 function misc(){
 	w.GGB = w.grB = w.gB = w.gGB = w.GGBd = function () {
@@ -276,123 +336,129 @@ function misc(){
 	}
 }
 function force(){
-	bD.inertia = function (ine) {
-		if (U(ine)) {
-			return this.insertiaScale
+	w.gv = w.G = function (x, y) {
+		var w = this
+		w.GG = function () {
+			return this.GetGravity()
 		}
-		this.insertiaScale = ine
-		return this
-	}
-	b.AI = function () {
-		this.ApplyImpulse.apply(this, arguments)
-		return this
-	}
-	b.I = function me(i, v, v2) {
-		var b = this, g = G(arguments), o
-		//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
-		if (g.A) {
-			return b.I.apply(b, g.f)
+		w.SG = function (gv) {
+			this.SetGravity(gv);
+			return this
 		}
-		o = N(g.s) ? {i: V(g.f, g.s), v: g.t} : {i: g.f, v: g.s}
-		o.i = o.i || b.v().d(40)
-		o.v = o.v || b.wC()
-		b.ApplyImpulse(o.i, o.v.div())
-		return b
+		var gv = w.GG()
+		if (U(x)) {
+			return gv
+		}
+		var v
+		if (N(x)) {
+			v = N(y) ? V(x, y) : V(0, x)
+		}
+		if (x == 'flip') {
+			v = V(-gv.x, -gv.y)
+		}
+		return w.SG(v)
 		function alt() {
-			b.I = function self(impulse, point, point2) {//b.impulse = b.applyImpulse = b.aI  =
-				if (U(impulse)) {
-					impulse = this.worldVec().div(40)
+			w.G = function (x, y) {
+				var w = this,
+						v, currG = w.GetGravity()
+				if (U(x)) {
+					return currG
 				}
-				if (N(point)) {
-					impulse = V(impulse, point)
-					point = point2
+				if (N(x)) {
+					v = N(y) ? V(x, y) : V(0, x)
 				}
-				if (U(point)) {
-					point = this.GetWorldCenter()
+				else if (x == 'flip') {
+					v = V(-currG.x, -currG.y)
 				}
-				this.ApplyImpulse(impulse, point)
-				return this
-			}//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
+				w.SetGravity(v)
+				return w
+				function alt() {
+					w.G = function (x, y) {
+						var v, currGrav = this.GetGravity()
+						if (U(x)) {
+							return currGrav
+						}
+						if (N(x)) {
+							v = N(y) ? V(x, y) : V(0, x)
+						}
+						if (x == 'flip') {
+							v = V(-currGrav.x, -currGrav.y)
+						}
+						w.SetGravity(v)
+						return this
+					}
+				}
+			}
 		}
-	}
-	b.F = function () {
-		function alt() {
-			b.F = b.constF = function (v, c, c2) {//b.applyForce = b.aF  =
-				var b = this, g = G(arguments), v = g[0], c = g[1], c2 = g[2]
-				if (N(c)) {
-					return b.F(V(v, c), c2)
-				}
-				if (U(c)) {
-					c = b.worldCenter()
-				} // gotta adjust this
-				b.ApplyForce(v, c)
-				if (g.p) {
-					cjs.tick(function () {
-						b.ApplyForce(v, c)
-					})
-				}
-				return b
-			}      //apply force. pass impulse as two nums, or obj //and pass in location, defaults to body center
-		}
-		
-		//apply force. pass impulse as two nums, or obj
-// and pass in location, defaults to body center
-		var b = this, g = G(arguments), o
-		o = N(g[1]) ? {f: V(g[0], g[1]), wP: g[2]}
-				: {f: V(g[0]), wP: g[1]}
-		o.wP = o.wP || b.wC()
-		b.ApplyForce(o.f, o.wP)
-		if (g.p) {
-			cjs.t(function () {
-				b.ApplyForce(o.f, o.wP)
-			})
-		}
-		return b
-	}
-	b.mass = function (m) {
-		if (U(m)) {
-			return ( this.GetMass() * 900 ) / 100
-		}
-	}
-	bD.SLV = function (lV) {
-		this.linearVelocity = lV;
-		return this
-	}
-	bD.SAV = function (aV) {
-		this.angularVelocity = aV;
-		return this
 	}
 	bD.lV = function (lV) {
+		bD.SLV = function (lV) {
+			this.linearVelocity = lV;
+			return this
+		}
+		var bD = this
 		return U(lV) ? this.linearVelocity : this.SLV(lV)
+		function alt(){
+			bD.lV = function (vel) {
+				if (U(vel)) {
+					return this.linearVelocity
+				}
+				this.linearVelocity = vel;
+				return this
+			}
+		}
 	}
-	bD.aV = function (vel) {
-		return U(vel) ? this.angularVelocity : this.SAV(vel)
-	}
-	bD.SLD = function (lD) {
-		this.linearDamping = lD;
-		return this
-	}
-	bD.SAD = function (aD) {
-		this.angularDamping = aD;
-		return this
-	}
-	bD.lD = function (lD) {
+	bD.lD = function (lD) {var bD=this
+		bD.SLD = function (lD) {
+			this.linearDamping = lD;
+			return this
+		}
 		return U(lD) ? this.linearDamping : this.SLD(lD)
+		function alt(){
+			bD.lD = function (dm) {
+				var bD = this
+				if (U(dm)) {
+					return bD.linearDamping
+				}
+				bD.linearDamping = dm
+				return bD
+			}
+		}
 	}
 	bD.aD = function (aD) {
+		var bD=this
+		bD.SAD = function (aD) {
+			this.angularDamping = aD;
+			return this
+		}
 		return U(aD) ? this.angularDamping : this.SAD(aD)
+	function alt(){
+		bD.aD = function (damp) {
+			if (U(damp)) {
+				return this.angularDamping
+			}
+			this.angularDamping = damp;
+			return this
+		}
+	
 	}
-	b.GLVFLP = function (v) {
-		return this.GetLinearVelocityFromLocalPoint(v)
 	}
-	b.GLVFWP = function (v) {
-		return this.GetLinearVelocityFromWorldPoint(v)
-	}
-	b.lVL = function (x, y) {
-		return this.GLVFLP(V(x, y, '-'))
-	}
-	b.lVW = function (x, y) {
-		return this.GLVFWP(V(x, y, '-'))
+	bD.aV = function (vel) {
+		var bD = this
+		bD.SAV = function (aV) {
+			this.angularVelocity = aV;
+			return this
+		}
+		return U(vel) ? this.angularVelocity : this.SAV(vel)
+		function alt() {
+			bD.aV = function (vel) {
+				if (U(a)) {
+					return this.angularVelocity
+				}
+				this.angularVelocity = vel
+				return this
+			}
+		}
 	}
 	b.lD = function (damp) {
 		if (U(damp)) {
@@ -472,124 +538,102 @@ function force(){
 			}
 		}
 	}
-	bD.lD = function (dm) {
-		var bD = this
-		if (U(dm)) {
-			return bD.linearDamping
-		}
-		bD.linearDamping = dm
-		return bD
-	}
-	bD.aD = function (damp) {
-		if (U(damp)) {
-			return this.angularDamping
-		}
-		this.angularDamping = damp;
+	b.AI = function () {
+		this.ApplyImpulse.apply(this, arguments)
 		return this
 	}
-	bD.lV = function (v) {
-		var bD = this
-		if (U(v)) {
-			return pD.linearVelocity
+	b.I = function me(i, v, v2) {
+		var b = this, g = G(arguments), o
+		//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
+		if (g.A) {
+			return b.I.apply(b, g.f)
 		}
-		pD.linearVelocity = v
-		return pD
+		o = N(g.s) ? {i: V(g.f, g.s), v: g.t} : {i: g.f, v: g.s}
+		o.i = o.i || b.v().d(40)
+		o.v = o.v || b.wC()
+		b.ApplyImpulse(o.i, o.v.div())
+		return b
+		function alt() {
+			b.I = function self(impulse, point, point2) {//b.impulse = b.applyImpulse = b.aI  =
+				if (U(impulse)) {
+					impulse = this.worldVec().div(40)
+				}
+				if (N(point)) {
+					impulse = V(impulse, point)
+					point = point2
+				}
+				if (U(point)) {
+					point = this.GetWorldCenter()
+				}
+				this.ApplyImpulse(impulse, point)
+				return this
+			}//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
+		}
 	}
-	bD.aV = function (vel) {
-		if (U(a)) {
-			return this.angularVelocity
+	b.F = function () {
+		function alt() {
+			b.F = b.constF = function (v, c, c2) {//b.applyForce = b.aF  =
+				var b = this, g = G(arguments), v = g[0], c = g[1], c2 = g[2]
+				if (N(c)) {
+					return b.F(V(v, c), c2)
+				}
+				if (U(c)) {
+					c = b.worldCenter()
+				} // gotta adjust this
+				b.ApplyForce(v, c)
+				if (g.p) {
+					cjs.tick(function () {
+						b.ApplyForce(v, c)
+					})
+				}
+				return b
+			}      //apply force. pass impulse as two nums, or obj //and pass in location, defaults to body center
 		}
-		this.angularVelocity = vel
-		return this
+		
+		//apply force. pass impulse as two nums, or obj
+// and pass in location, defaults to body center
+		var b = this, g = G(arguments), o
+		o = N(g[1]) ? {f: V(g[0], g[1]), wP: g[2]}
+				: {f: V(g[0]), wP: g[1]}
+		o.wP = o.wP || b.wC()
+		b.ApplyForce(o.f, o.wP)
+		if (g.p) {
+			cjs.t(function () {
+				b.ApplyForce(o.f, o.wP)
+			})
+		}
+		return b
+	}
+	b.mass = function (m) {
+		if (U(m)) {
+			return ( this.GetMass() * 900 ) / 100
+		}
+	}
+	b.lVL = function (x, y) {
+		var b = this
+		b.GLVFLP = function (v) {
+			return this.GetLinearVelocityFromLocalPoint(v)
+		}
+		return this.GLVFLP(V(x, y, '-'))
+	}
+	b.lVW = function (x, y) {
+		var b = this
+		b.GLVFWP = function (v) {
+			return this.GetLinearVelocityFromWorldPoint(v)
+		}
+		return this.GLVFWP(V(x, y, '-'))
 	}
 	f.lV = function () {
 		var f = this, b = f.B(), g = G(arguments)
 		b.lV.apply(b, g)
 		return f
 	}
-	bD.aD = function (damp) {
-		if (U(damp)) {
-			return this.angularDamping
+	bD.inertia = function (ine) {
+		if (U(ine)) {
+			return this.insertiaScale
 		}
-		this.angularDamping = damp;
+		this.insertiaScale = ine
 		return this
-	}
-	bD.aV = function (vel) {
-		if (U(a)) {
-			return this.angularVelocity
-		}
-		this.angularVelocity = vel
-		return this
-	}
-	bD.lD = function (dm) {
-		var bD = this
-		if (U(dm)) {
-			return bD.linearDamping
-		}
-		bD.linearDamping = dm
-		return bD
-	}
-	bD.lV = function (vel) {
-		if (U(vel)) {
-			return this.linearVelocity
-		}
-		this.linearVelocity = vel;
-		return this
-	}
-	w.gv = w.G = function (x, y) {
-		var w = this
-		w.GG = function () {
-			return this.GetGravity()
-		}
-		w.SG = function (gv) {
-			this.SetGravity(gv);
-			return this
-		}
-		var gv = w.GG()
-		if (U(x)) {
-			return gv
-		}
-		var v
-		if (N(x)) {
-			v = N(y) ? V(x, y) : V(0, x)
-		}
-		if (x == 'flip') {
-			v = V(-gv.x, -gv.y)
-		}
-		return w.SG(v)
-		function alt() {
-			w.G = function (x, y) {
-				var w = this,
-						v, currG = w.GetGravity()
-				if (U(x)) {
-					return currG
-				}
-				if (N(x)) {
-					v = N(y) ? V(x, y) : V(0, x)
-				}
-				else if (x == 'flip') {
-					v = V(-currG.x, -currG.y)
-				}
-				w.SetGravity(v)
-				return w
-				function alt() {
-					w.G = function (x, y) {
-						var v, currGrav = this.GetGravity()
-						if (U(x)) {
-							return currGrav
-						}
-						if (N(x)) {
-							v = N(y) ? V(x, y) : V(0, x)
-						}
-						if (x == 'flip') {
-							v = V(-currGrav.x, -currGrav.y)
-						}
-						w.SetGravity(v)
-						return this
-					}
-				}
-			}
-		}
 	}
 }
 function bug() {
