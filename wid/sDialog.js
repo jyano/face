@@ -1,3 +1,6 @@
+//https://learn.jquery.com/jquery-ui/widget-factory/extending-widgets/
+//super dialog!!
+
 
 $.wg("cust.sdlg", $.ui.dialog, {
 	open: function () {
@@ -33,6 +36,7 @@ SDLG = function () {
 	d.close = function () {
 		$l("close")
 	}
+	
 	$.d().sDlg()
 	$(':data(ui-dialog)').dlg("close") // Select both dialogs and call close() on each of them--> "close" will only be logged once.
 }

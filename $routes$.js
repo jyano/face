@@ -7,14 +7,11 @@ $stc('',
 		'fiz', 'fiz/hit', 'fiz/joins', 'fiz/steps',
 		//stage
 		'stage',
-		'sprite',
+		'anim',
 		'stageFiz', 'stageFiz/stageFizGames',
 		'stageFizSpaz',
 		//front
-		'front', 'front/bone',
-		'front/nok',
-		'front/jetUI',
-		'jetUI',
+		  'bone', 'nok', 'UI',
 		'wid',
 		//wappy
 		'wappy', 'login', 'muggy')
@@ -27,25 +24,22 @@ Web = {
 		'webApps', 'canApps', 'canClip'
 	]
 }
-Box = ['bx', 'box', 'debug', 'boxMath', 'defs', 'entities', 'world', 'makeWorld', 'worldCreate', 'fixture', 'body',
-	'collide', 'handling', 'filtering']
+
+Nok = ['ko', 'applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
+Jet = ['jqui', 'jquiCore',
+	'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
+Bone = [
+	'bb', 'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
+	'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
+]
 Stage = ['toSort',
 	'cjs', 'stage', 'dob', 'stageDraw', 'solve', 'iso',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official'
 ]
-Nok = ['ko','nok']// 'koCore', 'koApps', 'knock']
-Jet = ['jqui', 'jquiCore', 'cbw','jqIPApps','navApps',
- 'wid', 'jquiApps','calc','multi','progBar','slides','capt','sDialog','widFilt']
+Box = ['bx', 'box',   'boxBods', 'boxApps']
+ 
+ 
 
-Bone = [
-		'bb', 'bone', 'bbViews', 'bbRouter','bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect' , 'bbAvail',
-		'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
-]
-
-
-Sprite = [
-	'cjsMC','tween', 'animLoop', 'shake'
-]
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ' - '
@@ -54,3 +48,7 @@ $a.g('/box/:app', function (q, p) {
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
+Fiz = ['world', 'debug', 'collide', 'handling', 'filtering', 'defs', 'entities', 'fizApps', 'boxCxApps']
+Sprite = [
+	'cjsMC', 'tween', 'animLoop', 'shake'
+]

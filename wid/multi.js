@@ -1,3 +1,5 @@
+//multi select!!
+
 // The object literal should contain
 // default options
 // _create,    _setOption    _destroy

@@ -1,4 +1,4 @@
-ob = {
+$.wg('jy.clc', {
 	_setOptions: function () {
 		this._superApply(arguments)
 	},
@@ -98,21 +98,18 @@ ob = {
 		shown: null,
 		hidden: null
 	},
-	
 	show: function () {
 		var wg = this
 		this._show(this.element, this.options.show, function () {
 			wg._trigger('shown')
 		})
 	},
-	
 	hide: function () {
 		var wg = this
 		this._hide(this.element, this.options.hide, function () {
 			wg._trigger('hidden')
 		})
 	},
-	
 	_destroy: function () {
 		var q = this.element
 		q.rK('jy-clc')
@@ -217,7 +214,6 @@ ob = {
 	_equals: function (e, o) {
 		this._clculate(true)
 	},
-	
 	_udDp: function (reset) {
 		var wg = this, dpEl, dpVal
 		if (notTooLong(this)) {
@@ -244,61 +240,59 @@ ob = {
 				dpEl = q.fi('.jy-clc-clculation')
 		dpEl.tx(runDp.join(''))
 		wg.curDp = []
-	} 
-}
-
-ob._clculate = function (final) {
-	var wg = this, q = wg.element,
-			runDp = wg.runDp, tmp, trm, ops, res, run, dp, sum
-	if (final) {
-		sum = [
-			q.fi('.jy-clc-clculation').tx(),
-			q.fi('.jy-clc-display').tx()
-		].join('')
-		wg.curDp = [seqClc(sum)]
-		wg._udDp()
-		wg.runDp = []
-		wg.numIp = false
-		wg._udRunDp()
-	}
-	else if (_.z(runDp) > 1) {
-		tmp = runDp.pop()
-		trm = tmp.replace(/\s[\+\-\*\/']\s/, '')
-		runDp.push(trm)
-		res = seqClc(runDp.join(''))
-		wg.curDp = [res]
-		runDp.pop()
-		runDp.push(tmp)
-		wg._udDp(true)
-	}
-	function seqClc(str) {
-		var ops = {
-					'+': function (x, y) {
-						return x + y
-					},
-					'-': function (x, y) {
-						return x - y
-					},
-					'*': function (x, y) {
-						return x * y
-					},
-					'/': function (x, y) {
-						return x / y
-					}
-				},
-				sumA = str.split(' '),
-				left = +sumA[0],
-				len = _.z(sumA),
-				x
-		for (x = 1; x < len; x = x + 2) {
-			left = ops[sumA[x]](
-					left, +sumA[x + 1]
-			)
+	},
+	_clculate: function (final) {
+		var wg = this, q = wg.element,
+				runDp = wg.runDp, tmp, trm, ops, res, run, dp, sum
+		if (final) {
+			sum = [
+				q.fi('.jy-clc-clculation').tx(),
+				q.fi('.jy-clc-display').tx()
+			].join('')
+			wg.curDp = [seqClc(sum)]
+			wg._udDp()
+			wg.runDp = []
+			wg.numIp = false
+			wg._udRunDp()
 		}
-		return left
+		else if (_.z(runDp) > 1) {
+			tmp = runDp.pop()
+			trm = tmp.replace(/\s[\+\-\*\/']\s/, '')
+			runDp.push(trm)
+			res = seqClc(runDp.join(''))
+			wg.curDp = [res]
+			runDp.pop()
+			runDp.push(tmp)
+			wg._udDp(true)
+		}
+		function seqClc(str) {
+			var ops = {
+						'+': function (x, y) {
+							return x + y
+						},
+						'-': function (x, y) {
+							return x - y
+						},
+						'*': function (x, y) {
+							return x * y
+						},
+						'/': function (x, y) {
+							return x / y
+						}
+					},
+					sumA = str.split(' '),
+					left = +sumA[0],
+					len = _.z(sumA),
+					x
+			for (x = 1; x < len; x = x + 2) {
+				left = ops[sumA[x]](
+						left, +sumA[x + 1]
+				)
+			}
+			return left
+		}
 	}
-}
-$.wg('jy.clc', ob)
+})
 CALC = function () {
 	buttons = [{l: 8, a: 'number'}, {l: 9, a: 'number'}, {l: '+', k: 'jy-clc-plus', a: 'operator'},
 		{l: 4, k: 'jy-clc-clearfix', a: 'number'}] //{l:'Special', a:function(e,ui){$l('special clear!'+ ui)}}

@@ -1944,3 +1944,6 @@ function fromKnockOutPre(){
 		}
 	}
 }
+$.cI = function (id) {
+	return $.c().id(id || 'cv')
+}

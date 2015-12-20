@@ -1,3 +1,4 @@
+//https://learn.jquery.com/jquery-ui/widget-factory/how-to-use-the-widget-factory/
 $.wg("cust.prgbar", {
 	options: {v: 0},
 	_create: function () {
