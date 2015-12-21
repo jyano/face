@@ -2632,7 +2632,8 @@ function _pre() {
 	guyIt = {id: "guy", src: "/guy.png"}
 	myIt = {id: "myImage", src: "/me.png"}
 	mf1 = [myIt, guyIt];
-	mf2 = [$it("me"), $it(guyIt)]
+
+//	mf2 = [$it("me"), $it(guyIt)]
 	mf3 = ["me", guyIt];
 	mf4 = [myIt, guyIt];
 	mf5 = ['guy', 'me']

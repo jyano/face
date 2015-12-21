@@ -1,6 +1,6 @@
+
 $L('type', 'bool', 'polys', 'points','opers','hole')
-pS = ps = $pt.pS = gpc.PS.prototype
-pD = $pt.pD = gpc.PD.prototype
+ 
 $gP = function (pts) { 
 	// = M.poly
 	var pD = new gpc.PD()
@@ -277,6 +277,8 @@ function hole() {
 	}
 }
 function _pre(){
+
+	window.$pt = window.$pt || {}
 	gpc = gpcas
 // other lib:  http://jsclipper.sourceforge.net/6.1.3.2/main_demo.html
 	gpc.g = gpc.geometry
@@ -304,7 +306,10 @@ function _pre(){
 	ItNode = gpc.g.ItNode;
 	gpc.PS = gpc.g.PolySimple
 	gpc.PD = gpc.g.PolyDefault
+	pS = ps = $pt.pS = gpc.PS.prototype
+	pD = $pt.pD = gpc.PD.prototype
 }
+
 function _alpha() {
 	pD.ifHasPol = function () {
 		var pD = this

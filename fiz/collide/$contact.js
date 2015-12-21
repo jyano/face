@@ -94,7 +94,7 @@ cx.includes = cx.ic = function () {
 cx.between = cx.bw = function () {
 	var cx = this, g = G(arguments)
 	// bw(k,k1)  or  bw(k,k1,fn)
-			var fA = cx.fA())
+			var fA = cx.fA()
 			var fB = cx.fB()
 	
 	var fn = g.t

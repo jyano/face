@@ -1,7 +1,7 @@
 console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
-require('./core/both')
+require('./front/both/both')
 $l(' - face - \n')
-require('./core/$superNode$')
+require('./server/$superNode$')
 $stc = function () {
 
 	_.e(arguments, function (arg) {
@@ -29,16 +29,16 @@ $stc = function () {
 		}
 	}
 }
-require('./core/$xap$')
-require('./core/$goo$')
-require('./$mw$')
+require('./server/$xap$')
+require('./server/$goo$')
+require('./server/$mw$')
 $a.g('/', function (q, p) {
 	p.send('it worked jason..')
 })
 require('./$routes$')
 $htSv = httpServer = $h.createServer($a)
 $htSv.listen(80, lsFn)
-require('./socket/$kets$')
+require('./server/socket/$kets$')
 function lsFn() {$l('\nserver listening on port 80 \n')}
  
   

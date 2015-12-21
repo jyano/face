@@ -1,55 +1,55 @@
-$stc('',
-		'../art',
-		//web (core)
-		'core', 'core/superWeb', 'core/clip', 'core/can',
-		'box',
-		//fiz
-		'fiz', 'fiz/hit', 'fiz/joins', 'fiz/steps',
-		//stage
-		'stage',
-		'anim',
-		'stageFiz', 'stageFiz/stageFizGames',
-		'stageFizSpaz',
+$stc('', '../art',
 		//front
-		  'bone', 'nok', 'UI',
-		'wid',
+		'front', 'front/both', 'front/superWeb', 'front/can',
+		'front/bone', 'front/nok', 'front/UI', 'front/wid',
+		//geo
+		'geo',
+		//stage
+		'stage', 'stage/anim', 'stage/loader',
+		//fiz
+		'fiz', 'fiz/collide', 'fiz/query', 'fiz/joints', 'fiz/control',
+		'spaz', 'spaz/cam', 'spaz/arcade',
 		//wappy
-		'wappy', 'login', 'muggy')
-Web = {
-	deps: ['jq', 'ooo', 'cssData', 'gpc', 'dfDefs', 'polyData'],
-	lib: [
-		'superWeb', 'der', 'rules', 'local',
-		'can', 'ctx',
-		'clip',
-		'webApps', 'canApps', 'canClip'
-	]
-}
+		'wappy'
+)
+Deps = [
+	//dep libs
+	'both', 'jq', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
+	//data
+	'ooo', 'cssData', 'dfDefs' 
+]
 
-Nok = ['ko', 'applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
-Jet = ['jqui', 'jquiCore',
-	'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
+Front = [
+	'manip', 'sty', 'll', 'rules', 'local',
+	'can', 'ctx',
+ 
+	'webApps', 'canApps' 
+]
+
+
+Nok = ['applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
+Jet = ['jquiCore', 'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
 Bone = [
-	'bb', 'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
+	'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
 	'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
 ]
-Stage = ['toSort',
-	'cjs', 'stage', 'dob', 'stageDraw', 'solve', 'iso',
-	'stageApps', 'stageDrawApps', 'stageWorks', 'official'
+Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
+Stage = [
+	'stage', 'dob', 'stageDraw', 'solve', 'iso',
+	'stageApps', 'stageDrawApps', 'stageWorks', 'official',
+	'tween', 'animLoop', 'shake'
 ]
+Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
+	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
+	'$collide', '$contact', '$filtering', '$handle','$listen'
 
-Box = ['bx', 'box0', 'box', 'boxCx', 'filtering','listen', 'asBox', 'asCir', 'asPol', 'superBox', 'duperBox', 'boxApps']
  
- 
+	]
 
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ' - '
-	html += $js('both', Web.deps, Web.lib,  Stage,Sprite, Box, Nok, Jet, Bone
-	)
+	html += $js(Deps, Front, Nok, Jet, Bone, Stage, Fiz, Geo)
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
-Fiz = ['world', 'debug', 'collide', 'handling', 'filtering', 'defs', 'entities', 'fizApps', 'boxCxApps']
-Sprite = [
-	'cjsMC', 'tween', 'animLoop', 'shake'
-]

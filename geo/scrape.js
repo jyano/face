@@ -1,3 +1,180 @@
+w.polD = function (x, y, p1, p2) {
+	var w = this
+	return w.pol(x, y, M.p(p1).D(p2))
+}
+f.dif = function () {
+	var f = this, b = f.B(), g = G(arguments), p
+//f.dif does the math and returns the answer (vs)
+	p = M.p(f)
+	g.e(function (g) {
+		if (b2d.iB(g)) {
+			g.fs(function (f) {
+				p = p.D(f)
+			})
+		}
+		else {
+			p = p.D(g)
+		}
+	})
+	if (!b2d.hV(p)) {
+		$l('!hV(p)')
+		return
+	}
+	p = p.reg(f)
+	if (g.n) {
+		p = p.reg(f.B())
+	}
+	return p
+}
+f.sub = function () {
+	var f = this, b = f.B(), g = G(arguments),
+			p
+//f.sub uses f.dif and replaces itself on a body
+// with its (potentially) 'slimmer' self
+	p = f.dif(g[0], '-') //vs is f minus something
+	if (p && !M.p(p).hH()) {
+		f.kill() //then f goes away
+		if (M.p(p).getArea() < 2000) {
+			return
+		}
+		b.pol(p)//the body makes a new f, from the the vs
+	}
+	if (g.n) {
+		g[0].kill()
+	}
+	if (g.p) {
+		g[0].dyn()
+	} //can optionally delete the 'something'
+	return f
+}
+b.dif = function (o) {
+	var b = this, g = G(arguments),
+			f = b.f(), fs = b.fs(), p
+	if (b.n() == 1) {
+		return b.f().dif(o, '-')
+	}
+	p = DIF(b, o).reg(b)
+	if (g.n) {
+		if (b2d.iB(o) || b2d.iF(o)) {
+			o.kill()
+		}
+		else {
+			b.kill()
+		}
+	}
+	return p
+}
+f.sub = function (f1) {
+	var f = this, b = f.B(), g = G(arguments)
+	var pD = f.dif(f1, '-')   //   kill THIS f
+	if (g.n) {
+		f1.kill()
+	}
+	if (g.p) {
+		f1.dyn()
+	}
+	if (pD.bigEnough() || g.m) {
+		b.pol(pD)
+	}
+	return f
+}
+b.subF = function (f1, x, y) {
+	var b = this
+	var v = V(x, y)
+	b.fs(function (f) {
+		f.sub($pol(f1, v))
+	})
+	return b
+}
+b.subB = function (b1) {
+	return this.fs(function (f) {
+		b1.sub(f)
+	})
+}
+b.sub1 = function (pD) {
+	var b = this, g = G(arguments)
+	if (b2d.iF(pD)) {
+		b.subF(pD)
+	}
+	else if (b2d.iB(pD)) {
+		b.subB(pD)
+	}
+	if (g.n) {
+		pD.kill()
+	}
+	return b
+}
+b.sub = function () {
+	var b = this, g = G(arguments)
+	g.e(function (pD) {
+		b.sub1(pD, g.o)
+	})
+	if (g.f !== 0) {
+		//	b.C(g.f || b.c())
+	}
+	return b
+}
+w.polD = function (x, y, p1, p2) {
+	return this.pol(x, y, M.p(p1).D(p2))
+}
+b.sub = function () {
+	var b = this, gg = G(arguments), c = b.c()
+	gg.e(function (g) {
+		if (b2d.iF(g)) {
+			b.fs(function (f) {
+				f.sub(g)
+			})
+			if (gg.n) {
+				g.kill()
+			}
+		}
+		else if (b2d.iB(g)) {
+			g.fs(function (f) {
+				b.sub(f)
+			})
+			if (gg.n) {
+				g.kill()
+			}
+		}
+	})
+	b.C(b.c())
+	return b
+}
+f.dif = function () {
+	var f = this, g = G(arguments)
+	var pD = f.tGP()
+	g.e(function (v) {
+		pD = pD.D(v)
+	})
+	pD = pD.tlNeg(f.B())
+	if (g.n) {
+		f.kill()
+	}
+	return pD.ifHasPol()
+	function docs() {
+		//f.dif does the math and returns the answer (vs)
+//returns pD with array of pS's ( pD.m_List )
+//you can pass in the verts, 
+// or the gPoly itself! //what about a fxt?
+	}
+}
+b.dif = b.without = function (o) {
+	var b = this, g = G(arguments)
+	var f = b.f(), fs = b.fs()
+	if (b.count() == 1) {
+		return b.f().dif(o, '-')
+	}
+	if (g.n) {
+		if (b2d.iB(o) || b2d.iF(o)) {
+			o.kill()
+		}
+		else {
+			b.kill()
+		}
+	}
+	return $DIF(b, o).tlNeg(b)
+}
+//
 b.dff = function (b2) {
 	var b = this
 	var p = Math.poly(b.V())
@@ -90,7 +267,6 @@ b2d.ptsMinus = b2d.vertsMinus = b2d.sub = function (vs, p) {
 		return V(v).sub(p)
 	})
 }
-
 b.gPolWithout = b.gPolWo = function (pD) {
 	this.fs(function (f) {
 		pD = pD.D(f)
@@ -100,7 +276,6 @@ b.gPolWithout = b.gPolWo = function (pD) {
 		// =b.cutPol = b.difFromPol = b.difPol = b.subMe = b.scrapeMeWithPol = b.pDWo
 	}
 }
-
 f.dif = function () {
 	var f = this, b = f.B(), g = G(arguments)
 	var pD = f.GP()
@@ -121,43 +296,44 @@ f.dif = function () {
 		//   what about fixts? answer: p.D can consume a fixt
 	}
 }
-
-
 f.difKill = function (difWhat) {
-	var f = this
-
+	var f = this, g = G(arguments)
 	var difdFxt = f.dif(difWhat) //vs is f minus something
-	f.kill() //then f goes away
+	_.in(function () {
+		f.kill()
+		//then f goes away
+	})
 	return difdFxt
-	//difdFxt = f.dif(g.f, '-') //vs is f minus something
-	//f.kill() //then f goes away
 }
-
-
-f.scrapeWith = f.sub = function () {var f = this, b = f.B(), g = G(arguments); var  what = g.f
-	 
-	 
+f.scrapeWith = f.sub = function () {var f = this, b = f.B(), g = G(arguments)
+	var difdFxt = f.difKill(g.f)
+	function bigEnough(f) {
+		//otionally put a min size to allow it to be replaced
+		//i guess if it's too small, don't bother
+		//but calculating area could also be bottleneck?
+		return M.p(f).getArea() > 2000
+	}
+	if (!bigEnough(difdFxt)) {
+		return
+	}
+	b.pol(difdFxt)
+	if (g.n) {
+		//now that other thing that we subtracted from our fixt before it was killed and replaced..
+		//..letst talk about that thing
+		//we can optionally kill that thing too!!
+		//it may have been a real manufactured body or fixt
+		//... though there should be a better way than that!!! !!!! :=)(+
+		what.kill()
+	}
+	if (g.p) {//and  aparently we can also optionally dynamize it!
+		what.dyn()
+	}
+	return f
 	//f.sub uses f.dif and replaces itself on a body
 	// with its (potentially) 'slimmer' self
 	//lets begin:
 	// we get the dif of the this and the thing we are subtracting from it...
 	// then we kill THIS fixt
-	
-	var difdFxt = f.difKill(what)
-
-	//otionally put a min size to allow it to be replaced
-	//i guess if it's too small, don't bother
-	//but calculating area could also be bottleneck?
-
-	
-	function bigEnough(f) {
-		return M.p(f).getArea() > 2000
-	}
-
-	if (!bigEnough(difdFxt)) {
-		return
-	}
-	
 	//here, body makes a new f from the dif (hence, it might be slimmer)
 	//again... it is fixtizing the result of the gPol subtraction operation
 	// it subtracted something from this... killed itself..
@@ -166,30 +342,7 @@ f.scrapeWith = f.sub = function () {var f = this, b = f.B(), g = G(arguments); v
 	//so after that subtraction, it killed itself, and and now 
 	// we are replacing the body that held that fixt, replaces it with the resutl
 	// of the difference between it and another fixt
-
-	b.pol(difdFxt)
-
-	//now that other thing that we subtracted from our fixt before it was killed and replaced..
-	//..letst talk about that thing
-	//we can optionally kill that thing too!!
-	//it may have been a real manufactured body or fixt
-	//... though there should be a better way than that!!! !!!! :=)(+
-	
-	if (g.n) {
-		what.kill()
-	}
-	
-	//and  aparently we can also optionally dynamize it!
-	
-	if (g.p) {
-		what.dyn()
-	}
-	
-	return f
-
 }
-
-
 b.without = b.dif = function (o) {
 	var b = this, g = G(arguments),
 			f = b.f(), fs = b.fs(), p
@@ -207,7 +360,6 @@ b.without = b.dif = function (o) {
 	}
 	return p
 }
-
 b.scrapeWith = b.subFrom = function (fromWhat) {
 
 var b=this
@@ -219,13 +371,6 @@ var b=this
 	
 	return b
 }
-
-f.scrapeBodWith = f.subFromBod = function (bod) {
-	bod.fs(function (f) {
-		f.sub(bod)
-	})
-}
-
 b.scrapeWithFxt = b.subFxt = b.subF = b._sub = function (f) {
 	var b = this
 	b.fs(function (fxt) {
@@ -233,12 +378,9 @@ b.scrapeWithFxt = b.subFxt = b.subF = b._sub = function (f) {
 	})
 	return b
 }
-
-
 b.scrapeWithBod = b.subBod = b.subB = function (b) {
 	return this.subFrom(bod)
 }
-
 b.scrape = b.sub = function () {
 
 /// hhi im here ///////////////////////////////////////////////////////
@@ -254,4 +396,106 @@ b.scrape = b.sub = function () {
 	}
 	return b
 }
+f.scrapeBodWith = f.subFromBod = function (bod) {
+	bod.fs(function (f) {
+		f.sub(bod)
+	})
+}
 
+function terr(){
+	pD.hasAtLeastOnePoly = function () {
+		return this.m_List.get(0)
+	}
+	pD.isPolyless = pD.hasNoPolys = function () {
+		return !this.hasAtLeastOnePoly()
+	}
+	pD.D = function () {
+		var pD = this
+		G(arguments).e(function (polOrBod) {
+			pD = b2d.iB(polOrBod) ? polOrBod.pDWo(pD) :
+					pD.difference(gpc.p(polOrBod))
+		})
+		return pD
+	}
+//f.dif does the math and returns the answer (vs)
+//returns pD with array of pS's ( pD.m_List )
+	b.pDWo = b.gPolWo = function (gPol) {
+		this.fs(function (f) {
+			gPol = gPol.D(f)
+		})
+		return gPol
+	}
+	f._vs = function () {
+		return b2d.m(this.H().m_vertices)
+	}
+	f.pts = f.points = f.verts = f.vertices = f.vs = function () {
+		var f = this, b = f.B(), g = G(arguments),
+				vs = _.m(f._vs(), g.n ?
+								function (a) {
+									return a
+								} :
+								function (v) {
+									return v.rt(b.rt())
+								}
+				)
+		return b2d.tA(vs)
+	}
+	w.polD = function (x, y, p1, p2) {
+		return this.pol(x, y, M.p(p1).D(p2))
+	}
+	b.pos = function () {
+		return this.tf().position.m()
+	}//used in MEET
+	pD.butHere = pD.to = pD.at = pD.ger = function (x, y) {
+		return this.reg(-V(x, y).x, -V(x, y).y)
+	}
+	pD.maybeHere = function (xy) {
+		return xy ? this.butHere(xy) : this
+	}
+	pD.from = pD.cameFrom = pD.reg = pD.rel = function (x, y) {
+		return M.p(b2d.sub(this.vs(), V(x, y)))
+	}//you can pass in the verts, // or the gPoly itself! //what about a f?
+	pD.points = pD.vs = function (fn) {
+		var pD = this,
+				g = G(arguments),
+				o = g.F ? {fn: g.f} : {num: g.f, fn: g.s},
+				vs = []
+		_.t(pD.n(), function (i) {
+			vs.push([pD.x(i), pD.y(i)])
+		})
+		vs = g.n ? b2d.sub(vs, o.num) :
+				g.p ? b2d.add(vs, o.num) :
+						vs
+		if (o.fn) {
+			_.e(vs, o.fn);
+			return pD
+		}
+		return vs
+	}//used in MEET
+	f.wV = function () {
+		return b2d.tA(b2d.add(this.vs(), this.B()))
+	}//used in MEET
+//b2d.hV = b2d.hasVerts = gpc.hV
+	b.subAll = function (poly) {
+		return this.fs(function (f) {
+			f.sub(poly)
+		})
+	}
+	$pol = $poly = function (poly, xy) {
+		return $pD(S(poly) ? $vs[poly] : poly).maybeHere(xy)
+	}
+	b.subPol = b.subPoly = b.subP = function (poly, xy) {
+		return this.subAll($pol(poly, xy))
+	}
+	b.kXY = b.killXY = function () {
+		var xy = this.XY();
+		this.kill();
+		return xy
+	}
+	b.subPolAtFxt = function (pol, fxt) {
+		var g = G(arguments)
+		var xy = g.n ? fxt.B().kXY() : fxt.B()
+		this.subPol(pol, xy)
+		return this
+	}
+}

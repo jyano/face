@@ -1,4 +1,4 @@
- 
+window.W = window.W || {} 
 //the walls themselves are made with w.BOX
 	w.wall = function (x, y, wd, ht) {
 		var w = this

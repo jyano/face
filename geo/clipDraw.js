@@ -333,3 +333,11 @@ CG3 = HOL = HOLE = function () {
 	out.dif(inn)
 	inn.dyn()
 }
+w.pDraw = function (p, x, y) {
+	var w = this, b = w.S(0, 0)
+	b.pol({
+		v: M.p(p).plus(x || 0, y || 0).vs(),
+		c: 'w', C: 'x', l: 10
+	})
+	return p
+}
