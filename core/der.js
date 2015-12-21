@@ -1947,3 +1947,6 @@ function fromKnockOutPre(){
 $.cI = function (id) {
 	return $.c().id(id || 'cv')
 }
+$.pre = function () {
+	return $("<pre>").A()
+}

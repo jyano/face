@@ -16,4 +16,11 @@ test = function () {
 		}
 	})
 }
-  
+$P = function () {
+	bb = Backbone
+	md = bb.Model.prototype
+	vw = bb.View.prototype
+	rt = bb.Router.prototype
+	cl = bb.Collection.prototype
+}
+h = $pt.h = cjs.Shape.prototype

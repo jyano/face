@@ -5000,3 +5000,15 @@ $sOb = function (ob) {
 		}
 	}
 }
+_.run = function () {
+	var g = G(arguments)
+	return g.F_ ? g.f.apply(null, g.r) : false
+}
+_.fnEv = function () {
+	var g = G(arguments)
+	var secs = g.N_ ? g.shift() : 1
+	_.run(g.shift())
+	_.ev(secs, function () {
+		_.run(g.shift())
+	})
+}

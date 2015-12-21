@@ -8,26 +8,7 @@
 			}
 		})
 	}//clever use of flagging.. but not needed
-	f.Vold = function () {//f.rotVerts=
-		return this.wVerts()
-		newX = function (x, y, rot) {
-			rot = Math.toRadians(rot)
-			x *= Math.cos(rot).toFixed(3)
-			y *= Math.sin(rot).toFixed(3)
-			return x - y
-		}
-		newY = function (x, y, rot) {
-			rot = Math.toRadians(rot)
-			return (x * Math.sin(rot)) + (y * Math.cos(rot))
-		}
-		var verts = this.verts(), b = this.B()
-		return _.map(verts, function (v) {
-			var x = v.x, y = v.y
-			return V(
-					newX(x, y, b.rot()) + b.X(),
-					newY(x, y, b.rot()) + b.Y())
-		})
-	}//this becomes wVerts
+	 
 	f.DIFFold = function (b2) {
 		var f = this, b = f.B(), g = G(arguments), b2 = g[0]//,diff
 		// diff =  Math.poly( f.V() ).difference(  Math.poly( b2.V() ) )

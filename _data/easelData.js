@@ -9,4 +9,6 @@ events = ['drawend',
 	'stagemouseup',
 	'tickend',
 	'tickstart'
-]	
+]
+EVob = {$: 'click', $$: 'dblclick', v: 'mouseover'}
+ 
