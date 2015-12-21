@@ -850,4 +850,43 @@ CIRCSTROKE8 = function () {
 	 gx.dc(600,600,50)
 	 */
 }
- 
+HDC = function () {
+	h = $Sh()
+	h.graphics.f('blue')
+	h.dc(100, 100, 100)
+	h.graphics.f('yellow')
+	h.dc(200, 100, 100)
+	//.cir()
+	_$St().A(h).u()
+}
+HCR = function () {
+	h = $Sh()
+	h.graphics.f('blue')
+	//h.cir(100, 100, 100)
+	//h.graphics.f('yellow')
+	h.cir(200, 100, 100, 'r')
+	_$St().A(h).u()
+}
+HDC = function () {
+	h = $Sh()
+	h.graphics.f('blue')
+	h.dc(100, 100, 100)
+	h.graphics.f('yellow')
+	h.dc(200, 100, 100)
+	//.cir()
+	_$St().A(h).u()
+}
+HCR = function () {
+	h = $Sh()
+	h.graphics.f('blue')
+	//h.cir(100, 100, 100)
+	//h.graphics.f('yellow')
+	h.cir(200, 100, 100, 'r')
+	_$St().A(h).u()
+}
+DWW = function () {
+	gx = $Gx().f(cjs.rgb(255, 0, 0)).ss(10).s('white')
+	gx.dc(0, 0, 100).dc(100, 0, 100)
+	gx.s('blue').f('green').dc(0, 300, 100)
+	_$St().A($Sh(gx).XY(300, 100)).u()
+}
