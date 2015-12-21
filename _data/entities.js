@@ -1,3 +1,4 @@
+window.b2d = window.b2d || {}
 $eM = {}
 $eM.fixts = function () {
 	return w.D(100, 100, [

@@ -1,3 +1,30 @@
+eD = cjs.EventDispatcher.prototype
+eD.dE = eD.dispatchEvent
+eD.hEL = eD.hasEventListener
+eD.O = eD.off
+eD.o = eD.on
+eD.rAEL = eD.removeAllEventListeners
+eD.rEL = eD.removeEventListener
+eD.tS = eD.toString
+eD.wT = eD.willTrigger
+eD.aEL = eD.addEventListener
+eD.init = function () {
+	
+	//note: 'initialize' is the only STATIC method of eventDispatcher
+	this.initialize.apply(this, arguments)
+	return this
+}
+events = ['drawend',
+	'drawstart',
+	'mouseenter',
+	'mouseleave',
+	'stagemousedown',
+	'stagemousemove',
+	'stagemouseup',
+	'tickend',
+	'tickstart'
+]
+EVob = {$: 'click', $$: 'dblclick', v: 'mouseover'}
 events = ['added',
 	'mouseover', 'rollover', 'rollout', 'mouseout',
 	'mousedown', 'pressmove', 'pressup', 'click', 'dblclick',
@@ -287,3 +314,58 @@ cjs.watchKeys = function () {
 	})
 }
 //$.space = function (fn) {return $.kD('space', fn)}
+dO.underMouse = dO.uM = function () {
+	var dO = this, stg = dO.getStage()
+	if (stg.mouseInBounds) {
+		var pt = dO.gTL(stg.mouseX, stg.mouseY)
+		return dO.hitTest(pt.x, pt.y)
+		// alt : return hitTest( pt )
+	}
+}
+dO.mouEn = function (en) {
+	var dO = this, g = G(arguments)
+	if (g.u) {
+		return dO.mouseEnabled
+	}
+	dO.mouseEnabled = g.f ? true : false
+	return dO
+}
+dO.$ = dO.click = function (fn) {
+	return this.on('click', fn)
+}
+dO.$$ = dO.dblclick = function (fn) {
+	return this.on('dblclick', fn)
+}
+ 
+function alpha() {
+	i.flash = function () {
+		var i = this
+		i.al(0)
+		$.in(.3, function () {
+			i.al(1)
+		})
+		return i
+	}
+	i.rZero = function (a) {
+		var i = this, g = G(arguments), x = i.W() / 2, y = i.H() / 2
+		if (g.p) {
+			i.rX(0, '+').rY(0, '+')
+		}//i.X(a, i.regX()-a, '+')
+		else {
+			i.rXY(0, 0)
+		}
+		return i
+	}//
+	tw.Plugin = function (a, b) {
+		var g = G(arguments), a = g[0], b = g[1]
+		if (U(a)) {
+			return g.p ? w.pluginData.data : w.pluginData
+		}
+		if (U(b)) {
+			w.pluginData = a;
+			return w
+		}
+		w.pluginData[a] = b
+		return w
+	}
+}

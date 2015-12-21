@@ -1,11 +1,11 @@
-$stc('', '../art',
+$stc('', '../art', '_data',
 		//front
 		'front', 'front/both', 'front/superWeb', 'front/can',
 		'front/bone', 'front/nok', 'front/UI', 'front/wid',
 		//geo
 		'geo',
 		//stage
-		'stage', 'stage/anim', 'stage/loader',
+		'stage', 'superEasel', 'stage/anim', 'stage/loader',
 		//fiz
 		'fiz', 'fiz/collide', 'fiz/query', 'fiz/joints', 'fiz/control',
 		'spaz', 'spaz/cam', 'spaz/arcade',
@@ -23,7 +23,7 @@ Front = [
 	'manip', 'sty', 'll', 'rules', 'local',
 	'can', 'ctx',
  
-	'webApps', 'canApps' 
+	'webApps', 'canApps' ,'entities'
 ]
 
 
@@ -35,10 +35,12 @@ Bone = [
 ]
 Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
 Stage = [
-	'stage', 'dob', 'stageDraw', 'solve', 'iso',
+	'easel', 'dob', 'stageDraw', 'solve', 'iso',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official',
-	'tween', 'animLoop', 'shake'
+	'tween', 'animLoop', 'shake', 'justEaselApps'
 ]
+Easel = ['easel', 'tick','shape','recs','polygons','objects','graphics','container','colors','cirs','bitmaps', 'writing', 'justEaselApps','stageDrawApps']
+
 Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
 	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
 	'$collide', '$contact', '$filtering', '$handle','$listen'
@@ -49,7 +51,7 @@ Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ' - '
-	html += $js(Deps, Front, Nok, Jet, Bone, Stage, Fiz, Geo)
+	html += $js(Deps, Front, Nok, Jet, Bone, Easel, Fiz, Geo)
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
