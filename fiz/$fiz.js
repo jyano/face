@@ -964,6 +964,9 @@ function spazMath() {
 		return [pos.x, pos.y, col1.x, col1.y, col2.x, col2.y]
 	}
 }
+b2d.tF = b2d.toFxt = function (f) {
+	return b2d.iB(f) ? f.f() : f
+}
 function toFixed() {
 	v.dec = v.toFixed = function (n) {
 		n = N(n) ? n : 2
