@@ -4945,3 +4945,58 @@ BOTH = function () {
 		})
 	})
 }
+$lL = function () {
+	G(arguments).e(function (mt) {
+		if (F(mt)) {
+			mt()
+		}
+	})
+}
+_.set = function (ob, mt, v) {
+	ob[mt](v);
+	return ob
+}
+$sOb = function (ob) {
+	ob.ex = function (mt) {
+		if (F(this[mt])) {
+			return this[mt]()
+		}
+	}
+	ob.r = ob.run = function (mt) {
+		this.ex(mt);
+		return this
+	}
+	ob.s = ob.set = function (pp, v) {
+		this[pp] = v;
+		return this
+	}
+	ob._S = ob._Set = function (mt, pp) {
+		var ob = this;
+		ob[mt] = function (v) {
+			ob[pp] = v;
+			return ob
+		}
+	}
+	ob._G = ob._Get = function (mt, pp) {
+		this[mt] = function (pp) {
+			return this[pp]
+		}
+	}
+	ob.S = ob.Set = function (mt, pp) {
+		var ob = this;
+		ob[mt] = function (v) {
+			ob[pp](v);
+			return ob
+		}
+	}
+	ob.G = ob.Get = function (mt, pp) {
+		this[mt] = function (pp) {
+			return this[pp]()
+		}
+	}
+	ob.GS = function (mt, g, s) {
+		this[mt] = function (val) {
+			return U(val) ? this[g]() : this[s](val)
+		}
+	}
+}

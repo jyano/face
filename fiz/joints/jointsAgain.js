@@ -1,3 +1,65 @@
+function fromSpaz(){
+	function joint() {
+		w.J = w.joint = w.createJoint = w.j = w.cJ = function (a) {
+			var j = this.CreateJoint(a)
+			return j
+		}
+		f.q = j.fq = j.freq = function (a) {
+			if (U(a)) {
+				return this.GetFrequency()
+			}
+			this.SetFrequency(a)
+			return this
+		}
+		j.l = j.len = function (a) {
+			var g = G(arguments),
+					len = this.GetLength() * 30
+			if (U(a = g[0])) {
+				return len
+			}
+			this.SetLength(
+					$.update(len, a, g) / 30
+			)
+			return this
+		}
+		j.dm = j.damp = function (a) {
+			if (U(a)) {
+				return this.GetDampingRatio()
+			}
+			this.SetDampingRatio(a)
+			return this
+		}
+		jd.coll = jd.collide = jd.cC = function (a) {
+			this.collideConnected = a;
+			return this
+		}
+		b.dist = function (nextBody) {
+			var body = this
+			this.W().dist(body, nextBody)
+			return nextBody
+		}
+		$dJ = function (o) {
+			var dJ = new b2d.Joints.b2DistanceJointDef()
+			if (o) {
+				dJ.init.apply(dJ, arguments)
+			}
+			return dJ
+		}
+		$dJColl = function () {
+			return $dJ.apply(null, arguments).coll(true)
+		}
+		w.dstJ = w.dist = function (a, b) {
+			return this.J($dJ(a, b)).len(1).fq(1000).dm(1000)
+		}
+		w.dstJColl = function () {
+			return this.J($dJColl.apply(null, arguments))
+		}
+		jd.init = function (b1, b2) {
+			this.Initialize(b1, b2, b1.wC().d(), b2.wC().d())
+			return this
+		}
+	}
+}
 w.dist = function (a, b, b1OffV, b2OffV, len, freq, damp) {
 //location pams are optional, and be default to their center ponts
 // note: if you passe them in, pass them as relative(local to body) coords
