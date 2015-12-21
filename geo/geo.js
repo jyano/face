@@ -21,7 +21,6 @@ $gP$ = function () {
 	}
 	return $pD(pts)
 }
-
 $L('polys', 'points', 'extensions')
 function polys(){
 	 
@@ -774,7 +773,6 @@ function points(){
 		return poly.m_List.get(0)
 	}
 }
-
 function extensions(){
 	pS.reg = function (b) {
 		//= pS.toRelativePoints = pS.mapToBoxWorld

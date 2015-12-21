@@ -237,3 +237,80 @@ MU = HITC = HITCIRCLES = function () {
 		}//A
 	}//A
 }
+WINDING = function () {
+	cjs.Shape.prototype.same = function () {
+		return $h(this)
+	} //h.copy
+	cjs.manifest = function (func) {
+		var q = cjs.loadQueue()
+		q.complete(
+				function () {
+					func(function (getResult) {
+						return q.getResult(getResult)
+					})
+				})
+				.manifest([{
+					id: "chicks", src: "/chicks.png"
+				},
+					{id: "me", src: "/me.png"},
+					{id: "guy", src: "/guy.png"},
+					{id: "sun", src: "/sun.png"}])
+	}
+	z()
+	cjs.worldsMostInterestingShape = function () {
+		var h = cjs.shape()
+		h.graphics.f("pink").dr(20, 20, 450, 360)
+				.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
+				.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
+		return h
+	}
+	cjs.manifest(function (q) {
+		$.hdr().A($.h1('grahics winding')).A()
+		$.d().A($.c(960, 400)
+				.id("testCanvas"))
+		st = s = stage = $St(["testCanvas"])
+		h = shape = cjs.worldsMostInterestingShape().a2(stage).drag()
+		cjs.bm = function (img) {
+			var g = G(arguments), img = g[0],
+					bm = new cjs.Bitmap(img)
+			if (g.N) {
+				bm.rC()
+			}
+			return bm
+		} //warning: can't yet change to $Bm!!
+		bm = cjs.bm(q("chicks"), '-')
+				.a2(s).X(470).drag()
+		bm.mask = h.same().X(470)
+	})
+	function err() {
+		//Uncaught TypeError: Cannot read property 'image' of undefined
+	}
+}
+POPSPIN = function () {
+	z()
+	angle = 0
+	img = $.img('me', handleImageLoad)[0]
+	function stop() {
+		cjs.Ticker.removeEventListener("tick", tick)
+	}
+	
+	function handleImageLoad() {
+		canvas = $.c('p', 960, 400).id("testCanvas").A()
+		stage = $St(canvas)
+		stage.autoClear = true;
+		bmp = new cjs.Bitmap(img)
+				.rXY(img.width >> 1, img.height >> 1)
+				.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+		stage.A(bmp).update();
+		cjs.Ticker.timingMode = cjs.Ticker.RAF
+		cjs.tick(tick)
+	}
+	
+	function tick(event) {
+		angle += 0.01
+		var value = Math.sin(angle) * 360
+		bmp.rt(value).sXY(value / 360)
+		stage.update(event)
+	}
+}
+ 
