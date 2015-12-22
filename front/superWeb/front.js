@@ -10,3 +10,12 @@ $.fn.animloop = function () {
 		that.animloop()
 	})
 }
+z = function (fn) {
+	var g = G(arguments)
+	if (g.F_) {
+		T.t(fn)
+	}
+	else {
+		$('body').empty()
+	}
+}

@@ -40,9 +40,11 @@ Stage = [
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official',
 	'tween', 'animLoop', 'shake', 'justEaselApps'
 ]
-Easel = ['easel',  'tick','shapes', 'objects',
-'graphics','container',   'writing', 'justEaselApps',
-'stageDrawApps','graphicsTest']
+Easel = ['easel', 'shapes', 'objects', 
+          'graphics','container',   'writing',
+
+
+ 'justEaselApps', 'stageDrawApps','graphicsTest']
 
 Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
 	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
