@@ -21,31 +21,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="justEaselApps.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="justEaselApps.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/superEasel/_apps/justEaselApps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.8231441">
+              <caret line="252" column="6" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
               <folding>
-                <element signature="e#29#450#0" expanded="true" />
-                <element signature="e#364#416#0" expanded="true" />
-                <element signature="e#472#637#0" expanded="true" />
-                <element signature="e#667#971#0" expanded="true" />
-                <element signature="e#1003#1295#0" expanded="true" />
-                <element signature="e#1151#1292#0" expanded="true" />
-                <element signature="e#1417#1711#0" expanded="true" />
-                <element signature="e#1738#2168#0" expanded="true" />
-                <element signature="e#1976#2165#0" expanded="true" />
-                <element signature="e#2198#2348#0" expanded="true" />
-                <element signature="e#2312#2345#0" expanded="true" />
-                <element signature="e#2373#3796#0" expanded="true" />
-                <element signature="e#2389#2437#0" expanded="true" />
-                <element signature="e#3826#5593#0" expanded="true" />
-                <element signature="e#3853#4163#0" expanded="true" />
-                <element signature="e#4619#4622#0" expanded="false" />
-                <element signature="e#4747#4750#0" expanded="false" />
-                <element signature="e#5615#5727#0" expanded="true" />
-                <element signature="e#5747#5888#0" expanded="true" />
+                <element signature="e#29#445#0" expanded="true" />
+                <element signature="e#359#411#0" expanded="true" />
+                <element signature="e#467#632#0" expanded="true" />
+                <element signature="e#662#966#0" expanded="true" />
+                <element signature="e#998#1287#0" expanded="true" />
+                <element signature="e#1143#1284#0" expanded="true" />
+                <element signature="e#1409#1702#0" expanded="true" />
+                <element signature="e#1729#2158#0" expanded="true" />
+                <element signature="e#1966#2155#0" expanded="true" />
+                <element signature="e#2188#2338#0" expanded="true" />
+                <element signature="e#2302#2335#0" expanded="true" />
+                <element signature="e#2363#3786#0" expanded="true" />
+                <element signature="e#2379#2427#0" expanded="true" />
+                <element signature="e#3816#5585#0" expanded="true" />
+                <element signature="e#3843#4154#0" expanded="true" />
+                <element signature="e#4611#4614#0" expanded="false" />
+                <element signature="e#4739#4742#0" expanded="false" />
+                <element signature="e#5607#5719#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,26 +54,65 @@
         <entry file="file://$PROJECT_DIR$/superEasel/stage.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#178#207#0" expanded="true" />
-                <element signature="e#233#284#0" expanded="true" />
-                <element signature="e#703#793#0" expanded="true" />
-                <element signature="e#835#1065#0" expanded="true" />
-                <element signature="e#1085#1388#0" expanded="true" />
-                <element signature="e#1149#1273#0" expanded="true" />
-                <element signature="e#1282#1354#0" expanded="true" />
-                <element signature="e#1432#1634#0" expanded="true" />
+                <element signature="e#470#731#0" expanded="false" />
+                <element signature="e#856#904#0" expanded="false" />
+                <element signature="e#1095#1123#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clip.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/clip.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="352" column="2" selection-start-line="352" selection-start-column="2" selection-end-line="352" selection-end-column="2" />
+              <folding>
+                <element signature="e#7247#7530#0" expanded="true" />
+                <element signature="e#7740#7794#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entities.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_data/entities.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="253" column="1" selection-start-line="253" selection-start-column="1" selection-end-line="253" selection-end-column="1" />
+              <folding>
+                <element signature="e#2349#2472#0" expanded="true" />
+                <element signature="e#2381#2469#0" expanded="true" />
+                <element signature="e#2498#2631#0" expanded="true" />
+                <element signature="e#2531#2626#0" expanded="true" />
+                <element signature="e#3248#3299#0" expanded="true" />
+                <element signature="e#3251#3298#0" expanded="true" />
+                <element signature="e#3445#3559#0" expanded="true" />
+                <element signature="e#3579#3685#0" expanded="true" />
+                <element signature="e#3745#3993#0" expanded="true" />
+                <element signature="e#3871#3931#0" expanded="true" />
+                <element signature="e#3935#3991#0" expanded="true" />
+                <element signature="e#4000#4109#0" expanded="true" />
+                <element signature="e#4226#4340#0" expanded="true" />
+                <element signature="e#4804#4870#0" expanded="true" />
+                <element signature="e#4878#4919#0" expanded="true" />
+                <element signature="e#4926#4988#0" expanded="true" />
+                <element signature="e#5001#5103#0" expanded="true" />
+                <element signature="e#5332#5456#0" expanded="true" />
+                <element signature="e#5533#5647#0" expanded="true" />
+                <element signature="e#5655#5721#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/$routes$.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52492046">
-              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="e#496#591#0" expanded="true" />
                 <element signature="e#1021#1174#0" expanded="true" />
@@ -232,12 +270,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/superEasel/tick.js" />
-        <option value="$PROJECT_DIR$/superEasel/_apps/graphicsTest.js" />
-        <option value="$PROJECT_DIR$/superEasel/_apps/justEaselApps.js" />
-        <option value="$PROJECT_DIR$/superEasel/easel.js" />
+        <option value="$PROJECT_DIR$/superEasel/stage1.js" />
+        <option value="$PROJECT_DIR$/front/can/can.js" />
+        <option value="$PROJECT_DIR$/_data/entities.js" />
+        <option value="$PROJECT_DIR$/geo/clip.js" />
         <option value="$PROJECT_DIR$/superEasel/stage.js" />
-        <option value="$PROJECT_DIR$/$routes$.js" />
+        <option value="$PROJECT_DIR$/superEasel/_apps/justEaselApps.js" />
       </list>
     </option>
   </component>
@@ -251,7 +289,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="163" />
     <option name="y" value="22" />
-    <option name="width" value="1285" />
+    <option name="width" value="969" />
     <option name="height" value="1094" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -297,6 +335,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="geo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -312,11 +364,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/superEasel" />
       <recent name="$PROJECT_DIR$/geo" />
       <recent name="$PROJECT_DIR$/box" />
       <recent name="$PROJECT_DIR$/jetUI/_apps" />
       <recent name="$PROJECT_DIR$/wid" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/superEasel" />
@@ -339,14 +391,14 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
-    <frame x="163" y="22" width="1285" height="1094" extended-state="0" />
+    <frame x="163" y="22" width="969" height="1094" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07435653" sideWeight="0.49688888" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18987341" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25316456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20286885" sideWeight="0.5031111" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -394,127 +446,121 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/superEasel/tick.js">
+    <entry file="file://$PROJECT_DIR$/superEasel/stage1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.814816">
-          <caret line="186" column="11" selection-start-line="186" selection-start-column="11" selection-end-line="186" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/can/can.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25768822">
+          <caret line="323" column="17" selection-start-line="323" selection-start-column="17" selection-end-line="323" selection-end-column="17" />
           <folding>
-            <element signature="e#52#1308#0" expanded="true" />
-            <element signature="e#1949#2174#0" expanded="true" />
-            <element signature="e#3793#3818#0" expanded="true" />
+            <element signature="e#302#325#0" expanded="false" />
+            <element signature="e#336#352#0" expanded="false" />
+            <element signature="e#600#674#0" expanded="false" />
+            <element signature="e#894#928#0" expanded="false" />
+            <element signature="e#943#982#0" expanded="false" />
+            <element signature="e#1025#1051#0" expanded="false" />
+            <element signature="e#1159#1194#0" expanded="false" />
+            <element signature="e#1209#1248#0" expanded="false" />
+            <element signature="e#1293#1319#0" expanded="false" />
+            <element signature="e#1376#1504#0" expanded="false" />
+            <element signature="e#1694#1725#0" expanded="false" />
+            <element signature="e#1883#1913#0" expanded="false" />
+            <element signature="e#2153#2176#0" expanded="false" />
+            <element signature="e#2188#2211#0" expanded="false" />
+            <element signature="e#2219#2249#0" expanded="false" />
+            <element signature="e#2394#2433#0" expanded="false" />
+            <element signature="e#2565#2605#0" expanded="false" />
+            <element signature="e#2746#2799#0" expanded="false" />
+            <element signature="e#2954#2990#0" expanded="false" />
+            <element signature="e#3082#3116#0" expanded="false" />
+            <element signature="e#3207#3242#0" expanded="false" />
+            <element signature="e#3502#3520#0" expanded="false" />
+            <element signature="e#4113#4162#0" expanded="false" />
+            <element signature="e#4170#4273#0" expanded="false" />
+            <element signature="e#5410#5552#0" expanded="false" />
+            <element signature="e#5560#5705#0" expanded="false" />
+            <element signature="e#6007#6205#0" expanded="true" />
+            <element signature="e#6245#6442#0" expanded="true" />
+            <element signature="e#6482#6666#0" expanded="true" />
+            <element signature="e#6497#6579#0" expanded="false" />
+            <element signature="e#6888#7015#0" expanded="true" />
+            <element signature="e#6953#7011#0" expanded="true" />
+            <element signature="e#10081#10123#0" expanded="false" />
+            <element signature="e#10271#10312#0" expanded="false" />
+            <element signature="e#10452#10496#0" expanded="false" />
+            <element signature="e#10636#10680#0" expanded="false" />
+            <element signature="e#10998#11024#0" expanded="false" />
+            <element signature="e#11032#11074#0" expanded="false" />
+            <element signature="e#11161#11189#0" expanded="false" />
+            <element signature="e#11197#11241#0" expanded="false" />
+            <element signature="e#11325#11352#0" expanded="false" />
+            <element signature="e#11365#11391#0" expanded="false" />
+            <element signature="e#11577#11601#0" expanded="false" />
+            <element signature="e#11614#11644#0" expanded="false" />
+            <element signature="e#11791#11870#0" expanded="false" />
+            <element signature="e#13247#13296#0" expanded="false" />
+            <element signature="e#15908#15957#0" expanded="false" />
+            <element signature="e#16003#16036#0" expanded="false" />
+            <element signature="e#16856#16930#0" expanded="false" />
+            <element signature="e#17181#17209#0" expanded="false" />
+            <element signature="e#17624#17676#0" expanded="false" />
+            <element signature="e#18005#18043#0" expanded="false" />
+            <element signature="e#18216#18310#0" expanded="false" />
+            <element signature="e#18346#18461#0" expanded="false" />
+            <element signature="e#18475#18550#0" expanded="false" />
+            <element signature="e#20008#20051#0" expanded="false" />
+            <element signature="e#20126#20178#0" expanded="false" />
+            <element signature="e#20361#20384#0" expanded="false" />
+            <element signature="e#21239#21347#0" expanded="false" />
+            <element signature="e#21321#21342#0" expanded="false" />
+            <element signature="e#21423#21518#0" expanded="false" />
+            <element signature="e#21574#21641#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/superEasel/_apps/graphicsTest.js">
+    <entry file="file://$PROJECT_DIR$/_data/entities.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32744566">
-          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="253" column="1" selection-start-line="253" selection-start-column="1" selection-end-line="253" selection-end-column="1" />
           <folding>
-            <element signature="e#241#737#0" expanded="true" />
-            <element signature="e#255#395#0" expanded="true" />
-            <element signature="e#550#698#0" expanded="true" />
-            <element signature="e#765#897#0" expanded="true" />
-            <element signature="e#929#1234#0" expanded="true" />
-            <element signature="e#1272#1432#0" expanded="true" />
-            <element signature="e#1461#1711#0" expanded="true" />
-            <element signature="e#1751#1937#0" expanded="true" />
-            <element signature="e#2164#2355#0" expanded="true" />
-            <element signature="e#2381#2595#0" expanded="true" />
-            <element signature="e#2626#2790#0" expanded="true" />
-            <element signature="e#2816#2956#0" expanded="true" />
+            <element signature="e#2349#2472#0" expanded="true" />
+            <element signature="e#2381#2469#0" expanded="true" />
+            <element signature="e#2498#2631#0" expanded="true" />
+            <element signature="e#2531#2626#0" expanded="true" />
+            <element signature="e#3248#3299#0" expanded="true" />
+            <element signature="e#3251#3298#0" expanded="true" />
+            <element signature="e#3445#3559#0" expanded="true" />
+            <element signature="e#3579#3685#0" expanded="true" />
+            <element signature="e#3745#3993#0" expanded="true" />
+            <element signature="e#3871#3931#0" expanded="true" />
+            <element signature="e#3935#3991#0" expanded="true" />
+            <element signature="e#4000#4109#0" expanded="true" />
+            <element signature="e#4226#4340#0" expanded="true" />
+            <element signature="e#4804#4870#0" expanded="true" />
+            <element signature="e#4878#4919#0" expanded="true" />
+            <element signature="e#4926#4988#0" expanded="true" />
+            <element signature="e#5001#5103#0" expanded="true" />
+            <element signature="e#5332#5456#0" expanded="true" />
+            <element signature="e#5533#5647#0" expanded="true" />
+            <element signature="e#5655#5721#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/superEasel/_apps/justEaselApps.js">
+    <entry file="file://$PROJECT_DIR$/geo/clip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="352" column="2" selection-start-line="352" selection-start-column="2" selection-end-line="352" selection-end-column="2" />
           <folding>
-            <element signature="e#29#450#0" expanded="true" />
-            <element signature="e#364#416#0" expanded="true" />
-            <element signature="e#472#637#0" expanded="true" />
-            <element signature="e#667#971#0" expanded="true" />
-            <element signature="e#1003#1295#0" expanded="true" />
-            <element signature="e#1151#1292#0" expanded="true" />
-            <element signature="e#1417#1711#0" expanded="true" />
-            <element signature="e#1738#2168#0" expanded="true" />
-            <element signature="e#1976#2165#0" expanded="true" />
-            <element signature="e#2198#2348#0" expanded="true" />
-            <element signature="e#2312#2345#0" expanded="true" />
-            <element signature="e#2373#3796#0" expanded="true" />
-            <element signature="e#2389#2437#0" expanded="true" />
-            <element signature="e#3826#5593#0" expanded="true" />
-            <element signature="e#3853#4163#0" expanded="true" />
-            <element signature="e#4619#4622#0" expanded="false" />
-            <element signature="e#4747#4750#0" expanded="false" />
-            <element signature="e#5615#5727#0" expanded="true" />
-            <element signature="e#5747#5888#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/superEasel/easel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.148149">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="168" selection-end-column="6" />
-          <folding>
-            <element signature="e#98#112#0" expanded="false" />
-            <element signature="e#119#143#0" expanded="false" />
-            <element signature="e#1189#1218#0" expanded="false" />
-            <element signature="e#1245#1258#0" expanded="false" />
-            <element signature="e#1270#1283#0" expanded="false" />
-            <element signature="e#1323#1338#0" expanded="false" />
-            <element signature="e#1465#1516#0" expanded="false" />
-            <element signature="e#1905#1920#0" expanded="false" />
-            <element signature="e#1934#1949#0" expanded="false" />
-            <element signature="e#1960#1973#0" expanded="false" />
-            <element signature="e#2032#2208#0" expanded="true" />
-            <element signature="e#2251#2266#0" expanded="false" />
-            <element signature="e#2278#2304#0" expanded="false" />
-            <element signature="e#2524#2550#0" expanded="false" />
-            <element signature="e#2570#2634#0" expanded="false" />
-            <element signature="e#2646#2701#0" expanded="false" />
-            <element signature="e#2866#2892#0" expanded="false" />
-            <element signature="e#2922#3008#0" expanded="false" />
-            <element signature="e#2975#2993#0" expanded="false" />
-            <element signature="e#3035#3053#0" expanded="false" />
-            <element signature="e#3065#3083#0" expanded="false" />
-            <element signature="e#3096#3116#0" expanded="false" />
-            <element signature="e#3127#3146#0" expanded="false" />
-            <element signature="e#3235#3249#0" expanded="false" />
-            <element signature="e#3252#3260#0" expanded="false" />
-            <element signature="e#3324#3554#0" expanded="true" />
-            <element signature="e#3345#3388#0" expanded="false" />
-            <element signature="e#3941#4027#0" expanded="false" />
-            <element signature="e#3969#3991#0" expanded="false" />
-            <element signature="e#4000#4023#0" expanded="false" />
-            <element signature="e#4081#4113#0" expanded="false" />
-            <element signature="e#4285#4315#0" expanded="false" />
-            <element signature="e#4897#4934#0" expanded="false" />
-            <element signature="e#5076#5111#0" expanded="false" />
-            <element signature="e#5239#5274#0" expanded="false" />
-            <element signature="e#5407#5439#0" expanded="false" />
-            <element signature="e#5576#5607#0" expanded="false" />
-            <element signature="e#5740#5768#0" expanded="false" />
-            <element signature="e#5889#5919#0" expanded="false" />
-            <element signature="e#6026#6051#0" expanded="false" />
-            <element signature="e#6120#6153#0" expanded="false" />
-            <element signature="e#6230#6264#0" expanded="false" />
-            <element signature="e#6363#6396#0" expanded="false" />
-            <element signature="e#6409#6425#0" expanded="false" />
-            <element signature="e#6438#6454#0" expanded="false" />
-            <element signature="e#7522#7572#0" expanded="false" />
-            <element signature="e#7580#7614#0" expanded="false" />
-            <element signature="e#7698#7741#0" expanded="false" />
-            <element signature="e#7755#7878#0" expanded="false" />
-            <element signature="e#7770#7792#0" expanded="false" />
-            <element signature="e#7811#7833#0" expanded="false" />
-            <element signature="e#7852#7874#0" expanded="false" />
-            <element signature="e#8650#8686#0" expanded="false" />
-            <element signature="e#9935#9983#0" expanded="false" />
-            <element signature="e#10005#10038#0" expanded="false" />
+            <element signature="e#7247#7530#0" expanded="true" />
+            <element signature="e#7740#7794#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,27 +568,38 @@
     <entry file="file://$PROJECT_DIR$/superEasel/stage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#178#207#0" expanded="true" />
-            <element signature="e#233#284#0" expanded="true" />
-            <element signature="e#703#793#0" expanded="true" />
-            <element signature="e#835#1065#0" expanded="true" />
-            <element signature="e#1085#1388#0" expanded="true" />
-            <element signature="e#1149#1273#0" expanded="true" />
-            <element signature="e#1282#1354#0" expanded="true" />
-            <element signature="e#1432#1634#0" expanded="true" />
+            <element signature="e#470#731#0" expanded="false" />
+            <element signature="e#856#904#0" expanded="false" />
+            <element signature="e#1095#1123#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/$routes$.js">
+    <entry file="file://$PROJECT_DIR$/superEasel/_apps/justEaselApps.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52492046">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.8231441">
+          <caret line="252" column="6" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
           <folding>
-            <element signature="e#496#591#0" expanded="true" />
-            <element signature="e#1021#1174#0" expanded="true" />
+            <element signature="e#29#445#0" expanded="true" />
+            <element signature="e#359#411#0" expanded="true" />
+            <element signature="e#467#632#0" expanded="true" />
+            <element signature="e#662#966#0" expanded="true" />
+            <element signature="e#998#1287#0" expanded="true" />
+            <element signature="e#1143#1284#0" expanded="true" />
+            <element signature="e#1409#1702#0" expanded="true" />
+            <element signature="e#1729#2158#0" expanded="true" />
+            <element signature="e#1966#2155#0" expanded="true" />
+            <element signature="e#2188#2338#0" expanded="true" />
+            <element signature="e#2302#2335#0" expanded="true" />
+            <element signature="e#2363#3786#0" expanded="true" />
+            <element signature="e#2379#2427#0" expanded="true" />
+            <element signature="e#3816#5585#0" expanded="true" />
+            <element signature="e#3843#4154#0" expanded="true" />
+            <element signature="e#4611#4614#0" expanded="false" />
+            <element signature="e#4739#4742#0" expanded="false" />
+            <element signature="e#5607#5719#0" expanded="true" />
           </folding>
         </state>
       </provider>

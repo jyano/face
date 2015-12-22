@@ -2,12 +2,9 @@
 
 
 CIR2 = HDC = function () {
-	st = _$St()
-	
-	
+	st = $St()
 	//return
 	h = $Sh()
-	
 	h.graphics.f('blue')
 	h.dc(100, 100, 100)
 	
@@ -17,6 +14,7 @@ CIR2 = HDC = function () {
 	st.A(h).u()
 	
 	return
+	
 	cv = $.c(1000, 500).A()
 	st = new cjs.S(cv[0])
 	st.t()//.b()
@@ -69,7 +67,7 @@ CIR1 = CJSCIR = function () {
 }
 
 
-CIR3=DRG = GOB = function () {st = _$St().t()//good gx = $Sh().a2(st).graphics
+CIR3=DRG = GOB = function () {st =  $St() //good gx = $Sh().a2(st).graphics
 	//good gx = st.Sh().graphics
 	h = st.Sh().drag()
 	gx = h.graphics.SS()
@@ -87,7 +85,7 @@ CIR4 = HCR = function () {
 	gx = $Gx().f(cjs.rgb(255, 0, 0)).ss(10).s('white')
 	gx.dc(0, 0, 100).dc(100, 0, 100)
 	gx.s('blue').f('green').dc(0, 300, 100)
-	st = _$St().A($Sh(gx).XY(300, 100)).u()
+	st = $St().A($Sh(gx).XY(300, 100)).u()
 	h = $Sh()
 	h.graphics.f('blue')
 	//h.cir(100, 100, 100)
@@ -97,7 +95,7 @@ CIR4 = HCR = function () {
 }
 
 CIR100=GX1 = function () {
-	st = _$St().t()
+	st = $St().t()
 	//good gx = $Sh().a2(st).graphics
 	//good gx = st.Sh().graphics
 	gx = st.Gx()
@@ -181,13 +179,13 @@ CIR = SIR = function () {
 }
 CIR99 = CIRCS8 = function () {
 	CIRCTEST8 = function () {
-		St()
+		$St()
 		s.Sh().f('b').s('g').cir({r: 100, c: 'b', C: 'X', l: 20, lf: 1}, //why cant set lf to {}?
 				[{x: 250, y: 300}, {x: 450, y: 300}, {x: 250, y: 500}])
 		s.Sh().f('b').s('g').cir({C: 'X', lf: {X1: 650, X2: 220, Y1: 950, Y2: 520}, r: 100},
 				[{x: 750, y: 300}, {x: 950, y: 300}, {x: 750, y: 500}])
 	}//D better as wap
-	St()
+	$St()
 	h.c('b', 'r', 10).XY(-100, -100)
 	h.dc(200, 200, 50).dc(400, 200, 50).dc(600, 200, 50)
 	/*  h.dc(300,300,50)
@@ -250,7 +248,7 @@ POL = function () {
 			._pol(vs1)
 }
 REC  = function () {
-	st = _$St().t()
+	 $St().t()
 	h = st.Sh().drag()
 	gx = h.graphics
 	gx.FS()._dr()

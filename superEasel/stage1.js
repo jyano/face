@@ -11,12 +11,18 @@ __$St = function (cv) {
 	return new cjs.Stage(cv)
 }
 
+$.c0 = function () {
+	$l('$.c0')
+	var g = G(arguments)
+	$.c.apply($, g.A ? g.f : g)[0]
+}
 
 _$StCv = function (cv) {
 	return __$St(
-			$.c.apply($, arguments)[0]
+			$.c0.apply($, arguments) 
 	)
 }
+
 $StCv = function () {
 	var g = G(arguments), o, st
 	st = A(g.f) ? __$St(g.f[0]) :

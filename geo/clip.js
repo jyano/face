@@ -349,5 +349,5 @@ pD.maybeTl = function (xy) {
 	return xy ? this.tl(xy) : this
 	//= pD.maybeHere	
 }
- 
- 
+//p1 = $pD(vs1);
+//p2 = $pD(vs2)

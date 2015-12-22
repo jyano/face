@@ -16,8 +16,10 @@ $.c = $.can = function (c, width, h, x, y) {
 		el.drag()
 	}
 	el.A().al(.8)
-	return superCanvas(el)
+	 el = superCanvas(el)
+	return  el
 }
+
 function superCanvas(el) {
 	el = $(el)
 	//to be called internally by $.c //works on FIRST canvas in jquery obj
@@ -168,8 +170,9 @@ function _superCanvas(el) {
 		}
 		$.post('/img', pams, func)
 	}
-	el.img = $.img()
-	el.img.src(el.toDataURL())
+	//el.img = $.img()
+	//el.img.src(el.toDataURL())
+	
 	el.dots = function () {
 		el.copy()
 		el.DOTS = []
@@ -338,14 +341,14 @@ function _superCanvas(el) {
 			scaleNum *= .9
 		})
 	}
-	//_superCanvasGradient(el)
-	_superCanvasEvents(el)
-	_superCanvasShadow(el)
-	_superCanvasPixel(el)
-	_superCanvasText(el)
-	_superCanvasTransform(el)
+ _superCanvasGradient(el)
+ 	_superCanvasEvents(el)
+ 	_superCanvasShadow(el)
+ 	_superCanvasPixel(el)
+ 	_superCanvasText(el)
+	 _superCanvasTransform(el)
 	//_superCanvasMug(el)
-	_superCanvasPath(el)
+ 	_superCanvasPath(el)
 	cv.sun = function (a, b, s) {
 		s = s || 1;
 		this.rG(
