@@ -1,4 +1,4 @@
-$L()
+$L('bitmap','loader')
 mx.aTf = function (x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
 	x = N(x, 0)
 	y = N(y, 0)
@@ -393,29 +393,6 @@ function bitmap(){
 	}
 }
 function loader(){
-	function later() {
-		cjs.mf = cjs.manifest = function () {
-			var g = G(arguments)
-			var mf = []
-			_.e(g, function (i) {
-				mf.push($it(i))
-			})
-			return mf
-		}
-		cjs.handleFileLoad = function (e) {
-			if (e.item.type == "image") {
-				images[e.item.id] = e.result
-			}
-		}
-		cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
-			alert('manifest')
-			return cjs.mf.apply(null, _.m(a.images, function (i) {
-						return _.crs(i)
-					})
-			)
-		}
-	}
- 
 	$Ld = $ld = cjs.lQ = Q = function () {
 
 //starts off as a fn (obviously)
@@ -504,7 +481,6 @@ function loader(){
 			return this
 		}
 	}
-	
 	ld.jQuery = ld.$ = function (i) {
 		return $(this.i(i))
 	}
@@ -523,9 +499,31 @@ function loader(){
 		this.A(b);
 		return b
 	}
-}
- 
+	function later() {
+		cjs.mf = cjs.manifest = function () {
+			var g = G(arguments)
+			var mf = []
+			_.e(g, function (i) {
+				mf.push($it(i))
+			})
+			return mf
+		}
+		cjs.handleFileLoad = function (e) {
+			if (e.item.type == "image") {
+				images[e.item.id] = e.result
+			}
+		}
+		cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
+			alert('manifest')
+			return cjs.mf.apply(null, _.m(a.images, function (i) {
+						return _.crs(i)
+					})
+			)
+		}
+	}
+} 
 function _apps(){
+
 	$Ldr('LAYS', function (q) {
 		me = q.bm('me', $St()).scXY(3);
 		guy = q.bm('guy', st).scXY(.5).dg()
@@ -824,5 +822,10 @@ function _apps(){
 			Q.bm("guy", st, 300, 300)
 		}).mf("me", guyIt)
 	}
+	$.me('ME', function (me) {
+		gx = $St().Gx()
+				.SS().F().dc(200, 200, 200).S().dc(400, 400, 200)
+				.S()._bf(me).dc(400, 400, 200)
+	})
 }
  

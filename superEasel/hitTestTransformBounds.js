@@ -1236,3 +1236,761 @@ dO.lTL = function () {
 dO.lTG = function () {
 	return this.localToGlobal.apply(this, arguments)
 }
+function _apps(){
+	WINDING = function () {
+		cjs.Shape.prototype.same = function () {
+			return $h(this)
+		} //h.copy
+		cjs.manifest = function (func) {
+			var q = cjs.loadQueue()
+			q.complete(
+					function () {
+						func(function (getResult) {
+							return q.getResult(getResult)
+						})
+					})
+					.manifest([{
+						id: "chicks", src: "/chicks.png"
+					},
+						{id: "me", src: "/me.png"},
+						{id: "guy", src: "/guy.png"},
+						{id: "sun", src: "/sun.png"}])
+		}
+		z()
+		cjs.worldsMostInterestingShape = function () {
+			var h = cjs.shape()
+			h.graphics.f("pink").dr(20, 20, 450, 360)
+					.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
+					.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
+			return h
+		}
+		cjs.manifest(function (q) {
+			$.hdr().A($.h1('grahics winding')).A()
+			$.d().A($.c(960, 400)
+					.id("testCanvas"))
+			st = s = stage = $St(["testCanvas"])
+			h = shape = cjs.worldsMostInterestingShape().a2(stage).drag()
+			cjs.bm = function (img) {
+				var g = G(arguments), img = g[0],
+						bm = new cjs.Bitmap(img)
+				if (g.N) {
+					bm.rC()
+				}
+				return bm
+			} //warning: can't yet change to $Bm!!
+			bm = cjs.bm(q("chicks"), '-')
+					.a2(s).X(470).drag()
+			bm.mask = h.same().X(470)
+		})
+		function err() {
+			//Uncaught TypeError: Cannot read property 'image' of undefined
+		}
+	}
+	POPSPIN = function () {
+		z()
+		angle = 0
+		img = $.img('me', handleImageLoad)[0]
+		function stop() {
+			cjs.Ticker.removeEventListener("tick", tick)
+		}
+		
+		function handleImageLoad() {
+			canvas = $.c('p', 960, 400).id("testCanvas").A()
+			stage = $St(canvas)
+			stage.autoClear = true;
+			bmp = new cjs.Bitmap(img)
+					.rXY(img.width >> 1, img.height >> 1)
+					.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+			stage.A(bmp).update();
+			cjs.Ticker.timingMode = cjs.Ticker.RAF
+			cjs.tick(tick)
+		}
+		
+		function tick(event) {
+			angle += 0.01
+			var value = Math.sin(angle) * 360
+			bmp.rt(value).sXY(value / 360)
+			stage.update(event)
+		}
+	}
+	MX00 = M2D = CJSM2D = function () {
+		
+		/*
+		 Matrix2D Class
+		 Defined in: Matrix2D:41
+		 Module: EaselJS
+		 Represents an affine transformation matrix, and provides tools for constructing and concatenating matrices.
+		
+		 This matrix can be visualized as:
+		
+		 [ a  c  tx
+		 b  d  ty
+		 0  0  1  ]
+		 Note the locations of b and c.
+		
+		 Constructor
+		 Matrix2D ( [a=1]  [b=0]  [c=0]  [d=1]  [tx=0]  [ty=0] )
+		 Defined in Matrix2D:41
+		 Parameters:
+		
+		 [a=1] Number optional
+		 Specifies the a property for the new matrix.
+		
+		 [b=0] Number optional
+		 Specifies the b property for the new matrix.
+		
+		 [c=0] Number optional
+		 Specifies the c property for the new matrix.
+		
+		 [d=1] Number optional
+		 Specifies the d property for the new matrix.
+		
+		 [tx=0] Number optional
+		 Specifies the tx property for the new matrix.
+		
+		 [ty=0] Number optional
+		 Specifies the ty property for the new matrix.
+		
+		 IndexMethodsProperties
+		 Item Index
+		 Methods
+		
+		 append
+		 appendMatrix
+		 appendTransform
+		 clone
+		 copy
+		 decompose
+		 equals
+		 identity
+		 invert
+		 isIdentity
+		 prepend
+		 prependMatrix
+		 prependTransform
+		 rotate
+		 scale
+		 setValues
+		 skew
+		 toString
+		 transformPoint
+		 translate
+		 Properties
+		
+		 a
+		 b
+		 c
+		 d
+		 DEG_TO_RAD static
+		 identity static
+		 tx
+		 ty
+		 */
+		m = $Mx()
+		$l(m)
+		$St().bm('me', function (bm) {
+			b = bm.XY(400, 200)
+			p = b.getConcatenatedDisplayProps();
+			$l(p)
+			cm = b.getConcatenatedMatrix()
+			$l(cm)
+		})
+	}
+	LAYYS = USINGLAYERSINEASEL9 = function () {
+		z()
+		s = St(500).A()
+		s.bm('me', function (bm) {
+			b = bm
+			bm.sXY(3)
+			drawCar()
+			s.tick(function () {
+				b.x(-1 * (g.x() * 2))
+				b.y(-1 * (g.y() * 2))
+			})
+		})
+		bt = $.button('safd', function () {
+			s.sXY(2)
+		}).A()
+		function drawCar() {
+			s.bm('guy', function (bm) {
+				g = bm
+				bm.sXY(.5)
+				SL(bm)
+			})
+		}
+		
+		USINGLAYERSINEASEL9 = function () {
+			z()
+			s = St(500).A()
+			s.bm('me', function (bm) {
+				b = bm
+				bm.sXY(3)
+				drawCar()
+				s.tick(function () {
+					b.x(-1 * (g.x() * 2))
+					b.y(-1 * (g.y() * 2))
+				})
+			})
+			bt = $.button('safd', function () {
+				s.sXY(2)
+			}).A()
+			function drawCar() {
+				s.bm('guy', function (bm) {
+					g = bm
+					bm.sXY(.5)
+					SL(bm)
+				})
+			}
+		}
+	}
+	MGA = MARGINAUTO = function () {
+		o = outer = $.div('b', 500, 500).A()
+		o.A(i = inner = $.div('r', 100, 100))
+		i.mar('auto')
+		o.mar('auto')
+	}
+	ELM = ELEMENTS = function () {
+		z()
+		div = $.div('red', 400, 400).P('a').A().A($.input())
+		s = stage = createjs.stage('yellow', 1000).tick().A()
+		elem = new createjs.DOMElement(div[0])
+		//stage.A(el)
+		// tw(el, [{x:300,y:300},2000])
+		// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
+	}
+	MENTS = function () {
+		z()
+		div = $.div('red', 400, 400).P('a').A().A($.input())
+		s = stage = createjs.stage('yellow', 1000).tick().A()
+		elem = new createjs.DOMElement(div[0])
+		//stage.A(el)
+		// tw(el, [{x:300,y:300},2000])
+		// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
+	}
+	EASELPHYS = function () {
+		i = cjs.DisplayObject.prototype
+		i.vX = function (a) {
+			var g = G(arguments);
+			a = g[0]
+			if (g.p) {
+				this.vx = this.vx + a;
+				return this
+			}
+			else if (g.n) {
+				if (N(a)) {
+					this.vx = this.vx - a
+				}
+				else {
+					this.vx = this.vx * -1
+				}
+				return this
+			}
+			else if (U(g[0])) {
+				return this.vx
+			}
+			this.vx = a;
+			return this
+		}
+		i.vY = function (a) {
+			var g = G(arguments);
+			a = g[0]
+			if (g.p) {
+				this.vy = this.vy + a;
+				return this
+			}
+			else if (g.n) {
+				if (N(a)) {
+					this.vy = this.vy - a
+				}
+				else {
+					this.vy = this.vy * -1
+				}
+				return this
+			}
+			else if (U(g[0])) {
+				return this.vy
+			}
+			this.vy = a
+			return this
+		}
+		i.jX = function (a) {
+			var g = G(arguments);
+			a = g[0]
+			if (g.p) {
+				this.vx = this.vx + a;
+				return this
+			}
+			else if (g.n) {
+				if (N(a)) {
+					this.vx = this.vx - a
+				}
+				else {
+					this.vx = this.vx * -1
+				}
+				return this
+			}
+			else if (U(g[0])) {
+				return this.vx
+			}
+			this.vx = a;
+			return this
+		}
+		i.jY = function (a) {
+			var g = G(arguments);
+			a = g[0]
+			if (g.p) {
+				this.vy = this.vy + a;
+				return this
+			}
+			else if (g.n) {
+				if (N(a)) {
+					this.vy = this.vy - a
+				}
+				else {
+					this.vy = this.vy * -1
+				}
+				return this
+			}
+			else if (U(g[0])) {
+				return this.vy
+			}
+			this.vy = a
+			return this
+		}
+		i.move = function () {
+			return this.X(this.vx || 0, '+').Y(this.vy || 0, '+')
+		}
+		i.go = function () {
+			$t(this.move())
+		}
+		$St().bm('me', function (b) {
+			b.go(10, 10)
+			$.t(function () {
+				$l(b.inStage())
+			})
+		})
+	}
+	HGXX = function () {
+		W()
+		h = w.i.h()
+		h.graphics.ss(40, "round", "round")
+		h.C("rgba(0,0,0,0.2)").mt(100, 100)
+		h.graphics.curveTo(200, 500, 600, 300)
+	}
+	LAYZ = PLAX = function () {
+		st = $St(500)
+		st.bm('me', function (bm) {
+			me = bm.sXY(.5)
+			st.bm('guy', function (bm1) {
+				guy = bm1.sXY(.5).drag()//SL(bm)
+				$t(function () {
+					me.X(guy.X() * 1.6).Y(guy.Y() * 1.6)
+				})
+			})
+		})
+		$.bt('safd', function () {
+			st.sXY(2)
+		})
+	}
+	CVTXX = function () {
+		return $.d().A($.c(960, 400).id("testCanvas"))
+	}
+	ST22 = function () {
+		$.header().K("EaselJS").A(
+				$.h1('nextStage'),
+				$.p("This is an example")).A()
+		c1 = $.canvas('y', 540, 260).id('canvasOne')//.P('a').top(0).right(0).bor('1px solid grey').A() // background: 'none',
+		c2 = $.canvas('o', 540, 260).id('canvasTwo')//.P('a').left(0).bottom(0).bor('1px solid grey').A()// background: 'none'
+		$.div(960, 400).K("canvasDiv").P('relative').A(c1, c2).A()
+		bottomStage = stageSetup("canvasOne", handleEvt).N("bottomStage").eMO().A(makeSquare(30, 95, "red", handleEvt))
+		//bottomStage.enableDOMEvents(false);	// you can set this if the bottom stage is completely covered by the top stage, to reduce the number of active event listeners.
+		bottomStage.text = new cjs.Text("", "15px monospace", "#111").XY(195, 30).lineH(16.7).a2(bottomStage)
+		topStage = stageSetup("canvasTwo", handleEvt)
+				.N("topStage").eMO()
+				.A(makeSquare(375, 30, "pink", handleEvt))
+				.next(bottomStage)
+		topStage.text = new cjs.Text("", "15px monospace", "#111").XY(30).lineH(16.7).a2(topStage)
+		function stageSetup(canvasName, handler) {
+			s = stage = $St(canvasName)
+			//stage.addEventListener("stagemousemove", handler);	// too noisy
+			_.each(["stagemousedown", "stagemouseup", "mouseleave", "mouseenter"], function (ev) {
+				s.on(ev, handler)
+			})
+			s.log = []
+			return s
+		}
+		
+		function makeSquare(x, y, color, handler) {
+			var shape = cjs.shape().N('square').XY(x, y)
+			shape.graphics.f(color).dr(0, 0, 135, 135)
+			var cont = cjs.container().N('container').A(shape)
+			_.each(["mouseover", "mouseout", "dblclick", "click"], function (ev) {
+				cont.on(ev, handler)
+			})
+			cont.cursor = "pointer"
+			return cont
+		}
+		
+		function handleEvt(evt) {
+			var target = evt.target,
+					stage = target.getStage(),
+					log = stage.log
+			log.push(evt.type + " on " + target.name + " x:" + evt.stageX.toFixed(0)
+			+ " y:" + evt.stageY.toFixed(0))
+			while (log.length > 12) {
+				log.shift()
+			}
+			stage.text.text = log.join("\n")
+			if (evt.type == "mouseover") {
+				target.alpha = 0.5
+			}
+			if (evt.type == "mouseout") {
+				target.alpha = 1
+			}
+		}
+		
+		/*
+		
+		 $.header().K("EaselJS").A(
+		 $.h1('nextStage'),
+		 $.p("This is an example")).A()
+		 c1 = $.canvas('y', 540, 260).id('canvasOne').P('a').top(0)
+		 .right(0).bor('1px solid grey').A() // background: 'none',
+		 c2 = $.canvas('o', 540, 260).id('canvasTwo').P('a').left(0).bottom(0).bor('1px solid grey').A()// background: 'none'
+		 $.div(960, 400).K("canvasDiv").P('relative').A(c1, c2).A()
+		 bottomStage = stageSetup("canvasOne", handleEvt).N("bottomStage").eMO().A(makeSquare(30, 95, "red", handleEvt))
+		 //bottomStage.enableDOMEvents(false);	// you can set this if the bottom stage is completely covered by the top stage, to reduce the number of active event listeners.
+		 bottomStage.text = new cjs.Text("", "15px monospace", "#111").XY(195, 30).lineH(16.7).a2(bottomStage)
+		 topStage = stageSetup("canvasTwo", handleEvt)
+		 .N("topStage").eMO()
+		 .A(makeSquare(375, 30, "pink", handleEvt))
+		 .next(bottomStage)
+		 topStage.text = new cjs.Text("", "15px monospace", "#111").XY(30).lineH(16.7).a2(topStage)
+		 function stageSetup(canvasName, handler) {
+		 s = stage = new cjs.Stage(canvasName).tick()
+		 //stage.addEventListener("stagemousemove", handler);	// too noisy
+		 _.each(["stagemousedown", "stagemouseup", "mouseleave", "mouseenter"], function (ev) {
+		 s.on(ev, handler)
+		 })
+		 s.log = []
+		 return s
+		 }
+		
+		 function makeSquare(x, y, color, handler) {
+		 var shape = cjs.shape().N('square').XY(x, y)
+		 shape.graphics.f(color).dr(0, 0, 135, 135)
+		 var cont = cjs.container().N('container').A(shape)
+		 _.each(["mouseover", "mouseout", "dblclick", "click"], function (ev) {
+		 cont.on(ev, handler)
+		 })
+		 cont.cursor = "pointer"
+		 return cont
+		 }
+		
+		 function handleEvt(evt) {
+		 var target = evt.target,
+		 stage = target.getStage(),
+		 log = stage.log
+		 log.push(evt.type + " on " + target.name + " x:" + evt.stageX.toFixed(0)
+		 + " y:" + evt.stageY.toFixed(0))
+		 while (log.length > 12) {
+		 log.shift()
+		 }
+		 stage.text.text = log.join("\n")
+		 if (evt.type == "mouseover") {
+		 target.alpha = 0.5
+		 }
+		 if (evt.type == "mouseout") {
+		 target.alpha = 1
+		 }
+		 }
+		 */
+	}
+	DRG = function () {
+		h = $St().h(300, 300)
+		h.bf('me', function (h) {
+			h.dc(300).drag()
+		})
+	}
+	DISTRACT = function () {
+		z()
+		$.d().A($.c(960, 400).id("testCanvas"))
+		cjs.sharedCode()
+		cjs.utils()
+		cjs.slider()
+		examples.showDistractor()
+		st = new cjs.Stage("testCanvas")
+	}
+	XX6 = GXTX = GRAPHICSTEST = function () {
+		stage = cjs.stage(800, 500).A()
+		canvas = stage.canvas
+		// grab canvas width and height for later calculations:
+		w = canvas.width
+		h = canvas.height
+		img = $.img('me', layout)[0]
+		function layout() {
+			var arr = [createStar, createHex, createLineTo, createRadialGradientFill,
+				createEllipse, createRectGradientFill, createBitmapFill, createRoundRect]
+			var padding = 5
+			var _width = 155
+			var _height = 155
+			var cols = 4
+			var space = 0
+			var border = createBorder();
+			_.times(arr.length, function (i) {
+				var tile = arr[i]()
+				tile.x = 42 + (_width + padding) * (i % cols)
+				tile.y = 42 + (i / cols | 0) * (_height + padding)
+				stage.A(tile)
+			})
+			stage.A(border)
+			stage.update()
+		}
+		
+		function createBorder() {
+			var s = cjs.shape()
+			s.graphics.beginBitmapStroke(img).setStrokeStyle(32).dr(20, 20, 920, 360)
+			return cjs.container().A(s)
+		}
+		
+		function createBitmapFill() {
+			var container = createTile();
+			var s = cjs.shape().XY(12, 10)
+			var mtx = new createjs.Matrix2D().rotate(1)
+			s.graphics.beginBitmapFill(img, null, mtx).setStrokeStyle(8)
+					.beginRadialGradientStroke(["#FFF", "#000"], [0, 1], 0, 0, 0, 0, 30, 130).dr(0, 0, 130, 130)
+			return cjs.container().A(s)
+		}
+		
+		function createRectGradientFill() {
+			var s = cjs.shape().XY(12, 10)
+			s.graphics.beginLinearGradientFill(["#FFF", "#000"], [0, 1], 0, 0, 0, 130).dr(0, 0, 130, 130)
+			return createTile().A(s)
+		}
+		
+		function createEllipse() {
+			var s = cjs.shape().XY(40, 10)
+			s.graphics.f(createjs.Graphics.getRGB(0, 0x66, 0x99, 0.5))
+					.setStrokeStyle(4).beginLinearGradientStroke(["#F00", "#000"], [0, 1], 0, 0, 70, 140)
+					.drawEllipse(0, 0, 70, 140, 8)
+			return createTile().A(s)
+		}
+		
+		function createRadialGradientFill() {
+			var s = cjs.shape().XY(80)
+			s.graphics.ss(8).beginStroke("#f0f")
+					.beginRadialGradientFill(["#FFF", "#0FF"], [0, 1], 0, 0, 0, 0, 0, 40).dc(0, 0, 40)
+			return createTile().A(s)
+		}
+		
+		function createLineTo() {
+			var s = cjs.shape()
+			s.graphics.setStrokeStyle(16, "round", "round").beginStroke("#f90")
+					.moveTo(20, 10).lineTo(90, 90).lineTo(90, 140)
+			return createTile().A(s)
+		}
+		
+		function createHex() {
+			var s = cjs.shape().XY(80, 40)
+			s.graphics.beginFill("pink")
+					.drawPolyStar(0, 0, 40, 6)
+					.drawPolyStar(0, 75, 40, 6)
+					.drawPolyStar(45, 45, 20, 6)
+			return createTile().A(s)
+		}
+		
+		function createStar() {
+			var s = cjs.shape().XY(80, 85)
+			s.graphics.setStrokeStyle(1).beginStroke(cjs.Graphics.getRGB(255, 255, 0))
+					.beginFill("yellow").endStroke().drawPolyStar(0, 0, 80, 5, 0.9, -90)
+			return createTile().A(s)
+		}
+		
+		function createRoundRect() {
+			var s = cjs.shape().XY(12)
+			s.graphics.setStrokeStyle(6).beginStroke("red").beginFill("green").drawRoundRect(0, 0, 130, 130, 30);
+			return createTile().A(s)
+		}
+		
+		function createTile() {
+			var bg = cjs.shape()
+			bg.graphics.beginFill('#CCCCCC').dr(0, 0, 155, 155).endFill()
+			bg.alpha = 0.25
+			return cjs.container().A(bg)
+		}
+	}
+	DSTR = DISTRACTORDOESNOTHING = function () {
+		st = stage = $St()
+		cjs.utils()
+		cjs.slider()
+		examples.showDistractor()
+	}
+	TRF = TRANSF = function () {
+		z()
+		degToRad = Math.PI / 180;
+		cjs.testCanvas()
+		//cjs.sharedCode()
+		cjs.utils()
+		cjs.slider()
+		examples.showDistractor()
+		stage = new createjs.Stage("testCanvas")
+		stage.enableMouseOver();
+		createjs.Touch.enable(stage);
+		stage.mouseMoveOutside = true;
+		var img = new Image();
+		img.onload = handleImageLoad;
+		img.src = "/chicks.png";
+		function handleImageLoad(evt) {
+			examples.hideDistractor();
+			var img = evt.target, imgWidth = img.width, imgHeight = img.height, sliceCount = 6;
+			sliceWidth = imgWidth / sliceCount;
+			sliceContainer = new createjs.Container();
+			sliceContainer.x = stage.canvas.width / 2;
+			for (var i = 0; i < sliceCount; i++) {
+				var slice = new createjs.Bitmap(img);
+				slice.sourceRect = new createjs.Rectangle(sliceWidth * i, 0, sliceWidth, imgHeight);
+				slice.cache(0, 0, sliceWidth, imgHeight);
+				slice.filters = [new createjs.ColorMatrixFilter(new createjs.ColorMatrix())];
+				sliceContainer.addChild(slice);
+			}
+			var slider = new Slider(0, 50, 200, 50).set({x: 20, y: 330, value: 25});
+			slider.on("change", handleSliderChange, this);
+			stage.addChild(sliceContainer, slider);
+			updateEffect(slider.value);
+		}
+		
+		function handleSliderChange(evt) {
+			updateEffect(evt.target.value);
+		}
+		
+		function updateEffect(value) {
+			var l = sliceContainer.getNumChildren();
+			for (var i = 0; i < l; i++) {
+				var slice = sliceContainer.getChildAt(i);
+				slice.y = Math.sin(value * degToRad) * -sliceWidth / 2;
+				if (i % 2) {
+					slice.skewY = value;
+				} else {
+					slice.skewY = -value;
+					slice.y -= sliceWidth * Math.sin(slice.skewY * degToRad);
+				}
+				slice.x = sliceWidth * (i - l / 2) * Math.cos(slice.skewY * degToRad);
+				slice.filters[0].matrix//.setColor(Math.sin(slice.skewY * degToRad) * -80);
+				slice.updateCache();
+			}
+			stage.update();
+		}
+		
+		TRAN1 = function () {
+			degToRad = Math.PI / 180;
+			cjs.testCanvas()
+			cjs.utils()
+			cjs.slider()
+			examples.showDistractor()
+			stage = new createjs.Stage("testCanvas")
+			stage.enableMouseOver();
+			createjs.Touch.enable(stage);
+			stage.mouseMoveOutside = true;
+			var img = new Image();
+			img.onload = handleImageLoad;
+			img.src = "/chicks.png";
+			function handleImageLoad(evt) {
+				examples.hideDistractor();
+				var img = evt.target, imgWidth = img.width, imgHeight = img.height, sliceCount = 6;
+				sliceWidth = imgWidth / sliceCount;
+				sliceContainer = new createjs.Container();
+				sliceContainer.x = stage.canvas.width / 2;
+				for (var i = 0; i < sliceCount; i++) {
+					var slice = new createjs.Bitmap(img);
+					slice.sourceRect = new createjs.Rectangle(sliceWidth * i, 0, sliceWidth, imgHeight);
+					slice.cache(0, 0, sliceWidth, imgHeight);
+					slice.filters = [new createjs.ColorMatrixFilter(new createjs.ColorMatrix())];
+					sliceContainer.addChild(slice);
+				}
+				var slider = new Slider(0, 50, 200, 50).set({x: 20, y: 330, value: 25});
+				slider.on("change", handleSliderChange, this);
+				stage.addChild(sliceContainer, slider);
+				updateEffect(slider.value);
+			}
+			
+			function handleSliderChange(evt) {
+				updateEffect(evt.target.value);
+			}
+			
+			function updateEffect(value) {
+				var l = sliceContainer.getNumChildren();
+				for (var i = 0; i < l; i++) {
+					var slice = sliceContainer.getChildAt(i);
+					slice.y = Math.sin(value * degToRad) * -sliceWidth / 2;
+					if (i % 2) {
+						slice.skewY = value;
+					} else {
+						slice.skewY = -value;
+						slice.y -= sliceWidth * Math.sin(slice.skewY * degToRad);
+					}
+					slice.x = sliceWidth * (i - l / 2) * Math.cos(slice.skewY * degToRad);
+					slice.filters[0].matrix//.setColor(Math.sin(slice.skewY * degToRad) * -80);
+					slice.updateCache();
+				}
+				stage.update();
+			}
+		}
+	}
+	TFSP = TFSPIN = TRANSFORMSIMPLE = function () {
+		z()
+		angle = 0
+		img = $.img('me', handleImageLoad)[0]
+		function stop() {
+			cjs.Ticker.removeEventListener("tick", tick)
+		}
+		
+		function handleImageLoad() {
+			canvas = $.canvas('p', 960, 400).id("testCanvas").A()
+			stage = cjs.stage(canvas)
+			stage.autoClear = true;
+			bmp = new createjs.Bitmap(img)
+					.rXY(img.width >> 1, img.height >> 1)
+					.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+			stage.A(bmp).update();
+			cjs.Ticker.timingMode = cjs.Ticker.RAF
+			cjs.tick(tick)
+		}
+		
+		function tick(event) {
+			angle += 0.01
+			var value = Math.sin(angle) * 360
+			bmp.rot(value).sXY(value / 360)
+			stage.update(event)
+		}
+		
+		/*
+		 TFR2 = TRANSFORMSIMPLE = function () {
+		 z()
+		 angle = 0
+		 img = $.img('me', handleImageLoad)[0]
+		 function stop() {
+		 cjs.Ticker.removeEventListener("tick", tick)
+		 }
+		
+		 function handleImageLoad() {
+		 canvas = $.canvas('p', 960, 400).id("testCanvas").A()
+		 stage = cjs.stage(canvas)
+		 stage.autoClear = true;
+		 bmp = new createjs.Bitmap(img)
+		 .rXY(img.width >> 1, img.height >> 1)
+		 .XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+		 stage.A(bmp).update();
+		 cjs.Ticker.timingMode = cjs.Ticker.RAF
+		 cjs.tick(tick)
+		 }
+		
+		 function tick(event) {
+		 angle += 0.01
+		 var value = Math.sin(angle) * 360
+		 bmp.rot(value).sXY(value / 360)
+		 stage.update(event)
+		 }
+		 }
+		 */
+	}
+}
