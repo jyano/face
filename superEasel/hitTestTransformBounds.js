@@ -659,6 +659,52 @@ function dim() {
 	}
 }
 function regPt() {
+	testImgRegCenter = function () {
+		mockStage()
+		s.bm('me', function (bm) {
+			b1 = bm
+			bm.spin().drag()
+		})
+		s.bm('me', function (bm) {
+			b2 = bm
+			bm.sXY(0.5, 0.3).spin().drag()
+		})
+		s.A(c = cjs.circle(4).XY(200))
+	}
+	i.rX = function () {
+		var i = this, g = G(arguments), rX = g[0]
+		if (U(rX)) {
+			return i.regX
+		}
+		i.regX = g.p ? i.regX + rX : rX
+		return i
+	}
+	i.rY = function () {
+		var i = this, g = G(arguments), rY = g[0]
+		if (g.p) {
+			i.Y(i.y + (rY - i.regY))
+		}
+		if (U(rY)) {
+			return i.regY
+		}
+		i.regY = rY
+		return i
+	}
+	i.rXY = function () {
+		var i = this, g = G(arguments),
+				x = N(g.f, 0),
+				y = N(g.s, x)
+		return i.rX(x).rY(y)
+	}
+	i.rC = function () {
+		var i = this, g = G(arguments), x, y, hW, hH
+		x = i.W() / 2
+		hW = x
+		y = i.H() / 2
+		hH = y
+		return (g.p) ? i.rX(hW, '+').rY(hH, '+') :
+				i.rXY(hW, hH)
+	}
 	dO.rgX = dO.rX = function () {
 		var dO = this, g = G(arguments), rX = g[0]
 		if (U(rX)) {

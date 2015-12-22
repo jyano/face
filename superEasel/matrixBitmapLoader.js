@@ -523,7 +523,6 @@ function loader(){
 	}
 } 
 function _apps(){
-
 	$Ldr('LAYS', function (q) {
 		me = q.bm('me', $St()).scXY(3);
 		guy = q.bm('guy', st).scXY(.5).dg()

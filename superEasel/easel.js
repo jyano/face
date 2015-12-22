@@ -760,6 +760,10 @@ function _post() {
 			$.i('me', fn)
 		}
 	}
+	i.grow = function () {
+		$Tw(this, [{sxy: 10}, 10000]);
+		return this
+	}
 }
 st.cc = function () {
 	return this.cacheCanvas
@@ -964,3 +968,5 @@ tx.Tx = tx.tx = tx.T = function (text) {
 	this.text = text
 	return this
 }
+
+
