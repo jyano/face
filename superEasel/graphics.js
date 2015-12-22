@@ -403,12 +403,10 @@ function bitmap() {
 		return h
 	}
 }
-
 function color() {
 	gx._f = function (col) {
 		return this.f(oO('c', col))
 	}
-	
 	gx._s = function (col, thickness) {
 		// = gx.col = gx.sC
 		var gx = this
@@ -463,7 +461,6 @@ function color() {
 	gx.S = function (sC) {
 		return this._s(sC || 'w')
 	}
-	
 	gx.SS = function (thickness, caps, jts, mtrLm, igSc) {
 		return this._ss(N(thickness, 4), caps, jts, mtrLm, igSc)
 	}
@@ -743,6 +740,4 @@ h.drawPolygons = function (paths, fc, sc) {
 	})
 	return h
 }
-h.same = h.copy = function () {
-	return $h(this) // cjs.shape(this)
-}
+h.same = h.copy = function () {return $h(this)} // cjs.shape(this)

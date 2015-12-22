@@ -329,4 +329,160 @@ h.pol = function () {
 			})
 	return h
 }
+//
+ct.dc = function (x, y, r, f, s, width, opt) {
+	return this.shape(x, y, f, s, width, opt).dc(0, 0, r)
+}
+ct.cir = function () {
+	var h = this.h()
+	return h.cir.apply(h, arguments)
+}
+ct.circle = function (x, y, rad, color) {
+	this.A(cjs.cir(x, y, rad, color))
+	return this
+}
+ct.cir = function () {
+	var ct = this, g = G(arguments), h = this.h(), o
+	o = g.O ? g.f :
+			N(g.s) ? {x: g.f, y: g.s, r: g.t, c: g[3]} :
+			{r: g.f, c: g.s}
+	h.c(o.c)
+	h._dc(o.x, o.y, o.r)
+	return h
+}
+ct.h = function () {
+	var ct = this
+	var h = $H.apply($H, arguments)
+	ct.A(h)
+	return h
+}
+ct.art = function (x, y, f, s) {
+	var g = G(arguments)
+	if (U(x)) {
+		alert('must at LEAST define x');
+		return
+	}
+	if (!N(x)) {
+		alert('x not a number! but must be, lah');
+		return
+	}
+	y = N(g[1]) ? g[1] : x
+	f = S(g[2]) ? oO('c', g[2]) : null
+	s = S(g[2]) ? oO('c', g[3]) : f
+	var shp = cjs.shp(x, y, f, s)
+	this.A(shp)
+	if (g.p) {
+		shp.drag()
+	}
+	return shp
+}
+ct.pol = ct.poly = function () {
+	var ct = this,
+			g = G(arguments)
+	var h = ct.h()
+	if (N(g.f)) {
+		h.XY(g.shift(), g.shift())
+	}
+	h = ct.h() //  alt: h = $a(h, 'pol', g)
+	h.poly.apply(h, g)
+	return !g.p ? h : h.drag()
+}
+ct.rec = function () {
+	var ct = this, g = G(arguments), o, ct2, h
+	if (g.OO_) {
+		g.e(this, 'rec');
+		return this
+	} //it doesnt know that's this! (scope talk)
+	o = g.S_ ? {c: g.f, w: g.s, h: g.t, x: g[3], y: g[4], rt: g[5]} :
+			g.N_ ? {w: g.f, h: g.s, x: g.t, y: g[3], rt: g[4]} : g.f
+	o.al = N(o.al, 1)
+	o.rt = N(o.rt, 0)
+	o.c = o.c || 'z';
+	o.C = o.C || 'w'
+	ct2 = ct.ct();
+	h = ct2.h(o.x, o.y);
+	h.rt(o.rt);
+	h.c(o).al(o.al)
+	if (o.lf) {
+		h.lf(o)
+	} else if (o.rf) {
+		h.rf(o)
+	}
+	if (o.bm) {
+		h.bR({i: 'me', hs: [o]})
+	}
+	else {
+		h.rec(o.w, o.h)
+	}
+	if (g.p) {
+		ct.drag()
+	}
+	return ct2
+	function alt() {
+		ct.rec = function () {
+			var ct = this, g = G(arguments), o, ct2, h
+			if (g.OO_) {
+				g.e(this, 'rec');
+				return this
+			} //it doesnt know that's this! (scope talk)
+			o = g.S_ ? {c: g.f, w: g.s, h: g.t, x: g[3], y: g[4], rt: g[5]} :
+					g.N_ ? {w: g.f, h: g.s, x: g.t, y: g[3], rt: g[4]} : g.f
+			o.al = N(o.al, 1)
+			o.rt = N(o.rt, 0)
+			o.c = o.c || 'z';
+			o.C = o.C || 'w'
+			ct2 = ct.ct();
+			h = ct2.h(o.x, o.y);
+			h.rt(o.rt);
+			h.c(o).al(o.al)
+			if (o.lf) {
+				h.lf(o)
+			} else if (o.rf) {
+				h.rf(o)
+			}
+			if (o.bm) {
+				h.bR({i: 'me', hs: [o]})
+			}
+			else {
+				h.rec(o.w, o.h)
+			}
+			if (g.p) {
+				ct.drag()
+			}
+			return ct2
+		}
+		ct.rec = function () {
+			var ct = this, g = G(arguments), o, ct2, h
+			if (g.OO_) {
+				g.e(this, 'rec');
+				return this
+			} //it doesnt know that's this! (scope talk)
+			o = g.S_ ? {c: g.f, w: g.s, h: g.t, x: g[3], y: g[4], rt: g[5]} :
+					g.N_ ? {w: g.f, h: g.s, x: g.t, y: g[3], rt: g[4]} : g.f
+			o.al = N(o.al, 1)
+			o.rt = N(o.rt, 0)
+			o.c = o.c || 'z';
+			o.C = o.C || 'w'
+			ct2 = ct.ct();
+			h = ct2.h(o.x, o.y);
+			h.rt(o.rt);
+			h.c(o).al(o.al)
+			if (o.lf) {
+				h.lf(o)
+			} else if (o.rf) {
+				h.rf(o)
+			}
+			if (o.bm) {
+				h.bR({i: 'me', hs: [o]})
+			}
+			else {
+				h.rec(o.w, o.h)
+			}
+			if (g.p) {
+				ct.drag()
+			}
+			return ct2
+		}
+	}
+}
  
