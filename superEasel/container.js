@@ -630,12 +630,5 @@ function matrix() {
 		return h
 	}
 }
-$.me = function (name, fn) {
-	if (F(name)) {
-		return $.i('me', name)
-	}
-	window[name] = function () {
-		$.i('me', fn)
-	}
-}
+ 
  

@@ -108,7 +108,7 @@ cj.hasDim = function (bm) {
 	return !cj.iH(bm) && !cj.iCt(bm)
 }
 T = cjs.Ticker
-cjs.ticker = tt = function (a, b, c) {
+cj.ticker = tt = function (a, b, c) {
 	var g = G(arguments),
 			t = true,
 			f = false,
@@ -197,7 +197,7 @@ cjs.ticker = tt = function (a, b, c) {
 		return Ed(T$)
 	}
 }
-cjs.stop = function () {
+cj.stop = function () {
 	cjs.Ticker.removeAllEventListeners()
 }
 tickX = function (e) {
@@ -217,15 +217,15 @@ timeStamp2 = function (s, j, pxPerSec) {
 	}
 	return s.t(fn)
 }
-cjs.t = cjs.tick = function (func) {
+cj.t = cj.tick = function (func) {
 	func();
 	cjs.Ticker.on('tick', func)
 }
-cjs.tick2 = function (func) {
+cj.tick2 = function (func) {
 	cjs.Ticker.addEventListener('tick', func)
 	return cjs.Ticker
 }
-cjs.stopListening = function () {
+cj.stopListening = function () {
 	cjs.Ticker.removeAllEventListeners()
 }
 T.t = cjs.t = cjs.tick = function (fn) {
@@ -289,22 +289,6 @@ T.iP = function () {
 $t = function (fn) {
 	T.t(fn)
 }
-ct.au = function (au) {
-	this.autoClear = au ? true : false;
-	return this
-}
-ct.noAuCl = function () {
-	this.autoClear = false;
-	return this
-}
-st.aC = st.auCl = function () {
-	var st = this, g = G(arguments)
-	if (g.u) {
-		return st.autoClear
-	}
-	st.autoClear = g.f ? true : false
-	return st
-}
 ct.tkCh = function () {
 	var ct = this, g = G(arguments)
 	if (g.u) {
@@ -344,6 +328,72 @@ st.tk = function (ms) {
 	st.tk.apply(st, g)
 	return st
 }
+ct.au = function (au) {
+	this.autoClear = au ? true : false;
+	return this
+}
+ct.noAuCl = function () {
+	this.autoClear = false;
+	return this
+}
+st.aC = st.auCl = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.autoClear
+	}
+	st.autoClear = g.f ? true : false
+	return st
+}
+ct.moCh = ct.muCh = ct.mouCh = function () {
+	var ct = this, g = G(arguments)
+	if (g.u) {return ct.mouseChildren}
+	ct.mouseChildren = g.f ? true : false
+	return ct
+}
+st.eMO =st.mO = function (ms) {
+	var st = this, g = G(arguments)
+	if (U(g[0]) || g[0]) {st.enableMouseOver(N(g[0]) ? g[0] : true)}
+	else {st.enableMouseOver(g.f? true: false)}
+	return st
+}
+st.mMO = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {return st.mouseMoveOutside}
+	st.mouseMoveOutside = g.f ? true : false
+	return st
+}
+st.mIB = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {return st.mouseInBounds}
+	st.mouseInBounds = g.f ? true : false
+	return st
+}
+ct.gOUPs = function () {
+	return this.getObjectsUnderPoint.apply(this, arguments)
+}
+ct.gOUP = function () {
+	return this.getObjectUnderPoint.apply(this, arguments)
+}
+st.MD = function (fn) {
+	return this.on('stagemousedown', fn)
+}
+st.MM = function (fn) {
+	return this.on('stagemousemove', fn)
+}
+st.MU = function (fn) {
+	return this.on('stagemouseup', fn)
+}
+st.trDr = function () {
+	var st = this
+	st._md = 0
+	st.MD(function () {
+		st._md = 1
+	})
+	st.MU(function () {
+		st._md = 0
+	})
+	return this
+}
 dO.dg = dO.drag = dO.SL = function () {
 	drag(this);
 	return this
@@ -373,114 +423,41 @@ st.hEv = function () {
 	st.handleEvent = g.f
 	return st
 }
-st.trDr = function () {
-	var st = this
-	st._md = 0
-	st.MD(function () {
-		st._md = 1
-	})
-	st.MU(function () {
-		st._md = 0
-	})
-	return this
-}
-ct.gOUPs = function () {
-	return this.getObjectsUnderPoint.apply(this, arguments)
-}
-ct.gOUP = function () {
-	return this.getObjectUnderPoint.apply(this, arguments)
-}
-ct.moCh = ct.muCh = ct.mouCh = function () {
-	var ct = this, g = G(arguments)
-	if (g.u) {
-		return ct.mouseChildren
-	}
-	ct.mouseChildren = g.f ? true : false
-	return ct
-}
-ct.eMO = function (en) {
-	this.enableMouseOver(en ? true : false);
-	return this
-}
-st.mX = function () {
-	return this.mouseX
-}
-st.mY = function () {
-	return this.mouseY
-}
-st.m = function () {
-	return $Pt(this.mX(), this.mY())
-}
-st.MD = function (fn) {
-	return this.on('stagemousedown', fn)
-}
-st.MM = function (fn) {
-	return this.on('stagemousemove', fn)
-}
-st.MU = function (fn) {
-	return this.on('stagemouseup', fn)
-}
-st.mO = function () {
-	var g = G(arguments), st = this
-	if (U(g[0]) || g[0]) {
-		st.enableMouseOver(N(g[0]) ? g[0] : true)
-	}
-	else {
-		st.enableMouseOver(false)
-	}
+st.eDE = function () {
+	var st = this, g = G(arguments)
+	st.enableDOMEvents.apply(st, arguments)
 	return st
 }
 st.m = function (ob) {
-	//uses Point
 	var st = this
 	if (U(ob)) {
-		return cjs.P(st.mouseX, st.mouseY)
+		//return $Pt(this.mX(), this.mY())
+		return $Pt(st.mouseX, st.mouseY)
 	}
 	if (O(ob)) {
 		if (ob.d) {
 			st.MD(ob.d)
 		}
-		;
 		if (ob.u) {
 			st.MU(ob.u)
 		}
-		;
 		if (ob.m) {
 			st.MM(ob.m)
 		}
 	}
 	return st
 }
-st.mx = st.mX = function () {
+st.mX = st.mx = function () {
 	return this.m().x
 }
-st.my = st.mY = function () {
+st.mY = st.my = function () {
 	return this.m().y
 }
-st.eMO = function (ms) {
-	var st = this, g = G(arguments)
-	st.enableMouseOver(ms)
-	return st
-}
-st.eDE = function () {
-	var st = this, g = G(arguments)
-	st.enableDOMEvents.apply(st, arguments)
-	return st
-}
-st.mMO = function () {
-	var st = this, g = G(arguments)
-	if (g.u) {
-		return st.mouseMoveOutside
+$.me = function (name, fn) {
+	if (F(name)) {
+		return $.i('me', name)
 	}
-	st.
-			mouseMoveOutside = g.f ? true : false
-	return st
-}
-st.mIB = function () {
-	var st = this, g = G(arguments)
-	if (g.u) {
-		return st.mouseInBounds
+	window[name] = function () {
+		$.i('me', fn)
 	}
-	st.mouseInBounds = g.f ? true : false
-	return st
 }

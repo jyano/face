@@ -1,395 +1,1067 @@
-function needsBoot() {
-	SGUN = SGUNSHIP = function () {
-		St()
-		angleInDegrees = function self(y, x) {
-			if (O(y)) {
-				return self(y.vy, y.vx)
-			}
-			var d = tDeg(M.atan(y / x))
-			if (x < 0) {
-				d = M.abs(d) + 90;
-				if (y < 0) {
-					d = M.abs(d) + 90
-				}
-			}
-			return d
-		}
-		ship = function (st) {
-			h = t = $H().XY(100).rY(20).vX(1).vY(1)
-			h.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
-			$.kD('d', function () {
-				t.rt(6, '+')
-			})
-			$.kD('u', function () {
-				t.rt(6, '-')
-			})
-			if (st) {
-				st.A(h)
-				st.MD(function (e) {
-					t.vX((e.rawX - t.x) / 100, '+')
-					t.vY((e.rawY - t.y) / 100, '+')
-					if (t.vx > 10) {
-						t.vX(10)
-					}
-					if (t.vy > 10) {
-						t.vY(10)
-					}
+MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$.div('b', 50, 50).A()
+	stage = s = cjs.stage(1600, 1000).tick().A()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('e', co)
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+		c.bm('me',
+				function (b) {
+					b.sXY(.2).XY(100, 80)
+					b.on(click, function () {
+						$l('lit')
+					}, '/')  //on click, log('lit'), just once (remove listener)!
+				})
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function () {
+				$l('mid')
+			}, '-')  //on click, log('mid'), and stop prop
+		})
+		c.bm('me', function (bm) {
+			bm.sXY(1.5)
+			bm.on('click', function () {
+				$l('big')
+			})  //on click, log('big')
+		})
+		//on click, log('con')
+		c.on('click', function () {
+			$l('con')
+		})
+	})
+	stage.ct(function (c) {
+				var vn = 0,
+						rvn = 0,
+						on = 0,
+						ron = 0
+				c.X(200)
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(200, 80)
+						})
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(100, 280)
+						})
+				c.mg(
+						function (b) {
+							b.sXY(.8).XY(340, 180)
+						})
+				//this shows over/out vs rollover/rollout
+				//over/out get retriggered when switching between connected sprites
+				//rollover/rollout does not because it is still touching 'something'
+				c.on('mouseover', function () {
+					c.X(10, '+');
+					$l('v: ' + vn++)
+				})
+				c.on('rollover', function () {
+					c.X(20, '-');
+					$l('rv: ' + rvn++)
+				})
+				c.on('mouseout', function () {
+					c.Y(10, '+');
+					$l('o: ' + on++)
+				})
+				c.on('rollout', function () {
+					c.Y(20, '-');
+					$l('ro: ' + ron++)
 				})
 			}
-			_.ev(.05, function () {
-				h.X(t.vx, '+').Y(h.vy, '+')
-				h.rotation = angleInDegrees(t)
-			})
-			return t
-		}
-		PL = 1;
-		aA = []
-		div = $.d('y').pad(10)
-		div.A(
-				$.h1('controls'),
-				b1 = $.bt('start', function () {
-					PL = 1;
-					b1.hd();
-					b2.sh()
-				}),
-				b2 = $.bt('stop', function () {
-					PL = 0;
-					b2.hd();
-					b1.sh()
-				}).hd(),
-				$.bt('sgun', function () {
-					sgun(guy)
-				}))
-		boot = $.boot()
-		boot.A(div, st.canvas)
-		guy = ship(st)
-		// kD('s',function(){ $l('bang')})
-		_.t(100, function () {
-			var a = ast();
-			a.a();
-			a.p()
+	).MV(40)
+	stage.container(function (container, stage) {
+		container.X(700)
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(200, 80)
 		})
-		st.t(function () {
-			if (PL) {
-				_.e(aA, function (a) {
-					a.u()
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(100, 280)
+		})
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(340, 180)
+		})
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		container.on('mouseover', function () {
+			$l('mouseover')
+			this.sXY(.01, '+')
+		})
+		container.on('rollover', function () {
+			$l('rv')
+			this.sXY(.01, '+')
+		})
+		container.on('mouseout', function () {
+		})
+		container.on('rollout', function () {
+		})
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40) //??? mouse events? speed for some mouse checking thing
+	stage.container(function (container, stage) {
+		container.x = 1400
+		container.bm('me', function (bm) {
+			
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			SL(bm, stage)
+		})
+	})
+}
+MATRIX0 = function () {
+
+// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')
+// SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	$.div('blue', 50, 50).A()
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
+	})
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		//b.sxy(.2).xy(100,80)
+		//b.o('$', fL('lit'), '/')  //on click, log('lit'), just once (remove listener)!
+	})
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (b) {
+			b.sXY(.4).XY(100, 180)
+			//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
+		})
+		c.b('me', function (b) {
+			b.sXY(1.5)
+			// b.o('$',fL('big'))  //on click, log('big')
+		})
+		//on click, log('con')
+		//c.o('$',  fL('con'))
+	})
+	stage.ct(function (c) {
+		var vn = 0,
+				rvn = 0,
+				on = 0,
+				ron = 0
+		c.X(200)
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(200, 80)
+				})
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(100, 280)
+				})
+		c.mg(
+				function (b) {
+					b.sXY(.8).XY(340, 180)
+				})
+		//this shows over/out vs rollover/rollout
+		//over/out get retriggered when switching between connected sprites
+		//rollover/rollout does not because it is still touching 'something'
+		// c.o('v',function(){c.x(10,'+');$l('v: '+vn++)})
+		//c.o('rv',function(){c.x(20,'-');$l('rv: '+rvn++)})
+		// c.o('o',function(){c.y(10,'+');$l('o: '+on++)})
+		//  c.o('ro',function(){c.y(20,'-');$l('ro: '+ron++)})
+	})//.MV(40)
+	stage.ct(function (c, s) {
+		c.x(700)
+		c.mg(function (b) {
+			b.sxy(.8).xy(200, 80)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(100, 280)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(340, 180)
+		})
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		c.o('v', function (g, e) {
+			$l('v')
+			g.sxy(.01, '+')
+		})
+		c.o('rv', function (g, e) {
+			$l('rv')
+			g.sxy(.01, '+')
+		})
+		c.o('o', function (q, e, g) {
+		})
+		c.o('ro', function (q, e, g) {
+		})
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40)
+	stage.ct(function (container, stage) {
+		container.X(1400)
+		container.bm('me', function (bm) {
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			createjs.bindSlide(bm, stage)
+		})
+	})
+}
+MATRIX = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
+	})
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		bm.sXY(.2).XY(100, 80)
+		bm.on('click', function () {
+			$l('lit')
+		}, this, true) //just once
+	})
+	//make a container
+	stage.container(function (container, stage) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		container.bm('me', function (bm) {  //future: c.bm('me', .4, function(bm){})
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function (e) {
+				$l('mid')
+				e.stopPropagation()
+			})
+		})
+		container.bm('me', function (bm) {
+			bm.sXY(1.5)
+					.on('click', function () {
+						$l('big')
+					})
+		})
+		container.on('click', function () {
+			$l('con')
+		})
+	})
+}
+MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$.div('b', 50, 50).A()
+	stage = s = cjs.stage(1600, 1000).tick().A()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('e', co)
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+		c.bm('me',
+				function (b) {
+					b.sXY(.2).XY(100, 80)
+					b.on(click, function () {
+						$l('lit')
+					}, '/')  //on click, log('lit'), just once (remove listener)!
+				})
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function () {
+				$l('mid')
+			}, '-')  //on click, log('mid'), and stop prop
+		})
+		c.bm('me', function (bm) {
+			bm.sXY(1.5)
+			bm.on('click', function () {
+				$l('big')
+			})  //on click, log('big')
+		})
+		//on click, log('con')
+		c.on('click', function () {
+			$l('con')
+		})
+	})
+	stage.ct(function (c) {
+				var vn = 0,
+						rvn = 0,
+						on = 0,
+						ron = 0
+				c.X(200)
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(200, 80)
+						})
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(100, 280)
+						})
+				c.mg(
+						function (b) {
+							b.sXY(.8).XY(340, 180)
+						})
+				//this shows over/out vs rollover/rollout
+				//over/out get retriggered when switching between connected sprites
+				//rollover/rollout does not because it is still touching 'something'
+				c.on('mouseover', function () {
+					c.X(10, '+');
+					$l('v: ' + vn++)
+				})
+				c.on('rollover', function () {
+					c.X(20, '-');
+					$l('rv: ' + rvn++)
+				})
+				c.on('mouseout', function () {
+					c.Y(10, '+');
+					$l('o: ' + on++)
+				})
+				c.on('rollout', function () {
+					c.Y(20, '-');
+					$l('ro: ' + ron++)
 				})
 			}
+	).MV(40)
+	stage.container(function (container, stage) {
+		container.X(700)
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(200, 80)
 		})
-		sgun(guy)
-	}
-}
-function needsLoader() {
-	GREY = function () {
-		Q(function () {
-			Q.b('me').a2($St().t())
-					.fl($cMF($cM().s(-100)))
-					.ca(0, 0, 1000, 1000)
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(100, 280)
 		})
-	}
-}
-function needsS$() {
-	FAIL = SKETCH = function () {
-		s = cjs.stage(500, 500).A()
-		s.can.P('a').XY(300)
-		s.bm('me', 0.2, function (bm) {
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(340, 180)
 		})
-		s.A(cjs.circle(100, 'blue', 'green').XY(100, 100).drag())
-		s.circle(100, 100, 10, 'red', 'yellow')
-				.circle(10, 100, 100, 'black', 'purple')
-				.circle(100, 10, 100, 'blue', 'red')
-				.circle(150, 150, 120, 'red', 'blue')
-				.circle(30, 'brown', 'gray')
-		St()
-		ct = s.ct(1000, 300).drag()
-		ct.rec({w: 400, h: 200, c: 'r', C: 'o', l: 10, a: -5})
-		h1 = ct.rec({w: 200, h: 400, c: 'r', C: 'o', l: 10, a: 5})
-		h = s.h().dr2() // h is another container.. to clr ->  h1.children[0].clr()
-		st.u()
-		St()
-		ct = s.ct(600, 300)
-		ct.rec({w: 400, h: 400, c: 'r', C: 'o', l: 10, a: -5})
-		ct.rec({w: 100, h: 200, c: 'b', C: 'w', l: 20, a: 20, rg: 1})
-		h = ct.Sh()
-		h.graphics.FS()
-		h.rec({
-			w: 100, h: 200, a: 20,
-			c: 'b', C: 'w', l: 20, bm: 1
-		}).X(100)
-		_.in(8, function () {
-			h.X(0)
-		}) //notice how gradient is seen behind the bm!!!
-	}//D 
-	SHAPEZ8 = function () {//C- only PLAY!?
-		SHAPS8 = function () {
-			z()
-			s = stage = $St(500, 500)
-			//s.bm('me', function(bm){ bm.sXY(.2)   })
-			s.Sh().cir(100, 100, 100, 'b', 'g')//.fn(SL)
-			s.cir(100, 100, 10, 'r', 'y')//.fn(SL)
-			s.cir(10, 100, 100, 'z', 'x')//.fn(SL)
-			s.cir(100, 10, 100, 'a', 'c')//.fn(SL)
-			s.Sh().cir(150, 150, 120, 'c', 'd')
-				//.fn(SL)
-					.cir(30, 'x', 'x')
-		}
-		SHAPES9 = function () {
-			z()
-			s = stage = St(500, 500).a()
-			//s.bm('me', function(bm){ bm.sXY(.2)   })
-			s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
-			s.Circle(100, 100, 10, 'r', 'y').fn(SL)
-			s.Circle(10, 100, 100, 'z', 'x').fn(SL)
-			s.Circle(100, 10, 100, 'a', 'c').fn(SL)
-			s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
-			//s.bm('me', function(bm){ bm.sXY(.2)   })
-			s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
-			s.Circle(100, 100, 10, 'r', 'y').fn(SL)
-			s.Circle(10, 100, 100, 'z', 'x').fn(SL)
-			s.Circle(100, 10, 100, 'a', 'c').fn(SL)
-			s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
-		}
-		St()
-		s.can.P('a').XY(200)
-		s.bm('me')
-		s.bm('me', 0.2, function (bm) {
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		container.on('mouseover', function () {
+			$l('mouseover')
+			this.sXY(.01, '+')
 		})
-		h = $h().cir()
-		s.A(
-				$h().cir(100, 'blue', 'green').XY(100, 100).drag()
-		)
-		s.h().cir(100, 100, 10, 'red', 'yellow')
-		s.h().cir(10, 100, 100, 'black', 'purple')
-		s.h().cir(100, 10, 100, 'blue', 'red')
-		s.h().cir(150, 150, 120, 'red', 'blue')
-		s.h().cir(30, 'brown', 'gray')
-		s.u()
-	}
-}
-function needsOBx() {
-	DRL = DRAWLINE = XX5 = HDL11 = function () {
-		St()
-		h.dl(50, 50, 200, 200)
-		h.dl(V(300, 500), [500, 200])
-		DRAWLINE1 = DLN = function () {
-			St()
-			h.dl(50, 50, 200, 200)
-			h.dl(V(300, 500), [500, 200])
-		}
-	}
-}
-function needsStagePoly() {
-	POL2 = XX2 = EASELCONVEX8 = function () {
-		s = $St()
-		s.poly([[-100, -10], [0, 100], [100, 20]], 'red', 'white', 10).XY(200, 300)
-		s.poly([[-20, -80], [-100, -200], [100, 5]]).XY(300, 200)
-		s.poly([[-40, 40], [-40, -40], [40, -40], [40, 30]], 'blue', 'white').XY(200, 200)
-	}
-	POL3 = CPOL4 = function () {
-		St()
-		vs = [V(240, 210), V(450, 410), V(600, 500), V(500, 500)]
-		//h.lt([450, 410],[600, 500], [500, 500])
-		//h.lt([[450, 410], [600, 500], [500, 500]])
-		//h.lt( V(450, 410), V(600, 500), V(500, 500))
-		h.pol({
-			c: 'r',
-			C: 'b',
-			l: 20,
-			v: vs
+		container.on('rollover', function () {
+			$l('rv')
+			this.sXY(.01, '+')
 		})
-	}
-}
-function needsStageH() {
-	POL5 = CPOL0 = function () {
-		__St()
-		vs = [V(240, 210), V(450, 410), V(600, 500), V(500, 500)]
-		//h.lt([450, 410],[600, 500], [500, 500])
-		//h.lt([[450, 410], [600, 500], [500, 500]])
-		//h.lt( V(450, 410), V(600, 500), V(500, 500))
-		h.pol({
-			c: 'r',
-			C: 'b',
-			l: 20,
-			v: vs
+		container.on('mouseout', function () {
 		})
-	}
-	POL0 = HPOLY8 = function () {
-		St()
-		v = [[-100, 0], [0, -100], [100, 50]]
-		s.h(600, 300).poly({v: v, bf: 'me'})
-		s.h(900, 300).poly({v: v, lf: 1})
-		s.h(800, 300).poly({v: v, rf: 1})
-		h = s.h(200, 300).drag().bf('me', function () {
-			h.dc([150], [200, 0, 150])
+		container.on('rollout', function () {
 		})
-		st.u()
-	}//C
-	POL1 = HPOL = function () {
-		st = $St()
-		h = st.h('+').XY(0, 0)
-		h.pol({v: vs1, c: 'r', C: 'y', bf: 'flame'})
-		h.pol(vs1, 'r', 'y', 30)
-		h.pol(vs1, 200, 200, 'r', 'y', 3)
-	}
-	POL4 = POLY = EVEX = EASELCONVEX = function () {
-		s = cjs.S()
-		s.poly([[-100, -10], [0, 100], [100, 20]],
-				'red', 'white', 10).XY(200, 300)
-		s.poly([[-20, -80], [-100, -200], [100, 5]]).XY(300, 200)
-		s.poly(
-				[[-40, 40], [-40, -40], [40, -40], [40, 30]],
-				'blue', 'white').XY(200, 200)
-	}
-}
-function usesGrad() {
-	GRAPHTEST8 = function () {
-		St();
-		img = $.i('me', function () {
-			s.ct().A(h = $Sh())
-			gx = h.graphics.FS()
-			s.A($Bm(img))
-			gx.ss(32).dr(20, 20, 920, 360);
-			fns = [
-				function () {
-					return $Sh(12, 10)
-							.lf('b', 'g', 130).dr(130)
-				},
-				function () {
-					return $Sh(40, 10, 'b', 16)
-							.ls('r', 'w', 70, 140).de(70, 140)
-				},
-				function () {
-					return $Sh(80, 80)
-							.C('b', 8).rf('w', 'y', 40).dc(40)
-				},
-				function () {
-					return $Sh(12, 10, 18)
-							.bf(img, cjs.M(1)).rs('b', 'g', 30, 130).dr(130)
-				},
-				function () {
-					return $Sh(12, 12, 'g', 'r', 8)
-							.rr(130, 30)
-				}, //w(h) and r
-				function lt() {
-					return $Sh().C('o')
-							.ss(16, 'round', 'round')
-							.mt([40, 10], [90, 90], [90, 140])
-				},
-				function star() {
-					return $Sh(80, 85, 'y', 'b', 3)
-							.pStr(0, 0, 80, 5, .8, -95)
-				},
-				function hex() {
-					return $Sh(80, 40, 'p')
-							.pStr(40, 6).pStr(0, 75, 40, 6).pStr(45, 45, 20, 6)
-				}
-			]
-			_.e(fns, withEachFn)
-			function withEachFn(cont, i) {
-				var W = 155, H = 155, P = 5, C = 4 //pad, cols
-				s.A(tile(cont()).XY(
-						42 + (W + P) * (i % C),
-						42 + (i / C | 0) * (H + P)))
-			}
-		})[0]
-		tile = createTile = function (x, y) {
-			var bg, til
-			bg = $h().c('t').dr(0, 0, 155, 155).ef().op(.2)
-			til = cjs.ct().A(bg)
-			if (N(x)) {
-				til.X(x)
-			}
-			if (N(y)) {
-				til.Y(y)
-			}
-			if (O(x)) {
-				til.A(x)
-			}
-			return til
-		}
-	}
-}
-  
-CEN = YSTAR = CENSHP = function () {
-	stage = cjs.stage(500, 600).A()
-	shape = new cjs.Shape()
-	SL(shape)
-	stage.A(shape)
-	shape.graphics.f("orange").drawPolyStar(100, 100, 50, 5, 0.6, -90)
-	shape.RECT(0, 0, 100, 100, 'a')
-	shape.RECT(0, -75, 25, 50, 'b')
-	shape.RECT(0, -200, 100, 100, 'r')
-	shape.circle(100, 200, 40, 'z', 'x')
-	shape.graphics.drawRoundRectComplex(0, 0, 300, 300, 20, 20, 30, 40)
-	shape.XY(200)
-	stage.bm('me', function (b) {
-		me = b
-		me.XY(200)
-		me.sXY(.4)
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40) //??? mouse events? speed for some mouse checking thing
+	stage.container(function (container, stage) {
+		container.x = 1400
+		container.bm('me', function (bm) {
+			
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			SL(bm, stage)
+		})
 	})
 }
-CSH = CENTERSHAPE8 = function () {
-	CENTERSHAPE9 = function () {
-		z()
-		stage = St(500, 600).A()
-		shape = stage.Shape();
-		SL(shape)
-		shape.RECT(0, 0, 100, 100, 'a')
-		shape.RECT(0, -75, 25, 50, 'b')
-		shape.RECT(0, -200, 100, 100, 'r')
-		shape.circle(100, 200, 40, 'z', 'x')
-		shape.g.drawRoundRectComplex(0, 0, 300, 300, 20, 20, 30, 40)
-		shape.g.beginFill("orange").drawPolyStar(
-				100, 100, 50, 5, 0.6, -90)
-		shape.xy(200)
-		stage.bm('me', function (b) {
-			me = b
-			me.rgc()
-			me.xy(200)
-			me.sXY(.4)
-		})
-	}
-	stage = $St(500, 600)
-	shape = stage.Sh()
-	gx = shape.graphics.FS()
-	SL(shape)
-	shape.rec(0, 0, 100, 100, 'a')
-	shape.rec(0, -75, 25, 50, 'b')
-	shape.rec(0, -200, 100, 100, 'r')
-	shape.cir(100, 200, 40, 'z', 'x')
-	gx.drawRoundRectComplex(0, 0, 300, 300, 20, 20, 30, 40)
-	gx.beginFill("orange").drawPolyStar(
-			100, 100, 50, 5, 0.6, -90)
-	shape.XY(200)
-	stage.bm('me', function (b) {
-		me = b
-		me.rgc()
-		me.XY(200)
-		me.sXY(.4)
+MATRIX0 = function () {
+
+// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')
+// SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	$.div('blue', 50, 50).A()
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
 	})
-	CENTERSHAPE9 = function () {
-		z()
-		stage = St(500, 600).A()
-		shape = stage.Shape();
-		SL(shape)
-		shape.RECT(0, 0, 100, 100, 'a')
-		shape.RECT(0, -75, 25, 50, 'b')
-		shape.RECT(0, -200, 100, 100, 'r')
-		shape.circle(100, 200, 40, 'z', 'x')
-		shape.g.drawRoundRectComplex(0, 0, 300, 300, 20, 20, 30, 40)
-		shape.g.beginFill("orange").drawPolyStar(
-				100, 100, 50, 5, 0.6, -90)
-		shape.xy(200)
-		stage.bm('me', function (b) {
-			me = b
-			me.rgc()
-			me.xy(200)
-			me.sXY(.4)
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		//b.sxy(.2).xy(100,80)
+		//b.o('$', fL('lit'), '/')  //on click, log('lit'), just once (remove listener)!
+	})
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (b) {
+			b.sXY(.4).XY(100, 180)
+			//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
 		})
-	}
+		c.b('me', function (b) {
+			b.sXY(1.5)
+			// b.o('$',fL('big'))  //on click, log('big')
+		})
+		//on click, log('con')
+		//c.o('$',  fL('con'))
+	})
+	stage.ct(function (c) {
+		var vn = 0,
+				rvn = 0,
+				on = 0,
+				ron = 0
+		c.X(200)
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(200, 80)
+				})
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(100, 280)
+				})
+		c.mg(
+				function (b) {
+					b.sXY(.8).XY(340, 180)
+				})
+		//this shows over/out vs rollover/rollout
+		//over/out get retriggered when switching between connected sprites
+		//rollover/rollout does not because it is still touching 'something'
+		// c.o('v',function(){c.x(10,'+');$l('v: '+vn++)})
+		//c.o('rv',function(){c.x(20,'-');$l('rv: '+rvn++)})
+		// c.o('o',function(){c.y(10,'+');$l('o: '+on++)})
+		//  c.o('ro',function(){c.y(20,'-');$l('ro: '+ron++)})
+	})//.MV(40)
+	stage.ct(function (c, s) {
+		c.x(700)
+		c.mg(function (b) {
+			b.sxy(.8).xy(200, 80)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(100, 280)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(340, 180)
+		})
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		c.o('v', function (g, e) {
+			$l('v')
+			g.sxy(.01, '+')
+		})
+		c.o('rv', function (g, e) {
+			$l('rv')
+			g.sxy(.01, '+')
+		})
+		c.o('o', function (q, e, g) {
+		})
+		c.o('ro', function (q, e, g) {
+		})
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40)
+	stage.ct(function (container, stage) {
+		container.X(1400)
+		container.bm('me', function (bm) {
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			createjs.bindSlide(bm, stage)
+		})
+	})
 }
-GXPOL = function () {
-	$S$().Gx().FS().poly([vs1])
+MATRIX = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
+	})
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		bm.sXY(.2).XY(100, 80)
+		bm.on('click', function () {
+			$l('lit')
+		}, this, true) //just once
+	})
+	//make a container
+	stage.container(function (container, stage) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		container.bm('me', function (bm) {  //future: c.bm('me', .4, function(bm){})
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function (e) {
+				$l('mid')
+				e.stopPropagation()
+			})
+		})
+		container.bm('me', function (bm) {
+			bm.sXY(1.5)
+					.on('click', function () {
+						$l('big')
+					})
+		})
+		container.on('click', function () {
+			$l('con')
+		})
+	})
+}
+MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$.div('b', 50, 50).A()
+	stage = s = cjs.stage(1600, 1000).tick().A()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('e', co)
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+		c.bm('me',
+				function (b) {
+					b.sXY(.2).XY(100, 80)
+					b.on(click, function () {
+						$l('lit')
+					}, '/')  //on click, log('lit'), just once (remove listener)!
+				})
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function () {
+				$l('mid')
+			}, '-')  //on click, log('mid'), and stop prop
+		})
+		c.bm('me', function (bm) {
+			bm.sXY(1.5)
+			bm.on('click', function () {
+				$l('big')
+			})  //on click, log('big')
+		})
+		//on click, log('con')
+		c.on('click', function () {
+			$l('con')
+		})
+	})
+	stage.ct(function (c) {
+				var vn = 0,
+						rvn = 0,
+						on = 0,
+						ron = 0
+				c.X(200)
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(200, 80)
+						})
+				c.mug(
+						function (b) {
+							b.sXY(.8).XY(100, 280)
+						})
+				c.mg(
+						function (b) {
+							b.sXY(.8).XY(340, 180)
+						})
+				//this shows over/out vs rollover/rollout
+				//over/out get retriggered when switching between connected sprites
+				//rollover/rollout does not because it is still touching 'something'
+				c.on('mouseover', function () {
+					c.X(10, '+');
+					$l('v: ' + vn++)
+				})
+				c.on('rollover', function () {
+					c.X(20, '-');
+					$l('rv: ' + rvn++)
+				})
+				c.on('mouseout', function () {
+					c.Y(10, '+');
+					$l('o: ' + on++)
+				})
+				c.on('rollout', function () {
+					c.Y(20, '-');
+					$l('ro: ' + ron++)
+				})
+			}
+	).MV(40)
+	stage.container(function (container, stage) {
+		container.X(700)
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(200, 80)
+		})
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(100, 280)
+		})
+		container.mug(function (bm) {
+			bm.sXY(.8).XY(340, 180)
+		})
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		container.on('mouseover', function () {
+			$l('mouseover')
+			this.sXY(.01, '+')
+		})
+		container.on('rollover', function () {
+			$l('rv')
+			this.sXY(.01, '+')
+		})
+		container.on('mouseout', function () {
+		})
+		container.on('rollout', function () {
+		})
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40) //??? mouse events? speed for some mouse checking thing
+	stage.container(function (container, stage) {
+		container.x = 1400
+		container.bm('me', function (bm) {
+			
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			SL(bm, stage)
+		})
+	})
+}
+MATRIX0 = function () {
+
+// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')
+// SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	$.div('blue', 50, 50).A()
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
+	})
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		//b.sxy(.2).xy(100,80)
+		//b.o('$', fL('lit'), '/')  //on click, log('lit'), just once (remove listener)!
+	})
+	//make a container
+	stage.ct(function (c, s) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		c.bm('me', function (b) {
+			b.sXY(.4).XY(100, 180)
+			//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
+		})
+		c.b('me', function (b) {
+			b.sXY(1.5)
+			// b.o('$',fL('big'))  //on click, log('big')
+		})
+		//on click, log('con')
+		//c.o('$',  fL('con'))
+	})
+	stage.ct(function (c) {
+		var vn = 0,
+				rvn = 0,
+				on = 0,
+				ron = 0
+		c.X(200)
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(200, 80)
+				})
+		c.mug(
+				function (b) {
+					b.sXY(.8).XY(100, 280)
+				})
+		c.mg(
+				function (b) {
+					b.sXY(.8).XY(340, 180)
+				})
+		//this shows over/out vs rollover/rollout
+		//over/out get retriggered when switching between connected sprites
+		//rollover/rollout does not because it is still touching 'something'
+		// c.o('v',function(){c.x(10,'+');$l('v: '+vn++)})
+		//c.o('rv',function(){c.x(20,'-');$l('rv: '+rvn++)})
+		// c.o('o',function(){c.y(10,'+');$l('o: '+on++)})
+		//  c.o('ro',function(){c.y(20,'-');$l('ro: '+ron++)})
+	})//.MV(40)
+	stage.ct(function (c, s) {
+		c.x(700)
+		c.mg(function (b) {
+			b.sxy(.8).xy(200, 80)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(100, 280)
+		})
+		c.mg(function (b) {
+			b.sxy(.8).xy(340, 180)
+		})
+		//this example shows which sprites are acted upon with over/rollover
+		//over only affects one
+		//rollover affects ALL
+		//if you enter a sprite from outside, they all grow (via rollover),
+		//and the one sprite grows double (via over)
+		c.o('v', function (g, e) {
+			$l('v')
+			g.sxy(.01, '+')
+		})
+		c.o('rv', function (g, e) {
+			$l('rv')
+			g.sxy(.01, '+')
+		})
+		c.o('o', function (q, e, g) {
+		})
+		c.o('ro', function (q, e, g) {
+		})
+		// in summary,
+		// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+		// BUT, they will all recieve events separately
+	}).MV(40)
+	stage.ct(function (container, stage) {
+		container.X(1400)
+		container.bm('me', function (bm) {
+			
+			//make the little me slide the entire container
+			//it acts as a handle! (for its container)
+			lit = bm.sXY(.2).XY(100, 80)
+			SL(bm, container)
+			container.bm('me', function (bm) {
+//big me will scale the little me
+				big = bm.sXY(2).XY(100, 180)
+				SC(bm, lit)
+				container.bm('me', function (bm) {
+					bm.sXY(.6).XY(150, 180)
+					SL(bm)
+					RT(bm, big)
+				})
+			})
+		})
+//guy slides stage
+		container.bm('guy', function (bm) {
+			bm.sXY(.4).XY(100, 180)
+			createjs.bindSlide(bm, stage)
+		})
+	})
+}
+MATRIX = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+	z()
+	$l('matrix')
+	stage = s = createjs.stage(1600, 1000).A().tick()
+	// on stage enter, change background color, though you
+	// cant see it here because stage fills screen
+	// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+	stage.on('mouseenter', function () {
+		$('body').C($r())
+	})
+	stage.A(container = c = new createjs.Container())
+	container.bm('me', function (bm) {
+		bm.sXY(.2).XY(100, 80)
+		bm.on('click', function () {
+			$l('lit')
+		}, this, true) //just once
+	})
+	//make a container
+	stage.container(function (container, stage) {
+		
+		//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+		//but it does hit the container.  but this example shows off 'remove', so it only hits once
+		//however, it continues to propogate on to the container. hmmm..
+// the middle size me demonstrates stopPropogation
+// if you click it, the container does not feel the click
+		container.bm('me', function (bm) {  //future: c.bm('me', .4, function(bm){})
+			bm.sXY(.4).XY(100, 180)
+			bm.on('click', function (e) {
+				$l('mid')
+				e.stopPropagation()
+			})
+		})
+		container.bm('me', function (bm) {
+			bm.sXY(1.5)
+					.on('click', function () {
+						$l('big')
+					})
+		})
+		container.on('click', function () {
+			$l('con')
+		})
+	})
+}
+BOWL = function () {
+	stage = s = createjs.stage(1000, 1000).tick().A()
+	//append a container to the stage
+	container = c = new createjs.Container()
+	stage.A(container)
+	plX = stage.W() / 2
+	plY = 150
+	plR = 100
+	plr = 75 // this seems to determine the radius of the 'cluster' of balls
+	oRng = 8 //outer ring
+	nRng = 3// number of rings
+//when set to three, it seems like middle ring is 3 less than outer, and inner ring is 1
+	circle = cjs.circle(plX, plY, plR, 'yellow')
+	container.A(circle) // cr = Hx().c(plR,'y').xy(plX,plY)
+	rngSp = plr / (nRng - 1)
+	aA = []
+	var ast = function (x, y, r, m, f) {
+		return {
+			x: x, y: y, radius: radius,
+			m: m,  //?
+			f: f,
+			vX: 0, vY: 0, player: false
+		}
+	}
+	_.times(nRng, function (r) {
+		var crR = 0,
+				ang = 0,
+				rngR = 0
+		if (r == nRng - 1) {
+			crR = 1
+		}
+		else {
+			crR = oRng - (r * 3)
+			ang = 360 / crR
+			rngR = plr - (rngSp * r)
+		}
+		_.times(crR, function (a) {
+			var x = 0, y = 0
+			if (r == nRng - 1) {
+				x = plX;
+				y = plY
+			}
+			else {
+				x = plX + (rngR * cos((ang * a) * PI / 180))
+				y = plX + (rngR * sin((ang * a) * PI / 180)) - 350
+			}
+			aA.push(ast(x, y, 10, 5, 0.95))
+			container.A(
+					cjs.circle(10, 'black').XY(x, y))
+		})
+	})
+}
+BOWL = function () {
+	stage = s = createjs.stage(1000, 1000).tick().A()
+	//append a container to the stage
+	container = c = new createjs.Container()
+	stage.A(container)
+	plX = stage.W() / 2
+	plY = 150
+	plR = 100
+	plr = 75 // this seems to determine the radius of the 'cluster' of balls
+	oRng = 8 //outer ring
+	nRng = 3// number of rings
+//when set to three, it seems like middle ring is 3 less than outer, and inner ring is 1
+	circle = cjs.circle(plX, plY, plR, 'yellow')
+	container.A(circle) // cr = Hx().c(plR,'y').xy(plX,plY)
+	rngSp = plr / (nRng - 1)
+	aA = []
+	var ast = function (x, y, r, m, f) {
+		return {
+			x: x, y: y, radius: radius,
+			m: m,  //?
+			f: f,
+			vX: 0, vY: 0, player: false
+		}
+	}
+	_.times(nRng, function (r) {
+		var crR = 0,
+				ang = 0,
+				rngR = 0
+		if (r == nRng - 1) {
+			crR = 1
+		}
+		else {
+			crR = oRng - (r * 3)
+			ang = 360 / crR
+			rngR = plr - (rngSp * r)
+		}
+		_.times(crR, function (a) {
+			var x = 0, y = 0
+			if (r == nRng - 1) {
+				x = plX;
+				y = plY
+			}
+			else {
+				x = plX + (rngR * cos((ang * a) * PI / 180))
+				y = plX + (rngR * sin((ang * a) * PI / 180)) - 350
+			}
+			aA.push(ast(x, y, 10, 5, 0.95))
+			container.A(
+					cjs.circle(10, 'black').XY(x, y))
+		})
+	})
+}
+BOWL = function () {
+	stage = s = createjs.stage(1000, 1000).tick().A()
+	//append a container to the stage
+	container = c = new createjs.Container()
+	stage.A(container)
+	plX = stage.W() / 2
+	plY = 150
+	plR = 100
+	plr = 75 // this seems to determine the radius of the 'cluster' of balls
+	oRng = 8 //outer ring
+	nRng = 3// number of rings
+//when set to three, it seems like middle ring is 3 less than outer, and inner ring is 1
+	circle = cjs.circle(plX, plY, plR, 'yellow')
+	container.A(circle) // cr = Hx().c(plR,'y').xy(plX,plY)
+	rngSp = plr / (nRng - 1)
+	aA = []
+	var ast = function (x, y, r, m, f) {
+		return {
+			x: x, y: y, radius: radius,
+			m: m,  //?
+			f: f,
+			vX: 0, vY: 0, player: false
+		}
+	}
+	_.times(nRng, function (r) {
+		var crR = 0,
+				ang = 0,
+				rngR = 0
+		if (r == nRng - 1) {
+			crR = 1
+		}
+		else {
+			crR = oRng - (r * 3)
+			ang = 360 / crR
+			rngR = plr - (rngSp * r)
+		}
+		_.times(crR, function (a) {
+			var x = 0, y = 0
+			if (r == nRng - 1) {
+				x = plX;
+				y = plY
+			}
+			else {
+				x = plX + (rngR * cos((ang * a) * PI / 180))
+				y = plX + (rngR * sin((ang * a) * PI / 180)) - 350
+			}
+			aA.push(ast(x, y, 10, 5, 0.95))
+			container.A(
+					cjs.circle(10, 'black').XY(x, y))
+		})
+	})
 }
 BOWL = function () {
 	St()
@@ -435,4 +1107,353 @@ BOWL = function () {
 			ct.A(cjs.cir(10, 'z').XY(x, y))
 		})
 	})
+}
+ 
+CONNECT = function () {
+	z();//m$$('location=location')
+	stage = createjs.stage(1000).tick().A()
+	pink = cjs.circle(300, 'pink', 'purple').XY(520, 500)//.rXY(100)
+	stage.A(pink)
+	container = new createjs.Container()
+	stage.A(container)
+	green = cjs.circle(200, 'green', 'purple').XY(320, 300)//.rXY(100)
+	yellow = cjs.circle(100, 'yellow', 'purple').XY(250)
+	red = cjs.circle(40, 'red', 'purple').XY(200, 100)
+	orange = cjs.circle(20, 'orange', 'purple').XY(300)
+	container.A(green, yellow, red, orange)
+	LS(yellow, container)
+	SL(green)
+	SL(green, pink)
+	SL(yellow)
+	SL(red, container)
+	SL(orange, red)
+}
+CONNECT = function () {
+	z();//m$$('location=location')
+	stage = createjs.stage(1000).tick().A()
+	pink = cjs.circle(300, 'pink', 'purple').XY(520, 500)//.rXY(100)
+	stage.A(pink)
+	container = new createjs.Container()
+	stage.A(container)
+	green = cjs.circle(200, 'green', 'purple').XY(320, 300)//.rXY(100)
+	yellow = cjs.circle(100, 'yellow', 'purple').XY(250)
+	red = cjs.circle(40, 'red', 'purple').XY(200, 100)
+	orange = cjs.circle(20, 'orange', 'purple').XY(300)
+	container.A(green, yellow, red, orange)
+	LS(yellow, container)
+	SL(green)
+	SL(green, pink)
+	SL(yellow)
+	SL(red, container)
+	SL(orange, red)
+}
+CONNECT = function () {
+	z();//m$$('location=location')
+	stage = createjs.stage(1000).tick().A()
+	pink = cjs.circle(300, 'pink', 'purple').XY(520, 500)//.rXY(100)
+	stage.A(pink)
+	container = new createjs.Container()
+	stage.A(container)
+	green = cjs.circle(200, 'green', 'purple').XY(320, 300)//.rXY(100)
+	yellow = cjs.circle(100, 'yellow', 'purple').XY(250)
+	red = cjs.circle(40, 'red', 'purple').XY(200, 100)
+	orange = cjs.circle(20, 'orange', 'purple').XY(300)
+	container.A(green, yellow, red, orange)
+	LS(yellow, container)
+	SL(green)
+	SL(green, pink)
+	SL(yellow)
+	SL(red, container)
+	SL(orange, red)
+}
+CNC = CONNECT = function () {
+	St() //m$$('location=location')
+	cjs.circ = function (r, z, x, y) {
+		gx = new cjs.Graphics()
+		if (!S(r)) {
+			return cjs.circ('red', r, z, x)
+		}
+		z = _.tN(z, 32)
+		x = _.tN(x, 100)
+		y = _.tN(y, 100)
+		gx.ss(z / 8).f(r, 'black').dc(z)
+		return new cjs.Shape(gx).XY(x, y)
+	}
+	cjs.circ = function (x, y, r, c, C) {
+		var h = $h()
+		if (O(x)) {
+			return cjs.circ(x.x, x.y, x.r, x.c, x.C)
+		}
+		x = _.tN(x)
+		y = _.tN(y)
+		r = _.tN(r, 8)
+		h.cir(x, y, r, c || 'w', C || 'z')
+		SL(h)
+		return h
+	}
+	// st= $St('p', 1000)
+	pink = cjs.circ(300, 'pink', 'purple').XY(520, 500)//.rXY(100)
+	st.A(pink)
+	ct = $Ct()
+	st.A(ct)
+	green = cjs.circ(200, 'green', 'purple').XY(320, 300)//.rXY(100)
+	yellow = cjs.circ(100, 'yellow', 'purple').XY(250)
+	red = cjs.circ(40, 'red', 'purple').XY(200, 100)
+	orange = cjs.circ(20, 'orange', 'purple').XY(300)
+	ct.A(green, yellow, red, orange)
+	LS(yellow, ct)
+	SL(green)
+	SL(green, pink)
+	SL(yellow)
+	SL(red, ct)
+	SL(orange, red)
+	st.u()
+}
+PRM = function () {
+	z()
+	cjs.utils()
+	function ClassA(name) {
+		this.name = name
+	}
+	
+	ClassA.prototype.greet = function () {
+		return "Hello " + this.name
+	} //a = new ClassA('john')
+	function ClassB(name, punctuation) {
+		this.ClassA_constructor(name)
+		this.punctuation = punctuation
+	}
+	
+	cjs.extend(ClassB, ClassA)
+	ClassB.prototype.greet = function () {
+		return this.ClassA_greet() + this.punctuation
+	}
+	cjs.promote(ClassB, "ClassA")
+	b = new ClassB("World", "!?!")
+	$l(b.greet())  // Hello World!?!
+}
+PRM1 = PROMOTE = function () {
+	z()
+	cjs.utils()
+	function ClassA(name) {
+		this.name = name
+	}
+	
+	ClassA.prototype.greet = function () {
+		return "Hello " + this.name
+	} //a = new ClassA('john')
+	function ClassB(name, punctuation) {
+		this.ClassA_constructor(name)
+		this.punctuation = punctuation
+	}
+	
+	cjs.extend(ClassB, ClassA)
+	ClassB.prototype.greet = function () {
+		return this.ClassA_greet() + this.punctuation
+	}
+	cjs.promote(ClassB, "ClassA")
+	b = new ClassB("World", "!?!")
+	$l(b.greet())  // Hello World!?!
+}
+PROMOTE = function () {
+	z()
+	cjs.utils()
+	function ClassA(name) {
+		this.name = name
+	}
+	
+	ClassA.prototype.greet = function () {
+		return "Hello " + this.name
+	} //a = new ClassA('john')
+	function ClassB(name, punctuation) {
+		this.ClassA_constructor(name)
+		this.punctuation = punctuation
+	}
+	
+	cjs.extend(ClassB, ClassA)
+	ClassB.prototype.greet = function () {
+		return this.ClassA_greet() + this.punctuation
+	}
+	cjs.promote(ClassB, "ClassA")
+	b = new ClassB("World", "!?!")
+	$l(b.greet())  // Hello World!?!
+}
+GRIDD = NEEDSDRAWSQUARE = function () {
+	St()
+	ct = st.ct()
+	ct.SL()
+	rows = 5;
+	cols = 6;
+	sqP = 12;
+	sqS = 80
+	sqSP = sqS + sqP
+	_.t(rows * cols, function (i) {
+		drawSquare(ct, sqSP * (i % cols), sqSP * M.fl(i / cols)
+		)
+	})
+	st.update()
+}//A-
+GRID = function () {
+	z()
+	stage = s = createjs.stage(1000, 1000).tick().A()
+	container = c = new createjs.Container()
+	stage.A(container)
+	cjs.bindSlide(container)
+	rows = 5;
+	cols = 6;
+	sqP = 12;
+	sqS = 80
+	sqSP = sqS + sqP
+	_.times(rows * cols, function (i) {
+		drawSquare(container,
+				sqSP * (i % cols),
+				sqSP * Math.floor(i / cols)
+		)
+	})
+	function drawSquare(container, x, y) {
+		var rectangle = new createjs.Shape()
+		container.A(rectangle)
+		rectangle.graphics.beginFill($r()).drawRect(5, 5, 70, 70)
+		if (x) {
+			rectangle.X(x)
+		}
+		if (y) {
+			rectangle.Y(y)
+		}
+		return rectangle
+	}
+}
+GRID = function () {
+	z()
+	stage = s = createjs.stage(1000, 1000).tick().A()
+	container = c = new createjs.Container()
+	stage.A(container)
+	cjs.bindSlide(container)
+	rows = 5;
+	cols = 6;
+	sqP = 12;
+	sqS = 80
+	sqSP = sqS + sqP
+	_.times(rows * cols, function (i) {
+		drawSquare(container,
+				sqSP * (i % cols),
+				sqSP * Math.floor(i / cols)
+		)
+	})
+	function drawSquare(container, x, y) {
+		var rectangle = new createjs.Shape()
+		container.A(rectangle)
+		rectangle.graphics.beginFill($r()).drawRect(5, 5, 70, 70)
+		if (x) {
+			rectangle.X(x)
+		}
+		if (y) {
+			rectangle.Y(y)
+		}
+		return rectangle
+	}
+}
+testShape = function () {
+	z()
+	stage = createjs.stage(600).tick().A()
+	shape = new createjs.Shape()
+	stage.A(shape)
+	shape.graphics.f('red').s('black').dc(400, 400, 200).dr(100, 0, 200, 200)
+}
+TANGLE = function () {
+	z()
+	a = $.divA('r', 50, 50).XY(50).A().pad(10)
+	b = $.divA('b', 100, 100).XY(100).A().pad(10)
+	c = $.divA('g', 200, 200).XY(200).A().pad(10)
+	d = $.divA('y', 400, 400).XY(400).A().pad(10)
+	y = function (aa, bb, cc, dd) {
+		if (aa && U(bb)) {
+			aa.A().P('a')
+		}
+		if (bb) {
+			bb.A(aa.P('static'))
+		}
+		if (dd) {
+			dd.A(cc.P('s'))
+		}
+	}
+}
+SHIP = function () {
+	angleInDegrees = function self(y, x) {
+		if (O(y)) {
+			return self(y.vy, y.vx)
+		}
+		var d = tDeg(Math.atan(y / x))
+		if (x < 0) {
+			d = Math.abs(d) + 90;
+			if (y < 0) {
+				d = Math.abs(d) + 90
+			}
+		}
+		return d
+	}
+	ship = function (st) {
+		t = new cjs.Shape().XY(100).rY(20).vX(1).vY(1)
+		t.graphics.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
+		kD('d', function () {
+			t.rt(6, '+')
+		})
+		kD('u', function () {
+			t.rt(6, '-')
+		})
+		if (st) {
+			st.A(t)
+			st.on('stmousedown', function (event) {
+				e = event
+				t.vX((e.rawX - t.x) / 100, '+')
+				t.vY((e.rawY - t.y) / 100, '+')
+				if (t.vx > 10) {
+					t.vX(10)
+				}
+				if (t.vy > 10) {
+					t.vY(10)
+				}
+			})
+		}
+		setInterval(function () {
+			t.X(t.vx, '+').Y(t.vy, '+')
+			t.rotation = angleInDegrees(t)
+		}, 10)
+		return t
+	}
+	PL = 1;
+	aA = []
+	div = $.d('y').pad(10)
+	div.A(
+			$.h1('controls'),
+			b1 = $.bt('start', function () {
+				PL = 1;
+				b1.hd();
+				b2.sh()
+			}),
+			b2 = $.bt('stop', function () {
+				PL = 0;
+				b2.hd();
+				b1.sh()
+			}).hide(),
+			$.bt('sgun', function () {
+				sgun(guy)
+			})
+	)
+	boot = $.boot()
+	st = createjs.st(800, 600).tick()
+	boot.A(
+			div,
+			st.canvas
+	)
+	guy = ship(st)
+	// kD('s',function(){ $l('bang')})
+	// _.times(100,function(){var a=ast();a.a();a.p()})
+	// st.tick(function(){ if(PL){ _.each(aA,function(a){  a.u()  })}} )
+	sgun(guy)
+}
+ZX = function () {
+	z()
+	a = $.editDiv().A().C('a')
+	b = $.editDiv().A().C('b')
 }

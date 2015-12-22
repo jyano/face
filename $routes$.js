@@ -10,23 +10,19 @@ $stc('', '../art', '_data',
 		'fiz', 'fiz/collide', 'fiz/query', 'fiz/joints', 'fiz/control',
 		'spaz', 'spaz/cam', 'spaz/arcade',
 		//wappy
-		'wappy'
-)
+		'wappy')
 Deps = [
 	//dep libs
 	'both', 'jq', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
 	//data
 	'ooo', 'cssData', 'dfDefs' 
 ]
-
 Front = [
 	'manip', 'sty', 'll', 'rules', 'local',
 	'can', 'ctx',
  
 	'webApps', 'canApps' ,'entities'
 ]
-
-
 Nok = ['applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
 Jet = ['jquiCore', 'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
 Bone = [
@@ -41,18 +37,16 @@ Stage = [
 	'tween', 'animLoop', 'shake', 'justEaselApps'
 ]
 Easel = ['easel', 'shapes', 'objects', 
-          'graphics','container',   'writing',
+          'graphics','container',   'writing', 'loader',
 
 
- 'justEaselApps', 'stageDrawApps','graphicsTest']
-
+ 'justEaselApps', 'stageDrawApps','bmFillApps']
 Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
 	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
 	'$collide', '$contact', '$filtering', '$handle','$listen'
 
  
 	]
-
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ' - '
