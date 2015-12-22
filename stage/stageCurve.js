@@ -1,3 +1,8 @@
+$hsl = cjs.HSL = function (a, b, c) {
+	return U(a) ? cj.HSL(M.r() * 360, 100, 50) :
+			cj.Gx.getHSL(a, b, c)
+}
+$rgb = cjs.rgb = cjs.Gx.rgb = cjs.Gx.getRGB
 h.qt = function (a, b, c, d, e, f) {
 	var h = this, gx = h.graphics
 	if (O(a)) {

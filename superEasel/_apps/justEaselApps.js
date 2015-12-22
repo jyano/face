@@ -1,6 +1,4 @@
- 
-
-
+$L()
 CIR2 = HDC = function () {
 	st = $St()
 	//return
@@ -34,7 +32,6 @@ CIR2 = HDC = function () {
 	
 	 
 }
-
 CIR01 = function () {
 	ct = $Ct().a2($St(600))
  	
@@ -45,7 +42,6 @@ CIR01 = function () {
 	ct.A(cjs.cir(80, 300, 300, 'g', 'y', 30))
 	ct.A(cjs.cir(80, 300,  'g', 'y', 30))
 }
-
 CIR1 = CJSCIR = function () {
 
 	  
@@ -65,8 +61,6 @@ CIR1 = CJSCIR = function () {
 	 
 	
 }
-
-
 CIR3=DRG = GOB = function () {st =  $St() //good gx = $Sh().a2(st).graphics
 	//good gx = st.Sh().graphics
 	h = st.Sh().drag()
@@ -74,15 +68,13 @@ CIR3=DRG = GOB = function () {st =  $St() //good gx = $Sh().a2(st).graphics
 	$.i('me', function (img) {
 		gx.F()
 		//gx._bf(img)
-		gx.dcO({x: 100, y: 200, r: 200})
-		gx.C('R').dcO({x: 200, y: 200, r: 200})
+		gx._dc({x: 100, y: 200, r: 200})
+		gx.C('R')._dc({x: 200, y: 200, r: 200})
 		gx.C('b', 'g', 30)._dc(100, 300)
 	})
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////
 CIR4 = HCR = function () {
-	gx = $Gx().f(cjs.rgb(255, 0, 0)).ss(10).s('white')
+	gx = $Gx().f('pink').ss(10).s('white')
 	gx.dc(0, 0, 100).dc(100, 0, 100)
 	gx.s('blue').f('green').dc(0, 300, 100)
 	st = $St().A($Sh(gx).XY(300, 100)).u()
@@ -93,28 +85,27 @@ CIR4 = HCR = function () {
 	h.cir(200, 100, 100, 'r')
 	st.A(h).u()
 }
-
-CIR100=GX1 = function () {
-	st = $St().t()
-	//good gx = $Sh().a2(st).graphics
-	//good gx = st.Sh().graphics
-	gx = st.Gx()
-	gx.C('b').dc(200, 100, 40)
- 
-	//good gx = $Sh().a2(st).graphics
-	//good gx = st.Sh().graphics
-	gx = st.Gx().SS()
-	$.i('me', function (img) {
-		gx.F()
-		gx.dc(200, 200, 200).S()
-		gx.dc(400, 400, 200).S()
-		gx.dc(700, 700, 200).S()
-		gx._bf(img)
-		gx.dc(200, 200, 200).S()
-		gx.dc(400, 400, 200).S()
-		gx.dc(700, 700, 200).S()
-	})
+RGB = function () {
+	gx = $Gx().f(
+			cjs.rgb(255, 0, 0)
+	).ss(10).s('white')
+	gx.dc(0, 0, 100).dc(100, 0, 100)
+	gx.s('blue').f('green').dc(0, 300, 100)
+	st = $St().A($Sh(gx).XY(300, 100)).u()
+	h = $Sh()
+	h.graphics.f('blue')
+	//h.cir(100, 100, 100)
+	//h.graphics.f('yellow')
+	h.cir(200, 100, 100, 'r')
+	st.A(h).u()
 }
+$.me('ME', function (me) {
+		$St().Gx()
+		.SS().F().dc(200, 200, 200)
+		.S().dc(400, 400, 200)
+				.S()._bf(me)
+				.dc(400, 400, 200)
+})
 CIR0 = ROTCIRS = function () {
 	ct = $Ct().a2($St(1000, '+')).A(
 			$H(100, 100).f('r')
@@ -240,7 +231,6 @@ CIR99 = CIRCS8 = function () {
 		st.h(40, 10, 'b', 8).rf({c1: 'r', c2: 'd', r2: 100}).dc(0, 50, 40)
 	})//D
 }
-//
 POL = function () {
 	$S$().Gx().FS()._mt(100, 300)
 			._lt(300, 100)._lt(500, 200)._lt(800, 200)
@@ -248,11 +238,25 @@ POL = function () {
 			._pol(vs1)
 }
 REC  = function () {
-	 $St().t()
-	h = st.Sh().drag()
+	
+	$St()
+	
+	h = st.Sh().dg()
 	gx = h.graphics
+	
 	gx.FS()._dr()
 	gx = st.Gx().FS()._dr(100, 100, 500, 10)
+	h.dr(100, 100, 500, 10)
 	st.Gx().FS()._dr(500, 30)
 }
- 
+
+function _pre() {
+	$.me = function (name, fn) {
+		if (F(name)) {
+			return $.i('me', name)
+		}
+		window[name] = function () {
+			$.i('me', fn)
+		}
+	}
+}
