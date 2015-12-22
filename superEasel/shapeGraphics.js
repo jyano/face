@@ -1,3 +1,127 @@
+h.ef = function () {
+	this.graphics.endFill.apply(
+			this.graphics, arguments)
+	return this
+}
+h.es = function () {
+	var h = this, gx = h.graphics
+	gx.es()
+	return h
+}
+h.cp = function () {
+	this.graphics.cp();
+	return this
+}
+h.clr = h.z = h.clear = function () {
+	this.graphics.clear();
+	return this
+}
+h.dl = h.ln = h.line = function () {
+	var h = this, g = G(arguments), o
+	o = g.N_ ?
+	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
+	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
+	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
+	return this
+}
+h._lt = function (x, y) {
+	var v = V(x, y)
+	this.graphics.lt(v.x, v.y)
+	return this
+}
+h.lt = function (x, y) {
+	var h = this, gx = h.graphics, g = G(arguments)
+	//A(a) && O(a[0])
+	if (AO(g.f)) {
+		g.e(function (v) {
+			h.lt.apply(h, v)
+		})
+		return h
+	}
+	O(g.s) ? g.e(function (pt) {
+		h.lt(pt)
+	}) :
+			gx.lt(V(x, y).x, V(x, y).y)
+	return h
+	function alt() {
+		h.lt = function (x, y) {
+			var h = this, gx = h.graphics, g = G(arguments)
+			if (AO(g.f)) {
+				g.e(function (v) {
+					h.lt.apply(h, v)
+				})
+			}
+			else if (O(g.s)) {
+				g.e(function (pt) {
+					h.lt(pt)
+				})
+			}
+			else {
+				this.graphics.lt(V(x, y).x, V(x, y).y)
+			}
+			return this
+		}
+	}
+}
+h._mt = function (x, y) {
+	var g = G(arguments)
+	var pt = V(g.f, g.s)
+	this.graphics.mt(pt.x, pt.y)
+	return this
+}
+gx._mt = function (x, y) {
+	var gx = this, g = G(arguments), o
+	o = {x: g.f, y: g.s}
+	gx.mt(o.x, o.y)
+	return gx
+}
+gx._lt = function (x, y) {
+	var gx = this, g = G(arguments), o
+	o = {x: g.f, y: g.s}
+	gx.lt(o.x, o.y)
+	return gx
+}
+h.mt = function () {
+	var g = G(arguments), o
+	if (g.N) {
+		return this._mt(g.f, g.s)
+	}
+	o = AO(g) ? {
+		firPt: _.f(g.f), restPts: _.r(g.f),
+		ox: g.s, oy: g.t
+	} :
+	{firPt: g.f, restPts: g.r}
+	return this._mt(
+			o.firPt[0] + N(o.ox, 0),
+			o.firPt[1] + N(o.oy, 0)
+	).lt(M.os(o.restPts, o.ox, o.oy))
+}
+h.same = h.copy = function () {
+	return $h(this)
+} // cjs.shape(this)
+cj.shad = cj.shadow = function (color, x, y, blur) {
+	if (color == '-') {
+		return new cj.Shadow(null, 0, 0, 0)
+	}
+	color = S(color) ? color : 'a'
+	blur = N(blur) ? blur : 10
+	x = N(x) ? x : 0
+	y = N(y) ? y : 0
+	var shad = new cj.Shadow(oO('c', color), x, y, blur)
+	return shad
+}
+gx.fancyLt = gx.poly = function (vs, f, s, w) {
+	var gx = this, g = G(arguments), o
+	o = AA(g.f) ? {vs: g.f, cCL: [g.s, g.t, g[3]]} : {vs: g}
+	if (o.cCL) {
+		gx.cCL.apply(gx, o.cCL)
+	}
+	_.e(o.vs, function (v) {
+		gx.lt(v[0], v[1])
+	})
+	gx.cp()
+	return this
+}
 gx._dc = function () {
 	/*
 	 // dc = drawCircle ( x,  y,   rad  ) Graphics chainable Returns Graphics 
@@ -150,18 +274,6 @@ cj.cir = function () {
 	//return cjs.cir0(cir.x, cir.y, cir.r, cir.fC, cir.sC)	 }
 	//h.cir(x, y, r, fCol, sCol)
 }
-cj.rim = function (rad, lineWid, x, y) {
-	// = cjs.circle2
-	var z = lineWid
-	if (!S(r)) {
-		return rim('r', rad, z, x)
-	}
-	var gx = $Gx().ss(z / 8)._f(r, 'z')._dc(50)
-	return $Sh(gx).XY(N(x, 0), N(y, 0))
-}
-$Rec = function (a, b, c, d) {
-	return new cjs.R(a, b, c, d)
-}
 h._dr = function () {
 // = h.dr
 	var h = this, gx = h.graphics
@@ -229,32 +341,6 @@ h.rec = function () {
 	}
 	h.dr(-o.w / 2 + o.x, -o.h / 2 + o.y, o.w, o.h)
 	return h
-}
-$rGx = $recGx = classicRecGx = function (width, height, fc, sc) {
-	
-	// =  cjs.rect= cjs.rect2
-	width = width || 50
-	height = height || 50
-	fc = fc || 'green'
-	sc = sc || 'white'
-	halfwidth = width / 2
-	halfheight = height / 2
-	var h = new cjs.Shape()
-	h.graphics.f(fc).s(sc)
-			.mt(-halfwidth, -halfheight)
-			.lt(-halfwidth, halfheight)
-			.lt(halfwidth, halfheight)
-			.lt(halfwidth, -halfheight)
-			.lt(-halfwidth, -halfheight)
-	return h
-}
-$rCt = function () {
-	return 'this is a recGx in a container so it can be moved relative to something.. (its like a fx rel to a bd)'
-}
-$Cir = function () {
-	var g = G(arguments), o
-	o = g.S_ ? {c: g.f, x: g.s, y: g.t, r: g[3]} : {x: g.f, y: g.s, r: g.t}
-	return $H(o.c, o.x, o.y).dc(o.r)
 }
 h.vs = function (vs, x, y) {
 	return this.mt(M.os(vs, x, y))
@@ -484,51 +570,6 @@ ct.rec = function () {
 		}
 	}
 }
-$Sh = function (gx) {
-	return new cjs.Shape(gx)
-}
-cjs.shape = _$H = _$h = function (x, y, f, s, width, opt) {
-	if (cjs.iH(x)) {
-		return $Sh(x.graphics)
-	}
-	var h = $Sh()
-	if (N(x)) {
-		h.X(x)
-	}
-	if (N(y)) {
-		h.Y(y)
-	}
-	h.FS(f, s, width)
-	if (opt == 'drag') {
-		h.drag()
-	}
-	// use a switch statement here!  i love it!
-	return h
-}
-$H = $h = function () {
-	var g = G(arguments), h = new cjs.Shape(),
-	//if (cjs.iH(x)) {return new cjs.Shape(x.graphics)}
-//pass in your own obj to use 'o.i/o.bf' or 'o.lf' or 'o.rf'
-			o = g.O ? g.f :
-					g.N_ ? ( N(g[3]) ? // 'c-C-l' pattern
-					{x: g.f, y: g.s, C: g.t, l: g[3]} : {x: g.f, y: g.s, c: g.t, C: g[3], l: g[4]} ) :
-						// 'c-C-l' pattern
-							N(g.s) ? {C: g.f, l: g.s} :
-							{c: g.f, C: g.s, l: g.t}
-	_h = h
-	h.XY(N(o.x, 0), N(o.y, 0))
-	h.c(o.c || 'z', o.C || 'w', o.l || 8)
-	if (o.C) {
-		h.C(o.C)
-	}
-	if (N(o.l)) {
-		h.l(o.l)
-	}
-	if (g.p) {
-		h.dg()
-	}
-	return h
-}
 cjs.diamond = function (w, h, fc, sc) {
 	var h = $H(), gx = h.graphics;
 	fc = fc || 'green';
@@ -623,4 +664,15 @@ h.drawPolygons = function (paths, fc, sc) {
 		h.drawPolygon(path)
 	})
 	return h
+}
+function _post(){
+	cj.rim = function (rad, lineWid, x, y) {
+		// = cjs.circle2
+		var z = lineWid
+		if (!S(r)) {
+			return rim('r', rad, z, x)
+		}
+		var gx = $Gx().ss(z / 8)._f(r, 'z')._dc(50)
+		return $Sh(gx).XY(N(x, 0), N(y, 0))
+	}
 }

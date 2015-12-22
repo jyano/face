@@ -1,7 +1,4 @@
-$Ct = cjs.container = cjs.ct = function (a) {
-	return new cjs.Container(a)
-}
-$L('dot','dim', 'can', 'kids','add','next','matrix')
+$L('dot', 'dim', 'can', 'kids', 'add', 'next', 'compOp')
 st.sTPE = function () {
 	var st = this, g = G(arguments)
 	if (g.u) {
@@ -9,8 +6,245 @@ st.sTPE = function () {
 	}
 	st.snapToPixelEnabled = g.f ? true : false
 	return st
+}
+cjs.rmOb = function (ob) {
+	if (cjs.iDO(ob)) {
+		ob.rm()
+	}
+}
+ct.C = ct.bgC = function (c) {
+	var ct = this
+	$(ct.canvas).C(c)
+	return ct
+}
+ct.gSt = ct.gS = ct.st = ct.St = ct.S = function () {
+	return this.stage
 } 
-function kids(){
+st.hEv = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.handleEvent
+	}
+	st.handleEvent = g.f
+	return st
+}
+st.eDE = function () {
+	var st = this, g = G(arguments)
+	st.enableDOMEvents.apply(st, arguments)
+	return st
+}
+st.m = function (ob) {
+	var st = this
+	if (U(ob)) {
+		//return $Pt(this.mX(), this.mY())
+		return $Pt(st.mouseX, st.mouseY)
+	}
+	if (O(ob)) {
+		if (ob.d) {
+			st.MD(ob.d)
+		}
+		if (ob.u) {
+			st.MU(ob.u)
+		}
+		if (ob.m) {
+			st.MM(ob.m)
+		}
+	}
+	return st
+}
+st.mX = st.mx = function () {
+	return this.m().x
+}
+st.mY = st.my = function () {
+	return this.m().y
+}
+ct.t = ct.oT = ct.tick = function (fn) {
+	//cjs.Ticker.addEventListener('tick', this); return this
+	var g = G(arguments)
+	if (F(fn)) {
+		if (!g.n) {
+			fn()
+		}
+		return this.on('tick', fn)
+	}
+	else {
+		T.on('tick', this);
+		return this
+	}
+}
+ct.xT = function (fn) {
+	this.off('tick', fn)
+	return this
+}
+st.tOU = st.tkOUpd = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.tickOnUpdate
+	}
+	st.tickOnUpdate = g.f ? true : false
+	return st
+}
+st.tk = function (ms) {
+	var st = this, g = G(arguments)
+	st.tk.apply(st, g)
+	return st
+}
+ct.au = function (au) {
+	this.autoClear = au ? true : false;
+	return this
+}
+ct.noAuCl = function () {
+	this.autoClear = false;
+	return this
+}
+st.aC = st.auCl = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.autoClear
+	}
+	st.autoClear = g.f ? true : false
+	return st
+}
+ct.moCh = ct.muCh = ct.mouCh = function () {
+	var ct = this, g = G(arguments)
+	if (g.u) {
+		return ct.mouseChildren
+	}
+	ct.mouseChildren = g.f ? true : false
+	return ct
+}
+st.eMO = st.mO = function (ms) {
+	var st = this, g = G(arguments)
+	if (U(g[0]) || g[0]) {
+		st.enableMouseOver(N(g[0]) ? g[0] : true)
+	}
+	else {
+		st.enableMouseOver(g.f ? true : false)
+	}
+	return st
+}
+st.mMO = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.mouseMoveOutside
+	}
+	st.mouseMoveOutside = g.f ? true : false
+	return st
+}
+st.mIB = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.mouseInBounds
+	}
+	st.mouseInBounds = g.f ? true : false
+	return st
+}
+ct.gOUPs = function () {
+	return this.getObjectsUnderPoint.apply(this, arguments)
+}
+ct.gOUP = function () {
+	return this.getObjectUnderPoint.apply(this, arguments)
+}
+st.MD = function (fn) {
+	return this.on('stagemousedown', fn)
+}
+st.MM = function (fn) {
+	return this.on('stagemousemove', fn)
+}
+st.MU = function (fn) {
+	return this.on('stagemouseup', fn)
+}
+st.trDr = function () {
+	var st = this
+	st._md = 0
+	st.MD(function () {
+		st._md = 1
+	})
+	st.MU(function () {
+		st._md = 0
+	})
+	return this
+}
+dO.cl = function () {
+	return this.clone.apply(this, arguments)
+}
+dO.pa = dO.P = function () {
+	return this.parent
+}
+dO.sib = function () {
+	return this.P().ch()
+}
+dO.s2p = dO.snap2px = function (en) {
+	var dO = this, g = G(arguments)
+	if (g.u) {
+		return dO.snapToPixel
+	}
+	dO.snapToPixel = g.f ? true : false
+	return dO
+}
+dO.dr = function () {
+	this.draw.apply(this, arguments)
+	return this
+}
+dO.nm = dO.n = dO.N = function (name) {
+	if (U(name)) {
+		return this.name
+	}
+	this.name = name;
+	return this
+}
+dO.ix = function (n) {
+	var dO = this, g = G(arguments)
+	if (g.u) {
+		return
+	}
+	dO.parent.sChIx(dO, n)
+	return dO
+}
+dO.belowStg = function () {
+	return this.y > this.getStage().H()
+}
+dO.s = function () {
+	return this.set.apply(this, arguments)
+}
+dO.rm = dO.remove = function () {
+	var dO = this
+	if (O(dO) && O(dO.parent)) {
+		dO.parent.removeChild(dO)
+	}
+	return dO
+}
+dO.hd = dO.hide = function () {
+	return this.vsb(0)
+}
+dO.vis = dO.vsb = function (vsb) {
+	var dO = this
+	if (U(vsb)) {
+		return dO.visible
+	}
+	dO.visible = vsb ? true : false
+	return dO
+}
+dO.St = dO.S = dO.st = dO.stg = function () {
+	return this.getStage()
+}
+dO.gTL = function (x, y) {
+	if (O(x)) {
+		y = x.y;
+		x = x.x
+	}
+	return this.globalToLocal(x, y)
+}
+ 
+dO.tkEn = function (en) {
+	var dO = this, g = G(arguments)
+	if (g.u) {
+		return dO.tickEnabled
+	}
+	dO.tickEnabled = g.f ? true : false
+	return dO
+}
+function kids() {
 	ct.sort = ct.soCh = function () {
 		this.sortChildren.apply(this, arguments)
 		return this
@@ -223,26 +457,6 @@ function dot() {
 	}
 }
 function add() {
-	ct.A = function (arg, y) {
-		var ct = this, g = G(arguments)
-		var bd = $('body')
-		var st = ct.getStage()
-		if (g.u) {
-			if (g.u && st) {
-				//must be stage??
-				bd.A(st ? st.canvas : ct.canvas)
-			}
-		}
-		else if (g.N_) {
-			bd.A(ct.canvas).abs().XY(g.f, g.s)
-		}
-		else {
-			_.e(g, function (ch) {
-				ct._A(ch)
-			})
-		}
-		return ct
-	}
  
 	ct.ct = function (x, y) {
 		var ct = this, g = G(arguments), o
@@ -313,245 +527,68 @@ function next() {
 		return this
 	}
 }
-function can() {
-	st.cc = function () {
-		return this.cacheCanvas
-	}
-	st.du = st.tDU = function (ms) {
-		var st = this,
-				g = G(arguments)
-		// same as? return this.canvas.toDataURL()
-		st.toDataURL.apply(st, g)
-		return st
-	}
-	st.tabs = function (x, y) {
-		this.can.abs(x, y)
-		return this
-	}
-	st.snap = function (f) {
-		$.post('/img', {
-			d: this.toDataURL()//, dats: o.x.dats
-		})
-		sec(f)
-		return this
-	}
-
-	st.cv = function () {
-		var st = this, g = G(arguments)
+function compOp() {
+	dO.cO = dO.compOp = function (compOp) {
+		var dO = this, g = G(arguments)
 		if (g.u) {
-			return st.canvas
+			return dO.compositeOperation
 		}
-		st.canvas = g.f
-		return st
+		dO.compositeOperation = compOp
+		return dO
 	}
-	st.ab = st.abs = function (x, y) {
-		this.can.abs(x, y);
+// dO.o // not good!!!!!
+//eh.. unnecessary? could overlap something important? well.. does it or not?
+	dO.Ds = dO.dO = function () {
+		return this.compOp('destination-out');
+	}
+	dO.dS = dO.dI = function () {
+		return this.compOp('destination-in')
+	}
+	dO.sD = dO.sI = function () {
+		this.compOp('source-in');
 		return this
 	}
-
-}
-function dim(){
-	ct.cX = function () {
-		return this.St().cen().x
-	}
-	ct.cY = function () {
-		return this.St().cen().y
-	}
-	ct.cen = ct.pt = ct.center = function () {
-		return V(this.W() / 2, this.H() / 2)
-	}
-	ct.W = function (w) {
-		var st = this.stage
-		var can = st.canvas
-		if (U(w)) {
-			return can.width
-		}
-		can.width = w
+	dO.Sd = dO.sO = function () {
+		this.compOp('source-out');
+		return this
+	} // why use this ??x.sd = x.sV= function(){ this.compOp('source-over'); return this }
+	dO.ds = dO.dV = function () {
+		this.compOp('destination-over');
 		return this
 	}
-	ct.H = function (w) {
-		var can = this.getStage().canvas
-		if (U(w)) {
-			return can.height
-		}
-		can.height = w
+	dO.SD = dO.sT = dO.sA = function () {
+		this.compOp('source-atop');
 		return this
 	}
-	st.hW = function () {
-		return this.W() / 2
-	}
-	st.hH = function () {
-		return this.H() / 2
-	}
-	st.W = function (a) {
-		if (U(a)) {
-			return this.canvas.width
-		}
-		this.canvas.width = a
+	dO.DS = dO.dT = dO.dA = function () {
+		this.compOp('destination-atop');
 		return this
 	}
-	st.H = function (a) {
-		if (U(a)) {
-			return this.canvas.height
-		}
-		this.canvas.height = a
+	dO.li = function () {
+		this.compOp('lighter');
 		return this
 	}
-	st.WH = function (w, h) {
-		var st = this;
-		if (U(w)) {
-			return V(st.W(), st.H())
-		}
-		if (N(w)) {
-			st.W(w)
-		}
-		if (N(h)) {
-			st.H(h)
-		}
-		;
-		return st
-	}
-}
-function _pre() {
-	ct.C = ct.bgC = function (c) {
-		var ct = this
-		$(ct.canvas).C(c)
-		return ct
-	}
-	ct.u = ct.upd = function () {
-		this.update();
+	dO.co = function () {
+		this.compOp('copy');
 		return this
 	}
-	ct.gSt = ct.gS = ct.st = ct.St = ct.S = function () {
-		return this.stage
-	}
-	ct._A = function () {
-		return this.addChild.apply(this, arguments)
+	dO.xo = function () {
+		this.compOp('xor');
+		return this
 	}
 }
-function alpha() {
-	ct.bgI = ct.bg = function (i) {
-		var ct = this
-		ct.bm(i, function (b) {
-			ct.setChildIndex(b, 0) //ct.ch(b, 0)
-		})
-		return ct
-	}
-	ct.mc = function (x, y) {
-		var ct = this, g = G(arguments), mc
-		mc = cjs.MovieClip.apply(cjs, g)
-		this.A(mc).XY(N(x, 100), N(y, 100))
-		return mc
-	}
+ct.bgI = ct.bg = function (i) {
+	var ct = this
+	ct.bm(i, function (b) {
+		ct.setChildIndex(b, 0) //ct.ch(b, 0)
+	})
+	return ct
 }
-$.isCvId = $.iCI = function (id) {
-	return S(id) && $('#' + id).length
-}
-$.c0 = function () {
-	var g = G(arguments)
-	$.c.apply($, g.A ? g.f : g)[0]
-}
-$0 = function () {
-	return $.apply(null, arguments)[0]
-}
-$St = function () {
-	__$St = function (cv) {
-		return new cj.St(O(cv) ? $0(cv) : cv)
-	}
-	var g = G(arguments)
-	if (g.d) {
-		$.E()
-	}
-	var cv = g.A ? g.f[0] :
-			g.O || $.isCvId(g.f) ? g.f :
-					$.c(g.f ? g : 'o')
-	var st = __$St(cv)
-	if (!g.n) {
-		st.t()
-		st.cv = st.c = st.can = $(st.canvas)
-		st.cv0 = st.cv[0]
-		st.xc = st.cv0.getContext('2d')
-		s = stage = window.st = st
-		lib = {}
-		images = img = {}
-		loader = new cjs.LoadQueue(false);
-		h = $h(0, 0).a2(st).drag()
-		h.graphics.C('r', 'b', 20)
-	}
-	if (g.m) {
-		st.b('me')
-	}
-	return st
-	// = _$St = $StCv = cjs.stg = cjs.stage = St = St$ = $S$ = cjs.S = __St = __S
-}
-//get by canvas ID.. if in arr (but this depped)
-//if you pass it a canvas OR a $canvas object
-//	stage = new cjs.Stage($(a)[0])
-//create a new canvas
-//else {stage = new cjs.Stage($.c(a, b, c, d, e) [0])}
-$.iI = function (i) {
-	if (O(i)) {
-		return S($(i)[0].src)
-	}
-}
-//_$StCv = function (cv) {var g=G(arguments); return __$St($.c0(g.A ? g.f : g))}
-cjs.rmOb = function (ob) {
-	if (cjs.iDO(ob)) {
-		ob.rm()
-	}
-}
- 
-function matrix() {
-	mx = cjs.Matrix2D.prototype
-	mx.aTf = function (x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) {
-		x = N(x, 0)
-		y = N(y, 0)
-		scaleX = N(scaleX, 1)
-		scaleY = N(scaleY, 1)
-		rotation = N(rotation, 0)
-		return this.appendTransform(x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY)
-	}
-	$Mx = cjs.m2d = function () {
-		var _MxOb = function (mx) {
-			return new cjs.Matrix2D(mx.a, mx.b, mx.c, mx.d, mx.tx, mx.ty)
-		}
-		var g = G(arguments), o;
-		if (A(g.f)) {
-			return $Mx.apply(null, g.f)
-		}
-		o = g.O ? g.f :
-				U(g.t) ? {tx: N(g.f), ty: N(g.s)} :
-				{a: g.f, b: g.s, c: g.t, d: g.fo, tx: g.fi, ty: g.si}
-		var $mxDf = function (o) {//( [a=1]  [b=0]  [c=0]  [d=1]  [tx=0]  [ty=0] )
-			o.a = N1(o.a)
-			o.b = N0(o.b)
-			o.c = N0(o.c)
-			o.d = N1(o.d)
-			o.tx = N0(o.tx)
-			o.ty = N0(o.ty)
-			return o
-		}
-		return _MxOb($mxDf(o))
-	}
-	$Tf = $TfMx = $tMx = function (x, y, sx, sy, rt, kx, ky, rx, ry) {
-		return $Mx().aTf(x, y, sx, y, rt, kx, ky, rx, ry)
-	}
-	h._bfTf = h._bfT = function (img) {
-		var g = G(arguments)
-		var props = A(g.s) ? g.s : g.r
-		return this._bf(img, $Tf(props)) //gant!
-	}
-	h._bfTfArrs = h._bfTAs = function (str, tfPropsArr, fn) {
-		var h = this, g = G(arguments), o
-		o = A(g.s) ?
-		{i: g.f, tf: g.s, fn: g.t} :
-		{i: g.f, fn: g.s}
-		$.i(o.i, function (i) {
-			var fn = _.tFn(o.fn)
-			fn(h._bf(g.f, $Tf(_.tA(o.tf))))
-		})
-		return h
-	}
+ct.mc = function (x, y) {
+	var ct = this, g = G(arguments), mc
+	mc = cjs.MovieClip.apply(cjs, g)
+	this.A(mc).XY(N(x, 100), N(y, 100))
+	return mc
 }
  
  
