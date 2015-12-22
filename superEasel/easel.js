@@ -563,35 +563,38 @@ function matx() {
 	}
 }
 p = ct = cjs.Container.prototype
-i.dg = i.drag = i.SL = function () {
-	SL(this);
+ 
+dO.dg = dO.drag = dO.SL = function () {
+	drag(this);
 	return this
 }
-i.dg = i.drag = i.SL = function () {
-	SL(this);
-	return this
-}
-
-dO.dg = dO.drag = function () {
-	$l('dragggg')
-	var i = this;
-	cjs.SL(i); //<-SL(this)
-	return i
-}
-LS = cjs.SL = cjs.bindSlide = SL = function (b, b2) {
-	var g = G(arguments),
-			b = g[0], b2 = g[1] || b
-	return b.on('mousedown',
-			function (e) {
-				var bx = b2.x - e.rawX, by = b2.y - e.rawY
-				b.on('pressmove', function (e) {
-					if (g.P) {
-						b2.x = bx + e.rawX
-					}
-					if (g.N) {
-						b2.y = by + e.rawY
-					}
-				})
-			}
-	)
+ 
+drag = cjs.SL = LS = cjs.bindSlide = SL = function ( ) { 
+	var g = G(arguments)
+		
+	var b = g.f
+	var b2 = g.s || b
+			
+	
+	return b.on('mousedown', function (e) { 
+		
+		var  bx = b2.x - e.rawX
+		var  by = b2.y - e.rawY
+		
+		
+		b.on('pressmove', function (e) { 
+				 if (!g.p) {
+					
+					b2.x = bx + e.rawX
+					
+		 
+				 }
+					
+				 if (!g.n) {
+					b2.y = by + e.rawY
+					 }
+		
+		})
+		
+	})
 }

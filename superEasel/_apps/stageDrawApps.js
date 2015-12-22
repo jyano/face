@@ -172,7 +172,7 @@ GX2 = function () {
 		gx.dc(700, 700, 200).S()
 	})
 }
-GOB = function () {
+DRG = GOB = function () {
 	st = _$St().t()
 	//good gx = $Sh().a2(st).graphics
 	//good gx = st.Sh().graphics
@@ -197,70 +197,72 @@ GDR = function () {
 	gx = st.Gx().FS()._dr(100, 100, 500, 10)
 	st.Gx().FS()._dr(500, 10)
 }
-GRAPHTEST8 = function () {
-	St();
-	img = $.i('me', function () {
-		s.ct().A(h = $Sh())
-		gx = h.graphics.FS()
-		s.A($Bm(img))
-		gx.ss(32).dr(20, 20, 920, 360);
-		fns = [
-			function () {
-				return $Sh(12, 10)
-						.lf('b', 'g', 130).dr(130)
-			},
-			function () {
-				return $Sh(40, 10, 'b', 16)
-						.ls('r', 'w', 70, 140).de(70, 140)
-			},
-			function () {
-				return $Sh(80, 80)
-						.C('b', 8).rf('w', 'y', 40).dc(40)
-			},
-			function () {
-				return $Sh(12, 10, 18)
-						.bf(img, cjs.M(1)).rs('b', 'g', 30, 130).dr(130)
-			},
-			function () {
-				return $Sh(12, 12, 'g', 'r', 8)
-						.rr(130, 30)
-			}, //w(h) and r
-			function lt() {
-				return $Sh().C('o')
-						.ss(16, 'round', 'round')
-						.mt([40, 10], [90, 90], [90, 140])
-			},
-			function star() {
-				return $Sh(80, 85, 'y', 'b', 3)
-						.pStr(0, 0, 80, 5, .8, -95)
-			},
-			function hex() {
-				return $Sh(80, 40, 'p')
-						.pStr(40, 6).pStr(0, 75, 40, 6).pStr(45, 45, 20, 6)
+function usesGrad(){
+	GRAPHTEST8 = function () {
+		St();
+		img = $.i('me', function () {
+			s.ct().A(h = $Sh())
+			gx = h.graphics.FS()
+			s.A($Bm(img))
+			gx.ss(32).dr(20, 20, 920, 360);
+			fns = [
+				function () {
+					return $Sh(12, 10)
+							.lf('b', 'g', 130).dr(130)
+				},
+				function () {
+					return $Sh(40, 10, 'b', 16)
+							.ls('r', 'w', 70, 140).de(70, 140)
+				},
+				function () {
+					return $Sh(80, 80)
+							.C('b', 8).rf('w', 'y', 40).dc(40)
+				},
+				function () {
+					return $Sh(12, 10, 18)
+							.bf(img, cjs.M(1)).rs('b', 'g', 30, 130).dr(130)
+				},
+				function () {
+					return $Sh(12, 12, 'g', 'r', 8)
+							.rr(130, 30)
+				}, //w(h) and r
+				function lt() {
+					return $Sh().C('o')
+							.ss(16, 'round', 'round')
+							.mt([40, 10], [90, 90], [90, 140])
+				},
+				function star() {
+					return $Sh(80, 85, 'y', 'b', 3)
+							.pStr(0, 0, 80, 5, .8, -95)
+				},
+				function hex() {
+					return $Sh(80, 40, 'p')
+							.pStr(40, 6).pStr(0, 75, 40, 6).pStr(45, 45, 20, 6)
+				}
+			]
+			_.e(fns, withEachFn)
+			function withEachFn(cont, i) {
+				var W = 155, H = 155, P = 5, C = 4 //pad, cols
+				s.A(tile(cont()).XY(
+						42 + (W + P) * (i % C),
+						42 + (i / C | 0) * (H + P)))
 			}
-		]
-		_.e(fns, withEachFn)
-		function withEachFn(cont, i) {
-			var W = 155, H = 155, P = 5, C = 4 //pad, cols
-			s.A(tile(cont()).XY(
-					42 + (W + P) * (i % C),
-					42 + (i / C | 0) * (H + P)))
+		})[0]
+		tile = createTile = function (x, y) {
+			var bg, til
+			bg = $h().c('t').dr(0, 0, 155, 155).ef().op(.2)
+			til = cjs.ct().A(bg)
+			if (N(x)) {
+				til.X(x)
+			}
+			if (N(y)) {
+				til.Y(y)
+			}
+			if (O(x)) {
+				til.A(x)
+			}
+			return til
 		}
-	})[0]
-	tile = createTile = function (x, y) {
-		var bg, til
-		bg = $h().c('t').dr(0, 0, 155, 155).ef().op(.2)
-		til = cjs.ct().A(bg)
-		if (N(x)) {
-			til.X(x)
-		}
-		if (N(y)) {
-			til.Y(y)
-		}
-		if (O(x)) {
-			til.A(x)
-		}
-		return til
 	}
 }
 XX6 = GXTX = GRAPHICSTEST = function () {
@@ -371,28 +373,7 @@ DRAWLINE = XX5 = HDL11 = function () {
 		h.dl(V(300, 500), [500, 200])
 	}
 }
-IX1=INDEXX = function () {
-	z()
-	s = $.dragStage().bm('me', function (bm) {
-		b = bm
-		SL(b)
-		_.t(10, function () {
-			s.bm('guy', SL)
-		})
-		s.ch(b, 3)
-	})
-}
-IX2 = function () {
-	z()
-	s = $.dragStage().bm('me', function (bm) {
-		b = bm
-		SL(b)
-		_.t(10, function () {
-			s.bm('guy', SL)
-		})
-		s.ch(b, 3)
-	})
-}
+ 
 FAIL = SKETCH = function () {
 	s = cjs.stage(500, 500).A()
 	s.can.P('a').XY(300)
@@ -469,137 +450,142 @@ BOWL = function () {
 		})
 	})
 }
-SGUN = SGUNSHIP = function () {
-	St()
-	angleInDegrees = function self(y, x) {
-		if (O(y)) {
-			return self(y.vy, y.vx)
-		}
-		var d = tDeg(M.atan(y / x))
-		if (x < 0) {
-			d = M.abs(d) + 90;
-			if (y < 0) {
-				d = M.abs(d) + 90
+function needsBoot(){
+	SGUN = SGUNSHIP = function () {
+		St()
+		angleInDegrees = function self(y, x) {
+			if (O(y)) {
+				return self(y.vy, y.vx)
 			}
-		}
-		return d
-	}
-	ship = function (st) {
-		h = t = $H().XY(100).rY(20).vX(1).vY(1)
-		h.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
-		$.kD('d', function () {
-			t.rt(6, '+')
-		})
-		$.kD('u', function () {
-			t.rt(6, '-')
-		})
-		if (st) {
-			st.A(h)
-			st.MD(function (e) {
-				t.vX((e.rawX - t.x) / 100, '+')
-				t.vY((e.rawY - t.y) / 100, '+')
-				if (t.vx > 10) {
-					t.vX(10)
+			var d = tDeg(M.atan(y / x))
+			if (x < 0) {
+				d = M.abs(d) + 90;
+				if (y < 0) {
+					d = M.abs(d) + 90
 				}
-				if (t.vy > 10) {
-					t.vY(10)
-				}
-			})
+			}
+			return d
 		}
-		_.ev(.05, function () {
-			h.X(t.vx, '+').Y(h.vy, '+')
-			h.rotation = angleInDegrees(t)
+		ship = function (st) {
+			h = t = $H().XY(100).rY(20).vX(1).vY(1)
+			h.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
+			$.kD('d', function () {
+				t.rt(6, '+')
+			})
+			$.kD('u', function () {
+				t.rt(6, '-')
+			})
+			if (st) {
+				st.A(h)
+				st.MD(function (e) {
+					t.vX((e.rawX - t.x) / 100, '+')
+					t.vY((e.rawY - t.y) / 100, '+')
+					if (t.vx > 10) {
+						t.vX(10)
+					}
+					if (t.vy > 10) {
+						t.vY(10)
+					}
+				})
+			}
+			_.ev(.05, function () {
+				h.X(t.vx, '+').Y(h.vy, '+')
+				h.rotation = angleInDegrees(t)
+			})
+			return t
+		}
+		PL = 1;
+		aA = []
+		div = $.d('y').pad(10)
+		div.A(
+				$.h1('controls'),
+				b1 = $.bt('start', function () {
+					PL = 1;
+					b1.hd();
+					b2.sh()
+				}),
+				b2 = $.bt('stop', function () {
+					PL = 0;
+					b2.hd();
+					b1.sh()
+				}).hd(),
+				$.bt('sgun', function () {
+					sgun(guy)
+				}))
+		boot = $.boot()
+		boot.A(div, st.canvas)
+		guy = ship(st)
+		// kD('s',function(){ $l('bang')})
+		_.t(100, function () {
+			var a = ast();
+			a.a();
+			a.p()
 		})
-		return t
+		st.t(function () {
+			if (PL) {
+				_.e(aA, function (a) {
+					a.u()
+				})
+			}
+		})
+		sgun(guy)
 	}
-	PL = 1;
-	aA = []
-	div = $.d('y').pad(10)
-	div.A(
-			$.h1('controls'),
-			b1 = $.bt('start', function () {
-				PL = 1;
-				b1.hd();
-				b2.sh()
-			}),
-			b2 = $.bt('stop', function () {
-				PL = 0;
-				b2.hd();
-				b1.sh()
-			}).hd(),
-			$.bt('sgun', function () {
-				sgun(guy)
-			}))
-	boot = $.boot()
-	boot.A(div, st.canvas)
-	guy = ship(st)
-	// kD('s',function(){ $l('bang')})
-	_.t(100, function () {
-		var a = ast();
-		a.a();
-		a.p()
-	})
-	st.t(function () {
-		if (PL) {
-			_.e(aA, function (a) {
-				a.u()
-			})
+}
+function needsLoader(){
+	GREY = function () {
+		Q(function () {
+			Q.b('me').a2($St().t())
+					.fl($cMF($cM().s(-100)))
+					.ca(0, 0, 1000, 1000)
+		})
+	}
+}
+function needsS$(){
+	SHAPEZ8 = function () {//C- only PLAY!?
+		SHAPS8 = function () {
+			z()
+			s = stage = $St(500, 500)
+			//s.bm('me', function(bm){ bm.sXY(.2)   })
+			s.Sh().cir(100, 100, 100, 'b', 'g')//.fn(SL)
+			s.cir(100, 100, 10, 'r', 'y')//.fn(SL)
+			s.cir(10, 100, 100, 'z', 'x')//.fn(SL)
+			s.cir(100, 10, 100, 'a', 'c')//.fn(SL)
+			s.Sh().cir(150, 150, 120, 'c', 'd')
+				//.fn(SL)
+					.cir(30, 'x', 'x')
 		}
-	})
-	sgun(guy)
-}
-GREY = function () {
-	Q(function () {
-		Q.b('me').a2($St().t())
-				.fl($cMF($cM().s(-100)))
-				.ca(0, 0, 1000, 1000)
-	})
-}
- 
-SHAPEZ8 = function () {//C- only PLAY!?
-	SHAPS8 = function () {
-		z()
-		s = stage = $St(500, 500)
-		//s.bm('me', function(bm){ bm.sXY(.2)   })
-		s.Sh().cir(100, 100, 100, 'b', 'g')//.fn(SL)
-		s.cir(100, 100, 10, 'r', 'y')//.fn(SL)
-		s.cir(10, 100, 100, 'z', 'x')//.fn(SL)
-		s.cir(100, 10, 100, 'a', 'c')//.fn(SL)
-		s.Sh().cir(150, 150, 120, 'c', 'd')
-			//.fn(SL)
-				.cir(30, 'x', 'x')
+		SHAPES9 = function () {
+			z()
+			s = stage = St(500, 500).a()
+			//s.bm('me', function(bm){ bm.sXY(.2)   })
+			s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
+			s.Circle(100, 100, 10, 'r', 'y').fn(SL)
+			s.Circle(10, 100, 100, 'z', 'x').fn(SL)
+			s.Circle(100, 10, 100, 'a', 'c').fn(SL)
+			s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
+			//s.bm('me', function(bm){ bm.sXY(.2)   })
+			s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
+			s.Circle(100, 100, 10, 'r', 'y').fn(SL)
+			s.Circle(10, 100, 100, 'z', 'x').fn(SL)
+			s.Circle(100, 10, 100, 'a', 'c').fn(SL)
+			s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
+		}
+		St()
+		s.can.P('a').XY(200)
+		s.bm('me')
+		s.bm('me', 0.2, function (bm) {
+		})
+		h = $h().cir()
+		s.A(
+				$h().cir(100, 'blue', 'green').XY(100, 100).drag()
+		)
+		s.h().cir(100, 100, 10, 'red', 'yellow')
+		s.h().cir(10, 100, 100, 'black', 'purple')
+		s.h().cir(100, 10, 100, 'blue', 'red')
+		s.h().cir(150, 150, 120, 'red', 'blue')
+		s.h().cir(30, 'brown', 'gray')
+		s.u()
 	}
-	SHAPES9 = function () {
-		z()
-		s = stage = St(500, 500).a()
-		//s.bm('me', function(bm){ bm.sXY(.2)   })
-		s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
-		s.Circle(100, 100, 10, 'r', 'y').fn(SL)
-		s.Circle(10, 100, 100, 'z', 'x').fn(SL)
-		s.Circle(100, 10, 100, 'a', 'c').fn(SL)
-		s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
-		//s.bm('me', function(bm){ bm.sXY(.2)   })
-		s.Shape().circle(100, 100, 100, 'b', 'g').fn(SL)
-		s.Circle(100, 100, 10, 'r', 'y').fn(SL)
-		s.Circle(10, 100, 100, 'z', 'x').fn(SL)
-		s.Circle(100, 10, 100, 'a', 'c').fn(SL)
-		s.Shape().circle(150, 150, 120, 'c', 'd').fn(SL).circle(30, 'x', 'x')
-	}
-	St()
-	s.can.P('a').XY(200)
-	s.b('me')
-	s.bm('me', 0.2, function (bm) {
-	})
-	h = $h().cir()
-	s.A(
-			$h().cir(100, 'blue', 'green').XY(100, 100).drag()
-	)
-	s.h().cir(100, 100, 10, 'red', 'yellow')
-	s.h().cir(10, 100, 100, 'black', 'purple')
-	s.h().cir(100, 10, 100, 'blue', 'red')
-	s.h().cir(150, 150, 120, 'red', 'blue')
-	s.h().cir(30, 'brown', 'gray')
-	s.u()
 }
 CIRTUT = function () {
 	cv = $.c(1000, 500).A()
