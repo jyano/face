@@ -119,17 +119,22 @@ cjs.tick2 = function (func) {
 cjs.stopListening = function () {
 	cjs.Ticker.removeAllEventListeners()
 }
-$t = T.t = cjs.t = cjs.tick = function (fn) {
+
+ T.t = cjs.t = cjs.tick = function (fn) {
 	var g = G(arguments)
 	if (g.F_) {
 		if (!g.n) {
 			fn()
 		}
+		
 		return T.on('tick', fn) // T.addEventListener? return T?
 	}
+	
 	return g.n ? T.t('+') - T.t() :
 			Number((T.getTime(g.p ? false : true) / 1000).toFixed(2))
 }
+
+
 T.p = function () {
 	T.setPaused(false);
 	return T
@@ -178,3 +183,6 @@ T.iP = function () {
 	return T.getPaused()
 }
  
+ $t=function(fn){
+	 T.t(fn)
+ }
