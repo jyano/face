@@ -20,47 +20,7 @@ gx._mt = function (x, y) {
 	gx.mt(o.x, o.y)
 	return gx
 }
-gx._pol = function () {
-	var gx = this, g = G(arguments)
-	if (g.A) {
-		return gx._pol.apply(gx, g.f)
-	}
-	gx.mt(g.f[0], g.f[1])
-	_.e(_.r(g), function (pt) {
-		gx.lt(pt[0], pt[1])
-	})
-	gx.lt(g.f[0], g.f[1])
-	return gx
-}
-gx.pol = function (pts, f, s, w) {
-	var gx = this, g = G(arguments)
-	//  _.each(arguments,function(vert){that.lt(vert[0],vert[1])});this.cp()
-	if (N(pts[0])) {
-		_.e(g, function (pt) {
-			gx.lt(pt[0], pt[1])
-		})
-	}
-	else {
-		gx.fs(f, s, w)
-		_.e(pts, function (pt) {
-			gx.lt(pt[0], pt[1])
-		});
-	}
-	return gx.cp()
-}
-gx.fancyLt = gx.poly = function (vs, f, s, w) {
-	var gx = this, g = G(arguments), o
-	o = AA(g.f) ? {vs: g.f, cCL: [g.s, g.t, g[3]]} : {vs: g}
-	if (o.cCL) {
-		gx.cCL.apply(gx, o.cCL)
-	}
-	_.e(o.vs, function (v) {
-		gx.lt(v[0], v[1])
-	})
-	gx.cp()
-	return this
-}
-
+ 
 function color() {
 	gx._f = function (col) {
 		return this.f(oO('c', col))
@@ -122,8 +82,8 @@ function color() {
 	gx.SS = function (thickness, caps, jts, mtrLm, igSc) {
 		return this._ss(N(thickness, 4), caps, jts, mtrLm, igSc)
 	}
-	gx.FS = function (f, s, w) {
-		// = gx.fs = gx.C = gx.fC = gx.cCL
+	gx.FS = gx.C = function (f, s, w) {
+		// = gx.fs = gx.fC = gx.cCL
 		var gx = this
 		gx.F(f).S(s).SS(w)
 		return gx
@@ -303,250 +263,6 @@ function color() {
 		return h
 	}
 }
-h.es = function () {
-	var h = this, gx = h.graphics
-	gx.es()
-	return h
-}
-h.cp = function () {
-	this.graphics.cp();
-	return this
-}
-h.bs = function (i) {
-	var h = this;
-	h.graphics.bs(i);
-	return h
-}
-h.ef = function () {
-	var h = this, gx = h.graphics
-	gx.f()
-	return h
-}
-h.ef = function () {
-	this.graphics.endFill.apply(
-			this.graphics, arguments)
-	return this
-}
-h.es = function () {
-	var h = this, gx = h.graphics
-	gx.es()
-	return h
-}
-h.cp = function () {
-	this.graphics.cp();
-	return this
-}
-h.clr = h.z = h.clear = function () {
-	this.graphics.clear();
-	return this
-}
-h.ef = function () {
-	this.graphics.endFill.apply(
-			this.graphics, arguments)
-	return this
-}
-h.es = function () {
-	var h = this, gx = h.graphics
-	gx.es()
-	return h
-}
-h.cp = function () {
-	this.graphics.cp();
-	return this
-}
-h.clr = h.z = h.clear = function () {
-	this.graphics.clear();
-	return this
-}
-h._lt = function (x, y) {
-	var v = V(x, y)
-	this.graphics.lt(v.x, v.y)
-	return this
-}
-h.lt = h._lt = function (x, y) {
-	var h = this, gx = h.graphics, g = G(arguments)
-	//A(a) && O(a[0])
-	if (AO(g.f)) {
-		g.e(function (v) {
-			h.lt.apply(h, v)
-		})
-		return h
-	}
-	O(g.s) ?
-			g.e(function (pt) {
-				h.lt(pt)
-			}) :
-			gx.lt(V(x, y).x, V(x, y).y)
-	return h
-}
-h.lt = function (x, y) {
-	var h = this, g = G(arguments)
-	if (AO(g.f)) {
-		g.e(function (v) {
-			h.lt.apply(h, v)
-		})
-	}
-	else if (O(g.s)) {
-		g.e(function (pt) {
-			h.lt(pt)
-		})
-	}
-	else {
-		this.graphics.lt(V(x, y).x, V(x, y).y)
-	}
-	return this
-}
-h._mt = function (x, y) {
-	var g = G(arguments)
-	var pt = V(g.f, g.s)
-	this.graphics.mt(pt.x, pt.y)
-	return this
-}
-h._mt = function (x, y) {
-	var v = V(x, y)
-	this.graphics.mt(v.x, v.y)
-	return this
-}
-h.mt = function () {
-	var g = G(arguments), o
-	if (g.N) {
-		return this._mt(g.f, g.s)
-	}
-	o = AO(g) ? {
-		firPt: _.f(g.f), restPts: _.r(g.f),
-		ox: g.s, oy: g.t
-	} : {firPt: g.f, restPts: g.r}
-	return this._mt(
-			o.firPt[0] + N(o.ox, 0),
-			o.firPt[1] + N(o.oy, 0)
-	).lt(M.os(o.restPts, o.ox, o.oy))
-}
-h.mt = function () {
-	var g = G(arguments), o
-	if (g.N) {
-		return this._mt(g.f, g.s)
-	}
-	o = AO(g) ? {
-		firPt: _.f(g.f), restPts: _.r(g.f),
-		ox: g.s, oy: g.t
-	} : {firPt: g.f, restPts: g.r}
-	return this._mt(
-			o.firPt[0] + N(o.ox, 0),
-			o.firPt[1] + N(o.oy, 0)
-	).lt(M.os(o.restPts, o.ox, o.oy))
-}
-h.dl = h.ln = h.line = function () {
-	var h = this, g = G(arguments), o
-	o = g.N_ ?
-	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
-	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
-	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
-	return this
-}
-h.dl = h.ln = h.line = function () {
-	var h = this, g = G(arguments), o
-	o = g.N_ ?
-	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
-	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
-	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
-	return this
-}
-h._lt = function (x, y) {
-	var v = V(x, y)
-	this.graphics.lt(v.x, v.y)
-	return this
-}
-h.lt = h._lt = function (x, y) {
-	var h = this, gx = h.graphics, g = G(arguments)
-	//A(a) && O(a[0])
-	if (AO(g.f)) {
-		g.e(function (v) {
-			h.lt.apply(h, v)
-		})
-		return h
-	}
-	O(g.s) ?
-			g.e(function (pt) {
-				h.lt(pt)
-			}) :
-			gx.lt(V(x, y).x, V(x, y).y)
-	return h
-}
-h.lt = function (x, y) {
-	var h = this, g = G(arguments)
-	if (AO(g.f)) {
-		g.e(function (v) {
-			h.lt.apply(h, v)
-		})
-	}
-	else if (O(g.s)) {
-		g.e(function (pt) {
-			h.lt(pt)
-		})
-	}
-	else {
-		this.graphics.lt(V(x, y).x, V(x, y).y)
-	}
-	return this
-}
-h._mt = function (x, y) {
-	var g = G(arguments)
-	var pt = V(g.f, g.s)
-	this.graphics.mt(pt.x, pt.y)
-	return this
-}
-h._mt = function (x, y) {
-	var v = V(x, y)
-	this.graphics.mt(v.x, v.y)
-	return this
-}
-h.mt = function () {
-	var g = G(arguments), o
-	if (g.N) {
-		return this._mt(g.f, g.s)
-	}
-	o = AO(g) ? {
-		firPt: _.f(g.f), restPts: _.r(g.f),
-		ox: g.s, oy: g.t
-	} : {firPt: g.f, restPts: g.r}
-	return this._mt(
-			o.firPt[0] + N(o.ox, 0),
-			o.firPt[1] + N(o.oy, 0)
-	).lt(M.os(o.restPts, o.ox, o.oy))
-}
-h.mt = function () {
-	var g = G(arguments), o
-	if (g.N) {
-		return this._mt(g.f, g.s)
-	}
-	o = AO(g) ? {
-		firPt: _.f(g.f), restPts: _.r(g.f),
-		ox: g.s, oy: g.t
-	} : {firPt: g.f, restPts: g.r}
-	return this._mt(
-			o.firPt[0] + N(o.ox, 0),
-			o.firPt[1] + N(o.oy, 0)
-	).lt(M.os(o.restPts, o.ox, o.oy))
-}
-h.dl = h.ln = h.line = function () {
-	var h = this, g = G(arguments), o
-	o = g.N_ ?
-	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
-	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
-	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
-	return this
-}
-h.dl = h.ln = h.line = function () {
-	var h = this, g = G(arguments), o
-	o = g.N_ ?
-	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
-	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
-	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
-	return this
-}
-h.same = h.copy = function () {
-	return $h(this) // cjs.shape(this)
-}
 function shapes(){
 	gx._dc = function () {
 		/*
@@ -583,7 +299,7 @@ function shapes(){
 		if (o.sC) {
 			gx.sC(o.sC)
 		}
-		if (N(o.ss){
+		if (N(o.ss)){
 			gx.ss(o.ss)
 		}
 		return gx._dc(o)
@@ -1160,4 +876,249 @@ function ctShapes(){
 		// dot.$$(function(){tween.toggle()})
 		return this
 	}
+}
+
+h.es = function () {
+	var h = this, gx = h.graphics
+	gx.es()
+	return h
+}
+h.cp = function () {
+	this.graphics.cp();
+	return this
+}
+h.bs = function (i) {
+	var h = this;
+	h.graphics.bs(i);
+	return h
+}
+h.ef = function () {
+	var h = this, gx = h.graphics
+	gx.f()
+	return h
+}
+h.ef = function () {
+	this.graphics.endFill.apply(
+			this.graphics, arguments)
+	return this
+}
+h.es = function () {
+	var h = this, gx = h.graphics
+	gx.es()
+	return h
+}
+h.cp = function () {
+	this.graphics.cp();
+	return this
+}
+h.clr = h.z = h.clear = function () {
+	this.graphics.clear();
+	return this
+}
+h.ef = function () {
+	this.graphics.endFill.apply(
+			this.graphics, arguments)
+	return this
+}
+h.es = function () {
+	var h = this, gx = h.graphics
+	gx.es()
+	return h
+}
+h.cp = function () {
+	this.graphics.cp();
+	return this
+}
+h.clr = h.z = h.clear = function () {
+	this.graphics.clear();
+	return this
+}
+h._lt = function (x, y) {
+	var v = V(x, y)
+	this.graphics.lt(v.x, v.y)
+	return this
+}
+h.lt = h._lt = function (x, y) {
+	var h = this, gx = h.graphics, g = G(arguments)
+	//A(a) && O(a[0])
+	if (AO(g.f)) {
+		g.e(function (v) {
+			h.lt.apply(h, v)
+		})
+		return h
+	}
+	O(g.s) ?
+			g.e(function (pt) {
+				h.lt(pt)
+			}) :
+			gx.lt(V(x, y).x, V(x, y).y)
+	return h
+}
+h.lt = function (x, y) {
+	var h = this, g = G(arguments)
+	if (AO(g.f)) {
+		g.e(function (v) {
+			h.lt.apply(h, v)
+		})
+	}
+	else if (O(g.s)) {
+		g.e(function (pt) {
+			h.lt(pt)
+		})
+	}
+	else {
+		this.graphics.lt(V(x, y).x, V(x, y).y)
+	}
+	return this
+}
+h._mt = function (x, y) {
+	var g = G(arguments)
+	var pt = V(g.f, g.s)
+	this.graphics.mt(pt.x, pt.y)
+	return this
+}
+h._mt = function (x, y) {
+	var v = V(x, y)
+	this.graphics.mt(v.x, v.y)
+	return this
+}
+h.mt = function () {
+	var g = G(arguments), o
+	if (g.N) {
+		return this._mt(g.f, g.s)
+	}
+	o = AO(g) ? {
+		firPt: _.f(g.f), restPts: _.r(g.f),
+		ox: g.s, oy: g.t
+	} : {firPt: g.f, restPts: g.r}
+	return this._mt(
+			o.firPt[0] + N(o.ox, 0),
+			o.firPt[1] + N(o.oy, 0)
+	).lt(M.os(o.restPts, o.ox, o.oy))
+}
+h.mt = function () {
+	var g = G(arguments), o
+	if (g.N) {
+		return this._mt(g.f, g.s)
+	}
+	o = AO(g) ? {
+		firPt: _.f(g.f), restPts: _.r(g.f),
+		ox: g.s, oy: g.t
+	} : {firPt: g.f, restPts: g.r}
+	return this._mt(
+			o.firPt[0] + N(o.ox, 0),
+			o.firPt[1] + N(o.oy, 0)
+	).lt(M.os(o.restPts, o.ox, o.oy))
+}
+h.dl = h.ln = h.line = function () {
+	var h = this, g = G(arguments), o
+	o = g.N_ ?
+	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
+	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
+	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
+	return this
+}
+h.dl = h.ln = h.line = function () {
+	var h = this, g = G(arguments), o
+	o = g.N_ ?
+	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
+	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
+	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
+	return this
+}
+h._lt = function (x, y) {
+	var v = V(x, y)
+	this.graphics.lt(v.x, v.y)
+	return this
+}
+h.lt = h._lt = function (x, y) {
+	var h = this, gx = h.graphics, g = G(arguments)
+	//A(a) && O(a[0])
+	if (AO(g.f)) {
+		g.e(function (v) {
+			h.lt.apply(h, v)
+		})
+		return h
+	}
+	O(g.s) ?
+			g.e(function (pt) {
+				h.lt(pt)
+			}) :
+			gx.lt(V(x, y).x, V(x, y).y)
+	return h
+}
+h.lt = function (x, y) {
+	var h = this, g = G(arguments)
+	if (AO(g.f)) {
+		g.e(function (v) {
+			h.lt.apply(h, v)
+		})
+	}
+	else if (O(g.s)) {
+		g.e(function (pt) {
+			h.lt(pt)
+		})
+	}
+	else {
+		this.graphics.lt(V(x, y).x, V(x, y).y)
+	}
+	return this
+}
+h._mt = function (x, y) {
+	var g = G(arguments)
+	var pt = V(g.f, g.s)
+	this.graphics.mt(pt.x, pt.y)
+	return this
+}
+h._mt = function (x, y) {
+	var v = V(x, y)
+	this.graphics.mt(v.x, v.y)
+	return this
+}
+h.mt = function () {
+	var g = G(arguments), o
+	if (g.N) {
+		return this._mt(g.f, g.s)
+	}
+	o = AO(g) ? {
+		firPt: _.f(g.f), restPts: _.r(g.f),
+		ox: g.s, oy: g.t
+	} : {firPt: g.f, restPts: g.r}
+	return this._mt(
+			o.firPt[0] + N(o.ox, 0),
+			o.firPt[1] + N(o.oy, 0)
+	).lt(M.os(o.restPts, o.ox, o.oy))
+}
+h.mt = function () {
+	var g = G(arguments), o
+	if (g.N) {
+		return this._mt(g.f, g.s)
+	}
+	o = AO(g) ? {
+		firPt: _.f(g.f), restPts: _.r(g.f),
+		ox: g.s, oy: g.t
+	} : {firPt: g.f, restPts: g.r}
+	return this._mt(
+			o.firPt[0] + N(o.ox, 0),
+			o.firPt[1] + N(o.oy, 0)
+	).lt(M.os(o.restPts, o.ox, o.oy))
+}
+h.dl = h.ln = h.line = function () {
+	var h = this, g = G(arguments), o
+	o = g.N_ ?
+	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
+	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
+	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
+	return this
+}
+h.dl = h.ln = h.line = function () {
+	var h = this, g = G(arguments), o
+	o = g.N_ ?
+	{x1: g.f, y1: g.s, x2: g.t, y2: g[3]} :
+	{x1: g.f.x, y1: g.f.y, x2: g.s.x, y2: g.s.y}
+	this.mt(o.x1, o.y1).lt(o.x2, o.y2)
+	return this
+}
+h.same = h.copy = function () {
+	return $h(this) // cjs.shape(this)
 }

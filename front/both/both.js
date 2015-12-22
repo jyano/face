@@ -4186,8 +4186,13 @@ function superJS() {
 					L: g.length, z: g.length,
 					p: p, m: m, d: d, n: n
 				})
+				if (A(g.f)) {
+					g.f0 = g.f[0]
+					g.f1 = g.f[1]
+				}
 			}
 			
+		
 			setA()
 			function numArgs() {
 				g.u = U(g.f);
@@ -4305,6 +4310,11 @@ function superJS() {
 					g.t = g.s
 					g.s = g.f
 					g.f = d
+					if(A(g.f)){
+						g.f0 = g.f[0]
+						g.f1 = g.f[1]
+						
+					}
 					res = g.unshift(d)
 					return res
 				}
