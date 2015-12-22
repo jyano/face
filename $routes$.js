@@ -38,7 +38,8 @@ Stage = [
 ]
 Easel = ['easel', 'shapes', 'objects', 
           'graphics','container',   'writing', 'loader',
-
+		
+		'official','stageFilt',
 
  'justEaselApps', 'stageDrawApps','bmFillApps']
 Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',

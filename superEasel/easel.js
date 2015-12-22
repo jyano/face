@@ -461,3 +461,83 @@ $.me = function (name, fn) {
 		$.i('me', fn)
 	}
 }
+ct.bm = function () {
+	ct._bm = function (i, fn) {
+		var ct = this
+		$.i(i, function (i) {
+			ct.A(bm = $Bm(i))
+			if (F(fn)) {
+				fn(bm)
+			}
+		})
+		return ct
+	}
+	var ct = this, g = G(arguments), o, bmp
+	o = N(g.s) ?
+	{i: g.f, sc: g.s, fn: g.t} :
+	{i: g.f, fn: g.s}
+	o.sc = N(o.sc) ? o.sc : 1
+	if (_.iDU(o.i)) {
+		//return s$(a).contains('data:')
+		o.i = $.i(o.i)
+	}
+	if (O(o.i)) {
+		bmp = $Bm(o.i).a2(ct)
+		if (o.fn) {
+			o.fn(bmp)
+		}
+		return ct
+	}
+	$.i(o.i, function (i) {
+		bmp = $Bm(i)
+		bmp.a2(ct)
+		bmp.rC()
+		bmp.sXY(o.sc).a2(ct)
+		//bm.XY( that.W()/2, that.H()/2 )
+		// works with stage i guess.. but fucks with 'container' - cant check bounds
+		if (g.n) {
+			bmp.XY(-1000)
+		}
+		if (o.fn) {
+			o.fn(bmp)
+		}
+	})
+	return ct
+}
+ct.Bm = function (i) {
+	return $Bm(i).a2(this)//this.bm.apply(this, arguments)
+}
+_$Bm = function (i) {
+	return new cjs.Bitmap(i)
+}
+$Bm = cjs.bitmap = cjs.bm = function () {
+	var g = G(arguments)
+	var i = g[0]
+	if (!O(i)) {
+		return
+	}
+	if ($.iI(i)) {
+		i = $(i)[0];
+		bm = new cjs.Bitmap(i)
+		if (g.p) {
+			bm.drag()
+		}
+		return bm
+	}
+	//return new cjs.Bitmap(i)
+	bm = $Bm(i.i)
+	if (i.al) {
+		bm.al(i.al)
+	}
+	if (i.fl) {
+		bm.fl(i.fl)
+	}
+	if (i.aF2) {
+		bm.aF2(i.aF2)
+	}
+	if (!g.n) {
+		
+		//	bm.rCenter()
+	}
+	return bm
+}

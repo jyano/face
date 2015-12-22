@@ -220,7 +220,34 @@ PACK = function () {
 	sprite.framerate = 6
 	sprite.play()
 }
- 
+CHAN = function () {
+	$CHAN = {}
+	$.btEm = function (t, toEmit) {
+		return $.bt(t, function () {
+			k.em(toEmit || t)
+		})
+	} //a button that emits!
+	$.dA().A(
+			$.btEm('msg', 'chat'),
+			$.bt('room', function () {
+				Y.chan('chat', function () {
+					$l('chat')
+				}).on('al', pop)
+			})
+	)//.lt(300)
+	k.on('newChat', function (d) {
+		CH.bc(d.n + ': ' + d.m)
+	})
+	k.on('youChat', function (d) {
+		CH.s(d.n + ': ' + d.m)
+	})
+}
+FMTX = FORMATTX = function () {
+	z()
+	$.fm()
+	s1.A($.imgResponsive('chicks'))
+	s2.A($.i('me'), $.i('guy'))
+}
 //uses mug?
 SPRITE = function (sprite) {
 	sprite = $sprite(sprite || SS).XY(10).dg()

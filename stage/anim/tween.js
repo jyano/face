@@ -634,3 +634,39 @@ i.grow = function () {
 	this.tw([{sxy: 10}, 10000])
 	return this
 }
+$Ldr('TIMSPIN', function () {
+	$St().qB('guy').scXY(.5, .3).XY(300, 300).spin()
+	_.in(3, function () {
+		T.f(1)
+	});
+	_.in(9, function () {
+		T.f(1000)
+	})
+})
+POPSPIN = function () {
+	z()
+	angle = 0
+	img = $.img('me', handleImageLoad)[0]
+	function stop() {
+		cjs.Ticker.removeEventListener("tick", tick)
+	}
+	
+	function handleImageLoad() {
+		canvas = $.c('p', 960, 400).id("testCanvas").A()
+		stage = $St(canvas)
+		stage.autoClear = true;
+		bmp = new cjs.Bitmap(img)
+				.rXY(img.width >> 1, img.height >> 1)
+				.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+		stage.A(bmp).update();
+		cjs.Ticker.timingMode = cjs.Ticker.RAF
+		cjs.tick(tick)
+	}
+	
+	function tick(event) {
+		angle += 0.01
+		var value = Math.sin(angle) * 360
+		bmp.rt(value).sXY(value / 360)
+		stage.update(event)
+	}
+}

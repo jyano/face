@@ -74,14 +74,15 @@ QU3 = function () {
 		ld.bm("guy", st)
 	})
 }
-QU4 = function () {
+
+IT=QU4 = function () {
 	$Ld(function (ld) {
 		Q.bm("me", $St());
 		Q.bm("guy", st, 300, 300)
 	}).mf("me", guyIt)
 }
-QU5=ULE = USINGLAYERSINEASEL = function () {
-	$Ld(mf5, function (q) {
+ 
+	$Ldr('LAYS', function (q) {
 		me = q.bm('me', $St()).scXY(3);
 		guy = q.bm('guy', st).scXY(.5).dg()
 		$t(function () {
@@ -91,20 +92,13 @@ QU5=ULE = USINGLAYERSINEASEL = function () {
 	$.bt('s.sXY(2)', function () {
 		st.sXY(2)
 	})
-}
+ 
+
 $Ldr('WINDG',function (ld) {
 		ld.bm("chicks", $St($.c(960, 400).id("cv").id()), 470).dg()
 				.mask = cjs.worldsMostInterestingShape().X(470).a2(st).same().dg()
 	})
-$Ldr('TIMSPIN', function () {
-		$St().qB('guy').scXY(.5, .3).XY(300, 300).spin()
-		_.in(3, function () {
-			T.f(1)
-		});
-		_.in(9, function () {
-			T.f(1000)
-		})
-	})
+ 
 $Ldr('LBF', function (ld) {$St().h('+')
 			.C('z').dr(0, 0, 40, 40)
 			.bf(ld.get('me'),
@@ -170,25 +164,7 @@ $Ldr('HBC', function (ld) {
 	})
 })
 COOL =   function () {
-	cjs.src = _.src
-	obX = function (o) { // ************
-		var g = G(arguments);
-		return !O(o) ? {}
-				: g.p ? o.clone()
-				: o
-	}
-	guyIt = {id: "guy", src: "/guy.png"}
-	myIt = {id: "myImage", src: "/me.png"}
-	mf1 = [myIt, guyIt];
-//	mf2 = [$it("me"), $it(guyIt)]
-	mf3 = ["me", guyIt];
-	mf4 = [myIt, guyIt];
-	mf5 = ['guy', 'me']
-//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
-//q.b('guy', st).XY(300, 300).spin()
-//st.qB('guy').XY(300, 300).spin()
-//Q('me', function () {$.A( Q.i('me') )})  
-// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
+ 
 	pt = 0
 	h = $St().mO(1).h()
 	h.graphics._ss('g', 40, 's', 'b', 1)
@@ -206,125 +182,6 @@ COOL =   function () {
 	st.bm('chicks', function (b) {
 		b.XY(500, 300).al(.2)
 	})
-}
-ct.bm = function () {
-	ct._bm = function (i, fn) {
-		var ct = this
-		$.i(i, function (i) {
-			ct.A(bm = $Bm(i))
-			if (F(fn)) {
-				fn(bm)
-			}
-		})
-		return ct
-	}
-	var ct = this, g = G(arguments), o, bmp
-	o = N(g.s) ?
-	{i: g.f, sc: g.s, fn: g.t} :
-	{i: g.f, fn: g.s}
-	o.sc = N(o.sc) ? o.sc : 1
-	if (_.iDU(o.i)) {
-		//return s$(a).contains('data:')
-		o.i = $.i(o.i)
-	}
-	if (O(o.i)) {
-		bmp = $Bm(o.i).a2(ct)
-		if (o.fn) {
-			o.fn(bmp)
-		}
-		return ct
-	}
-	$.i(o.i, function (i) {
-		bmp = $Bm(i)
-		bmp.a2(ct)
-		bmp.rC()
-		bmp.sXY(o.sc).a2(ct)
-		//bm.XY( that.W()/2, that.H()/2 )
-		// works with stage i guess.. but fucks with 'container' - cant check bounds
-		if (g.n) {
-			bmp.XY(-1000)
-		}
-		if (o.fn) {
-			o.fn(bmp)
-		}
-	})
-	return ct
-}
-ct.Bm = function (i) {
-	return $Bm(i).a2(this)//this.bm.apply(this, arguments)
-}
-_$Bm = function (i) {
-	return new cjs.Bitmap(i)
-}
-$Bm = cjs.bitmap = cjs.bm = function () {
-	var g = G(arguments)
-	var i = g[0]
-	
-	
-	 if (!O(i)) {return }
-	
-	if ($.iI(i)) {
-		i = $(i)[0];
-		bm = new cjs.Bitmap(i)
-		if (g.p) {bm.drag()}
-		return bm
-		
-	}
-	//return new cjs.Bitmap(i)
-	
-	bm = $Bm(i.i)
-	
-	if (i.al) {
-		bm.al(i.al)
-	}
-	if (i.fl) {
-		bm.fl(i.fl)
-	}
-	if (i.aF2) {
-		bm.aF2(i.aF2)
-	}
-	
-	if (!g.n) {
-	
-		//	bm.rCenter()
-	}  
-	return bm
-	 
-}
-function _pre() {
-	$Ldr = function (name, fn) {
-		return window[name] = function () {
-			$Ld(fn)
-		}
-	}
-}
-CHAN = function () {
-	$CHAN = {}
-	$.btEm = function (t, toEmit) {
-		return $.bt(t, function () {
-			k.em(toEmit || t)
-		})
-	} //a button that emits!
-	$.dA().A(
-			$.btEm('msg', 'chat'),
-			$.bt('room', function () {
-				Y.chan('chat', function () {
-					$l('chat')
-				}).on('al', pop)
-			})
-	)//.lt(300)
-	k.on('newChat', function (d) {
-		CH.bc(d.n + ': ' + d.m)
-	})
-	k.on('youChat', function (d) {
-		CH.s(d.n + ': ' + d.m)
-	})
-}
-FMTX = FORMATTX = function () {
-	z()
-	$.fm()
-	s1.A($.imgResponsive('chicks'))
-	s2.A($.i('me'), $.i('guy'))
 }
 PROMOTE = function () {
 	z()
@@ -414,7 +271,6 @@ DISTRACT = function () {
 	examples.showDistractor()
 	st = new cjs.Stage("testCanvas")
 }
-//awesome:
 WINDING = function () {
 	cjs.Shape.prototype.same = function () {
 		return $h(this)
@@ -455,33 +311,26 @@ WINDING = function () {
 		bm.mask = h.same().X(470)
 	})
 } //Uncaught TypeError: Cannot read property 'image' of undefined
-POPSPIN = function () {
-	z()
-	angle = 0
-	img = $.img('me', handleImageLoad)[0]
-	function stop() {
-		cjs.Ticker.removeEventListener("tick", tick)
-	}
-	
-	function handleImageLoad() {
-		canvas = $.c('p', 960, 400).id("testCanvas").A()
-		stage = $St(canvas)
-		stage.autoClear = true;
-		bmp = new cjs.Bitmap(img)
-				.rXY(img.width >> 1, img.height >> 1)
-				.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
-		stage.A(bmp).update();
-		cjs.Ticker.timingMode = cjs.Ticker.RAF
-		cjs.tick(tick)
-	}
-	
-	function tick(event) {
-		angle += 0.01
-		var value = Math.sin(angle) * 360
-		bmp.rt(value).sXY(value / 360)
-		stage.update(event)
-	}
-}
+ function _pre(){
+	 cjs.src = _.src
+	 obX = function (o) { // ************
+		 var g = G(arguments);
+		 return !O(o) ? {}
+				 : g.p ? o.clone()
+				 : o
+	 }
+	 guyIt = {id: "guy", src: "/guy.png"}
+	 myIt = {id: "myImage", src: "/me.png"}
+	 mf1 = [myIt, guyIt];
+ 	mf2 = [$it("me"), $it(guyIt)]
+	 mf3 = ["me", guyIt];
+	 mf4 = [myIt, guyIt];
+	 mf5 = ['guy', 'me']
+//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
+//q.b('guy', st).XY(300, 300).spin()
+//st.qB('guy').XY(300, 300).spin()
+//Q('me', function () {$.A( Q.i('me') )})  
+// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
 cjs.worldsMostInterestingShape = function () {
 	var h = cjs.shape()
 	h.graphics.f("pink").dr(20, 20, 450, 360)
@@ -489,3 +338,6 @@ cjs.worldsMostInterestingShape = function () {
 			.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
 	return h
 }
+}
+
+ 

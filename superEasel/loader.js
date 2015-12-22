@@ -148,3 +148,8 @@ function later() {
 		)
 	}
 }
+$Ldr = function (name, fn) {
+	return window[name] = function () {
+		$Ld(fn)
+	}
+}
