@@ -498,7 +498,7 @@ cjs.shape = _$H = _$h = function (x, y, f, s, width, opt) {
 	if (N(y)) {
 		h.Y(y)
 	}
-	h.fs(f, s, width)
+	h.FS(f, s, width)
 	if (opt == 'drag') {
 		h.drag()
 	}

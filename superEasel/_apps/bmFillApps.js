@@ -1,74 +1,4 @@
 $L()
-function _pre() {
-	$Ldr = function (name, fn) {
-		return window[name] = function () {
-			$Ld(fn)
-		}
-	}
-}
-MANIFEST = function () {
-	Q(['me', 'guy'], function (q) {
-		$St().A(me = q.bm('me'))
-		st.A(guy = q.bm('guy'))
-		guy.dg()
-	})
-}
-QU0 = function () {
-	Q(mf5, function () {
-		$.A(Q.i('me'))
-	})
-}
-QU1 = function () {
-	$Ld(mf3, function (ld) {
-		$St().A(ld.bm("me"), ld.bm("guy", 300, 300))
-	})
-}
-QU14 = function () {
-	$Ld(mf1, function (ld) {
-		ld.bm("myImage", $St())
-	})
-}
-QU2 = function () {
-	$Ld(mf2, function (ld) {
-		ld.bm("me", $St());
-		ld.bm("guy", st)
-	})
-}
-QU3 = function () {
-	$Ld(function (ld) {
-		Q.bm("me", $St());
-		Q.bm("guy", st, 300, 300)
-	}).mf("me", guyIt)
-}
-ULE = USINGLAYERSINEASEL = function () {
-	$Ld(mf5, function (q) {
-		me = q.bm('me', $St()).scXY(3);
-		guy = q.bm('guy', st).scXY(.5).dg()
-		$t(function () {
-			me.X(guy.x * 2.2 - 140).Y(guy.y * .2)
-		})
-	})
-	$.bt('s.sXY(2)', function () {
-		st.sXY(2)
-	})
-}
-QU11 = WINDG = function () {
-	$Ld(function (ld) {
-		ld.bm("chicks", $St($.c(960, 400).id("cv").id()), 470).dg()
-				.mask = cjs.worldsMostInterestingShape().X(470).a2(st).same().dg()
-	})
-}
-QU7 = WOAH = TIMSPIN = function () {
-	$Ld(mf5, function () {
-		$St().qB('guy').scXY(.5, .3).XY(300, 300).spin()
-		_.in(3, function () {
-			T.f(1)
-		});
-		_.in(9, function () {
-			T.f(1000)
-		})
-	})
-}
 GREY = function () {
 	Q(function () {
 		Q.b('me').a2($St().t())
@@ -116,27 +46,66 @@ BF101 = BCS = function () {
 	h2 = st.h(700, 300).dg()
 	h2.bmCir({circs: vs})
 }
-COOL = Q2 = function () {
-	pt = 0
-	h = $St().mO(1).h().ss('g', 40, 's', 'b', 1)
-	st.MD(function () {
-		pt = st.m()
-	})
-	st.MU(function () {
-		pt = 0
-	})
-	st.MM(function () {
-		if (pt) {
-			h.line(pt, pt = st.m())
-		}
-	})
-	st.bm('chicks', function (b) {
-		b.XY(500, 300).al(.2)
+QU = MF= MANIFEST = function () {
+	Q(['me', 'guy'], function (q) {
+		$St().A(me = q.bm('me'))
+		st.A(guy = q.bm('guy'))
+		guy.dg()
 	})
 }
-
-$Ldr('LBF', function (ld) {
-	$St().h('+')
+QU0 = function () {
+	Q(mf5, function () {
+		$.A(Q.i('me'))
+	})
+}
+QU1 = function () {
+	$Ld(mf3, function (ld) {
+		$St().A(ld.bm("me"), ld.bm("guy", 300, 300))
+	})
+}
+QU2 = function () {
+	$Ld(mf1, function (ld) {
+		ld.bm("myImage", $St())
+	})
+}
+QU3 = function () {
+	$Ld(mf2, function (ld) {
+		ld.bm("me", $St());
+		ld.bm("guy", st)
+	})
+}
+QU4 = function () {
+	$Ld(function (ld) {
+		Q.bm("me", $St());
+		Q.bm("guy", st, 300, 300)
+	}).mf("me", guyIt)
+}
+QU5=ULE = USINGLAYERSINEASEL = function () {
+	$Ld(mf5, function (q) {
+		me = q.bm('me', $St()).scXY(3);
+		guy = q.bm('guy', st).scXY(.5).dg()
+		$t(function () {
+			me.X(guy.x * 2.2 - 140).Y(guy.y * .2)
+		})
+	})
+	$.bt('s.sXY(2)', function () {
+		st.sXY(2)
+	})
+}
+$Ldr('WINDG',function (ld) {
+		ld.bm("chicks", $St($.c(960, 400).id("cv").id()), 470).dg()
+				.mask = cjs.worldsMostInterestingShape().X(470).a2(st).same().dg()
+	})
+$Ldr('TIMSPIN', function () {
+		$St().qB('guy').scXY(.5, .3).XY(300, 300).spin()
+		_.in(3, function () {
+			T.f(1)
+		});
+		_.in(9, function () {
+			T.f(1000)
+		})
+	})
+$Ldr('LBF', function (ld) {$St().h('+')
 			.C('z').dr(0, 0, 40, 40)
 			.bf(ld.get('me'),
 			-100).dr(0, 0, 500, 200)
@@ -200,3 +169,323 @@ $Ldr('HBC', function (ld) {
 		]
 	})
 })
+COOL =   function () {
+	cjs.src = _.src
+	obX = function (o) { // ************
+		var g = G(arguments);
+		return !O(o) ? {}
+				: g.p ? o.clone()
+				: o
+	}
+	guyIt = {id: "guy", src: "/guy.png"}
+	myIt = {id: "myImage", src: "/me.png"}
+	mf1 = [myIt, guyIt];
+//	mf2 = [$it("me"), $it(guyIt)]
+	mf3 = ["me", guyIt];
+	mf4 = [myIt, guyIt];
+	mf5 = ['guy', 'me']
+//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
+//q.b('guy', st).XY(300, 300).spin()
+//st.qB('guy').XY(300, 300).spin()
+//Q('me', function () {$.A( Q.i('me') )})  
+// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
+	pt = 0
+	h = $St().mO(1).h()
+	h.graphics._ss('g', 40, 's', 'b', 1)
+	st.MD(function () {
+		pt = st.m()
+	})
+	st.MU(function () {
+		pt = 0
+	})
+	st.MM(function () {
+		if (pt) {
+			h.line(pt, pt = st.m())
+		}
+	})
+	st.bm('chicks', function (b) {
+		b.XY(500, 300).al(.2)
+	})
+}
+ct.bm = function () {
+	ct._bm = function (i, fn) {
+		var ct = this
+		$.i(i, function (i) {
+			ct.A(bm = $Bm(i))
+			if (F(fn)) {
+				fn(bm)
+			}
+		})
+		return ct
+	}
+	var ct = this, g = G(arguments), o, bmp
+	o = N(g.s) ?
+	{i: g.f, sc: g.s, fn: g.t} :
+	{i: g.f, fn: g.s}
+	o.sc = N(o.sc) ? o.sc : 1
+	if (_.iDU(o.i)) {
+		//return s$(a).contains('data:')
+		o.i = $.i(o.i)
+	}
+	if (O(o.i)) {
+		bmp = $Bm(o.i).a2(ct)
+		if (o.fn) {
+			o.fn(bmp)
+		}
+		return ct
+	}
+	$.i(o.i, function (i) {
+		bmp = $Bm(i)
+		bmp.a2(ct)
+		bmp.rC()
+		bmp.sXY(o.sc).a2(ct)
+		//bm.XY( that.W()/2, that.H()/2 )
+		// works with stage i guess.. but fucks with 'container' - cant check bounds
+		if (g.n) {
+			bmp.XY(-1000)
+		}
+		if (o.fn) {
+			o.fn(bmp)
+		}
+	})
+	return ct
+}
+ct.Bm = function (i) {
+	return $Bm(i).a2(this)//this.bm.apply(this, arguments)
+}
+_$Bm = function (i) {
+	return new cjs.Bitmap(i)
+}
+$Bm = cjs.bitmap = cjs.bm = function () {
+	var g = G(arguments)
+	var i = g[0]
+	
+	
+	 if (!O(i)) {return }
+	
+	if ($.iI(i)) {
+		i = $(i)[0];
+		bm = new cjs.Bitmap(i)
+		if (g.p) {bm.drag()}
+		return bm
+		
+	}
+	//return new cjs.Bitmap(i)
+	
+	bm = $Bm(i.i)
+	
+	if (i.al) {
+		bm.al(i.al)
+	}
+	if (i.fl) {
+		bm.fl(i.fl)
+	}
+	if (i.aF2) {
+		bm.aF2(i.aF2)
+	}
+	
+	if (!g.n) {
+	
+		//	bm.rCenter()
+	}  
+	return bm
+	 
+}
+function _pre() {
+	$Ldr = function (name, fn) {
+		return window[name] = function () {
+			$Ld(fn)
+		}
+	}
+}
+CHAN = function () {
+	$CHAN = {}
+	$.btEm = function (t, toEmit) {
+		return $.bt(t, function () {
+			k.em(toEmit || t)
+		})
+	} //a button that emits!
+	$.dA().A(
+			$.btEm('msg', 'chat'),
+			$.bt('room', function () {
+				Y.chan('chat', function () {
+					$l('chat')
+				}).on('al', pop)
+			})
+	)//.lt(300)
+	k.on('newChat', function (d) {
+		CH.bc(d.n + ': ' + d.m)
+	})
+	k.on('youChat', function (d) {
+		CH.s(d.n + ': ' + d.m)
+	})
+}
+FMTX = FORMATTX = function () {
+	z()
+	$.fm()
+	s1.A($.imgResponsive('chicks'))
+	s2.A($.i('me'), $.i('guy'))
+}
+PROMOTE = function () {
+	z()
+	cjs.utils()
+	function ClassA(name) {
+		this.name = name
+	}
+	
+	ClassA.prototype.greet = function () {
+		return "Hello " + this.name
+	} //a = new ClassA('john')
+	function ClassB(name, punctuation) {
+		this.ClassA_constructor(name)
+		this.punctuation = punctuation
+	}
+	
+	cjs.extend(ClassB, ClassA)
+	ClassB.prototype.greet = function () {
+		return this.ClassA_greet() + this.punctuation
+	}
+	cjs.promote(ClassB, "ClassA")
+	b = new ClassB("World", "!?!")
+	$l(b.greet())  // Hello World!?!
+}
+TWOSTAGES = function () {
+	z()
+	$.hdr().K("EaselJS").A(
+			$.h1('nextStage'),
+			$.p("This is an example")).A()
+	c1 = $.c('y', 540, 260).id('canvasOne').P('a').top(0)
+			.right(0).bor('1px solid grey').A() // background: 'none',
+	c2 = $.c('o', 540, 260).id('canvasTwo').P('a').left(0).bottom(0).bor('1px solid grey').A()// background: 'none'
+	$.div(960, 400).K("canvasDiv").P('relative').A(c1, c2).A()
+	bottomStage = stageSetup("canvasOne", handleEvt).N("bottomStage").eMO().A(makeSquare(30, 95, "red", handleEvt))
+	//bottomStage.enableDOMEvents(false);	// you can set this if the bottom stage is completely covered by the top stage, to reduce the number of active event listeners.
+	bottomStage.text = new cjs.Text("", "15px monospace", "#111").XY(195, 30).lineH(16.7).a2(bottomStage)
+	topStage = stageSetup("canvasTwo", handleEvt)
+			.N("topStage").eMO()
+			.A(makeSquare(375, 30, "pink", handleEvt))
+			.next(bottomStage)
+	topStage.text = new cjs.Text("", "15px monospace", "#111").XY(30).lineH(16.7).a2(topStage)
+	function stageSetup(canvasName, handler) {
+		s = stage = new cjs.Stage(canvasName).tick()
+		//stage.addEventListener("stagemousemove", handler);	// too noisy
+		_.each(["stagemousedown", "stagemouseup", "mouseleave", "mouseenter"], function (ev) {
+			s.on(ev, handler)
+		})
+		s.log = []
+		return s
+	}
+	
+	function makeSquare(x, y, color, handler) {
+		var shape = cjs.shape().N('square').XY(x, y)
+		shape.graphics.f(color).dr(0, 0, 135, 135)
+		var cont = cjs.ct().N('container').A(shape)
+		_.each(["mouseover", "mouseout", "dblclick", "click"], function (ev) {
+			cont.on(ev, handler)
+		})
+		cont.cursor = "pointer"
+		return cont
+	}
+	
+	function handleEvt(evt) {
+		var target = evt.target,
+				stage = target.getStage(),
+				log = stage.log
+		log.push(evt.type + " on " + target.name + " x:" + evt.stageX.toFixed(0)
+		+ " y:" + evt.stageY.toFixed(0))
+		while (log.length > 12) {
+			log.shift()
+		}
+		stage.text.text = log.join("\n")
+		if (evt.type == "mouseover") {
+			target.alpha = 0.5
+		}
+		if (evt.type == "mouseout") {
+			target.alpha = 1
+		}
+	}
+}
+DISTRACT = function () {
+	z()
+	$.d().A($.c(960, 400).id("testCanvas"))
+	cjs.sharedCode()
+	cjs.utils()
+	cjs.slider()
+	examples.showDistractor()
+	st = new cjs.Stage("testCanvas")
+}
+//awesome:
+WINDING = function () {
+	cjs.Shape.prototype.same = function () {
+		return $h(this)
+	} //h.copy
+	cjs.manifest = function (func) {
+		var q = cjs.loadQueue()
+		q.complete(
+				function () {
+					func(function (getResult) {
+						return q.getResult(getResult)
+					})
+				})
+				.manifest([{
+					id: "chicks", src: "/chicks.png"
+				},
+					{id: "me", src: "/me.png"},
+					{id: "guy", src: "/guy.png"},
+					{id: "sun", src: "/sun.png"}])
+	}
+	 
+	
+	cjs.manifest(function (q) {
+		$.hdr().A($.h1('grahics winding')).A()
+		$.d().A($.c(960, 400)
+				.id("testCanvas"))
+		st = s = stage = $St(["testCanvas"])
+		h = shape = cjs.worldsMostInterestingShape().a2(stage).drag()
+		cjs.bm = function (img) {
+			var g = G(arguments), img = g[0],
+					bm = new cjs.Bitmap(img)
+			if (g.N) {
+				bm.rC()
+			}
+			return bm
+		} //warning: can't yet change to $Bm!!
+		bm = cjs.bm(q("chicks"), '-')
+				.a2(s).X(470).drag()
+		bm.mask = h.same().X(470)
+	})
+} //Uncaught TypeError: Cannot read property 'image' of undefined
+POPSPIN = function () {
+	z()
+	angle = 0
+	img = $.img('me', handleImageLoad)[0]
+	function stop() {
+		cjs.Ticker.removeEventListener("tick", tick)
+	}
+	
+	function handleImageLoad() {
+		canvas = $.c('p', 960, 400).id("testCanvas").A()
+		stage = $St(canvas)
+		stage.autoClear = true;
+		bmp = new cjs.Bitmap(img)
+				.rXY(img.width >> 1, img.height >> 1)
+				.XY(canvas.W() >> 1, canvas.H() >> 1).sXY(0.1)
+		stage.A(bmp).update();
+		cjs.Ticker.timingMode = cjs.Ticker.RAF
+		cjs.tick(tick)
+	}
+	
+	function tick(event) {
+		angle += 0.01
+		var value = Math.sin(angle) * 360
+		bmp.rt(value).sXY(value / 360)
+		stage.update(event)
+	}
+}
+cjs.worldsMostInterestingShape = function () {
+	var h = cjs.shape()
+	h.graphics.f("pink").dr(20, 20, 450, 360)
+			.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
+			.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
+	return h
+}

@@ -1847,28 +1847,7 @@ function filts() {
 	}
 }
 function _pre() {
-	cjs.src = _.src
-	$S$ = function () {
-		return st = _$St().t()
-	}
-	obX = function (o) { // ************
-		var g = G(arguments);
-		return !O(o) ? {}
-				: g.p ? o.clone()
-				: o
-	}
-	guyIt = {id: "guy", src: "/guy.png"}
-	myIt = {id: "myImage", src: "/me.png"}
-	mf1 = [myIt, guyIt];
-//	mf2 = [$it("me"), $it(guyIt)]
-	mf3 = ["me", guyIt];
-	mf4 = [myIt, guyIt];
-	mf5 = ['guy', 'me']
-//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
-//q.b('guy', st).XY(300, 300).spin()
-//st.qB('guy').XY(300, 300).spin()
-//Q('me', function () {$.A( Q.i('me') )})  
-// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
+ 
 }
  
 function needsS$() {

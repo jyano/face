@@ -4702,6 +4702,7 @@ function superString() {
 		return 'url("' + a + '")'
 	}
 	_.iDU = function (a) {
+		return _.ct(a, 'data:')
 		return s$(a).contains('data:')
 	}
 	S.startsWith = function (str,prefix) {
