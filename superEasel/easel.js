@@ -579,5 +579,11 @@ $.iI = function (i) {
 	}
 }
 //_$StCv = function (cv) {var g=G(arguments); return __$St($.c0(g.A ? g.f : g))}
- 
- 
+$.me = function (name, fn) {
+	if (F(name)) {
+		return $.i('me', name)
+	}
+	window[name] = function () {
+		$.i('me', fn)
+	}
+}

@@ -2,12 +2,7 @@ $L('color','shapes','ctShapes')
 $Gx = function (a) {
 	return new cjs.Gx(a).FS()
 }
-gx._bf = function (i, tf) {
-	return this.bf(i, null, tf)
-}
-gx._bs = function (i, tf) {
-	return this.bs(i, null, tf)
-}
+ 
 gx._lt = function (x, y) {
 	var gx = this, g = G(arguments), o
 	o = {x: g.f, y: g.s}
@@ -20,7 +15,6 @@ gx._mt = function (x, y) {
 	gx.mt(o.x, o.y)
 	return gx
 }
- 
 function color() {
 	gx._f = function (col) {
 		return this.f(oO('c', col))
@@ -877,7 +871,6 @@ function ctShapes(){
 		return this
 	}
 }
-
 h.es = function () {
 	var h = this, gx = h.graphics
 	gx.es()
@@ -1121,4 +1114,172 @@ h.dl = h.ln = h.line = function () {
 }
 h.same = h.copy = function () {
 	return $h(this) // cjs.shape(this)
+}
+h.vs = function (vs, x, y) {
+	return this.mt(M.os(vs, x, y))
+	//  takes [pt,pt..] and draws it.. with optional offsets..
+	//used by (but NOT  dependent on) gPoly 
+	// ** previously: ***
+	//o = {v: g.f, ox: g.s, oy: g.t}
+	//o.ox = N(o.ox, 0)
+	//o.oy = N(o.oy, 0)
+	//h.mt(_.f(o.v)[0] + o.ox, _.f(o.v)[1] + o.oy)
+	//_.eR(o.v, function (v) {h.lt(v[0] + o.ox, v[1] + o.oy)})
+	//return h
+}
+h.$vs = function (polVs, ox, oy) {
+	if (gpc.iP(polVs)) {
+		polVs = polVs.vs()
+	}
+	return this.vs(polVs, ox, oy)
+}
+gx._pol = function () {
+	var gx = this, g = G(arguments)
+	if (g.A) {
+		return gx._pol.apply(gx, g.f)
+	}
+	gx.mt(g.f0, g.f1)
+	_.e(_.r(g), function (pt) {
+		gx.lt(pt[0], pt[1])
+	})
+	return gx.lt(g.f0, g.f1)
+}
+gx.pol = function (pts, f, s, w) {
+	var gx = this, g = G(arguments)
+	if (N(pts[0])) {
+		g.e(function (pt) {
+			gx.lt(pt[0], pt[1])
+		})
+	}
+	else {
+		gx.FS(f, s, w)
+		_.e(pts, function (pt) {
+			gx.lt(pt[0], pt[1])
+		})
+	}
+	return gx.cp()
+}
+h.poly = function (vxs, f, s, wd) {
+	var h = this, g = arguments
+	h.FS(f, s, wd)
+	_.e(g, A(vxs) && N(vxs[0]) ?
+			function ltXY(v) {
+				h.lt(v[0], v[1])
+			} :
+			function lt(v) {
+				h.lt(v)
+			})
+	h.cp()
+	return h
+}
+h.pol = function () {
+	var h = this,
+			g = G(arguments), o; //O$ >>  O(o) && !F(o) && !A(o)
+	h.ef().es()
+	o = O$(g.f) ? g.f :
+			N(g.s) && N(g.t) ?
+			{v: g.f, x: g.s, y: g.t, c: g.fo, C: g.fi, l: g.si} :
+			{v: g.f, c: g.s, C: g.t, l: g.fo}
+	o.v = M.os(o.v, o.x, o.y)
+	h.c(oDef(o || {}))
+	!o.bf ? h.lt(o.v).cp() :
+			h.bf(S(o.bf) ? o.bf : 'me', function draw() {
+				h.mt(o.v).cp()
+			})
+	return h
+}
+cjs.diamond = function (w, h, fc, sc) {
+	var h = $H(), gx = h.graphics;
+	fc = fc || 'green';
+	sc = sc || 'white';
+	w = w || 100;
+	h = h || w
+	var hW = w / 2
+	var hH = h / 2
+	//var h = new cjs.Shape()
+	h.graphics.f(fc).s(sc)
+			.mt(0, -hW)
+			.lt(-hW, 0).lt(0, hW)
+			.lt(hW, 0).lt(0, -hW)
+	//	gx.f(fc || 'green').s(sc || 'white')
+//	gx.mt(0, -hH).lt(-hW, 0).lt(0, hH).lt(hW, 0).lt(0, -hH)
+	return h
+	function alt() {
+		cjs.diamond = function self(width, height, fc, sc) {
+			fc = fc || 'green'
+			sc = sc || 'white'
+			width = width || 100
+			height = height || width
+			halfwidth = width / 2
+			halfheight = height / 2
+			var h = new createjs.Shape()
+			h.graphics.f(fc).s(sc)
+					.mt(0, -halfheight)
+					.lt(-halfwidth, 0).lt(0, halfheight)
+					.lt(halfwidth, 0).lt(0, -halfheight)
+			return h
+		}
+	}
+}
+h.polyStar = h.pStr = h.dp = function (x, y, r, sides, ptSiz, ang) {
+	var h = this, gx = h.graphics, g = G(arguments), o //,  x=g.f,  y=g[1], r=g[2],  sides=g[3], ptSiz=g[4], ang=g[5]
+	o = N(g[3]) ? {
+		x: g.f, y: g[1], r: g[2], s: g[3], p: g[4], a: g[5]
+	} :
+			N(g.f) ? {r: g.f, s: g[1], p: g[2], a: g[3]} :
+					O(g.f) ? g.f : {}
+	o.a = N(o.a, 0);
+	o.x = N(o.x, 0);
+	o.y = N(o.y, 0)
+	o.p = _.cap(o.p, 0, .99)
+	gx.drawPolyStar(o.x, o.y, o.r, o.s, o.p, o.a)
+	return h
+	function alt() {
+		h.pStr = h.dp = h.polyStar = function (x, y, r, sides, ptSiz, ang) {
+			var h = this, gx = h.graphics,
+					g = G(arguments), o //,  x=g[0],  y=g[1], r=g[2],  sides=g[3], ptSiz=g[4], ang=g[5]
+			o = N(g[3]) ? {
+				x: g[0], y: g[1], r: g[2], s: g[3], p: g[4], a: g[5]
+			} :
+					N(g[0]) ? {r: g[0], s: g[1], p: g[2], a: g[3]} :
+							O(g[0]) ? g[0] : {}
+			o.a = _.tN(o.a)
+			o.x = _.tN(o.x)
+			o.y = _.tN(o.y)
+			o.p = _.cap(o.p, 0, .99)
+			gx.drawPolyStar(o.x, o.y, o.r, o.s, o.p, o.a)
+			return h
+		}
+	}
+}
+h.drawPolygon = function (poly, sc) {
+	// = h.drawConnectedLines
+	var h = this,
+			numVerts = poly.length
+	_.e(poly, function (v) {
+		v.X = v.x;
+		v.Y = v.y
+	})
+	if (sc) {
+		this.s(sc)
+	}
+	if (numVerts >= 3) {
+		//move to the FIRST
+		h.mt(poly[0])
+		//lineTo the REST
+		T(numVerts, function (i) {
+			h.lt(poly[i % numVerts])
+		}) //just a clever way to start from 1
+	}
+	return this
+}
+h.drawPolygons = function (paths, fc, sc) {
+	var h = this.f(fc)
+	//if (sc) {
+	h.c(sc)
+	//}
+	_.e(paths, function (path) {
+		h.drawPolygon(path)
+	})
+	return h
 }

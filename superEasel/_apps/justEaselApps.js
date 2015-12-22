@@ -1,4 +1,55 @@
-$L()
+SIR = function () {
+	$.C('b')
+	$S({
+		body: {fZ: 40, c: 'o'},
+		canvas: {M: 20}
+	})
+	$.h1('SIR')
+	st = $St($.c(600, 300)[0])
+	st.A(_$Tx('h.dc', '50px Arial', 'white').X(400))
+	h = $H().a2(st)
+	h.dc()
+	h.dc(36)
+	h.dc(18, 'o')
+	h.dc(200, 100)
+	h.dc(300, 100, 20, 'r')
+	h.dc(300, 200, 20)
+	//
+	st2 = $St($.c(600, 300)[0]).t()
+	st2.A(_$Tx('h.cirs', '50px Arial', 'white').X(400))
+	st2.A($H().cirs({}, {x: 300, c: 'b'}, {y: 200, C: 'o'}))
+	//
+	st1 = $St($.c(600, 300)[0]).t()
+	st1.A(_$Tx('cjs.cir', '50px Arial', 'white').X(400))
+	st1.A(cjs.cir(300, 'g'))
+	st1.A(cjs.cir(140, 220, 20, 'o').dc())
+	st1.A(cjs.cir('r').XY(220, 200))
+	st3 = $St($.c(600, 300)[0]).t()
+	st3.A(_$Tx('cjs.cirs', '50px Arial', 'white').X(400))
+	st3.A(
+			$H().cirs({}, {x: 300, c: 'b'}, {y: 200, C: 'o'})
+	)
+	st.A(_$Tx('h.dc', '50px Arial', 'white').X(400))
+	h = $Sh().a2(st)
+	gx = h.graphics.FS()
+	h.dc()
+	h.dc(36)
+	h.cir(18, 'o')
+	h.dc(200, 100)
+	h.cir(300, 100, 20, 'r')
+	h.dc(300, 200, 20)
+	st2 = $St($.c(600, 300)[0]).t()
+	st2.A(_$Tx('h.cirs', '50px Arial', 'white').X(400))
+	st2.A($Sh().cir({x: 300, c: 'b'}).cir({y: 200, C: 'o'}))
+	st1 = $St($.c(600, 300)[0]).t()
+	st1.A(_$Tx('cjs.cir', '50px Arial', 'white').X(400))
+	st1.A(cjs.cir(300, 'g'))
+	st1.A(cjs.cir(140, 220, 20, 'o').dc())
+	st1.A(cjs.cir('r').XY(220, 200))
+	st3 = $St($.c(600, 300)[0]).t()
+	st3.A(_$Tx('cjs.cirs', '50px Arial', 'white').X(400))
+	st3.A($Sh().cir({x: 300, c: 'b'}).cir({y: 200, C: 'o'}))
+}
 CIR2 = HDC = function () {
 	st = $St()
 	//return
@@ -116,58 +167,6 @@ CIR0 = ROTCIRS = function () {
 		)
 	})
 }
-CIR = SIR = function () {
-	$.C('b')
-	$S({
-		body: {fZ: 40, c: 'o'},
-		canvas: {M: 20}
-	})
-	$.h1('SIR')
-	st = $St($.c(600, 300)[0])
-	st.A(_$Tx('h.dc', '50px Arial', 'white').X(400))
-	h = $H().a2(st)
-	h.dc()
-	h.dc(36)
-	h.dc(18, 'o')
-	h.dc(200, 100)
-	h.dc(300, 100, 20, 'r')
-	h.dc(300, 200, 20)
-	//
-	st2 = $St($.c(600, 300)[0]).t()
-	st2.A(_$Tx('h.cirs', '50px Arial', 'white').X(400))
-	st2.A($H().cirs({}, {x: 300, c: 'b'}, {y: 200, C: 'o'}))
-	//
-	st1 = $St($.c(600, 300)[0]).t()
-	st1.A(_$Tx('cjs.cir', '50px Arial', 'white').X(400))
-	st1.A(cjs.cir(300, 'g'))
-	st1.A(cjs.cir(140, 220, 20, 'o').dc())
-	st1.A(cjs.cir('r').XY(220, 200))
-	st3 = $St($.c(600, 300)[0]).t()
-	st3.A(_$Tx('cjs.cirs', '50px Arial', 'white').X(400))
-	st3.A(
-			$H().cirs({}, {x: 300, c: 'b'}, {y: 200, C: 'o'})
-	)
-	st.A(_$Tx('h.dc', '50px Arial', 'white').X(400))
-	h = $Sh().a2(st)
-	gx = h.graphics.FS()
-	h.dc()
-	h.dc(36)
-	h.cir(18, 'o')
-	h.dc(200, 100)
-	h.cir(300, 100, 20, 'r')
-	h.dc(300, 200, 20)
-	st2 = $St($.c(600, 300)[0]).t()
-	st2.A(_$Tx('h.cirs', '50px Arial', 'white').X(400))
-	st2.A($Sh().cir({x: 300, c: 'b'}).cir({y: 200, C: 'o'}))
-	st1 = $St($.c(600, 300)[0]).t()
-	st1.A(_$Tx('cjs.cir', '50px Arial', 'white').X(400))
-	st1.A(cjs.cir(300, 'g'))
-	st1.A(cjs.cir(140, 220, 20, 'o').dc())
-	st1.A(cjs.cir('r').XY(220, 200))
-	st3 = $St($.c(600, 300)[0]).t()
-	st3.A(_$Tx('cjs.cirs', '50px Arial', 'white').X(400))
-	st3.A($Sh().cir({x: 300, c: 'b'}).cir({y: 200, C: 'o'}))
-}
 CIR99 = CIRCS8 = function () {
 	CIRCTEST8 = function () {
 		$St()
@@ -232,7 +231,7 @@ CIR99 = CIRCS8 = function () {
 	})//D
 }
 POL = function () {
-	$S$().Gx().FS()._mt(100, 300)
+	$St().Gx().FS()._mt(100, 300)
 			._lt(300, 100)._lt(500, 200)._lt(800, 200)
 			._lt(100, 300)
 			._pol(vs1)
@@ -249,14 +248,4 @@ REC  = function () {
 	h.dr(100, 100, 500, 10)
 	st.Gx().FS()._dr(500, 30)
 }
-
-function _pre() {
-	$.me = function (name, fn) {
-		if (F(name)) {
-			return $.i('me', name)
-		}
-		window[name] = function () {
-			$.i('me', fn)
-		}
-	}
-}
+ 

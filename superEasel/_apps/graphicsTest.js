@@ -96,3 +96,15 @@ XX6 = GXTX = GRAPHICSTEST = function () {
 		return cjs.container().A(bg)
 	}
 }
+gx.fancyLt = gx.poly = function (vs, f, s, w) {
+	var gx = this, g = G(arguments), o
+	o = AA(g.f) ? {vs: g.f, cCL: [g.s, g.t, g[3]]} : {vs: g}
+	if (o.cCL) {
+		gx.cCL.apply(gx, o.cCL)
+	}
+	_.e(o.vs, function (v) {
+		gx.lt(v[0], v[1])
+	})
+	gx.cp()
+	return this
+}
