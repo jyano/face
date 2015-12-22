@@ -3936,12 +3936,12 @@ function moment() {
 		return _moment;
 	}));
 }
-superJS()
+superJ()
 superUnderscore()
 superMath()
 superString()
 superDate()
-function superJS() {
+function superJ() {
 	/*
 	 PN = function (n, n2) {
 	 if (U(n2)) {return ( _.isNumber(n)&&n<0)||1}
