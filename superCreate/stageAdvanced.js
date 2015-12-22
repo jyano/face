@@ -8,12 +8,7 @@ cjs.bulletHit = function (bullet, inWhat) {
 	}
 	return res
 }
-$.dragStage = function (x, y) {
-	c = $.c('g', 400)
-	s = $St(c[0])
-	$.dragFrame(c).A()
-	return s
-}
+ 
 cjs.stageHUD = cjs.stageHUD = cjs.HUD = function (a, b, c) {
 	var stage, can1, can2
 	can1 = $.c(a, b, c)

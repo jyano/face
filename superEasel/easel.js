@@ -968,5 +968,9 @@ tx.Tx = tx.tx = tx.T = function (text) {
 	this.text = text
 	return this
 }
-
-
+$.dragStage = function (x, y) {
+	c = $.c('g', 400)
+	s = $St(c[0])
+	$.dragFrame(c).A()
+	return s
+}
