@@ -151,12 +151,11 @@ RGB = function () {
 	st.A(h).u()
 }
 $.me('ME', function (me) {
-		$St().Gx()
-		.SS().F().dc(200, 200, 200)
-		.S().dc(400, 400, 200)
-				.S()._bf(me)
-				.dc(400, 400, 200)
+	gx = $St().Gx()
+	 .SS().F().dc(200, 200, 200).S().dc(400, 400, 200)
+	 .S()._bf(me).dc(400, 400, 200)
 })
+
 CIR0 = ROTCIRS = function () {
 	ct = $Ct().a2($St(1000, '+')).A(
 			$H(100, 100).f('r')

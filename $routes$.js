@@ -33,13 +33,16 @@ Bone = [
 	'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
 	'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
 ]
-Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
+Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate',
+ 'polyCircle', 'explode']
 Stage = [
 	'easel', 'dob', 'stageDraw', 'solve', 'iso',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official',
 	'tween', 'animLoop', 'shake', 'justEaselApps'
 ]
-Easel = ['easel','stage', 'tick','shape','recs','polygons','objects','graphics','container','containerShapes','colors','cirs','bitmaps', 'writing', 'justEaselApps','stageDrawApps','graphicsTest']
+Easel = ['easel',  'tick','shapes', 'objects',
+'graphics','container',   'writing', 'justEaselApps',
+'stageDrawApps','graphicsTest']
 
 Fiz = [  'box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes','$make',
 	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
