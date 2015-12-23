@@ -1,4 +1,4 @@
-L('canvas', 'context', 'canApps')
+$L('canvas', 'context', 'canApps')
 function context() {
 	x.cv = function () {
 		return this.canvas

@@ -1564,33 +1564,7 @@ function graf(){
 		}
 	}
 	
-	oC = function (c) {
-		return oO('c', c)
-	}
-	oK = function (a) {
-		return oO('k', a)
-	}
-	oT = function (a) {
-		return oO('t', a)
-	}
-	oE = function (a) {
-		return oO('e', a)
-	}
-	oI = function (a) {
-		return oO('i', a)
-	}
-	oS = function (a) {
-		return oO('s', a)
-	}
-	$o = function o(a, b, c) {
-		return _.isUndefined(b) ? _p(o, a) : G(arguments).N ? oO(a, b, c) : Oo(a, b, c)
-	}
-	oQ = function (f, m) {
-		$(function () {
-			Q(m || mf, f)
-		})
-	}
-	old = function () {
+ 
 		ct.bmR = function (i, fn) {
 			var ct = this, bm
 			alert('ct.bmR')
@@ -1904,12 +1878,8 @@ function graf(){
 		return Yano.toggleFunc
 	}
 //random
-	Yano.random = Yano.rand = $r = function (a, b) {
-		a = a || 'c'; //cannot be 'color' ?? only abr??
-		var values = _.values(oO(a))
-		return Oo(a, b) || values[_.random(_.size(values) - 1)]
-	}
-}
+ 
+ 
 T = function (times, func) {
 	var timeout
 	if (N(times)) {

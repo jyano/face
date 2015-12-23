@@ -1,5 +1,8 @@
 console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
-require('./front/both/both')
+
+require('./both/superUnder')
+require('./both/superJ')
+require('./both/superTime')
 $l(' - face - \n')
 require('./server/$superNode$')
 $stc = function () {
