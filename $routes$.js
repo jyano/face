@@ -1,4 +1,4 @@
-$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','layout', 'flex'
+$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules'
 		//'front', 'front/both', 'front/superWeb', 'front/can',
 		//'front/bone', 'front/nok', 'front/UI', 'front/wid',
 		//'geo',
@@ -7,19 +7,16 @@ $stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','layout', 'flex'
 		//'spaz', 'spaz/cam', 'spaz/arcade', 'wappy'
 )
 
-
 Deps = [
 	 // 'dfDefs', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
 ]
 Both = ['superUnder', 'superJ', 'superTime']
-Web=['jq', 'first', 'cssData', 'superJQ']
-Css=['superCSS', 'placement', 'sty',  'styApps','rules','rulesPlus','rulesExtend', 'rulesApps']
-Flex = ['flexy', 'flexApps','flexyDown', 'flexEx']
+Web=['jq', 'first', 'second','cssData', 'superJQ']
+Css=[ 'sty', 'inlineSty', 'styApps','rules',  'helpers', 'mixins', 'plugins', 'defaults', 'rulesApps']
+Flex = ['flex', 'flexApps','flexyDown', 'flexEx','devTipsVid']
 Layout=['cssMedia','layout','mobile', 'layApps', 'mobileApps']
 Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
 SuperWeb=['superAnim' ]
-
-
 Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
 Nok = ['applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
 Jet = ['jquiCore', 'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
@@ -27,8 +24,7 @@ Bone = [
 	'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
 	'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
 ]
-Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate',
- 'polyCircle', 'explode']
+Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
 Stage = [
 	'easel', 'dob', 'stageDraw', 'solve', 'iso',
 	'stageApps', 'stageDrawApps', 'stageWorks', 'official',
@@ -52,7 +48,7 @@ $a.g('/box/:app', function (q, p) {
 	html += $js(
 	
 	
-			Deps, Both,  Web, Css,Flex,Responsive, Html, SuperWeb
+			Deps, Both,  Web, Css,Flex,Layout, Html, SuperWeb
 			
 			//Front, Nok, Jet, Bone, Easel, Fiz, Geo
 	
