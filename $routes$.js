@@ -1,5 +1,5 @@
-$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules'
-		//'front', 'front/both', 'front/superWeb', 'front/can',
+$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules','front'
+		// 'front/both', 'front/superWeb', 'front/can',
 		//'front/bone', 'front/nok', 'front/UI', 'front/wid',
 		//'geo',
 		//'stage', 'superEasel', 'stage/anim', 'stage/loader',
@@ -8,7 +8,9 @@ $stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules'
 )
 
 Deps = [
-	 // 'dfDefs', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
+	  'dfDefs',
+	 
+	 // 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
 ]
 Both = ['superUnder', 'superJ', 'superTime']
 Web=['jq', 'first', 'second','cssData', 'superJQ']
@@ -23,9 +25,9 @@ Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps'
 Nok = ['applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
 Jet = ['jquiCore', 'wid', 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
 Bone = [
-	'bone', 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail',
-	'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
+	'bb', 'bone'//, 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail', 'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
 ]
+
 Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
 Stage = [
 	'easel', 'dob', 'stageDraw', 'solve', 'iso',
@@ -50,9 +52,11 @@ $a.g('/box/:app', function (q, p) {
 	html += $js(
 	
 	
-			Deps, Both,  Web, Css,Flex,  Html, SuperWeb
+			  Both,  Web, Css, Flex,  Html, SuperWeb,
 			
-			//Front, Nok, Jet, Bone, Easel, Fiz, Geo
+			//Front, Nok, Jet, 
+			Bone
+			// Easel, Fiz, Geo
 	
 	)
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'

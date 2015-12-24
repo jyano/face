@@ -213,48 +213,45 @@ SS40 = MOB = MEDIAOBJECT = function () {
 			)
 	)
 }
+
 SS13 = NONE = function () {
 	//$.sty(maxW(500) + $subRules({d:{dp:'n'}}))
 	smaller=until=__W=belowW=lessThanRu=maxWRu = function (w, css) {
 		$.sty(maxW(w) + $subRules(css))}
-	
-	
 	smaller(500, {d:{dp:'n'}})
-	
 	$.d('y',400, 500)
 }
-
 
 
 
 SS15 = MED3 = function () {
 	$s("@media all and (min-width: 960px) { body {font-size: 80px;}  }",
 			"@media all and (max-width: 959px) and (min-width: 600px) {body{font-size: 40px;}}",
-			"@media all and (max-width: 599px) and (min-width: 320px) {body{font-size: 20px;}}", '*')
+			"@media all and (max-width: 599px) and (min-width: 320px) {body{font-size: 20px;}}")
 	$s("@media all and (min-width: 960px) { body {color:blue;}  }",
 			"@media all and (max-width: 959px) and (min-width: 600px) {body{color:red;}}",
 			"@media all and (max-width: 599px) and (min-width: 320px) {body{color:yellow;}}")
 	$.sp().A('span')
 	$.h1().A('h1')
-}
-SS16 = MED2 = MEDWORKS = BREAK3 = function () {
+	SS16 = MED2 = MEDWORKS = BREAK3 = function () {
 
 //works
-	$s("@media all and (min-width: 960px) { body {font-size: 80px;}  }",
-			"@media all and (max-width: 959px) and (min-width: 600px) {body{font-size: 40px;}}",
-			"@media all and (max-width: 599px) and (min-width: 320px) {body{font-size: 20px;}}", '*')
-	$s("@media all and (min-width: 960px) { body {color:blue;}  }",
-			"@media all and (max-width: 959px) and (min-width: 600px) {body{color:red;}}",
-			"@media all and (max-width: 599px) and (min-width: 320px) {body{color:yellow;}}")
-	$.sp('fasd').A()
-	$.h1('fasd').A()
+		$s("@media all and (min-width: 960px) { body {font-size: 80px;}  }",
+				"@media all and (max-width: 959px) and (min-width: 600px) {body{font-size: 40px;}}",
+				"@media all and (max-width: 599px) and (min-width: 320px) {body{font-size: 20px;}}")
+		$s("@media all and (min-width: 960px) { body {color:blue;}  }",
+				"@media all and (max-width: 959px) and (min-width: 600px) {body{color:red;}}",
+				"@media all and (max-width: 599px) and (min-width: 320px) {body{color:yellow;}}")
+		$.sp('fasd').A()
+		$.h1('fasd').A()
+	}
 }
+
 SS17 = MED1 = function () {
 	$l('MD.')
 	$s(above(960, " { body {font-size: 80px;}  }"),
 			between(600, 960, "  {body {font-size: 40px;}}"),
-			between(320, 600, "  {body {font-size: 20px;}}"),
-			'*')
+			between(320, 600, "  {body {font-size: 20px;}}"))
 	$s(
 			above(960, "{ body {color:blue;}  }"),
 			between(600, 960, " {body{color:red;}}") + below(600, " {body{color:green;}}")
@@ -262,15 +259,18 @@ SS17 = MED1 = function () {
 	$.sp().A('span')
 	$.h1().A('h1')
 }
+
 SS18 = MED = function () {
 	str1 = above(960, "{ body {color:blue;}  }")
-	str2 = between(600, 960, " {body{color:red;}}") + below(600, " {body{color:green;}}")
+	str2 = between(600, 960, " {body{color:red;}}") +
+	 below(600, " {body{color:green;}}")
 	//{@media all and (min-width: 960px) { body {color:blue;}  }: "@media all and (max-width: 960px)  and (min-width:… all and (max-width: 600px)  {body{color:green;}}"}
-	css = Ob(str1, str2)
-	$s(css)
+	$s(Ob(str1, str2))
 	$.sp().A('span')
 	$.h1().A('h1')
 }
+
+
 SS19 = MVD2 = MEDVID = MEDIAVIDTUT = function () {
 	vidHtml()
 	med = '@media screen and (max-width: 960px)'
@@ -365,14 +365,21 @@ SS30 = FLD2 = BASISD = function () {
 		},
 		d: {B: ['bor', 'b']}
 	})
-	children(8, $.dK('ch ch2').a2($.dK('ct').C('w')))
+	
+	children(8, 
+	
+			$.dK('ch ch2').a2(
+					$.dK('ct').C('w')
+			)
+	)
+	
 	function children(num, parent) {
 		_.t(num, function () {
 			div().K('ch1').a2(parent)
-		})
+			function div() {
+				return $.d($r(), 40, 40)
+			}})
+		return parent
 	}
 	
-	function div() {
-		return $.d($r(), 40, 40)
-	}
 }

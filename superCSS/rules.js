@@ -219,28 +219,7 @@ function eh() {
 		})
 		return d
 	}
-	$.x = function (c, t) {
-		var g = G(arguments), bd = $.bd()
-		bd.E()
-		if (g.O_) {
-			$s(g.f)
-			if (g.s) {
-				$.h1(g.s);
-				$.hr().A()
-			}
-			bd.C(g.t || $r())
-		}
-		else {
-			bd.C(c || $r())
-			if (t) {
-				bd.A($.h1(t))
-			}
-		}
-		if (g.p) {
-			bd.A($.hr())
-		}
-		return $
-	}
+ 
 	css = {
 		//_ct:{dp:'fl'},
 		'.flex-container': {
