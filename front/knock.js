@@ -1,6 +1,8 @@
+//https://www.youtube.com/watch?v=roeKTS8Z0I0&index=4&list=PLzpzty4VRTPfbao0m8oADCmBD5BmWM4rT
 function boundEls() {
 	$.d_w = function (a, b) {
 		var d = $.d().bW(a)
+		
 		if (A(b)) {
 			_.e(b, function (b) {
 				d.A(b)
@@ -15,7 +17,9 @@ function boundEls() {
 	$.d_cm = $.dCm = function (a) {
 		return $.d().bCm(a)
 	}
-	$.d_if = $.dIf = function (a, b) {
+	
+	
+	ko.d.if= $.d_if = $.dIf = function (a, b) {
 		var d = $.d().bI(a)
 		if (A(b)) {
 			_.e(b, function (b) {
@@ -153,6 +157,7 @@ function boundEls() {
 		return $.cb().bC(a)
 	}
 }
+
 function elBind() {
 	$.fn.ko_if = function (s) {
 		return this.b('if', s)
@@ -166,6 +171,7 @@ function elBind() {
 		return this.b('text', s || '$data')
 		// = $.fn.bT
 	}
+	
 	$.fn.ko_ht = function (s) {
 		return this.b('html', s)
 		// = $.fn.bH
@@ -350,13 +356,17 @@ function core(){
 	$.aA = function (a, b, c, d) {
 		return $.a(b, c, d).bA(a)
 	}
-//event and enable
+
+	//event and enable
 	$.fn.bSm = function (s) {
 		return this.b('submit', s)
 	}
+	
 	$.fn.koE = $.fn.eKo = function (a) {
 		return this.bindKO('fe', a)
 	}
+	
+	
 	$.fn.eD = $.fn.eB = function (a) {
 		return this.bindKOEach('$data.' + a)
 	}
@@ -1779,7 +1789,7 @@ function core(){
 		$.fn.bEn = function (a) {
 			return this.b('en', a)
 		}
-		$D = $Dt = function () {
+		$Dx= $Dt = function () {
 			var dt = new Date()
 			return dt
 		}
@@ -1823,6 +1833,7 @@ function core(){
 			init: function (el, vA) {// 1st set el vs pop rel to val
 				$(el).toggle(ko.unwrap(vA()))
 			},
+			
 			update: function (el, vA) {//on change, slowly fade el in/out
 				ko.unwrap(vA()) ? $(el).fadeIn() : $(el).fadeOut()
 			}
@@ -1837,7 +1848,8 @@ function core(){
 				})
 			},
 			update: function (el, vA) {
-				ko.uw(vA()) ? el.focus() : el.blur()
+				ko.uw(vA()) ? el.focus() :
+				 el.blur()
 			}
 		}
 		$bH = function (b, o) {
@@ -2016,8 +2028,8 @@ FCB = function () {//working!!!
 }
 TLVM = function () {
 	var o = {
-		ts: ko.oa([]),
-		nT: ko.o()
+		ts: $oa([]),
+		nT: $o()
 	}
 	o.inc = ko.c(function () {
 		return ko.ut.af(
@@ -2042,7 +2054,7 @@ TLVM = function () {
 	return o
 }
 KOTEMP = function () {
-	z()
+ 
 	format()
 	s2(
 			ip('r').at({name: 'choices', value: 'summary'}).b('ch', 'selectedView'), sp('summary'),
@@ -2078,7 +2090,7 @@ KOTEMP = function () {
 	ko.ab(viewModel)
 }
 KOTEMP2 = function () {
-	z()
+ 
 	_b()(
 			scrp('tt')(
 					h1('afsdfds')
@@ -2124,7 +2136,7 @@ KOTEMP = function () {
 	ko.ab(viewModel)
 }
 KOTEMP2 = function () {
-	z()
+ 
 	_b()(
 			scrp('tt')(
 					h1('afsdfds')
@@ -2351,31 +2363,32 @@ KNOCKS4 = function () {
 	ko.ab(TLVM())
 }
 KNOCKS4 = function () {
-	format()
+	$.format()
 	s2(
-			h3('Tasks'),
-			_f().b("S", "aT")(
+			$.h3('Tasks'),
+			$.f().b("S", "aT").A(
 					"Add task: ",
-					ip().b('v', 'nT').ph("What?"),
-					bt('Add').at('t', 's')
+					$.ip().b('v', 'nT').ph("What?"),
+					$.bt('Add').at('t', 's')
 			),
-			ul(
-					li()(
+
+			$.ul().A($.li().A(
 							cb().b('ch', 'iD'),
 							ip().b("value:t, disable:iD"),
 							lk('Del').b('ch', '$parent.rmT')
 					)
 			).b("foreach:ts, visible:ts().length>0"),
 			sp("You have"),
-			_B("&nbsp;").b('t', "inc().length"),
-			sp("inc task(s)"),
-			sp("- beer!").b("visible: inc().length==0")
+			
+			$.B().A("&nbsp;").b('t', "inc().length"),
+			$.sp("inc task(s)"),
+			$.sp("- beer!").b("visible: inc().length==0")
 	)
 	ko.ab(TLVM())
 }
 KNOCKS = function () {
-	z()
-	format()
+	 
+	$.format()
 	s2(
 			ul().k('fs').b('E', "fs")(
 					li().b(
@@ -2395,8 +2408,8 @@ KNOCKS = function () {
 	ko.ab(MVM())
 }
 KNOCKS = function () {
-	z()
-	format()
+	 
+	$.format()
 	s2(
 			ul().k('fs').b('E', "fs")(
 					li().b(
@@ -2423,14 +2436,15 @@ FCB = function () {
 		A: [
 			$.ip().b("hasFocus: editingName"),
 			$.h1('editing..').bVs('editingName'),
-			$.bt('Edit').b("enable: !editingName(), click:function() { editingName(true) }")]
+			$.bt('Edit')
+			.b("enable: !editingName(), click:function() { editingName(true) }")]
 	})
 }
 BLM = function () {
 	var o = {}
-	o.itemToAdd = ko.o('')
-	o.allItems = ko.oa(['a', 'b', 'c'])
-	o.selectedItems = ko.oa(['d'])
+	o.itemToAdd = $o('')
+	o.allItems = $oa(['a', 'b', 'c'])
+	o.selectedItems = $oa(['d'])
 	o.addItem = function () {
 		if (o.itemToAdd() != ''//&& o.allItems.indexOf(o.itemToAdd())<0
 		) {
@@ -2448,33 +2462,44 @@ BLM = function () {
 	return o
 }
 KOSCR = function () {
-	z();
+	 
 	$.bd().A(
 			$.scrp('tt').A($.h1('afsdfds')), $.d().bT("{name:'tt'}")
-	);
-	ko.b({})
+	)
+	ok({})
 }
 KOS = function () {
-	$l('kos')
-	$.x()
-	$.d('Profit Information').bS("{color:curProf()<0?'red':'black'}")
-	ko.b({curProf: ko.o(50)})
+ 
+	$.d('Profit Information')
+			.bS("{color:curProf()<0?'red':'black'}")
+			
+	ok({curProf: $o(50)})
+	
 	_.in(function () {
 		vm.curProf(-50)
-	}, '*')
+	})
 }
+
 KOAT = function () {
 	_$({
-		C: 'w', t: 'attributes.. unlikely to use?', vm: {url: $o("year-end.html"), tt: $o("stats report")},
+		C: 'w',
+		 t: 'attributes.. unlikely to use?', 
+		vm: {url: $o("year-end.html"),
+		 tt: $o("stats report")},
 		A: [$.aA('{href:url,title:tt}', 'report')]
 	})
 }
+
 TXIP = TWOWAY = function () {
-	z()
-	$.dA('y', 100, 300, 200, 100).bT('n')
-	$.ip().bTI('n')
-	ok({n: $o('ph text')})
+	 
+	$.dA('y', 100, 300, 200, 100).bT('NAME')
+			
+	$.ip().bTI('NAME')
+	
+	ok({NAME: $o('ph text')})
+	
 } // bT(text)  bTI(textInput)  $o
+
 K1 = function () {
 	z()
 	$.p('f').A($.S().bT('f'))
