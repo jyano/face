@@ -246,7 +246,7 @@ ob = {
 		wg.curDp = []
 	} 
 }
-
+//https://www.youtube.com/watch?v=yuqX4oarOwc&list=PLz_6dB4PItBGBrFeexo-BzO9JHDAhjnQq
 ob._clculate = function (final) {
 	var wg = this, q = wg.element,
 			runDp = wg.runDp, tmp, trm, ops, res, run, dp, sum
@@ -299,10 +299,13 @@ ob._clculate = function (final) {
 	}
 }
 $.wg('jy.clc', ob)
+
 CALC = function () {
 	buttons = [{l: 8, a: 'number'}, {l: 9, a: 'number'}, {l: '+', k: 'jy-clc-plus', a: 'operator'},
 		{l: 4, k: 'jy-clc-clearfix', a: 'number'}] //{l:'Special', a:function(e,ui){$l('special clear!'+ ui)}}
-	$CSS({button: {w: 100, h: 120}, '.jy-clc-display': {fZ: 50, c: 'r'}})
+	$s({bt: {w: 100, h: 120}, '.jy-clc-display': {fS: 50, c: 'r'}})
+	
+	
 	$.a('hide').$(function () {
 		$('#clc').clc('hide')
 	})
@@ -330,6 +333,7 @@ CALC = function () {
 		shown: function () {
 			$Ms('shown')
 		},
+		
 		hidden: function () {
 			$Ms('hidden..')
 		},

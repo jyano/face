@@ -1,48 +1,76 @@
-$.fn.dgb= $.fn.draggable
+$.fn.dgb = $.fn.draggable
 $.fn.dpb = $.fn.droppable
-$.fn.zLite=function(type, icon) {var e=this
-    icon = icon? icon: (type === 'highlight')?
-        'ui-icon-info': 'ui-icon-alert'
-
-    return e.each(function(){var d
-        $(this).K('ui-widget')
-        d=$.d([$.sp().K("ui-icon '+icon+'").css({float:'left', 'margin-right':'3em'}),
-            $(this).text() ])
-        d.K('ui-state-'+type+'ui-corner-all').css({padding:'0 .7em'})
-        $(this).html(d) })
+$.fn.zLite = function (type, icon) {
+	var e = this
+	icon = icon ? icon : (type === 'highlight') ?
+			'ui-icon-info' : 'ui-icon-alert'
+	return e.each(function () {
+		var d
+		$(this).K('ui-widget')
+		d = $.d([$.sp().K("ui-icon '+icon+'").css({float: 'left', 'margin-right': '3em'}),
+			$(this).text()])
+		d.K('ui-state-' + type + 'ui-corner-all').css({padding: '0 .7em'})
+		$(this).html(d)
+	})
 }
-$.fn.error=function(){this.zLite('error')}
-$.fn.highlight=function(){this.zLite('highlight')}
-$.fn.ef= $.fn.effect
-$.fn.hd= function(ef, o, ms){
-    if(ef=='sl'){
-        ef='slide'}
-    if(o&&o.d){
-        if(o.d=='l'){o.d='left'}
-        if(o.d=='r'){o.d='right'}
-        if(o.d=='up'){o.d='up'}
-        if(o.d=='down'){o.d='down'}
-        o.direction = o.d
-    }
-    return this.hide(ef,o,ms)
+$.fn.error = function () {
+	this.zLite('error')
 }
-$.fn.sh= function(ef, o, ms){
-    if(ef=='sl'){ef='slide'}
-    if(o&&o.d){
-        if(o.d=='l'){o.d='left'}
-        if(o.d=='r'){o.d='right'}
-        if(o.d=='u'){o.d='up'}
-        if(o.d=='d'){o.d='down'}
-        o.direction = o.d}
-    return this.show(ef, o, ms)
+$.fn.highlight = function () {
+	this.zLite('highlight')
 }
-$.fn.ps= $.fn.position
-$.fn.tIx=function(a,b){
-    a= this.at('tabindex', a)
-    if(b){a.v(b)}
-    return a
+$.fn.ef = $.fn.effect
+$.fn.hd = function (ef, o, ms) {
+	if (ef == 'sl') {
+		ef = 'slide'
+	}
+	if (o && o.d) {
+		if (o.d == 'l') {
+			o.d = 'left'
+		}
+		if (o.d == 'r') {
+			o.d = 'right'
+		}
+		if (o.d == 'up') {
+			o.d = 'up'
+		}
+		if (o.d == 'down') {
+			o.d = 'down'
+		}
+		o.direction = o.d
+	}
+	return this.hide(ef, o, ms)
 }
-$.fn.dtp= $.fn.datepicker // CSS Framework
+$.fn.sh = function (ef, o, ms) {
+	if (ef == 'sl') {
+		ef = 'slide'
+	}
+	if (o && o.d) {
+		if (o.d == 'l') {
+			o.d = 'left'
+		}
+		if (o.d == 'r') {
+			o.d = 'right'
+		}
+		if (o.d == 'u') {
+			o.d = 'up'
+		}
+		if (o.d == 'd') {
+			o.d = 'down'
+		}
+		o.direction = o.d
+	}
+	return this.show(ef, o, ms)
+}
+$.fn.ps = $.fn.position
+$.fn.tIx = function (a, b) {
+	a = this.at('tabindex', a)
+	if (b) {
+		a.v(b)
+	}
+	return a
+}
+$.fn.dtp = $.fn.datepicker // CSS Framework
 //   list of the class names
 // used by jQuery UI.
 // The classes are designed to
@@ -56,17 +84,16 @@ $.fn.dtp= $.fn.datepicker // CSS Framework
 // fixed and structural, or themeable
 // (colors, fonts, backgrounds, etc) respectively.
 //jqAnim:
-$.fn.st= $.fn.stop
-$.fn.f2= $.fn.fadeTo
-$.fn.fI= $.fn.fadeIn
+$.fn.st = $.fn.stop
+$.fn.f2 = $.fn.fadeTo
+$.fn.fI = $.fn.fadeIn
 //to use bootstrap with jqui!!!
 //http://www.ryadel.com/2015/01/03/using-jquery-ui-bootstrap-togheter-web-page/
 // http://api.jqueryui.com/jQ.widget.bridge/
- $.fn.bt=function(op){
- 
- this.bt(op)
- return this
- }
+$.fn.bt = function (op) {
+	this.bt(op)
+	return this
+}
 $.fn.wg = $.fn.wid = $.fn.widget
 $.wg = $.wid = $.widget
 HIGHLIGHTFADE = HGHLT = function () {
@@ -747,255 +774,25 @@ EF3 = HIDESHOWNICE = HIDE = function () {
 		}
 	}
 }
-EF4 = function () {
-	$.x('o', 'jqls')
-	$.d([$.h3('Pending')
-		
-		/*
-		 ,  $.d([
-		 $.dK('task-header').A('Sample Header'),
-		 $.d([  '25/06/1992'  ]).K('task-date'),
-		 $.d(['Lorem Ipsum Dolor Sit Amet']).K('task-desc')
-		 ]).K('td-task')
-		 */
-	]).id('pending').K('task-list')
-	$.d([$.h3('In Progress')]).id('inProgress').K('task-list')
-	$.d([$.h3('Completed')]).id('completed').K('task-list')
-	$.d([
-		$.h3('Add a task'),
-		$.f([
-			$.ip().ph('Title'),
-			$.ta().ph('Description'),
-			$.ip().ph('Due Date (dd/mm/yyyy)').datepicker(),
-			$.bt('Add Task').K('btn btn-primary')
-		]).C('u').id('td-form'),
-		$.bt('Clear Data').K('btn btn-primary'),
-		$.d(['Drag Here to Delete']).id('delete-div')
-	]).K('task-list')
-	// {
-	// width:250; // float:left;
-	// mar:0;
-	// background-color:gray;
-	// min-height:240;
-	// border-radius:10;
-	// padding-bottom:15;
-	// }
-	$CSS({
-		'.task-list': {
-			w: '250px', float: 'left',
-			mar: '0px', C: 'gray', 'min-height': '240px',
-			'border-radius': '10px', 'padding-bottom': '15px'
+codes = {"1": "#pending", "2": "#inProgress", "3": "#completed"}
+ 
+JU33 = OVERLAY = FADEIN = FIN = function () {
+	$s({
+		bd: {B: 0, M: 0},
+		'_ui-widget-overlay': {
+			bg: 'repeat-x scroll 50% 50% #AAA', al: '0.3'
 		},
-		h3: {'text-align': 'center'},
-		'.task-list input, .task-list textarea': {w: '240px', mar: '1px 5px'},
-		'.task-list input': {h: '30px'},
-		'.task-list input[type="button"]': {w: '100px', mar: '5px'},
-		'.td-task': {'border-radius': '5px', C: 'g', w: '230px', mar: '5px', pad: '5px'},
-		'.td-task > .task-header': {'font-weight': 'bold'},
-		'.td-task >.task-date': {'font-size': 'small', 'font-style': 'italic'},
-		'.td-task > .task-desc': {'font-size': 'smaller'},
-		'#delete-div': {
-			C: 'b', bor: '3px dotted #000', mar: '10px', h: '75px',
-			'line-height': '75px', 'text-align': 'center'
+		'_ui-widget-overlay': {
+			h: '100%', l: 0,
+			ps: 'a', t: 0, w: '100%'
 		}
 	})
-	//<style type="text/css"> h3{text-align:center;  }</style>
-	$l($('head').oh())
-	data = _.jP($ls.g("tdData")) || {}
-	codes = {"1": "#pending", "2": "#inProgress", "3": "#completed"}
-	options = {}
-	td = {
-		add: function () {
-			var ips = $('#td-form :input'),
-					id, title,
-					desc, date,
-					tempData
-			if (ips.length !== 4) {
-				return
-			}
-			title = ips[0].value
-			desc = ips[1].value
-			date = ips[2].value
-			if (!title) {
-				return $.dlg("!Title")
-			}
-			id = _.gT()
-			tempData = {
-				id: id, code: "1", title: title,
-				date: date, desc: desc
-			}
-			data[id] = tempData
-			$ls.s("tdData", _.jS(data))
-			genEl(tempData)
-			ips[0].value = "";
-			ips[1].value = "";
-			ips[2].value = ""
-		},
-		clear: function () {
-			data = {}
-			$ls.s('tdData', _.jS(data))
-			$('.td-task').rm()
-		}
-	}
-	genEl = function (pams) {
-		$l('genEl')
-		pams = pams || {}
-		var parent
-		if (!pams.code) {
-			$l('!pams.code');
-			return;
-		}
-		parent = $(codes[pams.code]), wrapper;
-		if (!parent) {
-			$l('!parent');
-			return
-		}
-		wrapper = $.d()
-				.at({class: 'td-task', id: 'task-' + pams.id, data: pams.id}).a2(parent)
-		$.d().at({class: 'task-header', text: pams.title}).a2(wrapper);
-		$.d().at({class: 'task-date', text: pams.date}).a2(wrapper)
-		$.d({class: 'task-desc', text: pams.desc}).a2(wrapper)
-		wrapper.draggable({
-			start: function () {
-				$("#" + 'delete-div').show()
-			},
-			stop: function () {
-				$("#" + 'delete-div').hide()
-			},
-			revert: "invalid", revertDuration: 200
-		})
-	}
-	rmEl = function (pams) {
-		$('#task-' + pams.id).rm()
-	}
-	$.each(data, function (index, pams) {
-		genEl(pams)
+	ovL = $.dK("ui-overlay", [
+		$.dK("ui-widget-overlay")]).hd().fI()
+	$(window).resize(function () {
+		ovL.WH($(document).W(),
+				$(document).H()).hd().fI()
 	})
-	/*genEl({
-	 id: "123", code: "1",
-	 title: "asd",   date: "22/12/2013",  desc: "Blah Blah"     });*/
-	/*rmEl({      id: "123",
-	 code: "1",  title: "asd",
-	 date: "22/12/2013",
-	 desc: "Blah Blah"
-	 });*/
-	// Adding drop function to each category of task and del div
-	$.each({"1": "#pending", "2": "#inProgress", "3": "#completed"},
-			function (index, value) {
-				$(value).droppable({
-					drop: function (event, ui) {
-						var element = ui.helper,
-								css_id = element.attr('id'),
-								id = css_id.replace('task-', ''),
-								object = data[id]
-						rmEl(object)
-						object.code = index
-						genEl(object)
-						data[id] = object
-						$ls.s("tdData", _.jS(data))
-						$('#delete-div').hide()
-					}
-				})
-			})
-	$('#delete-div').droppable({
-		drop: function (event, ui) {
-			var element = ui.helper,
-					css_id = element.attr("id"),
-					id = css_id.replace('task-', ""),
-					object = data[id];
-			// Removing old element
-			rmEl(object);
-			// Updating local storage
-			delete data[id];
-			$ls.s("tdData", _.jS(data));
-			// Hiding Delete Area
-			$("#" + 'delete-div').hide();
-		}
-	})
-	function alt() {
-		JU16 = SAMPLER = EFFECTS = EFS = function () {
-			$.x('x')
-			$CSS({
-				_toggler: {w: 500, h: 200, p: 'r'},
-				$button: {pad: '.5em 1em', 'text-decoration': 'none'},
-				$ef: {w: 240, h: 135, pad: '0.4em', p: 'r'},
-				'$ef h3': {mar: 0, pad: '0.4em', 'text-align': 'center'},
-				'_ui-efs-transfer': {bor: '2px dotted gray'}
-			})
-			$.d([
-				$.d([
-					$.h3('Effect').K('ui-widget-header ui-corner-all'),
-					$.p('afsdfsdfsa fasdsafdas fdsdfa')
-				]).id('ef').K("ui-widget-content ui-corner-all")
-			]).K('toggler')
-			sl = $.sl().n('efs').id('efTypes')
-			_.e(['efs', 'blind', 'bounce', 'clip', 'drop', 'explode', 'fade', 'fold',
-						'highlight', 'puff', 'pulsate', 'scale', 'shake', 'size', 'slide', 'transfer'],
-					function (a) {
-						sl.A($.op(a))
-					})
-			$.bt('Run Effect', runEf).id("button").K("ui-state-default ui-corner-all")
-			function runEf() {
-				$l('runEf')
-				var selEf = $("#efTypes").val()
-				op = ( selEf === "scale" ) ? {percent: 0} :
-						( selEf === "transfer" ) ? {to: "#button", className: "ui-efs-transfer"} :
-								( selEf === "size" ) ? {to: {width: 200, height: 60}} : {}
-				$("#ef").effect(selEf, op, 500, cb)
-				function cb() {
-					_.in(function () {
-						$("#ef").removeAttr("style").hide().fadeIn()
-					})
-				}
-				
-				$("#button").$(function () {
-					runEf();
-					return false
-				})
-			}
-		}
-		JU13 = SAMPLER = EFFECTS = EFS = function () {
-			$.x('x')
-			$CSS({
-				_toggler: {w: 500, h: 200, p: 'r'},
-				$button: {pad: '.5em 1em', 'text-decoration': 'none'},
-				$ef: {w: 240, h: 135, pad: '0.4em', p: 'r'},
-				'$ef h3': {mar: 0, pad: '0.4em', 'text-align': 'center'},
-				'_ui-efs-transfer': {bor: '2px dotted gray'}
-			})
-			$.d([
-				$.d([
-					$.h3('Effect').K('ui-widget-header ui-corner-all'),
-					$.p('afsdfsdfsa fasdsafdas fdsdfa')
-				]).id('ef').K("ui-widget-content ui-corner-all")
-			]).K('toggler')
-			sl = $.sl().n('efs').id('efTypes')
-			_.e(['efs', 'blind', 'bounce', 'clip', 'drop', 'explode', 'fade', 'fold',
-						'highlight', 'puff', 'pulsate', 'scale', 'shake', 'size', 'slide', 'transfer'],
-					function (a) {
-						sl.A($.op(a))
-					})
-			$.bt('Run Effect', runEf).id("button").K("ui-state-default ui-corner-all")
-			function runEf() {
-				$l('runEf')
-				var selEf = $("#efTypes").val()
-				op = ( selEf === "scale" ) ? {percent: 0} :
-						( selEf === "transfer" ) ? {to: "#button", className: "ui-efs-transfer"} :
-								( selEf === "size" ) ? {to: {width: 200, height: 60}} : {}
-				$("#ef").effect(selEf, op, 500, cb)
-				function cb() {
-					_.in(function () {
-						$("#ef").removeAttr("style").hide().fadeIn()
-					})
-				}
-				
-				$("#button").$(function () {
-					runEf();
-					return false
-				})
-			}
-		}
-	}
 }
 DPB = function () {
 	$.x('b', 'dpb')
@@ -1081,21 +878,19 @@ UI2 = DIAL = function () {
 		$.p('dialog window can be moved, resized and closed with the x icon')]).id('dialog').at('title', 'Basic dialog')
 	$("#dialog").dialog()
 	$.dlg('dialog 1')
-	_.in(3, function () {
+	_.in(30, function () {
 		$.dlg('dialog 2')
 		$.dlg('dialog 3')
 		$.dlg('dialog 4')
 	})
 }
 UI3 = PROG = function () {
-	z();
 	$.d().id('progressbar')
 	$("#progressbar").progressbar({
 		value: false
 	})
 }
 IP1 = FOC = SPANFOCUS = function () {
-	$.x()
 	$.sp('Some Span').id("my-span").at('tabindex', "0")
 	$.sp('Some Span1').id("my-span1")//.at('tabindex',"0")
 	$.sp('Some Span2').id("my-span2").at('tabindex', "0")
@@ -1103,7 +898,6 @@ IP1 = FOC = SPANFOCUS = function () {
 	document.getElementById('my-span2').focus()
 }
 IP2 = DATEPICK = function () {
-	$.x('b', 'jqui')
 	$.d().id("datepicker")
 	$("#datepicker").datepicker()
 	function alt() {
@@ -1131,7 +925,7 @@ IP3 = SETRADIOBTUI = function () {
 	$("#radio").buttonset()
 }
 IP4 = SLIDER = RANGEUI = function () {
-	$CSS({_slider: {M: 12}});
+	$s({_slider: {M: 12}});
 	$.dI('slider').slider()
 }
 IP5 = NUMSPINN = function () {
@@ -1155,7 +949,6 @@ UIBT = IP6 = UI15 = UIBUT = function () {
 	})
 }
 UI0 = FID = function () {
-	z()
 	$.wg("jy.simp", {
 		options: {text: ""},
 		_setOption: function (k, v) {
@@ -1213,282 +1006,41 @@ NV5 = UISLMENU = USM = function () {
 	$("#files").selectmenu()
 	$("#number").selectmenu().selectmenu("menuWidget").K("overflow")
 }
-function needs_wi_rz() {
-//needs wi.rz :
-	JU3 = FID = function () {
-		z()
-		$.wg("jy.simp", {
-			options: {text: ""},
-			_setOption: function (k, v) {
-				if (k === "text") {
-					this.element.text(v)
-				}
-				this._trigger("change")
+JU3 = FID = function () {
+	$.wg("jy.simp", {
+		options: {text: ""},
+		_setOption: function (k, v) {
+			if (k === "text") {
+				this.element.text(v)
 			}
-		})
-		a = $.a('Hello World')
-				.simp().on("simpchange", function () {
-					//p.html( a.simp("option", "text"))
-				})
-		// p = $.p()
-		$.bt('Change Text', function () {
-			a.simp("option", "text", "new text")
-		}).button()
-	}
-	JU333 = OVERLAY = FADEIN = FIN = function () {
-		$.h({
-			bd: {B: 0, M: 0},
-			'_ui-widget-overlay': {
-				bg: 'repeat-x scroll 50% 50% #AAA', al: '0.3'
-			},
-			'_ui-widget-overlay': {
-				h: '100%', l: 0,
-				ps: 'a', t: 0, w: '100%'
-			}
-		})
-		ovL = $.dK("ui-overlay", [
-			$.dK("ui-widget-overlay")]).hd().fI()
-		$.rz(function () {
-			ovL.WH($(document).W(), $(document).H()).hd().fI()
-		})
-	}
-	JU33 = OVERLAY = FADEIN = FIN = function () {
-		$.h({
-			bd: {B: 0, M: 0},
-			'_ui-widget-overlay': {
-				bg: 'repeat-x scroll 50% 50% #AAA', al: '0.3'
-			},
-			'_ui-widget-overlay': {
-				h: '100%', l: 0,
-				ps: 'a', t: 0, w: '100%'
-			}
-		})
-		ovL = $.dK("ui-overlay", [
-			$.dK("ui-widget-overlay")]).hd().fI()
-		$.rz(function () {
-			ovL.WH($(document).W(), $(document).H()).hd().fI()
-		})
-	}
+			this._trigger("change")
+		}
+	})
+	a = $.a('Hello World')
+			.simp().on("simpchange", function () {
+				//p.html( a.simp("option", "text"))
+			})
+	// p = $.p()
+	$.bt('Change Text', function () {
+		a.simp("option", "text", "new text")
+	}).button()
 }
-function needs_ls() {
-	JU63 = JQLS10 = function () {
-		$.x('o', 'jqls')
-		$.d([$.h3('Pending')
-			
-			/*
-			 ,  $.d([
-			
-			 $.dK('task-header').A('Sample Header'),
-			
-			 $.d([  '25/06/1992'  ]).K('task-date'),
-			
-			 $.d(['Lorem Ipsum Dolor Sit Amet']).K('task-desc')
-			
-			
-			 ]).K('td-task')
-			 */
-		]).id('pending').K('task-list')
-		$.d([$.h3('In Progress')]).id('inProgress').K('task-list')
-		$.d([$.h3('Completed')]).id('completed').K('task-list')
-		$.d([
-			$.h3('Add a task'),
-			$.f([
-				$.ip().ph('Title'),
-				$.ta().ph('Description'),
-				$.ip().ph('Due Date (dd/mm/yyyy)').datepicker(),
-				$.bt('Add Task').K('btn btn-primary')
-			]).C('u').id('td-form'),
-			$.bt('Clear Data').K('btn btn-primary'),
-			$.d(['Drag Here to Delete']).id('delete-div')
-		]).K('task-list')
-		$CSS(JQLScss) //<style type="text/css"> h3{text-align:center;  }</style>
-		$l($('head').oh())
-		El = function (o) {
-			var q
-			if (q = $(codes[o.code])) {
-				wrapper = $.dI('task-' + o.id).K('td-task').at('data', o.id)
-				wrapper.A(
-						$.d(o.tt).K('task-header'),
-						$.d(o.date).K('task-date'),
-						$.d(o.desc).K('task-desc')
-				).a2(q)
-			}
+JU333 = OVERLAY = FADEIN = FIN = function () {
+	$.h({
+		bd: {B: 0, M: 0},
+		'_ui-widget-overlay': {
+			bg: 'repeat-x scroll 50% 50% #AAA', al: '0.3'
+		},
+		'_ui-widget-overlay': {
+			h: '100%', l: 0,
+			ps: 'a', t: 0, w: '100%'
 		}
-		addItem = function (dat) {
-			ips = $('#td-form :input')
-			if (ips.length != 4) {
-				return
-			}
-			if (!tt) {
-				return $l("Title empty!")
-			}
-			El(dat[id = _.gT()] = {
-				id: id,
-				code: "1",
-				tt: ips[0].value, date: ips[2].value, desc: ips[1].value
-			})
-			ips[0].value = ips[1].value = ips[2].value = ''
-			$ls.s('tdData', _.jS(dat))
-		}
-		rmEl = function (o) {
-			$('#task-' + o.id).rm()
-		}
-		exEl = El({
-			code: "1", id: "123",
-			tt: "My Uber Important Task", date: "5/2/2014",
-			desc: "I have to do a lot of steps to implement this task!"
-		})
-		wrapper.dgb({
-			start: function () {
-				$('#delete-div').show()
-			},
-			stop: function () {
-				$('#delete-div').hide()
-			}
-		})
-		$ls.s("tdData", _.jS(data = _.jP($ls.g("tdData"))))
-		$('.td-task').dgg()
-		$.each(codes, function (k, v) {
-			$(v).dpb({//on drop !!!
-				drop: function (ev, ui) {
-					el = ui.helper
-					css_id = el.attr("id")
-					id = css_id.replace(ops.taskId, '')
-					ob = data[id]
-					rmEl(ob)
-					ob.code = k
-					El(ob)
-					data[id] = ob
-					$ls.s("tdData", _.jS(data))
-					$('#delete-div').hide()
-				}
-			})
-		})
-		$('#delete-div').dpb({
-			drop: function (ev, ui) {
-				el = ui.helper
-				css_id = el.attr('id')
-				id = css_id.replace(op.taskId, '')
-				o = data[id]
-				rmEl(o)
-				delete data[id]
-				$ls.s("tdData", _.jS(data))
-				$('#delete-div').hide()
-			}
-		})
-		data = _.jP($ls.g("tdData")) || {}
-		codes = {"1": "#pending", "2": "#inProgress", "3": "#completed"}
-		options = {}
-		td = {
-			add: function () {
-				var ips = $('#td-form :input'),
-						id, title,
-						desc, date,
-						tempData
-				if (ips.length !== 4) {
-					return
-				}
-				title = ips[0].value
-				desc = ips[1].value
-				date = ips[2].value
-				if (!title) {
-					return $.dlg("!Title")
-				}
-				id = _.gT()
-				tempData = {
-					id: id, code: "1", title: title,
-					date: date, desc: desc
-				}
-				data[id] = tempData
-				$ls.s("tdData", _.jS(data))
-				genEl(tempData)
-				ips[0].value = "";
-				ips[1].value = "";
-				ips[2].value = ""
-			},
-			clear: function () {
-				data = {}
-				$ls.s('tdData', _.jS(data))
-				$('.td-task').rm()
-			}
-		}
-		genEl = function (pams) {
-			$l('genEl')
-			var parent = $(codes[pams.code]),
-					wrapper
-			if (!pams.code || !parent) {
-				$l('!parent');
-				return
-			}
-			wrapper = $.d()
-			wrapper.at({class: 'td-task', id: 'task-' + pams.id, data: pams.id})
-					.a2(parent)
-			$.d().at({class: 'task-header', text: pams.title}).a2(wrapper)
-			$.d().at({class: 'task-date', text: pams.date}).a2(wrapper)
-			$.d().at({class: 'task-desc', text: pams.desc}).a2(wrapper)
-			wrapper.draggable({
-				start: function () {
-					$("#" + 'delete-div').show()
-				},
-				stop: function () {
-					$("#" + 'delete-div').hide()
-				},
-				revert: "invalid", revertDuration: 200
-			})
-		}
-		rmEl = function (pams) {
-			$('#task-' + pams.id).rm()
-		}
-		$.each(data, function (index, pams) {
-			genEl(pams)
-		})
-		/*genEl({
-		 id: "123",
-		 code: "1",
-		 title: "asd",
-		 date: "22/12/2013",
-		 desc: "Blah Blah"
-		 });*/
-		/*rmEl({
-		 id: "123",
-		 code: "1",
-		 title: "asd",
-		 date: "22/12/2013",
-		 desc: "Blah Blah"
-		 });*/
-		// Adding drop function to each category of task and del div
-		$.each(codes, function (index, value) {
-			$(value).droppable({
-				drop: function (event, ui) {
-					var element = ui.helper,
-							css_id = element.attr("id"),
-							id = css_id.replace('task-', ""),
-							object = data[id]
-					rmEl(object)
-					object.code = index
-					genEl(object)
-					data[id] = object
-					$ls.s("tdData", _.jS(data))
-					$('#delete-div').hide()
-				}
-			})
-		})
-		$('#delete-div').droppable({
-			drop: function (event, ui) {
-				var element = ui.helper,
-						css_id = element.attr("id"),
-						id = css_id.replace('task-', ""),
-						object = data[id];
-				// Removing old element
-				rmEl(object);
-				// Updating local storage
-				delete data[id];
-				$ls.s("tdData", _.jS(data));
-				// Hiding Delete Area
-				$("#" + 'delete-div').hide();
-			}
-		})
-	}
+	})
+	ovL = $.dK("ui-overlay", [
+		$.dK("ui-widget-overlay")]).hd().fI()
+	$.resize(function () {
+		ovL.WH($(document).W(), $(document).H()).hd().fI()
+	})
 }
 $L() //UI-CHECK-BOX WIDGET
 _create2 = function () {
@@ -1744,405 +1296,803 @@ CB4 = CB$(function () {
 	}
 	$.wg("app.checkbox", ob4)
 })
-function err() {
-	HIGHLIGHTFADE = HGHLT = function () {
-		$.h({
-			_gg: {
-				C: 'o', w: 100, h: 100
-			}
-		})
-		// ?? hides or shows an el  by ang its bgC 1st // bgC ="#ffff99"
-		d = $('<div>').A().A('Click to tog ').K('gg')
-		$.$(function () {
-			$l('$.$')
-			$("#gg").toggle("highlight")
-		})
-	}
-	DRAGGY = function () {
-		$.x('o', 'draggy')
-		$.d('r', 500, 500).K('sel')
-		$('.sel').dgb({
-			delay: 1000,
-			distance: 100,
-			helper: "clone",
-			addClasses: false,
-			snapMode: "inner",
-			grid: [50, 20],
-			snap: true
-		})
-	}
-	APP2 = function () {
-		k = $('.k')
-		k.dgb({appendTo: "body"})
-		k.dgb({helper: "clone"})
-	}
-	TABSELIX = function () {
-		$.h({
-			ip: {bor: '1px solid #000'}, d: {pad: 5}
-		})
-		$.d([
-			'no tabindex'
-		])
-		$.d([$.ip().tIx(5, '+tIx')
-		])
-		$.d([$.ip().tIx(5, '+tIx')
-		])
-		$.d(['-tIx',
-			$.ip().tIx(-1, '-tIx')
-		])
-		$(":tabbable").bdC("red")
-	}
-	MENU1 = function () {
-		z()
-		$CSS({
-			'.ui-menu': {
-				width: 200,
-				C: 'r'
-			}
-		})
-		$.ul().A(
-				$.li('Item 1'),
-				$.li('Item 2'),
-				$.li().A(
-						'Item 3',
-						$.li('Item 3-1'),
-						$.li('Item 3-2'),
-						$.li('Item 3-3'),
-						$.li('Item 3-4'),
-						$.li('Item 3-5')),
-				$.li('Item 4'),
-				$.li('Item 5')
-		).id("menu")
-		$("#menu").menu()
-	}
-	JUSTREDDIV = IXSTAT = function () {
-		$.x()
-		k = $.d('r', 500, 200)
-		// to clb bT-like elS. Applies clb df ct stys to el
-		// and its ch t, lks, and icons.
-		k.K('.ui-state-default')
-		//   on mv to clb bt-oid. Applies "clickable hover" ct stys
-		// to an element and its child text, links, and icons.
-		k.K('.ui-state-hover')
-		//  on kb fcs to clb btoids. Applies "clickable focus"
-		// ct stys  to el and its child text, links, and icons.
-		k.K('.ui-state-focus')
-		//   on md to clb btoids. Applies "clickable active" cot stysto an el
-		// and its ch t, lks, and icons.
-		k.K('.ui-state-active')
-	}
-	DATESCR = function () {
-		$.x('b', 'jqui')
-		('<link rel="stylesheet" href="/jquery-ui.min.css">').A()
-		('<script src="/jquery-ui.min.js">').A()
-		d = $.d('b', 400, 400).A(
-				ip = $.ip('date').datepicker()
-		).pad(20)
-	}
-	DROP = function () {
-		$CSS({
-			$dgb: {
-				w: 100, h: 50, pad: '0.5em', fl: 'l',
-				mar: '22px 5px 10px 0'
-			},
-			$dpb: {w: 130, h: 90, pad: '0.5em', mar: 10, fl: 'l'},
-			div: {w: 400, h: 300, C: 'r', c: 'y'},
-			$dgb2: {w: 100, h: 50, pad: '0.5em', mar: '0px 5px 10px 0'},
-			'#dpb2,#dpb3,#dpb4,#dpb5': {w: 12, h: 90, pad: '0.5em', fl: 'l', mar: 10}
-		})
-		$.d().id('dgb').K('ui-widget-content').A($.p('Drag me'))
-		$.d().id('dpb').K('ui-widget-header').A($.p('here'))
-		$("#dgb").dgb()
-		$("#dpb").dpb()
-		Dpb(2, 'Drag me to my target', 'ui-widget-content')
-		Dpb(2, 'here');
-		Dpb(3, "dsbld !drop");
-		Dpb(4, 'tol toch');
-		Dpb(5, 'tol fit')
-		$("#dgb2").dgb()
-		$("#dpb2").dpb({
-			drop: function (ev, ui) {
-				$(this).K("ui-state-highlight").find("p").html("Dpd")
-			}
-		})
-		$("#dpb3").dpb({
-			disabled: "true", drop: function (ev, ui) {
-				$(this)
-						.K("ui-state-highlight").find("p").html("Dpd")
-			}
-		})
-		$("#dpb4").dpb({
-			tolerance: 'touch', drop: function (ev, ui) {
-				$(this).K("ui-state-highlight").find("p").html("Dpd w tch")
-			}
-		})
-		$("#dpb5").dpb({
-			tolerance: 'fit', drop: function (ev, ui) {
-				$(this).K("ui-state-highlight")
-						.find("p").html("Dpd whn fulfit")
-			}
-		})
-		function Dpb(id, pT, k) {
-			k = k || "ui-widget-header"
-			return $.d().id('dpb' + id).K(k).A($.p(pT))
+function superDlg() {
+//https://learn.jquery.com/jquery-ui/widget-factory/extending-widgets/
+//super dialog!!
+	$.wg("cust.sdlg", $.ui.dialog, {
+		open: function () {
+			$l("open");
+			return this._super()
+		},
+		setOption: function (k, v) {
+			this._super(k, v);
+			this._superApply(arguments)
+		},
+		red: function (r) {
+			this.element.C('r')
 		}
-	}
-	CRAZYWEIRD = POSI = function () {
-		$.h({
-			$par: {
-				C: 'b', ta: 'c', w: '60%', ht: 40,
-				mar: '10px auto', pad: 5, bor: '1px solid #777'
-			},
-			_psb: {
-				p: 'a', ds: 'b',
-				r: 0, b: 0, C: 'r', ta: 'c'
-			},
-			$psb1: {w: 75, h: 75},
-			$psb2: {w: 120, h: 40},
-			'select,input': {mL: 15}
+	})
+	WIJ = function () {
+		$.x('b', 'wijj');
+		d = $.d(['i am red']);
+		d.sDlg().sDlg('red')
+		$.in(function () {
+			d.sDlg("close")
 		})
-		$.d([$.p('This is the ps par el')]).id('par')
-		$.dK('psb').id("psb1")
-		$.p('to ps')
-		$.d([$.p('to ps2')]).K('psb', 'psb2')
-		$.d().mgT(75).pad(20), 'ps...'
-		$.d().pdB(20)
-		$.b().A('my:')
-		$.sl('my_hz', 'left', 'center', 'right')
-		$.sl("my_vrt", 'top', 'center', 'bottom')
-		$.d().pdB(20)
-		$.p().A('at:')
-		$.sl("at_hz", 'left', 'center', 'right')
-		$.sl("at_vrt", 'top', 'center', 'bottom')
-		$.d([
-			$.b().A('cl:'),
-			$.sl('cl_vrt', 'flip', 'flit', 'flipfit', 'none'),
-			$.sl('cl_hz', 'flip', 'flit', 'flipfit', 'none')
-		]).pdB(200)
-		$("select, input").bind("click keyup change", ps)
-		$("#par").dgb({drag: ps})
-		$(".psb").al(.5)
-		ps()
-		function ps() {
-			$(".psb").ps({
-				of: $("#par"),
-				my: $("#my_hz").v() + $("#my_vrt").v(),
-				at: $("#at_hz").v() + $("#at_vrt").v(),
-				collision: $("#cl_hz").v() + $("#cl_vrt").v()
-			})
+	}
+	SDLG = function () {
+		$.x('g', 'sdlg')
+		// Mets overridden on the ptt affect all insts of wid.
+// both insts of the dlg use the same open() met
+		d = $.d().sdlg().data("ui-dialog");// Retrieve the dialog's instance and store it.
+		// sometimes you only need to change the bhr for a sing  inst  of the wid.  //To do this, obtain   ref  to   inst  and override the met  using  normal js
+		d.close = function () {
+			$l("close")
 		}
-	}
-	BLANK = LAYOUTHELP = function () {
-		k = $('.k')
-		k.K('ui-helper-hidden')//  Hides content visually  and from assistive technologies, such as screen readers.
-		k.K('ui-helper-hidden-accessible')// Hides cont
-		k.K('.ui-helper-reset')// A basic style reset for DOM nodes. Resets pad, mar, t-dec, ls-sty
-		k.K('.ui-helper-clearfix')// Appls float, wrapg pops to par els
-		k.K('.ui-front')// z-ix to mang  stackg  of mult wids on screen.  See  stacking ELS
-		k.K('.ui-widget')// outer ct of all wids. Appls fo-fam  and fZ to wids
-		k.K('.ui-widget-header')// : appl2  hdr conts. Appls hdr cont sty to el and its ch t,lks, and icons.
-		k.K('.ui-widget-content')
-		// : appl2 cont cts. // Appls cont-ct stys to el and its ch t, lks, and icons.
-		// (can be appld to par  or sib  of hdr).
-	}
-	NOTWORKING = ICONN = function () {
-		$.x('y', 'icon')
-		$.sp('helllloooo1')
-		$.sp('helllloooo2')
-				.K("ui-icon ui-icon-arrowthick-1-n")
-		k = $.d('k', 500, 500)
-		k.K('ui-icon ui-icon-triangle-1-e')
-		/*
-		 Base class to be applied to an icon element.
-		 Sets dimensions to a 16px square
-		 block,
-		 hides inner text,
-		 sets background image to
-		 "content" state sprite image.
-		
-		 Note: ui-icon class will be given    different sprite background image
-		 depending on its parent container.
-		
-		 For example,
-		 a ui-icon element
-		 within a ui-state-default container
-		 will get colored according to
-		 the ui-state-default's icon color.
-		 Icon types
-		
-		 After declaring a ui-icon class,
-		 you can follow up with a second class
-		 describing the type of icon.
-		 Icon classes generally follow a syntax
-		
-		
-		 */
-		//  .ui-icon-{icon type}-{icon sub description}-{direction}.
-//             For example, a single triangle icon pointing to the right
-		//    .ui-icon-triangle-1-e
-		//  ThemeRoller provides
-		// full set of CSS framework icons  in  prev col
-		//  Hv over them to see the class name.
-	}
-	NOTHINGATALL = VLAYSHAD = function () {
-		k = $('.k')
-		k.K('ui-widget-overlay')
-		/*
-		
-		 Applies 100% width & height dimensions to an overlay screen,
-		 along with background color/texture, and screen opacity.
-		 k.K('ui-widget-shadow')
-		 appy to vlay widg shad els
-		 Applies bg    c/texture, cust cor rad, al,
-		 top/left ofs and shd "thickness".
-		 Thickness is appld via pad  all sides of shad  that
-		 set to mat  the dims of the overlay el .
-		 Offsets are appld via t and l  margs  (can be pos  or neg ).
-		 */
-		// https://www.packtpub.com/books/content/jquery-ui-themes-states-cues-overlays-and-shadows
-	}
-	ITHINKNOTHING = CORRAD = function () {
-		$.x('o')
-		$.d('d', 500, 500)
-		k = $.d('d', 500, 500)
-		/*   k.K('.ui-corner-tl') // corner-radius to top left corner of element.
-		 k.K('.ui-corner-tr')// t r cor
-		 k.K('.ui-corner-bl')//to bt l corn
-		 k.K('.ui-corner-br')// bt r cor
-		 k.K('.ui-corner-top')//o both t cors
-		 k.K('.ui-corner-bottom')//both bt cors
-		 k.K('.ui-corner-right')// both r cors
-		 k.K('.ui-corner-left')// both left cors
-		 k.K('.ui-corner-all')//all 4 cors
-		 */
-	}
-	STUCKLOGINFORM = UICT = function () {
-		$.h()
-//http://www.phpeveryday.com/articles/jQuery-UI-Using-The-Framework-Classes-P986.html
-		num = 3
-		if (num == 1) {
-			$.dK("ui-widget").A(
-					$.dK("ui-widget-header ui-corner-top").A(
-							$.h2('his is a ui-widget-header container')),
-					$.dK("ui-widget-content ui-corner-bottom").A(
-							$.p('This is a ui-widget-content container')))
-			$.dK("ui-widget").A(
-					$.dK("ui-state-default ui-state-active ui-corner-all").A(
-							$.a('clickable and selected')),
-					$.d([
-						$.a('clickable but not selected')
-					]).K("ui-state-default ui-corner-all"))
-		}
-		$('.ui-state-default a').hv(function () {
-			$(this).parent().K("ui-state-hover")
-		}, function () {
-			$(this).parent().xK("ui-state-hover")
-		})
-		if (num == 2) {
-			$.dK("ui-widget").A(
-					$.dK("ui-state-default ui-state-active ui-corner-all").A(
-							$.dK("ui-icon ui-icon-circle-plus"), $.a('clb, seld')),
-					$.dK("ui-state-default ui-corner-all").A(
-							$.dK("ui-icon ui-icon-circle-plus"),
-							$.a('clb, !selected')))
-			$(".ui-state-default a").hv(function () {
-						$(this).pa().K("ui-state-hover")
-					},
-					function () {
-						$(this).pa().xK("ui-state-hover")
-					})
-		}
-		if (num == 3) {
-			$CSS({
-				'_ui-form': {w: 470, mar: '0 auto'},
-				'_ui-form _ui-widget-header h2': {margin: '10px 0 10px 20px'},
-				'_ui-form _ui-widget-content': {padding: 20},
-				'_ui-form label, _ui-form input, _ui-form _ui-state-error,_ui-form _ui-icon, _ui-form _ui-state-error p': {fl: 'l'},
-				'_ui-form label, _ui-state-error p': {fz: 12, pad: '10px 10px 0 0'},
-				'_ui-form _ui-state-error': {pad: 4},
-				'_ui-form _ui-state-error p': {'font-weight': 'bold', pT: 5},
-				'_ui-form _ui-state-error _ui-icon': {mar: '5px 3px 0 4px'}
-			})
-			$.dK("ui-widget ui-form").A(
-					$.dK("ui-widget-header ui-corner-all").A(
-							$.h2('Login Form')),
-					$.dK("ui-widget-content ui-corner-all").A(
-							$.f().K('ui-helper-clearfix').A(
-									$.lb('Username').K("ui-helper-reset"),
-									$.d("ui-state-error ui-corner-all").A(
-											$.ip(), $.dK("ui-icon ui-icon-alert"),
-											$.p('Required field')
-													.K("ui-helper-reset ui-state-error-text")))))
-		}
-		// <link rel="stylesheet" type="text/css" href="css/ui.form.css">
-//http://www.w3.org/TR/html4/strict.dtd">
-	}
-	LOOKSLIKEHIGHLIGHT = DOESNOTHING = INTX = function () {
-		$.x()
-		$CSS({
-			$d: {C: 'r'}
-		})
-		k = $('.k')
-		// to highlighted/selected els
-		// Applies "highlight" ct sty to an el and
-		// its ch text, links, and icons.
-		k.K('.ui-state-highlight')
-		// appl to z msg ct eles. Applies z ct stys to   el
-		// and its ch text, links, and icons.
-		k.K('.ui-state-error')
-		//  appls just z t  c  w/o bg. Can be used on f-lbs, appls z icon c  to ch  icons.
-		k.K('.ui-state-error-text')
-		//// Appl dimmed al to dsabld UI els,  (adjunct, to an already-styled el)
-		k.K('.ui-state-disabled')
-		//    apl2 priority-1 bt when need bt hier
-		k.K('.ui-priority-primary')
-		k.K('.ui-priority-secondary')
-		//: Class to be applied to a priority-2 button in situations where button hierarchy is needed.
-		j = $('<div>').A($.h3('hello'))
-				.id('d').WH(100, 100).A()
-				.K('.ui-state-highlight')
-		$.d('r', 100, 100).A($.h3('hello'))
-	}
-	BROKENMENUMAYBE = HLFDL = function () {
-		$.x('b', 'hlfdl')
-		$.d(['z1']).K('error')
-		$.d(['z2']).K('error')
-		$.d(['hl1']).K('highlight')
-		$.d(['hl2']).K('highlight')
-		//   http://jsfiddle.net/774wH/
-		function errorHighlight(e, type, icon) {
-			if (!icon) {
-				if (type === 'highlight') {
-					icon = 'ui-icon-info';
-				} else {
-					icon = 'ui-icon-alert';
-				}
-			}
-			return e.each(function () {
-				$(this).addClass('ui-widget');
-				var h = '<div class="ui-state-' + type + ' ui-corner-all" style="padding:0 .7em;">';
-				h += '<p>';
-				h += '<span class="ui-icon ' + icon + '" style="float:left;margin-right: .3em;"></span>';
-				h += $(this).text();
-				h += '</p>';
-				h += '</div>';
-				$(this).html(h);
-			});
-		}
-
-//error dialog
-		(function ($) {
-			$.fn.error = function () {
-				errorHighlight(this, 'error');
-			};
-		})(jQuery);
-//highlight (alert) dialog
-		(function ($) {
-			$.fn.highlight = function () {
-				errorHighlight(this, 'highlight');
-			};
-		})(jQuery);
-		$('.error').error()
-		$('.highlight').highlight()
+		$.d().sdlg()
+		$(':data(ui-dialog)').dlg("close")
+		// Select both dialogs and call close() on each of them--> "close" will only be logged once.
 	}
 }
+function widFilt() {
+//https://vimeo.com/22686559
+	$.wg("aj.flb", {//filterable
+		options: {k: ''},
+		_create: function () {
+			var wg = this, q = wg.element;
+			wg.op = wg.options
+			wg.flEls = q.ch()
+			wg.flEls.K("ui-widget-content " + wg.op.k)
+			wg.flIp = $.ip().iB(q).wr(
+					"<div class='ui-widget-header " + wg.op.k + "'>"
+			)
+			wg._on(this.flEls, {
+				mouseenter: "_hover",
+				mouseleave: "_hover"
+			})
+			this._focusable(this.flIp)   // :toggles ui-state-focus
+			// _hoverable works for ui-state-hover, but we will do something slighty different in our hover
+			this._on(this.flIp, {"keyup": "filter"})
+			this.timeout = false;
+		},
+		filter: function (e) {
+			var wg = this
+			// Debounce the keyup event with a timeout, using the specified delay
+			_.cT(wg.timeout)
+			wg.timeout = wg._delay(
+					function () {
+						var visible = this.flEls.filter(function () {
+							var q = $(this)
+							var re = new RegExp(
+											wg.flIp.val(),
+											"i"),
+									matches = re.test(q.text())
+							q.tK("ui-helper-hidden", !matches)
+							return matches;
+						})
+						// Trigger a callback so the user
+						// can respond to filtering being complete
+						// Supply  an object of useful
+						// parameters with the second argument to _trigger
+						this._trigger("filtered", event, {visible: visible})
+					},
+					this.op.delay);
+		},
+		_hover: function (e) {
+			var q = $(e.target)
+			q.tK("ui-state-active", e.type === "mouseenter")
+			this._trigger("hover", e, {hovered: q})
+		},
+		_setOption: function (k, v) {
+			switch (k) {
+				case "length":
+					break;
+			}
+			return this._superApply(arguments)
+		},
+		_destroy: function () {
+			var wg = this
+			wg.flIp.parent().rm()// Remove any new elements that you created
+			wg.flEls.rK(
+					"ui-widget-content ui-helper-hidden ui-state-active " +
+					wg.op.k) // Remove classes you applied
+			return wt._super()
+		}
+	})
+//flilterbale?
+	SLIDES = function () {
+		$Ms('SLIDES')
+		$.ul([
+			$.li('asdf').data('price', '23.23'),
+			$.li('bsdf').data('price', '2.23'),
+			$.li('xsdf').data('price', '213.23'),
+			$.li('dsdf').data('price', '233'),
+			$.li('asdf').data('price', '3.23')
+		]).id('cheeses')
+		$('<div>').id('reg').A(
+				'One pound of each would cost',
+				$.sp().id('total')
+		)
+		total = $("#total")
+		cheeses = $("#cheeses")
+		reg = $("#reg")
+		price = $("<span>")
+		$.bt('activate', function () {
+			if (cheeses.is(":aj-flb")) {
+				alert('cheese is!')
+				return cheeses.flb("destroy")
+			}
+			cheeses.flb({
+				k: "cheese",
+				create: function () {
+					reg.K("ui-widget-header cheese").sh()
+				},
+				filtered: function (e, ui) {
+					var t = 0
+					ui.visible.each(function () {
+						t += _.pF($(this).da("price"))
+					})
+					total.text(t.toFixed(2))
+				},
+				setOption: function (e, ui) {
+					ui.option === "k" && reg.tK([ui.original, ui.current].join(" "));
+				},
+				hover: function (e, ui) {
+					if (e.originalEvent.type === "mouseenter") {
+						price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+					} else {
+						price.detach();
+					}
+				}
+			})
+			cheeses.on("flbdestroy", function (e, ui) {
+				reg.rK("ui-widget-header " + ui.op.k).hd()
+			})
+			cheeses.flb("filter")
+			_.in(3, function () {
+				$.C('r')
+				cheeses.flb("option", "k", "cheesePlease")
+			})
+		}).button({icons: {primary: "ui-icon-search"}})
+	}
+}
+function caption() {
+//CAPTION!!
+	$.wg("ui.capt", {
+		options: {
+			loc: "bottom",
+			c: "#fff", C: "#000"
+		},
+		_create: function () {
+			var wg = this, q = wg.element, o = wg.options, tx = q.at("alt"), cap = $('<span>').A()
+			cap.tx(tx)
+			cap.C(o.C).col(o.c)
+			cap.W(q.W())
+			cap.iA(q).K("ui-widget ui-caption")
+			cap.css({
+				width: q.W() - _.pI(cap.pL()) - _.pI(cap.pR()),
+				top: top(o.loc === "top"),
+				left: q.os().left,
+				display: "block"
+			})
+			// custom event:
+			wg._trigger("added", null, cap);
+			// that can be reacted to.
+			// We call the _trigger() method of the plugin instance (which we stored in the variable wg)
+			// and pass the method three arguments;
+			// the first is the name of the event,
+			// the second is for the event object
+			// (we don't need to use this in our example plugin, hence the null value)
+			// and the third is a reference to the caption element.
+			// The widget factory will automatically pass the event object
+			// (if supplied) and the data we pass in the third parameter to a callback function
+			// that uses the added event. A developer could hook into this event using the following syntax:
+			// $("element_caption_attached_to").capt({ added: function(e, ui){ //do stuff });
+			//
+			$(window).resize(function () {
+				cap.css({
+					top: top(o.loc === "top"),
+					left: q.os().left
+				})
+			})
+			function top(bool) {
+				return bool ?
+						q.os().top :
+				q.os().top + q.H() - cap.ouH() - _.pI(cap.pT()) + _.pI(cap.pB())
+			}
+		},
+		destroy: function () {
+			this.element.next().remove();
+			$(window).unbind("resize")
+		},
+		_setOption: function (option, value) {
+			$.Widget.prototype._setOption.apply(this, arguments)
+			var el = this.element, cap = el.next(),
+					capH = cap.outerHeight() - parseInt(cap.css("paddingTop"))
+							+ parseInt(cap.css("paddingBottom"))
+			switch (option) {
+				case "loc":
+					(value === "top") ? cap.css("top", el.os().top) :
+							cap.css("top", el.os().top + el.H() - capH);
+					break;
+				case "color":
+					el.next().css("color", value);
+					break;
+				case "backgroundColor":
+					el.next().css("backgroundColor", value);
+					break;
+			}
+		}
+	})
+	CAPT = function () {
+		$CSS({'.ui-caption': {d: 'none', position: 'absolute', P: 10}})
+		$.C('z')
+		$.i('me').A().at('alt', 'wowowowowoowowo').capt({
+			loc: "top"
+		})
+		$.i('chicks').A().at('alt', 'wowowowowoowowo').capt({
+			loc: "top"
+		})
+		//Once the caption has been inserted,
+		// it needs to be sized and positioned;
+		// the only way it can be sized accurately is if it already exists in the
+		// DOM and has CSS rules applied to it, such as the font-size.
+		// This is why we append the caption to the page, and then determine its exact dimensions,
+		// which are then stored in the variables capW and capH.
+		//Once the caption has been appended to the page (and only then) we can work set the correct width, H and position of each caption,
+		// which we set using the css() method once again.
+		// The captions are actually completely separate from the images;
+		// they are inserted directly after each image and then positioned to appear to overlay the images, after all,
+		// we can't append
+		// the <span> as a child of the <img>.
+		//This is fine, until the browser is resized, at which point the images move but the captions don't because they are absolutely positioned.
+		// To remedy this, we've used a basic resize handler
+		// attached to the window which simply repositions each caption to the new position of its image. This event handler is the last thing in our initialization method.
+		//Another method that our plugin should expose is the destroy() method which is common to all jQuery UI plugins.
+		// We must provide an implementation of this method in order to clean up after
+		// our plugin. For our example plugin, the method can be as simple as this:
+		//
+		//All we need to do is remove the captions and unbind our window resize handler.
+		// This method can be called by an implementer
+		// using the plugin so we shouldn't begin this method name with an underscore.
+		// To call this method,
+		// the implementer would use
+		// $("element_caption_attached_to").capt("destroy");
+		// which is how any of our public methods would be called.
+		//We start this method with an underscore because the implementer uses option,
+		// not _setOption to actually change the options; we don't need to worry about how this is handled,
+		// we just need to provide this method to deal with anything specific to our plugin.
+		// Because this method already exists in the widget factory we should call the original method,
+		// which we do first of all in our method using the prototype of the Widget object,
+		// specifying the method name (_setOption in this case but we could do it for other built-in methods as well)
+		// and use apply to call it.
+		//The function will automatically receive two arguments
+		// which are the option to change and the new value.
+		// We cache some commonly used elements,
+		// such as the image and the caption, and obtain the current H of each caption.
+		// We then use a simple switch-case statement to handle each of our three options being changed.
+		// Repositioning the captions is the most complex,
+		// but is still quite trivial and similar to how we positioned them initially.
+	}
+///
+	BASE = function () {
+		$S({
+			'.custom-colorize': {'font-size': '20px', position: 'relative', width: '75px', height: '75px'},
+			'.custom-colorize-changer': {'font-size': '10px', position: 'absolute', right: '0', bottom: '0'}
+		})
+		$.d().A(
+				$.d().id("my-widget1").A('color me'),
+				$.d().id("my-widget2").A('color me'),
+				$.d().id("my-widget3").A('color me'),
+				$.bt('Toggle disabled option').id('disable'),
+				$.bt('Go green').id('green')
+		)
+		// the widget definition, where "custom" is the namespace,
+		// "colorize" the widget name
+		$.widget("custom.colorize", {
+			// default options
+			options: {
+				red: 255,
+				green: 0,
+				blue: 0,
+				// callbacks
+				change: null,
+				random: null
+			},
+			// the constructor
+			_create: function () {
+				this.element
+					// add a class for theming
+						.addClass("custom-colorize")
+					// prevent double click to select text
+						.disableSelection()
+				this.changer = $("<button>", {text: "change", "class": "custom-colorize-changer"})
+						.appendTo(this.element).button()
+				// bind click events on the changer button to the random method
+				this._on(this.changer, {
+					// _on won't call random when widget is disabled
+					click: "random"
+				})
+				this._refresh()
+			},
+			// called when created, and later when changing options
+			_refresh: function () {
+				this.element.css("background-color", "rgb(" +
+						this.options.red + "," +
+						this.options.green + "," +
+						this.options.blue + ")"
+				);
+				// trigger a callback/event
+				this._trigger("change");
+			},
+			// a public method to change the color to a random value
+			// can be called directly via .colorize( "random" )
+			random: function (event) {
+				var colors = {
+					red: Math.floor(Math.random() * 256),
+					green: Math.floor(Math.random() * 256),
+					blue: Math.floor(Math.random() * 256)
+				};
+				// trigger an event, check if it's canceled
+				if (this._trigger("random", event, colors) !== false) {
+					this.option(colors);
+				}
+			},
+			// events bound via _on are removed automatically
+			// revert other modifications here
+			_destroy: function () {
+				// remove generated elements
+				this.changer.remove();
+				this.element
+						.removeClass("custom-colorize")
+						.enableSelection()
+						.css("background-color", "transparent");
+			},
+			// _setOptions is called with a hash of all options that are changing
+			// always refresh when changing options
+			_setOptions: function () {
+				// _super and _superApply handle keeping the right this-context
+				this._superApply(arguments);
+				this._refresh();
+			},
+			// _setOption is called for each individual option that is changing
+			_setOption: function (key, value) {
+				// prevent invalid color values
+				if (/red|green|blue/.test(key) && (value < 0 || value > 255)) {
+					return
+				}
+				this._super(key, value)
+			}
+		})
+		// initialize with default options
+		$("#my-widget1").colorize();
+		// initialize with two customized options
+		$("#my-widget2").colorize({red: 60, blue: 60})
+		// initialize with custom green value
+		// and a random callback to allow only colors with enough green
+		$("#my-widget3").colorize({
+			green: 128, random: function (event, ui) {
+				return ui.green > 128
+			}
+		})
+		// click to toggle enabled/disabled
+		$("#disable").click(function () {
+			// use the custom selector created for each widget to find all instances
+			// all instances are toggled together, so we can check the state from the first
+			if ($(":custom-colorize").colorize("option", "disabled")) {
+				$(":custom-colorize").colorize("enable")
+			} else {
+				$(":custom-colorize").colorize("disable")
+			}
+		})
+		// click to set options after initialization
+		$("#green").click(function () {
+			$(":custom-colorize").colorize("option", {red: 64, green: 250, blue: 8})
+		})
+	}
+}
+superDlg()
+widFilt()
+caption()
+//function err() {
+HIGHLIGHTFADE = HGHLT = function () {
+	$s({_gg: {C: 'o', w: 100, h: 100}})
+	// ?? hides or shows an el  by ang its bgC 1st // bgC ="#ffff99"
+	d = $('<div>').A().A('Click to tog ').K('gg')
+	$.$(function () {
+		$l('$.$')
+		$(".gg").toggle("highlight")
+	})
+	
+}
+
+DRAGGY = function () {
+	$.x('o', 'draggy')
+	$.d('r', 500, 500).K('sel')
+	$('.sel').dgb({
+		delay: 1000,
+		distance: 100,
+		helper: "clone",
+		addClasses: false,
+		snapMode: "inner",
+		grid: [50, 20],
+		snap: true
+	})
+}
+APP2 = function () {
+	k = $('.k')
+	k.dgb({appendTo: "body"})
+	k.dgb({helper: "clone"})
+}
+TABSELIX = function () {
+	$s({
+		ip: {bor: '1px solid #000'}, d: {pad: 5}
+	})
+	$.d([
+		'no tabindex'
+	])
+	$.d([$.ip().tIx(5, '+tIx')
+	])
+	$.d([$.ip().tIx(5, '+tIx')
+	])
+	$.d(['-tIx',
+		$.ip().tIx(-1, '-tIx')
+	])
+	$(":tabbable").bdC("red")
+}
+MENU1 = function () {
+ 
+	$s({
+		'.ui-menu': {
+			width: 200,
+			C: 'r'
+		}
+	})
+	$.ul().A(
+			$.li('Item 1'),
+			$.li('Item 2'),
+			$.li().A(
+					'Item 3',
+					$.li('Item 3-1'),
+					$.li('Item 3-2'),
+					$.li('Item 3-3'),
+					$.li('Item 3-4'),
+					$.li('Item 3-5')),
+			$.li('Item 4'),
+			$.li('Item 5')
+	).id("menu")
+	$("#menu").menu()
+}
+JUSTREDDIV = IXSTAT = function () {
+	$.x()
+	k = $.d('r', 500, 200)
+	// to clb bT-like elS. Applies clb df ct stys to el
+	// and its ch t, lks, and icons.
+	k.K('.ui-state-default')
+	//   on mv to clb bt-oid. Applies "clickable hover" ct stys
+	// to an element and its child text, links, and icons.
+	k.K('.ui-state-hover')
+	//  on kb fcs to clb btoids. Applies "clickable focus"
+	// ct stys  to el and its child text, links, and icons.
+	k.K('.ui-state-focus')
+	//   on md to clb btoids. Applies "clickable active" cot stysto an el
+	// and its ch t, lks, and icons.
+	k.K('.ui-state-active')
+}
+DATESCR = function () {
+	$.x('b', 'jqui')
+	('<link rel="stylesheet" href="/jquery-ui.min.css">').A()
+	('<script src="/jquery-ui.min.js">').A()
+	d = $.d('b', 400, 400).A(
+			ip = $.ip('date').datepicker()
+	).pad(20)
+}
+DROP = function () {
+	$CSS({
+		$dgb: {
+			w: 100, h: 50, pad: '0.5em', fl: 'l',
+			mar: '22px 5px 10px 0'
+		},
+		$dpb: {w: 130, h: 90, pad: '0.5em', mar: 10, fl: 'l'},
+		div: {w: 400, h: 300, C: 'r', c: 'y'},
+		$dgb2: {w: 100, h: 50, pad: '0.5em', mar: '0px 5px 10px 0'},
+		'#dpb2,#dpb3,#dpb4,#dpb5': {w: 12, h: 90, pad: '0.5em', fl: 'l', mar: 10}
+	})
+	$.d().id('dgb').K('ui-widget-content').A($.p('Drag me'))
+	$.d().id('dpb').K('ui-widget-header').A($.p('here'))
+	$("#dgb").dgb()
+	$("#dpb").dpb()
+	Dpb(2, 'Drag me to my target', 'ui-widget-content')
+	Dpb(2, 'here');
+	Dpb(3, "dsbld !drop");
+	Dpb(4, 'tol toch');
+	Dpb(5, 'tol fit')
+	$("#dgb2").dgb()
+	$("#dpb2").dpb({
+		drop: function (ev, ui) {
+			$(this).K("ui-state-highlight").find("p").html("Dpd")
+		}
+	})
+	$("#dpb3").dpb({
+		disabled: "true", drop: function (ev, ui) {
+			$(this)
+					.K("ui-state-highlight").find("p").html("Dpd")
+		}
+	})
+	$("#dpb4").dpb({
+		tolerance: 'touch', drop: function (ev, ui) {
+			$(this).K("ui-state-highlight").find("p").html("Dpd w tch")
+		}
+	})
+	$("#dpb5").dpb({
+		tolerance: 'fit', drop: function (ev, ui) {
+			$(this).K("ui-state-highlight")
+					.find("p").html("Dpd whn fulfit")
+		}
+	})
+	function Dpb(id, pT, k) {
+		k = k || "ui-widget-header"
+		return $.d().id('dpb' + id).K(k).A($.p(pT))
+	}
+}
+CRAZYWEIRD = POSI = function () {
+	$s({
+		$par: {
+			C: 'b', ta: 'c', w: '60%', ht: 40,
+			mar: '10px auto', pad: 5, bor: '1px solid #777'
+		},
+		_psb: {
+			p: 'a', ds: 'b',
+			r: 0, b: 0, C: 'r', ta: 'c'
+		},
+		$psb1: {w: 75, h: 75},
+		$psb2: {w: 120, h: 40},
+		'select,input': {mL: 15}
+	})
+	$.d([$.p('This is the ps par el')]).id('par')
+	$.dK('psb').id("psb1")
+	$.p('to ps')
+	$.d([$.p('to ps2')]).K('psb', 'psb2')
+	$.d().mgT(75).pad(20), 'ps...'
+	$.d().pdB(20)
+	$.b().A('my:')
+	$.sl('my_hz', 'left', 'center', 'right')
+	$.sl("my_vrt", 'top', 'center', 'bottom')
+	$.d().pdB(20)
+	$.p().A('at:')
+	$.sl("at_hz", 'left', 'center', 'right')
+	$.sl("at_vrt", 'top', 'center', 'bottom')
+	$.d([
+		$.b().A('cl:'),
+		$.sl('cl_vrt', 'flip', 'flit', 'flipfit', 'none'),
+		$.sl('cl_hz', 'flip', 'flit', 'flipfit', 'none')
+	]).pdB(200)
+	$("select, input").bind("click keyup change", ps)
+	$("#par").dgb({drag: ps})
+	$(".psb").al(.5)
+	ps()
+	function ps() {
+		$(".psb").ps({
+			of: $("#par"),
+			my: $("#my_hz").v() + $("#my_vrt").v(),
+			at: $("#at_hz").v() + $("#at_vrt").v(),
+			collision: $("#cl_hz").v() + $("#cl_vrt").v()
+		})
+	}
+}
+BLANK = LAYOUTHELP = function () {
+	k = $('.k')
+	k.K('ui-helper-hidden')//  Hides content visually  and from assistive technologies, such as screen readers.
+	k.K('ui-helper-hidden-accessible')// Hides cont
+	k.K('.ui-helper-reset')// A basic style reset for DOM nodes. Resets pad, mar, t-dec, ls-sty
+	k.K('.ui-helper-clearfix')// Appls float, wrapg pops to par els
+	k.K('.ui-front')// z-ix to mang  stackg  of mult wids on screen.  See  stacking ELS
+	k.K('.ui-widget')// outer ct of all wids. Appls fo-fam  and fZ to wids
+	k.K('.ui-widget-header')// : appl2  hdr conts. Appls hdr cont sty to el and its ch t,lks, and icons.
+	k.K('.ui-widget-content')
+	// : appl2 cont cts. // Appls cont-ct stys to el and its ch t, lks, and icons.
+	// (can be appld to par  or sib  of hdr).
+}
+NOTWORKING = ICONN = function () {
+	$.x('y', 'icon')
+	$.sp('helllloooo1')
+	$.sp('helllloooo2')
+			.K("ui-icon ui-icon-arrowthick-1-n")
+	k = $.d('k', 500, 500)
+	k.K('ui-icon ui-icon-triangle-1-e')
+	/*
+	 Base class to be applied to an icon element.
+	 Sets dimensions to a 16px square
+	 block,
+	 hides inner text,
+	 sets background image to
+	 "content" state sprite image.
+	
+	 Note: ui-icon class will be given    different sprite background image
+	 depending on its parent container.
+	
+	 For example,
+	 a ui-icon element
+	 within a ui-state-default container
+	 will get colored according to
+	 the ui-state-default's icon color.
+	 Icon types
+	
+	 After declaring a ui-icon class,
+	 you can follow up with a second class
+	 describing the type of icon.
+	 Icon classes generally follow a syntax
+	
+	
+	 */
+	//  .ui-icon-{icon type}-{icon sub description}-{direction}.
+//             For example, a single triangle icon pointing to the right
+	//    .ui-icon-triangle-1-e
+	//  ThemeRoller provides
+	// full set of CSS framework icons  in  prev col
+	//  Hv over them to see the class name.
+}
+NOTHINGATALL = VLAYSHAD = function () {
+	k = $('.k')
+	k.K('ui-widget-overlay')
+	/*
+	
+	 Applies 100% width & height dimensions to an overlay screen,
+	 along with background color/texture, and screen opacity.
+	 k.K('ui-widget-shadow')
+	 appy to vlay widg shad els
+	 Applies bg    c/texture, cust cor rad, al,
+	 top/left ofs and shd "thickness".
+	 Thickness is appld via pad  all sides of shad  that
+	 set to mat  the dims of the overlay el .
+	 Offsets are appld via t and l  margs  (can be pos  or neg ).
+	 */
+	// https://www.packtpub.com/books/content/jquery-ui-themes-states-cues-overlays-and-shadows
+}
+ITHINKNOTHING = CORRAD = function () {
+	$.x('o')
+	$.d('d', 500, 500)
+	k = $.d('d', 500, 500)
+	/*   k.K('.ui-corner-tl') // corner-radius to top left corner of element.
+	 k.K('.ui-corner-tr')// t r cor
+	 k.K('.ui-corner-bl')//to bt l corn
+	 k.K('.ui-corner-br')// bt r cor
+	 k.K('.ui-corner-top')//o both t cors
+	 k.K('.ui-corner-bottom')//both bt cors
+	 k.K('.ui-corner-right')// both r cors
+	 k.K('.ui-corner-left')// both left cors
+	 k.K('.ui-corner-all')//all 4 cors
+	 */
+}
+STUCKLOGINFORM = UICT = function () {
+	 
+//http://www.phpeveryday.com/articles/jQuery-UI-Using-The-Framework-Classes-P986.html
+	num = 3
+	if (num == 1) {
+		$.dK("ui-widget").A(
+				$.dK("ui-widget-header ui-corner-top").A(
+						$.h2('his is a ui-widget-header container')),
+				$.dK("ui-widget-content ui-corner-bottom").A(
+						$.p('This is a ui-widget-content container')))
+		$.dK("ui-widget").A(
+				$.dK("ui-state-default ui-state-active ui-corner-all").A(
+						$.a('clickable and selected')),
+				$.d([
+					$.a('clickable but not selected')
+				]).K("ui-state-default ui-corner-all"))
+	}
+	$('.ui-state-default a').hv(function () {
+		$(this).parent().K("ui-state-hover")
+	}, function () {
+		$(this).parent().xK("ui-state-hover")
+	})
+	if (num == 2) {
+		$.dK("ui-widget").A(
+				$.dK("ui-state-default ui-state-active ui-corner-all").A(
+						$.dK("ui-icon ui-icon-circle-plus"), $.a('clb, seld')),
+				$.dK("ui-state-default ui-corner-all").A(
+						$.dK("ui-icon ui-icon-circle-plus"),
+						$.a('clb, !selected')))
+		$(".ui-state-default a").hv(function () {
+					$(this).pa().K("ui-state-hover")
+				},
+				function () {
+					$(this).pa().xK("ui-state-hover")
+				})
+	}
+	if (num == 3) {
+		$CSS({
+			'_ui-form': {w: 470, mar: '0 auto'},
+			'_ui-form _ui-widget-header h2': {margin: '10px 0 10px 20px'},
+			'_ui-form _ui-widget-content': {padding: 20},
+			'_ui-form label, _ui-form input, _ui-form _ui-state-error,_ui-form _ui-icon, _ui-form _ui-state-error p': {fl: 'l'},
+			'_ui-form label, _ui-state-error p': {fz: 12, pad: '10px 10px 0 0'},
+			'_ui-form _ui-state-error': {pad: 4},
+			'_ui-form _ui-state-error p': {'font-weight': 'bold', pT: 5},
+			'_ui-form _ui-state-error _ui-icon': {mar: '5px 3px 0 4px'}
+		})
+		$.dK("ui-widget ui-form").A(
+				$.dK("ui-widget-header ui-corner-all").A(
+						$.h2('Login Form')),
+				$.dK("ui-widget-content ui-corner-all").A(
+						$.f().K('ui-helper-clearfix').A(
+								$.lb('Username').K("ui-helper-reset"),
+								$.d("ui-state-error ui-corner-all").A(
+										$.ip(), $.dK("ui-icon ui-icon-alert"),
+										$.p('Required field')
+												.K("ui-helper-reset ui-state-error-text")))))
+	}
+	// <link rel="stylesheet" type="text/css" href="css/ui.form.css">
+//http://www.w3.org/TR/html4/strict.dtd">
+}
+LOOKSLIKEHIGHLIGHT = DOESNOTHING = INTX = function () {
+	$.x()
+	$CSS({
+		$d: {C: 'r'}
+	})
+	k = $('.k')
+	// to highlighted/selected els
+	// Applies "highlight" ct sty to an el and
+	// its ch text, links, and icons.
+	k.K('.ui-state-highlight')
+	// appl to z msg ct eles. Applies z ct stys to   el
+	// and its ch text, links, and icons.
+	k.K('.ui-state-error')
+	//  appls just z t  c  w/o bg. Can be used on f-lbs, appls z icon c  to ch  icons.
+	k.K('.ui-state-error-text')
+	//// Appl dimmed al to dsabld UI els,  (adjunct, to an already-styled el)
+	k.K('.ui-state-disabled')
+	//    apl2 priority-1 bt when need bt hier
+	k.K('.ui-priority-primary')
+	k.K('.ui-priority-secondary')
+	//: Class to be applied to a priority-2 button in situations where button hierarchy is needed.
+	j = $('<div>').A($.h3('hello'))
+			.id('d').WH(100, 100).A()
+			.K('.ui-state-highlight')
+	$.d('r', 100, 100).A($.h3('hello'))
+}
+BROKENMENUMAYBE = HLFDL = function () {
+	 
+	$.d(['z1']).K('error')
+	$.d(['z2']).K('error')
+	$.d(['hl1']).K('highlight')
+	$.d(['hl2']).K('highlight')
+	//   http://jsfiddle.net/774wH/
+	function errorHighlight(e, type, icon) {
+		if (!icon) {
+			if (type === 'highlight') {
+				icon = 'ui-icon-info';
+			} else {
+				icon = 'ui-icon-alert';
+			}
+		}
+		
+		return $(this).each(function () {
+			$(this).addClass('ui-widget');
+			var h = '<div class="ui-state-' + type + ' ui-corner-all" style="padding:0 .7em;">';
+			h += '<p>';
+			h += '<span class="ui-icon ' + icon + '" style="float:left;margin-right: .3em;"></span>';
+			h += $(this).text();
+			h += '</p>';
+			h += '</div>';
+			$(this).html(h);
+		});
+	}
+
+//error dialog
+	(function ($) {
+		$.fn.error = function () {
+			errorHighlight(this, 'error');
+		};
+	})(jQuery);
+//highlight (alert) dialog
+	 
+	
+	$.fn.highlight = function () {
+			errorHighlight(this, 'highlight');
+		};
+ 
+	$('.error').error()
+	$('.highlight').highlight()
+}
+ 
