@@ -12,9 +12,11 @@ Deps = [
 ]
 Both = ['superUnder', 'superJ', 'superTime']
 Web=['jq', 'first', 'second','cssData', 'superJQ']
-Css=[ 'sty', 'inlineSty', 'styApps','rules',  'helpers', 'mixins', 'plugins', 'defaults', 'rulesApps']
-Flex = ['flex', 'flexApps','flexyDown', 'flexEx','devTipsVid']
-Layout=['cssMedia','layout','mobile', 'layApps', 'mobileApps']
+Css=[ 'sty', 'inlineSty', 'styApps','rules', 
+ 'helpers', 'mixins', 'plugins', 'defaults', 'rulesApps']
+ 
+Flex = ['flex', 'flexApps', 'media','flexyDown', 'flexEx','devTipsVid']
+ 
 Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
 SuperWeb=['superAnim' ]
 Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
@@ -48,7 +50,7 @@ $a.g('/box/:app', function (q, p) {
 	html += $js(
 	
 	
-			Deps, Both,  Web, Css,Flex,Layout, Html, SuperWeb
+			Deps, Both,  Web, Css,Flex,  Html, SuperWeb
 			
 			//Front, Nok, Jet, Bone, Easel, Fiz, Geo
 	

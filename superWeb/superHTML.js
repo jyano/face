@@ -1150,4 +1150,6 @@ function lists() {
 		return t
 	}
 }
- 
+$.nav = $.n = function () {
+	return $('<nav>')
+}
