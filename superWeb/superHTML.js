@@ -133,7 +133,7 @@ function manip() {
 		//  if( N(c) ){  return $.hr('z', c, h )  }
 		//  hr = $('<hr>').h(h ||2).C(c||'z');
 		//  if(w ){ hr.W(w ) }
-		return hr
+		return hr.A()
 	}
 	attr()
 	nest()

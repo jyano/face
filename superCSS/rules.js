@@ -1,100 +1,53 @@
-$L('plugs','mixs', 'helps','defs','apps')
-$sel=function(sel) {
-	if (A(sel)) {
-		sel = '{' + sel[0] + ':' + sel[1] + '; ' + '}'
+ooo.fl = {
+	a: 'auto', b: 'baseline', m: 'center', c: 'column', C: 'column-reverse',
+	i: 'initial', _: 'inherit', r: 'row', R: 'row-reverse',
+	n: 'nowrap', s: 'flex-start', e: 'flex-end', S: 'stretch',
+	sB: 'space-between', sA: 'space-around', w: 'wrap', W: 'wrap-reverse'
+}
+_.x(ooo, {
+	dir: {r: 'row', rv: 'row-reverse', c: 'column', cRv: 'column-reverse'},
+	wr: {
+		w: 'wrap', wr: 'wrap',
+		rv: 'wrap-reverse', nw: 'nowrap'
+	},
+	jfC: {
+		st: 'flex-start',
+		end: 'flex-end',
+		c: 'center',
+		sB: 'space-between',
+		sA: 'space-around',
+		i: 'initial',
+		_: 'inherit'
+	},
+	alC: {
+		fs: 'flex-start',
+		fe: 'flex-end',
+		c: 'center',
+		sB: 'space-between',
+		sA: 'space-around',
+		i: 'initial',
+		_: 'inherit'
+	},
+	alI: {
+		fs: 'flex-start',
+		fe: 'flex-end',
+		c: 'center',
+		b: 'baseline',
+		s: 'stretch',
+		i: 'initial',
+		_: 'inherit',
+		a: 'auto'
 	}
-	if(sel == '$'){return '*'}
-	sel = sel.replace('_', '.')
-			.replace('$', '#')
-	_.e({
-		bd: 'body',
-		bt: 'button',
-		sc: 'section', nv: 'nav',
-		d: 'div',
-		i: 'img', ip: 'input', hdr:'header', n:'nav'
-	}, function (v, k) {
-		if (sel == k) {
-			sel = v
-		}
-	})
-	return sel
-}
-$val = function (v, k) {
-	if(A(v)){return  $helperValue(v, k) }
-	return N(v) && v > 10 ? $S(v) + 'px' :
-			oO(k, v, 'R')
-}
-$decBlk = function (decs, ob) {
-	ob = ob || {}
-	var decBlk  = ' ', 
-	Decs = {}
-	
-	if (S(decs)) {
-		return decs
-	} //for @media ??
-	
-	$plugin(decs)
-	$mixin(decs, ob)
-	_.e(decs, function (v, k) {
-		if (k == 'mixins' || k == 'plugins') {
-			return
-		}
-		$setPropVal = function (ob, key, val) {
-			ob[key] = $val(val, key)
-		}
-		
-		Decs[oO('s', k)] = $val(v, k)
-	})
-	
-	_.e(Decs, function (v, k) {
-	
-		var dec = _dec(v, k)
-		$l('dec: ' + dec)
-		decBlk  += dec
-	})
-	$l('decBlk: ' + decBlk )
-	return _brace(decBlk )
-}
-$rule = function (sel, decs, rulesOb) {
-	return $sel(sel) + ' ' + $decBlk(decs, rulesOb)
-}
-$rules = function (rulesOb) {
-	var rulesStr = '\n\n'
-	_.e(rulesOb, function(decs, sel) {
-		rulesStr += $rule(sel, decs, rulesOb) + '\n'
-	})
-	return rulesStr + '\n'
-}
-$.sty = function (h) {
+})
+$.sty = $.Sty = function (h) {
+	var g = G(arguments)
 	var styleTag = $('<style>')
 			.at({type: 'text/css'});
 	styleTag.h(h)
+	if (!g.n) {
+		styleTag.A()
+	}
 	return styleTag
-}
-$.Sty = function (h) {
-	return $.sty(h).A()
-}
-$sty = function (sty, styVal) {
-	//= $decs = $css
-	_$sty = function (o, a, b) {
-		//= addSty
-		if (N(b) && M.abs(b) > 10) {
-			b = String(b) + 'px'
-		}
-		o[oO('s', a)] = oO(a, b, 'R')
-		return o
-	}
-	var o = {}
-	if (S(sty)) {
-		_$sty(o, sty, styVal)
-	}
-	else {
-		_.e(sty, function (styVal, sty) {
-			_$sty(o, sty, styVal)
-		})
-	}
-	return o
-	//= $.qs
 }
 $s = function () {
 	var g = G(arguments), rulesOb
@@ -112,11 +65,252 @@ $s = function () {
 	$('head').A($.sty(rulesStr))
 	return rulesStr
 }
-STY = function () {
-	css = $decs({C: 'r'})
-	$l(css)
+$sel = function (sel) {
+	if (A(sel)) {
+		sel = '{' + sel[0] + ':' + sel[1] + '; ' + '}'
+	}
+	if (sel == '$') {
+		return '*'
+	}
+	sel = sel.replace('_', '.')
+			.replace('$', '#')
+	_.e({
+		bd: 'body',
+		bt: 'button',
+		sc: 'section', nv: 'nav',
+		d: 'div',
+		i: 'img', ip: 'input', hdr: 'header', n: 'nav'
+	}, function (v, k) {
+		if (sel == k) {
+			sel = v
+		}
+	})
+	return sel
 }
-function plugs(){
+$rule = function (sel, decs, rulesOb) {
+	return $sel(sel) + ' ' + $decBlk(decs, rulesOb)
+}
+$decBlk = function (decs, ob) {
+	ob = ob || {}
+	var decBlk = ' ',
+			Decs = {}
+	if (S(decs)) {
+		return decs
+	} //for @media ??
+	$plugin(decs)
+	$mixin(decs, ob)
+	_.e(decs, function (v, k) {
+		if (k == 'mixins' || k == 'plugins') {
+			return
+		}
+		$setPropVal = function (ob, key, val) {
+			ob[key] = $val(val, key)
+		}
+		Decs[oO('s', k)] = $val(v, k)
+	})
+	_.e(Decs, function (v, k) {
+		var dec = _dec(v, k)
+		$l('dec: ' + dec)
+		decBlk += dec
+	})
+	$l('decBlk: ' + decBlk)
+	return _brace(decBlk)
+}
+$val = function (v, k) {
+	if (A(v)) {
+		return $helperValue(v, k)
+	}
+	return N(v) && v > 10 ? $S(v) + 'px' :
+			oO(k, v, 'R')
+}
+$sty = function (sty, styVal) {
+	//= $decs = $css
+	_$sty = function (o, a, b) {
+		//= addSty
+		if (N(b) && M.abs(b) > 10) {
+			b = $S(b) + 'px'
+		}
+		o[oO('s', a)] = oO(a, b, 'R')
+		return o
+	}
+	var o = {}
+	if (S(sty)) {
+		_$sty(o, sty, styVal)
+	}
+	else {
+		_.e(sty, function (styVal, sty) {
+			_$sty(o, sty, styVal)
+		})
+	}
+	return o
+	//= $.qs
+}
+$rules = function (rulesOb) {
+	var rulesStr = '\n\n'
+	_.e(rulesOb, function (decs, sel) {
+		rulesStr += $rule(sel, decs, rulesOb) + '\n'
+	})
+	return rulesStr + '\n'
+}
+$subRules = function (rulesOb) {
+	return _brace($rules(rulesOb))
+	//for meta (see Grail)
+}
+above = greaterThan = atLeast = min = function (num, str) {
+	return '@media all and (min-width: ' + num + 'px) ' + (str || '')
+}
+below = lessThan = max = function (num, str) {
+	return '@media all and (max-width: ' + num + 'px) ' + (str || '')
+}
+between = within = function (n1, n2, str) {
+	maxMin = function (n1, n2, str) {
+		return max(n1) + ' and (min-width: ' + n2 + 'px)' + (str || '')
+	}
+	return maxMin(n2, n1, str)
+}
+_$phone = function (ob) {
+	return _phone + $rules(ob)
+}
+_$tablet = function (ob) {
+	return _tablet + $rules(ob)
+}
+function _pre(){
+	yada = function (n) {
+		n = N(n, 20)
+		var str = ''
+		_.t(n, function () {
+			str += 'yada '
+		})
+		return str
+	}
+	$ct = function () {
+//!: $.ct gives jQuery error
+		return $.d().K('ct').id('ct')
+	}
+	_tablet = '@media screen and (max-width: 960px)'
+	_phone = '@media screen and (max-width: 640px)'
+//https://www.youtube.com/watch?v=fA1NW-T1QXc
+	tabRus = {$ct: {w: '100%'}, $left: {w: '70%'}, $right: {w: '30%'}, i: {w: '100%'}}
+	phRus = {$left: {w: '100%'}, $right: {w: '100%'}}
+	Ob = function (k, v) {
+		var ob = {}
+		ob[k] = v
+		return ob
+	}
+	_bor = '5px solid red'
+	_bulls = '&bull; &bull; &bull;'
+	_dec = function (v, k) {
+		return k + ':' + v + '; '
+	}
+	_brace = function (str) {
+		return '{' + (str || '') + '}'
+	}
+}
+function eh() {
+	$styS = $styStr = unused = function (ob) {
+		return J.s($sty(ob))
+	}
+	$.fn.T0 = function () {
+		var d = this, g = G(arguments)
+		d.E()
+		g.e(function (str) {
+			d.A($.h3(str))
+		})
+		return d
+	}
+	$.x = function (c, t) {
+		var g = G(arguments), bd = $.bd()
+		bd.E()
+		if (g.O_) {
+			$s(g.f)
+			if (g.s) {
+				$.h1(g.s);
+				$.hr().A()
+			}
+			bd.C(g.t || $r())
+		}
+		else {
+			bd.C(c || $r())
+			if (t) {
+				bd.A($.h1(t))
+			}
+		}
+		if (g.p) {
+			bd.A($.hr())
+		}
+		return $
+	}
+	css = {
+		//_ct:{dp:'fl'},
+		'.flex-container': {
+			display: 'flex', 'flex-direction': 'row',
+			$W: 'w', 'justify-content': 'space-around',
+			'align-content': 'flex-start', 'align-items': 'stretch'
+		},
+		'.flex-items-default': {
+			width: '300px', height: '250px',
+			'flex-grow': 0, 'flex-shrink': 0, 'flex-basis': 0
+		},
+		'.flex-item-1': {
+			width: '100px',
+			height: '100px',
+			'flex-grow': 1,
+			'flex-shrink': 0,
+			'flex-basis': '98%'
+		},
+		'.flex-item-2': {
+			width: '100px', height: '100px',
+			'flex-grow': 1, 'flex-shrink': 0, 'flex-basis': '200px'
+		},
+		'.flex-item-3': {
+			width: '100px', height: '100px',
+			'flex-grow': 1, 'flex-shrink': 0,
+			'flex-basis': '200px'
+		},
+		'.flex-item-4': {
+			width: '100px', height: '100px',
+			'flex-grow': 1, 'flex-shrink': 0,
+			'flex-basis': '200px'
+		},
+		'.flex-item-5': {
+			width: '100px', height: '100px',
+			'flex-grow': 1, 'flex-shrink': 0, 'flex-basis': '98%'
+		}
+	}
+	$.fn.T0 = function () {
+		var d = this, g = G(arguments)
+		d.E()
+		g.e(function (str) {
+			d.A($.h3(str))
+		})
+		return d
+	}
+	_$ = function (ob) {
+		ob.C = ob.C || $r()
+		$.x(ob.C, ob.t)
+		if (ob.vm) {
+			OK(ob.vm)
+		}
+		if (ob.el) {
+			els(ob.el)
+		}
+		if (ob.A) {
+			_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
+				q.A()
+			})
+		}
+		if (ob._) {
+			$.in(ob._)
+		}
+	}
+	$.s = function (css, c, tx) {
+		$s(css)
+		$.x(c, tx)
+		return $
+	}
+}
+$L('plugs', 'mixs', 'helps', 'defs')
+function plugs() {
 // PLUGINS ARE FUNCTIONS THAT EXTEND THE CSS OBJECT
 	$s.plugins = {
 		// these are functions that take pams
@@ -150,7 +344,7 @@ function plugs(){
 		}
 	}
 }
-function mixs(){
+function mixs() {
 // MIXINS ARE OBJECTS THAT EXTEND THE CSS OBJECT
 	$s.mixins = $s.mx = {
 		// this lets you associate a selector with a bunch
@@ -169,7 +363,7 @@ function mixs(){
 		//then goes to global ($S.mx)
 	}
 }
-function helps(){
+function helps() {
 // HELPERS ARE FUNCTIONS THAT RETURN VALUES FOR CSS PROPERTIES
 	$s.helpers = $s.fn = {
 		// (value-)helper functions:
@@ -246,7 +440,7 @@ function helps(){
 		return $default(v, k)
 	}
 }
-function defs(){
+function defs() {
 	$s.defaults = $s.df = {}
 	$s.defaults.Bor = {}
 	$s.defaults.Bor.b = '1px blue border'
@@ -267,135 +461,127 @@ function defs(){
 				null
 	}
 }
-function _pre() {
-	_dec = function (v, k) {
-		return k + ':' + v + '; '
-	}
-	_brace = function (str) {
-		return '{' + (str || '') + '}'
-	}
-}
-function apps() {
-	SEL = function () {
-		t = $.t()
-		sels = [
-			'd', '_klas_klas', '$id$id', '$'
-		]
-		_.e(sels, function (sel) {
-			t.A(
-					$.tr().A(
-							$.td(sel).W(100),
-							$.td($sel(sel)).W(100)
-					)
-			)
-		})
-	}
-	VAL = function () {
-		t = $.t()
-		sels = {
-			C: 'r',
-			dp: 'flex'
-		}
-		_.e(sels, function (val, key) {
-			t.A($.tr().A($.td(key + ': ' + val).W(100),
-					$.td($val(val, key)).W(100)))
-		})
-	}
-	RUL = function () {
-		var ru = $rule('d', {C: 'r', c: 'b'})
-		$.h1(ru)
-	}
-	RUS = function () {
-		css = {d: {C: 'r', c: 'b'}, bt: {C: 'b', c: 'r'}}
-		$.h1($rules(css))
-		$.br().A()
-		$.h1($subRules(css))
-	}
-	QFN = LJQFN = function () {
-		css = {}
-		css.redDivs = {
-			div: {
-				C: 'v', c: 'p',
-				M: 20, P: 40, h: 420
-			},
-			span: {
-				C: 'x'
-			}
-		}
-		css.big = {div: {fZ: 100}}
-		$CSS(css.redDivs)
-		$CSS(css.big)
-		d = $.d().A('hello').A($.sp('why not span'))
-		$.d().A('nice day')
-		$.d().A('see ya')
-		$('div').e(function () {
-			$l('this:', this)
-		})
-		$('span').C('z')//.p()
-		//r=	$('body').f('div').C("b").r()
-	}
-	RU1 = BORDR = function () {
-		$s({
-			_bordered: {'border-top': 'dotted 1px black', 'border-bottom': 'solid 2px black'},
-			//And we want to use these properties inside other rule-sets.
-			// Well, we just have to drop in the name of the class
-			// where we want the properties, like so:
-			a: {ex: '_bordered', c: 'r'},
-			button: {c: 'r', ex: '_bordered'}
-		}, '*')
-		$.h1().A('bordered').K('bordered')
-		$.bt('fsad')
-		$.a('fasd')
-	}
-	RU2 = SIZE = MIXIN = function () {
-		$s({d: {C: 'r', c: 'o', mx: {size: [1250]}}}, '*')
-		$.d().A('HELO')
-	}
-	RU3 = EXT = function () {
-		$CSS({
-			d: {
-				ex: 'icon', C: 'y', c: 'o',
-				mx: {size: [250]}
-			}
-		})
-		$.d().A('hello')
-	}
-	H1 = function () {
-		rule = "h1 {  font-size: 40px;  margin-bottom: 20px;  margin-left: 20px; }"
-		$s(rule)
-		// HTML5.CSSRule(rule)
-		$.h1('this is a big font').A()
-	}
-	H12 = function () {
-		rule = "h1 {  font-size: 22px; margin: bottom 10px;  @media (min-width:@screen-tablet) {font-size: 40px;   margin-bottom: 20px;   margin-left: 20px; } }"
-		$s(rule)
-		$.h1('this is a small font').A()
-	}
-	TIP = MOBILETIPS = function () {
-		$.d('o', 400, 200).dg().pad(20).A(
-				$.d('u', 200, 100),
-				$.d('g', 100, 80)
-		)
-		d = $.d('o', 400, 1200).A().drag().pad(20)
-		d.A($.h3('mobile tips').C('x', 'w'))
-		d.A($.h4('tip1:  First and foremost, screen sizes can vary greatly between different device categories as can screen resolutions and aspect ratios ').C('x', 't'))
-		d.A($.h4('tip2:  If you want your HTML5 games to work well on mobile devices, you should make sure they either support multiple resolutions or don’t exceed the WVGA frame size of 800x480.').C('x', 't'))
-		d.A($.h4('tip3: ').C('x', 't'))
-		d.A($.h3('mobile devices  zoom and pan -  counterproductive for games. term them off with: viewport meta tag').C('x', 'w'))
-		d.A($.h4("ex: cause your game’s viewport to occupy all of the available horizontal screen real estate.").C('x', 't'))
-		d.A($.h4("ex: cause your game’s viewport to occupy all of the available horizontal screen real estate.").C('x', 't'))
-		d.A($.h4('<meta name="Viewport"content="width=device-width; user-scaleable=no; initial-scale=1.0" />').C('x', 't'))
-		d.A($.h4('[ user-scaleable = no ] ->  disables pinch-zooming').C('x', 't'))
-		d.A($.h3('mobile tips').C('x', 'w'))
-		d.A($.h4('tip1: ').C('x', 't'))
-		d.A($.h4('tip2: ').C('x', 't'))
-		d.A($.h4('tip3: ').C('x', 't'))
-	}
-}
 function _post() {
+	$.fn.flx = $.fn.flex = $.fn.fl = function () {
+		return this.css('display', 'flex')
+	}
+	$.fn.jfC = $.fn.jC = $.fn.$J = function (a) {
+		return this.css('justify-content', a)
+	}
+	$.fn.alI = $.fn.$I = function (a) {
+		return this.css('align-items', a)
+	}
+	$.fn.alC = $.fn.$C = function (a) {
+		return this.css('align-content', a)
+	}
+	$s.bd = function (ob) {
+		$s('body', ob)
+	}
+	$s.bt = function (ob) {
+		$s('button', ob)
+	}
+
+	$phone = function (ob) {
+		$.Sty(_$phone(ob))
+	}
+	$tablet = function (ob) {
+		$.Sty(_$tablet(ob))
+	}
+	
+
 	$CSS = function () {
 		var res = $s.apply(null, arguments)
 		$l(res)
 		return res
 	}
+	vidHtml = function (css) {
+		$s(_.x({
+			bd: {dp: 'fl', jfC: 'c'},
+			_ct: {w: 960, B: '20px solid yellow'},
+			$right: {C: 'o', w: 260},
+			$left: {C: 'b', w: 700},
+			img: {
+				w: 960, h: 400
+			},
+			_fl: {dp: 'fl', wr: 'wr'}
+		}, css || {}))
+		$ct().A(
+				$.i('me'),
+				$.d().K('fl').A(
+						$.sc().id('left').A('this is the left column (a section)' + yada()),
+						$.ac().id('right').A('this is the right column (an article)' + yada())
+				))
+	}
+	flxCt = function (css) {
+		if (css) {
+			$s(css)
+		}
+		return $.dK('flex-container')
+				.A(Item(1), Item(2), Item(3), Item(4), Item(5))
+		function Item(n) {
+			return $.dK('.flex-item-' + (n || 1)).A(
+					$.i('me')
+			).css({margin: 20}).C('b')
+		}
+	}
+	Item = function (n) {
+		k = 'flex-item-' + (n || 1)
+		$l('k: ' + k)
+		return $.dK(k).A(
+				$.i('me')
+		).css({margin: 20}).C('b')
+	}
+	_It = function (child) {
+		return $.dK('item').C('_b').A(child)
+	}
+	It = function () {
+		return $.dK('item').A('hello').C()
+	}
+	$cssApp = function (name, cssOb, fn) {
+		return window[name] = function () {
+			$s(cssOb)
+			fn()
+		}
+	}
+	$.flexy = function () {
+		$s.d({	// cool: $s.d('margin', 10)
+			margin: 10, display: 'flex',
+			'justify-content': 'center',
+			'flex-wrap': 'wrap'
+		})
+	}
+	$.fn.insertBts = function () {
+		var el = this
+		_.e([1, 2, 3, 4, 5, 6], function (num) {
+			var name = 'button ' + num
+			var bt = $.bt(name, function () {
+				$l('clicked: ' + name)
+			})
+			bt.C('y').a2(el)
+			bt.css({
+				'font-size': 20,
+				margin: 4,
+				height: 40,
+				width: 180
+				//, width : '100%'
+			})
+		})
+		return el
+	}
+	/*
+	 $s({
+	 _ct: {
+	 d: '$',
+	 //  define  flow dir
+	 // and
+	 // if we allow the items to wrap
+	 //  Remember this is the same as:
+	 $D: 'r',
+	 $W: 'w',
+	 //      'flex-flow' : 'row wrap',
+	 // Then we define how is distributed the remaining space
+	 flJC: 'space-around'
+	 }
+	 })
+	 */
 }
