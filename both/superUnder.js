@@ -4,7 +4,28 @@ _.b = _.bind
 _.f = _.first;
 _.l = _.last;
 _.i = _.initial;
-_.r = _.rest
+_.r = function(firstPam){
+	
+	return _.isUndefined(firstPam) ? _.r(100) :
+			 _.isArray(firstPam)?
+			_.rest.apply(_, arguments):
+	
+	_.random.apply(_, arguments)
+	
+	/*
+	 rest_.rest(array, [index]) Alias: tail, drop 
+	 Returns the rest of the elements in an array.
+	 Pass an index to return the values of the array from that index onward.
+	 _.rest([5, 4, 3, 2, 1]);
+	 => [4, 3, 2, 1]
+	 random_.random(min, max) 
+	 Returns a random integer between min and max, inclusive.
+	  If you only pass one argument, 
+	  it will return a number between 0 and that number.
+	 _.random(0, 100);
+	 => 42
+	 */
+}
 _.m = _.map;
 _.t = _.times
 _.x = _.extend;
@@ -24,13 +45,13 @@ _.ic = _.include
 _.wo = _.without
 _.rs = _.result
 _.cp = _.compact
-_.z = _.size // _.s ???
+_.s = _.z = _.size 
 _.th = _.throttle
+_.v = _.values
 //////
 _.eR = function (g, fn) {
 	_.e(_.r(g), fn)
 }
-
 _.tA = function (a) {
 	return O(a) ? _.toArray(a) : A(a) ? a : a ? [a] : []
 }
@@ -1118,6 +1139,7 @@ function under() {
 			}
 		}
 		
-		_.iRE = _.isRegExp
+	
 	})())
 }
+_.iRE = _.isRegExp

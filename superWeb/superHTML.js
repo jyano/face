@@ -1,3 +1,4 @@
+// add vs create : add returns parent, create returns child
 $L('manip',  'text', 'hTags', 'nest', 'divs', 'lists')
 function manip() {
 	function ipsum() {
@@ -700,11 +701,17 @@ function divs() {
 		d.id(g.f)
 		return d
 	}
-	$.dK = function (k) {
-		var g = G(arguments),
-				d = $.d.apply($, _.r(arguments))
-		return d.K(k)
+	$.dK = function () {
+		
+		var g = G(arguments)
+		var args = _.r(arguments)
+		
+		var d = $.d.apply(null, args || [])
+		
+		return g.f?  d.K( g.f ) : d
 	}
+	
+	
 	$.dD = $.divD = function (c, w, h, x, y) {
 		var d, g = G(arguments)
 		w = N(w, 200)
@@ -1143,3 +1150,4 @@ function lists() {
 		return t
 	}
 }
+ 

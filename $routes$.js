@@ -1,28 +1,23 @@
-$stc('', '../art', '_data', 'both', 'web'
-
-	 
+$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','layout', 'flex'
 		//'front', 'front/both', 'front/superWeb', 'front/can',
 		//'front/bone', 'front/nok', 'front/UI', 'front/wid',
 		//'geo',
 		//'stage', 'superEasel', 'stage/anim', 'stage/loader',
 		//'fiz', 'fiz/collide', 'fiz/query', 'fiz/joints', 'fiz/control', 
 		//'spaz', 'spaz/cam', 'spaz/arcade', 'wappy'
-		
 )
 
+
 Deps = [
-	'both', 'jq', 'cssData'//, 'dfDefs', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
+	 // 'dfDefs', 'bb', 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
 ]
-
-
-Web = [
-
-		'superUnder', 'superJ', 'superTime',
-
-	'ooo', 'superWeb', 'superJQ',  'superAnim', 'superCSS', 'flexy', 'superHTML', 'superInput', 
-	'superImage', 'superCan'
-]
-
+Both = ['superUnder', 'superJ', 'superTime']
+Web=['jq', 'first', 'cssData', 'superJQ']
+Css=['superCSS', 'placement', 'sty',  'styApps','rules','rulesPlus','rulesExtend', 'rulesApps']
+Flex = ['flexy', 'flexApps','flexyDown', 'flexEx']
+Layout=['cssMedia','layout','mobile', 'layApps', 'mobileApps']
+Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
+SuperWeb=['superAnim' ]
 
 
 Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
@@ -57,8 +52,7 @@ $a.g('/box/:app', function (q, p) {
 	html += $js(
 	
 	
-			Deps, Web
-			
+			Deps, Both,  Web, Css,Flex,Responsive, Html, SuperWeb
 			
 			//Front, Nok, Jet, Bone, Easel, Fiz, Geo
 	

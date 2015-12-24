@@ -1,481 +1,119 @@
-
-$.dS = function (cssOb) {
-	return $.d().css(cssOb)
-}
-$.fn.animloop = function () {
-	var that = this
-	this.show("slow")
-	this.animate({"marginLeft": "300px"}, 2000)
-			.animate({"marginLeft": "0px"}, 2000)
-	this.hide("slow", function () {
-		that.animloop()
-	})
-}
-z = function (fn) {
-	var g = G(arguments)
-	if (g.F_) {
-		T.t(fn)
+$L('ajax')
+ 
+function ajax() {
+	$.pD = function (ev) {
+		ev.preventDefault()
+		return ev
 	}
-	else {
-		$('body').empty()
+	$.iQ = function (o) {
+		return O(o) && F(o.ajaxStart)
 	}
-}
-//$.fn.A = $.fn.append;
-//$.fn.K = $.fn.addClass 
-_lS = localStorage
-$w = window
-z = function () {
-	$('body').E()
-}
-$.joystick = function () {
-	alert('joystick')
-	$('#left').on('mousedown mouseover touchenter', function (e) {
-		$.K.left = true;
-		e.preventDefault()
-	})
-	$('#left').on('mouseup mouseout touchleave', function () {
-		$.K.left = false
-	})
-	$('#jump').on('mousedown mouseover touchenter', function () {
-		$.K.up = true
-	})
-	$('#jump').on('mouseup mouseout touchleave', function () {
-		$.K.up = false
-	})
-	$('#right').on('mousedown mouseover touchenter', function () {
-		$.K.right = true
-	})
-	$('#right').on('mouseup mouseout touchleave', function () {
-		$.K.right = false
-	})
-}
-$test = function (a, b) {
-	if (b2d.test) {
-		var g = G(arguments), a = g[0], b = g[1], str
-		if (D(b)) {
-			str = '||'
-			_.e(g, function (s) {
-				str += ' ' + s.toString() + ' |'
+	$.iO$ = function (o) {
+		return O$(o) && !$.iQ(o)
+	}
+	$.g = $.G = function () {
+		var g = G(arguments), o;
+		if (U(g[1])) {
+			return _.p($.G, g[0])
+		}
+		o = F(g[1]) ? {p: g[0], fn: g[1]} :
+		{p: g[0], d: g[1], fn: g[2]};
+		$.get(S.eL(o.p), o.d || {},
+				function (d) {
+					o.fn = o.fn || function () {
+						return 'boo ya!'
+					};
+					o.fn(d)
+				})
+	}
+	$.eG = function () {
+		var g = G(arguments), o;
+		if (U(g[1])) {
+			return _.p($.eG, g[0])
+		}
+		o = F(g[1]) ? {p: g[0], fn: g[1]} :
+		{p: g[0], d: g[1], fn: g[2]};
+		$.G(o.p, o.d || {},
+				function (dd) {
+					_.e(dd, function (d) {
+						o.fn(d)
+					})
+				});
+		return $
+	}
+	$.txG = function (url) {
+		$.get('/' + url, function (aa) {
+			a = aa
+		})
+	}
+	$.j = $.gJ = $.Gj = function () {
+		var g = G(arguments), o;
+		if (U(g[1])) {
+			return _.p($.Gj, g[0])
+		}
+		o = F(g[1]) ? {p: g[0], fn: g[1]} : {p: g[0], d: g[1], fn: g[2]};
+		o.fn = o.fn || function () {
+			return 'boo ya!'
+		};
+		$.getJSON(
+				S.eL(o.p),
+				o.d || {},
+				function (d) {
+					o.fn(d)
+				});
+		return $
+	}
+	$.eJ = $.eGj = function () {
+		var g = G(arguments), o;
+		if (U(g[1])) {
+			return _.p($.eJ, g[0])
+		}
+		o = F(g[1]) ?
+		{p: g[0], fn: g[1]} : {p: g[0], d: g[1], fn: g[2]};
+		$.Gj(o.p, o.d || {}, function (dd) {
+			_.e(dd, function (d) {
+				o.fn(d)
 			})
-			str += '|'
+		});
+		return $
+	}
+	$.po = $.P = function () {
+		var g = G(arguments), o;
+		o = F(g.s) ?
+		{url: g.f, fn: g.s} :
+		{url: g.f, da: g.s, fn: g.t};
+		o.da = O(o.da) ? o.da : D(o.da) ? {da: o.da} : {}
+		o.fn = o.fn || function () {
+			return 'boo ya!'
+		};
+		o.url = S.eL(o.url)
+		$.post(o.url, o.da, function (d) {
+			o.fn(o.da, o)
+		})
+		return $
+	}
+	$.eP = $.ePo = function () {
+		var g = G(arguments);
+		if (U(g[1])) {
+			return _.p($.eP, g[0])
 		}
-		else {
-			str = a.toString()
-		}
-		alert(str)
-	}
-	return a
-} // =$t
-$.E = function () {
-	$.bd().E()
-}
-$.c = $.can
-ll = el = function (ob, op) {
-	if (A(ob)) {
-		_.e(ob, function (ob) {
-			el(ob)
-		})
-		return
-	}
-	return el.d(ob, op)
-}
-el.d = function (ob) {
-	var d, g = G(arguments)
-	d = $('<div>')
-	if (ob.b) {
-		d.b(ob.b)
-	}
-	if (ob.ch) {
-		ob.ch = A(ob.ch) ? ob.ch : [ob.ch]
-		_.e(ob.ch, function (ch) {
-			d.A(ch)
-		})
-	}
-	if (ob.C) {
-		d.C(ob.C)
-	}
-	if (ob.c) {
-		d.c(ob.c)
-	}
-	if (ob.w) {
-		d.W(ob.w)
-	}
-	if (ob.h) {
-		d.H(ob.h)
-	}
-	if (!g.n) {
-		d.A()
-	}
-	//ko
-	if (ob.$vs) {
-		d.bVs(ob.$vs)
-	}
-	if (ob.$h) {
-		d.bH(ob.$h)
-	}
-	$l('el.d..')
-	return d
-}
-els = function () {
-	G(arguments).e(function (g) {
-		el(g)
-	})
-}
-_$ = function (ob) {
-	ob.C = ob.C || $r()
-	$.x(ob.C, ob.t)
-	if (ob.vm) {
-		OK(ob.vm)
-	}
-	if (ob.el) {
-		els(ob.el)
-	}
-	if (ob.A) {
-		_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
-			q.A()
-		})
-	}
-	if (ob._) {
-		$.in(ob._)
-	}
-}
-ll.vwTr = function (ob) {
-	var tr = $.tr()
-	ob = _.x(ob || {}, {el: tr})
-	var view = Bb.V.x(ob)
-	tr.vw = ll.trVw()
-	return tr
-}
-$.tg = function (a) {
-	return $('<' + a + '>')
-}
-$.frg = function () {
-	return $(
-			document.createDocumentFragment()
-	)
-}
-$El = function (tag) {
-	if (tag) {
-		return document.createElement(tag)
-	}
-}
-$.scr = function (scr, fn) {
-	return $.getScript(scr, fn)
-}
-$.getMultiScripts = function (arr, path) {
-	var _arr = $.map(arr, function (scr) {
-		return $.getScript((path || "") + scr)
-	})
-	//_arr.push($.Deferred(function( deferred ){$( deferred.resolve )}))
-	return $.when.apply($, _arr)
-}
-SCRIPTS = _.map([
-	"socket.io/socket.io", "string", 'bb', 'bbmn', 'ko', 'mel', 'gq', 'objects', 'defaultMug', 'spriteSheets',
-	'core', 'jqueryplugins', 'html', 'boot', 'ui', 'can', 'sys', 'images', 'event', 'socket', 'ranky', 'routeTests', 'nav', 'api', 'j3', 'display', 'animate', 'imagine', 'work', 'tween', 'universe', 'create', 'easel', 'displayObject', 'shape', 'text', 'mobile', 'animation', 'sprites', 'bitmap', 'toolkit', 'stage', 'filt', 'draw', 'solve', 'playgame', 'users', 'share', 'chat', 'messages', 'knock', 'bbtemps', 'backbone1', 'people', 'mar', 'backbone', 'angu'
-	
-	// ,'melon','gquery','ph','phaser0','phaser','ninja', 'ph2','bx','b2dbasics','b2dutils', 'invaders','three', 'iso', 'boxWorld','boxWorldMore','walls', 'makeworld', 'b2dSensors','playerWorld', 'boxRev','weld','prism','coll','gamey','pong','easelbox','joints','wheel',
-	// 'emitter','p2fiddle','ragdoll','p2constraints','unigame',
-	//  'tilemapping','launcher','fullgames','p2physics', 'controls','orbs',
-	//  'shooter','boxBody','talkjs','mario','squares','edges','boxgame','boxDebug','boxFixt', 'boxShapes','player','pinball', 'examples'
-], function (js) {
-	return "/" + js + ".js"
-})
-// _.each(SCRIPTS, function(scr){$.scr(scr)})
-/*
- dfr = $.getMultiScripts(SCRIPTS)
- dfr.done(function(){alert('done')})
- .always(function(){
- alert('always')
- $.scr('app')
- })
- .fail(function(){alert('fail')})
- */
-GSCR = function () {
-	$.scr = function (scr, fn) {
-		return $.getScript(scr, fn)
-	}
-	$.getMultiScripts = function (arr, path) {
-		var _arr = $.map(arr, function (scr) {
-			return $.getScript((path || "") + scr)
-		})
-		//_arr.push($.Deferred(function( deferred ){$( deferred.resolve )}))
-		return $.when.apply($, _arr)
-	}
-	$.scr("https://code.jquery.com/color/jquery.color.js", function (a, b, c) {
-		console.log(a + b + c)
-		d = c
-		$l('got script')
-		$.$(function () {
-			$.j({C: "z"}, 1).in(.5).j({C: 'r'}, 1).in(.5).j({C: "y"}, 1)
-		})
-	})
-	dfr = $.Deferred(function (dfrd) {
-		d = dfrd
-		// $(dfrd.resolve)
-	})
-	testx = 100
-	$.when(
-			$.scr("/boxSprite.js"),
-			$.scr("/easel.js")
-	).done(function () {
-				$l(testx)
+		o = F(g[1]) ? {p: g[0], fn: g[1]} : {p: g[0], d: g[1], fn: g[2]};
+		$.P(o.u, o.d || {}, function (dd) {
+			_.e(dd, function (d) {
+				o.fn(d)
 			})
-}
-$.scr = function (js) {
-	var script = $('<script>')
-	script.attr('src', js);
-	return script
-}
-$.j = $.js = function (js) {
-	$('body').A($.scr(js))
-}
-LOADSCRIPTS = function () {
-	$(function () {
-//$('body').A(  $('<script src="/us.js">') )
-//$('body').A(  $('<script src="/string.js">') )
-		$.j('/us.js')
-		$.j('/string.js')
-		$.j('/both.js')
-		//$.j('/jq.js')
-		//$.j('/jqSer.js')
-		$.j('/bs.js')
-		$.j('/frontOb.js')
-		$.j('/handy.js')
-		$.j('/sty.js')
-		$.j('/rules.js')
-		$.j('/flex.js')
-		$.j('/bb.js')
-		$.j('/bbCore.js')
-		$.j('/bbLs.js')
-		arr = [
-			"us", 'string', 'both', 'jq', 'jqSer', 'bs', 'frontOb', 'handy', 'sty',
-			'rules', 'flex', 'flexApps', 'boot', 'bb', 'bbCore', 'bbLs', 'bbTemplate',
-			'bbApps', 'avail', 'bbLsApps', 'BfRoll', 'blog'
-		]
-	})
-}
-$.fn.el = function (e) {
-	if (U(e)) {
-		console.log($('<div>').append(this.clone()).html())
-		return this
+		});
+		return $
 	}
-}
-$.fn.sb = function (fn) {
-	return this.submit(fn)
-}
-$.fn.a2Lb = function (t) {
-	t = t || 'label:';
-	return this.a2($.lb(t))
-}
-$.fn.isLi = $.fn.iLi = function () {
-	return _.isElement(this) && _h('HTMLLIElement', this)
-}
-$.fn.li = function () {
-	var g = G(arguments),
-			li = $.li()
-	this.A(li)
-	g.e(function (g) {
-		li.A(g)
-	})
-}
-Ms$ = function (ms) {
-	$.h1(ms)
-}
-$Ms = function (ms) {
-	return $.d().fS(80).C($r()).col($r()).A(ms)
-};
-$MS = function (ms, cHeader, cBody) {
-	z()
-	var m = $Ms(ms)
-	if (S(cHeader)) {
-		m.C(cHeader)
+	$.aj = function (ob) {
+		return $.ajax(ob)
 	}
-	if (S(cBody)) {
-		$.C(cBody)
-	}
-	return $
-}
-show = function (a) {
-	a = a || 'welcome'
-	$b().H('')(h1(a))
-}
-$Ms = function (ms) {
-	$.h1(ms)
-}
-$$$ = function (ms) {
-	z()
-	$Ms(ms)
-}
-$MS = function (ms, cHeader, cBody) {
-	z()
-	var m = $Ms(ms)
-	if (S(cHeader)) {
-		m.C(cHeader)
-	}
-	if (S(cBody)) {
-		$.C(cBody)
-	}
-	return $
-}
-$$$ = function (ms) {
-	z()
-	$Ms(ms)
-}
-$.rulers = function () {
-	$.d('b', 100, 100).al(.3).dg()
-	$.d('r', 100, 300).al(.3).dg()
-}
-$.dg = $.dragFrame = function (d) {
-	var oD
-	oD = $.d('y').pad(20).drag()
-	d = d || $.d('r').mar(20)
-	d.xPrp().a2(oD)
-	d.oD = oD
-	oD.XY(40, 40)
-	return oD
-}
-$.x = function (c, t) {
-	var g = G(arguments), bd = $.bd()
-	bd.empty()
-	if (g.O_) {
-		$CSS(g.f)
-		if (g.s) {
-			$.h1(g.s);
-			$.hr().A()
-		}
-		bd.C(g.t || $r())
-	}
-	else {
-		bd.C(c || $r())
-		if (t) {
-			bd.A($.h1(t))
-		}
-	}
-	if (g.p) {
-		bd.A($.hr())
-	}
-	return $
-}
-$.h = function () {
-	var g = G(arguments), o
-	bd = $.bd()
-	bd.empty()
-	bd.C($r())
-	o = g.S_ ? {t: g.f, s: g.s} : {s: g.f}
-	if (o.s) {
-		$CSS(o.s)
-	}
-	if (o.t) {
-		$.h1(o.t);
-		$.hr().A()
-	}
-	return $
-}
-$.s = function (css, c, tx) {
-	$CSS(css)
-	$.x(c, tx)
-	return $
-}
-_z = function z(a, b, c) {
-	return U(b) ? _.size(a)
-			: N(b) ? _z(a) == b
-			: _z(a) == _z(b)
-}
-z = function (fn) {
-	$('body').empty()
-}
-$D = $Dt = function () {
-	var dt = new Date()
-	return dt
-}
-$D = $Dt = function () {
-	var dt = new Date()
-	return dt
-}
-$.fn.a2Lb = function (t) {
-	t = t || 'label:'
-	return this.a2($.lb(t))
-}
-$.scrp = function (i, t) {
-	var scr = $("<script type='text/html'>")
-	scr.id(i)
-	if (t) {
-		scr.A(t)
-	}
-	scr.A()
-	return scr
-}
-el = function (ob, op) {
-	if (A(ob)) {
-		_.e(ob, function (ob) {
-			el(ob)
-		})
-		return
-	}
-	return el.d(ob, op)
-}
-el.d = function (ob) {
-	var d, g = G(arguments)
-	d = $('<div>')
-	if (ob.b) {
-		d.b(ob.b)
-	}
-	if (ob.ch) {
-		ob.ch = A(ob.ch) ? ob.ch : [ob.ch]
-		_.e(ob.ch, function (ch) {
-			d.A(ch)
-		})
-	}
-	if (ob.C) {
-		d.C(ob.C)
-	}
-	if (ob.c) {
-		d.c(ob.c)
-	}
-	if (ob.w) {
-		d.W(ob.w)
-	}
-	if (ob.h) {
-		d.H(ob.h)
-	}
-	if (!g.n) {
-		d.A()
-	}
-	//ko
-	if (ob.$vs) {
-		d.bVs(ob.$vs)
-	}
-	if (ob.$h) {
-		d.bH(ob.$h)
-	}
-	$l('el.d..')
-	return d
-}
-els = function () {
-	G(arguments).e(function (g) {
-		el(g)
-	})
-}
-_$ = function (ob) {
-	ob.C = ob.C || $r()
-	$.x(ob.C, ob.t)
-	if (ob.vm) {
-		OK(ob.vm)
-	}
-	if (ob.el) {
-		els(ob.el)
-	}
-	if (ob.A) {
-		_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
-			q.A()
-		})
-	}
-	if (ob._) {
-		$.in(ob._)
+	$.XML = function () {
+		alert('$.XML!');
+		return new XMLHttpRequest()
 	}
 }
 JQ1 = MAG = FRIDGEMAG = function () {
- 
 	word = function (text, c1, c2) {
 		var s = $.sp(text).C(c1, c2).A().drag()
 		return s
@@ -1247,6 +885,3 @@ EDITDIV = function () {
 	a = $.editDiv().A().C('a')
 	b = $.editDiv().A().C('b')
 }
-	 
-	
- 

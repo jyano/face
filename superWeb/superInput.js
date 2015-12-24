@@ -1,4 +1,4 @@
-$L('but', 'submitBut', 'form')
+$L('but', 'submitBut', 'form' ,'mouse' ,'keys')
 $.ip = function (n) {
 	var g = G(arguments), o, ip
 	ip = $('<input>').at('type', 'text')
@@ -371,6 +371,7 @@ $.V = function (id) {
 }
 but()
 form()
+
 function but() {
 	$.bt = $.button = function () {
 		var g = G(arguments), o, bt = $('<button>');
@@ -379,8 +380,16 @@ function but() {
 		if (!g.n) {
 			bt.A()
 		}
-		return bt.T(o.t).$(o.fn)
+		
+	  bt.T(o.t)
+	  
+		if(F(o.fn)){
+			bt.click(o.fn)
+		}
+	  
+		return bt
 	}
+	
 	$.BT = $.btL = function (t, fn) {
 		if (F(t)) {
 			return $.bt('submit', t)

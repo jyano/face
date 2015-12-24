@@ -7,9 +7,10 @@ function anim() {
 		var g = G(arguments), q = this
 		//if (N(g.s)) {g.s *= 1000}
 		this.animate(
-				$.qs(g.f), g.s, g.t, g[3], g[4])
+				$sty(g.f), g.s, g.t, g[3], g[4])
 		return this
 	}
+	
 	$.fn.st = $.fn.stop
 	$.fn.f2 = $.fn.fadeTo
 	$.fn.an = $.fn.a = function (a, b, c, d) {

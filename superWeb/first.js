@@ -351,8 +351,6 @@ FONTSTRETCH = {
 TEXTDECORATION = {u: "underline", o: "overline", l: "line-through", b: "blink"}
 TEXTALIGNMENT = {l: "left", r: "right", c: "center", j: "justify"}
 TEXTBASELINE = {s: 'sub', S: 'super', t: 'top', tt: 'text-top', m: 'middle', b: 'bottom', tb: 'text-bottom'}
-
-
 ooo = {
 	c: COLOR,
 	s: CSS,// a: ATTRIBUTE,o: PROPERTY,
@@ -366,7 +364,6 @@ ooo = {
 	tt: TEXTTRANSFORM, td: TEXTDECORATION,
 	tA: TEXTALIGNMENT, tb: TEXTBASELINE
 }
- 
 ooo.R = {
 	C: 'c', f: 'c', s: 'c', dc: 'c',
 	t: 'i', //type->input
@@ -376,44 +373,95 @@ _oO = function (a, b) {
 	return oO[a] && oO[a][b] ? oO[a][b] : b
 }
 oO = function (a, b, c) {
-	var val = U(a) ? _.keys(f)
+	var val = U(a) ? _.k(f)
 			: '*' == b ? $r(a)
 			: D(c) ? oO(oO(c, a), b)
-			: U(b) ? D(function (x, y) {
+			: U(b) ? _.df(function (x, y) {
 		return oO(a, x, y)
-	}, oO[a] || {})
-			: (oO[a] && oO[a][b]) ?
-			oO[a][b]
+	}, ooo[a] || {})
+			: ooo[a] && ooo[a][b] ? ooo[a][b]
 			: b
 	return val
 }
-oO = _.defaults(oO, ooo)
-oO.V = function (a) {
-	return _.values(S(a) ? oO(a) : a)
+Oo = function (a, b) {
+	return ooo[a] && ooo[a][b]
 }
-function mini() {
-	oO.c = oC = function (c) {
-		return oO('c', c)
+$r = function (a, b) {
+	var vals = _.v(oO(a = a || 'c'))
+	return Oo(a, b) || vals[_.r(_.s(vals) - 1)]
+}
+ 
+function old() {
+//oO = _.df(oO, ooo)
+	oO.V = function (a) {
+		return _.v(S(a) ?
+				oO(a) : a)
 	}
-	oO.k = oK = function (a) {
-		return oO('k', a)
+	function mini() {
+		oO.c = oC = function (c) {
+			return oO('c', c)
+		}
+		oO.k = oK = function (a) {
+			return oO('k', a)
+		}
+		oO.t = oT = function (a) {
+			return oO('t', a)
+		}
+		oO.e = oE = function (a) {
+			return oO('e', a)
+		}
+		oO.i = oI = function (a) {
+			return oO('i', a)
+		}
+		oO.s = oS = function (a) {
+			return oO('s', a)
+		}
+		oO.q = oQ = function (f, m) {
+			$(function () {
+				Q(m || mf, f)
+			})
+		}
 	}
-	oO.t = oT = function (a) {
-		return oO('t', a)
+	
+	$o = function (a, b, c) {
+		var g = G(arguments)
+		return U(b) ? _p($o, a) :
+				g.N ? oO(a, b, c) :
+						Oo(a, b, c)
 	}
-	oO.e = oE = function (a) {
-		return oO('e', a)
-	}
-	oO.i = oI = function (a) {
-		return oO('i', a)
-	}
-	oO.s = oS = function (a) {
-		return oO('s', a)
-	}
-	oO.q = oQ = function (f, m) {
+	oQ = function (f, m) {
 		$(function () {
 			Q(m || mf, f)
 		})
 	}
+	oC = function (c) {
+		return oO('c', c)
+	}
+	oK = function (a) {
+		return oO('k', a)
+	}
+	oT = function (a) {
+		return oO('t', a)
+	}
+	oE = function (a) {
+		return oO('e', a)
+	}
+	oI = function (a) {
+		return oO('i', a)
+	}
+	oS = function (a) {
+		return oO('s', a)
+	}
+	oOo = function (a, b) {
+		if (U(b)) {
+			return _I(lC(V(oO(a))))
+		}
+		if (oOo(a)[lC(b)]) {
+			return b
+		}
+	}
 }
-
+	
+	 
+	
+ 

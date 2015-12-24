@@ -476,7 +476,7 @@ S.eR = S.ensureRight = function (str, suffix) {
 	
 	 */
 },
-		function superString() {
+	 
 	_.rp = function (a, b, c) {
 		return a.replace(b || '#', c || '')
 	}
@@ -516,7 +516,7 @@ S.eR = S.ensureRight = function (str, suffix) {
 	_.tLc = _.tL = _.tLC = function (a) {
 		return a.toLowerCase()
 	}
-}
+ 
 S.cR = function (a, b) {
 	return s$(a).chompRight(b).s
 }
