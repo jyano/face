@@ -1,5 +1,5 @@
 BACKDEMO = function () {
-	z()
+	 
 	Temp('task', [
 		lb('Task: '),
 		tx().id('task_desc'),
@@ -187,17 +187,7 @@ function rtrTp() {
 //router:
 BACKDEMO0 = function () {
 	$.x().d('yoo hoo').id('cont')
-	Temp = function (i, h) {
-		var s = ''
-		return _.tp($('#' + i).html(), h || {})
-		if (A(h)) {
-			_.e(h, function (h) {
-				s += h.oh()
-			})
-		}
-		s = "<script type='text/template'>" + s + "</script>"
-		return $(s).id(i).A()
-	}
+
 	$R({
 		rt: {'': 'f', 'f': 'f', 's': 's'},
 		f: function () {
@@ -228,8 +218,33 @@ BACKDEMO0 = function () {
 		}
 	})
 }
+Temp = function (i, h) {
+	var s = ''
+	return _.tp($('#' + i).html(), h || {})
+	if (A(h)) {
+		_.e(h, function (h) {
+			s += h.oh()
+		})
+	}
+	s = "<script type='text/template'>" + s + "</script>"
+	return $(s).id(i).A()
+}
+Temp = function (i, h) {
+	var s = ''
+	return _.tp(
+			$('#' + i).html(), h || {}
+	)
+	if (A(h)) {
+		_.e(h, function (h) {
+			s += h.oh()
+		})
+	}
+	_str = "<script type='text/template'>" + _str + "</script>"
+	str = $(s)
+	return $(s).id(i).A()
+}
 BACKDEMO1 = function () {
-	$.x().d('yoo hoo').id('cont')
+ 
 	$R({
 		rt: {
 			'': 'f', 'f': 'f', 's': 's',
@@ -249,20 +264,7 @@ BACKDEMO1 = function () {
 			$l('t = new Task')
 		}
 	})
-	Temp = function (i, h) {
-		var s = ''
-		return _.tp(
-				$('#' + i).html(), h || {}
-		)
-		if (A(h)) {
-			_.e(h, function (h) {
-				s += h.oh()
-			})
-		}
-		_str = "<script type='text/template'>" + _str + "</script>"
-		str = $(s)
-		return $(s).id(i).A()
-	}
+	
 	/*
 	
 	
@@ -288,17 +290,7 @@ BACKDEMO1 = function () {
 	})
 }
 BACKDEMO = function () {
-	Temp = function (i, h) {
-		var s = ''
-		return _.tp($('#' + i).html(), h || {})
-		if (A(h)) {
-			_.e(h, function (h) {
-				s += h.oh()
-			})
-		}
-		s = "<script type='text/template'>" + s + "</script>"
-		return $(s).id(i).A()
-	}
+	
 	Temp('task', [
 		$.lb('Task: '),
 		$.ip().id('task_desc'),
@@ -332,6 +324,30 @@ BACKDEMO = function () {
 		}
 	})
 }
+Temp = function (i, h) {
+	var s = ''
+	return _.tp($('#' + i).html(), h || {})
+	if (A(h)) {
+		_.e(h, function (h) {
+			s += h.oh()
+		})
+	}
+	s = "<script type='text/template'>" + s + "</script>"
+	return $(s).id(i).A()
+}
+Tsk = $V({
+	el: $('#cont'),
+	i: function () {
+		this.r()
+	},
+	r: function () {
+		this.$el.ht(Temp('task'))
+	},
+	e: {'click button': 'add'},
+	add: function () {
+		alert($('#task_desc').v() + ' task added')
+	}
+})
 BACKDEMO = function () {
 
 
@@ -426,19 +442,7 @@ BACKDEMO = function () {
 		$.lb('Task: '),
 		$.ip().id('task_desc'),
 		$.bt('add task').id('btn')])
-	Tsk = $V({
-		el: $('#cont'),
-		i: function () {
-			this.r()
-		},
-		r: function () {
-			this.$el.ht(Temp('task'))
-		},
-		e: {'click button': 'add'},
-		add: function () {
-			alert($('#task_desc').v() + ' task added')
-		}
-	})
+	
 	BACKDEMOoldSchol = function () {
 		z()
 		Temp('task', [

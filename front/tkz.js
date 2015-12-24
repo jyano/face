@@ -17,7 +17,6 @@ TKZ = function () {
 			}).$el.a2(this.$el)}, 
 			cl: tsksC
 	})
-	
 	viw.ren().$el.A()
 	$.bt('add', function () {tsksC.add([{
 			title: 'yooo',

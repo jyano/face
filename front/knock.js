@@ -28,18 +28,7 @@ function boundEls() {
 		}
 		return d
 	}
-	$.d_e = $.dE = function (a, b) {
-		var d = $.d().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				d.A(el)
-			})
-		}
-		else if (S(b)) {
-			d.A(b)
-		}
-		return d
-	}
+ 
 	$.sp_t = $.spT = $.spBt = function (a, b) {
 		return $.sp(b).bT(a)
 	}
@@ -60,42 +49,12 @@ function boundEls() {
 		p.bT(a)
 		return p
 	}
-	$.ol_e = $.olE = $.olBe = function (a, b) {
-		var ol = $.ol().bE(a)
-		if (b) {
-			ol.A(b)
-		}
-		return ol
-	}
+ 
 	$.li_t = $.liT = $.liBt = function (a) {
 		return $.li().bT(a)
 	}
-	$.U = function () {
-		var g = G(arguments)
-		return $.uE(g.f, [$.li(g.s)])
-	}
-	$.u_e = $.uE = $.ulE = function (a, b) {
-		var ul = $.ul().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-	}
-	$.t_e = $.tBE = function (a, b) {
-		var tB = $.tB()
-		tB.bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				tB.A(el)
-			})
-		}
-		return tB
-	}
+ 
+ 
 	$.td_t = $.tdT = function (a, b) {
 		var td = $.td()
 		td.bT(a)
@@ -180,15 +139,7 @@ function elBind() {
 		return this.b({tI: a})
 		// = $.fn.bTi = $.fn.bTI
 	}
-	$.fn.ko_e = $.fn.ko_each = function (s) {
-// = $.fn.bE
-		// if called from $.fn.eD = $.fn.eB =  feD = ... use '+'
-		var g = G(arguments)
-		if (g.p) {
-			return '$data.' + s
-		}
-		return this.b('foreach', s)
-	}
+ 
 	$.fn.ko_w = $.fn.ko_with = function (s) { // = $.fn.bW
 		return this.b('with', s)
 	}
@@ -344,31 +295,15 @@ function core(){
 		}
 		return this
 	}
-	$.fn.koE = $.fn.eKo = function (a) {
-		return this.bindKO('fe', a)
-	}
-	$.fn.eD = $.fn.eB = function (a) {
-		return this.bindKOEach('$data.' + a)
-	}
-	$.fn.dB = function (dB) {
+ 	$.fn.dB = function (dB) {
 		return this.at({'data-bind': dB})
 	}
 	$.aA = function (a, b, c, d) {
 		return $.a(b, c, d).bA(a)
 	}
-
 	//event and enable
 	$.fn.bSm = function (s) {
 		return this.b('submit', s)
-	}
-	
-	$.fn.koE = $.fn.eKo = function (a) {
-		return this.bindKO('fe', a)
-	}
-	
-	
-	$.fn.eD = $.fn.eB = function (a) {
-		return this.bindKOEach('$data.' + a)
 	}
 	$.fn.dB = function (dB) {
 		return this.at({'data-bind': dB})
@@ -536,31 +471,8 @@ function core(){
 		 
 	}
 	 
-		$.fn.bE = function (s) {
-			return this.b('foreach', s)
-		}
 	 
-		$.fn.koE = $.fn.eKo = function (a) {
-			alert('koE')
-			return this.bindKO('fe', a)
-		}
-		$.fn.eD = $.fn.eB = function (a) {
-			alert('ko eD')
-			return this.bindKOEach('$data.' + a)
-		}
-		$.fn.bU = $.fn.bUN = function (s) {
-			return this.b('uniqueName', s)
-		}
-		$.fn.bCm = function (s) {
-			return this.b('component', s)
-		}
-		$.fn.bindKOEach = fe = forEach = function (a) {
-			return this.bindKO('fe', a)
-		}
-		$.fn.bindKOEachData = feD = forEachData = function (a) {
-			return this.bindKOEach('$data.' + a)
-		}
-		$.fn.bindKO = b = knockoutBind = function (a, b) {
+			$.fn.bindKO = b = knockoutBind = function (a, b) {
 			var o = []
 			if (O(a)) {
 				_.each(a, function (v, k) {
@@ -575,8 +487,12 @@ function core(){
 			}
 			return this
 		}
-	 
-	
+	$.fn.bU = $.fn.bUN = function (s) {
+		return this.b('uniqueName', s)
+	}
+	$.fn.bCm = function (s) {
+		return this.b('component', s)
+	}
 	function templ() {
 		$.fn.bTp = function (s) {
 			return this.b('template', s)
@@ -683,27 +599,15 @@ function core(){
 			return this.b('checked', s)
 		}
 		function hasV() {
-			$.fn.bEv = function (s) {
-				return this.dB('event: ' + s)
-			}
+	 
 			$.fn.bEv = function (s) {
 				return this.b('event', s)
 			}
-			$.fn.bEv = function (s) {
-				return this.b('event', s)
-			}
-			$.fn.bEv = function (s) {
-				return this.dB('event: ' + s)
-			}
+		 
 			$.fn.bVs = function (s) {
 				return this.b('visible', s)
 			}
-			$.fn.bVs = function (s) {
-				return this.dB('visible: ' + s)
-			}
-			$.fn.bVs = function (s) {
-				return this.dB('visible: ' + s)
-			}
+	 
 			$.fn.bV = function (s) {
 				var g = G(arguments)
 				str = "value: " + s
@@ -751,18 +655,7 @@ function core(){
 		$.dCm = function (a) {
 			return $.d().bCm(a)
 		}
-		$.dE = function (a, b) {
-			var d = $.d().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					d.A(el)
-				})
-			}
-			else if (S(b)) {
-				d.A(b)
-			}
-			return d
-		}
+	 
 		$.dW = function (a, b) {
 			var d = $.d().bW(a)
 			if (A(b)) {
@@ -808,30 +701,7 @@ function core(){
 		$.dH = function (a) {
 			return $.d().bH(a)
 		}
-		$.dE = function (a, b) {
-			var d = $.d().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					d.A(el)
-				})
-			}
-			else if (S(b)) {
-				d.A(b)
-			}
-			return d
-		}
-		$.dE = function (a, b) {
-			var d = $.d().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					d.A(el)
-				})
-			}
-			else if (S(b)) {
-				d.A(b)
-			}
-			return d
-		}
+ 
 		$.dW = $.dBw = function (a, b) {
 			var d = $.d()
 					.bW(a)
@@ -879,183 +749,7 @@ function core(){
 		}
 		 
 	 
-	function list() {
-		$.tdT = function (a, b) {
-			var td = $.td()
-			td.bT(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					td.A(el)
-				})
-			}
-			return td
-		}
-		$.liT = $.liBt = function (a) {
-			return $.li().bT(a)
-		}
-		$.olE = $.olBe = function (a, b) {
-			var ol = $.ol().bE(a)
-			if (b) {
-				ol.A(b)
-			}
-			return ol
-		}
-		$.tBE = function (a, b) {
-			var tB = $.tB()
-			tB.bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					tB.A(el)
-				})
-			}
-			return tB
-		}
-		function tabl() {
-			$.tBE = function (a, b) {
-				var g = G(arguments),
-						tB = $.tB()
-				tB.bE(a)
-				if (A(b)) {
-					_.e(b, function (el) {
-						tB.A(el)
-					})
-				}
-				else {
-					_.e(g.r, function (q) {
-						tB.A((q[0].tagName == "TD") ? q : $.td().A(q))
-					})
-				}
-				return tB
-			}
-			$.tBT = function (arr) {
-				var g = G(arguments),
-						tB = $.tB(), tr = $.tr()
-				_.e(g.r, function (q) {
-					tr.A(q)
-				})
-				return tB.bE(arr).A(tr)
-			}
-			$.tBE = function (a, b) {
-				var tB = $.tB()
-				tB.bE(a)
-				if (A(b)) {
-					_.e(b, function (el) {
-						tB.A(el)
-					})
-				}
-				return tB
-			}
-			$.tdT = function (a, b) {
-				var td = $.td()
-				td.bT(a)
-				if (A(b)) {
-					_.e(b, function (el) {
-						td.A(el)
-					})
-				}
-				return td
-			}
-		};
-		function ul() {
-			$.U = function () {
-				var g = G(arguments)
-				return $.uE(g.f, [$.li(g.s)])
-			}
-			$.uE = $.ulE = function (a, b, c) {
-				var g = G(arguments)
-				var ul = $.ul().bE(a)
-				if (c) {
-					b = $.li(_.r(g))
-				}
-				else if (O(b) && !A(b)) {
-					b = [b]
-				}
-				if (A(b)) {
-					_.e(b, function (el) {
-						ul.A(el)
-					})
-				}
-				else if (S(b)) {
-					ul.A(b)
-				}
-				return ul
-			}
-		};
-		$.U = function () {
-			var g = G(arguments)
-			return $.uE(g.f, [$.li(g.s)])
-		}
-		$.uE = $.ulE = function (a, b) {
-			var ul = $.ul().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					ul.A(el)
-				})
-			}
-			else if (S(b)) {
-				ul.A(b)
-			}
-			return ul
-		}
-		$.uE = $.ulE = function (a, b, c) {
-			var g = G(arguments)
-			var ul = $.ul().bE(a)
-			if (c) {
-				b = $.li(_.r(g))
-			}
-			else if (O(b) && !A(b)) {
-				b = [b]
-			}
-			if (A(b)) {
-				_.e(b, function (el) {
-					ul.A(el)
-				})
-			}
-			else if (S(b)) {
-				ul.A(b)
-			}
-			return ul
-			function old() {
-				$.uE = $.uE = $.ulE = function (a, b) {
-					var ul = $.ul().bE(a)
-					if (A(b)) {
-						_.e(b, function (el) {
-							ul.A(el)
-						})
-					}
-					else if (S(b)) {
-						ul.A(b)
-					}
-					return ul
-				}
-			}
-		}
-		$.U = function () {
-			var g = G(arguments)
-			return $.uE(g.f, [$.li(g.s)])
-		}
-		$.olE = function (a, b) {
-			var ol = $.ol().bE(a)
-			if (b) {
-				ol.A(b)
-			}
-			return ol
-		}
-		$.uLE = function (a) {
-			var g = G(arguments);
-			return $.ulE(a, $.li(g.r))
-		}
-		$.liT = $.liBt = function (a) {
-			return $.li().bT(a)
-		}
-		$.olE = $.olBe = function (a, b) {
-			var ol = $.ol().bE(a)
-			if (b) {
-				ol.A(b)
-			}
-			return ol
-		}
-	};
+	 
 	function inp() {
 		function anc() {
 			$.a$ = function (t, fn) {
@@ -2018,61 +1712,7 @@ KOVIS = function () {
 	)
 //vm.ssm(false); // ... now it's hidden
 //vm.ssm(true); // ... now it's visible again
-}
-KOEACH = function () {
-	format()
-	s2(
-			_t()(
-					thead()(
-							tr()(
-									th()('First name'),
-									th()('Last name')
-							)
-					),
-					tbody().b('E', 'people')(
-							tr()(
-									td().b('t', 'fn'),
-									td().b('t', 'ln'))
-					)
-			)
-	)
-	ko.ab({
-		people: [
-			{fn: 'B', ln: 'Bert'},
-			{fn: 'Ch', ln: 'Char'},
-			{fn: 'De', ln: 'Dent'}
-		]
-	})
-}
-KOEACH2 = function () {
-	format()
-	s2(
-			h4('People'),
-			ul().b('E', 'people')(
-					li()(
-							sp('pos/name: '),
-							sp().b('t', '$index'),
-							sp().b('t', 'n'),
-							lk(' X').b('$', '$parent.rem')
-					)
-			),
-			bt('add').b('$', 'add')
-	)
-	vm = function () {
-		var o = {}
-		o.people = ko.oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-		o.add = function () {
-			o.people.push({n: "New at " + new Date()})
-		}
-		o.rem = function () {
-			o.people.remove(this)
-		}
-		return o
-	}
-	ko.ab(vm()
-	)
-}
- 
+} 
 FCB = function () {
 	_$({
 		C: 'u',
@@ -2250,68 +1890,7 @@ SEL = CUNTS = function (n, v) {
 		vm.cunts.push('Chi')
 	})
 }
-
-TTR = function () {$('body').fS(30)
-	$.t([
-	$.tH([$.tr([$.th('F'),
-	 $.th('L')])]),
-	  $.tBE('peep', [
-		$.tr([$.tdT('f'), ', ', $.tdT('l')])
-		
-	  ])])//  $.t([$.tH([$.tr([$.th('F'), $.th('L')])]), $.tBE('peep', [$.tr([$.tdT('f').col('b'), ', ', $.tdT('l').col('w')])])])// <- $.fn.tE= $.fn.tBE ? // (not tableHTML)
-	ok({peep: $oa([{f: 'a', l: 'A'},
-	 {f: 'b', l: 'B'}, 
-	 {f: 'c', l: 'C'}])}) //ok({ peep: [{f:'a',l:'A'},      {f:'b',l:'B'}, {f:'c',l:'C'}]})
-	function classik() {
-		KOEACH = function () {
-			format()
-			s2(
-					_t()(
-							thead()(
-									tr()(
-											th()('First name'),
-											th()('Last name')
-									)
-							),
-							tbody().b('E', 'people')(
-									tr()(
-											td().b('t', 'fn'),
-											td().b('t', 'ln'))
-							)
-					)
-			)
-			ko.ab({
-				people: [
-					{fn: 'B', ln: 'Bert'},
-					{fn: 'Ch', ln: 'Char'},
-					{fn: 'De', ln: 'Dent'}
-				]
-			})
-		}
-	}
-}
-BINDUL = BUL = MONK = function () {
-	$.x('x')
-	$.h1('monkey').bT('monkey')
-	$.iV('monkey')
-	$.sb('hello').b$('A')
-	//  $.s$('a','play');
-//    $.U('cl',[            'my name is ',$.sT('n'),            ' and i like to play ', $.sT('c')])
-	$.uE('list', [$.li(['my name is ',
-		$.sT('n'), ' and i like to play ',
-		$.sT('c')])])
-	vm = {
-		monkey: $o(),
-		list: $oa(),
-		A: function () {
-			this.list.p({n: 'j', c: $r()})
-		}
-	}
-	vm.monkey('elephant')
-	ok(vm)
-	vm.A().A().A()
-	//https://www.youtube.com/watch?v=JGwRIbWWqjE
-}
+ 
 COMPUTED = CPD = function () {
 	$.z().h1('KNOCKOUT') //bT,bV and computed
 	$.d().A(
@@ -2383,234 +1962,9 @@ SELMULTI = SLM = function () {
 	_.in(function () {
 		vm.chosen.push('France')
 	})
-}
-K3 = function () {
-	z()
-	ko.$bH({
-		fadeVisible: {
-			i: function (e, v) {
-				var v = v()
-				$l('v:' + v)
-				$(e).toggle(v)
-			}, u: function (el, vAc) {
-				vAc() ? $(el).fadeIn() : $(el).fadeOut()
-			}
-		},
-		jqButton: {
-			i: function (e) {
-				$(e).button()
-			}, u: function (e, vA) {
-				$(e).button("option", "disabled", vA().enable === false);
-			}
-		}
-	})
-	str = '<h3 data-bind="text: q"></h3>'
-	str += '<p> distribute <b data-bind="text: pB"></b> points  </p>'
-	str += ' <table><thead><tr><th>Option</th><th>Importance</th></tr></thead>'
-	str += '  <tbody data-bind="foreach: As"><tr>'
-	str += '<td data-bind="text: aT"></td>'
-	str += ' <td><select data-bind="options: [1,2,3,4,5], value:Ps"></select></td>'
-	str += ' </tr> </tbody> </table>'
-	str += '<h3 data-bind="fadeVisible: pU() > pB">  too many points!  </h3>'
-	str += '<p><b data-bind="text: pB-pU()"></b> left</p>'
-	str += '<button data-bind="jqButton: jqButton: { enable: pU() <= pB },  click: save">Finished</button>  '
-	$(str).A()
-	function VM(q, pB, As) {
-		var vm = this
-		vm.q = q
-		vm.pB = pB
-		vm.As = $.map(As, function (t) {
-			return {aT: t, Ps: $o(1)}
-		})
-		vm.save = function () {
-			alert('To do')
-		}
-		vm.pU = ko.c(function () {
-			var t = 0;
-			_.e(vm.As, function (a) {
-				t += a.Ps()
-			});
-			return t
-		}) //points Used
-	}
-	
-	ok(new VM("factors?", 10, ["Functionality", "News", "dropshadows", "testimonials"]))
-}
-EACHDIVADD = EDA = function () {
-	$.dE('peep', [$.p($.spT('f'), ' ', $.spT('l'))])
-	vm = {peep: $oa([{f: 'B', l: 'Bb'}, {f: 'C', l: 'Cc'}, {f: 'D', l: 'Dd'}])}
-	ok(vm)
-	$.bt('push', function () {
-	
-		vm.peep.push({f: 'j', l: 'y'})
-	})
-}
+} 
 
-ULADD = ULA = function () {
- 
-	$.lb('Show time: ').A($.cbC('showDT'))
-	
-	$.uE('peep', [$.li().A(
-			$.d([$.spT('n'), 'has',
-				$.spT('ch().length'),
-				'children &nbsp;',
-				$.a$('New', 'A')]),
-			$.ulE('ch', [
-				$.li([$.spT(), $.spVs('$root.showDT').A(
-						' (child rendered at ', $.spT('new Date().getSeconds()'), ')'
-				)])]))])
-	
-	ok({peep: peep, 
-	showDT: $o()})
-	
-	peep()
-	//add, conditional el
-	//anonymous vm
-}
-ULDEL = ULD = function () {
-	 
-	$.h4('People')
-//bind bt 'click' to parent.rem
-	$.ulE('peep', [$.li([
-		$.sp('pos/name: '),
-		$.spT('$index'),
-		$.spT('n'),
-		$.$bt('del', 'rm', '-')
-	])])
-	$.$bt('A')
-	ok({
-		peep: $oa({n: 'B'}, {n: 'Ch'}, {n: 'De'}),
-		A: function () {
-			this.peep.push({n: "New at " + $D()})
-		},
-		rm: function (a) {
-			vm.peep.remove(this)
-		}
-	})
-	function klassic() {
-		ULINDEX = function () {
-			format()
-			s2(
-					h4('People'),
-					ul().b('E', 'people')(
-							li()(
-									sp('pos/name: '),
-									sp().b('t', '$index'),
-									sp().b('t', 'n'),
-									lk(' X').b('$', '$parent.rem')
-							)
-					),
-					bt('add').b('$', 'add')
-			)
-			vm = function () {
-				var o = {}
-				o.people = $oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-				o.add = function () {
-					o.people.push({n: "New at " + new Date()})
-				}
-				o.rem = function () {
-					o.people.remove(this)
-				}
-				return o
-			}
-			ko.ab(vm()
-			)
-		}
-	}
-}
-K4 = TUTC = COL = function () {
-	z();
-	$Ms('TUTC');
-	$.h2(['seats:(', $.spT("_.z(Ss())"), ')'])
-	$.t([$.tH([$.tr([$.th('n'), $.th('M'), $.th('$$'), $.th()])]),
-		$.tBT('Ss', $.tdT('n'), $.td($.slB({o: '$root.Ms', v: 'm', oT: "'n'"})),
-				$.tdT('fm'), $.td([$.a$('XX', "$root.rm")]))])
-	$.h3(['$$: $', $.sp().bT('_.tF($$())')]).bVs('$$()>0');
-	$.bt('+').b({$: 'A', en: '_.z(Ss())<5'})
-	ok(new (function () {
-		var vm = this;
-		vm.Ms = [{n: "bat", $$: 0}, {n: "pig", $$: 3.9}, {n: "zeb", $$: 29}]
-		vm.Ss = $oa([Res("jas"), Res("rig")]);
-		vm.$$ = ko.c(function () {
-			var $$ = 0, Ss = vm.Ss();
-			_.e(Ss, function (s) {
-				$$ += s.m().$$
-			});
-			return $$
-		});
-		vm.A = function () {
-			vm.Ss.p(Res())
-		};
-		vm.rm = function (s) {
-			vm.Ss.rm(s)
-		};
-		function Res(n, m) {
-			var r = {n: n || 'ano', m: $o(m || vm.Ms[0])}
-			r.fm = ko.c(fm);
-			return r;
-			function fm() {
-				return fm(r.m().$$)
-				function fm($$) {
-					return !$$ ? 'Name' : '$' + _.tF($$)
-				}
-			}
-		}
-	}))
-	function old() {
-		TUTC1 = function () {
-			z();
-			$Ms('TUTC')
-			availableMeals = [
-				{mealName: "Standard (sandwich)", price: 0},
-				{mealName: "Premium (lobster)", price: 34.95},
-				{mealName: "Ultimate (whole zebra)", price: 290}
-			]
-			$.h2().A('Your seat reservations (', $.sp().bT("seats().length"), ')')
-			$.t().A(
-					$('<thead>').A($.tr().A($('<th>Passenger name</th><th>Meal</th><th>Surcharge</th><th></th>'))),
-					$('<tbody>').bE('seats').A($.tr().A(
-							$.td().bT('name'),
-							$.td($.sl().b("options: $root.availableMeals, value: meal, optionsText: 'mealName'")),
-							$.td().bT('formattedPrice'),
-							$.td().A($.a('Remove', '#').b$("$root.removeSeat")))))
-			$.h3().A('Total surcharge: $', $.sp().bT('totalSurcharge().toFixed(2)')).bVs('totalSurcharge() > 0')
-			$.bt('reserve another seat').b('click: addSeat, enable: seats().length < 5')
-			ok(new ReservationsViewModel())
-			function SeatReservation(name, initialMeal) {
-				var self = this;
-				self.name = name;
-				self.meal = $o(initialMeal);
-				self.formattedPrice = ko.computed(function () {
-					var price = self.meal().price;
-					return price ? "$" + price.toFixed(2) : "None";
-				});
-			}
-			
-			function ReservationsViewModel() {
-				var self = this;
-				// Non-editable catalog data - would come from the server
-				self.availableMeals = availableMeals
-				// Editable data
-				self.seats = $oa([
-					new SeatReservation("Steve", self.availableMeals[0]),
-					new SeatReservation("Bert", self.availableMeals[0])
-				])
-				self.totalSurcharge = ko.computed(function () {
-					var total = 0;
-					for (var i = 0; i < self.seats().length; i++)
-						total += self.seats()[i].meal().price;
-					return total;
-				})
-				self.addSeat = function () {
-					self.seats.push(new SeatReservation("", self.availableMeals[0]));
-				}
-				self.removeSeat = function (seat) {
-					self.seats.remove(seat)
-				}
-			}
-		} //full collection app from website !!!!!!!
-	}
-}
+
 BSTY = function () {
  
 	$s({bd: {fS: 100, C: 'p'},
@@ -2672,30 +2026,7 @@ WITH = function () {
 	
 }
 
-WITHPARENT = WPA = function () {
-	 
-	$.f().A('Twt-acc:', $.ip().bV('twtN'), $.sm().A('Get twts')).b({sm: 'getTwts'})
-	$.d([$.h3(['Rec twts fetched at', $.spT('retrDt')]),
-		$.ol().bE('topTwts').A($.liT('text')),
-		$.bt('Clear twts').b('$', '$parent.clearRes')]).b({w: 'resDa'})
-	ok(new (function () {
-		var vw = this
-		vw.twtN = $o('@ex');
-		vw.resDa = $o(0)
-		vw.clearRes = function () {
-			vw.resDa(undefined)
-		}
-		vw.getTwts = function () {
-			var n = vw.twtN();
-			vw.resDa({
-			
-				topTwts: [{text: n + ':nice'}, {text: n + ':trump'}, {text: n + ':sex'}],
-				retrDt: new Date()
-				 
-			})
-		}
-	}))
-}
+
 STARRATING = function () {
  
 	ko.bindingHandlers.starRating = {

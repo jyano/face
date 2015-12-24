@@ -1,32 +1,3 @@
-w.brick = w.bii = function (x, y, W, H) {//=brk=brick=
-	x = N(x) ? x : 60;
-	y = N(y) ? y : x
-	W = N(W) ? W : 30;
-	H = N(H) ? H : W
-	return this.A(b2d.stat(x, y),
-			b2d.poly(W, H).r(0)).K('brick')
-}
-w.bump = w.bumper = w.baa = function (x, y, r) {
-	x = x || 100
-	y = N(y) ? y : x
-	r = r || 20
-	return this.A(b2d.stat(x, y), b2d.circ(r)).K('bumper')
-}
-w.bmp = w.bump = w.cS = w.bu = w.baa = function (x, y) {
-	var g = G(arguments)
-	var b = w.S(x, y)
-	b.cF.apply(b, _.r(g, 2))
-	return b.decor(g).K('bump')
-}
-w.brk = w.brick = w.rS = w.bii = w.brik = function (x, y, W, H) {
-	var w = this, g = G(arguments)
-	var b = w.S(x, y)
-	b.rF.apply(b, _.r(g, 2))
-	//var b = w.A($sB(x, y), $rF(W, H))
-	b.decor(g)
-	b.K('brick')
-	return b
-}
 w.ball = w.ba = function (x, y, r) {
 	var w = this,
 			ball
@@ -56,6 +27,27 @@ w.bal = w.ball = w.cD = w.ba = w.cirB = function () {
 	}
 	return b.decor(g).K('ball')
 }
+w.ball = function self(x, y, r) {
+	var ball
+	if (O(x)) {
+		r = y;
+		y = x.y;
+		x = x.x
+	}
+	x = x || 100
+	y = N(y) ? y : x
+	r = r || 30
+	ball = this.D(x, y, $cF(r))
+	ball.K('ball')
+	return ball
+}
+w.box = function (x, y, W, H) {
+	x = N(x) ? x : 60;
+	y = N(y) ? y : x
+	W = N(W) ? W : 50;
+	H = N(H) ? H : W
+	return this.A($dB(x, y), $rF(W, H)).K('box')
+}
 w.box = w.bi = function (x, y, W, H) {//=brk=brick=
 	x = N(x) ? x : 60;
 	y = N(y) ? y : x
@@ -72,32 +64,13 @@ w.box = w.rD = w.bo = w.bi = w.dR = function (x, y, W, H) {
 	b.K('box')
 	return b
 }
-w.ball = function self(x, y, r) {
-	var ball
-	if (O(x)) {
-		r = y;
-		y = x.y;
-		x = x.x
-	}
-	x = x || 100
-	y = N(y) ? y : x
-	r = r || 30
-	ball = this.D(x, y, $cF(r))
-	ball.K('ball')
-	return ball
-}
-w.bump = function (x, y, r) {
-	x = x || 100
-	y = N(y) ? y : x
-	r = r || 20
-	return this.A($sB(x, y), $cF(r)).K('bumper')
-}
-w.box = function (x, y, W, H) {
+w.brick = w.bii = function (x, y, W, H) {//=brk=brick=
 	x = N(x) ? x : 60;
 	y = N(y) ? y : x
-	W = N(W) ? W : 50;
+	W = N(W) ? W : 30;
 	H = N(H) ? H : W
-	return this.A($dB(x, y), $rF(W, H)).K('box')
+	return this.A(b2d.stat(x, y),
+			b2d.poly(W, H).r(0)).K('brick')
 }
 w.brick = function (x, y, W, H) {
 	x = N(x) ? x : 60;
@@ -105,4 +78,32 @@ w.brick = function (x, y, W, H) {
 	W = N(W) ? W : 30;
 	H = N(H) ? H : W
 	return this.A($sB(x, y), $rF(W, H).re(0)).K('brick')
+}
+w.brk = w.brick = w.rS = w.bii = w.brik = function (x, y, W, H) {
+	var w = this, g = G(arguments)
+	var b = w.S(x, y)
+	b.rF.apply(b, _.r(g, 2))
+	//var b = w.A($sB(x, y), $rF(W, H))
+	b.decor(g)
+	b.K('brick')
+	return b
+}
+
+w.bump = w.bumper = w.baa = function (x, y, r) {
+	x = x || 100
+	y = N(y) ? y : x
+	r = r || 20
+	return this.A(b2d.stat(x, y), b2d.circ(r)).K('bumper')
+}
+w.bmp = w.bump = w.cS = w.bu = w.baa = function (x, y) {
+	var g = G(arguments)
+	var b = w.S(x, y)
+	b.cF.apply(b, _.r(g, 2))
+	return b.decor(g).K('bump')
+}
+w.bump = function (x, y, r) {
+	x = x || 100
+	y = N(y) ? y : x
+	r = r || 20
+	return this.A($sB(x, y), $cF(r)).K('bumper')
 }

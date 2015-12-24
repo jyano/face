@@ -72,4 +72,111 @@ $dD = b2d.debugDraw = function () {
 		}
 	}
 }
- 
+w.bug = function () {
+	var w = this
+	w.SDD($dD().ctx(ctx).sc(20).fA(.5).lT(1)
+			.SF(b2DebugDraw.e_shapeBit))
+	return w
+}
+w.SDD = function (dD) {
+	this.SetDebugDraw(dD);
+	return this
+}
+$_DD = function () {
+	return new b2d.DD
+}
+bx.DD = b2DebugDraw = bx.D.b2DebugDraw
+dD.ctx = function (ctx) {
+	var dD = this  //it is looking for  a context?
+	if (U(ctx)) {
+		return dD.GetSprite()
+	}
+	dD.SetSprite(ctx)
+	return dD
+	//dD.cx = dD.spr = dD.i = dD.sprite = 
+}
+dD.SDS = function (sc) {
+	this.SetDrawScale(sc)
+	return this
+}
+dD.sc = function (sc) {
+	var dD = this
+	if (U(sc)) {
+		return dD.GetDrawScale()
+	}
+	dD.SDS(sc)
+	return dD
+	// = dD.dS = dD.scale = dD.drawScale
+}
+dD.al = dD.alpha = dD.fA = function (al) {
+	var dD = this
+	if (U(al)) {
+		return this.GetAlpha()
+	}
+	this.SetAlpha(al)
+	return this
+//Get/SetAlpha(al:N)    used for lines
+}
+dD.fA = dD.fAl = function (a) {
+	var dD = this
+	if (U(a)) {
+		return dD.GetFillAlpha()
+	}
+	dD.SetFillAlpha(a)
+	return dD
+	//= dD.alpha = dD.fillAlpha
+}
+dD.lT = function (lt) {
+	var dD = this
+	if (U(lt)) {
+		return dD.GetLineThickness()
+	}
+	dD.SetLineThickness(lt);
+	return dD
+	// = dD.line
+}
+dD.fl = function (fl) {
+	var dD = this
+	var DD = b2DebugDraw
+	if (U(fl)) {
+		return dD.GetFlags()
+	}
+	if (flags == '*') {
+		flags = (DD.e_shapeBit | DD.e_jointBit | DD.e_pairBit | DD.e_aabbBit | DD.e_centerOfMassBit | DD.e_controllerBit)
+	}
+	dD.SetFlags(flags);
+	return dD
+	//dD.flags = dD.F =
+}
+dD.SF = function () {
+	this.SetFlags.apply(this, arguments)
+	return this
+}
+w.DDD = function () {
+	this.DrawDebugData();
+	return this
+}
+w.setDbD = function (id) {
+	id = id || 'cv'
+	var dbD = $_DD().ctx($("#" + id)[0].getContext("2d")).SDS(20)
+	dbD.SetFillAlpha(0.5)
+	dbD.SetLineThickness(1)
+	dbD.SetFlags(b2DebugDraw.e_shapeBit)
+	return this.SDD(dbD)
+}
+$dD = function (sp, sc) {
+// = b2d.debugDraw
+	//=DebugDraw=dbD
+	var dD = new b2d.DD()
+	if (sp) {
+		dD.sp(sp);
+	}
+	if (N(sc)) {
+		dD.sc(sc)
+	}
+	return dD
+}
+dD.cv = function (cv) {
+	cv = cv || $.c()
+	return this.ctx($(cv)[0].getContext("2d"))
+}
