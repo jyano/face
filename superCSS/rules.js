@@ -75,7 +75,7 @@ $sel = function (sel) {
 	sel = sel.replace('_', '.')
 			.replace('$', '#')
 	_.e({
-		bd: 'body',
+		bd: 'body',sp:'span',
 		bt: 'button',
 		sc: 'section', nv: 'nav',
 		d: 'div',
@@ -156,10 +156,11 @@ $subRules = function (rulesOb) {
 	return _brace($rules(rulesOb))
 	//for meta (see Grail)
 }
-above = greaterThan = atLeast = min = function (num, str) {
+minW= above = greaterThan = atLeast = min = function (num, str) {
 	return '@media all and (min-width: ' + num + 'px) ' + (str || '')
 }
-below = lessThan = max = function (num, str) {
+
+maxW=below = lessThan = max = function (num, str) {
 	return '@media all and (max-width: ' + num + 'px) ' + (str || '')
 }
 between = within = function (n1, n2, str) {
