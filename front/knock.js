@@ -437,43 +437,22 @@ function core(){
 		}
 	}
 	
-	function sync() {
+	 
 		$.fn.bY = $.fn.bSy = function (s) {
 			return this.b('style', s)
 		}
-		$.fn.bY = $.fn.bSy = function (s) {
-			return this.b('style', s)
-		}
-		$.fn.bY = $.fn.bSy = function (s) {
-			return this.dB('style: ' + s)
-		}
-		$.fn.bY = $.fn.bSy = function (s) {
-			return this.dB('style: ' + s)
-		}
-	}
+	 
 	
-	function buu() {
-		$.fn.bU = $.fn.bUN = function (s) {
-			return this.dB('uniqueName: ' + s)
-		}
-		$.fn.bU = $.fn.bUN = function (s) {
-			return this.b('uniqueName', s)
-		}
-		$.fn.bU = $.fn.bUN = function (s) {
-			return this.dB('uniqueName: ' + s)
-		}
+ 
+	$.fn.bU = $.fn.bUN = function (s) {
+			return this.b('uniqueName' + s)
 	}
-	
-	function subm() {
-		$.fn.bSb = function (s) {
-			return this.dB('submit: ' + s)
-		}
+	 
+ 
 		$.fn.bSb = function (s) {
 			return this.b('submit', s)
 		}
-		$.fn.bSb = function (s) {
-			return this.dB('submit: ' + s)
-		}
+	 
 		$.fSm = $.fBSm = function (a, b) {
 			var f = $.f();
 			f.bSb(a)
@@ -496,27 +475,17 @@ function core(){
 				}
 			}
 		}
-	}
-	
-	function txIpVal() {
-		$.fn.bTI = function (s) {
-			return this.dB('textInput: ' + s)
-		}
+	  
+	 
 		$.fn.bTi = function (a) {
 			return this.b({ti: a})
 		}
-		$.fn.bTi = function (a) {
-			return this.b({ti: a})
-		}
+	 
 		$.fn.bTI = function (s) {
 			return this.b('textInput', s)
 		}
-		$.fn.bTI = function (s) {
-			return this.dB('textInput: ' + s)
-		}
-		$.fn.bTi = function (a) {
-			return this.b({ti: a})
-		}
+		 
+	 
 		$.fn.bV = function (s) {
 			var g = G(arguments)
 			str = "value: " + s
@@ -539,39 +508,21 @@ function core(){
 		 ip.bV.apply(ip, g)
 		 return ip
 		 }*/
-	}
+	 
 	
 	function options() {
-		$.fn.bH = function (s) {
-			return this.dB('html: ' + s)
-		}
-		$.fn.bH = function (s) {
-			return this.dB('html: ' + s)
-		}
+	 
 		$.fn.bH = function (s) {
 			return this.b('html', s)
 		}
 		$.fn.bS = function (s) {
 			return this.b('css', s)
-		}
-		$.fn.bS = function (s) {
-			return this.dB('css: ' + s)
-		}
-		$.fn.bS = function (s) {
-			return this.b('css', s)
-		} //not bind sprite!!
-		$.fn.bS = function (s) {
-			return this.dB('css: ' + s)
-		}
+		} 
+	 
 		$.fn.bC = function (s) {
 			return this.dB('checked: ' + s)
 		}
-		$.fn.bO = function (s) {
-			return this.dB('options: ' + s)
-		}
-		$.fn.bSO = function (s) {
-			return this.dB('selectedOptions: ' + s)
-		}
+	  
 		$.fn.bO = function (s) {
 			return this.b('options', s)
 		}
@@ -581,24 +532,14 @@ function core(){
 		$.fn.bCm = function (s) {
 			return this.dB('component: ' + s)
 		}
-		$.fn.bO = function (s) {
-			return this.dB('options: ' + s)
-		}
-		$.fn.bSO = function (s) {
-			return this.dB('selectedOptions: ' + s)
-		}
+		 
+		 
 	}
-	
-	function koEach() {
+	 
 		$.fn.bE = function (s) {
 			return this.b('foreach', s)
 		}
-		$.fn.bE = function (s) {
-			return this.dB('foreach: ' + s)
-		}
-		$.fn.bE = function (s) {
-			return this.dB('foreach: ' + s)
-		}
+	 
 		$.fn.koE = $.fn.eKo = function (a) {
 			alert('koE')
 			return this.bindKO('fe', a)
@@ -634,32 +575,27 @@ function core(){
 			}
 			return this
 		}
-	}
+	 
 	
 	function templ() {
 		$.fn.bTp = function (s) {
 			return this.b('template', s)
 		}
+	 
 		$.fn.a2Lb = function (t) {
 			t = t || 'label:'
 			return this.a2($.lb(t))
 		}
-		$.fn.bT = function (s) {
-			s = s || '$data'
-			return this.dB('text: ' + s)
-		}
+		 
 		$.fn.bCm = function (s) {
 			return this.dB('component: ' + s)
 		}
-		$.fn.bTp = function (s) {
-			return this.dB('template: ' + s)
-		}
-		$.fn.bTp = function (s) {
-			return this.b('template', s)
-		}
+	 
+		
 		$.fn.bT = function (s) {
 			return this.b('text', s || '$data')
 		}
+	 
 		$.fn.b = $.fn.ko = function (a, b) {
 			KOob = {
 				t: 'text',
@@ -712,70 +648,34 @@ function core(){
 			this.at('params', a + ': ' + b);
 			return this
 		}
-		$.fn.bT = function (s) {
-			s = s || '$data'
-			return this.dB('text: ' + s)
-		}
-		$.fn.bTp = function (s) {
-			return this.dB('template: ' + s)
-		}
+		
+		 
 	}
-	
-	function enab() {
-		$.fn.bEn = function (a) {
-			return this.b('en', a)
-		}
+	 
+		 
 		$.fn.bEn = function (s) {
 			return this.b('enable', s)
-		}
-		$.fn.bEn = function (s) {
-			return this.dB('enable: ' + s)
-		}
-		$.fn.bEn = function (a) {
-			return this.b('en', a)
-		}
-		$.fn.bEn = function (s) {
-			return this.dB('enable: ' + s)
-		}
-		$.fn.bEn = function (a) {
-			return this.b('en', a)
-		}
-	}
-	
-	function bW$() {
+		} 
+	 
 		$.fn.bW = function (s) {
 			return this.b('with', s)
 		}
-		$.fn.bW = function (s) {
-			return this.dB('with: ' + s)
-		}
-		$.fn.bW = function (s) {
-			return this.dB('with: ' + s)
-		}
-		$.fn.b$ = function (s) {
-			return this.dB('click: ' + s)
-		}
-		$.fn.b$ = function (s) {
-			return this.dB('click: ' + s)
-		}
+	 
+	 
 		$.fn.b$ = function (s) {
 			return this.b('click', s)
 		}
-	}
+	 
 	
 	function cdf() {
 		$.fn.bD = function (s) {
 			return this.b('disable', s)
 		}
-		$.fn.bD = function (s) {
-			return this.dB('disable: ' + s)
-		}
+		 
 		$.fn.bC = function (s) {
 			return this.dB('checked: ' + s)
 		}
-		$.fn.bD = function (s) {
-			return this.dB('disable: ' + s)
-		}
+	 
 		$.fn.bD = function (s) {
 			return this.b('disable', s)
 		}
@@ -835,31 +735,17 @@ function core(){
 		
 		$.fn.bF = function (s) {
 			return this.b('hasFocus', s)
-		}
-		$.fn.bF = function (s) {
-			return this.dB('hasFocus: ' + s)
-		}
-		$.fn.bF = function (s) {
-			return this.b('hasFocus', s)
-		}
-		$.fn.bF = function (s) {
-			return this.dB('hasFocus: ' + s)
-		}
+		} 
 	}
 
 //////////////////////////////////////////////function koEls(){
-	function hTag() {
+ 
 		$.h1T = $.h1Bt = function (a, b) {
 			var h1 = $.h1(a)
 			h1.bT(b || a)
 			return h1
 		}
-		$.h1T = $.h1Bt = function (a, b) {
-			var h1 = $.h1(a)
-			h1.bT(b || a)
-			return h1
-		}
-	}
+	 
 	
 	function div() {
 		$.dCm = function (a) {
@@ -934,6 +820,18 @@ function core(){
 			}
 			return d
 		}
+		$.dE = function (a, b) {
+			var d = $.d().bE(a)
+			if (A(b)) {
+				_.e(b, function (el) {
+					d.A(el)
+				})
+			}
+			else if (S(b)) {
+				d.A(b)
+			}
+			return d
+		}
 		$.dW = $.dBw = function (a, b) {
 			var d = $.d()
 					.bW(a)
@@ -953,18 +851,7 @@ function core(){
 		$.dT = function (a) {
 			return $.d().bT(a)
 		}
-		$.dE = function (a, b) {
-			var d = $.d().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					d.A(el)
-				})
-			}
-			else if (S(b)) {
-				d.A(b)
-			}
-			return d
-		}
+		
 		$.dIf = function (a, b) {
 			var d = $.d().bI(a)
 			if (A(b)) {
@@ -975,12 +862,7 @@ function core(){
 			return d
 		}
 	};
-	function pg() {
-		$.pT = function (a) {
-			var p = $.p()
-			p.bT(a)
-			return p
-		}
+ 
 		$.pT = function (a) {
 			var p = $.p()
 			p.bT(a)
@@ -989,16 +871,14 @@ function core(){
 		$.pI = function (a, b, c, d) {
 			var p = $.p(b, c, d).bI(a)
 		}
-	};
-	function span() {
+	 
+ 
 		$.sT = $.spT = function (a, b) {
 			return $.sp(b)
 					.bT(a || '$data')
 		}
-		$.spVs = function (a) {
-			return $.sp().b('vs', a)
-		}
-	};
+		 
+	 
 	function list() {
 		$.tdT = function (a, b) {
 			var td = $.td()
@@ -1325,26 +1205,20 @@ function core(){
 		}
 	}
 	
-	function vsb() {
-		$.spVs = function (a) {
+	 	$.spVs = function (a) {
 			return $.sp().bVs(a)
+		    return $.sp().b('vs', a)
 		}
-		$.spVs = function (a) {
-			return $.sp().b('vs', a)
-		}
-		$.dV = $.dVs = function () {
-			var g = G(arguments),
-					d = $.d().bVs(g.f)
-			_.e(g.r, function (q) {
-				d.A(q)
-			})
-			return d
-		}
-		$.spVs = function (a) {
-			return $.sp().b('vs', a)
-		}
+		 
+	 
+	$.dV = $.dVs = function () {
+		var g = G(arguments),
+				d = $.d().bVs(g.f)
+		_.e(g.r, function (q) {
+			d.A(q)
+		})
+		return d
 	}
-	
 	function mouse() {
 		$.a$ = function (t, fn) {
 			return $.a(t).b('$', fn)
@@ -1386,9 +1260,7 @@ function core(){
 			}
 			return $.bt(a).b$(b)
 		}
-		$.s$ = function (a, b, c, d) {
-			return $.sb(b, c, d).b$(a)
-		}
+	 
 		$.s$ = function (a, b, c, d) {
 			return $.sb(b, c, d).b$(a)
 		}
@@ -1422,14 +1294,15 @@ function core(){
 		$.cC = $.cbC = function (a) {
 			return $.cb().bC(a)
 		}
-		$.c$ = function (fn) {
-			return $.cb().b$(fn)
-		}
+		
 		$.cC = $.cbC = function (a) {
 			if (U(a)) {
 				a = '$'
 			}
 			return $.cb().bC(a)
+		}
+		$.c$ = function (fn) {
+			return $.cb().b$(fn)
 		}
 		$.sO = function (a) {
 			return $.sl().bO(a)
@@ -1738,24 +1611,17 @@ function core(){
 			oA.push(i)
 			return oA
 		}
+	 
 		oA.rm = function (i) {
 			var oA = this
 			oA.remove(i)
 			return oA
 		}
-		oA = ko.observableArray.fn // inhertince extension :)
-		oA.p = function (i) {
-			var oA = this
-			oA.push(i)
-			return oA
-		}
+		 
 	}
 	
-	function $fn() {
-	}
-	
-	function bEls() {
-	}
+	 
+	 
 	
 	function bindHandlres() {
 		ko.bindingHandlers.randomOrder = {
@@ -1957,9 +1823,6 @@ function core(){
 }
 str = "<div class='liveExample'><p>First name: <input data-bind='value: firstName' /></p><p>Last name: <input data-bind='value: lastName' /></p><h2>Hello, <span data-bind='text: fullName'> </span>!</h2></div>"
 KOO = function () {
-	
-	
-	
 	//body { font-family: arial; font-size: 14px; }
 	//.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
 	//.liveExample input { font-family: Arial; }
@@ -2009,7 +1872,7 @@ KKO = function () {
 			return this.firstName() + " " + this.lastName();
 		}, this);
 	};
-	ko.applyBindings(new ViewModel("Planet", "Earth"))
+	ok(new ViewModel("Planet", "Earth"))
 }
 CHL = function () {
 	$.h1('shown!').slV()
@@ -2100,7 +1963,7 @@ KOTEMP2 = function () {
 	ko.ab({})
 }
 KOTEMP = function () {
-	z()
+ 
 	format()
 	s2(
 			ip('r').at({name: 'choices', value: 'summary'}).b('ch', 'selectedView'), sp('summary'),
@@ -2209,225 +2072,7 @@ KOEACH2 = function () {
 	ko.ab(vm()
 	)
 }
-KNOCKS0 = function () {
-	format()
-	s2(
-			$.h1('KNOCKOUT'),
-			$.p('F: ', _B().b('t', 'first')),
-			$.p('L: ', _B().b('t', 'last')),
-			$.p('F: ', ip().b('V', 'first')),
-			$.p('L: ', ip().b('V', 'last')).id('last'),
-			$.p('L: ', _B().b('t', 'firstLast')),
-			$.button('caps').b('$', 'capL')
-	)
-	vm = {}
-	vm.first = ko.observable('j')
-	vm.last = ko.observable('y')
-	vm.firstLast = ko.computed(function () {
-		return vm.first() + ' ' + vm.last()
-	})
-	vm.capL = function () {
-		vm.last(uC(vm.last()))
-	}
-	ko.applyBindings(vm)
-}
-KNOCKS0 = function () {
-	format()
-	s2(h1('KNOCKOUT'),
-			pg('F: ', _B().b('t', 'f')),
-			pg('L: ', _B().b('t', 'l')),
-			pg('F: ', ip().b('V', 'f')),
-			pg('L: ', ip().b('V', 'l')).id('l'),
-			pg('L: ', _B().b('t', 'fl')),
-			bt('caps').b('$', 'capL'))
-	vm = {}
-	vm.f = ko.o('j')
-	vm.l = ko.o('y')
-	vm.fl = ko.c(function () {
-		return vm.f() + ' ' + vm.l()
-	})
-	vm.capL = function () {
-		vm.l(uC(vm.l()))
-	}
-	ko.ab(vm)
-}
-KNOCKS1 = function () {
-	format()
-	s2(
-			h2('Your seat reservations'),
-			_t()(
-					thead()(
-							tr()(
-									th('Passenger name'),
-									th('Meal'),
-									th('Surcharge'),
-									th(''))
-					), tbody().b('fe', 'seats')(
-							tr()(
-									td().b('t', 'n'),
-									td().b('t', 'm().mn'),
-									td()(
-											// sel() //.b({o:'$root.AM', V:'m', ot:'mn'})
-									),
-									td().b('t', 'm().p')
-							))),
-			bt('reserve').b('$', 'add')
-	)
-	AM = [
-		{mn: "fries", p: 10},
-		{mn: "fish", p: 20},
-		{mn: "noodles", p: 30}
-	]
-	sR = function (n, m) {
-		return {
-			n: n,
-			m: ko.o(m)
-		}
-	}
-	vm = {}
-	vm.seats = ko.oa([
-		sR('Jo', AM[0]), sR('Bo', AM[1])
-	])
-	vm.add = function () {
-		vm.seats.push(
-				sR('', AM[2])
-		)
-	}
-	ko.ab(vm)
-}
-KNOCKS1 = function () {
-	format()
-	s2(
-			h2('Your seat reservations'),
-			_t()(
-					thead()(
-							tr()(
-									th('Passenger name'),
-									th('Meal'),
-									th('Surcharge'),
-									th(''))
-					), tbody().b('fe', 'seats')(
-							tr()(
-									td().b('t', 'n'),
-									td().b('t', 'm().mn'),
-									td()(
-											// sel() //.b({o:'$root.AM', V:'m', ot:'mn'})
-									),
-									td().b('t', 'm().p')
-							))),
-			bt('reserve').b('$', 'add')
-	)
-	AM = [
-		{mn: "fries", p: 10},
-		{mn: "fish", p: 20},
-		{mn: "noodles", p: 30}
-	]
-	sR = function (n, m) {
-		return {
-			n: n,
-			m: ko.o(m)
-		}
-	}
-	vm = {}
-	vm.seats = ko.oa([
-		sR('Jo', AM[0]), sR('Bo', AM[1])
-	])
-	vm.add = function () {
-		vm.seats.push(
-				sR('', AM[2])
-		)
-	}
-	ko.ab(vm)
-}
-KNOCKS4 = function () {
-	format()
-	s2(
-			h3('Tasks'),
-			_f().b("S", "aT")(
-					"Add task: ",
-					ip().b('v', 'nT').ph("What?"),
-					bt('Add').at('t', 's')
-			),
-			ul(
-					li()(
-							cb().b('ch', 'iD'),
-							ip().b("value:t, disable:iD"),
-							lk('Del').b('ch', '$parent.rmT')
-					)
-			).b("foreach:ts, visible:ts().length>0"),
-			sp("You have"),
-			_B("&nbsp;").b('t', "inc().length"),
-			sp("inc task(s)"),
-			sp("- beer!").b("visible: inc().length==0")
-	)
-	ko.ab(TLVM())
-}
-KNOCKS4 = function () {
-	$.format()
-	s2(
-			$.h3('Tasks'),
-			$.f().b("S", "aT").A(
-					"Add task: ",
-					$.ip().b('v', 'nT').ph("What?"),
-					$.bt('Add').at('t', 's')
-			),
-
-			$.ul().A($.li().A(
-							cb().b('ch', 'iD'),
-							ip().b("value:t, disable:iD"),
-							lk('Del').b('ch', '$parent.rmT')
-					)
-			).b("foreach:ts, visible:ts().length>0"),
-			sp("You have"),
-			
-			$.B().A("&nbsp;").b('t', "inc().length"),
-			$.sp("inc task(s)"),
-			$.sp("- beer!").b("visible: inc().length==0")
-	)
-	ko.ab(TLVM())
-}
-KNOCKS = function () {
-	 
-	$.format()
-	s2(
-			ul().k('fs').b('E', "fs")(
-					li().b(
-							"text:$data,css:{selected:$data==$root.chFI()},click:$root.gtf"
-					)
-			)
-	)
-	MVM = function () {
-		var o = {}
-		o.fs = ['I', 'A', 'Se', 'Sp']
-		o.chFI = ko.o()
-		o.gtf = function (f) {
-			o.chFI(f)
-		}
-		return o
-	}
-	ko.ab(MVM())
-}
-KNOCKS = function () {
-	 
-	$.format()
-	s2(
-			ul().k('fs').b('E', "fs")(
-					li().b(
-							"text:$data,css:{selected:$data==$root.chFI()},click:$root.gtf"
-					)
-			)
-	)
-	MVM = function () {
-		var o = {}
-		o.fs = ['I', 'A', 'Se', 'Sp']
-		o.chFI = ko.o()
-		o.gtf = function (f) {
-			o.chFI(f)
-		}
-		return o
-	}
-	ko.ab(MVM())
-}
+ 
 FCB = function () {
 	_$({
 		C: 'u',
@@ -2464,7 +2109,8 @@ BLM = function () {
 KOSCR = function () {
 	 
 	$.bd().A(
-			$.scrp('tt').A($.h1('afsdfds')), $.d().bT("{name:'tt'}")
+			$.scrp('tt').A($.h1('afsdfds')),
+			 $.d().bT("{name:'tt'}")
 	)
 	ok({})
 }
@@ -2472,14 +2118,11 @@ KOS = function () {
  
 	$.d('Profit Information')
 			.bS("{color:curProf()<0?'red':'black'}")
-			
 	ok({curProf: $o(50)})
-	
 	_.in(function () {
 		vm.curProf(-50)
 	})
 }
-
 KOAT = function () {
 	_$({
 		C: 'w',
@@ -2499,9 +2142,8 @@ TXIP = TWOWAY = function () {
 	ok({NAME: $o('ph text')})
 	
 } // bT(text)  bTI(textInput)  $o
-
 K1 = function () {
-	z()
+ 
 	$.p('f').A($.S().bT('f'))
 	$.p('l').A($.S().bT('l'))
 	$.p('f:').A($.ip().bV('f'))
@@ -2521,14 +2163,17 @@ K1 = function () {
 	ok(vm)
 } //bT  bV(value)  b$ ko.c(computed)
 TXIPROOT = TXI = function () {
-	$.z('x')
+	 
 	$.d([
 		$.p(['un:', $.ipTi('un')]),
 		$.p(['Pw:', $.pwTi('pw')]),
 		'the vm: ',
+		
 		$.pre().bT('ko.toJSON($root,null,2)')
 	])
-	ok({un: $o('fred flintsone'), pw: $o('yaba daba password')})
+	
+	ok({un: $o('fred flintsone'), 
+	pw: $o('yaba daba password')})
 }//$.ipTi  $.pwTi   $.pre  bT  ko.toJSON  $root
 BHTML = HTM = function () {
 	$.z().dH('details').fS(100);
@@ -2538,14 +2183,17 @@ BHTML = HTM = function () {
 	})
 }// dH
 ATTR = function () {
-	$.x();
+	 
 	$.aA('{href:url, title:tt}', 'report').fS(100)
 	ok({url: $o("http://www.hustler.com"), tt: $o("statistics")})
 }// aA
 VISABLE = VIS = function () {
 	$.z('y').h1('see me if true!').bVs('vs')
+	
 	$.h1('ALWAYS HERE!');
+	
 	ok('vs', $o(1))
+	
 	_.in(function () {
 		vm.vs(0);
 		_.in(function () {
@@ -2554,23 +2202,26 @@ VISABLE = VIS = function () {
 	})
 }// bVs
 IF = function () {
-	$.x('x');
+	 
 	$.d([
 		'Display?', $.cC('ms'),
 		$.pI('ms').A('Here is a message. Astonishing')
 	])
-	ok({ms: $o(0)});
+	
+	ok({ms: $o(0)})
+	
 	_.in(function () {
 		vm.ms(1)
 	})
 } //$.cC  $.pI
 ENABLE = EN = function () {
-	$.x()
+ 
 	$.p().A($.cbC('hasPhone'), 'I have phone')
 	$.p('Your cellphone number').A(
 			$.ip().b({v: 'num', en: 'hasPhone'}))
 	ok({hasPhone: $o(0), num: ''})
 }
+
 VALUE = VAL = function () {
 	$.x('K1');
 	$Ms('K1')
@@ -2582,26 +2233,35 @@ VALUE = VAL = function () {
 			$.d('r').b({v: '!editing()', t: 'name', $: 'edit'}))
 	$.p('Click the name to edit it; click elsewhere to apply changes')
 	ok({
-		name: $o("Bert Bertington"), editing: $o(),
+		name: $o("Bert Bertington"),
+		 editing: $o(),
 		edit: function () {
 			vm.editing(true)
 		}
 	})//KOFCC
 }
 SEL = CUNTS = function (n, v) {
-	$.x('o').h1('dests')
+	 
 	$.sO('cunts')
 	ok('cunts', $oa('Fran', 'Ger', 'Spa'))
+	
 	_.in(2, function () {
+	
 		vm.cunts.push('Chi')
 	})
 }
-TTR = function () {
-	$.C('r');
-	$('body').fS(30)
-	$.x().t([$.tH([$.tr([$.th('F'), $.th('L')])]), $.tBE('peep', [
-		$.tr([$.tdT('f'), ', ', $.tdT('l')])])])//  $.t([$.tH([$.tr([$.th('F'), $.th('L')])]), $.tBE('peep', [$.tr([$.tdT('f').col('b'), ', ', $.tdT('l').col('w')])])])// <- $.fn.tE= $.fn.tBE ? // (not tableHTML)
-	ok({peep: $oa([{f: 'a', l: 'A'}, {f: 'b', l: 'B'}, {f: 'c', l: 'C'}])}) //ok({ peep: [{f:'a',l:'A'},      {f:'b',l:'B'}, {f:'c',l:'C'}]})
+
+TTR = function () {$('body').fS(30)
+	$.t([
+	$.tH([$.tr([$.th('F'),
+	 $.th('L')])]),
+	  $.tBE('peep', [
+		$.tr([$.tdT('f'), ', ', $.tdT('l')])
+		
+	  ])])//  $.t([$.tH([$.tr([$.th('F'), $.th('L')])]), $.tBE('peep', [$.tr([$.tdT('f').col('b'), ', ', $.tdT('l').col('w')])])])// <- $.fn.tE= $.fn.tBE ? // (not tableHTML)
+	ok({peep: $oa([{f: 'a', l: 'A'},
+	 {f: 'b', l: 'B'}, 
+	 {f: 'c', l: 'C'}])}) //ok({ peep: [{f:'a',l:'A'},      {f:'b',l:'B'}, {f:'c',l:'C'}]})
 	function classik() {
 		KOEACH = function () {
 			format()
@@ -2777,18 +2437,19 @@ K3 = function () {
 	ok(new VM("factors?", 10, ["Functionality", "News", "dropshadows", "testimonials"]))
 }
 EACHDIVADD = EDA = function () {
-	$.x()
 	$.dE('peep', [$.p($.spT('f'), ' ', $.spT('l'))])
 	vm = {peep: $oa([{f: 'B', l: 'Bb'}, {f: 'C', l: 'Cc'}, {f: 'D', l: 'Dd'}])}
 	ok(vm)
 	$.bt('push', function () {
+	
 		vm.peep.push({f: 'j', l: 'y'})
 	})
 }
+
 ULADD = ULA = function () {
-	$.x('x').h2('Peeep')
-	$.lb('Show time: ').A(
-			$.cbC('showDT'))
+ 
+	$.lb('Show time: ').A($.cbC('showDT'))
+	
 	$.uE('peep', [$.li().A(
 			$.d([$.spT('n'), 'has',
 				$.spT('ch().length'),
@@ -2798,13 +2459,16 @@ ULADD = ULA = function () {
 				$.li([$.spT(), $.spVs('$root.showDT').A(
 						' (child rendered at ', $.spT('new Date().getSeconds()'), ')'
 				)])]))])
-	ok({peep: peep, showDT: $o()})
+	
+	ok({peep: peep, 
+	showDT: $o()})
+	
 	peep()
 	//add, conditional el
 	//anonymous vm
 }
 ULDEL = ULD = function () {
-	$.x();
+	 
 	$.h4('People')
 //bind bt 'click' to parent.rem
 	$.ulE('peep', [$.li([
@@ -2948,8 +2612,9 @@ K4 = TUTC = COL = function () {
 	}
 }
 BSTY = function () {
-	z()
-	$CSS({body: {'font-size': 100, C: 'p'}, _profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}});
+ 
+	$s({bd: {fS: 100, C: 'p'},
+	 _profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}});
 	d = $.d(['Prof Info'])
 	str = "{ color: curProf() < 0 ? 'red' : 'black', padding: curProf() < 0 ? '20px' : '200px'}"
 	d.b({y: str})
@@ -2962,21 +2627,22 @@ BSTY = function () {
 	})
 }
 BCSS = function () {
-	z()
-	$CSS({
+	 
+	$s({
 		_profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}
 	})
-	$.d(['Prof Info']).fS(40)
-			.b({s: 'profSts'})
+	
+	$.d(['Prof Info']).fS(40).b({s: 'profSts'})
 	vm = {
 		curProf: $o(150000)
 	}
 	vm.profSts = ko.pureComputed(function () {
-		$l('in vm.protSs')
+		 
 		var res = this.curProf() < 0 ? "profWarn" : "profPos"
-		$l('res: ' + res)
+		 
 		return res
 	}, vm)
+	
 	ok(vm)
 	_.in(2, function () {
 		// Causes the "profitPositive" class to be removed
@@ -2985,15 +2651,29 @@ BCSS = function () {
 	})
 }
 WITH = function () {
-	z();
-	$.d([$.h1().bT('city'), $.p(['lat:', $.spT('lat'), 'lon:', $.spT('lon')]).b('w', 'xy')])
+	 
+	$.d([
+
+		$.h1().bT('city'),
+		
+		 $.p([
+		 'lat:', $.spT('lat'),
+		  'lon:', $.spT('lon')
+		 ]).b('w', 'xy')
+	
+	])
+	
+	
 	ok({
 		city: "London",
 		xy: {lat: 51, lon: -0.1}
 	})
+	
+	
 }
+
 WITHPARENT = WPA = function () {
-	z();
+	 
 	$.f().A('Twt-acc:', $.ip().bV('twtN'), $.sm().A('Get twts')).b({sm: 'getTwts'})
 	$.d([$.h3(['Rec twts fetched at', $.spT('retrDt')]),
 		$.ol().bE('topTwts').A($.liT('text')),
@@ -3007,12 +2687,17 @@ WITHPARENT = WPA = function () {
 		}
 		vw.getTwts = function () {
 			var n = vw.twtN();
-			vw.resDa({topTwts: [{text: n + ':nice'}, {text: n + ':trump'}, {text: n + ':sex'}], retrDt: new Date()})
+			vw.resDa({
+			
+				topTwts: [{text: n + ':nice'}, {text: n + ':trump'}, {text: n + ':sex'}],
+				retrDt: new Date()
+				 
+			})
 		}
 	}))
 }
 STARRATING = function () {
-	z()
+ 
 	ko.bindingHandlers.starRating = {
 		init: function (element, valueAccessor) {
 			$(element).addClass("starRating");
@@ -3083,8 +2768,7 @@ STARRATING = function () {
 	]))
 }
 KOSPA = SPA = function () {
-	z();
-	$Ms('KOSPA')
+  
 	$.ulE('folders').K('folders').A(
 			$.liT('$data')
 	)
@@ -3131,6 +2815,8 @@ KOSPA = SPA = function () {
 			self.chosenMailData(null); // Stop showing a mail
 			$.get('/mail', {folder: folder}, self.chosenFolderData);
 		};
+		
+		
 		self.goToMail = function (mail) {
 			self.chosenFolderId(mail.folder);
 			self.chosenFolderData(null); // Stop showing a folder
@@ -3146,7 +2832,7 @@ KOSPA = SPA = function () {
 	}))
 }
 KOCSS = function () {
-	$.x()
+ 
 	$.d().fS(400).A('Profit Information')
 			.bS("{color:curProf()<0?'red':'blue'}")
 	ok({curProf: $o(50)})
@@ -3156,18 +2842,19 @@ KOCSS = function () {
 	})
 }
 CHECK = SPAM = function () {
-	$.x('o', 'spam')
+	 
 	$.cKO = function (m, b, v) {
-		var cb = $.cb(),
-				p = $.p().A($.sp().A(m), cb.bC(b))
-		if (v) {
-			cb.v(v)
-		}
-		;
+		var cb = $.cb()
+		
+		var p = $.p().A($.sp().A(m), cb.bC(b))
+		
+		if (v) {cb.v(v)}
+	 
 		return p
 	}//=cbKO=cb2
 	$.p(['spam?',
 		$.cbC('wantSpam', 'wantSpam')])
+	
 	$.d([
 		'spam flavors:',
 		$.d([$.cKO('Cherry', 'flav', 'cherry')]),
@@ -3179,11 +2866,15 @@ CHECK = SPAM = function () {
 	_.in(2, function () {
 		vm.wantSpam(0)
 	})
+	
+	
 //bind cb 'checked' to boolean
 	//vm.spamFlavors.push("msg"); // Now additionally checks the Monosodium Glutamate checkbox
 }
-function _pre() {
-	initialData = [
+ 
+	
+	
+initialData = [
 		{name: "Well-Travelled Kitten", sales: 352, price: 75.95},
 		{name: "Speedy Coyote", sales: 89, price: 190.00},
 		{name: "Furious Lizard", sales: 152, price: 25.00},
@@ -3192,4 +2883,4 @@ function _pre() {
 		{name: "Ingenious Tadpole", sales: 39450, price: 0.35},
 		{name: "Optimistic Snail", sales: 420, price: 1.50}
 	]
-}
+ 
