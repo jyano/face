@@ -15,18 +15,16 @@ Deps = [
 ]
 Both = ['superUnder', 'superJ', 'superTime']
 Web=['jq', 'first', 'second','cssData', 'superJQ']
-Css=[ 'sty', 'inlineSty', 'styApps','rules', 
- 'helpers', 'mixins', 'plugins', 'defaults', 'rulesApps']
-Flex = ['flex', 'flexApps', 'media','flexyDown', 'flexEx','devTipsVid']
+Css=[ 'sty',    'rules' ]
+Flex = ['flex',  'media' ]
 Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
-SuperWeb=['superAnim' ]
-Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
-Nok = ['ko','nok','koEach', 'koApps', 'koEachApps'//, 'koArrFilter', 'koPlus', 'grid'
+SuperWeb=['superAnim' ] 
+Nok = ['ko','nok',  'koApps' //, 'koArrFilter', 'koPlus', 'grid'
 ]
-Jet = ['jqui', 'widget','calc']
+Jet = ['jqui', 'widget' ]
 //, 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
 Bone = [
-	'bb', 'bone'//, 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail', 'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
+	'bb' //, 'bbViews', 'bbRouter', 'bbLocalStorage', 'bbAppsData', 'bbColls', 'bbWasPerfect', 'bbAvail', 'bbApps', 'bbAppsBasic', 'bbAppsCool', 'bbAppsMore'
 ]
 Geo = ['clip', 'clipDraw','geo', 'clump', 'scrape', 'separate', 'polyCircle', 'explode']
 Stage = [

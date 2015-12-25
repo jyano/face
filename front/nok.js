@@ -4,7 +4,7 @@ $o = function () {
 	g[0] = g.u ? (g.n ? 0 : 1) : g.f
 	return ko.o.apply(ko, g)
 }
-$oA = function () {
+$oA = $oa=function () {
 	var g = G(arguments)
 	return ko.oA(g.A_ ? g.f : g)
 }
@@ -41,9 +41,6 @@ OK = $ok = function self() {
 					: g.f
 	ok(vm)
 }
-$.fn.dB = function (dB) {
-	return this.at({'data-bind': dB})
-}
 $KOob = function (k, v) {
 	var g = G(arguments)
 	if (g.O) {
@@ -57,7 +54,27 @@ $KOob = function (k, v) {
 	v = v ? ': ' + v : ''
 	return k + v
 }
-$.fn.ko = $.fn.b = function (a, b) {
+$.fn.dB = function (dB, p2) {
+	return this.at({'data-bind': p2? (dB+':'+p2): dB})
+}
+
+$.fn.ko =   function (a, b) {
+	var o = []
+	if (O(a)) {
+		_.e(a, function (v, k) {if (KOob[k]) {k = KOob[k]}
+			o.push(k + ':' + v)
+		})
+		this.b(  $l(o.join()))
+	}
+	
+	else {
+		if (KOob[a]) {a = KOob[a]}
+		str = a + ':' + b;  // str= oO('b', a)
+		this.at({'data-bind': str})
+	}
+	return this
+}
+$.fn.b = function (a, b) {
 	var q = this, g = G(arguments)
 	var str = g.O ? $KOob(g.f) :
 			hasCln(a) ? a :
@@ -67,73 +84,21 @@ $.fn.ko = $.fn.b = function (a, b) {
 		return str.indexOf(':') != -1
 	}
 }
-$.fn.bindKO = b = knockoutBind = function (a, b) {
-	var o = []
-	if (O(a)) {
-		_.each(a, function (v, k) {
-			o.push(oO('b', k) + ':' + v)
-		})
-		this.attr({'data-bind': o.join()})
-	}
-	else {
-		this.attr({
-			b: oO('b', a) + ':' + b
-		})
-	}
-	return this
-}
-$.fn.b = $.fn.ko = function (a, b) {
-	KOob = {
-		t: 'text',
-		h: 'html',
-		s: 'css',
-		y: 'style',
-		a: 'attr',
-		e: 'foreach',
-		i: 'if', n: 'ifnot', w: 'with',
-		$: 'click',
-		ev: 'event',
-		sb: 'submit',
-		en: 'enable',
-		d: 'disable',
-		V: 'valueUpdate',
-		vs: 'visible',
-		f: 'hasFocus',
-		c: 'checked',
-		ch: 'checked',
-		v: 'value', o: 'options',
-		ti: 'textInput',
-		so: 'selectedOptions',
-		u: 'uniqueName',
-		tp: 'template',
-		cm: 'component'
-	}
-	var o = []
-	if (O(a)) {
-		_.e(a, function (v, k) {
-			if (KOob[k]) {
-				k = KOob[k]
-			}
-			o.push(k + ':' + v)
-		})
-		this.at({
-			'data-bind': $l(o.join())
-		})
-	}
-	else {
-		if (KOob[a]) {
-			a = KOob[a]
-		}
-		// str= oO('b', a)
-		str = a + ':' + b;  //$l(': '+ str  )
-		this.at({'data-bind': str})
-	}
-	return this
-}
+/*
+ var o = []
+ if (O(a)) {
+ _.each(a, function (v, k) {
+ o.push(oO('b', k) + ':' + v)
+ })
+ this.attr({'data-bind': o.join()})
+ }
+ else {
+ this.attr({
+ b: oO('b', a) + ':' + b
+ })
+ }
+ */
 function bindings() {
-	text = $.fn.ko_t = $.fn.ko_tx = $.fn.bT = function (s) {
-		return this.b('text', s || '$data')
-	}
 	html = $.fn.ko_ht = function (s) {
 		return this.b('html', s)
 		// = $.fn.bH
@@ -146,15 +111,6 @@ function bindings() {
 	}
 	visib = $.fn.ko_vs = $.fn.bVs = function (s) {
 		return this.b('visible', s)
-	}
-	value = $.fn.bV = function (s) {
-		var g = G(arguments)
-		str = "value: " + s
-		if (!g.n) {
-			str += ", valueUpdate: 'afterkeydown'"
-		}
-		this.b(str)
-		return this
 	}
 	style = $.fn.bY = $.fn.bSy = function (s) {
 		return this.b('style', s)
@@ -172,15 +128,10 @@ function bindings() {
 	click = $.fn.ko_$ = $.fn.ko_click = $.fn.b$ = function (s) {
 		return this.b('click', s)
 	}
-	textIp = $.fn.ko_txIp = $.fn.bTI = $.fn.bTi = function (s) {
-		return this.b('textInput', s)
-	}
 	submit = $.fn.bSm = function (s) {
 		return this.b('submit', s)
 	}
-	checked = $.fn.ko_ch = $.fn.ko_C_ = $.fn.bC = function (s) {
-		return this.b('checked', s)
-	}
+	 
 	focus = $.fn.bF = function (s) {
 		return this.b('hasFocus', s)
 	}
@@ -205,6 +156,22 @@ function bindings() {
 	templ = $.fn.bTp = function (s) {
 		return this.b('template', s)
 	}
+}
+
+$.fn.t$= $.fn.ko_t = $.fn.ko_tx = $.fn.bT = function (s) {
+	return this.b('text', s || '$data')
+}
+$.fn.v$=$.fn.bV = function (s) {
+	var g = G(arguments)
+	str = "value: " + s
+	if (!g.n) {
+		str += ", valueUpdate: 'afterkeydown'"
+	}
+	this.b(str)
+	return this
+}
+$.fn.ko_txIp = $.fn.bTI = $.fn.bTi = function (s) {
+	return this.b('textInput', s)
 }
 function elements() {
 	$.d_w = function (a, b) {
@@ -369,6 +336,20 @@ function elements() {
 		return td
 	}
 }
+
+$.fn.ch$   = function (s) {
+	//= $.fn.ko_C_ = $.fn.bC
+	return this.b('checked', s)
+}
+
+ko.cb = $.cC = function (a) {
+	//$.cb_c =  $.cbC
+	return $.cb().ch$(a)
+}
+ko.sp = function (t) {
+	return $.sp().t$(t)
+}
+
 function inputs() {
 	$.fSb = function (a, b) {
 		var f = $.f()
@@ -477,9 +458,9 @@ function inputs() {
 		}
 		return $.bt(a).b$(b)
 	}
-	$.cb_c = $.cC = $.cbC = function (a) {
-		return $.cb().bC(a)
-	}
+	
+
+	
 	function anc() {
 		$.a$ = function (t, fn) {
 			return $.a(t).b('$', fn)
@@ -593,9 +574,7 @@ function inputs() {
 		$.fn.bS = function (s) {
 			return this.b('css', s)
 		}
-		$.fn.bC = function (s) {
-			return this.dB('checked: ' + s)
-		}
+	
 		$.fn.bO = function (s) {
 			return this.b('options', s)
 		}
@@ -713,6 +692,8 @@ function inputs() {
 		}
 	}
 }
+
+
 function classic() {
 	knockoutBind2 = function (a) {
 
@@ -749,19 +730,34 @@ function alphaPams() {
 }
 function _pre() {
 	KOob = {
+	
 		e: 'foreach',
-		ch: 'checked',
-		c: 'checked',
-		t: 'text', v: 'value', h: 'html', i: 'if', $: 'click',
-		f: 'hasFocus', w: 'with', s: 'css',
-		y: 'style', a: 'attr', en: 'enable',
+		ch: 'checked', c: 'checked',
+		t: 'text',
+		 v: 'value',
+		  h: 'html',
+		 i: 'if',
+		$: 'click',
+		fc: 'hasFocus', hF: 'hasFocus',f: 'hasFocus',
+		 w: 'with',
+		at: 'attr', a: 'attr',
+		en: 'enable',
 		vs: 'visible', tI: 'textInput',
 		o: 'options',
 		oT: 'optionsText',
 		ev: 'event',
-		sm: 'submit', sO: 'selectedOptions', n: 'ifnot', d: 'disable', u: 'uniqueName', vU: 'valueUpdate',
-		cm: 'component', tp: 'template'
+		sm: 'submit',
+		sO: 'selectedOptions',
+		n: 'ifnot',
+		d: 'disable',
+		///////////
+		u: 'uniqueName', vU: 'valueUpdate',
+		cm: 'component', tp: 'template',
+		////////////////////
+		s: 'css', sty: 'style', y: 'style'
+	
 	}
+	
 	ko.ut = ko.u = ko.utils
 	ko.cm = ko.components
 	ko.vE = ko.ve = ko.virtualElements
@@ -793,6 +789,7 @@ function _pre() {
 			return oA
 		}
 	}
+	
 	extending()
 }
 $cO = function () {
@@ -800,17 +797,157 @@ $cO = function () {
 }
 
 KOO = function () {
-	$.h2().A('Hello, ', $.sp().dB('text: fullName'), '!')
-	$.p().A('First name: ', $.ip().dB('value: firstName'))
-	$.p().A('Last name: ', $.ip().dB('value: lastName'))
+	
+	sp = $.sp().t$('fullName')
+	
+	$.h2().A('Hello, ', sp, '!')
+	$.p().A('First name: ', $.ip().v$('firstName') )
+	$.p().A('Last name: ', $.ip().v$('lastName') )
 	
 	VM = function (first, last) {
-		this.firstName = $o(first);
-		this.lastName = $o(last);
+		
+		this.firstName = $o(first)
+		
+		this.lastName = $o(last)
+		
 		this.fullName = $cO(function () {
 			return this.firstName() + " " + this.lastName();
-		}, this)}
 		
-	ok(new VM("rigo", "ochoa"))
+		}, this)
+	}
 	
+	ok(new VM("rigo", "ochoa"))
+}
+COMPUTED = CPD = function () {
+	$.d().A(
+			$.p('F: ', $.b().bT('f')),
+			$.p('L: ', $.b().bT('l')),
+			$.p('F: ', $.ip().bV('f')),
+			$.p('L: ', $.ip().bV('l')).id('l'),
+			$.p('L: ', $.b().bT('fl')),
+			$.bt('caps').b$('capL')
+	)
+	vm = {
+		f: $o('j'),
+		l: $o('y'),
+		capL: function () {
+			this.l(_.tU(this.l()))
+		}
+	}
+	vm.fl = ko.c(function () {
+		return vm.f() + ' ' + vm.l()
+	})
+	ok(vm)
+	function klassk() {
+		KNOCKS = function () {
+			format()
+			s2(h1('KNOCKOUT'),
+					pg('F: ', _B().b('t', 'f')),
+					pg('L: ', _B().b('t', 'l')),
+					pg('F: ', ip().b('V', 'f')),
+					pg('L: ', ip().b('V', 'l')).id('l'),
+					pg('L: ', _B().b('t', 'fl')),
+					bt('caps').b('$', 'capL'))
+			vm = {}
+			vm.f = $o('j')
+			vm.l = $o('y')
+			vm.fl = ko.c(function () {
+				return vm.f() + ' ' + vm.l()
+			})
+			vm.capL = function () {
+				vm.l(uC(vm.l()))
+			}
+			ko.ab(vm)
+		}
+	}
+}
+VALUE = VAL = function () {
+	$.p('Name:').A($.ip().b({
+				v: 'editing',
+				v: 'name',
+				f: 'editing'
+			}),
+			$.d('r').b({v: '!editing()', t: 'name', $: 'edit'}))
+	$.p('Click the name to edit it; click elsewhere to apply changes')
+	ok({
+		name: $o("Bert Bertington"),
+		editing: $o(),
+		edit: function () {
+			vm.editing(true)
+		}
+	})//KOFCC
+}
+WITHH = function () {
+	$.d([
+		$.h1().t$('city'),
+		$.p([
+			'lat:', $.sp().t$('lat'),
+			'lon:', $.sp().t$('lon')
+		]).b('w', 'xy')
+	])
+	ok({
+		city: "London",
+		xy: {lat: 51, lon: -0.1}
+	})
+}
+BSTY = function () {
+	$s({
+		bd: {fS: 100, C: 'p'},
+		_profWarn: {C: 'r', c: 'b'},
+		_profPos: {C: 'b', c: 'r'}
+	})
+	d = $.d(['Prof Info'])
+	str = "{ color: curProf() < 0 ? 'red' : 'black', padding: curProf() < 0 ? '20px' : '200px'}"
+	d.b({y: str})
+	vm = {curProf: $o(150000)}
+	ok(vm)
+	_.in(2, function () {
+		// Causes the "profitPositive" class to be removed
+		// and "profitWarning" class to be added
+		vm.curProf(-50)
+	})
+}
+BCSS = function () {
+	$s({
+		_profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}
+	})
+	$.d(['Prof Info']).fS(40).b({s: 'profSts'})
+	vm = {
+		curProf: $o(150000)
+	}
+	vm.profSts = ko.pureComputed(function () {
+		var res = this.curProf() < 0 ? "profWarn" : "profPos"
+		return res
+	}, vm)
+	ok(vm)
+	_.in(2, function () {
+		// Causes the "profitPositive" class to be removed
+		// and "profitWarning" class to be added
+		vm.curProf(-50)
+	})
+}
+CHECK = SPAMM = function () {
+	$.cKO = function (m, b, v) {
+		var cb = $.cb()
+		var p = $.p().A($.sp().A(m), cb.ch$(b))
+		if (v) {
+			cb.v(v)
+		}
+		return p
+	}//=cbKO=cb2
+	$.p(['spam?',
+		$.cC('wantSpam', 'wantSpam')])
+	$.d([
+		'spam flavors:',
+		$.d([$.cKO('Cherry', 'flav', 'cherry')]),
+		$.d([$.cKO('Almond', 'flav', 'almond')]),
+		$.d([$.cKO('Glut', 'flav', 'glut')])])
+			.bVs('wantSpam')
+	vm = {wantSpam: $o(1), flav: $oa(["cherry", "almond"])}
+	ok(vm)
+	_.in(2, function () {
+		vm.wantSpam(0)
+	})
+//bind cb 'checked' to boolean
+	//vm.spamFlavors.push("msg"); // Now additionally checks the Monosodium Glutamate checkbox
 }

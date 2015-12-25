@@ -37,7 +37,7 @@ KNOCKS = function () {
 	ko.ab(MVM())
 }
 KNOCKS1 = function () {
-	format()
+	$.format()
 	s2(
 			h2('Your seat reservations'),
 			$.t().A($.tH().A($.tr().A(
@@ -77,7 +77,7 @@ KNOCKS1 = function () {
 	ko.ab(vm)
 }
 KNOCKS1 = function () {
-	format()
+	$.format()
 	s2(
 			h2('Your seat reservations'),
 			_t()(
@@ -143,26 +143,13 @@ KNOCKS4 = function () {
 	)
 	ok(TLVM())
 }
- 
-KKO = function () {
-	d = $(str).A()
-	ViewModel = function (first, last) {
-		this.firstName = ko.observable(first);
-		this.lastName = ko.observable(last);
-		this.fullName = ko.computed(function () {
-			// Knockout tracks dependencies automatically.
-			// It knows that fullName depends on firstName and lastName,
-			// because these get called when evaluating fullName.
-			return this.firstName() + " " + this.lastName();
-		}, this);
-	};
-	ok(new ViewModel("Planet", "Earth"))
-}
-CHL = function () {
-	$.h1('shown!').slV()
-	$.cC()
-	ok()
-}
+ function option(){
+	 CHL = function () {
+		 $.h1('shown!').slV()
+		 $.cC()
+		 ok()
+	 }
+ }
 FCB = function () {//working!!!
 	_$({
 		C: 'u', t: 'read&write els “focusedness”  by binding it to  obserb',
@@ -201,7 +188,7 @@ TLVM = function () {
 	return o
 }
 KOTEMP = function () {
-	format()
+	$.format()
 	s2(
 			ip('r').at({name: 'choices', value: 'summary'}).b('ch', 'selectedView'), sp('summary'),
 			ip('r').at({name: 'choices', value: 'details'}).b('ch', 'selectedView'), sp('details'),
@@ -245,7 +232,7 @@ KOTEMP2 = function () {
 	ko.ab({})
 }
 KOTEMP = function () {
-	format()
+	$.format()
 	s2(
 			ip('r').at({name: 'choices', value: 'summary'}).b('ch', 'selectedView'), sp('summary'),
 			ip('r').at({name: 'choices', value: 'details'}).b('ch', 'selectedView'), sp('details'),
@@ -289,7 +276,7 @@ KOTEMP2 = function () {
 	ko.ab({})
 }
 KOVIS = function () {
-	format()
+	$.format()
 	s2(
 			h1('you should seee if true!!!!').b('vs', 'ssm')
 	)
@@ -311,26 +298,28 @@ FCB = function () {
 					.b("enable: !editingName(), click:function() { editingName(true) }")]
 	})
 }
-BLM = function () {
-	var o = {}
-	o.itemToAdd = $o('')
-	o.allItems = $oa(['a', 'b', 'c'])
-	o.selectedItems = $oa(['d'])
-	o.addItem = function () {
-		if (o.itemToAdd() != ''//&& o.allItems.indexOf(o.itemToAdd())<0
-		) {
-			o.allItems.push(o.itemToAdd());
-			o.itemToAdd('')
+function huh(){
+	BLM = function () {
+		var o = {}
+		o.itemToAdd = $o('')
+		o.allItems = $oa(['a', 'b', 'c'])
+		o.selectedItems = $oa(['d'])
+		o.addItem = function () {
+			if (o.itemToAdd() != ''//&& o.allItems.indexOf(o.itemToAdd())<0
+			) {
+				o.allItems.push(o.itemToAdd());
+				o.itemToAdd('')
+			}
 		}
+		o.removeSelected = function () {
+			o.allItems.removeAll(o.selectedItems())
+			o.selectedItems([])
+		}
+		o.sortItems = function () {
+			o.allItems.sort()
+		}
+		return o
 	}
-	o.removeSelected = function () {
-		o.allItems.removeAll(o.selectedItems())
-		o.selectedItems([])
-	}
-	o.sortItems = function () {
-		o.allItems.sort()
-	}
-	return o
 }
 KOSCR = function () {
 	$.bd().A(
@@ -339,14 +328,16 @@ KOSCR = function () {
 	)
 	ok({})
 }
-KOS = function () {
-	$.d('Profit Information')
-			.bS("{color:curProf()<0?'red':'black'}")
-	ok({curProf: $o(50)})
+KOSS = function () {
+	d=$.d().A('Profit Information')
+	d.dB('css',"{color:curProf()<0?'red':'black'}")
+	vm = {curProf: $o(50)}
+	ok(vm)
 	_.in(function () {
 		vm.curProf(-50)
 	})
 }
+
 KOAT = function () {
 	_$({
 		C: 'w',
@@ -395,18 +386,21 @@ TXIPROOT = TXI = function () {
 	})
 }//$.ipTi  $.pwTi   $.pre  bT  ko.toJSON  $root
 BHTML = HTM = function () {
-	$.z().dH('details').fS(100);
+	$.dH('details').fS(100);
 	ok('h', $o('wait..'));
 	_.in(2, function () {
 		vm.h("<em>report:<a href='http://www.playboy.com'>here</a>.</em>")
 	})
 }// dH
+
 ATTR = function () {
 	$.aA('{href:url, title:tt}', 'report').fS(100)
 	ok({url: $o("http://www.hustler.com"), tt: $o("statistics")})
 }// aA
+
 VISABLE = VIS = function () {
-	$.z('y').h1('see me if true!').bVs('vs')
+
+	$.h1('see me if true!').bVs('vs')
 	$.h1('ALWAYS HERE!');
 	ok('vs', $o(1))
 	_.in(function () {
@@ -416,90 +410,33 @@ VISABLE = VIS = function () {
 		})
 	})
 }// bVs
-IF = function () {
+
+IFF = function () {
 	$.d([
 		'Display?', $.cC('ms'),
-		$.pI('ms').A('Here is a message. Astonishing')
+		$.pI('ms')
+				.A('Here is a message. Astonishing')
 	])
 	ok({ms: $o(0)})
 	_.in(function () {
 		vm.ms(1)
 	})
-} //$.cC  $.pI
+}
+ //$.cC  $.pI
+ 
 ENABLE = EN = function () {
 	$.p().A($.cbC('hasPhone'), 'I have phone')
 	$.p('Your cellphone number').A(
 			$.ip().b({v: 'num', en: 'hasPhone'}))
 	ok({hasPhone: $o(0), num: ''})
 }
-VALUE = VAL = function () {
-	$.x('K1');
-	$Ms('K1')
-	$.p('Name:').A($.ip().b({
-				v: 'editing',
-				v: 'name',
-				f: 'editing'
-			}),
-			$.d('r').b({v: '!editing()', t: 'name', $: 'edit'}))
-	$.p('Click the name to edit it; click elsewhere to apply changes')
-	ok({
-		name: $o("Bert Bertington"),
-		editing: $o(),
-		edit: function () {
-			vm.editing(true)
-		}
-	})//KOFCC
-}
+ 
 SEL = CUNTS = function (n, v) {
 	$.sO('cunts')
 	ok('cunts', $oa('Fran', 'Ger', 'Spa'))
 	_.in(2, function () {
 		vm.cunts.push('Chi')
 	})
-}
-COMPUTED = CPD = function () {
-	$.z().h1('KNOCKOUT') //bT,bV and computed
-	$.d().A(
-			$.p('F: ', $.b().bT('f')),
-			$.p('L: ', $.b().bT('l')),
-			$.p('F: ', $.ip().bV('f')),
-			$.p('L: ', $.ip().bV('l')).id('l'),
-			$.p('L: ', $.b().bT('fl')),
-			$.bt('caps').b$('capL')
-	)
-	vm = {
-		f: $o('j'),
-		l: $o('y'),
-		capL: function () {
-			this.l(_.tU(this.l()))
-		}
-	}
-	vm.fl = ko.c(function () {
-		return vm.f() + ' ' + vm.l()
-	})
-	ok(vm)
-	function klassk() {
-		KNOCKS = function () {
-			format()
-			s2(h1('KNOCKOUT'),
-					pg('F: ', _B().b('t', 'f')),
-					pg('L: ', _B().b('t', 'l')),
-					pg('F: ', ip().b('V', 'f')),
-					pg('L: ', ip().b('V', 'l')).id('l'),
-					pg('L: ', _B().b('t', 'fl')),
-					bt('caps').b('$', 'capL'))
-			vm = {}
-			vm.f = $o('j')
-			vm.l = $o('y')
-			vm.fl = ko.c(function () {
-				return vm.f() + ' ' + vm.l()
-			})
-			vm.capL = function () {
-				vm.l(uC(vm.l()))
-			}
-			ko.ab(vm)
-		}
-	}
 }
 ULIF = function () {
 	$.x()
@@ -527,54 +464,6 @@ SELMULTI = SLM = function () {
 	})
 	_.in(function () {
 		vm.chosen.push('France')
-	})
-}
-BSTY = function () {
-	$s({
-		bd: {fS: 100, C: 'p'},
-		_profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}
-	});
-	d = $.d(['Prof Info'])
-	str = "{ color: curProf() < 0 ? 'red' : 'black', padding: curProf() < 0 ? '20px' : '200px'}"
-	d.b({y: str})
-	vm = {curProf: $o(150000)}
-	ok(vm)
-	_.in(2, function () {
-		// Causes the "profitPositive" class to be removed
-		// and "profitWarning" class to be added
-		vm.curProf(-50)
-	})
-}
-BCSS = function () {
-	$s({
-		_profWarn: {C: 'r', c: 'b'}, _profPos: {C: 'b', c: 'r'}
-	})
-	$.d(['Prof Info']).fS(40).b({s: 'profSts'})
-	vm = {
-		curProf: $o(150000)
-	}
-	vm.profSts = ko.pureComputed(function () {
-		var res = this.curProf() < 0 ? "profWarn" : "profPos"
-		return res
-	}, vm)
-	ok(vm)
-	_.in(2, function () {
-		// Causes the "profitPositive" class to be removed
-		// and "profitWarning" class to be added
-		vm.curProf(-50)
-	})
-}
-WITH = function () {
-	$.d([
-		$.h1().bT('city'),
-		$.p([
-			'lat:', $.spT('lat'),
-			'lon:', $.spT('lon')
-		]).b('w', 'xy')
-	])
-	ok({
-		city: "London",
-		xy: {lat: 51, lon: -0.1}
 	})
 }
 STARRATING = function () {
@@ -708,42 +597,10 @@ KOSPA = SPA = function () {
 		this.folders = ['Inbox', 'Archive', 'Sent', 'Spam'];
 	}))
 }
-KOCSS = function () {
-	$.d().fS(400).A('Profit Information')
-			.bS("{color:curProf()<0?'red':'blue'}")
-	ok({curProf: $o(50)})
-	_.in(function () {
-		vm.curProf(-50);
-		$l('booya')
-	})
-}
+ 
 //https://www.youtube.com/watch?v=roeKTS8Z0I0&index=4&list=PLzpzty4VRTPfbao0m8oADCmBD5BmWM4rT
 str = "<div class='liveExample'><p>First name: <input data-bind='value: firstName' /></p><p>Last name: <input data-bind='value: lastName' /></p><h2>Hello, <span data-bind='text: fullName'> </span>!</h2></div>"
-CHECK = SPAM = function () {
-	$.cKO = function (m, b, v) {
-		var cb = $.cb()
-		var p = $.p().A($.sp().A(m), cb.bC(b))
-		if (v) {
-			cb.v(v)
-		}
-		return p
-	}//=cbKO=cb2
-	$.p(['spam?',
-		$.cbC('wantSpam', 'wantSpam')])
-	$.d([
-		'spam flavors:',
-		$.d([$.cKO('Cherry', 'flav', 'cherry')]),
-		$.d([$.cKO('Almond', 'flav', 'almond')]),
-		$.d([$.cKO('Glut', 'flav', 'glut')])])
-			.bVs('wantSpam')
-	vm = {wantSpam: $o(1), flav: $oa(["cherry", "almond"])}
-	ok(vm)
-	_.in(2, function () {
-		vm.wantSpam(0)
-	})
-//bind cb 'checked' to boolean
-	//vm.spamFlavors.push("msg"); // Now additionally checks the Monosodium Glutamate checkbox
-}
+ 
 initialData = [
 	{name: "Well-Travelled Kitten", sales: 352, price: 75.95},
 	{name: "Speedy Coyote", sales: 89, price: 190.00},
