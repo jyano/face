@@ -4248,7 +4248,6 @@ ko.bindingHandlers.randomOrder = {
 		}
 	}
 };
- 
 ko.bH = ko.bindingHandlers
 ko.bH.randomOrder = {
 	init: function (el, vA) {

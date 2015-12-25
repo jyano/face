@@ -4,7 +4,6 @@ $.fn.bindKOEach = fe = forEach = function (a) {
 $.fn.bindKOEachData = feD = forEachData = function (a) {
 	return this.bindKOEach('$data.' + a)
 }
-
 //////////////////////////////////
 $.ol_e = $.olE = $.olBe = function (a, b) {
 	var ol = $.ol().bE(a)
@@ -223,7 +222,6 @@ $.tdT = function (a, b) {
 	}
 	return td
 }
-
 ////////////////////////////////////////////////////
 K3 = function () {
 	z()
