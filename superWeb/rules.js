@@ -261,30 +261,9 @@ function eh() {
 		})
 		return d
 	}
-	_$ = function (ob) {
-		ob.C = ob.C || $r()
-		$.x(ob.C, ob.t)
-		if (ob.vm) {
-			OK(ob.vm)
-		}
-		if (ob.el) {
-			els(ob.el)
-		}
-		if (ob.A) {
-			_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
-				q.A()
-			})
-		}
-		if (ob._) {
-			$.in(ob._)
-		}
-	}
-	$.s = function (css, c, tx) {
-		$s(css)
-		$.x(c, tx)
-		return $
-	}
+ 
 }
+
 $L('plugs', 'mixs', 'helps', 'defs')
 function plugs() {
 // PLUGINS ARE FUNCTIONS THAT EXTEND THE CSS OBJECT

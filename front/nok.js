@@ -1,3 +1,4 @@
+$L('bindings')
 ko.aB = ko.ab = ko.applyBindings
 ko.o = ko.observable
 ko.c = ko.computed
@@ -24,7 +25,7 @@ ok = function self(vm, el) {
 	ko.aB(vm, el)
 	return vm
 }
-$ok = function self() {
+OK =$ok = function self() {
 
 // ???? pass plain object and element(string or ob?) :)
 	var g = G(arguments)
@@ -447,12 +448,7 @@ function inputs() {
 		}
 		return pg
 	}
-	$.iV = warning = $.ipV = $.ipBv = function () {
-		var g = G(arguments), ip
-		ip = $.ip()
-		ip.bV.apply(ip, g)
-		return ip
-	}
+
 	$.fSm = $.fBSm = function (a, b) {
 		var f = $.f();
 		f.bSb(a)
@@ -477,11 +473,15 @@ function inputs() {
 	}
 	$.ipV = $.ipBv = function () {
 		var g = G(arguments),
-				ip = $.ip(),
-				ip
-		.
-		bV.apply(ip, g)
+				ip = $.ip()
+				ip.bV.apply(ip, g)
 		return ip
+		$.iV = warning = $.ipV = $.ipBv = function () {
+			var g = G(arguments), ip
+			ip = $.ip()
+			ip.bV.apply(ip, g)
+			return ip
+		}
 	}
 	$.sO = $.slO = function (a) {
 		return $.sl().bO(a)
@@ -1075,4 +1075,56 @@ function alphaPams() {
 		this.qA(a).par(b, c)
 		return this
 	}
+}
+$.format = function () {
+	section1 = s1 = $.sp()
+	section2 = s2 = $.sp()
+	$.d().A( section1)
+	$.d().A( section2)
+}
+$l('nok')
+_$ = function (ob) {
+	ob.C = ob.C || $r()
+	$.x(ob.C, ob.t)
+	if (ob.vm) {
+		OK(ob.vm)
+	}
+	if (ob.el) {
+		els(ob.el)
+	}
+	if (ob.A) {
+		_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
+			q.A()
+		})
+	}
+	if (ob._) {
+		$.in(ob._)
+	}
+}
+$.s = function (css, c, tx) {
+	$s(css)
+	$.x(c, tx)
+	return $
+}
+$.x = function (c, t) {
+	var g = G(arguments), bd = $.bd()
+	bd.E()
+	if (g.O_) {
+		$s(g.f)
+		if (g.s) {
+			$.h1(g.s);
+			$.hr().A()
+		}
+		bd.C(g.t || $r())
+	}
+	else {
+		bd.C(c || $r())
+		if (t) {
+			bd.A($.h1(t))
+		}
+	}
+	if (g.p) {
+		bd.A($.hr())
+	}
+	return $
 }

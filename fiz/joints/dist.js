@@ -854,7 +854,7 @@ function blob(){
 		b2d.hB = b2d.hBit = b2d.shapeBit = b2d.DD.e_shapeBit
 		b2d.jB = b2d.jBit = b2d.jointBit = b2d.DD.e_jointBit
 		b2d.sB = b2d.B.b2_staticBody
-		$.x = $.extend
+		//$.x = $.extend
 		M.sumSqr = function (x, y) {
 			return x * x + y * y
 		}

@@ -500,6 +500,7 @@ function nest() {
 		})
 		return sp
 	}
+	
 	$.S = $.str = function () {
 		var g = G(arguments), s = $('<strong>');
 		_.e(g, function (g) {
@@ -507,10 +508,11 @@ function nest() {
 		});
 		return s
 	}
+	
 	$.pre = function () {
 		return $("<pre>").A()
 	}
-	$.b = function (a, k) {
+	_B=$.b = $.B =function (a, k) {
 		var g = G(arguments), b = $('<b>')
 		//if(g.p){a =  '&nbsp;'+a  }
 		//  b.H(a)
@@ -523,6 +525,7 @@ function nest() {
 		}
 		return b
 	}
+	  
 	$.hdr = function () {//$.H=
 		var g = G(arguments), hdr = $('<header>')
 		//  return $.ip().ty('header').n(n).v(v)
@@ -541,13 +544,7 @@ function nest() {
 		hdr.A()
 		return hdr
 	}
-	$.B = function (a) {
-		var q = $('<bold>')
-		if (a) {
-			q.A(a)
-		}
-		return q
-	}
+	 
 	$.nv = function () {
 		return $('<nav>')
 	}
