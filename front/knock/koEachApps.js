@@ -1,443 +1,3 @@
-BINDUL = BUL = MONK = function () {
-	 
-	$.h1('monkey').bT('monkey')
-	$.iV('monkey')
-	$.sb('hello').b$('A')
-	//  $.s$('a','play');
-//    $.U('cl',[            'my name is ',$.sT('n'),            ' and i like to play ', $.sT('c')])
-	$.uE('list', [$.li(['my name is ',
-		$.sT('n'), ' and i like to play ',
-		$.sT('c')])])
-	vm = {
-		monkey: $o(),
-		list: $oa(),
-		A: function () {
-			this.list.p({n: 'j', c: $r()})
-		}
-	}
-	vm.monkey('elephant')
-	ok(vm)
-	vm.A().A().A()
-	//https://www.youtube.com/watch?v=JGwRIbWWqjE
-}
-ULADD = ULA = function () {
-	$.lb('Show time: ').A($.cbC('showDT'))
-	$.uE('peep', [$.li().A(
-			$.d([$.spT('n'), 'has',
-				$.spT('ch().length'),
-				'children &nbsp;',
-				$.a$('New', 'A')]),
-			$.ulE('ch', [
-				$.li([$.spT(), $.spVs('$root.showDT').A(
-						' (child rendered at ', $.spT('new Date().getSeconds()'), ')'
-				)])]))])
-	ok({
-		peep: peep,
-		showDT: $o()
-	})
-	peep()
-	//add, conditional el
-	//anonymous vm
-}
-ULDEL = ULD = function () {
-	$.h4('People')
-//bind bt 'click' to parent.rem
-	$.ulE('peep', [$.li([
-		$.sp('pos/name: '),
-		$.spT('$index'),
-		$.spT('n'),
-		$.$bt('del', 'rm', '-')
-	])])
-	$.$bt('A')
-	ok({
-		peep: $oa({n: 'B'}, {n: 'Ch'}, {n: 'De'}),
-		A: function () {
-			this.peep.push({n: "New at " + $D()})
-		},
-		rm: function (a) {
-			vm.peep.remove(this)
-		}
-	})
-	function klassic() {
-		ULINDEX = function () {
-			format()
-			s2(
-					h4('People'),
-					ul().b('E', 'people')(
-							li()(
-									sp('pos/name: '),
-									sp().b('t', '$index'),
-									sp().b('t', 'n'),
-									lk(' X').b('$', '$parent.rem')
-							)
-					),
-					bt('add').b('$', 'add')
-			)
-			vm = function () {
-				var o = {}
-				o.people = $oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-				o.add = function () {
-					o.people.push({n: "New at " + new Date()})
-				}
-				o.rem = function () {
-					o.people.remove(this)
-				}
-				return o
-			}
-			ko.ab(vm()
-			)
-		}
-	}
-}
-ULROOT = function () {$.uE('fs', [$.li().b({t: '$data',
-			s: '{selected: $data==$root.chFI()}',
-			$: '$root.gtf'})
-	]).K('fs')
-	$.A(
-			ul().k('fs').b('E', "fs")(
-			li().b("text:$data, css:{selected:$data==$root.chFI()},click:$root.gtf")))
-	MVM = function () {
-		var vm = {
-			fs: ['I', 'A', 'Se', 'Sp'],
-			chFI: $o()
-		}
-		vm.gtf = function (f) {
-			vm.chFI(f)
-		}
-		return vm
-	}
-	ok(MVM())
-}
-KOCL = function () {
-	$.x('x').h2('Peeep')
-	Per = function (n, ch) {
-		var per = this
-		per.n = n
-		per.ch = ko.oa(ch)
-		per.A = function () {
-			per.ch.push('new ch')
-		}
-	}
-	peep = [
-		new Per("Annabelle", ["Arnie", "Anders", "Apple"]),
-		new Per("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
-		new Per("Charles", ["Cayenne", "Cleopatra"])
-	]
-	$.uE('peep', [
-		$.li().A(
-				$.d([
-					$.spT('n'), 'has',
-					$.spT('ch().length'),
-					'children &nbsp;',
-					$.a$('New', 'A')
-				]),
-				$.ulE('ch', [
-					$.li([
-						$.spT(), $.spVs('$root.showDT').A(
-								' (child rendered at ', $.spT('$Dt().getSeconds()'), ')'
-						)])
-				])
-		)
-	])
-	$.cbC('showDT').a2Lb('Show time:')
-	//anonymous vm
-	OK({peep: peep, showDT: kO()})
-}
-KOEACH = function () {
-	$.format()
-	s2(
-			$.t().A(
-					thead()(
-							tr()(th()('First name'),
-							 th()('Last name'))),
-					tbody().b('E', 'people')(tr()(
-							td().b('t', 'fn'), 
-							td().b('t', 'ln'))
-					)
-			)
-	)
-	
-	ok({people: [
-			{fn: 'B', ln: 'Bert'},
-			{fn: 'Ch', ln: 'Char'},
-			{fn: 'De', ln: 'Dent'}
-		]
-	})
-}
-
-
-KOEACH2 = function () {
-	format()
-	s2(
-			h4('People'),
-			ul().b('E', 'people')(
-					li()(
-							sp('pos/name: '),
-							sp().b('t', '$index'),
-							sp().b('t', 'n'),
-							lk(' X').b('$', '$parent.rem')
-					)
-			),
-			bt('add').b('$', 'add')
-	)
-	vm = function () {
-		var o = {}
-		o.people = ko.oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-		o.add = function () {
-			o.people.push({n: "New at " + new Date()})
-		}
-		o.rem = function () {
-			o.people.remove(this)
-		}
-		return o
-	}
-	ko.ab(vm()
-	)
-}
-$.tdT = function (a, b) {
-	var td = $.td()
-	td.bT(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			td.A(el)
-		})
-	}
-	return td
-}
-$.liT = $.liBt = function (a) {
-	return $.li().bT(a)
-}
-$.olE = $.olBe = function (a, b) {
-	var ol = $.ol().bE(a)
-	if (b) {
-		ol.A(b)
-	}
-	return ol
-}
-$.tBE = function (a, b) {
-	var tB = $.tB()
-	tB.bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			tB.A(el)
-		})
-	}
-	return tB
-}
-function tabl() {
-	$.tBE = function (a, b) {
-		var g = G(arguments),
-				tB = $.tB()
-		tB.bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				tB.A(el)
-			})
-		}
-		else {
-			_.e(g.r, function (q) {
-				tB.A((q[0].tagName == "TD") ? q : $.td().A(q))
-			})
-		}
-		return tB
-	}
-	$.tBT = function (arr) {
-		var g = G(arguments),
-				tB = $.tB(), tr = $.tr()
-		_.e(g.r, function (q) {
-			tr.A(q)
-		})
-		return tB.bE(arr).A(tr)
-	}
-	$.tBE = function (a, b) {
-		var tB = $.tB()
-		tB.bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				tB.A(el)
-			})
-		}
-		return tB
-	}
-	$.tdT = function (a, b) {
-		var td = $.td()
-		td.bT(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				td.A(el)
-			})
-		}
-		return td
-	}
-};
-function ul() {
-	$.U = function () {
-		var g = G(arguments)
-		return $.uE(g.f, [$.li(g.s)])
-	}
-	$.uE = $.ulE = function (a, b, c) {
-		var g = G(arguments)
-		var ul = $.ul().bE(a)
-		if (c) {
-			b = $.li(_.r(g))
-		}
-		else if (O(b) && !A(b)) {
-			b = [b]
-		}
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-	}
-};
-$.U = function () {
-	var g = G(arguments)
-	return $.uE(g.f, [$.li(g.s)])
-}
-$.uE = $.ulE = function (a, b) {
-	var ul = $.ul().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			ul.A(el)
-		})
-	}
-	else if (S(b)) {
-		ul.A(b)
-	}
-	return ul
-}
-$.uE = $.ulE = function (a, b, c) {
-	var g = G(arguments)
-	var ul = $.ul().bE(a)
-	if (c) {
-		b = $.li(_.r(g))
-	}
-	else if (O(b) && !A(b)) {
-		b = [b]
-	}
-	if (A(b)) {
-		_.e(b, function (el) {
-			ul.A(el)
-		})
-	}
-	else if (S(b)) {
-		ul.A(b)
-	}
-	return ul
-	function old() {
-		$.uE = $.uE = $.ulE = function (a, b) {
-			var ul = $.ul().bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					ul.A(el)
-				})
-			}
-			else if (S(b)) {
-				ul.A(b)
-			}
-			return ul
-		}
-	}
-}
-$.U = function () {
-	var g = G(arguments)
-	return $.uE(g.f, [$.li(g.s)])
-}
-$.olE = function (a, b) {
-	var ol = $.ol().bE(a)
-	if (b) {
-		ol.A(b)
-	}
-	return ol
-}
-$.uLE = function (a) {
-	var g = G(arguments);
-	return $.ulE(a, $.li(g.r))
-}
-$.liT = $.liBt = function (a) {
-	return $.li().bT(a)
-}
-$.olE = $.olBe = function (a, b) {
-	var ol = $.ol().bE(a)
-	if (b) {
-		ol.A(b)
-	}
-	return ol
-}
-$.U = function () {
-	var g = G(arguments)
-	return $.uE(g.f, [$.li(g.s)])
-}
-$.u_e = $.uE = $.ulE = function (a, b) {
-	var ul = $.ul().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			ul.A(el)
-		})
-	}
-	else if (S(b)) {
-		ul.A(b)
-	}
-	return ul
-}
-$.dE = function (a, b) {
-	var d = $.d().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			d.A(el)
-		})
-	}
-	else if (S(b)) {
-		d.A(b)
-	}
-	return d
-}
-$.dE = function (a, b) {
-	var d = $.d().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			d.A(el)
-		})
-	}
-	else if (S(b)) {
-		d.A(b)
-	}
-	return d
-}
-$.dE = function (a, b) {
-	var d = $.d().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			d.A(el)
-		})
-	}
-	else if (S(b)) {
-		d.A(b)
-	}
-	return d
-}
-$.fn.bE = function (s) {
-	return this.b('foreach', s)
-}
-$.fn.koE = $.fn.eKo = function (a) {
-	alert('koE')
-	return this.bindKO('fe', a)
-}
-$.fn.eD = $.fn.eB = function (a) {
-	alert('ko eD')
-	return this.bindKOEach('$data.' + a)
-}
-$.fn.bindKOEach = fe = forEach = function (a) {
-	return this.bindKO('fe', a)
-}
-$.fn.bindKOEachData = feD = forEachData = function (a) {
-	return this.bindKOEach('$data.' + a)
-}
 K3 = function () {
 	z()
 	ko.$bH({
@@ -612,33 +172,6 @@ WITHPARENT = WPA = function () {
 		}
 	}))
 }
-$.ol_e = $.olE = $.olBe = function (a, b) {
-	var ol = $.ol().bE(a)
-	if (b) {
-		ol.A(b)
-	}
-	return ol
-}
-$.t_e = $.tBE = function (a, b) {
-	var tB = $.tB()
-	tB.bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			tB.A(el)
-		})
-	}
-	return tB
-}
-$.fn.ko_e = $.fn.ko_each = function (s) {
-// = $.fn.bE
-	// if called from $.fn.eD = $.fn.eB =  feD = ... use '+'
-	var g = G(arguments)
-	if (g.p) {
-		return '$data.' + s
-	}
-	return this.b('foreach', s)
-}
-//
 TTR = function () {
 	$('body').fS(30)
 	$.t([
@@ -679,30 +212,6 @@ TTR = function () {
 			})
 		}
 	}
-}
-$.d_e = $.dE = function (a, b) {
-	var d = $.d().bE(a)
-	if (A(b)) {
-		_.e(b, function (el) {
-			d.A(el)
-		})
-	}
-	else if (S(b)) {
-		d.A(b)
-	}
-	return d
-}
-$.fn.koE = $.fn.eKo = function (a) {
-	return this.bindKO('fe', a)
-}
-$.fn.eD = $.fn.eB = function (a) {
-	return this.bindKOEach('$data.' + a)
-}
-$.fn.koE = $.fn.eKo = function (a) {
-	return this.bindKO('fe', a)
-}
-$.fn.eD = $.fn.eB = function (a) {
-	return this.bindKOEach('$data.' + a)
 }
 MENU = function () {
 	$.z('b').h2('Your seat reservations')
@@ -1118,5 +627,318 @@ KOGRID = function () {
 	]))
 	// $("form").validate({ submitHandler: vm.save }) // Activate jQuery Validation
 }
-//broken
- 
+TWT = function () {
+	$.x('r', 'twt')
+	OK({
+		un: ko.o('@ex'),
+		da: ko.o(),
+		g: function () {
+			vm.da({
+				dt: $D(),
+				MS: _.m(['a', 'b'],
+						function (t) {
+							return {ms: vm.un() + ':' + t}
+						})
+			})
+		},
+		clr: function () {
+			vm.da([])
+		}
+		//<- $.bt('Clear tweets').b$(' $parent.clearResults')
+	})
+	$.fSb('g', ['un:',
+		$.ipV('un'), $.sb('Get')
+	])
+	$.dW('da', [
+		$.h3('dt:', $.spT('dt')),
+		$.olE('MS', $.liT('ms')),
+		$.bt$('clr', '$parent.clr')
+	]).A()
+}
+TWT = function () {
+	$.x('r', 'twt')
+	OK({
+		un: ko.o('@ex'),
+		da: ko.o(),
+		g: function () {
+			vm.da({
+				dt: $D(),
+				MS: _.m(['a', 'b'],
+						function (t) {
+							return {ms: vm.un() + ':' + t}
+						})
+			})
+		},
+		clr: function () {
+			vm.da([])
+		}
+		//<- $.bt('Clear tweets').b$(' $parent.clearResults')
+	})
+	$.fSb('g', ['un:',
+		$.ipV('un'), $.sb('Get')
+	])
+	$.dW('da', [
+		$.h3('dt:', $.spT('dt')),
+		$.olE('MS', $.liT('ms')),
+		$.bt$('clr', '$parent.clr')
+	]).A()
+}
+OLTWT = function () {
+	$.x('r', 'twt')
+	$.fSm('g', ['un:', $.ipV('un'), $.sb('Get')])
+	$.dW('da', [
+		$.h3('dt:', $.spT('dt')),
+		$.olE('MS',
+				$.liT('ms')),
+		$.bt$('clr', ' $parent.clr')
+	])
+	ok({
+		un: $o('@ex'),
+		da: $o(),
+		g: function () {
+			vm.da({
+				dt: $D(),
+				MS: _.m(['a', 'b'],
+						function (t) {
+							return {ms: vm.un() + ':' + t}
+						})
+			})
+		},
+		clr: function () {
+			vm.da([])
+		}
+		//<- $.bt('Clear tweets').b$(' $parent.clearResults')
+	})
+}
+ULTIARR = function () {
+	$.x();
+	$.ipTi('n');//textInput
+	$.h1T('n');//h1 text (read only) // $.dA('b',100,300,200,'+').bT('n')
+	//ul each 'array'
+	$.ulE('arr', [$.liT()])
+	$.sm().b$('A')
+	ok({
+		n: $o('zi'), arr: $oa(),
+		A: function () {
+			this.arr.p(this.n())
+		}
+	})
+	_.in(1, function () {
+		vm.n('girf')
+		_.e(['a', 'b', 'c'], function (i) {
+			vm.arr.p(i)
+		})
+	})
+}
+ULNEST = function () {
+	$.x('x').h2('Pp')
+	$.ulE('peep', $.d([  // name has length children
+				$.spT('n'), 'has', $.spT('ch().length'), 'children &nbsp;',
+				//new
+				$.a$('New', 'A')
+			]),
+			$.uLE('ch',
+					$.spT(), //child name
+					$.spVs('$root.showDT').A('(child rendered at ', $.spT('$Dt().getSeconds()'), ')')
+			)
+	)
+	$.lb('show time: ').A($.cbC('showDT'))
+	//anonymous vm
+	ok({peep: peep, showDT: $o()})
+}
+BINDUL = BUL = MONK = function () {
+	$.h1('monkey').bT('monkey')
+	$.iV('monkey')
+	$.sb('hello').b$('A')
+	//  $.s$('a','play');
+//    $.U('cl',[            'my name is ',$.sT('n'),            ' and i like to play ', $.sT('c')])
+	$.uE('list', [$.li(['my name is ',
+		$.sT('n'), ' and i like to play ',
+		$.sT('c')])])
+	vm = {
+		monkey: $o(),
+		list: $oa(),
+		A: function () {
+			this.list.p({n: 'j', c: $r()})
+		}
+	}
+	vm.monkey('elephant')
+	ok(vm)
+	vm.A().A().A()
+	//https://www.youtube.com/watch?v=JGwRIbWWqjE
+}
+ULADD = ULA = function () {
+	$.lb('Show time: ').A($.cbC('showDT'))
+	$.uE('peep', [$.li().A(
+			$.d([$.spT('n'), 'has',
+				$.spT('ch().length'),
+				'children &nbsp;',
+				$.a$('New', 'A')]),
+			$.ulE('ch', [
+				$.li([$.spT(), $.spVs('$root.showDT').A(
+						' (child rendered at ', $.spT('new Date().getSeconds()'), ')'
+				)])]))])
+	ok({
+		peep: peep,
+		showDT: $o()
+	})
+	peep()
+	//add, conditional el
+	//anonymous vm
+}
+ULDEL = ULD = function () {
+	$.h4('People')
+//bind bt 'click' to parent.rem
+	$.ulE('peep', [$.li([
+		$.sp('pos/name: '),
+		$.spT('$index'),
+		$.spT('n'),
+		$.$bt('del', 'rm', '-')
+	])])
+	$.$bt('A')
+	ok({
+		peep: $oa({n: 'B'}, {n: 'Ch'}, {n: 'De'}),
+		A: function () {
+			this.peep.push({n: "New at " + $D()})
+		},
+		rm: function (a) {
+			vm.peep.remove(this)
+		}
+	})
+	function klassic() {
+		ULINDEX = function () {
+			format()
+			s2(
+					h4('People'),
+					ul().b('E', 'people')(
+							li()(
+									sp('pos/name: '),
+									sp().b('t', '$index'),
+									sp().b('t', 'n'),
+									lk(' X').b('$', '$parent.rem')
+							)
+					),
+					bt('add').b('$', 'add')
+			)
+			vm = function () {
+				var o = {}
+				o.people = $oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
+				o.add = function () {
+					o.people.push({n: "New at " + new Date()})
+				}
+				o.rem = function () {
+					o.people.remove(this)
+				}
+				return o
+			}
+			ko.ab(vm()
+			)
+		}
+	}
+}
+ULROOT = function () {
+	$.uE('fs', [$.li().b({
+		t: '$data',
+		s: '{selected: $data==$root.chFI()}',
+		$: '$root.gtf'
+	})
+	]).K('fs')
+	$.A(
+			ul().k('fs').b('E', "fs")(
+					li().b("text:$data, css:{selected:$data==$root.chFI()},click:$root.gtf")))
+	MVM = function () {
+		var vm = {
+			fs: ['I', 'A', 'Se', 'Sp'],
+			chFI: $o()
+		}
+		vm.gtf = function (f) {
+			vm.chFI(f)
+		}
+		return vm
+	}
+	ok(MVM())
+}
+KOCL = function () {
+	$.x('x').h2('Peeep')
+	Per = function (n, ch) {
+		var per = this
+		per.n = n
+		per.ch = ko.oa(ch)
+		per.A = function () {
+			per.ch.push('new ch')
+		}
+	}
+	peep = [
+		new Per("Annabelle", ["Arnie", "Anders", "Apple"]),
+		new Per("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
+		new Per("Charles", ["Cayenne", "Cleopatra"])
+	]
+	$.uE('peep', [
+		$.li().A(
+				$.d([
+					$.spT('n'), 'has',
+					$.spT('ch().length'),
+					'children &nbsp;',
+					$.a$('New', 'A')
+				]),
+				$.ulE('ch', [
+					$.li([
+						$.spT(), $.spVs('$root.showDT').A(
+								' (child rendered at ', $.spT('$Dt().getSeconds()'), ')'
+						)])
+				])
+		)
+	])
+	$.cbC('showDT').a2Lb('Show time:')
+	//anonymous vm
+	OK({peep: peep, showDT: kO()})
+}
+KOEACH = function () {
+	$.format()
+	s2(
+			$.t().A(
+					thead()(
+							tr()(th()('First name'),
+									th()('Last name'))),
+					tbody().b('E', 'people')(tr()(
+									td().b('t', 'fn'),
+									td().b('t', 'ln'))
+					)
+			)
+	)
+	ok({
+		people: [
+			{fn: 'B', ln: 'Bert'},
+			{fn: 'Ch', ln: 'Char'},
+			{fn: 'De', ln: 'Dent'}
+		]
+	})
+}
+KOEACH2 = function () {
+	format()
+	s2(
+			h4('People'),
+			ul().b('E', 'people')(
+					li()(
+							sp('pos/name: '),
+							sp().b('t', '$index'),
+							sp().b('t', 'n'),
+							lk(' X').b('$', '$parent.rem')
+					)
+			),
+			bt('add').b('$', 'add')
+	)
+	vm = function () {
+		var o = {}
+		o.people = ko.oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
+		o.add = function () {
+			o.people.push({n: "New at " + new Date()})
+		}
+		o.rem = function () {
+			o.people.remove(this)
+		}
+		return o
+	}
+	ko.ab(vm()
+	)
+}

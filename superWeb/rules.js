@@ -193,11 +193,7 @@ function _pre(){
 //https://www.youtube.com/watch?v=fA1NW-T1QXc
 	tabRus = {$ct: {w: '100%'}, $left: {w: '70%'}, $right: {w: '30%'}, i: {w: '100%'}}
 	phRus = {$left: {w: '100%'}, $right: {w: '100%'}}
-	Ob = function (k, v) {
-		var ob = {}
-		ob[k] = v
-		return ob
-	}
+ 
 	_bor = '5px solid red'
 	_bulls = '&bull; &bull; &bull;'
 	_dec = function (v, k) {

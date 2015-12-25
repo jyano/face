@@ -1,4 +1,5 @@
-$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules','front'
+$stc('', '../art', '_data', 'both', 'superWeb', 'superCSS','rules','front',
+'font/bone', 'front/jet', 'front/knock', 'front/templating'
 		// 'front/both', 'front/superWeb', 'front/can',
 		//'front/bone', 'front/nok', 'front/UI', 'front/wid',
 		//'geo',
@@ -20,7 +21,8 @@ Flex = ['flex', 'flexApps', 'media','flexyDown', 'flexEx','devTipsVid']
 Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
 SuperWeb=['superAnim' ]
 Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
-Nok = ['applyBindings', 'elBind', 'boundEls', 'koApps', 'koIPApps']
+Nok = ['knock', 'koApps', 'koEachApps', 'koArrFilter', 'koPlus', 'grid']
+
 Jet = ['jqui', 'widget','calc']
 //, 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']
 Bone = [
@@ -54,7 +56,8 @@ $a.g('/box/:app', function (q, p) {
 			
 			//Front, Nok,
 			Jet, 
-			Bone
+			Bone,
+			Nok
 			// Easel, Fiz, Geo
 	
 	)

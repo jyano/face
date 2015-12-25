@@ -250,34 +250,7 @@ function inputApps() {
 		}
 		return p
 	}
-	TWT = function () {
-		$.x('r', 'twt')
-		OK({
-			un: ko.o('@ex'),
-			da: ko.o(),
-			g: function () {
-				vm.da({
-					dt: $D(),
-					MS: _.m(['a', 'b'],
-							function (t) {
-								return {ms: vm.un() + ':' + t}
-							})
-				})
-			},
-			clr: function () {
-				vm.da([])
-			}
-			//<- $.bt('Clear tweets').b$(' $parent.clearResults')
-		})
-		$.fSb('g', ['un:',
-			$.ipV('un'), $.sb('Get')
-		])
-		$.dW('da', [
-			$.h3('dt:', $.spT('dt')),
-			$.olE('MS', $.liT('ms')),
-			$.bt$('clr', '$parent.clr')
-		]).A()
-	}
+	 
 //broken
 	TASKS = function () {
 		$.z().h3('Tasks')
@@ -476,34 +449,7 @@ function inputApps() {
 				vm.flav.push("glut")
 			})
 		}
-		TWT = function () {
-			$.x('r', 'twt')
-			OK({
-				un: ko.o('@ex'),
-				da: ko.o(),
-				g: function () {
-					vm.da({
-						dt: $D(),
-						MS: _.m(['a', 'b'],
-								function (t) {
-									return {ms: vm.un() + ':' + t}
-								})
-					})
-				},
-				clr: function () {
-					vm.da([])
-				}
-				//<- $.bt('Clear tweets').b$(' $parent.clearResults')
-			})
-			$.fSb('g', ['un:',
-				$.ipV('un'), $.sb('Get')
-			])
-			$.dW('da', [
-				$.h3('dt:', $.spT('dt')),
-				$.olE('MS', $.liT('ms')),
-				$.bt$('clr', '$parent.clr')
-			]).A()
-		}
+ 
 //broken
 		TASKS = function () {
 			$.z().h3('Tasks')
@@ -681,54 +627,6 @@ function planet() {
 			}
 		}
 	}
-}
-OLTWT = function () {
-	$.x('r', 'twt')
-	$.fSm('g', ['un:', $.ipV('un'), $.sb('Get')])
-	$.dW('da', [
-		$.h3('dt:', $.spT('dt')),
-		$.olE('MS',
-				$.liT('ms')),
-		$.bt$('clr', ' $parent.clr')
-	])
-	ok({
-		un: $o('@ex'),
-		da: $o(),
-		g: function () {
-			vm.da({
-				dt: $D(),
-				MS: _.m(['a', 'b'],
-						function (t) {
-							return {ms: vm.un() + ':' + t}
-						})
-			})
-		},
-		clr: function () {
-			vm.da([])
-		}
-		//<- $.bt('Clear tweets').b$(' $parent.clearResults')
-	})
-}
- 
-ULTIARR = function () {
-	$.x();
-	$.ipTi('n');//textInput
-	$.h1T('n');//h1 text (read only) // $.dA('b',100,300,200,'+').bT('n')
-	//ul each 'array'
-	$.ulE('arr', [$.liT()])
-	$.sm().b$('A')
-	ok({
-		n: $o('zi'), arr: $oa(),
-		A: function () {
-			this.arr.p(this.n())
-		}
-	})
-	_.in(1, function () {
-		vm.n('girf')
-		_.e(['a', 'b', 'c'], function (i) {
-			vm.arr.p(i)
-		})
-	})
 }
  
 CHERRYMISC = function () {
@@ -1113,6 +1011,7 @@ function kos() {
 		})
 	}
 }
+
 function comput() {
 //bT,bV and computed
 	COMP = function () {
@@ -1578,21 +1477,7 @@ function virtual() {
 	}
 	VM.prototype.doSmg = function () {
 	}
-	Gift = function (gifts) {
-		var vm = this
-		vm.gifts = $oa(gifts)
-		vm.addGift = function () {
-			vm.gifts.push({name: "", price: ""})
-		}
-		vm.removeGift = function (gift) {
-			vm.gifts.remove(gift)
-		}
-		vm.save = function (form) {
-			alert("Could now transmit to server: " + ko.ut.stringifyJson(vm.gifts))
-		}
-		// To actually transmit to server as a regular form post, write this:
-		// ko.utils.postJson($("form")[0], self.gifts)
-	}
+
 	Task = function (title, done) {
 		this.tt = this.title = $o(title)
 		this.done = $o(done)
@@ -1724,32 +1609,7 @@ function virtual() {
 	Task = function (d) {
 		return {t: $o(d.t), iD: $o(d.iD)}
 	}
-	Gift = function (gifts) {
-		var vm = this
-		vm.gifts = $oa(gifts)
-		vm.addGift = function () {
-			vm.gifts.push({name: "", price: ""})
-		}
-		vm.removeGift = function (gift) {
-			vm.gifts.remove(gift)
-		}
-		vm.save = function (form) {
-			alert("Could now transmit to server: " + ko.ut.stringifyJson(vm.gifts))
-		}  // To actually transmit to server as a regular form post, write this: ko.utils.postJson($("form")[0], self.gifts);
-	}
-	Gift = function (gifts) {
-		var vm = this
-		vm.gifts = $oa(gifts)
-		vm.addGift = function () {
-			vm.gifts.push({name: "", price: ""})
-		}
-		vm.removeGift = function (gift) {
-			vm.gifts.remove(gift)
-		}
-		vm.save = function (form) {
-			alert("Could now transmit to server: " + ko.ut.stringifyJson(vm.gifts))
-		}  // To actually transmit to server as a regular form post, write this: ko.utils.postJson($("form")[0], self.gifts);
-	}
+	 
 	Per = function (n, ch) {
 		this.n = n
 		this.ch = $oa(ch)
@@ -1757,20 +1617,5 @@ function virtual() {
 			this.ch.p('new ch ' + $r())
 		}
 	}
-	ULNEST = function () {
-		$.x('x').h2('Pp')
-		$.ulE('peep', $.d([  // name has length children
-					$.spT('n'), 'has', $.spT('ch().length'), 'children &nbsp;',
-					//new
-					$.a$('New', 'A')
-				]),
-				$.uLE('ch',
-						$.spT(), //child name
-						$.spVs('$root.showDT').A('(child rendered at ', $.spT('$Dt().getSeconds()'), ')')
-				)
-		)
-		$.lb('show time: ').A($.cbC('showDT'))
-		//anonymous vm
-		ok({peep: peep, showDT: $o()})
-	}
+ 
 }

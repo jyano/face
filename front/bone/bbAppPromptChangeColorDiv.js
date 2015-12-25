@@ -795,4 +795,178 @@ BB9 = CHC = CHANGECOL = FRIEND = function () {
 		sb.promptColor()
 	})
 }
-
+BADS = function () {
+	$.x().h1('backcl').i('chicks').A()
+	bads = $Cl()()
+	bads.oA(function (s) {
+		alert("new baddie: " + s.g("n"))
+	})
+	bads.add([{n: "bad1"}, {n: "bad2"}])
+}
+BADS = function () {
+	BADS = function () {
+		z()
+		$.h1('backcl').id('chicks').A()
+		bads = $C()
+		bads.oA(function (s) {
+			$Ms("new baddie: " + s.g("n"))
+		})
+		bads.add([{n: "bad1"}, {n: "bad2"}])
+	}
+	BADS = function () {
+		$.x().h1('backcl').i('chicks').A()
+		bads = $Cl()()
+		bads.oA(function (s) {
+			alert("new baddie: " + s.g("n"))
+		})
+		bads.add([{n: "bad1"}, {n: "bad2"}])
+	}
+	BADS = function () {
+		$.x().h1('backcl').i('chicks').A()
+		bads = $$C()()
+		bads.oA(function (s) {
+			alert("new baddie: " + s.g("n"))
+		})
+		bads.add([{n: "bad1"}, {n: "bad2"}])
+	}
+	$.x().h1('backcl').i('chicks').A()
+	bads = $Cl()()
+	bads.oA(function (s) {
+		alert("new baddie: " + s.g("n"))
+	})
+	bads.add([{n: "bad1"}, {n: "bad2"}])
+}
+BADS = function () {
+	$.x().h1('backcl').i('chicks').A()
+	bads = $Cl()()
+	bads.oA(function (s) {
+		alert("new baddie: " + s.g("n"))
+	})
+	bads.add([{n: "bad1"}, {n: "bad2"}])
+}
+BBBEV = function () {
+	$.x().i('chicks')
+	ev = Bb.Ev()
+	ev.b("fun:had", function () {
+		alert("wee!")
+	})// bind? on?
+	ev.tr("fun:had")//trigger  //it'll alert "wee!"
+}
+EVENTS = EVS = function () {
+	$.x('o', 'beauty')
+	dv = $.d('r', 200).A(
+			$.h1('hello'),
+			bt = $.bt('-------')
+	)
+	$V({
+		el: dv,
+		events: {
+			'click button': function () {
+				bt.C($r())
+			},
+			'dblclick': 'r',
+			'mouseover': function () {
+				dv.C($r())
+			}
+		},
+		r: function () {
+			$.C($r())
+		}
+	})
+}
+BBEV = function () {
+	$.x().i('chicks')
+	ev = bb.Ev()
+	ev.b("fun:had", // bind? on?
+			function () {
+				alert("wee!")
+			})
+	//trigger
+	ev.tr("fun:had")  //it'll alert "wee!"
+}
+BB11 = VME = EVENTS = EVS = function () {
+	q = $.d('r', 200).A(
+			$.h1('hello'),
+			bt = $.bt('-------')
+	)
+	$V({
+		el: q,
+		ren: function () {
+			$.C($r())
+		},
+		events: {
+			'click button': function () {
+				bt.C($r())
+			},
+			'dblclick': 'ren',
+			'mouseover': function () {
+				q.C($r())
+			}
+		}
+	})
+}
+function huh() {
+	BCL = function () {
+		$.x().h1('BCL but whats up wit dose funcs?')
+		BksC = $Cl({
+			m: Bk = $M({
+				d: {n: '', g: 'fun'},
+				url: 'http://localhost:51377/api/Books'
+			}),
+			d: {pizzaTopping: 'pepperoni'}
+		})
+		cl1 = BksC()
+		cl1.A([Bk({n: "Bk 1"}), {}, {}, Bk({n: "Bk 2"})])
+		cl2 = BksC([bk1 = Bk({ID: 1, n: "Bk 1"}), bk2 = Bk({ID: 2, n: "Bk 2"})])
+		cl2.A(bk3 = Bk({ID: 3, n: "Bk 3"}))
+		add = function () {
+			$l('add')
+			cl2.A([
+				bk4 = Bk({ID: 4, n: "Bk 4"}),
+				bk5 = Bk({ID: 5, n: "Bk 5"})
+			])
+		}
+		add()
+		addAt = function (n) {
+			cl2.add(bk0 = Bk({n: "Bk 0"}), {at: n || 0})
+		}
+		change = function () {
+			bk3 = Bk({ID: 3, n: "Bk 3"})
+			cl2.add(bk3)
+			bk3_changed = Bk({ID: 3, n: "Changed Model"})
+			cl2.add(bk3_changed, {merge: true})
+		}
+	}
+	BCL = function () {
+		$.x().h1('BCL')
+		Bk = Bb.M.e({
+			d: {ID: '', n: ''},
+			id: "ID",
+			url: 'http://localhost:51377/api/Books'
+		})
+		BksC = Bb.C.e({m: Bk})
+		cl1 = BksC.o()
+		bk1 = Bk.o({ID: 1, n: "Bk 1"})
+		bk2 = Bk.o({ID: 2, n: "Bk 2"})
+		cl2 = BksC.o([bk1, bk2])
+		bk3 = Bk.o({ID: 3, n: "Bk 3"})
+		cl2.add(bk3)
+		change = function () {
+			bk3 = new Bk({ID: 3, n: "Bk 3"})
+			cl2.add(bk3)
+			bk3_changed = Bk.o({ID: 3, n: "Changed Model"})
+			cl2.add(bk3_changed, {merge: true})
+		}
+		add = function () {
+			bk4 = Bk.o({ID: 4, n: "Bk 4"})
+			bk5 = Bk.o({ID: 5, n: "Bk 5"})
+			cl2.add([bk4, bk5])
+		}
+		addAt = function (n) {
+			bk0 = new Bk({ID: 0, n: "Bk 0"})
+			cl2.add(
+					bk0, {at: n || 0}
+			)
+		}
+	}
+}

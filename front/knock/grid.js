@@ -32,9 +32,7 @@ KOGRID = function () {
 		{name: "Tall Hat", price: "39.95"}, {name: "Long Cloak", price: "120.00"}]))
 	// $("form").validate({ submitHandler: vm.save }) // Activate jQuery Validation
 }
-$.smEn = function (a) {
-	return $.sm().bEn(a)
-}
+ 
 PAGEGRID = function () {
 	$.x('r', 'page grid')//requires simple grid
 //<div data-bind='simpleGrid: gridViewModel'> </div>
