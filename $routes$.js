@@ -21,7 +21,7 @@ Flex = ['flex', 'flexApps', 'media','flexyDown', 'flexEx','devTipsVid']
 Html = [ 'superHTML','htmlPlus', 'superInput', 'superImage', 'superCan' ]
 SuperWeb=['superAnim' ]
 Web1=['manip', 'sty', 'll', 'rules' ,'local', 'can', 'ctx', 'webApps', 'canApps', 'entities']
-Nok = ['ko','nok', 'koApps', 'koEachApps'//, 'koArrFilter', 'koPlus', 'grid'
+Nok = ['ko','nok','koEach', 'koApps', 'koEachApps'//, 'koArrFilter', 'koPlus', 'grid'
 ]
 Jet = ['jqui', 'widget','calc']
 //, 'jquiApps', 'calc', 'multi', 'progBar', 'capt', 'sDialog', 'widFilt']

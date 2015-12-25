@@ -143,44 +143,7 @@ KNOCKS4 = function () {
 	)
 	ok(TLVM())
 }
-KOO = function () {
-	//body { font-family: arial; font-size: 14px; }
-	//.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
-	//.liveExample input { font-family: Arial; }
-	//.liveExample b { font-weight: bold; }
-	//.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
-	//.liveExample select[multiple] { width: 100%; height: 8em; }
-	//.liveExample h2 { margin-top: 0.4em; font-weight: bold; font-size: 1.2em; }
-	d = $.dK('liveExample').A(
-			$.p().A('First name: ', $.ip().attr({'data-bind': 'value: firstName'})),
-			$.p().A('Last name: ', $.ip().attr({'data-bind': 'value: lastName'})),
-			$.h2().A('Hello, ', $.sp().attr({'data-bind': 'text: fullName'}), '!')
-			
-			/*
-			
-			
-			 "<p>First name: <input type="text" data-bind="value: firstName"></p>
-			 <p>Last name: <input type="text" data-bind="value: lastName"></p>
-			
-			 <h2>Hello, <span data-bind="text: fullName">function g(){if(0&lt;arguments.length){if("function"===typeof C)C.apply(d,arguments);
-			 else throw Error("Cannot write a value to a ko.computed unless you specify a 'write' option.
-			 If you wish to read the current value, don't pass any parameters.");
-			 return this}a.k.Ob(g);(r||s&amp;&amp;f())&amp;&amp;l();return n}</span>!</h2>"
-			 */
-	)
-	ViewModel = function (first, last) {
-		this.firstName = ko.observable(first);
-		this.lastName = ko.observable(last);
-		this.fullName = ko.computed(function () {
-			// Knockout tracks dependencies automatically.
-			// It knows that fullName depends on firstName and lastName,
-			// because these get called when evaluating fullName.
-			return this.firstName() + " " + this.lastName();
-		}, this);
-	};
-	ko.applyBindings(new ViewModel("Planet", "Earth"))
-	// This makes Knockout get to work
-}
+ 
 KKO = function () {
 	d = $(str).A()
 	ViewModel = function (first, last) {

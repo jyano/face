@@ -1,10 +1,4 @@
 $L('bindings')
-ko.aB = ko.ab = ko.applyBindings
-ko.o = ko.observable
-ko.c = ko.computed
-ko.pC = ko.pc = ko.pureComputed
-ko.oA = ko.oa = ko.observableArray
-ko.aF = ko.ut.aF = ko.u.af = ko.u.arrayFilter
 $o = function () {
 	var g = G(arguments)
 	g[0] = g.u ? (g.n ? 0 : 1) : g.f
@@ -25,7 +19,7 @@ ok = function self(vm, el) {
 	ko.aB(vm, el)
 	return vm
 }
-OK =$ok = function self() {
+OK = $ok = function self() {
 
 // ???? pass plain object and element(string or ob?) :)
 	var g = G(arguments)
@@ -49,49 +43,6 @@ OK =$ok = function self() {
 }
 $.fn.dB = function (dB) {
 	return this.at({'data-bind': dB})
-}
-KOob = {
-	e: 'foreach',
-	ch: 'checked',
-	c: 'checked',
-	t: 'text', v: 'value', h: 'html', i: 'if', $: 'click',
-	f: 'hasFocus', w: 'with', s: 'css',
-	y: 'style', a: 'attr', en: 'enable',
-	vs: 'visible', tI: 'textInput',
-	o: 'options',
-	oT: 'optionsText',
-	ev: 'event',
-	sm: 'submit', sO: 'selectedOptions', n: 'ifnot', d: 'disable', u: 'uniqueName', vU: 'valueUpdate',
-	cm: 'component', tp: 'template', alt: {
-		t: 'text',
-		h: 'html',
-		s: 'css',
-		y: 'style',
-		a: 'attr',
-		e: 'foreach',
-		i: 'if', n: 'ifnot', w: 'with',
-		$: 'click',
-		ev: 'event',
-		sb: 'submit',
-		en: 'enable',
-		d: 'disable',
-		V: 'valueUpdate',
-		vs: 'visible',
-		f: 'hasFocus',
-		c: 'checked',
-		ch: 'checked',
-		v: 'value', o: 'options',
-		ti: 'textInput',
-		so: 'selectedOptions',
-		u: 'uniqueName',
-		tp: 'template',
-		cm: 'component',
-		t: 'text', h: 'html', s: 'css', y: 'style',
-		a: 'attr', e: 'foreach', i: 'if', n: 'ifnot', w: 'with', $: 'click', ev: 'event', sb: 'submit',
-		en: 'enable', d: 'disable', V: 'valueUpdate', vs: 'visible', f: 'hasFocus',
-		c: 'checked', ch: 'checked', v: 'value', o: 'options',
-		ti: 'textInput', so: 'selectedOptions', u: 'uniqueName', tp: 'template', cm: 'component'
-	}
 }
 $KOob = function (k, v) {
 	var g = G(arguments)
@@ -179,7 +130,7 @@ $.fn.b = $.fn.ko = function (a, b) {
 	}
 	return this
 }
-function bindings(){
+function bindings() {
 	text = $.fn.ko_t = $.fn.ko_tx = $.fn.bT = function (s) {
 		return this.b('text', s || '$data')
 	}
@@ -227,8 +178,6 @@ function bindings(){
 	submit = $.fn.bSm = function (s) {
 		return this.b('submit', s)
 	}
- 
-	
 	checked = $.fn.ko_ch = $.fn.ko_C_ = $.fn.bC = function (s) {
 		return this.b('checked', s)
 	}
@@ -448,7 +397,6 @@ function inputs() {
 		}
 		return pg
 	}
-
 	$.fSm = $.fBSm = function (a, b) {
 		var f = $.f();
 		f.bSb(a)
@@ -474,7 +422,7 @@ function inputs() {
 	$.ipV = $.ipBv = function () {
 		var g = G(arguments),
 				ip = $.ip()
-				ip.bV.apply(ip, g)
+		ip.bV.apply(ip, g)
 		return ip
 		$.iV = warning = $.ipV = $.ipBv = function () {
 			var g = G(arguments), ip
@@ -765,283 +713,6 @@ function inputs() {
 		}
 	}
 }
-function koEa() {
-	$.ol_e = $.olE = $.olBe = function (a, b) {
-		var ol = $.ol().bE(a)
-		if (b) {
-			ol.A(b)
-		}
-		return ol
-	}
-	$.olE = $.olBe = function (a, b) {
-		var ol = $.ol().bE(a)
-		if (b) {
-			ol.A(b)
-		}
-		return ol
-	}
-	$.uE = $.ulE = function (a, b) {
-		var ul = $.ul().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-	}
-	$.uE = $.ulE = function (a, b, c) {
-		var g = G(arguments)
-		var ul = $.ul().bE(a)
-		if (c) {
-			b = $.li(_.r(g))
-		}
-		else if (O(b) && !A(b)) {
-			b = [b]
-		}
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-		function old() {
-			$.uE = $.uE = $.ulE = function (a, b) {
-				var ul = $.ul().bE(a)
-				if (A(b)) {
-					_.e(b, function (el) {
-						ul.A(el)
-					})
-				}
-				else if (S(b)) {
-					ul.A(b)
-				}
-				return ul
-			}
-		}
-	}
-	$.uLE = function (a) {
-		var g = G(arguments);
-		return $.ulE(a, $.li(g.r))
-	}
-	$.U = function () {
-		var g = G(arguments)
-		return $.uE(g.f, [$.li(g.s)])
-	}
-	$.liT = $.liBt = function (a) {
-		return $.li().bT(a)
-	}
-	$.u_e = $.uE = $.ulE = function (a, b) {
-		var ul = $.ul().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-	}
-	$.uE = $.ulE = function (a, b, c) {
-		var g = G(arguments)
-		var ul = $.ul().bE(a)
-		if (c) {
-			b = $.li(_.r(g))
-		}
-		else if (O(b) && !A(b)) {
-			b = [b]
-		}
-		if (A(b)) {
-			_.e(b, function (el) {
-				ul.A(el)
-			})
-		}
-		else if (S(b)) {
-			ul.A(b)
-		}
-		return ul
-	}
-	function tabl() {
-		$.t_e = $.tBE = function (a, b) {
-			var tB = $.tB()
-			tB.bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					tB.A(el)
-				})
-			}
-			return tB
-		}
-		$.tdT = function (a, b) {
-			var td = $.td()
-			td.bT(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					td.A(el)
-				})
-			}
-			return td
-		}
-		$.tBE = function (a, b) {
-			var tB = $.tB()
-			tB.bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					tB.A(el)
-				})
-			}
-			return tB
-		}
-		$.tBE = function (a, b) {
-			var g = G(arguments),
-					tB = $.tB()
-			tB.bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					tB.A(el)
-				})
-			}
-			else {
-				_.e(g.r, function (q) {
-					tB.A((q[0].tagName == "TD") ? q : $.td().A(q))
-				})
-			}
-			return tB
-		}
-		$.tBT = function (arr) {
-			var g = G(arguments),
-					tB = $.tB(), tr = $.tr()
-			_.e(g.r, function (q) {
-				tr.A(q)
-			})
-			return tB.bE(arr).A(tr)
-		}
-		$.tBE = function (a, b) {
-			var tB = $.tB()
-			tB.bE(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					tB.A(el)
-				})
-			}
-			return tB
-		}
-		$.tdT = function (a, b) {
-			var td = $.td()
-			td.bT(a)
-			if (A(b)) {
-				_.e(b, function (el) {
-					td.A(el)
-				})
-			}
-			return td
-		}
-	};
-	$.dE = function (a, b) {
-		var d = $.d().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				d.A(el)
-			})
-		}
-		else if (S(b)) {
-			d.A(b)
-		}
-		return d
-	}
-	$.d_e = $.dE = function (a, b) {
-		var d = $.d().bE(a)
-		if (A(b)) {
-			_.e(b, function (el) {
-				d.A(el)
-			})
-		}
-		else if (S(b)) {
-			d.A(b)
-		}
-		return d
-	}
-	$.fn.bindKOEach = fe = forEach = function (a) {
-		return this.bindKO('fe', a)
-	}
-	$.fn.bindKOEachData = feD = forEachData = function (a) {
-		return this.bindKOEach('$data.' + a)
-	}
-	$.fn.bE = function (s) {
-		return this.b('foreach', s)
-	}
-	$.fn.ko_e = $.fn.ko_each = function (s) {
-// = $.fn.bE
-		// if called from $.fn.eD = $.fn.eB =  feD = ... use '+'
-		var g = G(arguments)
-		if (g.p) {
-			return '$data.' + s
-		}
-		return this.b('foreach', s)
-	}
-	$.fn.koE = $.fn.eKo = function (a) {
-		return this.bindKO('fe', a)
-	}
-	$.fn.eD = $.fn.eB = function (a) {
-		return this.bindKOEach('$data.' + a)
-	}
-}
-function __pre() {
-	$Dt = function () {
-		var dt = new Date()
-		return dt
-	}
-	Ob = function (k, v) {
-		var g = G(arguments)
-		if (g.A || g.F || g.N || g.O) {
-			return Ob('da', g.f)
-		}
-		g.f = D(g.f) ? g.f : 'da'
-		var ob = {}
-		ob[g.f] = g.s
-		return ob
-	}
-}
-function _pre() {
-	$.fn.a2Lb = function (t) {
-		t = t || 'label:'
-		return this.a2($.lb(t))
-	}
-	ko.ut = ko.u = ko.utils
-	ko.cm = ko.components
-	ko.vE = ko.ve = ko.virtualElements
-}
-function _post() {
-	ko.cm.rg = ko.cm.register
-	ko.bH = ko.bh = ko.BH = ko.bindingHandlers
-	ko.rTp = ko.rT = ko.renderTemplate
-	ko.dO = ko.do = ko.dependentObservable
-	ko.uw = ko.unwrap
-	ko.ut.uo = ko.ut.unwrapObservable
-	ko.bD = ko.applyBindingsToDescendants
-	ko.cm.iR = ko.cm.isRegistered
-	ko.vE.aB = ko.B = ko.ve.ab = ko.vE.AB = ko.vE.allowedBindings
-	function extending() {
-		oA = ko.observableArray.fn
-		oA.rm = function (i) {
-			var oA = this
-			oA.remove(i)
-			return oA
-		}
-		oA.p = function (i) {
-			var oA = this
-			oA.push(i)
-			return oA
-		}
-	}
-	extending()
-}
 function classic() {
 	knockoutBind2 = function (a) {
 
@@ -1076,55 +747,70 @@ function alphaPams() {
 		return this
 	}
 }
-$.format = function () {
-	section1 = s1 = $.sp()
-	section2 = s2 = $.sp()
-	$.d().A( section1)
-	$.d().A( section2)
-}
-$l('nok')
-_$ = function (ob) {
-	ob.C = ob.C || $r()
-	$.x(ob.C, ob.t)
-	if (ob.vm) {
-		OK(ob.vm)
+function _pre() {
+	KOob = {
+		e: 'foreach',
+		ch: 'checked',
+		c: 'checked',
+		t: 'text', v: 'value', h: 'html', i: 'if', $: 'click',
+		f: 'hasFocus', w: 'with', s: 'css',
+		y: 'style', a: 'attr', en: 'enable',
+		vs: 'visible', tI: 'textInput',
+		o: 'options',
+		oT: 'optionsText',
+		ev: 'event',
+		sm: 'submit', sO: 'selectedOptions', n: 'ifnot', d: 'disable', u: 'uniqueName', vU: 'valueUpdate',
+		cm: 'component', tp: 'template'
 	}
-	if (ob.el) {
-		els(ob.el)
-	}
-	if (ob.A) {
-		_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
-			q.A()
-		})
-	}
-	if (ob._) {
-		$.in(ob._)
-	}
-}
-$.s = function (css, c, tx) {
-	$s(css)
-	$.x(c, tx)
-	return $
-}
-$.x = function (c, t) {
-	var g = G(arguments), bd = $.bd()
-	bd.E()
-	if (g.O_) {
-		$s(g.f)
-		if (g.s) {
-			$.h1(g.s);
-			$.hr().A()
+	ko.ut = ko.u = ko.utils
+	ko.cm = ko.components
+	ko.vE = ko.ve = ko.virtualElements
+	ko.aB = ko.ab = ko.applyBindings
+	ko.o = ko.observable
+	ko.c = ko.computed
+	ko.pC = ko.pc = ko.pureComputed
+	ko.oA = ko.oa = ko.observableArray
+	ko.aF = ko.ut.aF = ko.u.af = ko.u.arrayFilter
+	ko.cm.rg = ko.cm.register
+	ko.bH = ko.bh = ko.BH = ko.bindingHandlers
+	ko.rTp = ko.rT = ko.renderTemplate
+	ko.dO = ko.do = ko.dependentObservable
+	ko.uw = ko.unwrap
+	ko.ut.uo = ko.ut.unwrapObservable
+	ko.bD = ko.applyBindingsToDescendants
+	ko.cm.iR = ko.cm.isRegistered
+	ko.vE.aB = ko.B = ko.ve.ab = ko.vE.AB = ko.vE.allowedBindings
+	function extending() {
+		oA = ko.observableArray.fn
+		oA.rm = function (i) {
+			var oA = this
+			oA.remove(i)
+			return oA
 		}
-		bd.C(g.t || $r())
-	}
-	else {
-		bd.C(c || $r())
-		if (t) {
-			bd.A($.h1(t))
+		oA.p = function (i) {
+			var oA = this
+			oA.push(i)
+			return oA
 		}
 	}
-	if (g.p) {
-		bd.A($.hr())
-	}
-	return $
+	extending()
+}
+$cO = function () {
+	return ko.computed.apply(ko, arguments)
+}
+
+KOO = function () {
+	$.h2().A('Hello, ', $.sp().dB('text: fullName'), '!')
+	$.p().A('First name: ', $.ip().dB('value: firstName'))
+	$.p().A('Last name: ', $.ip().dB('value: lastName'))
+	
+	VM = function (first, last) {
+		this.firstName = $o(first);
+		this.lastName = $o(last);
+		this.fullName = $cO(function () {
+			return this.firstName() + " " + this.lastName();
+		}, this)}
+		
+	ok(new VM("rigo", "ochoa"))
+	
 }
