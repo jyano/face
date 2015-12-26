@@ -1,11 +1,17 @@
 $stc('', '../art', '_data', 'superWeb/both', 'superWeb', 
-		'front', 'font/bone', 'front/jet', 'front/knock')
+		'front', 'bone', 'font/bone', 'front/jet', 'front/knock')
 Both = ['superUnder', 'superJ', 'superTime']
 SuperWeb=['jq', 'first', 'second','cssData',
 	'superJQ', 'superAnim', 'sty', 'rules' , 'flex',  'media' ,
 	 'superHTML', 'superInput', 'superImage', 'htmlPlus'
 ]
-Front= ['bb', 'bone',   'bbTweet','local', 'jqui', 'jet', 'ko', 'nok',  'koApps', 'viewModels', 'superTemplate',' koCustom'  ]
+Front= ['appClas', 'bb', 'bone', 'bbPerfect',  
+ 'bbTweet','local', 'jqui', 'jet',
+  'koPre', 'ko', 'nok0', 'nok', 'nokWorks', 'nokEach',
+  'koEls','koSty',
+   'viewModels',
+  'koInput', 'superTemplate',' koCustom' 
+    ]
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '

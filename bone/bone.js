@@ -11,7 +11,8 @@ Bb.x = Bb.e = function (ob) {
 		return new Ev(a, b, c, d)
 	}
 }
-$L('events', 'models', 'router', 'history', 'mod', 'rtr', 'views', 'vew', 'collec', 'col')
+$L('events', 'models', 'router', 'history', 'mod',
+ 'rtr', 'views', 'vew', 'collec', 'col')
 function events() {
 	Bb.E = Bb.Ev = Bb.Events;
 	Bb.E.x = Bb.E.extend
@@ -1666,382 +1667,7 @@ BB10 = PVR = PER = function () {
 		pV.r()
 	})
 }
-function perfect() {
-	MDGET = function () {
-		$.x('r').h1('tut');
-		Md = $$M();
-		md = Md({n: 'j'});
-		$.h3('p: ' + md.g('n'))
-	}
-	EXTEV = function () {
-		$.x('o', 'EXTEV')
-		o = _.x({}, Bb.E)
-		o.on('yo', function () {
-			$.sp(G(arguments)).fS(50)
-		})
-		o.trigger('yo', 'a', 'b', 'c')
-	}
-	VIEW = function () {
-		$.x('b', 'viw')
-		Vw = $$V({
-			el: q = $.dA('g', 400, 400, 200, 200),
-			r: function () {
-				var vw = this
-				vw.A($.ul().fS(40).A('hello'))
-				_.in(function () {
-					vw.r()
-				})
-			},
-			i: function () {
-				this.r()
-			}
-		})
-		Vw2 = $$V({
-			r: function () {
-				this.A(
-						$.ul(['hello']).fZ(30)
-				)
-			},
-			i: function () {
-				this.r()
-			}
-		})
-		Vw()
-		$.bt('orange', function () {
-			d2 = $.d('O', 500, 500)
-			Vw2({el: d2})
-		})
-	}
-	PEOPOP = function () {
-		$.x('x', 'bb view people')
-		peep = [{n: 'a', a: 11}, {n: 'b', a: 46}, {n: 'c', a: 13}]
-		Vw = $$V({
-			t: 'ul',
-			r: function () {
-				var vw = this, q = vw.$el.E();
-				_.e(vw.collection, function (p) {
-					var li = $.li([p.n + '(' + p.a + ')'])
-					q.A(li)
-				});
-				return this
-			},
-			i: function () {
-				this.$el.C('y')
-			}
-		})
-		vw = Vw({cl: peep})  // alpha! <- vw= $.ulV({ i:function(){  },  r:function(){ } })({cl: peep})
-		$.A(vw.r().el)
-		_.in(function () {
-			peep.pop();
-			vw.r()
-		})
-	}
-	DIVADD = function () {
-		z()
-		q = $.dI('d1', 'r', 500, 500)
-		Vw = $$V({
-			r: function () {
-				q.A($.ul(['hello']))
-			},
-			initialize: function () {
-				this.r()
-			}
-		})
-		_.t(3, function () {
-			Vw()
-		}) // alpha! <-  q.V({r: function () { }, i: function () {  }})()
-	}
-	CLONADD = function () {
-		$.x().h1('backcl');
-		$.i('chicks').A()
-		Cl = $$C({})
-		cl = Cl().oA(function (s) {
-			$l("new!!!!!! " + s.g('n'))
-		}).A([{n: 'g1'}, {n: 'g2'}])
-	}
-	MDVW = function () {
-		$.x('n')
-		Md = $$M({d: {n: 'j', a: 20, o: 'p'}})
-		Vw = $$V({
-			t: 'li',
-			_: 'some-per', k: 'per',
-			r: function () {
-				this.$el.A('n').A()
-			},
-			i: function () {
-				this.r()
-			}
-		})
-		md = Md()
-		md.V = function (Vw, ob) {
-			ob = ob || {}
-			ob.m = this
-			return Vw(ob)
-		}
-		md.V(Vw)
-		_.in(2, function () {
-			$.C('R');
-			$l('- - --- - - - - ');
-			md.l();
-			$Ms(JSON.stringify(md.j()))
-		})
-	}
-	BACKVALL = function () {
-		z();
-		$l('backvall')
-		Md = $$M({
-			defaults: {lame: true},
-			validate: function (at) {
-				$l('in validate')
-				_at = at
-				if (!at) {
-					return false
-				}
-				if (at.n == 'rigo') {
-					return "name can't be rigo!"
-				}
-			},
-			i: function () {
-				var t = this
-				t.on('error', function (m, e) {
-					alert(3);
-					$l(e)
-				})
-				t.on('change:n', function (m, e) {
-					alert(3);
-					$l(e)
-				})
-			}
-		})
-		md = Md({n: "migo", a: 7})
-		_.in(3, function () {
-			$.C('r')
-			md.oIv(function (m, er) {
-				$Ms('...');
-				$Ms('er: ' + er);
-				$Ms('...')
-			})
-			md.s({n: 'rigo'}, {validate: true})
-		})
-	}
-	CLLEN = function () {
-		z();
-		$Ms('CLLEN')
-		Td = $$M({df: {tt: '', completed: false}});
-		Md = $$M({
-			d: {tt: '', completed: false}
-		})
-		Cl = $$C({
-			md: Md
-		})
-		cl = Cl([Td({tt: 'Read', id: 2})]);
-		$Ms('len 1?: ' + cl.length)
-		TdsCl = $$C({md: Td})
-		tds = TdsCl([
-			a = Td({tt: 'Jam'}),
-			b = Td({tt: 'Chin'})
-		])
-		$Ms('len 2?: ' + tds.length)
-		tds.A(c = Td({tt: 'Disn'}))
-		$Ms('len 3?: ' + tds.length)
-		tds.rm([a, b]);
-		$Ms('len 1?: ' + tds.length)
-		tds.rm(c);
-		$Ms('len 0?: ' + tds.length)
-	}
-	BBRECS = BBSAMP = function () {
-		$.x('b', 'bbsampp', '+')
-		d = $.d()
-		Rec = $$M()
-		RecV = $$V({
-			k: 'rec', e: {'click': 'move'},
-			move: function () {
-				this.q.css('left',
-						this.q.position().left + 10)
-			},
-			rr: function () {
-				return this.sDims().sPos().sCol()
-			},
-			sDims: function () {
-				this.q.WH(this.model.g('w'),
-						this.model.g('h'))
-				return this
-			},
-			sPos: function () {
-				this.q.ab().LR(
-						this.model.g('pos').x,
-						this.model.g('pos').y)
-				return this
-			},
-			sCol: function () {
-				this.q.C(this.model.g('C'))
-				return this
-			}
-		})
-		_.e([
-			Rec({w: 100, h: 30, pos: {x: 300, y: 400}, C: 'o'}),
-			Rec({w: 100, h: 20, pos: {x: 400, y: 400}, C: 'g'}),
-			Rec({w: 100, h: 200, pos: {x: 0, y: 100}, C: 'y'})
-		], function (md) {
-			RecV({model: md}).rr().$el.a2(d)
-		})
-	}
-	CHANGECOL = function () {
-		z()
-		d = $.dA(400, 400, 300, 200)
-		Md = $$M({
-			promptColor: function () {
-				this.s({
-					co: prompt('color:')
-				})
-			}
-		})
-		sb = Md()
-		sb.on('change:co', function (mod, col, ops) {
-			$l('new color!: ' + col);
-			d.C(col)
-		})
-		sb.s({co: 'g'})
-		_.in(2, function () {
-			sb.promptColor()
-		})
-	}
-	NNN = PER0 = function () {
-		$.x('n')
-		Per = $$M({d: {n: 'j', a: 20, o: 'p'}})
-		PerV = $$V({
-			t: 'li', k: 'per',
-			r: function () {
-				this.$el.A('n')
-				this.$el.A()
-			},
-			i: function () {
-				this.r()
-			}
-		})
-		pV = PerV({m: p = Per()})
-		_.ev(.5, function () {
-			pV.r()
-		})
-	}
-	TKZ = function () {
-		$$$('TKZ');
-		App = {Models: {}, Views: {}, Collections: {}}
-		App.Models.Task = Backbone.Model.extend({})
-		App.Views.Task = Backbone.View.extend({
-			tagName: 'li',
-			events: { //'click':' showAlert',
-				'click .edit': 'editTask'
-			},
-			showAlert: function () {
-				alert('you clicked me')
-			},
-			editTask: function () {//alert('you are edititing the task')
-				newTaskTitle = prompt('what would you like to change the text to?', this.model.get('title'))
-				this.model.set('title', newTaskTitle)
-			},
-			render: function () {
-				this.$el.html(
-						this.model.get('title')
-				)
-				return this
-			}
-		})
-		App.Collections.Tasks = Backbone.Collection.extend({model: App.Models.Task})
-		App.Views.Tasks = Backbone.View.extend({
-			initialize: function () {
-				var view = this
-				this.collection.on('all', function () {
-					view.render()
-				})
-			},
-			tagName: 'ol',
-			render: function () {
-				this.$el.E()
-				this.collection.each(this.addOne, this)
-				return this
-			},
-			addOne: function (task) {
-				var taskView = new App.Views.Task({model: task})
-				this.$el.append(taskView.render().el)
-			}
-		})
-		tasksCollection = tasks = new App.Collections.Tasks([{title: 'game', prior: 3},
-			{title: 'store', prior: 5}, {title: 'haha', prior: 3}])
-		tasksView = new App.Views.Tasks({collection: tasksCollection})
-		tasksView.render()
-		$.A(tasksView.el)
-		$.bt('add', function () {
-			tasksCollection.add([{title: 'yooo', prior: 4}])
-		}).button()
-	}
-	DEFAULT = function () {
-		$.x('n')
-		Md = $$M({
-			defaults: {n: 'j', a: 20, o: 'p'}
-		})
-		Vw = $$V({
-			t: 'li',
-			r: function () {
-				this.$el.A('n: ' + this.g('n'))
-			},
-			i: function () {
-				this.$el.A().C('r').col('b').fS(149);
-				this.r()
-			}
-		})
-		md = Md()
-		vw = Vw({
-			m: md
-		})
-	}
-	EVENTS = EVS = function () {
-		$.x('o', 'beauty')
-		q = $.d('r', 200).A($.h1('hello'), bt = $.bt('-------'))
-		Vw = $$V({
-			el: q, r: function () {
-				$.C($r())
-			},
-			events: {
-				'click button': function () {
-					bt.C($r())
-				},
-				'dblclick': 'r',
-				'mouseover': function () {
-					q.C($r())
-				}
-			}
-		})
-		Vw()
-	}
-	CHANGE = function () {
-		Md = $$M()
-		Vw = $$V({
-			r: function () {
-				return this.h(this.g('rx'))
-			},
-			i: function () {
-				var vw = this;
-				vw.r();
-				vw.oC(function () {
-					vw.r()
-				})
-			}
-		})
-		$.x('x', 'bbv');
-		$('body').fS(30)
-		div = $.dA('o', 300, 400).XY(200, 200)
-		ip = $.ip()
-		$.bt('change', function () {
-			m.s('rx', ip.v())
-		})
-		m = Md({rx: 'antibiotic'})
-		Vw({
-			el: div,
-			m: m
-		})
-	}
-}
+
 TKZ = BCA = function () {
 	App = {Models: {}, Views: {}, Collections: {}}
 	App.Models.Task = Bb.M.x({})
@@ -3062,4 +2688,226 @@ BB8 = BRV = BBRECS = BBSAMP = function () {
 		RecV({model: md}).rr().$el.a2(d)
 	})
 }
- 
+bbLocStorPLUG = function () {
+	(function (root, factory) {
+		if (typeof exports === 'object' && typeof require === 'function') {
+			module.exports = factory(require("backbone"));
+		} else if (typeof define === "function" && define.amd) {
+			// AMD. Register as an anonymous module.
+			define(["backbone"], function (bb) {
+				// Use global variables if the locals are undefined.
+				return factory(bb || root.bb);
+			});
+		} else {
+			factory(bb);
+		}
+	}(this, function (bb) {
+// A simple module to replace `bb.sync` with *localStorage*-based
+// persistence. Models are given GUIDS, and saved into a JSON object. Simple
+// as that.
+// Generate four random hex digits.
+		function S4() {
+			return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+		};
+// Generate a pseudo-GUID by concatenating random hexadecimal.
+		function guid() {
+			return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+		};
+		function isObject(item) {
+			return item === Object(item);
+		}
+		
+		function contains(array, item) {
+			var i = array.length;
+			while (i--) if (array[i] === item) return true;
+			return false;
+		}
+		
+		function extend(obj, props) {
+			for (var key in props) obj[key] = props[key]
+			return obj;
+		}
+		
+		function result(object, property) {
+			if (object == null) return void 0;
+			var value = object[property];
+			return (typeof value === 'function') ? object[property]() : value;
+		}
+
+// Our Store is represented by a single JS object in *localStorage*. Create it
+// with a meaningful name, like the name you'd give a table.
+// window.Store is deprectated, use bb.LocalStorage instead
+		bb.LocalStorage = window.Store = function (name, serializer) {
+			if (!this.localStorage) {
+				throw "bb.localStorage: Environment does not support localStorage."
+			}
+			this.name = name;
+			this.serializer = serializer || {
+				serialize: function (item) {
+					return isObject(item) ? JSON.stringify(item) : item;
+				},
+				// fix for "illegal access" error on Android when JSON.parse is passed null
+				deserialize: function (data) {
+					return data && JSON.parse(data);
+				}
+			};
+			var store = this.localStorage().getItem(this.name);
+			this.records = (store && store.split(",")) || [];
+		};
+		extend(bb.LocalStorage.prototype, {
+			// Save the current state of the **Store** to *localStorage*.
+			save: function () {
+				this.localStorage().setItem(this.name, this.records.join(","));
+			},
+			// Add a model, giving it a (hopefully)-unique GUID, if it doesn't already
+			// have an id of it's own.
+			create: function (model) {
+				if (!model.id && model.id !== 0) {
+					model.id = guid()
+					model.set(model.idAttribute, model.id)
+				}
+				this.localStorage().setItem(this._itemName(model.id),
+						this.serializer.serialize(model))
+				this.records.push(model.id.toString())
+				this.save();
+				return this.find(model)
+			},
+			// Update a model by replacing its copy in `this.data`.
+			update: function (model) {
+				this.localStorage().setItem(this._itemName(model.id),
+						this.serializer.serialize(model))
+				var modelId = model.id.toString()
+				if (!contains(this.records, modelId)) {
+					this.records.push(modelId)
+					this.save()
+				}
+				return this.find(model)
+			},
+			// Retrieve a model from `this.data` by id.
+			find: function (model) {
+				return this.serializer.deserialize(
+						this.localStorage().getItem(this._itemName(model.id)))
+			},
+			// Return the array of all models currently in storage.
+			findAll: function () {
+				var result = []
+				for (var i = 0, id, data; i < this.records.length; i++) {
+					id = this.records[i]
+					data = this.serializer.deserialize(this.localStorage().getItem(this._itemName(id)));
+					if (data != null) result.push(data)
+				}
+				return result
+			},
+			// Delete a model from `this.data`, returning it.
+			destroy: function (model) {
+				this.localStorage().removeItem(this._itemName(model.id));
+				var modelId = model.id.toString();
+				for (var i = 0, id; i < this.records.length; i++) {
+					if (this.records[i] === modelId) {
+						this.records.splice(i, 1);
+					}
+				}
+				this.save();
+				return model;
+			},
+			localStorage: function () {
+				return localStorage;
+			},
+			// Clear localStorage for specific collection.
+			_clear: function () {
+				var local = this.localStorage(),
+						itemRe = new RegExp("^" + this.name + "-");
+				// Remove id-tracking item (e.g., "foo").
+				local.removeItem(this.name);
+				// Match all data items (e.g., "foo-ID") and remove.
+				for (var k in local) {
+					if (itemRe.test(k)) {
+						local.removeItem(k);
+					}
+				}
+				this.records.length = 0;
+			},
+			// Size of localStorage.
+			_storageSize: function () {
+				return this.localStorage().length;
+			},
+			_itemName: function (id) {
+				return this.name + "-" + id;
+			}
+		})
+// localSync delegate to the model or collection's
+// *localStorage* property, which should be an instance of `Store`.
+// window.Store.sync and bb.localSync is deprecated, use bb.LocalStorage.sync instead
+		bb.LocalStorage.sync = window.Store.sync = bb.localSync = function (method, model, options) {
+			var store = result(model, 'localStorage') || result(model.collection, 'localStorage');
+			var resp, errorMessage;
+			//If $ is having Deferred - use it.
+			var syncDfd = bb.$ ?
+					(bb.$.Deferred && bb.$.Deferred()) :
+					(bb.Deferred && bb.Deferred());
+			try {
+				switch (method) {
+					case "read":
+						resp = model.id != undefined ? store.find(model) : store.findAll();
+						break;
+					case "create":
+						resp = store.create(model);
+						break;
+					case "update":
+						resp = store.update(model);
+						break;
+					case "delete":
+						resp = store.destroy(model);
+						break;
+				}
+			} catch (error) {
+				if (error.code === 22 && store._storageSize() === 0)
+					errorMessage = "Private browsing is unsupported";
+				else
+					errorMessage = error.message;
+			}
+			if (resp) {
+				if (options && options.success) {
+					if (bb.VERSION === "0.9.10") {
+						options.success(model, resp, options);
+					} else {
+						options.success(resp);
+					}
+				}
+				if (syncDfd) {
+					syncDfd.resolve(resp);
+				}
+			} else {
+				errorMessage = errorMessage ? errorMessage
+						: "Record Not Found";
+				if (options && options.error)
+					if (bb.VERSION === "0.9.10") {
+						options.error(model, errorMessage, options);
+					} else {
+						options.error(errorMessage);
+					}
+				if (syncDfd)
+					syncDfd.reject(errorMessage);
+			}
+			// add compatibility with $.ajax
+			// always execute callback for success and error
+			if (options && options.complete) options.complete(resp);
+			return syncDfd && syncDfd.promise();
+		};
+		bb.ajaxSync = bb.sync
+		bb.getSyncMethod = function (model, options) {
+			forceAjaxSync = options && options.ajaxSync
+			if (!forceAjaxSync && (result(model, 'localStorage') ||
+					result(model.collection, 'localStorage'))) {
+				return bb.localSync
+			}
+			return bb.ajaxSync
+		}
+// Override 'bb.sync' to default to localSync,
+// the original 'bb.sync' is still available in 'bb.ajaxSync'
+		bb.sync = function (met, md, op) {
+			return bb.getSyncMethod(md, op).apply(this, [met, md, op])
+		}
+		return bb.LocalStorage
+	}))
+}

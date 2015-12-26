@@ -891,56 +891,13 @@ $.format = function () {
 	$.d().A(section1)
 	$.d().A(section2)
 }
-_$ = function (ob) {
-	ob.C = ob.C || $r()
-	$.x(ob.C, ob.t)
-	if (ob.vm) {
-		OK(ob.vm)
-	}
-	if (ob.el) {
-		els(ob.el)
-	}
-	if (ob.A) {
-		_.e(A(ob.A) ? ob.A : [ob.A], function (q) {
-			q.A()
-		})
-	}
-	if (ob._) {
-		$.in(ob._)
-	}
-}
-$.s = function (css, c, tx) {
-	$s(css)
-	$.x(c, tx)
-	return $
-}
-$.x = function (c, t) {
-	var g = G(arguments), bd = $.bd()
-	bd.E()
-	if (g.O_) {
-		$s(g.f)
-		if (g.s) {
-			$.h1(g.s);
-			$.hr().A()
-		}
-		bd.C(g.t || $r())
-	}
-	else {
-		bd.C(c || $r())
-		if (t) {
-			bd.A($.h1(t))
-		}
-	}
-	if (g.p) {
-		bd.A($.hr())
-	}
-	return $
-}
+  
+ 
 $Dt = function () {
 	var dt = new Date()
 	return dt
 }
-Ob = function (k, v) {
+$Ob=Ob = function (k, v) {
 	var g = G(arguments)
 	if (g.A || g.F || g.N || g.O) {
 		return Ob('da', g.f)

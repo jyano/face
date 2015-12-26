@@ -1,11 +1,18 @@
+BBLS = function () {
+	bbLocStorPLUG()
+	Cl = bb.C.e({
+		localStorage: new bb.LocalStorage('clN')
+	})
+}
 $g = $get = function (a) {
 	return _lS.getItem(a)//= lG
 }
-$s = $set = function (key, val) {
+error = _$s = $set = function (key, val) {
 	_lS.setItem(key, val);
 	return val
 	//=lS
 }
+
 $k = $key = function (key) {
 	return (S(key)) ? $g($k(key)) :
 			_lS.key(key)
