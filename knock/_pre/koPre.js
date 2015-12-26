@@ -8,6 +8,36 @@ $ul = function () {
 $$s = function (ob) {
 	$s({$: ob})
 }
+
+$(function () {
+	bd = $('body')
+})
+$.fS = function (num) {
+	return bd.fS(N(num, 30))
+}
+$.fn.pam = $.fn.par = function (a, b) {
+	this.at('params', a + ': ' + b);
+	return this
+}
+//tagUp and add, return jQ
+$.fn.qA = function (t) {
+	return $('<' + t + '>').A()
+}
+$.fn.par = function (a, b) {
+	this.at('params', a + ': ' + b);
+	return this
+}
+$.fn.qAP = function (a, b, c) {
+	this.qA(a).par(b, c)
+	return this
+}
+$.p.cb=$.p.ch = function () {
+}
+$.p.sp = function () {
+}
+$els = function () {
+	return $.sp.apply(null, arguments)
+}
 old = function () {
 	CUSTEL = function () {
 		
@@ -51,35 +81,4 @@ old = function () {
 		cm = ko.R(o.n, o.op)
 		return cm
 	}
-}
-$(function () {
-	bd = $('body')
-})
-$.fS = function (num) {
-	return bd.fS(N(num, 30))
-}
-$.fn.pam = $.fn.par = function (a, b) {
-	this.at('params', a + ': ' + b);
-	return this
-}
- 
-//tagUp and add, return jQ
-$.fn.qA = function (t) {
-	return $('<' + t + '>').A()
-}
-$.fn.par = function (a, b) {
-	this.at('params', a + ': ' + b);
-	return this
-}
-$.fn.qAP = function (a, b, c) {
-	this.qA(a).par(b, c)
-	return this
-}
-$.p.cb=$.p.ch = function () {
-}
-
-$.p.sp = function () {
-}
-$els = function () {
-	return $.sp.apply(null, arguments)
 }
