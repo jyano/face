@@ -56,7 +56,7 @@ CHERRY1 = function () {
 TASKS1 = function () {
 	$.z().h3('Tasks')
 	$.f().bSb('aT').A().A("Add task: ",
-			$.ip().bV('nT').ph("What?"),
+			$.ip().v$('nT').ph("What?"),
 			$.bt('Add')//.bS('s') // ??
 	)
 	$.ul().b({e: 'ts', vs: 'visible:ts().length>0'}).A($.li().A(
@@ -64,9 +64,9 @@ TASKS1 = function () {
 			$.ip().b("value:t, disable:iD"),
 			$.bt('Del').bC('$parent.rmT')))
 	$.sp("You have").A()
-	$.B("&nbsp;").bT("inc().length").A()
+	$.B("&nbsp;").t$("inc().length").A()
 	$.sp("inc task(s)").A()
-	$.sp("- beer!").bV("inc().length==0").A()
+	$.sp("- beer!").v$("inc().length==0").A()
 	ko.b({
 		itemToAdd: ko.o(''),
 		allItems: ko.oa(['a', 'b', 'c']),
@@ -124,7 +124,7 @@ KOC1 = function () {
 	$.d().t$("{name: templateToUse, " + "foreach: articles }")
 	$.scrp("summary").A().A($.d().t$('title')),
 			$.scrp('details').A(
-					$.d([$.h2().bT('title'), $.p().bT('content'),
+					$.d([$.h2().t$('title'), $.p().t$('content'),
 						$.bt('edit').b$('$parent.selectedArticle')]))
 	$.scrp('edit').A().A(
 			$.d([$.ip().v$('title'),
@@ -298,14 +298,14 @@ SPAM = function () {
 	})
 }
 KOIP = function () {
-	$.z('x')
+ 
 	$.p('Login name:').A(
 			$.ipTi('un'))
 	$.p('Pw:').A(
 			$.pwTi('pw'))     // $.p(['Pw:', $.pwTi('pw')])    //<p> <input type="password" data-bind="textInput: userPassword" /></p>
 	$.A(
 			'vm: ',
-			$.pre().bT(
+			$.pre().t$(
 					'ko.toJSON($root, null, 2)'
 			)
 	)
@@ -335,7 +335,7 @@ CHERRY = function () {
 TASKS = function () {
 	$.z().h3('Tasks')
 	$.f().bSb('aT').A().A("Add task: ",
-			$.ip().bV('nT').ph("What?"),
+			$.ip().v$('nT').ph("What?"),
 			$.bt('Add')//.bS('s') // ??
 	)
 	$.ul().b({e: 'ts', vs: 'visible:ts().length>0'}).A($.li().A(
@@ -343,9 +343,9 @@ TASKS = function () {
 			$.ip().b("value:t, disable:iD"),
 			$.bt('Del').bC('$parent.rmT')))
 	$.sp("You have").A()
-	$.B("&nbsp;").bT("inc().length").A()
+	$.B("&nbsp;").t$("inc().length").A()
 	$.sp("inc task(s)").A()
-	$.sp("- beer!").bV("inc().length==0").A()
+	$.sp("- beer!").v$("inc().length==0").A()
 	ko.b({
 		itemToAdd: ko.o(''),
 		allItems: ko.oa(['a', 'b', 'c']),
@@ -391,11 +391,11 @@ TASKS = function () {
 function comput() {
 	COMP = function () {
 		$.d([
-			$.p('F: ', $.b().bT('f')),
-			$.p('L: ', $.b().bT('l')),
-			$.p('F: ', $.ip().bV('f')),
-			$.p('L: ', $.ip().bV('l')).id('l'),
-			//   $.p('L: ', $.b().bT('fL') ),
+			$.p('F: ', $.b().t$('f')),
+			$.p('L: ', $.b().t$('l')),
+			$.p('F: ', $.ip().v$('f')),
+			$.p('L: ', $.ip().v$('l')).id('l'),
+			//   $.p('L: ', $.b().t$('fL') ),
 			$.bt('caps').b$('capL')
 		])
 		ok({
@@ -426,14 +426,14 @@ function comput() {
 				return vm.f() + ' ' + vm.l()
 			})
 			ok(vm)
-		} //bT  bV(value)  b$ ko.c(computed)}
+		} //bT  v$(value)  b$ ko.c(computed)}
 		K2 = COMPUTED = CPD = function () {
 			$.d().A(
-					$.p('F: ', $.b().bT('f')),
-					$.p('L: ', $.b().bT('l')),
-					$.p('F: ', $.ip().bV('f')),
-					$.p('L: ', $.ip().bV('l')).id('l'),
-					$.p('L: ', $.b().bT('fl')),
+					$.p('F: ', $.b().t$('f')),
+					$.p('L: ', $.b().t$('l')),
+					$.p('F: ', $.ip().v$('f')),
+					$.p('L: ', $.ip().v$('l')).id('l'),
+					$.p('L: ', $.b().t$('fl')),
 					$.bt('caps').b$('capL')
 			)
 			vm = {
@@ -476,11 +476,11 @@ function comput() {
 	COMP = function () {
 		$.z().h1('KNOCKOUT')
 		$.d([
-			$.p('F: ', $.b().bT('f')),
-			$.p('L: ', $.b().bT('l')),
-			$.p('F: ', $.ip().bV('f')),
-			$.p('L: ', $.ip().bV('l')).id('l'),
-			$.p('L: ', $.b().bT('fL')),
+			$.p('F: ', $.b().t$('f')),
+			$.p('L: ', $.b().t$('l')),
+			$.p('F: ', $.ip().v$('f')),
+			$.p('L: ', $.ip().v$('l')).id('l'),
+			$.p('L: ', $.b().t$('fL')),
 			$.bt('caps').b$('capL')
 		]).A()
 		ok({
@@ -497,11 +497,11 @@ function comput() {
 	COMP = function () {
 		$.z().h1('KNOCKOUT')
 		$.d([
-			$.p('F: ', $.b().bT('f')),
-			$.p('L: ', $.b().bT('l')),
-			$.p('F: ', $.ip().bV('f')),
-			$.p('L: ', $.ip().bV('l')).id('l'),
-			//   $.p('L: ', $.b().bT('fL') ),
+			$.p('F: ', $.b().t$('f')),
+			$.p('L: ', $.b().t$('l')),
+			$.p('F: ', $.ip().v$('f')),
+			$.p('L: ', $.ip().v$('l')).id('l'),
+			//   $.p('L: ', $.b().t$('fL') ),
 			$.bt('caps').b$('capL')
 		])
 		ok({
@@ -517,7 +517,7 @@ function comput() {
 function task() {
 	TASKS = function () {
 		$.f().bSb('aT').A().A("Add task: ",
-				$.ip().bV('nT').ph("What?"),
+				$.ip().v$('nT').ph("What?"),
 				$.bt('Add')//.bS('s') // ??
 		)
 		$.ul().b({e: 'ts', vs: 'visible:ts().length>0'}).A($.li().A(
@@ -525,9 +525,9 @@ function task() {
 				$.ip().b("value:t, disable:iD"),
 				$.bt('Del').bC('$parent.rmT')))
 		$.sp("You have").A()
-		$.B("&nbsp;").bT("inc().length").A()
+		$.B("&nbsp;").t$("inc().length").A()
 		$.sp("inc task(s)").A()
-		$.sp("- beer!").bV("inc().length==0").A()
+		$.sp("- beer!").v$("inc().length==0").A()
 		ko.b({
 			itemToAdd: ko.o(''),
 			allItems: ko.oa(['a', 'b', 'c']),
@@ -611,7 +611,7 @@ function task() {
 	}
 	TASKS = function () {
 		$.f().bSb('aT').A().A("Add task: ",
-				$.ip().bV('nT').ph("What?"),
+				$.ip().v$('nT').ph("What?"),
 				$.bt('Add')//.bS('s') // ??
 		)
 		$.ul().b({
@@ -623,9 +623,9 @@ function task() {
 						$.ip().b("value:t, disable:iD"),
 						$.bt('Del').bC('$parent.rmT')))
 		$.sp("You have").A()
-		$.B("&nbsp;").bT("inc().length").A()
+		$.B("&nbsp;").t$("inc().length").A()
 		$.sp("inc task(s)").A()
-		$.sp("- beer!").bV("inc().length==0").A()
+		$.sp("- beer!").v$("inc().length==0").A()
 		ko.b({
 			itemToAdd: ko.o(''),
 			allItems: ko.oa(['a', 'b', 'c']),
@@ -731,15 +731,15 @@ CHERRYMISC = function () {
 }
 ULTASKMISC = function () {
 	$.z().h3('Tasks')
-	$.f().bSm('aT').A().A("Add task: ", $.ip().bV('nT').ph("What?"), $.bt('Add'))
+	$.f().bSm('aT').A().A("Add task: ", $.ip().v$('nT').ph("What?"), $.bt('Add'))
 	$.ul().b({e: 'ts', vs: 'visible:ts().length>0'}).A($.li().A(
 			$.cb().bC('iD'),
 			$.ip().b("value:t, disable:iD"),
 			$.bt('Del').bC('$parent.rmT')))
 	$.sp("You have").A()
-	$.B("&nbsp;").bT("inc().length").A()
+	$.B("&nbsp;").t$("inc().length").A()
 	$.sp("inc task(s)").A()
-	$.sp("- beer!").bV("inc().length==0").A()
+	$.sp("- beer!").v$("inc().length==0").A()
 	ok({
 		itemToAdd: $o(''),
 		allItems: $oa(['a', 'b', 'c']),
@@ -782,7 +782,7 @@ ULTASKMISC = function () {
 	 //  $.Gj('ts', function(d){  o.ts($.map(d, function(i){return  { t: $o(i.t), iD: $o(i.iD) }}))})
 	 */
 	$.f().bSm('aT').A().A("Add task: ",
-			$.ip().bV('nT').ph("What?"),
+			$.ip().v$('nT').ph("What?"),
 			$.bt('Add')//.bS('s') // ??
 	)
 	$.ul().b({
@@ -792,12 +792,12 @@ ULTASKMISC = function () {
 			$.ip().b("value:t, disable:iD"),
 			$.bt('Del').bC('$parent.rmT')))
 	$.sp("You have").A()
-	$.B("&nbsp;").bT("inc().length").A()
+	$.B("&nbsp;").t$("inc().length").A()
 	$.sp("inc task(s)").A()
-	$.sp("- beer!").bV("inc().length==0").A()
+	$.sp("- beer!").v$("inc().length==0").A()
 	$.z().h3('Tasks')
 	$.f().bSm('aT').A().A("Add task: ",
-			$.ip().bV('nT').ph("What?"),
+			$.ip().v$('nT').ph("What?"),
 			$.bt('Add')//.bS('s') // ??
 	)
 	$.ul().b({e: 'ts', vs: 'visible:ts().length>0'}).A($.li().A(
@@ -805,9 +805,9 @@ ULTASKMISC = function () {
 			$.ip().b("value:t, disable:iD"),
 			$.bt('Del').bC('$parent.rmT')))
 	$.sp("You have").A()
-	$.B("&nbsp;").bT("inc().length").A()
+	$.B("&nbsp;").t$("inc().length").A()
 	$.sp("inc task(s)").A()
-	$.sp("- beer!").bV("inc().length==0").A()
+	$.sp("- beer!").v$("inc().length==0").A()
 	ok({
 		itemToAdd: $o(''),
 		allItems: $oa(['a', 'b', 'c']),
@@ -913,7 +913,7 @@ function huh() {
 	KOSCR = function () {
 		$.bd().A(
 				$.scrp('tt').A($.h1('afsdfds')),
-				$.d().bT("{name:'tt'}")
+				$.d().t$("{name:'tt'}")
 		)
 		ok({})
 	}
@@ -950,13 +950,13 @@ function err() {
 		$.ip('r').at({name: 'choices', value: 'details'}).bC('selectedView');
 		$.sp('details').A();
 		$.hr().A()
-		$.d().bT("{name: templateToUse, " + "foreach: articles }")
-		$.scrp("summary").A().A($.d().bT('title')),
+		$.d().t$("{name: templateToUse, " + "foreach: articles }")
+		$.scrp("summary").A().A($.d().t$('title')),
 				$.scrp('details').A(
-						$.d([$.h2().bT('title'), $.p().bT('content'),
+						$.d([$.h2().t$('title'), $.p().t$('content'),
 							$.bt('edit').b$('$parent.selectedArticle')]))
 		$.scrp('edit').A().A(
-				$.d([$.ip().bV('title'), $.br(), $.ip().bV('content')])
+				$.d([$.ip().v$('title'), $.br(), $.ip().v$('content')])
 		)
 		ko.b({
 			articles: [
@@ -1070,13 +1070,13 @@ KOSCR = function () {
 		$.ip('r').at({name: 'choices', value: 'details'}).bC('selectedView');
 		$.sp('details').A();
 		$.hr().A()
-		$.d().bT("{name: templateToUse, " + "foreach: articles }")
-		$.scrp("summary").A().A($.d().bT('title')),
+		$.d().t$("{name: templateToUse, " + "foreach: articles }")
+		$.scrp("summary").A().A($.d().t$('title')),
 				$.scrp('details').A(
-						$.d([$.h2().bT('title'), $.p().bT('content'),
+						$.d([$.h2().t$('title'), $.p().t$('content'),
 							$.bt('edit').b$('$parent.selectedArticle')]))
 		$.scrp('edit').A().A(
-				$.d([$.ip().bV('title'), $.br(), $.ip().bV('content')])
+				$.d([$.ip().v$('title'), $.br(), $.ip().v$('content')])
 		)
 		ko.b({
 			articles: [
@@ -1092,7 +1092,7 @@ KOSCR = function () {
 		})
 	}
 	$.bd().A(
-			$.scrp('tt').A($.h1('afsdfds')), $.d().bT("{name:'tt'}")
+			$.scrp('tt').A($.h1('afsdfds')), $.d().t$("{name:'tt'}")
 	);
 	ko.b({})
 }
@@ -1107,13 +1107,13 @@ KOC = function () {
 	$.sp('details').A();
 	$.hr().A()
 	$.d().t$("{name: templateToUse, " + "foreach: articles }")
-	$.scrp("summary").A().A($.d().bT('title')),
+	$.scrp("summary").A().A($.d().t$('title')),
 			$.scrp('details').A(
-					$.d([$.h2().bT('title'), $.p().bT('content'),
+					$.d([$.h2().t$('title'), $.p().t$('content'),
 						$.bt('edit').b$('$parent.selectedArticle')]))
 	$.scrp('edit').A().A(
-			$.d([$.ip().bV('title'),
-				$.br(), $.ip().bV('content')])
+			$.d([$.ip().v$('title'),
+				$.br(), $.ip().v$('content')])
 	)
 	ok({
 		articles: [
@@ -1128,14 +1128,12 @@ KOC = function () {
 		}
 	})
 }//broken select and inputs
-
 $.fn.u$ = $.fn.uN$ = function (s) {
 	return this.b('uniqueName' + s)
 }
 $.fn.tp$ = $.fn.bTp = function (s) {
 	return this.b('template', s)
 }
-
 function classic() {
 	knockoutBind2 = function (a) {
 

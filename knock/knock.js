@@ -349,8 +349,6 @@ function Vm(p) {
 	}
 	return vm
 }
-
- 
 COMPUTEDOBSERVABLE = function () {
 	$.d([
 		$.p('F: ', $.b().t$('f')),

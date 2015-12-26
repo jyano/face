@@ -28,7 +28,7 @@ ko.extenders.logChange = function (target, option) {
 // and passing an object that contains a logChange property.
 this.firstName = $o("Bob").extend({logChange: "first name"})
 //If the firstName observable’s value was changed to Ted, then the console would show first name: Ted.
-a
+ 
 /*
  function ex1() {
  //    Live Example 1: Forcing input to be numeric

@@ -14,6 +14,22 @@ oA.p = function (i) {
 }
 
 FLVIEWPLG = function () {
+
+//filter the items using the filter text
+	vm.filteredItems = ko.c(function () {
+		var t = this, fl
+		fl = t.filter().toLowerCase()
+		if (!fl) {
+			return t.items();
+		}
+		else {
+			return ko.utils.arrayFilter(t.items(),
+					function (it) {
+						return ko.utils.stringStartsWith(
+								it.name().toLowerCase(), fl)
+					})
+		}
+	}, vm)
 	$.x('x')
 	$.h3('All tasks').A($.spT('tasks().length'))
 	$.ulE('tasks', [
@@ -85,21 +101,7 @@ ko.$oa('filterByProperty', function (propName, matchValue) {
 		return matchingItems
 	}, this)
 })
-//filter the items using the filter text
-vm.filteredItems = ko.c(function () {
-	var t = this, fl
-	fl = t.filter().toLowerCase()
-	if (!fl) {
-		return t.items();
-	}
-	else {
-		return ko.utils.arrayFilter(t.items(),
-				function (it) {
-					return ko.utils.stringStartsWith(
-							it.name().toLowerCase(), fl)
-				})
-	}
-}, vm)
+ 
 FLVIEWPLG = function () {
 	tasks = $oA(
 			Task('Find new desktop background', 1),
