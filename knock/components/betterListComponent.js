@@ -95,6 +95,7 @@ List = Lst = function () {
 		}
 	}
 }
+
 ko.rg('MyLs', {
 	t: {el: 'MyLs-template'},
 	m: function (p) {
@@ -109,6 +110,7 @@ ko.rg('MyLs', {
 	 }) 
 	 */
 })
+
 LIST = CMLDR = function () {
 	$.tp("MyLsTp").A($.h3('spcl ls:'))
 	$.ulE(
@@ -130,6 +132,7 @@ LIST = CMLDR = function () {
 		curObsrvInst = pm.$raw.myExpr()
 	}
 }
+
 ko.cm.gN = ko.cm.getComponentNameForNode = function (nd) {
 	tgNLower = nd.tagName && nd.tagName.toLowerCase()
 	return ko.cm.iR(tgNLower) ? tgNLower :
@@ -140,6 +143,7 @@ ko.cm.gN = ko.cm.getComponentNameForNode = function (nd) {
 	// "MySpecialComponent" (whether or not it was preregistered)
 	// Treat anything else as not representing a component
 }
+
 MyCmVM = function (pm) {
 	curObsrvInst = pm.$raw.myExpr()
 }
@@ -457,3 +461,5 @@ LST = EACHS = SELLISTMISC = function () {
 	})
 	ok(new Lst())
 }
+
+ 

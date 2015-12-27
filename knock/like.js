@@ -41,7 +41,6 @@ $rg = function (name, ob) {
 	ob.template = $tpEl((ob.template))
 	return ko.cm.rg(name, ob)
 }
-
 function classic(){
 el2H = function (a, t) {
 	var g = G(arguments)
@@ -50,66 +49,79 @@ el2H = function (a, t) {
 	d.A(A(g.s) ? g.s : g)
 	return d.ch(0).h()
 }}
-LIKE = function () {
-	ko.cm.register('like-widget', {
-		viewModel: function (params) {
-			// Data: value is either null, 'like', or 'dislike'
-			this.chosenValue = params.value;
-			// Behaviors
-			this.like = function () {
-				this.chosenValue('like');
-			}.bind(this);
-			this.dislike = function () {
-				this.chosenValue('dislike');
-			}.bind(this);
-		},
-		template: $.sp().A(
-				$.dK('like-or-dislike')
-						.vs$('!chosenValue()').A(cl$('like'), cl$('dislike')),
-				$.dK('result')
-						.vs$('chosenValue()').A('You', t$(' chosenValue'), 'it')).h()
+REG = function () {
+	$s({i:{w:40, h:40}})
+	$rg('test', {vM: function(pm){
+		this.text = $o(pm.name ,  'default')},
+		tp: $.d(['hello, ', t$('text'), ' ! ', $.i('me')])
 	})
-	e$('products', [t$('name'), $('<like-widget>').at('params', 'value: userRating')])
-	// Source code: View model
+	cm$('test')
+	cm$('test', {name: "tesfadsafdst" })
+	ok({})
+}
+
+EXA = function () {
+	$.mar()
+	
+	$rg('editor', {
+		
+		vM: function (pm) {
+			this.text = $o(pm.initText, '')
+		},
+		
+		tp: ['Message: ', v$('text'),
+			'[', 'length:', t$('text().length'),
+			']']
+	})
+	
+	$.h4('First instance, without parameters')
+	cm$('editor')
+	$.h4('Second instance, passing parameters')
+	cm$('editor', {initText: "Heldflo, world!"})
+	ok({})
+	
+}
+LIKE = function () {$.mar(10)
 	function Product(name, rating) {
 		this.name = name;
 		this.userRating = ko.observable(rating || null);
 	}
 	
-	function MyViewModel() {
-		this.products = [
-			new Product('Garlic bread'),
-			new Product('Pain au chocolat'),
-			new Product('Seagull spaghetti', 'like') // This one was already 'liked'
-		];
-	}
-	
-	ok(new MyViewModel());
-}
-REG = function () {
-	ko.components.register('test', {
-		template: {element: $.sp().rm().A('hello', 'weirdo', $.i('me'))[0]}
-	})
-	cm$('test')
-	cm$('test')
-	cm$('test')
-	$.sp().cm$('{ name: "test"}')
-	ok({})
-}
-EXA = function () {
-	$.mar()
-	$rg('editor', {
-		vM: function (pm) {
-			this.text = $o(pm.initText, '')
+	$rg('like', {
+		vM: function (params) {
+			// Data: value is either null, 'like', or 'dislike'
+			this.chosenValue = params.value;
+			// Behaviors
+			this.like = function () {
+				this.chosenValue('like')
+			}.bind(this)
+			this.dislike = function () {
+				this.chosenValue('dislike')
+			}.bind(this);
 		},
-		tp: ['Message: ', v$('text'),
-			'[', 'length:', t$('text().length'),
-			']']
+		
+		tp: $.d().A(
+			vs$('!chosenValue()').A(
+					cl$('like'),
+					cl$('dislike')			).K("like-or-dislike"),
+			  vs$('chosenValue').A('You ', t$('chosenValue'), ' it').K('result')
+		
+		).bor('4px solid yellow')
 	})
-	$.h4('First instance, without parameters')
-	cm$('editor')
-	$.h4('Second instance, passing parameters')
-	cm$('editor', {initText: "Heldflo, world!"})
-	//Source code: View model
-	ok({})
+	
+	e$('products', $.d().A(
+	
+		t$('name'),
+		 cm$('like', 'value:userRating')
+	
+	).C('g'))
+	
+	
+	 ok({products: [
+				 new Product('Garlic bread'),
+				 new Product('Pain au chocolat'),
+				 new Product('Seagull spaghetti', 'like') // This one was already 'liked'
+			 ]}
+	 )
 }
+

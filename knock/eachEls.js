@@ -7,14 +7,18 @@ e$ol = ol$e = $ol$e = $ol.e$ = $.ol.e$ = $.olE = $.olBe = function (a, b) {
 }
 ko.t$ = t$ = sp$t = sp_t$ = $.sp.t$ = function () {
 }
+
 ko.v$ = function(){}
+
 e$ = function (arr) {
 	$.d().e$()
 }
+
 e$example=function(){
 	ul_e$([{n:'j'},{n:'r'},{n:'y'}], [ $.li() ])
 
 }
+
  e$ul = ul$e = $ul$e = $ul.e$ = $.ul.e$ = $.ulE = $.uE = function (a, b, c) {
 	var g = G(arguments)
 	var ul = $.ul().e$(a)
@@ -34,9 +38,12 @@ e$example=function(){
 	}
 	return ul
 }
+
 $.li.tb$ = $.liBt = function (a) {
-	return $.li().bT(a)
+	return $.li().t$(a)
 }
+
+
 $.tB.e$ = function (a, b) {
 	var g = G(arguments), tB = $.tB()
 	tB.e$(a)
@@ -54,6 +61,7 @@ $.tB.e$ = function (a, b) {
 	}
 	return tB
 }
+
 $.tBTr = $.tBT = function (arr) {
 	var g = G(arguments)
 	var tr = $.tr()

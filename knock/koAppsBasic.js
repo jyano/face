@@ -232,74 +232,29 @@ ADD2 = ULADD = ULA = function () {
 	//anonymous vm
 }
 DELETE = ADD3 = ULP = function () {
-	$.ul().e$('people').A(
-			$.li().A(
-					$.sp('pos/name: '),
-					$.sp().t$('$index'),
-					$.sp().t$('name'),
-					$.a('X').cl$('$parent.rm'))
-	)
-	$.bt('add').cl$('add')
-	vm = function () {
-		var o = {}
-		o.people = $oA([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-		o.add = function () {
-			o.people.push({n: "New at " + new Date().time})
-		}
-		o.remove = function () {
-			o.people.rm(this)
-		}
-		return o
-	}
-	ok(vm())
-	REM = ULDEL = ULD = function () {
-		$.ul().e$('peep',
-				//bind bt 'click' to parent.rem
-				$.li([
-					$.sp('pos/name: '),
-					$.sp().t$('$index'),
-					$.sp().t$('n'),
-					$.bt('delete').cl$('rm')
-				]))
-		$.bt('A').cl$('A')
-		$.bt('rm').ch$('rm')
-		ok({
-			peep: $oa({n: 'B'}, {n: 'Ch'}, {n: 'De'}),
-			A: function () {
-				this.peep.push({n: "New at " + $D()})
-			},
-			rm: function (a) {
-				vm.peep.remove(this)
-			}
-		})
-	}
-	ULINDEX = function () {
-		format()
-		s2(
-				h4('People'),
-				ul().b('E', 'people')(
-						li()(
-								sp('pos/name: '),
-								sp().b('t', '$index'),
-								sp().b('t', 'n'),
-								lk(' X').b('$', '$parent.rem')
-						)
-				),
-				bt('add').b('$', 'add')
-		)
-		vm = function () {
-			var o = {}
-			o.people = $oa([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])
-			o.add = function () {
-				o.people.push({n: "New at " + new Date()})
-			}
-			o.rem = function () {
-				o.people.remove(this)
-			}
-			return o
-		}
-		ko.ab(vm()
-		)
-	}
+
+
+ok(function(){
+
+	$s({
+		bd:{C: 'x', c: 'y'},
+		$:{C:'n',c:'z',M:5,fS:42},
+		sp:{C:'o', c: 'z'}
+	})
+	cl$('add', 'ADD')
+	e$('people', $.d([
+		'name: ', t$('$index'), 
+		t$('name'), cl$('$root.rm', 'DELETE')
+	]))
+	
+	cl$('add', 'ADD')
+	var o = {people: $oA([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])}
+	o.add = function () {o.people.push({n: "New at " + new Date().time})}
+	o.rm = function () {o.people.remove(this)}
+	return o
+	
+	}())
+	
+	
 }
  

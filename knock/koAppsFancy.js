@@ -15,11 +15,18 @@ $d_ch$cb = $d.ch$cb = function (text, ch$) {
 t$ = ok.t$ = t$d = $.d.t$ = function (bd, textVal) {
 	return $.sp().t$(bd).A(textVal || '')
 }
-cl$ = function (bnd, kids) {
+
+cl$ = function (bnd, btTx) {
 	var g = G(arguments)
-	var bt = $.bt()
-	return bt.A.apply(bt, A(g.s) ? g.s : g.r).cl$(bnd)
+	
+	var bt = $('<button>').A()
+	bt.cl$(bnd)
+	bt.A(D(btTx)? btTx: bnd)
+	return bt
+	
+	
 }
+
 vs$ = function (bnd, kids) {
 	var g = G(arguments)
 	return $.sp(A(g.s) ? g.s : g.r).vs$(bnd)

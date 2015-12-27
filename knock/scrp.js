@@ -13,24 +13,26 @@ KOSCR = function () {
 }
 KOSCR = function () {
 	KOTEMP = function () {
-		$.format()
-		s2(
-				ip('r').at({name: 'choices', value: 'summary'}).b('ch', 'selectedView'), sp('summary'),
-				ip('r').at({name: 'choices', value: 'details'}).b('ch', 'selectedView'), sp('details'),
-				hr(),
-				_d().b('T', "{name: templateToUse, foreach: articles }"),
-				script("summary")(_d().b('t', 'title')),
+	 
+		$.rb().at({name: 'choices', value: 'summary'}).ch$('ch', 'selectedView'), $.sp('summary')
+				
+		$.rb().at({name: 'choices', value: 'details'})
+				.ch$( 'selectedView'), $.sp('details')
+				
+		
+		$.d().t$("{name: templateToUse, foreach: articles }")
+				script("summary").A(t$( 'title'))
 				script('details')(
 						_d()(
 								h2().b('t', 'title'),
 								pg().b('t', 'content'),
 								bt('edit').b('$', '$parent.selectedArticle'))
-				),
+				)
 				script('edit')(
 						_d()(ip().b('v', 'title'),
 								br(),
 								ip().b('v', 'content'))
-				))
+			 
 		viewModel = {
 			articles: [
 				{id: 1, title: "Article One", content: "Content for article one."},
@@ -112,9 +114,10 @@ KOSCR = function () {
 		})
 	}
 	$.bd().A(
-			$.scrp('tt')
-					.A($.h1('afsdfds')),
-			$.d().t$("{name:'tt'}")
+	
+			$.scrp('tt').A($.h1('afsdfds')),
+			
+			 t$("{name:'tt'}")
 	);
 	ok({})
 }

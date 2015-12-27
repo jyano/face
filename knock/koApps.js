@@ -29,58 +29,74 @@ TBTR = function () {
 	ok({peep: $O([{f: 'a', l: 'A'}, {f: 'b', l: 'B'}, {f: 'c', l: 'C'}])})
 	//ok({ peep: [{f:'a',l:'A'},      {f:'b',l:'B'}, {f:'c',l:'C'}]})
 }
+$Ul = function (bnd) {
+	var g = G(arguments)
+	var ul = $.ul().e$(bnd)
+	_.e(A(g.s) ? g.s : g.r, function (q) {
+		$.li().A(q).a2(ul)
+	})
+	return ul
+}
+ $Cb=function(bnd, tx){return $.sp().A($.lb((D(tx)?tx:bnd)+': '), ch$(bnd))}
+
 ULI = SHOWTIME = ROOT = $$$TWOLAYERSDEEPNESTED$$$ = function () {
-	$.ul().e$('peep').A(
-			$.d([// name has length children
-				$.sp().t$('name'), 'has',
-				$.sp().t$('ch().length'),
-				'children &nbsp;',
-				$.a('New').cl$('A')
-			]),
-			$.ul().e$('ch').A($.li([
-						$.sp().t$(), //child name
-						$els(
-								'(child rendered at ',
-								$.sp().t$('$Dt().getSeconds()'),
-								')'
-						).vs$('$root.showDT')
-					])
-			)
-	)
-	$.lb('show time: ').A($.cb().ch$('showDT'))
+	
+
+	 e$('peep').A(
+	 
+			 t$('n'), ' has ', t$('ch().length'), ' children',
+				
+			 cl$('A').mar(10),
+			 
+			 $Ul(
+			 'ch',
+			  t$(),
+			  vs$('$root.showDT',
+			  '(child rendered at ', 
+			  t$('$Dt().getSeconds()'),
+			   ')')
+			   
+			 ))
+	
+	$Cb('showDT', 'show time')  
+	
 	//anonymous vm
 	ok({
-		peep: Peep(),
-		showDT: $o(),
-		A: function () {
-		}
-	})
-	function alt() {
-		KOCL = SHOWTIME = function () {
-			$.ul().$('peep').A(
-					$.li().A(
-							$.d([
 		
-														$.sp().t$('n'), 'has',
-								$.sp().t$('ch().length'),
-								'children &nbsp;',
-								$.a$('New', 'A')
-							]),
-							$.ul().e$('ch').A(
-									$.li([
-										$.sp().t$(), $.sp().vs$('$root.showDT').A(
-												' (child rendered at ',
-												$.sp().t$('$Dt().getSeconds()'),
-												')'
-										)]))))
-			$.cb().ch$('showDT').a2($.lb('Show time:'))
-			//anonymous vm
-			OK({
-				n: 'j',
-				ch: Peep(),
-				showDT: $o()
-			})
-		}
+		peep: Peep(),
+	 showDT: $o(),
+	  A: function () {
+	  
+	  }})
+
+}
+
+
+
+function alt() {
+	KOCL = SHOWTIME = function () {
+		$.ul().$('peep').A(
+				$.li().A(
+						$.d([
+							$.sp().t$('n'), 'has',
+							$.sp().t$('ch().length'),
+							'children &nbsp;',
+							$.a$('New', 'A')
+						]),
+						$.ul().e$('ch').A(
+								$.li([
+									$.sp().t$(), $.sp().vs$('$root.showDT').A(
+											' (child rendered at ',
+											$.sp().t$('$Dt().getSeconds()'),
+											')'
+									)]))))
+		$.cb().ch$('showDT').a2($.lb('Show time:'))
+		//anonymous vm
+		OK({
+			n: 'j',
+			ch: Peep(),
+			showDT: $o()
+		})
 	}
 }
 ULE = function () {
@@ -96,6 +112,7 @@ ULE = function () {
 		])
 	})
 }
+
 ULROOT = function () {
 
 	$.ul().e$('fs').A([ 
@@ -271,29 +288,63 @@ KOGRID = function () {
 	f = $.f().at({action: '/someServerSideHandler'})
 	f.A(
 			$.p(['You have asked for', $.sp('&nbsp;')])
-					.bT('gifts().length', 'gift(s)'),
-			$.t([
-				$.tH($.tr([$.th('Gift name'), $.th('Price')])).bVs('gifts().length > 0'),
-				$.tBE('gifts').A(
+					.t$('gifts().length', 'gift(s)'),
+			
+
+			
+			$.t([$.tH($.tr([
+				$.th('Gift name'), $.th('Price')
+				])).vs$('gifts().length > 0'),
+				
+				
+				$.TBd('gifts').A(
+				
 						$.tr([$.td().A($.ip().K('required').b({v: 'name', u: 1})),
 							$.td($.ip().K('required number').b({v: 'price', u: 1})),
-							$.td($.a('delete').b$('$root.removeGift'))])),
-				$.bt$('addGift'), $.smEn('gifts().length > 0')
+							$.td($.a('delete').b$('$root.removeGift'))])
+				),
+				$.bt$('addGift'), 
+				$.smEn('gifts().length > 0')
 			])
 	)
-	f = $.z().f().at({action: '/someServerSideHandler'})
+	f = $.f().at({action: '/someServerSideHandler'})
 	f.A(
 			$.p(['You have asked for', $.sp('&nbsp;')
 					.bT('gifts().length'), 'gift(s)']),
-			$.tVs('gifts().length > 0').A($.tH().A($.tr().A(//tHR
-							$.th().A('Gift name'), $.th().A('Price'))),
+			
+			
+			$.tVs('gifts().length > 0').A(
+			
+			
+			
+					$.tH().A($.tr().A(//tHR
+							
+							
+							$.th().A('Gift name'),
+							 $.th().A('Price'))),
 					$.tB().bE('gifts').A($.tr().A(  //tBR
-							$.td($.ip().K('required').b({v: 'name', u: 1})).A(),
-							$.td($.ip().K('required number').b({v: 'price', u: 1})).A(),
-							$.td($.a('delete').b$('$root.removeGift')).A()))),
-			$.bt('add gift').b$('addGift'), $.sb().bEn('gifts().length > 0'),
+							$.td(
+									$.ip().K('required').b({v: 'name', u: 1})),
+							$.td(
+							
+							$.ip().K('required number').b({v: 'price', u: 1})),
+							
+							$.td(
+							
+									$.a('delete').cl$('$root.removeGift'))))
+							
+			),
+		
+			
+			$.bt('add gift').cl$('addGift'), 
+			
+			$.sm().en$('gifts().length > 0'),
+			
 			$.p('You have asked for').A(
-					$.sp('&nbsp;').bT('gifts().length'), 'gift(s)'),
+					
+					
+					t$('gifts().length'), 'gift(s)'),
+			
 			$.tVs('gifts().length > 0').A(
 					$.tH($.tr([$.th('Gift name'), $.th('Price')])),
 					$.tBE('gifts').A(
@@ -304,14 +355,20 @@ KOGRID = function () {
 								$.td().A($.ip().K('required number').b({
 									v: 'price', u: 1
 								})),
-								$.td($.a('delete').b$('$root.removeGift'))
+									
+									
+								$.td(
+										$.a('delete').b$('$root.removeGift')
+								)
 							]))
 			),
+			
 			$.b$('addGift'), $.sm().en$('gifts().length > 0')
 	)
+	
 	f.A([
 		$.p('You have asked for').A($.sp('&nbsp;').bT('gifts().length'), 'gift(s)'),
-		$.t().bVs('gifts().length > 0').A(
+		$.t().$vs('gifts().length > 0').A(
 				$.tH().A(
 						$.tr().A(//tHR
 								$.th().A('Gift name'),
@@ -639,6 +696,6 @@ BDSMPGRD = SIMPLEGRIDPLUGIN = function () {
 		cols = [];
 		for (var popN in d[0])
 			cols.push({headerText: popN, rowText: popN});
-		return cols;
+		return cols
 	}
 } 

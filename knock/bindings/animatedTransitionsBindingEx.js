@@ -8,6 +8,7 @@ planets= [
 	{name: "Uranus", type: "gasgiant"},
 	{name: "Neptune", type: "gasgiant"}
 ]
+
 Planets = function () {
 	this.planets = $oA(planets);
 	this.typeToShow = $o("all");
@@ -39,7 +40,8 @@ Planets = function () {
 }
 PLANETS = CUSTOMBINDING = function () {
 	 
-	$.p().A($.lb().A($.cb().ch$('displayAdvancedOptions'), 'Display advanced options'))
+	$.p().A($.lb().A($.cb().ch$('displayAdvancedOptions'),
+	 'Display advanced options'))
 	$.p().A('Show:',
 			$.lb([$.ip()]),
 			$.lb([$.ip()]),
@@ -89,6 +91,7 @@ PLAN = function () {
 	 <label><input type='radio' name="type" value='rock' data-bind='checked: typeToShow' />Rocky planets</label>
 	 <label><input type='radio' name="type" value='gasgiant' data-bind='checked: typeToShow' />Gas giants</label>
 	 </p>*/
+	 
 	$.d([$.d([$.d()])])
 	/*
 	

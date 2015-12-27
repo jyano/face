@@ -255,4 +255,112 @@ Person = Per = function (n, ch) {
 		per.ch.push('new ch')
 	}
 }
- 
+
+
+LST = function (n, ch) {
+	$s({_sl:{
+		fS: 16,
+		C:'i',c:'j',
+	position: 'relative',
+	display: 'inline-block',
+		P:66,
+		h:'60%' 
+		 }})
+	
+	$.f().A('Add item:',
+			
+			$.ip().tI$('itemToAdd'),
+			
+			$.sm('Add').en$('itemToAdd().length > 0')
+			
+	).sm$('addItem')
+	
+	$.p('Your values: ')
+	
+	$.sl().at({multiple: "multiple", height: 5})
+	.b({o: 'allItems', sO:'selectedItems'}).K('sl')
+	
+	
+	
+	$.d([
+	
+		$.bt('Remove').b({cl:'removeSelected', en: 'selectedItems().length > 0'}),
+		$.bt('Sort').b({cl: 'sortItems', en: 'allItems().length > 1'})
+	
+	])
+	
+	var BetterListModel = function () {
+		this.itemToAdd = ko.observable("");
+		
+		this.allItems = ko.observableArray(["Fries", "Eggs Benedict", "Ham", "Cheese"]); // Initial items
+		
+		this.selectedItems = ko.observableArray(["Ham"]);                                // Initial selection
+		
+		this.addItem = function () {
+		
+		$l('add')
+			if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0))
+			// Prevent blanks and duplicates
+				this.allItems.push(this.itemToAdd());
+			this.itemToAdd(""); // Clear the text box
+		};
+		
+		this.removeSelected = function () {
+			this.allItems.removeAll(this.selectedItems());
+			this.selectedItems([]); // Clear selection
+		};
+		
+		this.sortItems = function () {
+			this.allItems.sort();
+		};
+	}
+	
+	ok(vm= new BetterListModel());
+}
+LST = function (n, ch) {
+	$s({
+		_sl: {
+			fS: 16,
+			C: 'i', c: 'j',
+			position: 'relative',
+			display: 'inline-block',
+			P: 66,
+			h: '60%'
+		}
+	})
+	$.f().A('Add item:',
+			$.ip().tI$('itemToAdd'),
+			$.sm('Add').en$('itemToAdd().length > 0')
+	).sm$('addItem')
+	$.p('Your values: ')
+	$.sl().at({multiple: "multiple", height: 5})
+			.b({o: 'allItems', sO: 'selectedItems'}).K('sl')
+	$.d([
+		cl$('removeSelected', 'Remove')
+				.en$('selectedItems().length > 0'),
+		cl$('sortItems', 'Sort').en$('allItems().length > 1')
+	])
+	var BetterListModel = function () {
+		this.itemToAdd = ko.observable("");
+		this.allItems = ko.observableArray(["Fries", "Eggs Benedict", "Ham", "Cheese"]); // Initial items
+		this.selectedItems = ko.observableArray(["Ham"]);                                // Initial selection
+		this.addItem = function () {
+			$l('add')
+			if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0))
+			// Prevent blanks and duplicates
+				this.allItems.push(this.itemToAdd());
+			this.itemToAdd(""); // Clear the text box
+		}
+		this.removeSelected = function () {
+			$l('rm')
+			this.allItems.removeAll(this.selectedItems());
+			this.selectedItems([]); // Clear selection
+		}
+		this.sortItems = function () {
+			$l('sort')
+			this.allItems.sort();
+		}
+	}
+	ok(vm = new BetterListModel());
+}
+

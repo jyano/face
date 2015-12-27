@@ -11,6 +11,7 @@ ko.bH.fadeVisible = {
 		ko.unwrap(value) ? $(el).fadeIn() :
 				$(el).fadeOut();
 	},
+	
 	alt: function () {
 		//fade in/out
 		ko.BH.fadeVs = {
@@ -37,25 +38,27 @@ ko.bH.fadeVisible = {
 		} // On update,
 	}
 }
+
 K3 = TABLE = function () {
-	ko.h$({
+	
+	$BH({
 		fadeVisible: {
-			i: function (e, v) {
-				var v = v()
-				$l('v:' + v)
-				$(e).toggle(v)
-			}, u: function (el, vAc) {
-				vAc() ? $(el).fadeIn() : $(el).fadeOut()
+			I: function (e, vA) {$(e).toggle(vA())},
+			U: function (el, vA) {
+				vA() ? $(el).fadeIn() :
+				 $(el).fadeOut()
 			}
 		},
+	
 		jqButton: {
-			i: function (e) {
-				$(e).button()
-			}, u: function (e, vA) {
-				$(e).button("option", "disabled", vA().enable === false);
+			I: function (e) {$(e).button()},
+			U: function (e, vA) {
+				$(e).button("option", "disabled", 
+						vA().enable === false);
 			}
 		}
 	})
+	
 	str = '<h3 data-bind="text: q"></h3>'
 	str += '<p> distribute <b data-bind="text: pB"></b> points  </p>'
 	str += ' <table><thead><tr><th>Option</th><th>Importance</th></tr></thead>'
