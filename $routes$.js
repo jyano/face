@@ -1,5 +1,7 @@
 $stc('', '../art', '_data', 'superWeb/both', 'superWeb', 
-		'front', 'bone', 'font/bone', 'front/jet', 'front/knock', 'knock', 'knock/custom')
+		'front', 'bone', 'font/bone', 'front/jet', 'front/knock', 'knock','eachEls',
+		'knock/bindings', 'knock/components', 'knock/custFunctions',
+		 'knock/plugins', 'knock/viewModels')
 
 Both = ['superUnder', 'superJ', 'superTime']
 
@@ -10,7 +12,10 @@ SuperWeb=['jq', 'first', 'second','cssData',
 Front= [  'bb', 'bone', 'bbPerfect',  
  'bbTweet','local', 'jqui', 'jet',
     'ko', 'knock0', 'knock', 'koInput', 'koEach', 'koEls',
+    'koApps',
 	'bindings', 'components', 'extenders', 'functions', 'plugins',
+	
+	'koAppsBasic', 'koAppsFancy','like',
 	'superTemplate',  
 ]
     

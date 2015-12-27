@@ -1,9 +1,15 @@
  $L('$_app_Clas_$','data')
 $o = function () {
 	var g = G(arguments)
-	g[0] = g.u ? (g.n ? 0 : 1) : g.f
+	
+	g[0] = D(g.f)? g.f: 
+			D(g.s)? g.s:   g.n ? 
+			0 : 1 
+	
 	return ko.o.apply(ko, g)
 }
+
+
 $oA = $oa = function () {
 	var g = G(arguments)
 	return ko.oA(g.A_ ? g.f : g)
@@ -122,12 +128,6 @@ ko.$oa = function (name, fn) {
 	 ]
 	 
 	 
-	 Peep = function(){return peep = [
-			 new Per("Annabelle", ["Arnie", "Anders", "Apple"]),
-			 new Per("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
-			 new Per("Charles", ["Cayenne", "Cleopatra"])
-		 ]
-	 }
 	 
 	 
 	 PLANS = [
@@ -397,6 +397,10 @@ function $_app_Clas_$(){
 			 }
 		 }
 	 }
+	
+	 ko.cm = ko.cmp = ko.comp = ko.components
+	 ko.rg = ko.cm.rg = ko.cm.reg = ko.cm.register
+	 ko.cm.iR = ko.cm.isRegistered
  }
  function lost() {
 	 //note: widget name apparently must be lowercase

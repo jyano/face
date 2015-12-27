@@ -1,3 +1,27 @@
+CLICK1 = VWW = function () {
+	d = $.d('r', 200).A(
+			$.h1('hello'),
+			$.bt(__)
+	)
+	//d.$(function(){v.r()})
+	mOv = function () {
+		$l('mouse over !')
+	}
+	v = $V({
+		e: {
+			'click button': function () {
+				$l('$')
+			},
+			$$: 'r',
+			v: mOv
+		},
+		q: d,
+		r: function () {
+			alert('double click')
+			$.bd().C($r())
+		}
+	})()
+}
 BKS = function () {
 	$.x().h1('BCL')
 	Bk = _M({
