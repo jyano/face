@@ -79,4 +79,9 @@ $Sa = function () {
 
 $Sa()
 $Mk()
- 
+$mk.css = $s({h1: {C: 'o'}, li: {C: 'o'}, ul: {C: 'gray'}, d: {C: 'r'}, $: {B: '4px dashed pink', M: 20}})
+$mk.$ = function () {
+	$s($mk.css)
+	return $
+}
+	
