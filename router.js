@@ -1,8 +1,18 @@
 $L()
 
-Rtr = R$ = function (ob) {return Bb.R.x(ob || {})}
+Rtr = R$ = function (ob) {
+$l('R$')
+	ob= ob || {}
+	
+	if( O(ob.R) ){ob.routes = ob.R}
+	
+	return Bb.R.x(ob)
+}
 
-$R = function (ob) {ob = ob || {}
+$R = function (ob) {
+
+$l('$R')
+	ob = ob || {}
 	ob.routes = ob.R ? ob.R : 
 	ob.routes || ob.rt || ob.r || {} //if (ob.i) {ob.initialize = ob.i}
 		//if (ob.$) {ob.initialize = function () {$start(); if (F(ob.$)) {ob.$()}}}

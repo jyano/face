@@ -163,6 +163,11 @@ cl.ls1 = cl.l1 = function (a, b, c, d) {
 cl.fl = cl.filter
 cl.wo = cl.without
 cl.la = cl.last
+
+cl.f= function(){
+	return this.find.apply(this, arguments)
+}
+
 clEvents()
 function clEvents() {
 	cl.V = function (Vw, ob) {
