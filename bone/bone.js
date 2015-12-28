@@ -88,7 +88,13 @@ Bb.sEv = function (md) {
 		}
 		return md
 	};
-	
+Bb.Model.prototype.j = function () {
+	return this.toJSON()
+}
+Bb.M.prototype.idAttribute = '_id'
+$Df = function (ob) {
+	return $M({df: ob})
+}
 Eve = function () {
 		var e = _({}).extend(Backbone.Events)
 		e.o = e.bind
@@ -99,3 +105,65 @@ Eve = function () {
 BBEXT = function () {
 	// https://coderwall.com/p/xj81ua/a-better-way-of-extending-backbone-models-and-views
 }
+BBBEV = function () {
+	$.x().i('chicks')
+	ev = Bb.Ev()
+	ev.b("fun:had", function () {
+		alert("wee!")
+	})// bind? on?
+	ev.tr("fun:had")//trigger  //it'll alert "wee!"
+}
+EVENTS = EVS = function () {
+	$.x('o', 'beauty')
+	dv = $.d('r', 200).A(
+			$.h1('hello'),
+			bt = $.bt('-------')
+	)
+	$V({
+		el: dv,
+		events: {
+			'click button': function () {
+				bt.C($r())
+			},
+			'dblclick': 'r',
+			'mouseover': function () {
+				dv.C($r())
+			}
+		},
+		r: function () {
+			$.C($r())
+		}
+	})
+}
+BBEV = function () {
+	$.x().i('chicks')
+	ev = bb.Ev()
+	ev.b("fun:had", // bind? on?
+			function () {
+				alert("wee!")
+			})
+	//trigger
+	ev.tr("fun:had")  //it'll alert "wee!"
+}
+BB11 = VME = EVENTS = EVS = function () {
+	q = $.d('r', 200).A(
+			$.h1('hello'),
+			bt = $.bt('-------')
+	)
+	$V({
+		el: q,
+		ren: function () {
+			$.C($r())
+		},
+		events: {
+			'click button': function () {
+				bt.C($r())
+			},
+			'dblclick': 'ren',
+			'mouseover': function () {
+				q.C($r())
+			}
+		}
+	})
+}
+ 

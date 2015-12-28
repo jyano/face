@@ -1,7 +1,6 @@
 $.fn.dgb = $.fn.draggable
 $.fn.dpb = $.fn.droppable
 $.fn.ef = $.fn.effect
-
 $.fn.zLite = function (type, icon) {
 	var e = this
 	icon = icon ? icon : (type === 'highlight') ?
@@ -89,12 +88,9 @@ $.fn.dtp = $.fn.datepicker // CSS Framework
 // fixed and structural, or themeable
 // (colors, fonts, backgrounds, etc) respectively.
 //jqAnim:
-
-
 $.fn.bt = function (op) {
 	this.bt(op)
 	return this
 }
-
 $.wd=$.wg = $.wid = $.widget
  
