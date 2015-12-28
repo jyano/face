@@ -357,12 +357,45 @@ function manip() {
 			this.prependTo(a);
 			return this
 		}
-		$.fn.iB = $.fn.insertBefore
+		$.fn.bf=$.fn.iBf =$.fn.iB = $.fn.insertBefore
 		$.fn.iA = $.fn.insertAfter
 		$.fn.wr = $.fn.wrap
+		
+		
+		
+		$.fn.d_ = function(k){
+			var q=this, d = $.d()
+			d.K(k)
+			d.A(q)
+			return q
+		}
+		$.fn._d = function(k){
+			var q = this, d = $.d()
+			d.K(k)
+			q.A(d)
+		return q
+		}
+		
+		$.fn.D_ = function (k) {
+			var q = this, d = $.d()
+			d.K(k)
+			d.A(q)
+			return d
+		}
+		
+		$.fn._D = function (k) {
+			var q = this, d = $.d()
+			d.K(k)
+			q.A(d)
+			return d
+		}
+		
+		
 	}
 }
  
+
+
 function text() {
 	$.fn.tt = function (t, c) {
 		var p = $.p(t).mH(10).pH(30)

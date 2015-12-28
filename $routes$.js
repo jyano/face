@@ -1,7 +1,9 @@
 $stc('', '../art', '_data', 'superWeb/both', 'superWeb', 
-		'front', 'bone', 'font/bone', 'front/jet', 'front/knock', 'knock','eachEls',
+		'front', 'bone', 'font/bone', 
+		'front/jet', 'front/knock', 'knock','eachEls',
+		'bone','knock','wid',
 		'knock/bindings', 'knock/components', 'knock/custFunctions',
-		 'knock/plugins', 'knock/viewModels')
+		 'knock/plugins', 'knock/viewModels','loop','apps')
 
 Both = ['superUnder', 'superJ', 'superTime']
 
@@ -9,22 +11,29 @@ SuperWeb=['jq', 'first', 'second','cssData',
 	'superJQ', 'superAnim', 'sty', 'rules' , 'flex',  'media' ,
 	 'superHTML', 'superInput', 'superImage', 'htmlPlus']
 
-Front= [  'bb', 'bone', 'bbPerfect',  
- 'bbTweet','local', 'jqui', 'jet',
-    'ko', 'knock0', 'knock', 'koInput', 'koEach', 'koEls',
-    'koApps',
-	'bindings', 'components', 'extenders', 'functions', 'plugins',
-	
-	'koAppsBasic', 'koAppsFancy','like',
-	'superTemplate',  
+Bone= [  'bb', 'bone', 'bbPerfect','bbApps',  
+ 'bbTweet', 'local', 'superTemplate', 
+  
 ]
-    
+ 
+ Knock=['ko', 'knock0', 'knock', 'koInput', 'koEach', 'koEls',
+	 'koApps',
+	 'bindings', 'components', 'extenders', 'functions', 'plugins',
+	 'koAppsBasic', 'koAppsFancy', 'like']  
+  
+Wid = [
+	'jqui', 'jetPre', 'checkbox',
+	'jet', 'wid', 'calc', 'uiApps', 'uiAppsMore',
+	'widFilt', 'widProgessBar', 'widSuperDlg'
+]
+ 
+ 
 $a.g('/box/:app', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js(Both,  SuperWeb, Front)	// Geo, Can, Stage, Fiz
+	html += $js(Both,  SuperWeb, Bone, Knock, Wid)	// Geo, Can, Stage, Fiz
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
@@ -43,3 +52,6 @@ Fiz = ['box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes', '$make',
 	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
 	'$collide', '$contact', '$filtering', '$handle', '$listen']
 }
+
+
+// google fonts?

@@ -1,7 +1,8 @@
 ENAB = PHONENUMBER = function () {
 	$s({$: {M: 10}})
-	$.sp('phone #:').A($.ip().b({v: 'num', en: 'hasPhone'}))
-	$.sp([$.cb().ch$('hasPhone'), 'I have phone'])
+	
+	$.sp(['phone #:', v$('num').en$('hasPhone')])
+	$.sp([ ch$('hasPhone'), 'I have phone'])
 	ok({hasPhone: $o(0), num: ''})
 }
 TEXT =   function () {
@@ -12,32 +13,35 @@ TEXT =   function () {
 	})
 }
 CPD = COMPUTED = function () {
-	$.d().A(
-			$.p('F: ', $.b().t$('f')),
-			$.p('L: ', $.b().t$('l')),
-			$.sp('F: ').A($.ip().v$('f')),
-			$.p('L: ', $.ip().v$('l')).id('l'),
-			$.p('L: ', $.b().t$('fl')),
-			$.bt('caps').cl$('capL')
-	)
+	$.d([
+		$.p('F: ', t$('f')),
+		$.p('L: ', t$('l')),
+		$.sp('F: ').A(v$('f')),
+		$.p('L: ', v$('l')).id('l'),
+		$.p('L: ', t$('fl')),
+		cl$('capL')
+		
+	]) 
+	
 	vm = {
+	
 		f: $o('j'), l: $o('y'),
 		capL: function () {
 			this.l(this.l().toUpperCase())
 		}
 	}
+	
 	vm.fl = ko.c(function () {
-		return vm.f() + ' ' + vm.l()
+		return vm.f()+' '+vm.l()
 	})
+	
 	ok(vm)
 	 
 }
 KIP = function () {
 	$.p('Login name:').A($.ip().tI$('un'))
 	//$.p('Login name:').A($.ipTi('un'))
-	$.p('Pw:').A(
-			$.pw().tI$('pw')
-	)     // $.p(['Pw:', $.pwTi('pw')])    //<p> <input type="password" data-bind="textInput: userPassword" /></p>
+	$.p('Pw:').A($.pw().tI$('pw'))     // $.p(['Pw:', $.pwTi('pw')])    //<p> <input type="password" data-bind="textInput: userPassword" /></p>
 	//$.p('Pw:').A($.pwTi('pw'))
 	// $.p(['Pw:', $.pwTi('pw')])    //<p> <input type="password" data-bind="textInput: userPassword" /></p>
 	$.A('vm: ', $.pre().t$('ko.toJSON($root, null, 2)'))
@@ -46,18 +50,12 @@ KIP = function () {
 FOC = PERFECT_FOR_EDITTING_A_PROFILE_IP = KOFC = function () {
 //bind cb and bind ip to 'enable'
 	$.p('Name:').A(
-			$.ip().b({
-				visible: 'editing',
-				hasFocus: 'editing',
-				value: 'name'
-			}),
-			$.d('r').b({
+			v$('name').b({visible: 'editing', hasFocus: 'editing'}),
+			t$('name').b({
 				//visible: '!editing()',
-				text: 'name',
-				click: 'edit'
-			})
-	)
+				click: 'edit'}))
 	$.p('Click the name to edit it; click elsewhere to apply changes')
+	
 	function VM(n) {
 		var vm = this
 		vm.name = $o(n)
@@ -71,22 +69,24 @@ FOC = PERFECT_FOR_EDITTING_A_PROFILE_IP = KOFC = function () {
  
 }
 SPAM = CHECKED = function () {
-	$.p(['spam?',
-		$.cC('wantSpam', 'wantSpam')])
+	
+	$.p(['spam?', ch$('wantSpam')])
+	
 	$.d([
 		'spam flavors:',
 		$.d([$.cKO('Cherry', 'flav', 'cherry')]),
 		$.d([$.cKO('Almond', 'flav', 'almond')]),
-		$.d([$.cKO('Glut', 'flav', 'glut')])]).dB('visible', 'wantSpam')
-	vm = {wantSpam: $o(1), flav: $oa(["cherry", "almond"])}
+		$.d([$.cKO('Glut', 'flav', 'glut')])]).vs$('wantSpam')
+	
+	vm = {wantSpam: $o(1),
+		flav: $oa(["cherry", "almond"])}
+	
 	ok(vm)
-	_.in(2, function () {
-		vm.wantSpam(0)
-	})
+	_.in(2, function () {vm.wantSpam(0)})
 //bind cb 'checked' to boolean
 	//vm.spamFlavors.push("msg"); // Now additionally checks the Monosodium Glutamate checkbox
 }
-VISABLE = VIS = function () {
+VIS = VISABLE = function () {
 	$.h1('ALWAYS HERE!')
 	$.h1('see me if true!').vs$('vs')
 	ok(vm = {vs: $o(1)})
@@ -143,63 +143,34 @@ ATTR = function () {
 }
 ADD0 = EACHDIVADD = EDA = function () {
 	$.d([$.p(
-			$.sp().t$('f'),
+			 t$('f'),
 			' ',
-			$.sp().t$('l')
+		 t$('l')
 	)]).e$('peep')
-	vm = {
-		peep: $oA([
-			{f: 'B', l: 'Bb'},
-			{f: 'C', l: 'Cc'},
-			{f: 'D', l: 'Dd'}
-		])
-	}
+	vm = {peep: $oA([{f: 'B', l: 'Bb'}, {f: 'C', l: 'Cc'}, {f: 'D', l: 'Dd'}])}
 	ok(vm)
-	$.bt('push', function () {
-		vm.peep.push({f: 'j', l: 'y'})
-	})
-}
-ADD = UAR = ULTIARR = function () {
-	$.ip().tI$('name')
-	$.h1().t$('name')
-	//h1 text (read only) // $.dA('b',100,300,200,'+').bT('n')
-	//ul each 'array'
-	$.ul().e$('arr').A($.li().t$())
-	$.sm().cl$('A')
-	_.in(1, function () {
-		vm.name('girf')
-		_.e(['a', 'b', 'c'], function (i) {
-			vm.arr.push(i)
-		})
-	})
-	ok({
-		name: $o('zi'),
-		arr: $oa(),
-		A: function () {
-			this.arr.push(this.name())
-		}
+	$.bt('push', function () {vm.peep.push({f: 'j', l: 'y'})
 	})
 }
 ADD1 = ULA = BINDUL = BUL = MONK = function () {
-	$.h1('monkey').t$('monkey')
-	$.ip().v$('monkey')
+	$.h1('monkey')
+	$.t$('monkey')
+	v$('monkey')
+	
+	  
 	$.sm('hello').cl$('A')
-	//  $.s$('a','play');
-//    $.U('cl',[            'my name is ',$.sT('n'),            ' and i like to play ', $.sT('c')])
-	$.ul().e$('list').A(
-			$.li([
-				'my name is ', $.sp().t$('name'),
-				' and i like ', $.sp().t$('color')
-			]))
+	
+	$Ul( 'list',
+			$.d(['my name is ',  t$('name'), 
+			' and i like ',  t$('color')]))
+	
 	vm = {
 		monkey: $o(),
 		list: $oa(),
 		A: function () {
 			this.list.push({
-				name: 'j', color: $r()
-			})
-		}
-	}
+				name: 'j', color: $r()})}}
+	
 	vm.monkey('elephant')
 	ok(vm)
 	_.ev(1, function () {
@@ -210,44 +181,24 @@ ADD1 = ULA = BINDUL = BUL = MONK = function () {
 ADD2 = ULADD = ULA = function () {
 	peep = Peep()
 	$.lb('Show time: ').A($.cb().ch$('showDT'))
-	$.ul.e$('peep').A($.li().A(
-			$.d([$.sp().t$('n'), 'has',
-				$.sp().t$('ch().length'),
-				'children &nbsp;',
-				$.a().ch$('New', 'A')]),
-			$.ul().e$('ch').A([
-				$.li([
-					$.sp().t$(),
-					$.sp().vs$('$root.showDT').A(
-							' (child rendered at ',
-							$.sp().t$('new Date().getSeconds()'), ')'
-					)])
-			])
-	))
-	ok({
-		peep: peep,
-		showDT: $o()
-	})
+	$Ul('peep',
+			$.p([t$('n'), ' has ', t$('ch().length'), ' children']),
+			$.a().ch$('New', 'A'),
+			$Ul('ch', vs$('$root.showDT',t$())))
+	ok({peep: peep, showDT: $o()})
 	//add, conditional el
 	//anonymous vm
+	
+	
 }
-DELETE = ADD3 = ULP = function () {
+DELETE = ADD3 = ULP = function () {ok(function(){
 
-
-ok(function(){
-
-	$s({
-		bd:{C: 'x', c: 'y'},
-		$:{C:'n',c:'z',M:5,fS:42},
-		sp:{C:'o', c: 'z'}
-	})
-	cl$('add', 'ADD')
-	e$('people', $.d([
-		'name: ', t$('$index'), 
-		t$('name'), cl$('$root.rm', 'DELETE')
-	]))
+	$s({bd:{C: 'x', c: 'y'}, $:{C:'n',c:'z',M:5,fS:42}, sp:{C:'o', c: 'z'}})
 	
 	cl$('add', 'ADD')
+	e$('people', $.d(['name: ', t$('$index'), t$('name'), cl$('$root.rm', 'DELETE')]))
+	cl$('add', 'ADD')
+	
 	var o = {people: $oA([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])}
 	o.add = function () {o.people.push({n: "New at " + new Date().time})}
 	o.rm = function () {o.people.remove(this)}
