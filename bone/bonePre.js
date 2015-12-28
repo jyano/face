@@ -145,7 +145,7 @@ function learnRooter() {
 	// and passing "faq" and "installing" to the action in the second.
 	//
 }
- 
+// MUST WATCH !!!!!!!!! https://www.youtube.com/watch?v=b4R3d46Ce80 
 // BEST VIDEO (WATCH ALL, KNOW ALL) https://www.youtube.com/watch?v=cIq6Z_Vv4nY
 rtsOb = rtsOb2 = {
 	rt: {

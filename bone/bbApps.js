@@ -977,6 +977,8 @@ Temp = function (i, h) {
 	s = "<script type='text/template'>" + s + "</script>"
 	return $(s).id(i).A()
 }
+
+$Task=function(){
 Tsk = $V({
 	el: $('#cont'),
 	i: function () {
@@ -990,6 +992,7 @@ Tsk = $V({
 		alert($('#task_desc').v() + ' task added')
 	}
 })
+}
 BACKDEMO = function () {
 
 

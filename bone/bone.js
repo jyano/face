@@ -1,5 +1,9 @@
 
 Bb = bb = Backbone
+Bb.M = Bb.Model;
+Bb.V= Bb.View
+Bb.C=Bb.Collection
+Bb.R= Bb.Router
 Bb.U = Bb.Utility
 Bb.S = Bb.Sync
 Bb.x = Bb.e = function (ob) {
@@ -9,7 +13,7 @@ Bb.x = Bb.e = function (ob) {
 		return new Ev(a, b, c, d)
 	}
 }
-
+vw=Bb.V.prototype
 //$L('events', 'models', 'router', 'history', 'mod', 'rtr', 'views', 'vew', 'collec', 'col')
 Bb.E = Bb.Ev = Bb.Events;
 Bb.E.x = Bb.E.extend
@@ -105,6 +109,7 @@ Eve = function () {
 BBEXT = function () {
 	// https://coderwall.com/p/xj81ua/a-better-way-of-extending-backbone-models-and-views
 }
+
 BBBEV = function () {
 	$.x().i('chicks')
 	ev = Bb.Ev()
@@ -166,4 +171,5 @@ BB11 = VME = EVENTS = EVS = function () {
 		}
 	})
 }
+
  

@@ -20,13 +20,15 @@ Both = ['superUnder', 'superJ', 'superTime']
 
 SuperWeb=[
 		
+		
 	'jq', 'first', 'second','cssData', 'superJQ', 'superAnim', 'sty', 'rules' ,
 	'flex',  'media' ,
 	 'superHTML', 'superInput',
 	  'superImage', 'htmlPlus',
 	  
-	  'preFront','checkbox'
-	
+	 'checkbox',
+	  
+	'$mock'
 ]
 
 Bone= [ 
@@ -44,7 +46,8 @@ Bone= [
  
  'boneQuery',
  
- 'course','bbBook','bbAdder', 'blogRoll', 'bbSort', 'bbLoop', 
+ 'course',//'bbBook',
+ 'bbAdder', 'blogRoll', 'bbSort', 'bbLoop', 
  'bbTweet', 
  'dirt', 'tut','breakRoll','bbLS','local'
   
@@ -53,21 +56,24 @@ Bone= [
  Knock=[
  
  
-	 'ko', 'knock00', 'knock0', 'knock', 'koInput', 'koEach', 'koEls',
+	 'ko', 'knock00', 'knock0', 'knock',    'koEls',
 	 'koApps','eachEls',
-	 'bindings', 'components', 'extenders', 'functions', 'plugins',
-	  'customizing',
+	 
+	//  'customizing',
 	 'koAppsBasic', 'koAppsFancy', 'like',
-	 'scrp','liveExamples',
-	 'list','workingEachApps'
+	 
+	 //'scrp',
+	// 'liveExamples',
+	 'list','workingEachApps',
+	  'documentRouter'
  
  ]
   
 Wid = [
 		
-	'jqui', 'jetPre', 'checkbox',
-	'jet', 'wid', 'calc', 'uiApps', 'uiAppsMore',
-	'widFilt', 'widProgessBar',
+	'jqui',   'checkbox',
+	  'wid', 'calc', 'uiApps', 'uiAppsMore',
+	'widFilt', 
 	 'widSuperDlg','widLS','cheese','countdownTimer','widCaption'
 ]
 
@@ -84,7 +90,7 @@ $a.g('/box/:app', function (q, p) {
 			
 			Wid,
 			Bone,
-			Knock
+			Knock, ['sap']
 			
 	)	// Geo, Can, Stage, Fiz
 

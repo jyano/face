@@ -1,5 +1,5 @@
  
-	Bb.M = Bb.Model;
+	 
 	Bb.M.x = Bb.M.extend
 	md = Bb.Model.prototype;
 	Bb.sEv(md)

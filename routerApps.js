@@ -5,16 +5,34 @@ BBHS = function () {
 	bH = Bb.H
 	bh = Bb.h
 }
+
+$.h=function(h){$.bd().H(h)}
+ 
+ 
+
 RT1 = function () {
-	$bd('font-size', 30).dI('ct')
-	_$r({
-		r: {
-			'': 'pg1', pg1: 'pg1',
-			pg2: $VW$('pg2', 'pg1', 'pg1')
-		},
-		pg1: $VW$('pg1', 'pg2', 'pg2')
+ 
+	$.fS(60).dI('ct')
+	
+	$s({$: {M:12, B:'8px dotted orange'}})
+
+	_$r({r: {
+	
+			'': 'pg1',
+			
+			  pg1: 'pg1',
+			pg2: Bb.LinkView('pg2', 'pg1', 'pg1')
+			},
+		
+		pg1: Bb.LinkView('pg1', 'pg2', 'pg2')
 	})
-}
+
+
+//pg1: $VW$('view 1: want to know your NPI NUMBER??', 'Its at view 2. go ->', 'pg2'),
+		//pg2:$VW$('vw 2: nada', 'what was the question again?', 'pg1')
+} 
+
+
 RT2 = ROUTEE1 = function () {
 	$l('RT2')
 	n = 0
@@ -1419,19 +1437,7 @@ STILLNOPUSH = VID1 = function () {
 	})()
 	Bb.h.start({pushState: true})
 }
-RT1OLD = NOPUSHSTATE = VID0 = WORKS = function () {
-	$bd('font-size', 30)
-			.dI('ct')
-	$r({
-		r: {
-			'': 'pg1',
-			'pg1': 'pg1',
-			'pg2': 'pg2'
-		},
-		pg1: $VW$('view 1: want to know your NPI NUMBER??', 'Its at view 2. go ->', 'pg2'),
-		pg2: $VW$('vw 2: nada', 'what was the question again?', 'pg1')
-	})
-}
+ 
 RT8 = VID00 = function () {
 	VID00 = function () {
 		$FirstVw = Bb.V.x({

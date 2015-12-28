@@ -76,7 +76,7 @@
 		return new Bb.View(ob);
 	}
 	vw = Bb.View.prototype;
-	Bb.V = Bb.View;
+ 
 	Bb.V.x = Bb.V.extend;
 	Bb.sEv(vw)
 	vw.A = function (ob) {
@@ -173,23 +173,4 @@
 			this.model.destroy()
 		}
 	}
-	$VW$ = function (lbTx, aTx, href) {
-		return function () {
-			$autoV = function (fn) {
-				return Bb.V.x({
-					initialize: function () {
-						this.render()
-					},
-					render: fn
-				})
-			}
-			return new (($autoV(function () {
-				this.$el.html($.__d(
-						$.lb(lbTx),
-						$.a(aTx, '#' + href)
-				).oh())
-			})))({
-				el: $('#ct')
-			})
-		}
-	}
+ 
