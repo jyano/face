@@ -363,4 +363,71 @@ LST = function (n, ch) {
 	}
 	ok(vm = new BetterListModel());
 }
-
+COURSE = function () {
+	$.x('x')
+	//https://www.youtube.com/watch?v=JGwRIbWWqjE
+	$.h1('monkey').bT('monkey')
+	$.iV('monkey')
+	$.sb('hello').b$('A')
+	$.uE('list', [$.li(['my name is ', $.sT('n'), ' and i like to play ', $.sT('c')])])
+	vm = {
+		monkey: ko.o(),
+		list: ko.oa(),
+		A: function () {
+			this.list.push({n: 'j', c: $r()})
+		}
+	}
+	vm.monkey('elephant')
+	ok(vm)
+}
+COURSE = function () {
+	$.x('x')
+	$.s$('a', 'play');
+	$.U('cl', [
+		'my name is ', $.sT('n'),
+		' and i like to play ',
+		$.sT('c')])
+	ok({
+		cl: ko.oa(),
+		a: function () {
+			this.cl.p({n: 'j', c: $r()})
+			return this
+		}
+	})
+	vm.a().a().a()
+	//https://www.youtube.com/watch?v=JGwRIbWWqjE
+}
+COURSE = function () {
+	$.x('x')
+	//https://www.youtube.com/watch?v=JGwRIbWWqjE
+	$.h1('monkey').bT('monkey')
+	$.iV('monkey')
+	$.sb('hello').b$('A')
+	$.uE('list', [$.li(['my name is ', $.sT('n'), ' and i like to play ', $.sT('c')])])
+	vm = {
+		monkey: ko.o(),
+		list: ko.oa(),
+		A: function () {
+			this.list.push({n: 'j', c: $r()})
+		}
+	}
+	vm.monkey('elephant')
+	ok(vm)
+}
+COURSE = function () {
+	$.x('x')
+	$.s$('a', 'play')
+	$.U('cl', [
+		'my name is ', $.sT('n'),
+		' and i like to play ',
+		$.sT('c')])
+	ok({
+		cl: ko.oa(),
+		a: function () {
+			this.cl.p({n: 'j', c: $r()})
+			return this
+		}
+	})
+	vm.a().a().a()
+	//https://www.youtube.com/watch?v=JGwRIbWWqjE
+}

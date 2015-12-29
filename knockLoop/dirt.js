@@ -17,10 +17,7 @@ DIRT = function () {
 									//$.iP(400),
 									$.bt('new c'))),
 							$.h4().C('b').bE('comments').A(
-									s2.A($.spT('comment'))
-							)
-					)
-			),
+									s2.A($.spT('comment'))))),
 			$.br(),
 			$.br()
 	)

@@ -1,18 +1,9 @@
 $stc('', '../art', '_data', 'superWeb/both', 'superWeb')
 $stc(
-
-
 		'wid',
-		
-		'bone', 'boneLoop',
-
+		'bone','superBone', 'duperBone','boneLoop',
 		'knock', 'knockLoop', 'knockCust',
-		
-		 'loop',
-		 
-		   'sync',
-		 
-		   'sappy'
+		 'loop', 'sync', 'sappy','webSite'
 		   
 )
 
@@ -37,19 +28,11 @@ Bone= [
 	'bone',
 	
 	'models','collections','views','router',
-	'routerApps',
-		
-	'bbPerfect', 'bbRecs',
-	
-	'bbApps',  
- 'bbTweet', 'local', 'superTemplate',
- 
- 'boneQuery',
- 
- 'course',//'bbBook',
+	'routerApps', 'bbPerfect', 'bbRecs',
+	'bbApps', 'bbTweet', 'local', 'superTemplate',
+ 'boneQuery', 'course',//'bbBook',
  'bbAdder', 'blogRoll', 'bbSort', 'bbLoop', 
- 'bbTweet', 
- 'dirt', 'tut','breakRoll','bbLS','local'
+ 'bbTweet', 'dirt', 'tut','breakRoll','bbLS','local'
   
 ]
  
@@ -57,7 +40,7 @@ Bone= [
  
  
 	 'ko', 'knock00', 'knock0', 'knock',    'koEls',
-	 'koApps','eachEls',
+	 'koApps','eachEls','avail',
 	 
 	//  'customizing',
 	 'koAppsBasic', 'koAppsFancy', 'like',

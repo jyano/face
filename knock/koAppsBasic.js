@@ -191,17 +191,17 @@ ADD2 = ULADD = ULA = function () {
 	
 	
 }
-DELETE = ADD3 = ULP = function () {ok(function(){
-
+KODEL = DELETEWORKS = ADD3 = ULP = function () {ok(function(){
 	$s({bd:{C: 'x', c: 'y'}, $:{C:'n',c:'z',M:5,fS:42}, sp:{C:'o', c: 'z'}})
 	
 	cl$('add', 'ADD')
-	e$('people', $.d(['name: ', t$('$index'), t$('name'), cl$('$root.rm', 'DELETE')]))
+	e$('people', $.d(['name: ',
+		t$('$index'), t$('name'), cl$('$root.rm', 'DELETE')]))
 	cl$('add', 'ADD')
-	
 	var o = {people: $oA([{n: 'B'}, {n: 'Ch'}, {n: 'De'}])}
 	o.add = function () {o.people.push({n: "New at " + new Date().time})}
-	o.rm = function () {o.people.remove(this)}
+	o.rm = function () {
+		o.people.remove(this)}
 	return o
 	
 	}())

@@ -15,7 +15,6 @@ KOE = function () {
 		]
 	})
 }
-
 BARN = function () {
 	$l('barn')
 	$.z().ulE(
