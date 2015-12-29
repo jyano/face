@@ -172,28 +172,7 @@ GenView.tr = Bb.V.x({
 	}
 })
 BLOG = BLOGVID2WORKS = function () {
-	$CSS({
-		$: {M: 20},
-		bd: {dp: 'fl'},
-		d: {C: 'r', c: 'b'}
-	})
-	$table = $.t().a2($.dK('ct').A($.h1('Blog App')))
-	$thead = $.tH().a2($table)
-	$thTr = $.tr().a2($thead).A(
-			$.th('AuthoR'), $.th('Title'),
-			$.th('Url'), $.th('action'))
-	$tbody = $.tB().a2($table).K('blogs-list')
-	$tr = $.tr().a2($thead)
-	$.ip().a2($.td().a2($tr)).K('user-ip')
-	$.ip().a2($.td().a2($tr)).K('title-ip')
-	$.ip().a2($.td().a2($tr)).K('url-ip')
-	$.bt('Add', function () {
-		blogs.create({
-			user: $('.user-ip').V(),
-			title: $('.title-ip').V(),
-			url: $('.url-ip').V()
-		})
-	}).K('add-blog').a2($.td().a2($tr))                                //
+
 	BlogView = GenView.tr.extend({
 		
 		 
@@ -239,16 +218,38 @@ BLOG = BLOGVID2WORKS = function () {
 		},
 		cancel: function () {blogsView.R()}, delete: function () {this.model.destroy()}
 	})
-	BlogsView = CollView.extend({subView: BlogView})
-
+	
+	
 	blogs = new Blogs
 
-	blogsView= new BlogsView({
-		
-		model: blogs, 
-		el: '.blogs-list'
-		
-	})
+	$CSS({$: {M: 40},
+		bd: {dp: 'fl'},
+		d: {C: 'r', c: 'b'}})
+	$table = $.t().a2($.dK('ct').A($.h1('Blog App')))
+	$thead = $.tH().a2($table)
+	$thTr = $.tr().a2($thead).A(
+			$.th('AuthoR'), $.th('Title'),
+			$.th('Url'), $.th('action'))
+	$tbody = $.tB().a2($table).K('blogs-list')
+	$tr = $.tr().a2($thead)
+	$.ip().a2($.td().a2($tr)).K('user-ip')
+	$.ip().a2($.td().a2($tr)).K('title-ip')
+	$.ip().a2($.td().a2($tr)).K('url-ip')
+	$.bt('Add', function () {blogs.create({
+			user: $('.user-ip').V(),
+			title: $('.title-ip').V(),
+			url: $('.url-ip').V()})
+	}).K('add-blog').a2($.td().a2($tr))                                //
+	
+
+	
+	BlogsView = CollView.extend({model: blogs, el: '.blogs-list', subView: BlogView})
+	
+	
+	
+	
+	
+	blogsView=new BlogsView
 	
 
 }
