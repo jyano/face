@@ -1,18 +1,12 @@
 console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
-
 require('./superWeb/both/superUnder')
 require('./superWeb/both/superJ')
 require('./superWeb/both/superTime')
 $l(' - face - \n')
 require('./server/$superNode$')
 $stc = function () {
-
-	_.e(arguments, function (arg) {
-		A(arg) ? _.e(arg, $stc) : Use(arg)
-	})
-
-	function Use(arg) {
-		use(name(arg))
+	_.e(arguments, function (arg) {A(arg) ? _.e(arg, $stc) : Use(arg)})
+	function Use(arg) {use(name(arg))
 		use(name(arg + '/_pre'))
 		use(name(arg + '/_deps'))
 		use(name(arg + '/_protos'))
@@ -24,21 +18,21 @@ $stc = function () {
 		use(name(arg + '/_routes'))
 		use(name(arg + '/_api'))
 		use(name(arg + '/_alpha'))
-		function name(dir) {
-			return __dirname + '/' + dir
-		}
-		function use(dir) {
-			$a.use($e.static(dir))
-		}
-	}
+		function name(dir) {return __dirname + '/' + dir}
+		function use(dir) {$a.use($e.static(dir))}}
 }
+
 require('./server/$xap$')
 require('./server/$goo$')
 require('./server/$mw$')
 $a.g('/', function (q, p) {
 	p.send('it worked jason..')
 })
+
+require('./$api$/$twitServer$')
+
 require('./$routes$')
+
 $htSv = httpServer = $h.createServer($a)
 $htSv.listen(80, lsFn)
 require('./server/socket/$kets$')

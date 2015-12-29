@@ -67,15 +67,7 @@ $a.g('/box/:app', function (q, p) {
 	html = ''//' - '
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js(
-			
-			Both, SuperWeb,
-			
-			Wid,
-			Bone,
-			Knock, ['sap']
-			
-	)	// Geo, Can, Stage, Fiz
+	html += $js(Both, SuperWeb, Bone)	// Geo, Can, Stage, Fiz
 
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)

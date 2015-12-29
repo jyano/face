@@ -591,6 +591,7 @@
 				model.stopListening();
 				model.trigger('destroy', model, model.collection, options);
 			};
+			
 			options.success = function (resp) {
 				if (wait) destroy();
 				if (success) success.call(options.context, model, resp, options);

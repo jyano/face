@@ -1,10 +1,3 @@
- 
-Storage = function (name) {
-	return $C({
-		localStorage: new Bb.LocalStorage(name)
-	})
-}
-
 $TWT$ = $TWTAPP$ = function (fn) {
 //https://www.youtube.com/watch?v=2BDGBJUtAmo
 //Introduction to Backbone.js Part 1 - Client-side
@@ -18,170 +11,36 @@ $TWT$ = $TWTAPP$ = function (fn) {
 	}
 }
 
-function TWTmvc() {
-	Tweet = _M({
-		initialize: function () {
-			$l('new Tweet model')
-		},
-		df: {un: 'fred', sts: 'sleeping'}
-	})
-	TweetsList = _C({
-		url: '/tweets',
-		model: Tweet
-	})
-	TweetView = _V({
-		events: {
-			'click .edit': function (ev) {
-				$.pD(ev)
-				this.$('.sts').edFoc()
-			},
-			'click .delete': function (ev) {
-				$.pD(ev)
-				tweets.remove(this.model)
-			},
-			'blur .sts': 'close',
-			'keypress .sts': function (ev) {
-				if ((ev.which) == 13) {
-					this.close()
-				}
-			}
-		},
-		close: function () {
-			var vw = this
-			vw.model.set('sts', vw.$('.sts').T())
-			vw.$('.sts').ed(0)//.rmAt('contenteditable')
-		},
-		ren: function () {
-			this.$el.E(
-					$.sp(this.model.get('un')).K('un'),
-					': ',
-					$.sp(this.model.get('sts')).K('sts'),
-					$.a('[details]').K('details'),
-					$.a('[edit]').K('edit'),
-					$.a('[delete]').K('delete'),
-					$.br()
-			)
-			return this
-		}
-	})
-}
-
-TWT0 = TWTPART1WORKS = $TWT$(function () {
-	$l('twt00 tweet video part 1 good')
-	form = $.f().A(
-			$.lb('un'), $.ip().at('name', 'un').id('un'),
-			$.lb('sts'), $.ip().at('name', 'sts').id('sts'),
-			$.bt('post')
-	)
-	form.submit(function (ev) {
-		//ev.preventDefault()
-		var un = $('#un').val()
-		var sts = $('#sts').val()
-		var tweet = Tweet({un: un, sts: sts})
-		tweets.add(tweet)
-		$l(tweets.toJSON())
-		return false
-	})
-	$.hr()
-	div = $.d('y', 500, 200)
-	Tweet = _M({df: {un: 'fred', sts: 'sleeping'}})
-	TweetsList = _C({model: Tweet})
-	tweets = TweetsList()
-	tweets.add({un: 'zzzzzzzzz'})
-	TweetView = _V({
-		events: {
-			'click .edit': function (ev) {
-				ev.preventDefault()
-				this.$('.sts').at('contenteditable', true).focus()
-			},
-			'click .delete': function (ev) {
-				ev.preventDefault()
-				tweets.remove(this.model)
-			},
-			'blur .sts': 'close'
-		},
-		close: function () {
-			var sts = this.$('.sts').text()
-			this.model.set('sts', sts)
-			this.$('.sts').removeAttr('contenteditable')
-		},
-		model: Tweet(),
-		tagName: 'div',
-		ren: function () {
-			this.$el.empty().A(
-					$.sp(this.model.get('un')).K('un'), ': ',
-					$.sp(this.model.get('sts')).K('sts'),
-					$.a('[edit]').K('edit'), $.a('[delete]').K('delete')
-			)
-			return this
-		}
-	})
-	TweetsView = _V({
-		el: div,
-		i: function () {
-			var vw = this
-			this.ren()
-			this.collection.on('add', function () {
-				vw.ren()
-			})
-			this.collection.on('remove', function () {
-				vw.ren()
-			})
-		},
-		collection: tweets,
-		ren: function () {
-			var vw = this
-			vw.$el.E()
-			vw.collection.each(function (md) {
-				vw.$el.A(TweetView({model: md}).ren().el)
-			})
-			return vw
-		}
-	})
-	appView = tweetsView = TweetsView({
-		collection: tweets
-	})
-	//
+Twit = Bb.M.x({
+	
+	idAttribute: "_id",
+	
+	//url: '/twits',
+	
+	df: {un: 'fred', sts: 'sleeping'}
 })
 
-TWT = function () {
-
-TWT0()
-	$l("TWT video part 2...")
-	Twit = Bb.M.x({
-		defaults: {author: 'jt', status: 'zzzzzzz'}
-	})
-	Twits = Bb.C.x({
-		model: Twit,
-		url: '/twits'
-	})
-	new Twits()
-}
+Twits= TwitsList = Bb.C.x({
+	url: '/twits',
+	model: Twit
+})
 
 
-TWITTEMP = function (fn) {
-	$CSS(twtCss)
-	form = $.f().A(
-			$.lb('un'), $.ip().at('name', 'un').id('un'),
-			$.lb('sts'), $.ip().at('name', 'sts').id('sts'),
-			$.bt('post'))
-	$.hr()
-	
-	div = $.d('y', 500, 200)
-	Twit = M$({
-		initialize: function () {
-			$l('new Twit model')
-		},
-		defaults: {author: 'jy', status: 'zzzzzzz'}
-	})
-	TwitsList = C$({
-		url: '/twits',
-		 model: Twit})
-	
-	TwitView = V$({
-		model: new Twit,
-		tagName: 'div',
-		events: {
+// NO SERVER
+TWIT0 = function () {
+	$s({$: {P: 10, B: 0, M: 10, fS: 20}, d: {C: 'z'}, p: {C: 'o', c: 'w'}, form: {C: 'g'}})
+	$.f([
+		$.lb('un'), $.ip().at('name', 'un').id('un'),
+		$.lb('sts'), $.ip().at('name', 'sts').id('sts'),
+		$.bt('post', function (ev) {
+			ev.preventDefault()
+			twits.create({
+				un: $('#un').v(),
+				sts: $('#sts').v()
+			})
+		})])
+	TwitView = Bb.V.x({
+		E: {
 			'click .edit': function (ev) {
 				$.pD(ev)
 				this.$('.sts').edFoc()
@@ -197,61 +56,162 @@ TWITTEMP = function (fn) {
 				}
 			}
 		},
-		ren: function () {
-			this.$el.E(
+		tagName: 'p',
+		close: function () {
+			var vw = this
+			vw.model.set('sts', vw.$('.sts').T())
+			vw.$('.sts').ed(0)//.rmAt('contenteditable')
+		},
+		R: function () {
+			this.$el.E().A(
+					$.sp().A($.a('[details]').K('details'),
+							$.a('[edit]').K('edit'),
+							$.a('[delete]').K('delete')),
 					$.sp(this.model.get('un')).K('un'),
 					': ',
-					$.sp(this.model.get('sts')).K('sts'),
-					$.a('[details]').K('details'),
-					$.a('[edit]').K('edit'),
-					$.a('[delete]').K('delete'),
-					$.br()
-			)
+					$.sp(this.model.get('sts')).K('sts'))
 			return this
-		},
-		close: function () {
-			var sts = this.$('.sts').text()
-			this.model.set('sts', sts)
-			this.$('.sts').removeAttr('contenteditable')
 		}
 	})
-	TwitsView = V$({
-		el: div,
-		i: function () {
+	TwitsView = Bb.V.x({
+		initialize: function () {
 			var vw = this
-			this.ren()
-			this.collection.on('add', function () {
-				vw.ren()
-			})
-			this.collection.on('remove', function () {
-				vw.ren()
+			this.collection.on('all', function () {
+				$l('TwitsView picked up on collection event')
+				vw.R()
 			})
 		},
-		collection: twits,
-		ren: function () {
+		R: function () {
 			var vw = this
 			vw.$el.E()
 			vw.collection.each(function (md) {
-				vw.$el.A(TwitView({model: md}).ren().el)
+				var twitV = new TwitView({
+					model: md
+				})
+				vw.$el.A(twitV.R().el)
 			})
-			return vw
 		}
 	})
-	twits = TwitsList()
-	twits.add({un: 'zzzzzzzzz'})
-	appView = twitsView = TwitsView({
+	twits = new TwitsList()
+	twitsV = new TwitsView({
+		el: $.d(),
 		collection: twits
 	})
-	form.submit(function (ev) {
-		//ev.preventDefault()
-		var un = $('#un').val()
-		var sts = $('#sts').val()
-		var twit = Twit({un: un, sts: sts})
-		twits.add(twit)
-		$l(twits.toJSON())
-		return false
-	})
 }
+
+// SERVER 
+TWIT = function () {
+	$s({$: {P: 10, B: 0, M: 10, fS: 20}, d: {C: 'z'}, p: {C: 'o', c: 'w'}, form: {C: 'g'}})
+	$.f([$.lb('un'), $.ip().at('name', 'un').id('un'),
+		$.lb('sts'), $.ip().at('name', 'sts').id('sts'),
+		$.bt('post', function (ev) {
+		
+			ev.preventDefault()
+		
+			twits.create({
+				un: $('#un').v(),
+				 sts: $('#sts').v()
+				 
+			}, {success: function(doc){
+				$l('success')
+				$l(doc)}
+			})
+			
+		})])
+	
+	
+	TwitView = Bb.V.x({
+		tagName: 'p',
+		events: {
+			'click .edit': function (ev) {
+				$.pD(ev)
+				this.$('.sts').edFoc()
+			},
+			'click .delete': function (ev) {$.pD(ev)
+				$l('deliting...')
+				
+				m=this.model
+				//twits.remove(
+				this.model.destroy({
+				success:function(){$l("s")},
+				error:function(){$l('z')}
+				
+				})
+				
+				//)
+				//twits.destroy(this.model)
+			},
+			'blur .sts': 'close',
+			'keypress .sts': function (ev) {
+				if ((ev.which) == 13) {
+					this.close()
+				}
+			}
+		},
+		close: function () {var vw = this
+			
+			vw.model.set(
+			
+					'sts', vw.$('.sts').T()
+			)
+			vw.model.save()
+			vw.$('.sts').ed(0) 
+			
+		},
+		R: function () {
+			this.$el.E().A(
+					$.sp().A($.a('[details]').K('details'),
+							$.a('[edit]').K('edit'),
+							$.a('[delete]').K('delete')),
+					$.sp(this.model.get('un')).K('un'),
+					': ',
+					$.sp(this.model.get('sts')).K('sts'))
+			return this
+		}
+	})
+	
+	TwitsView = Bb.V.x({
+		initialize: function () {var vw = this
+			
+			this.collection.on('add', function () {
+				
+				$l('TwitsView picked up on collection ADD  event')
+				
+				vw.R()
+				
+			})
+			this.collection.on('remove', function () {
+				$l('TwitsView picked up on collection REMOVE event')
+				vw.R()
+			})
+			this.collection.fetch()
+			
+		},
+		
+		R: function () {
+			var vw = this
+			vw.$el.E()
+			vw.collection.each(function (md) {
+				
+				var twitV = new TwitView({
+					model: md
+				})
+				
+				vw.$el.A(twitV.R().el)
+			})
+		}
+	})
+	
+	twits = new TwitsList()
+	twitsV = new TwitsView({el: $.d(),
+	
+		collection: twits
+	
+	})
+	//Bb.M.prototype.idAttribute = '_id'
+}
+
+
 
 // video timelog:
 // 2:50 makes tweet model 
@@ -286,3 +246,15 @@ TWITTEMP = function (fn) {
 // this.cl.on('add', this.render, this)
 // this.cl.on('remove', this.render, this)
  
+SYNC=function(){
+
+
+	Md =   Bb.M.x({url: '/fetch'})
+	
+	md = new Md({id: 4, idAttribute: "_id"})
+	
+	md.save()
+	
+	
+
+}

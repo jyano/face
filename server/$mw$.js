@@ -1,15 +1,23 @@
 $ss = require('express-session')
 $cnMg = require('connect-mongo')($ss)
 $ssSt = new $cnMg({url: 'mongodb://localhost/jy'})
+methodOverride = require('method-override')
+ 
+
 $bP = require('body-parser');
 _.e([
+
 	$ss({store: $ssSt, secret: 'foo', resave: true, saveUninitialized: true}),
 	require('cookie-parser')('xyz'),
 	$bP.urlencoded({extended: false, limit: '50mb'}),
-	$bP.json({limit: '50mb'})
+	$bP.json({limit: '50mb'}),
+	//methodOverride('X-HTTP-Method-Override'),
+	//methodOverride('_method')
+	 
 ], function (mw) {
 	$a.use(mw)
 })
+
 /*
 $a.use(function (q, p, nx) {
  q.b = q.bd = q.body

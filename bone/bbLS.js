@@ -221,3 +221,8 @@ bbLocStorPLUG = function () {
 		return bb.LocalStorage
 	}))
 }
+Storage = function (name) {
+	return $C({
+		localStorage: new Bb.LocalStorage(name)
+	})
+}
