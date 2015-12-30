@@ -13,7 +13,7 @@ SuperWeb=[
 		
 		
 	'jq', 'first', 'second','cssData', 'superJQ', 'superAnim', 'sty', 'rules' ,
-	'flex',  'media' ,
+	'flexy',  'media' ,
 	 'superHTML', 'superInput',
 	  'superImage', 'htmlPlus',
 	  
