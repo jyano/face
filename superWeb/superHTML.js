@@ -632,10 +632,7 @@ function nest() {
 	$.header = function () {
 		return $('<header>')
 	}
-	$rtHeader = function (name) {
-		$dA($spA('this is RoApp: '), $dA('this is a RoApp').fS(75).col('r'),
-				$spA2(name).fS(100), $.d('B').W('auto').H(8))
-	}
+ 
  
 	$dA = function () {
 		var d = $.d()
