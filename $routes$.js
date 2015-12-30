@@ -12,7 +12,7 @@ Both = ['superUnder', 'superJ', 'superTime']
 SuperWeb=[
 		
 		
-	'jq', 'first', 'second','cssData', 'superJQ', 'superAnim', 'sty', 'rules' ,
+	'jq', 'bb', 'bone','first', 'second','cssData', 'superJQ', 'superAnim', 'sty', 'rules' ,
 	'flexy',  'media' ,
 	 'superHTML', 'superInput',
 	  'superImage', 'htmlPlus',
@@ -24,8 +24,8 @@ SuperWeb=[
 
 Bone= [ 
 
-	'bb', 'bonePre',
-	'bone',
+	  'bonePre',
+	
 	
 	'models','collections','views','router',
 	'routerApps', 'bbPerfect', 'bbRecs',
