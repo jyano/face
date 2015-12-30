@@ -1,75 +1,25 @@
 $stc('', '../art', '_data', 'superWeb/both', 'superWeb')
-$stc(
-		'wid',
-		'bone','superBone', 'duperBone','boneLoop',
-		'knock', 'knockLoop', 'knockCust',
-		 'loop', 'sync', 'sappy','webSite'
-		   
-)
-
+$stc('wid', 'bone','superBone', 'duperBone','boneLoop', 'knock',
+ 'knockLoop', 'knockCust', 'loop', 'sync', 'sappy','webSite')
 Both = ['superUnder', 'superJ', 'superTime']
-
 SuperWeb=[
-		
-		
-	'jq', 'bb', 'bone','first', 'second','cssData', 'superJQ', 'superAnim', 'sty', 'rules' ,
-	'flexy',  'media' ,
-	 'superHTML', 'superInput',
-	  'superImage', 'htmlPlus',
-	  
-	 'checkbox',
-	  
-	'$mock'
+	'jq', 'bb', 'bone','first', 'second','cssData', 
+	'superJQ', 'superAnim', 'sty', 'rules' , 
+	'media' , 'superHTML', 'superInput', 'superImage', 'htmlPlus' 
 ]
-
-Bone= [ 
-
-	  'bonePre',
-	
-	
-	'models','collections','views','router',
-	'routerApps', 'bbPerfect', 'bbRecs',
-	'bbApps', 'bbTweet', 'local', 'superTemplate',
- 'boneQuery', 'course',//'bbBook',
- 'bbAdder', 'blogRoll', 'bbSort', 'bbLoop', 
- 'bbTweet', 'dirt', 'tut','breakRoll','bbLS','local'
-  
-,
- 
- 
-	 'ko', 'knock00', 'knock0', 'knock',    'koEls',
-	 'koApps','eachEls','avail',
-	 
-	//  'customizing',
-	 'koAppsBasic', 'koAppsFancy', 'like',
-	 
-	 //'scrp',
-	// 'liveExamples',
-	 'list','workingEachApps',
-	  'documentRouter'
- 
-,
-		
-	'jqui',   'checkbox',
-	  'wid', 'calc', 'uiApps', 'uiAppsMore',
-	'widFilt', 
-	 'widSuperDlg','widLS','cheese','countdownTimer','widCaption',
-	 
-	 'front','works','err'
+Front= ['bbApps', 'dirt',  'breakRoll','bbLS', 'ko',  
+ 'knock', 'jqui', 'wid',   'uiApps', 'widLS', 'front',  'flexy' 
 ]
 
  
 $a.g('/box/:app*', function (q, p) {
-	
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js(Both, SuperWeb, Bone)	// Geo, Can, Stage, Fiz
-
+	html += $js(Both, SuperWeb, Front)	// Geo, Can, Stage, Fiz
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
-	
 })
 
 

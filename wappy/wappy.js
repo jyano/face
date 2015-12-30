@@ -1374,7 +1374,7 @@ function snap() {
 				Y('GuestPage')
 			})
 		}
-		$nav = Y.nav = function () {
+		$$nav = Y.nav = function () {
 			navbarCollapse = $.nbC().A($.n(
 							// $.dd('stuff', ['tangle', 'corners', 'grid' , 'fullcan' , 'solar',  'ship',  'connect','matrix', 'iso' ]),
 							$.dd('make', ['upload', 'uploads', 'cutouts', 'edit', 'avatar']),

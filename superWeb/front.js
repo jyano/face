@@ -1,3 +1,54 @@
+ok = function self(vm, el) {
+	if (A(vm)) {
+		return self(vm[0], vm[1])
+	}
+	if (S(vm)) {
+		return self($Ob(vm, el))
+	}
+	window.vm = vm
+	ko.aB(vm, el)
+	return vm
+}
+$ok = function self() {
+
+// ???? pass plain object and element(string or ob?) :)
+	var g = G(arguments)
+	if (g.p) {
+		_.in(0, function () {
+			self.apply(null, g)
+		})
+	}
+	// pass nothing -> {da: $o(1)} Note: 'da' replaced '$'
+	if (g.u) {
+		g.f = 'da'
+	}
+	// pass a single key, value -> {key:value}
+	vm = S(g.f) ? Ob(g.f, D(g.s) ? g.s : $o(g.n)) :
+		// pass just a value -> {$: value}
+			F(g.f) || N(g.f) || A(g.f) ?
+					Ob('da', g.f)
+				// pass just plain obj (normal)
+					: g.f
+	ok(vm)
+}
+OK = function (vm) {
+	_.in(.1, function () {
+		ok(vm)
+	})
+}
+$KOob = function (k, v) {
+	var g = G(arguments)
+	if (g.O) {
+		var o = []
+		_.e(g.f, function (v, k) {
+			o.push($KOob(k, v))
+		})
+		return o.join()
+	}
+	k = KOob[k] ? KOob[k] : k
+	v = v ? ': ' + v : ''
+	return k + v
+}
 $.wd = $.wg = $.wid = $.widget
 $s = function () {
 	var g = G(arguments), rulesOb
@@ -5271,3 +5322,628 @@ function create() {
 	})
 }
 // book, movement: pleasurable js (or javascript for pleasure)
+Blog = Bb.M.x({
+	idAttribute: "_id",
+	D: {user: '', title: '', url: ''}
+})
+Blogs = Bb.C.x({
+	model: Blog,
+	url: '/api/blogs'
+})
+CollView = Bb.V.x({
+	I: function () {
+		var view = this
+		view.model.on('all', function () {
+			_.in(.03, function () {
+				view.R()
+			})
+		})
+		/*
+		 //this.collection.on('add', this.R, this)
+		 //this.collection.on('remove', this.R, this)
+		 this.collection.fetch({
+		 success: function (docs) {
+		 if (docs) {
+		 $l('there are doc')
+		 $l(docs)
+		 _.each(docs.toJSON(), function (item) {
+		 $l('got blog with _id: ' + item._id)
+		 })
+		 }
+		 },
+		 error: function () {
+		 $l('failed to get blogs!')
+		 }
+		 })*/
+	},
+	R: function () {
+		var view = this.H('')
+		view.model.each(function (model) {
+			view.A((new view.subView({model: model})).R().el)
+		})
+		return view
+	}
+})
+GenView = Bb.V.x({
+	G: function (ob) {
+		return $.tr().A(J.s(ob)).C('b', 'y')
+	},
+	R: function () {
+		var view = this
+		_.e(view.G(view.J()), function (el) {
+			view.A(el)
+		})
+		return view
+	}
+})
+$.td.kids = function () {
+	var g = G(arguments)
+	var kids = g.A ? g.f : g
+	return _.m(kids, function (o) {
+		var td = $.td()
+		_.e(A(o) ? o : [o], function (ch) {
+			td.A(ch)
+		})
+		return td
+	})
+}
+tdFn = function (fn) {
+	return function (ob) {
+		var kids = fn(ob)
+		return $.td.kids.apply(null, kids)
+	}
+}
+GenView.tr = Bb.V.x({
+	tagName: 'tr',
+	G: function (ob) {
+		return $.tr().A(J.s(ob)).C('b', 'y')
+	},
+	R: function () {
+		var view = this
+		_.e(tdFn((view.row || view.tr || view.G))(view.J()),
+				function (el) {
+					view.A(el)
+				})
+		return view
+	}
+})
+GenView.tr = Bb.V.x({
+	tagName: 'tr',
+	G: function (ob) {
+		return $.tr().A(J.s(ob)).C('b', 'y')
+	},
+	R: function () {
+		var view = this
+		_.e(tdFn((view.row || view.tr || view.G))(view.J()),
+				function (el) {
+					view.A(el)
+				})
+		return view
+	}
+})
+KOob = {
+	e: 'foreach',
+	ch: 'checked', c: 'checked',
+	t: 'text',
+	v: 'value',
+	h: 'html',
+	i: 'if',
+	$: 'click',
+	fc: 'hasFocus', hF: 'hasFocus', f: 'hasFocus',
+	w: 'with',
+	at: 'attr', a: 'attr',
+	en: 'enable',
+	vs: 'visible', tI: 'textInput',
+	o: 'options',
+	oT: 'optionsText',
+	ev: 'event',
+	sm: 'submit',
+	sO: 'selectedOptions',
+	n: 'ifnot',
+	d: 'disable',
+	///////////
+	u: 'uniqueName', vU: 'valueUpdate',
+	cm: 'component', tp: 'template',
+	////////////////////
+	s: 'css', sty: 'style', y: 'style'
+}
+ko.ut = ko.u = ko.utils
+ko.cm = ko.components
+ko.vE = ko.ve = ko.virtualElements
+ko.aB = ko.ab = ko.applyBindings
+ko.o = ko.observable
+ko.c = ko.computed
+ko.pC = ko.pc = ko.pureComputed
+ko.oA = ko.oa = ko.observableArray
+ko.aF = ko.ut.aF = ko.u.af = ko.u.arrayFilter
+ko.cm.rg = ko.cm.register
+ko.bH = ko.bh = ko.BH = ko.bindingHandlers
+ko.rTp = ko.rT = ko.renderTemplate
+ko.dO = ko.do = ko.dependentObservable
+ko.uw = ko.unwrap
+ko.ut.uo = ko.ut.unwrapObservable
+ko.bD = ko.applyBindingsToDescendants
+ko.cm.iR = ko.cm.isRegistered
+ko.vE.aB = ko.B = ko.ve.ab = ko.vE.AB = ko.vE.allowedBindings
+ko.cm = ko.cmp = ko.comp = ko.components
+ko.rg = ko.cm.rg = ko.cm.reg = ko.cm.register
+ko.cm.iR = ko.cm.isRegistered
+ko.o.prototype.rm = ko.o.prototype.remove
+$.sl.o$ = function (a) {
+	//= OptionBoundSelect = $sl$o = $.sel.op = sel$op = $.sO = $.slO
+	return $.sl().o$(a)
+}
+t$sp = function () {
+}
+v$tI = v$ip = ko.v$tI = ko.v$ip = $.ip$v = function () {
+}
+$.fn.h$ = function (s) {
+	//= $.fn.bH 
+	return this.b('html', s)
+	// = $.fn.bH
+}
+$.fn.t$ = function (bnd) {
+	return this.b('text', bnd || '$data')
+}
+$.fn.at$ = $.fn.a$ = function (s) {
+	return this.b('attr', s)
+}
+$.fn.v$ = function (s) {
+	var g = G(arguments)
+	str = "value: " + s
+	if (!g.n) {
+		str += ", valueUpdate: 'afterkeydown'"
+	}
+	this.b(str)
+	return this
+}
+$.fn.fc$ = $.fn.f$ = function (s) {
+	return this.b('hasFocus', s)
+}
+$.fn.if$ = function (s) {
+	return this.b('if', s)
+	// = $.fn.bI = $.fn.bIf
+}
+$.fn.n$ = $.fn.not$ = function (s) {
+	return this.b('ifnot', s)
+}
+$.fn.en$ = function (s) {
+	return this.b('enable', s)
+}
+$.fn.d$ = function (s) {
+	return this.b('disable', s)
+}
+$.fn.vs$ = function (bnd) {
+	return this.b('visible', bnd)
+}
+$.fn.w$ = function (s) {
+	return this.b('with', s)
+}
+$.fn.cl$ = $.fn.b$ = function (s) {
+	return this.b('click', s)
+}
+$.fn.ev$ = function (s) {
+	return this.b('event', s)
+}
+$.fn.ch$ = function (bnd) {
+	return this.b('checked', bnd)
+}
+$.fn.tI$ = function (s) {
+	return this.b('textInput', s)
+}
+$.fn.st$ = function (s) {
+	return this.b('style', s)
+}
+$.fn.css$ = function (s) {
+	//= $.fn.bS
+	return this.b('css', s)
+}
+$.fn.o$ = $.fn.op$ = _optionbind = function (s) {
+	return this.b('options', s)
+}
+$.fn.sO$ = $.fn.bSO = function (s) {
+	return this.b('selectedOptions', s)
+}
+$.fn.sm$ = function (s) {
+	return this.b('submit', s)
+}
+$.fn.u$ = $.fn.uN$ = function (s) {
+	return this.b('uniqueName' + s)
+}
+$.fn.tp$ = $.fn.bTp = function (s) {
+	return this.b('template', s)
+}
+$.fn.e$ = function (s) {
+//return this.b('foreach',S)
+// = $.fn.bE
+	// if called from $.fn.eD = $.fn.eB =  feD = ... use '+'
+	var q = this, g = G(arguments)
+	return g.p ? '$data.' + s : q.b('foreach', s)
+//= $.fn.bindKOEach = $.fn.koE = $.fn.eKo = $.fn.bE = $.fn.ko_e 
+}
+$.fn.e$da = function (a) {
+	//=$.fn.eD = $.fn.eB =  $.fn.bindKOEachData 
+	return this.b('$data.' + a)
+}
+$o = function () {
+	var g = G(arguments)
+	g[0] = D(g.f) ? g.f :
+			D(g.s) ? g.s : g.n ?
+					0 : 1
+	return ko.o.apply(ko, g)
+}
+$oA = $oa = function () {
+	var g = G(arguments)
+	return ko.oA(g.A_ ? g.f : g)
+}
+$cO = $c = function () {
+	return ko.computed.apply(ko, arguments)
+}
+$.fn.dB = function (dB, p2) {
+	return this.at({'data-bind': p2 ? (dB + ':' + p2) : dB})
+}
+$.fn.ko = function (a, b) {
+	var o = []
+	if (O(a)) {
+		_.e(a, function (v, k) {
+			if (KOob[k]) {
+				k = KOob[k]
+			}
+			o.push(k + ':' + v)
+		})
+		this.b($l(o.join()))
+	}
+	else {
+		if (KOob[a]) {
+			a = KOob[a]
+		}
+		str = a + ':' + b;  // str= oO('b', a)
+		this.at({'data-bind': str})
+	}
+	return this
+}
+$.fn.b = function (a, b) {
+	var q = this, g = G(arguments)
+	var str = g.O ? $KOob(g.f) :
+			hasCln(a) ? a :
+					$KOob(a, b || 't')
+	return q.dB(str)
+	function hasCln(str) {
+		return str.indexOf(':') != -1
+	}
+}
+ok$ = function (vm, app) {
+	var g = G(arguments)
+	$.app(g.r)
+	ok(vm)
+}
+ok.oA = function (key, oA) {
+	ok($Ob(key, $aO(oA)))
+}
+ko.$oa = function (name, fn) {
+	ko.oa.fn[name] = fn
+}
+$.ko = function () {
+}
+t$ = ok.t$ = t$d = $.d.t$ = function (bd, textVal) {
+	return $.sp().t$(bd).A(textVal || '')
+}
+cl$ = function (bnd, btTx) {
+	var g = G(arguments)
+	var bt = $('<button>').A()
+	bt.cl$(bnd)
+	bt.A(D(btTx) ? btTx : bnd)
+	return bt
+}
+vs$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.sp(A(g.s) ? g.s : g.r).vs$(bnd)
+}
+v$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.ip(A(g.s) ? g.s : g.r).v$(bnd)
+}
+fc$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.ip(A(g.s) ? g.s : g.r).fc$(bnd)
+}
+tI$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.ip(A(g.s) ? g.s : g.r).tI$(bnd)
+}
+pw$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.pw(A(g.s) ? g.s : g.r).tI$(bnd)
+}
+ch$ = function (bnd) {
+	return $.cb().ch$(bnd)
+}
+ip$ = function (ob) {
+	return $.ip().b(ob)
+}
+d$ = function (ob) {
+	return $.d().b(ob)
+}
+w$ = function (bnd, kids) {
+	var g = G(arguments)
+	return $.sp(A(g.s) ? g.s : g.r).w$(bnd)
+}
+Ms = function (a) {
+	return $.sp(a)
+}
+$nav = function (pageName, rtr) {
+	var nav = $.sp(pageName).K(pageName + '-nav')
+	if (rtr) {
+	}
+	return nav
+}
+$mockPage = function (pageName) {
+	return $.sp(pageName).id(pageName + '-pg').K('pg').fS(50)
+}
+$Rt = function (o, root) {
+	if (!o['routes'] && !o['rts'] && !o['rt'] && !o['R']) {
+		o = {routes: o}
+	}
+	return $rt(Bb.R.x(o), root)
+}
+rtr = Bb.R.prototype
+$trg = function () {
+	$ev.trigger.apply($ev, arguments)
+}
+//var vw=this;return vw.cl(function (md) {vw.A(Bb.el( Li_, md ))})
+//$:  'doc:selected', //R: function () {return this.addVal('title')},
+V$R = function (fn) {
+	return V$({R: fn})
+}
+Bb.Co = Bb.Controller = function (Vw, md) {
+	return new Vw({model: md})
+}
+Bb.el = function (Vw, md) {
+	return new Vw({model: md}).el
+}
+$start = $route = function () {
+	_$start = function () {
+		Bb.h.s()
+	}
+	Bb.h.s({pushState: true})
+	return new Rtr
+}
+sRtr = function (rtr) {
+	rtr.n = function (url, op) {
+		this.navigate(url, op);
+		return this
+	}
+	rtr.N = function (url) {//normal navigate,
+// but i change the default
+// to auto trigger the route fn
+		return this.n(url, {trigger: true})
+	}
+	rtr.rt = rtr.A = rtr.oR = function (rt, fn) {
+		var rtr = this
+		if (O(rt)) {
+			//_.e(rt, function (v, k) {rtr.on('route:' +k, v)})
+		}
+		else {
+			rtr.on('route:' + rt, fn)
+		}
+		return rtr
+	}
+	rtr.rp = function (url, op) {
+		return this._n(url, _.x({replace: true},
+				G(arguments).n ? {trigger: true} : {}))
+	}//navigate: replace
+// history:
+	rtr.Fn = function () {
+		return function (url) {
+			this.N(url)
+		}
+	}
+	return rtr
+}
+$R = $Rtr = R$ = function (ob) {
+	ob = ob || {}
+	if (O(ob.R)) {
+		ob.routes = ob.R
+	}
+	ob.routes = ob.R ? ob.R : (ob.routes || ob.rt || ob.r || {}) //if (ob.i) {ob.initialize = ob.i}
+	//if (ob.$) {ob.initialize = function () {$start(); if (F(ob.$)) {ob.$()}}}
+	//if (ob.x) {ob.index = ob.x}
+	//if (ob.h) {ob.home = ob.h}
+	//ob.routes[''] = ob.routes[''] || 'index'
+	//ob.routes = _.x({'': '_'}, ob.routes)
+	//ob.routes['*other'] = 'd'
+	//ob = _.x({
+	//_: function () {$l('INDEX ( _ ) ')},
+	//d: function (other) {$l('DEFAULT(d): "' + other + '"')}
+	//}, ob)
+	//return function (a, b, c, d) {return new Rt(a, b, c, d)}
+	//metaClass.. no need for 'new' //= $$R
+	var rtr = Bb.R.x(ob)
+	return rtr
+	//rt._ = _$start
+	//rt.$ = $start
+	// (goto time: 43:42 )  https://www.youtube.com/watch?v=FXBCBjLGlK4
+// MUST WATCH !!!!!!!!! https://www.youtube.com/watch?v=b4R3d46Ce80 
+// BEST VIDEO (WATCH ALL, KNOW ALL) https://www.youtube.com/watch?v=cIq6Z_Vv4nY
+// RTR ALL U NEED TO KNOW!!!   https://www.youtube.com/watch?v=cIq6Z_Vv4nY
+}
+$RoApp = function (name, CALLBACK) {
+	window[name] = function () {
+		name = name.toUpperCase()
+		$.d('B').W('auto').H(8).A('this is RoApp: ').fS(75).col('r')
+		$.sp(name).fS(100).C('o', 'x')
+		$.hr()
+		d = $.d().id('ct').fS(40)
+		CALLBACK()
+		Bb.h.s({pushState: true, root: "/box/" + name + "/"})
+	}
+}
+$rt = function (Rtr, root, ob) {
+	if (Rtr) {
+		rtr = rt(Rtr, ob)
+	}
+	Bb.h.s({
+		root: root,
+		pushState: true
+	})
+	return rtr
+	function rt(Rtr, ob) {
+		return sRtr(new Rtr(ob))
+	}
+}
+function ach$$$() {
+	V$i = function (ob) {
+		if (F(ob)) {
+			ob = {R: ob}
+		}
+		ob.I = 1
+		return V$(ob)
+	}
+	$FirstVw = V$i(function () {
+		var $$lb = $.lb('My 1st View')
+		var $$a = $.a('Go to 2nd View', 'sec')
+		this.A(ll.oh($$lb, ll, $$a))
+	})
+	$SecVw = V$i({
+		R: ll.TpFn(ll($.lb('My 2nd View'),
+				$.br(), $.a().hr('first').A('Go to 1st View')))
+	})
+}
+//http://www.codeproject.com/Articles/803073/BackBone-Tutorial-Part-Understanding-Backbone-js-R
+R$R = $rR = function (fn) {
+	return R$({R: fn})
+}
+anchorClickBlocker = function () {
+	//looks for clicks on any anchor els where
+	//href starts with '/' (no domain) and stop
+	//bw from nv to it
+	$.bd().on('click', 'a[href^="/"]', function (ev) {
+		$l('wow')
+		ev.preventDefault()
+		r.n($(this).attr('href', {trigger: true}))
+	})
+//looks for clicks on any anchor els where
+//href starts with '/' (no domain) and stop
+//bw from nv to it
+	$('body').on('click', 'a[href^="/"]', function (ev) {
+		ev.preventDefault()
+		r.n($(this).attr('href'))
+	})
+}
+knockAncs = function (ev) {
+	ev.preventDefault()
+	rtr.n($(this).attr('href',
+			{trigger: true}))
+}
+$TrRtrFn = notUsed = function (rtr, fn) {
+	//rtr =	$Trg$( new( R$R( ob ) ), 'contents')
+	return function (md) {
+		$Trg(rtr, fn(md))
+	}
+}
+$.k = function (k) {
+	var q = $.sp()
+	q.K(k)
+	return q
+}
+server = {
+	d: 2,
+	n: 2,
+	docs: {
+		1: {text: 'this is a doc', id: 1}
+	},
+	notes: {
+		1: {1: {text: 'note'}, 2: {text: 'another note'}}
+	},
+	get: {
+		'/docs': function (q, p) {
+			var res = []
+			for (var doc in docs) {
+				if (docs.hasOwnProperty(doc)) {
+					res.push(docs[doc])
+				}
+			}
+			p.json(res)
+		},
+		'/docs/:did/notes': function (q, p) {
+			var res = [], n = notes[q.params.id]
+			for (var note in n) {
+				if (n.hasOwnProperty(note)) {
+					res.push(n[notes])
+				}
+			}
+		}
+	},
+	post: {
+		'/docs': function (q, p) {
+			var doc = q.body
+			doc.id = d++
+			docs.doc.id = doc
+			p.json(doc)
+		},
+		'/docs/:did/notes': function (q, p) {
+			var note = q.body, id = q.params.id
+			note.id = n++
+			if (!notes[id]) {
+				notes[id] = {}
+			}
+			notes[id][notes.id] = note
+			p.json(note)
+		}
+	},
+	put: {
+		'docs/:id': function (q, p) {
+			docs[q.params.id] = q.body
+			p.json(q.body)
+		},
+		'docs/:did/notes:nid': function (q, p) {
+			notes[q.params.id][q.params.nid] = q.body
+			p.json(q.body)
+		}
+	}
+}
+ch$cb = function (bnd) {
+	return $.cb().ch$(bnd)
+}
+$d_ch$cb = $d.ch$cb = function (text, ch$) {
+	$.d().A(ch$cb(ch$), text)
+}
+spCh$Cb = sp_Ch$Cb = function () {
+}
+ch$cb = function (bnd) {
+	return $.cb().ch$(bnd)
+}
+$d_ch$cb = $d.ch$cb = function (text, ch$) {
+	$.d().A(ch$cb(ch$), text)
+}
+_$_ = function (a) {
+	a = a || ''
+	return $('<' + a + '>')
+}
+e$ = function (bnd, kids) {
+	var g = G(arguments)
+	var sp = $.sp(A(g.s) ? g.s : g.r)
+	sp.e$(bnd)
+	return sp
+}
+VoteFns = function (vm, whats) {
+	_.e(A(whats) ? whats : [whats], function (what) {
+		vm[what] = function () {
+			vm.vote(what)
+		}
+	})
+	return vm
+}
+Prod = function (name, op) {
+	return {name: name, op: $o(op)}
+}
+//	return VoteFns(vm = {vote: pmOb.vote || ''}, ['like', 'hate'])
+//can also pass in just an array of the two divs -> ...'like', [$.d(),$.d()
+$.mar = function (num) {
+	$s({$: {M: N(num, 10)}})
+	return $
+}
+ok$o = function (key, val) {
+	vm = $Ob(key, $o(val))
+	ok(vm)
+}
