@@ -34,9 +34,7 @@ Bone= [
  'bbAdder', 'blogRoll', 'bbSort', 'bbLoop', 
  'bbTweet', 'dirt', 'tut','breakRoll','bbLS','local'
   
-]
- 
- Knock=[
+,
  
  
 	 'ko', 'knock00', 'knock0', 'knock',    'koEls',
@@ -50,14 +48,14 @@ Bone= [
 	 'list','workingEachApps',
 	  'documentRouter'
  
- ]
-  
-Wid = [
+,
 		
 	'jqui',   'checkbox',
 	  'wid', 'calc', 'uiApps', 'uiAppsMore',
 	'widFilt', 
-	 'widSuperDlg','widLS','cheese','countdownTimer','widCaption'
+	 'widSuperDlg','widLS','cheese','countdownTimer','widCaption',
+	 
+	 'front','works','err'
 ]
 
  

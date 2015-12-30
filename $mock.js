@@ -1,12 +1,8 @@
  
 $Mk = function () {
-	$mk = function () {
-	}
+	$mk = function () {}
 	ipsum()
-	
 	mks()
-	 
-	
 	function mks() {
 		$mk.strs = ['wallaby', 'Macropus', 'agilis',
 		 'Agouti', 'Dasyprocta', 'leporina']
@@ -50,7 +46,6 @@ $Mk = function () {
 			likes: ['shopping', 'puking']
 		}
 	}
-	
 	function ipsum() {
 		$mk.lI = function (n) {
 			n = N(n, R(40))
@@ -64,9 +59,8 @@ $Mk = function () {
 			return $mk.lI(1) + $sa.S($sa.S('-') + $mk.lI(1))
 		}
 	}
-	
-	 
 }
+
 $Sa = function () {
 	$sa = function (a, b) {
 		if (U(b)) {

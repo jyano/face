@@ -243,7 +243,6 @@ function unrealisticComponent() {
 	}
 //<- $.bt('Clear tweets').b$(' $parent.clearResults')
 function compos(){
- 
 function plugins(){
 	ko.ext = ko.ext || {};
 	ko.ext.utils = ko.ext.utils || {};
