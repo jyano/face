@@ -61,7 +61,7 @@ Wid = [
 ]
 
  
-$a.g('/box/:app', function (q, p) {
+$a.g('/box/:app*', function (q, p) {
 	
 	app = q.params.app.toUpperCase()
 	html = ''//' - '

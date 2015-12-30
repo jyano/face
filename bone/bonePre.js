@@ -1677,4 +1677,154 @@ ADD = function () {
 		tasksCollection.add([{title: 'yooo', prior: 4}])
 	}).button()
 }
+BBEV = function () {
+	$.x().i('chicks')
+	ev = bb.Ev()
+	ev.b("fun:had", // bind? on?
+			function () {
+				alert("wee!")
+			})
+	//trigger
+	ev.tr("fun:had")  //it'll alert "wee!"
+}
+BB220 = EVENTS = BEAUTY = function () {
+	dv = $.d('r', 200).A($.h1('hello'),
+			bt = $.bt('-------'))
+	Vw = Bb.V.x({
+		events: {
+			'click button': function () {
+				bt.C($r())
+			},
+			'dblclick': 'R',
+			'mouseover': function () {
+				dv.C($r())
+			}
+		},
+		R: function () {
+			$.C($r())
+		}
+	})
+	new Vw({
+		I: 1,
+		el: dv
+	})
+}
+Bb.M.prototype.idAttribute = '_id'
+Temp = function (i, h) {
+	var s = ''
+	return _.tp($('#' + i).html(), h || {})
+	if (A(h)) {
+		_.e(h, function (h) {
+			s += h.oh()
+		})
+	}
+	s = "<script type='text/template'>" + s + "</script>"
+	return $(s).id(i).A()
+	_str = "<script type='text/template'>" + _str + "</script>"
+	str = $(s)
+	return _.tp($('#' + i).html(), h || {})
+}
+$Df = function (ob) {
+	return $M({df: ob})
+}
+//function qT_superTemplate() {
+qT = function (fn, ob, $el) {
+//QT:
+// this will be an attempt to make
+// underscore templates, but via qq
+// -does not actually use _.template at all
+	return fn(ob, $el || $._d())
+}
+function QTexample() {
+	function sampleTemplates() {
+		$tp.thed = function (ob, $el) {
+			return $el.A(
+					$.thead().A(
+							$.tr().K('header').A(
+									$.th('Name'),
+									$.th('Age')
+							)
+					)
+			)
+			// $tp.thed :  use like this:  t=qT(thed).a()
+		}
+		$tp.lii = function (ob, $el) {
+
+/// ***********
+//	***********
+// ***********
+// ***********
+			//two ways ok!!!!
+//can pass:
+//1) jq/el
+			return $el.A($.li(ob.me), $.li(ob.me))
+			//2)
+			// or .... array
+			return [$.li().A(ob.me), $.li().A(ob.me)]
+		}
+	}
+	
+	e = qT($tp.lii, {me: 'jason'}).a()
+}
+//QT:
+// this will be an attempt to make
+// underscore templates, but via qq
+// -does not actually use _.template at all
+qT = function (fn, ob, el) {
+	return fn(ob, $(el) || $.d())
+}
+//a sample template
+lii = function (o, e) {
+	return e(li(o.me), li(o.me))
+}
+//return [li(o.me), li(o.me)]
+// e= qT( lii, {me:'jason'} ).a()
+thed = function (o, e) {
+	return e(
+			thead()(
+					tr().k('header')(
+							th()('Name'), th()('Age')
+					)
+			)
+	)
+}
+// t=qT(thed).a()
+listTp = function () {
+	$.d().C('o').id('list-tp').A($.li().A($.a()))
+}
+BBVT5 = function () {
+	COMS = [{t: 'a.com', h: 'a.com'}, {t: 'b.com', h: 'b.com'}, {t: 'c.com', h: 'c.com'}]
+	$.d('y').id('ct').A($.bt('Load', function () {
+		v.r()
+	}), $.ul().id('list'))
+	Vw = Bb.V.x({
+		el: '#ct',
+		I: function (op) {
+			$l(op.blOp);
+			this.tp = $('#list-tp').children()
+		},
+		E: {
+			'click button': function () {
+				$l('click');
+				this.R()
+			}
+		},
+		R: function () {
+			var da, tp;
+			$l('rr: ' + this.model.get('d')[0].h);//$.c('b').ab(300,300)
+			da = this.model.get('d')
+			tp = this.tp,
+					ul = this.$el.find('ul')
+			_.e(da, function (da) {
+				ul.A(tp.clone().find('a').hr('href', da.h).T(da.t).end())
+			})
+		}
+	})
+	m = $M()({d: BBVTdArr})
+	md = new Bb.M({d: COMS})
+	vw = new Vw({blOp: 'empty!', model: md})
+	new v({blOp: 'empty!', m: m = $M()({d: COMS})})
+	v = Vw({zm: m, blOp: 'emp!'})
+}
+ 
 
