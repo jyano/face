@@ -1,9 +1,20 @@
-$stc('', '../art', '_data', 'superWeb/both', 'superWeb','apps')
+$stc('', '../art', '_data', 'superWeb/both', 'superWeb', 'anim',
+ 'front','apps','poly','stage','box')
 Both = ['superUnder', 'superJ', 'superTime']
-SuperWeb=['jq', 'jqui', 'first',  'superInput', 'superImage']
-Front= ['ko','bb', 'bone', 'front',
-	'apps'  
+SuperWeb=['jq', 'jqui', 'first', 'gpc', 'bx', 'superCan',
+'superBox', 'cjs', 'cjsMC', 'create',
+	'clip', 'ko', 'bb', 'bone','front', 
+	'da', 'superInput', 'superImage']
+Front= [ //'da',
+
+	'apps' ,
+	
+	'colorTextShadow',
+	'shapeGraphics','stageObjectsComposition','tranEventsTicker',
+	'hitTestTransformBounds','matrixBitmapLoader',
+	'canApps','cjsApps','shapeApps','bmApps','gpcApps'
 ]
+
 
 $a.g('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()

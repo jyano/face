@@ -1,3 +1,6 @@
+cj = cjs = createjs
+T = cjs.Ticker
+ official()
 $Ldr = function (name, fn) {
 	return window[name] = function () {
 		$Ld(fn)
@@ -45,7 +48,7 @@ function _pre() {
 //answer: art follows fiz structure
 //art follows form follows function? form is the art
 //art/fiz ~ form/function
-	cj = cjs = createjs
+	
 	cj.Pt = cj.Point
 	cjs.R = cjs.Rectangle
 	cj.ED = cj.EventDispatcher
@@ -516,6 +519,65 @@ $aMFl = $aMF = function (a, b, c, d, e) {
 	return new cjs.AlphaMapFilter(a, b, c, d, e)
 }
 function official() {
+	$it = function (i) {
+		var _$it = function (i) {
+			return {src: _.src(i), id: i}
+		}
+		return S(i) ? _$it(i) : i
+	}
+	$its = function (its) {
+		var g = G(arguments)
+		if (!g.A) {
+			its = g
+		}
+		return _.m(its, $it)
+	}
+	ld = cjs.LoadQueue.prototype
+	examples = {}
+	cjs.testCanvas = function () {
+		return $.div().A($.canvas(960, 400).id("testCanvas")).A()
+	}
+	cjs.utils = function () {
+	}
+	cjs.extend = function (subclass, superclass) {
+		function o() {
+			this.constructor = subclass
+		}
+		
+		o.prototype = superclass.prototype;
+		return (subclass.prototype = new o())
+	}
+	cjs.sharedCode = function () {
+		if (document.body) {
+			setupEmbed()
+		}
+		else {
+			document.addEventListener("DOMContentLoaded", setupEmbed)
+		}
+		function setupEmbed() {
+			if (window.top != window) {
+				document.body.className += " embedded"
+			}
+		}
+		
+		var o = window.examples = {}
+		o.showDistractor = function (id) {
+			var div = id ? document.getElementById(id) :
+					document.querySelector("div canvas").parentNode;
+			div.className += " loading"
+		}
+		o.hideDistractor = function () {
+			var div = document.querySelector(".loading")
+			div.className = div.className.replace(/\bloading\b/)
+		}
+	}
+	cjs.worldsMostInterestingShape = function () {
+		var h = cjs.shape()
+		h.graphics.f("pink").dr(20, 20, 450, 360)
+				.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
+				.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
+		return h
+	}
 	examples.showDistractor = function (id) {
 		var div = id ? document.getElementById(id) : document.querySelector("div canvas").parentNode;
 		div.className += " loading"
@@ -660,66 +722,9 @@ function official() {
 		}
 		window.Slider = createjs.promote(Slider, "Shape");
 	}
-	$it = function (i) {
-		var _$it = function (i) {
-			return {src: _.src(i), id: i}
-		}
-		return S(i) ? _$it(i) : i
-	}
-	$its = function (its) {
-		var g = G(arguments)
-		if (!g.A) {
-			its = g
-		}
-		return _.m(its, $it)
-	}
-	ld = cjs.LoadQueue.prototype
-	examples = {}
-	cjs.testCanvas = function () {
-		return $.div().A($.canvas(960, 400).id("testCanvas")).A()
-	}
-	cjs.utils = function () {
-	}
-	cjs.extend = function (subclass, superclass) {
-		function o() {
-			this.constructor = subclass
-		}
-		
-		o.prototype = superclass.prototype;
-		return (subclass.prototype = new o())
-	}
-	cjs.sharedCode = function () {
-		if (document.body) {
-			setupEmbed()
-		}
-		else {
-			document.addEventListener("DOMContentLoaded", setupEmbed)
-		}
-		function setupEmbed() {
-			if (window.top != window) {
-				document.body.className += " embedded"
-			}
-		}
-		
-		var o = window.examples = {}
-		o.showDistractor = function (id) {
-			var div = id ? document.getElementById(id) :
-					document.querySelector("div canvas").parentNode;
-			div.className += " loading"
-		}
-		o.hideDistractor = function () {
-			var div = document.querySelector(".loading")
-			div.className = div.className.replace(/\bloading\b/)
-		}
-	}
-	cjs.worldsMostInterestingShape = function () {
-		var h = cjs.shape()
-		h.graphics.f("pink").dr(20, 20, 450, 360)
-				.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
-				.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
-		return h
-	}
+ 
 }
+ 
 function _weird() {
 	cjs.src = _.src
 }
@@ -899,8 +904,7 @@ cjs.reggy = reggy = function (o, s) {
 			b.XY(o.x + o.regX, o.y + o.regY)
 		}, 100)
 	})
-}
-T = cjs.Ticker
+} 
 eD = cjs.EventDispatcher.prototype
 cj.t = cj.tick = function (func) {
 	func();
