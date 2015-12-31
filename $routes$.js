@@ -1,17 +1,10 @@
-$stc('', '../art', '_data', 'superWeb/both', 'superWeb')
-$stc('wid', 'bone','superBone', 'duperBone','boneLoop', 'knock',
- 'knockLoop', 'knockCust', 'loop', 'sync', 'sappy','webSite')
+$stc('', '../art', '_data', 'superWeb/both', 'superWeb','apps')
 Both = ['superUnder', 'superJ', 'superTime']
-SuperWeb=[
-	'jq', 'bb', 'bone','first', 'second','cssData', 
-	'superJQ', 'superAnim', 'sty', 'rules' , 
-	'media' , 'superHTML', 'superInput', 'superImage', 'htmlPlus' 
-]
-Front= ['bbApps', 'dirt',  'breakRoll','bbLS', 'ko',  
- 'knock', 'jqui', 'wid',   'uiApps', 'widLS', 'front',  'flexy' 
+SuperWeb=['jq', 'jqui', 'first',  'superInput', 'superImage']
+Front= ['ko','bb', 'bone', 'front',
+	'apps'  
 ]
 
- 
 $a.g('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '

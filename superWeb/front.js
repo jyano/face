@@ -1,3 +1,10 @@
+$RE = function (rx, flags) {
+	return new RegExp(rx, flags)
+}
+$REi = function (rx) {
+	return new RegExp(rx, 'i')
+}
+//flilterbale?
 ok = function self(vm, el) {
 	if (A(vm)) {
 		return self(vm[0], vm[1])
@@ -5946,4 +5953,22 @@ $.mar = function (num) {
 ok$o = function (key, val) {
 	vm = $Ob(key, $o(val))
 	ok(vm)
+}
+$.fn.aI = function () {
+	var i = $.i.apply(null, arguments)
+	return this.A(i)
+}
+$.red = function () {
+	return $.d().C('r')
+}
+$.blue = function () {
+	return $.d().C('b')
+}
+$.green = function () {
+	return $.d().C('g')
+}
+$.fn.crD = function () {
+	var q = $.d.apply(null, arguments)
+	this.A(q)
+	return q
 }
