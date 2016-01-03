@@ -1,6 +1,34 @@
-
+window.$pt = window.$pt || {}
+gpc = gpcas
+// other lib:  http://jsclipper.sourceforge.net/6.1.3.2/main_demo.html
+gpc.g = gpc.geometry
+PolyDefault = gpc.g.PolyDefault;
+ArrayList = gpc.util.ArrayList;
+PolySimple = gpc.g.PolySimple;
+Clip = gpc.g.Clip;
+OperationType = gpc.g.OperationType;
+LmtTable = gpc.g.LmtTable;
+ScanBeamTreeEntries = gpc.g.ScanBeamTreeEntries;
+EdgeTable = gpc.g.EdgeTable;
+EdgeNode = gpc.g.EdgeNode;
+ScanBeamTree = gpc.g.ScanBeamTree;
+Rectangle = gpc.g.Rectangle;
+BundleState = gpc.g.BundleState;
+LmtNode = gpc.g.LmtNode;
+TopPolygonNode = gpc.g.TopPolygonNode;
+AetTree = gpc.g.AetTree;
+HState = gpc.g.HState;
+VertexType = gpc.g.VertexType;
+VertexNode = gpc.g.VertexNode;
+PolygonNode = gpc.g.PolygonNode;
+ItNodeTable = gpc.g.ItNodeTable;
+StNode = gpc.g.StNode;
+ItNode = gpc.g.ItNode;
+gpc.PS = gpc.g.PolySimple
+gpc.PD = gpc.g.PolyDefault
+pS = ps = $pt.pS = gpc.PS.prototype
+pD = $pt.pD = gpc.PD.prototype
 $L('type', 'bool', 'polys', 'points','opers','hole','clipCan')
- 
 $gP = function (pts) { 
 	// = M.poly
 	var pD = new gpc.PD()
@@ -276,40 +304,6 @@ function hole() {
 		return !this.hasAtLeastOnePoly()
 	}
 }
-function _pre(){
-
-	window.$pt = window.$pt || {}
-	gpc = gpcas
-// other lib:  http://jsclipper.sourceforge.net/6.1.3.2/main_demo.html
-	gpc.g = gpc.geometry
-	PolyDefault = gpc.g.PolyDefault;
-	ArrayList = gpc.util.ArrayList;
-	PolySimple = gpc.g.PolySimple;
-	Clip = gpc.g.Clip;
-	OperationType = gpc.g.OperationType;
-	LmtTable = gpc.g.LmtTable;
-	ScanBeamTreeEntries = gpc.g.ScanBeamTreeEntries;
-	EdgeTable = gpc.g.EdgeTable;
-	EdgeNode = gpc.g.EdgeNode;
-	ScanBeamTree = gpc.g.ScanBeamTree;
-	Rectangle = gpc.g.Rectangle;
-	BundleState = gpc.g.BundleState;
-	LmtNode = gpc.g.LmtNode;
-	TopPolygonNode = gpc.g.TopPolygonNode;
-	AetTree = gpc.g.AetTree;
-	HState = gpc.g.HState;
-	VertexType = gpc.g.VertexType;
-	VertexNode = gpc.g.VertexNode;
-	PolygonNode = gpc.g.PolygonNode;
-	ItNodeTable = gpc.g.ItNodeTable;
-	StNode = gpc.g.StNode;
-	ItNode = gpc.g.ItNode;
-	gpc.PS = gpc.g.PolySimple
-	gpc.PD = gpc.g.PolyDefault
-	pS = ps = $pt.pS = gpc.PS.prototype
-	pD = $pt.pD = gpc.PD.prototype
-}
-
 function _alpha() {
 	pD.ifHasPol = function () {
 		var pD = this
@@ -351,8 +345,7 @@ pD.maybeTl = function (xy) {
 }
 //p1 = $pD(vs1);
 //p2 = $pD(vs2)
-
-function clipCan(){
+function POLYCTX() {
 	w.pDraw = function (p, x, y) {
 		var w = this,
 				b = w.S(0, 0)
@@ -470,165 +463,6 @@ function clipCan(){
 		}
 	}
 	
-	
-	GP = function () {
-		GP.pols()
-		$cv = $.c('c', 400, 400)
-		x = $cv.ctx()
-		$.br().A()
-		_.e(['difference', 'intersection', 'union', 'xor'], function (op) {
-			$.bt(op, {
-				difference: opFn('difference'),
-				intersection: opFn('intersection'),
-				union: opFn('union'),
-				xor: opFn('xor')
-			}[op]).A()
-		})
-		function opFn(op) {
-			return function () {
-				x.setup()
-				x.drawPolyD(applyOp(op), "green", 0, 150);
-			}
-			function applyOp(op) {
-				return pol1[op](pol2)
-			}
-		}
-		
-		x.drawPolyD(pol1, "blue", 0, -30);
-		x.drawPolyD(pol2, "red", 0, -30);
-	}
-	
-	GP.pols = function () {
-		vxs1 = [[61, 68], [145, 122], [186, 94], [224, 135], [204, 211], [105, 200], [141, 163], [48, 139], [74, 117]]
-		vxs2 = [[131, 84], [224, 110], [174, 180], [120, 136], [60, 167]]
-		pol1 = createPoly(vxs1);
-		pol2 = createPoly(vxs2);
-	}
-	function polyCtx1() {
-		createPoly = function (points) {
-			var res = $pD()
-			for (var i = 0; i < points.length; i++) {
-				res.addPoint(new Point(points[i][0], points[i][1]));
-			}
-			return res;
-		}
-		vs1 = v1 = [[61, 68], [145, 122], [186, 94], [224, 135], [204, 211],
-			[105, 200], [141, 163], [48, 139], [74, 117]]
-		vs2 = v2 = [[131, 84], [224, 110], [174, 180], [120, 136], [60, 167]]
-		colsArr = ["#91ab19", "#ab9119", "#e5ce35", "#ab1998"]
-		vertices1 = [
-			[61, 68],
-			[145, 122],
-			[186, 94],
-			[224, 135],
-			[204, 211],
-			[105, 200],
-			[141, 163],
-			[48, 139],
-			[74, 117]
-		];
-		poly1 = p1 = createPoly(vertices1);
-		vertices2 = p2 = [
-			[131, 84],
-			[224, 110],
-			[174, 180],
-			[120, 136],
-			[60, 167],
-		];
-		poly2 = createPoly(vertices2);
-		opFns = {}
-		opFns.difference = function (e) {
-			clearScreen();
-			drawPoly(poly1, "blue", 0, -30);
-			drawPoly(poly2, "red", 0, -30);
-			var diff = poly1.difference(poly2);
-			drawPoly(diff, "green", 0, 150);
-		}
-		opFns.intersection = function (e) {
-			clearScreen();
-			drawPoly(poly1, "blue", 0, -30);
-			drawPoly(poly2, "red", 0, -30);
-			var diff = poly1.intersection(poly2);
-			drawPoly(diff, "green", 0, 150);
-		}
-		opFns.union = function (e) {
-			clearScreen();
-			drawPoly(poly1, "blue", 0, -30);
-			drawPoly(poly2, "red", 0, -30);
-			var diff = poly1.union(poly2);
-			drawPoly(diff, "green", 0, 150);
-		}
-		opFns.xor = function (e) {
-			clearScreen();
-			drawPoly(poly1, "blue", 0, -30);
-			drawPoly(poly2, "red", 0, -30);
-			var diff = poly1.xor(poly2);
-			drawPoly(diff, "green", 0, 150);
-		}
-		getPolygonVertices = function (poly) {
-			var vertices = [];
-			var numPoints = poly.getNumPoints();
-			var i;
-			for (i = 0; i < numPoints; i++) {
-				vertices.push([poly.getX(i), poly.getY(i)]);
-			}
-			return vertices;
-		}
-		drawSinglePoly = function (vertices, strokeColor, hole, ox, oy) {
-			var i;
-			if (ox == undefined)    ox = 0;
-			if (oy == undefined)    oy = 0;
-			x.beginPath();
-			x.moveTo(vertices[0][0] + ox, vertices[0][1] + oy);
-			for (i = 1; i < vertices.length; i++) {
-				x.lineTo(vertices[i][0] + ox, vertices[i][1] + oy);
-			}
-			x.lineWidth = 12
-			x.strokeStyle = strokeColor;
-			x.fillStyle = "rgba(255, 0, 0, 0.1)";
-			if (hole == true) {
-				x.fillStyle = "#ffffff";
-			}
-			x.closePath();
-			x.stroke();
-			x.fill();
-		}
-		clearScreen = function () {
-			x.clearRect(0, 0, 400, 400);
-		}
-		colors = ["#91ab19", "#ab9119", "#e5ce35", "#ab1998"]//if more than one poly produced, use multiple color to display
-		GP = function () {
-			$('<title>GPCJS example</title>').A()
-			$cv = $('<canvas id="canvas" width="400px" height="400px">').A();
-			canvas = $cv[0];
-			x = $cv.ctx()
-			drawPoly(poly1, "blue", 0, -30);
-			drawPoly(poly2, "red", 0, -30);
-			GP.opBtns()
-		}
-		drawPoly = function (polygon, strokeColor, ox, oy) {
-			var num = polygon.getNumInnerPoly();
-			var i;
-			for (i = 0; i < num; i++) {
-				var poly = polygon.getInnerPoly(i);
-				var vertices = getPolygonVertices(poly);
-				if (i == 0) {
-					drawSinglePoly(vertices, strokeColor, poly.isHole(), ox, oy);
-				}
-				else {
-					drawSinglePoly(vertices, colors[i % num], poly.isHole(), ox, oy);
-				}
-			}
-		}
-		GP.opBtns = function () {
-			opsArr = ['difference', 'intersection', 'union', 'xor']
-			$.br().A()
-			_.e(opsArr, function (op) {
-				$.bt(op, opFns[op]).A()
-			})
-		}
-	}
-	
 	w.pDraw = function (p, x, y) {
 		var w = this, b = w.S(0, 0)
 		b.pol({
@@ -637,5 +471,161 @@ function clipCan(){
 		})
 		return p
 	}
+
+	createPoly = function (points) {
+		var res = $pD()
+		for (var i = 0; i < points.length; i++) {
+			res.addPoint(new Point(points[i][0], points[i][1]));
+		}
+		return res;
+	}
+	vs1 = v1 = [[61, 68], [145, 122], [186, 94], [224, 135], [204, 211],
+		[105, 200], [141, 163], [48, 139], [74, 117]]
+	vs2 = v2 = [[131, 84], [224, 110], [174, 180], [120, 136], [60, 167]]
+	colsArr = ["#91ab19", "#ab9119", "#e5ce35", "#ab1998"]
+	vertices1 = [
+		[61, 68],
+		[145, 122],
+		[186, 94],
+		[224, 135],
+		[204, 211],
+		[105, 200],
+		[141, 163],
+		[48, 139],
+		[74, 117]
+	];
+	poly1 = p1 = createPoly(vertices1);
+	vertices2 = p2 = [
+		[131, 84],
+		[224, 110],
+		[174, 180],
+		[120, 136],
+		[60, 167],
+	];
+	poly2 = createPoly(vertices2);
+	opFns = {}
+	opFns.difference = function (e) {
+		clearScreen();
+		drawPoly(poly1, "blue", 0, -30);
+		drawPoly(poly2, "red", 0, -30);
+		var diff = poly1.difference(poly2);
+		drawPoly(diff, "green", 0, 150);
+	}
+	opFns.intersection = function (e) {
+		clearScreen();
+		drawPoly(poly1, "blue", 0, -30);
+		drawPoly(poly2, "red", 0, -30);
+		var diff = poly1.intersection(poly2);
+		drawPoly(diff, "green", 0, 150);
+	}
+	opFns.union = function (e) {
+		clearScreen();
+		drawPoly(poly1, "blue", 0, -30);
+		drawPoly(poly2, "red", 0, -30);
+		var diff = poly1.union(poly2);
+		drawPoly(diff, "green", 0, 150);
+	}
+	opFns.xor = function (e) {
+		clearScreen();
+		drawPoly(poly1, "blue", 0, -30);
+		drawPoly(poly2, "red", 0, -30);
+		var diff = poly1.xor(poly2);
+		drawPoly(diff, "green", 0, 150);
+	}
+	getPolygonVertices = function (poly) {
+		var vertices = [];
+		var numPoints = poly.getNumPoints();
+		var i;
+		for (i = 0; i < numPoints; i++) {
+			vertices.push([poly.getX(i), poly.getY(i)]);
+		}
+		return vertices;
+	}
+	drawSinglePoly = function (vertices, strokeColor, hole, ox, oy) {
+		var i;
+		if (ox == undefined)    ox = 0;
+		if (oy == undefined)    oy = 0;
+		x.beginPath();
+		x.moveTo(vertices[0][0] + ox, vertices[0][1] + oy);
+		for (i = 1; i < vertices.length; i++) {
+			x.lineTo(vertices[i][0] + ox, vertices[i][1] + oy);
+		}
+		x.lineWidth = 12
+		x.strokeStyle = strokeColor;
+		x.fillStyle = "rgba(255, 0, 0, 0.1)";
+		if (hole == true) {
+			x.fillStyle = "#ffffff";
+		}
+		x.closePath();
+		x.stroke();
+		x.fill();
+	}
+	clearScreen = function () {
+		x.clearRect(0, 0, 400, 400);
+	}
+	colors = ["#91ab19", "#ab9119", "#e5ce35", "#ab1998"]//if more than one poly produced, use multiple color to display
+	drawPoly = function (polygon, strokeColor, ox, oy) {
+		var num = polygon.getNumInnerPoly();
+		var i;
+		for (i = 0; i < num; i++) {
+			var poly = polygon.getInnerPoly(i);
+			var vertices = getPolygonVertices(poly);
+			if (i == 0) {
+				drawSinglePoly(vertices, strokeColor, poly.isHole(), ox, oy);
+			}
+			else {
+				drawSinglePoly(vertices, colors[i % num], poly.isHole(), ox, oy);
+			}
+		}
+	}
+	GP = function () {
+		$('<title>GPCJS example</title>').A()
+		$cv = $('<canvas id="canvas" width="400px" height="400px">').A();
+		canvas = $cv[0];
+		x = $cv.ctx()
+		drawPoly(poly1, "blue", 0, -30);
+		drawPoly(poly2, "red", 0, -30);
+		GP.opBtns()
+	}
+	GP.opBtns = function () {
+		opsArr = ['difference', 'intersection', 'union', 'xor']
+		$.br().A()
+		_.e(opsArr, function (op) {
+			$.bt(op, opFns[op]).A()
+		})
+	}
+	GP()
+	function alt(){
+		GP = function () {
+			GP.pols()
+			$cv = $.c('c', 400, 400)
+			x = $cv.ctx()
+			$.br().A()
+			_.e(['difference', 'intersection', 'union', 'xor'], function (op) {
+				$.bt(op, {
+					difference: opFn('difference'),
+					intersection: opFn('intersection'),
+					union: opFn('union'),
+					xor: opFn('xor')
+				}[op]).A()
+			})
+			function opFn(op) {
+				return function () {
+					x.setup()
+					x.drawPolyD(applyOp(op), "green", 0, 150);
+				}
+				function applyOp(op) {
+					return pol1[op](pol2)
+				}
+			}
+			
+			x.drawPolyD(pol1, "blue", 0, -30);
+			x.drawPolyD(pol2, "red", 0, -30);
+		}
+		GP.pols = function () {
+			vxs1 = [[61, 68], [145, 122], [186, 94], [224, 135], [204, 211], [105, 200], [141, 163], [48, 139], [74, 117]]
+			vxs2 = [[131, 84], [224, 110], [174, 180], [120, 136], [60, 167]]
+			pol1 = createPoly(vxs1);
+			pol2 = createPoly(vxs2);
+		}}
 }
- 

@@ -156,7 +156,6 @@ OLSTYLE = {
 	"#": 'inherit'
 }
 OLWIDTH = {'|': 'thin', '||': 'medium', '|||': 'thick', 's': 'thin', 'm': 'medium', 'b': 'thick'}
- 
 POSITION = {s: 'static', a: 'absolute', r: 'relative', f: 'fixed', '#': 'inherit'}
 OVERFLOW = {v: 'visible', h: 'hidden', s: 'scroll', a: 'auto', '#': 'inherit'}
 CURSOR = {
@@ -164,7 +163,6 @@ CURSOR = {
 	N: 'n-resize', E: 'e-resize', S: 's-resize', W: 'w-resize',
 	NE: 'ne-resize', NW: 'nw-resize', SE: 'se-resize', SW: 'sw-resize'
 }
- 
 FONTFAMILY = {
 	u: "cursive", f: "fantasy", m: 'monospace', ss: 'sans-serif', s: 'serif',//generic
 	t: 'times', c: 'courier', a: 'arial'
@@ -201,77 +199,6 @@ FONTSTRETCH = {
 TEXTDECORATION = {u: "underline", o: "overline", l: "line-through", b: "blink"}
 TEXTALIGNMENT = {l: "left", r: "right", c: "center", j: "justify"}
 TEXTBASELINE = {s: 'sub', S: 'super', t: 'top', tt: 'text-top', m: 'middle', b: 'bottom', tb: 'text-bottom'}
- 
-function old() {
-//oO = _.df(oO, ooo)
-	oO.V = function (a) {
-		return _.v(S(a) ?
-				oO(a) : a)
-	}
-	function mini() {
-		oO.c = oC = function (c) {
-			return oO('c', c)
-		}
-		oO.k = oK = function (a) {
-			return oO('k', a)
-		}
-		oO.t = oT = function (a) {
-			return oO('t', a)
-		}
-		oO.e = oE = function (a) {
-			return oO('e', a)
-		}
-		oO.i = oI = function (a) {
-			return oO('i', a)
-		}
-		oO.s = oS = function (a) {
-			return oO('s', a)
-		}
-		oO.q = oQ = function (f, m) {
-			$(function () {
-				Q(m || mf, f)
-			})
-		}
-	}
-	
-	$o = function (a, b, c) {
-		var g = G(arguments)
-		return U(b) ? _p($o, a) :
-				g.N ? oO(a, b, c) :
-						Oo(a, b, c)
-	}
-	oQ = function (f, m) {
-		$(function () {
-			Q(m || mf, f)
-		})
-	}
-	oC = function (c) {
-		return oO('c', c)
-	}
-	oK = function (a) {
-		return oO('k', a)
-	}
-	oT = function (a) {
-		return oO('t', a)
-	}
-	oE = function (a) {
-		return oO('e', a)
-	}
-	oI = function (a) {
-		return oO('i', a)
-	}
-	oS = function (a) {
-		return oO('s', a)
-	}
-	oOo = function (a, b) {
-		if (U(b)) {
-			return _I(lC(V(oO(a))))
-		}
-		if (oOo(a)[lC(b)]) {
-			return b
-		}
-	}
-}
 CSS = {
 	fl: 'flex',
 	$: 'flex',
@@ -472,7 +399,73 @@ $r = function (a, b) {
 	var vals = _.v(oO(a = a || 'c'))
 	return Oo(a, b) || vals[_.r(_.s(vals) - 1)]
 }
- 
-	 
+function old() {
+//oO = _.df(oO, ooo)
+	oO.V = function (a) {
+		return _.v(S(a) ?
+				oO(a) : a)
+	}
+	function mini() {
+		oO.c = oC = function (c) {
+			return oO('c', c)
+		}
+		oO.k = oK = function (a) {
+			return oO('k', a)
+		}
+		oO.t = oT = function (a) {
+			return oO('t', a)
+		}
+		oO.e = oE = function (a) {
+			return oO('e', a)
+		}
+		oO.i = oI = function (a) {
+			return oO('i', a)
+		}
+		oO.s = oS = function (a) {
+			return oO('s', a)
+		}
+		oO.q = oQ = function (f, m) {
+			$(function () {
+				Q(m || mf, f)
+			})
+		}
+	}
 	
- 
+	$o = function (a, b, c) {
+		var g = G(arguments)
+		return U(b) ? _p($o, a) :
+				g.N ? oO(a, b, c) :
+						Oo(a, b, c)
+	}
+	oQ = function (f, m) {
+		$(function () {
+			Q(m || mf, f)
+		})
+	}
+	oC = function (c) {
+		return oO('c', c)
+	}
+	oK = function (a) {
+		return oO('k', a)
+	}
+	oT = function (a) {
+		return oO('t', a)
+	}
+	oE = function (a) {
+		return oO('e', a)
+	}
+	oI = function (a) {
+		return oO('i', a)
+	}
+	oS = function (a) {
+		return oO('s', a)
+	}
+	oOo = function (a, b) {
+		if (U(b)) {
+			return _I(lC(V(oO(a))))
+		}
+		if (oOo(a)[lC(b)]) {
+			return b
+		}
+	}
+}

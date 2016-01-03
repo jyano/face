@@ -1,63 +1,42 @@
-$stc('', '../art', '_data', 'web/both', 'web', 'anim', 'front','apps','poly','stage','stage/anim', 'box')
-Both = ['superUnder', 'superJ', 'superTime']
-Deps = ['jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','setup']
-//
+$stc('', '../art', '_data',
+		'web/both', 'web', 'web/css', 'web/dom','web/html',
+		'front','graphics',
+		'stage','stage/anim', 'wappy',
+		'box'
+)
+
+Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','setup']
 
 
-
-SuperWeb=['first', 'sJQ', 'sHtml', 'superInput', 'superImage', 'sCss', 'jqAnim']
-
+Web= ['web', 'sJQ', 'webEvents', 'attributes','qAnim','traverse','value',
+	 'media', 'rules', 'style', 'html', 'inputs','lists','submit','root', 'flex','ll']
+	 
 Front= ['sJQUI', 'bone', 'knock','wapUI']
 
-
 Graphics = [
-	
-	'superCan', 'create', 'clip', 'colorTextShadow',
+	'superCan', 'create', 
 	'shapeGraphics', 'stageObjectsComposition', 'tranEventsTicker',
-	'hitTestTransformBounds', 'matrixBitmapLoader',
-	'canApps', 'cjsApps', 'shapeApps', 'bmApps', 'gpcApps'
+	'hitTestTransformBounds', 
+	 'cjsApps', 'shapeApps',   'gpcApps'
 ]
-
-
-
-Fiz = ['superBox','debug', 'world','$walls','$vec','$state','$shapes','$make','$generate','$fiz','$kinem']
-
-
-Apps = ['da','webApps', 'frontApps', 'canApps', 'cjsApps', 'boxApps' ]
-
-
+Fiz = ['superBox' ,'clip','debug', 'world','$walls','$vec','$state','$shapes',
+	'$make','$generate','$fiz','$kinem']
+Apps = ['da', 'frontApps',
+	'canApps', 'cjsApps', 'boxApps','bbApps','koApps' ]
 
 $a.g('/box/:app*', function (q, p) {
+
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
+
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js(Both, Deps, SuperWeb, Front, Graphics, Apps, Fiz)	
+	html += $js(
+			Deps,  Web, Front, Graphics, Fiz,Apps
+	)	
+	
+	
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
-
-
-function graphics(){
-	
-	//Deps: 'dfDefs' 'ko', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC',
-	
-	Can = ['superCan']
-	
-	Geo = ['clip', 'clipDraw', 'geo', 'clump', 'scrape', 
-	'separate', 'polyCircle', 'explode']
-	
-	Create = ['easel', 'shapes', 'objects',
-	'graphics', 'container', 'writing', 'loader',
-	'official', 'stageFilt',
-	'justEaselApps', 'stageDrawApps', 'bmFillApps','tween',
-	 'animLoop', 'shake', 'justEaselApps']
-
-	Fiz = ['box', 'world', 'debug', '$walls', '$vec', '$state', '$shapes', '$make',
-	'$generate', '$fiz', '$mouseWorld', '$query', 'mouseQuery', 'worldEach',
-	'$collide', '$contact', '$filtering', '$handle', '$listen']
-
-
-}
-
-// <---  100 google fonts?
+ 

@@ -1282,6 +1282,4 @@ dO.lTL = function () {
 dO.lTG = function () {
 	return this.localToGlobal.apply(this, arguments)
 }
-function _apps(){
  
-}

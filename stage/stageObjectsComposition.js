@@ -1,12 +1,5 @@
 $L('dot', 'dim', 'can', 'kids', 'add', 'next', 'compOp')
-st.sTPE = function () {
-	var st = this, g = G(arguments)
-	if (g.u) {
-		return st.snapToPixelEnabled
-	}
-	st.snapToPixelEnabled = g.f ? true : false
-	return st
-}
+
 cjs.rmOb = function (ob) {
 	if (cjs.iDO(ob)) {
 		ob.rm()
@@ -295,166 +288,7 @@ function kids() {
 		// 3) just return the children
 		return CH
 	}
-}
-function dot() {
-	ct.dot = function () {
-		var ct = this
-		var g = G(arguments), o = {c: g.f, x: g.s, y: g.t}
-		o.x = N(o.x, ct.W() / 2)
-		o.y = N(o.y, ct.H() / 2)
-		o.c = o.c || 'y'
-		d = this.h(o.x, o.y).s(o.c).f('z').l(10).cir(10).al(.7).drag()
-		tw = d.twL([{sxy: 1.3}, 100], [{sxy: 1}, 100]).$()
-		d.$$(function () {
-			tw.$()
-		})
-		return d.K('dot')
-	}
-	ct.dot = function (color, x, y) {
-		var that = this, dot, tween
-		if (A(color)) {
-			_.each(color, function (args) {
-				if (A(args)) {
-					that.dot.apply(that, args)
-				}
-				else {
-					that.dot(args)
-				}
-			})
-			return
-		}
-		if (!S(color)) {
-			y = x;
-			x = color;
-			color = 'yellow'
-		}
-		if (O(x)) {
-			y = x.y;
-			x = x.x
-		}
-		x = N(x) ? x : this.W() / 2
-		y = N(y) ? y : this.H() / 2
-		dot = __dot = this.cir(x, y, 6, oO('c', color)).drag()//.opacity(.4)
-		tween = dot.tweenLoop([{sxy: 1.3}, 100], [{sxy: 1}, 100]).toggle()
-		dot.$$(function () {
-			tween.toggle()
-		})
-		dot.N('dot')
-		return this
-	}
-	ct.dot = function (color, x, y) {
-		var that = this, dot, tween
-		if (A(color)) {
-			_.each(color, function (args) {
-				if (A(args)) {
-					that.dot.apply(that, args)
-				}
-				else {
-					that.dot(args)
-				}
-			})
-			return
-		}
-		if (!S(color)) {
-			y = x;
-			x = color;
-			color = 'yellow'
-		}
-		if (O(x)) {
-			y = x.y;
-			x = x.x
-		}
-		x = N(x) ? x : this.W() / 2
-		y = N(y) ? y : this.H() / 2
-		dot = __dot = this.cir(x, y, 6, oO('c', color)).drag()//.opacity(.4)
-		tween = dot.tweenLoop([{sxy: 1.3}, 100], [{sxy: 1}, 100]).toggle()
-		dot.$$(function () {
-			tween.toggle()
-		})
-		dot.N('dot')
-		return this
-	}
-	ct.dot = function (color, x, y) {
-		var that = this,
-				dot,
-				tween
-		if (b2d.isGPoly(color)) {
-			_.each(color.verts(), function (v) {
-				that.dot(V(v))
-			})
-			return this
-		}
-		if (A(color)) {
-			_.each(color, function (args) {
-				if (A(args)) {
-					that.dot.apply(that, args)
-				}
-				else {
-					that.dot(args)
-				}
-			})
-			return
-		}
-		if (!S(color)) {
-			y = x;
-			x = color;
-			color = 'yellow'
-		}
-		if (O(x)) {
-			y = x.y;
-			x = x.x
-		}
-		x = N(x) ? x : this.W() / 2
-		y = N(y) ? y : this.H() / 2
-		dot = __dot = this.cir(x, y, 6, oO('c', color)).drag()//.opacity(.4)
-		tween = dot.tweenLoop([{sxy: 1.3}, 100], [{sxy: 1}, 100]).toggle()
-		dot.$$(function () {
-			tween.toggle()
-		})
-		dot.N('dot')
-		return this
-	}
-	ct.squareDot = function (color, x, y) {
-		var squareDot, tween
-		if (!S(color)) {
-			y = x;
-			x = color;
-			color = 'orange'
-		}
-		if (O(x)) {
-			y = x.y;
-			x = x.x
-		}
-		x = N(x) ? x : 300
-		y = N(y) ? y : 300
-		__squareDot = squareDot = cjs.rect(20, 20, oO('c', color))//.opacity(.4)
-		this.A(squareDot.XY(x, y)//.drag()
-		)
-		//tween = dot.tweenLoop([{sxy:1.3},100],[{sxy:1},100]).toggle()
-		// dot.$$(function(){tween.toggle()})
-		return this
-	}
-	ct.squareDot = function (color, x, y) {
-		var squareDot, tween
-		if (!S(color)) {
-			y = x;
-			x = color;
-			color = 'orange'
-		}
-		if (O(x)) {
-			y = x.y;
-			x = x.x
-		}
-		x = N(x) ? x : 300
-		y = N(y) ? y : 300
-		__squareDot = squareDot = cjs.rect(20, 20, oO('c', color))//.opacity(.4)
-		this.A(squareDot.XY(x, y)//.drag()
-		)
-		//tween = dot.tweenLoop([{sxy:1.3},100],[{sxy:1},100]).toggle()
-		// dot.$$(function(){tween.toggle()})
-		return this
-	}
-}
+} 
 function add() {
  
 	ct.ct = function (x, y) {
@@ -526,56 +360,8 @@ function next() {
 		return this
 	}
 }
-function compOp() {
-	dO.cO = dO.compOp = function (compOp) {
-		var dO = this, g = G(arguments)
-		if (g.u) {
-			return dO.compositeOperation
-		}
-		dO.compositeOperation = compOp
-		return dO
-	}
-// dO.o // not good!!!!!
-//eh.. unnecessary? could overlap something important? well.. does it or not?
-	dO.Ds = dO.dO = function () {
-		return this.compOp('destination-out');
-	}
-	dO.dS = dO.dI = function () {
-		return this.compOp('destination-in')
-	}
-	dO.sD = dO.sI = function () {
-		this.compOp('source-in');
-		return this
-	}
-	dO.Sd = dO.sO = function () {
-		this.compOp('source-out');
-		return this
-	} // why use this ??x.sd = x.sV= function(){ this.compOp('source-over'); return this }
-	dO.ds = dO.dV = function () {
-		this.compOp('destination-over');
-		return this
-	}
-	dO.SD = dO.sT = dO.sA = function () {
-		this.compOp('source-atop');
-		return this
-	}
-	dO.DS = dO.dT = dO.dA = function () {
-		this.compOp('destination-atop');
-		return this
-	}
-	dO.li = function () {
-		this.compOp('lighter');
-		return this
-	}
-	dO.co = function () {
-		this.compOp('copy');
-		return this
-	}
-	dO.xo = function () {
-		this.compOp('xor');
-		return this
-	}
-}
+ 
+
 ct.bgI = ct.bg = function (i) {
 	var ct = this
 	ct.bm(i, function (b) {
@@ -588,8 +374,42 @@ ct.mc = function (x, y) {
 	mc = cjs.MovieClip.apply(cjs, g)
 	this.A(mc).XY(N(x, 100), N(y, 100))
 	return mc
+} 
+st.cc = function () {
+	return this.cacheCanvas
 }
- function _apps(){
-  
- }
- 
+st.du = st.tDU = function (ms) {
+	var st = this,
+			g = G(arguments)
+	// same as? return this.canvas.toDataURL()
+	st.toDataURL.apply(st, g)
+	return st
+}
+st.snap = function (f) {
+	$.post('/img', {
+		d: this.toDataURL()//, dats: o.x.dats
+	})
+	sec(f)
+	return this
+}
+st.cv = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.canvas
+	}
+	st.canvas = g.f
+	return st
+}
+st.tabs = st.ab = st.abs = function (x, y) {
+	this.can.abs(x, y);
+	return this
+}
+
+st.sTPE = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.snapToPixelEnabled
+	}
+	st.snapToPixelEnabled = g.f ? true : false
+	return st
+}
