@@ -1,19 +1,30 @@
-$stc('', '../art', '_data', 'superWeb/both', 'superWeb', 'anim',
- 'front','apps','poly','stage','box')
+$stc('', '../art', '_data', 'web/both', 'web', 'anim', 'front','apps','poly','stage','stage/anim', 'box')
 Both = ['superUnder', 'superJ', 'superTime']
-SuperWeb=['jq', 'jqui', 'first', 'gpc', 'bx', 'superCan',
-'superBox', 'cjs', 'cjsMC', 'create',
-	'clip', 'ko', 'bb', 'bone','front', 
-	'da', 'superInput', 'superImage']
-Front= [ //'da',
+Deps = ['jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','setup']
+//
 
-	'apps' ,
+
+
+SuperWeb=['first', 'sJQ', 'sHtml', 'superInput', 'superImage', 'sCss', 'jqAnim']
+
+Front= ['sJQUI', 'bone', 'knock','wapUI']
+
+
+Graphics = [
 	
-	'colorTextShadow',
-	'shapeGraphics','stageObjectsComposition','tranEventsTicker',
-	'hitTestTransformBounds','matrixBitmapLoader',
-	'canApps','cjsApps','shapeApps','bmApps','gpcApps'
+	'superCan', 'create', 'clip', 'colorTextShadow',
+	'shapeGraphics', 'stageObjectsComposition', 'tranEventsTicker',
+	'hitTestTransformBounds', 'matrixBitmapLoader',
+	'canApps', 'cjsApps', 'shapeApps', 'bmApps', 'gpcApps'
 ]
+
+
+
+Fiz = ['superBox','debug', 'world','$walls','$vec','$state','$shapes','$make','$generate','$fiz','$kinem']
+
+
+Apps = ['da','webApps', 'frontApps', 'canApps', 'cjsApps', 'boxApps' ]
+
 
 
 $a.g('/box/:app*', function (q, p) {
@@ -21,7 +32,7 @@ $a.g('/box/:app*', function (q, p) {
 	html = ''//' - '
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js(Both, SuperWeb, Front)	// Geo, Can, Stage, Fiz
+	html += $js(Both, Deps, SuperWeb, Front, Graphics, Apps, Fiz)	
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })

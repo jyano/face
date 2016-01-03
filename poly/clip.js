@@ -45,12 +45,12 @@ function bool() {
 }
 function polys(){
 //get number of pols
-	pD.nIP = pS.nIP = function () {
-// = pD.numPol = pS.numPol = pD.nPol = pS.nPol = ps.numInnerPolygons = ps.numPolys = ps.nP = pD.numPolys = pD.nP
+	pD.nIP = pS.nIP = pD.numPol = function () {
+// =pS.numPol = pD.nPol = pS.nPol = ps.numInnerPolygons = ps.numPolys = ps.nP = pD.numPolys = pD.nP
 		return this.getNumInnerPoly()
 	}
 //get inner pol
-	pS.gIP = function (n) {
+	pD.g=pS.gIP = function (n) {
 		// = pS.getPoly = pS.g = pD.iPol = pD.pg = pD.iPg = pD.inP = pD.getPoly = pD.gIP = pD.g
 		return this.getInnerPoly(n || 0)
 		function docs() {
@@ -470,6 +470,7 @@ function clipCan(){
 		}
 	}
 	
+	
 	GP = function () {
 		GP.pols()
 		$cv = $.c('c', 400, 400)
@@ -496,6 +497,7 @@ function clipCan(){
 		x.drawPolyD(pol1, "blue", 0, -30);
 		x.drawPolyD(pol2, "red", 0, -30);
 	}
+	
 	GP.pols = function () {
 		vxs1 = [[61, 68], [145, 122], [186, 94], [224, 135], [204, 211], [105, 200], [141, 163], [48, 139], [74, 117]]
 		vxs2 = [[131, 84], [224, 110], [174, 180], [120, 136], [60, 167]]
@@ -636,5 +638,4 @@ function clipCan(){
 		return p
 	}
 }
-function canClipApps(){ 
-}
+ 

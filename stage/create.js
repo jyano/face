@@ -413,13 +413,15 @@ $Mx = cjs.m2d = function () {
 	}
 	return _MxOb($mxDf(o))
 }
+
 $Tf = $TfMx = $tMx = function (x, y, sx, sy, rt, kx, ky, rx, ry) {
 	return $Mx().aTf(x, y, sx, y, rt, kx, ky, rx, ry)
 }
+_$Bm = function (i) {
+	return new cjs.Bitmap(i)
+}
 $Bm = cjs.bitmap = cjs.bm = function () {
-	_$Bm = function (i) {
-		return new cjs.Bitmap(i)
-	}
+
 	var g = G(arguments)
 	var i = g[0]
 	if (!O(i)) {

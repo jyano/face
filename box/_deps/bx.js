@@ -1,4 +1,4 @@
-$l('b')
+ 
  var Box2D = {};
 
 (function (a2j, undefined) {

@@ -532,7 +532,6 @@ function hTags() {
 		return this
 	}
 	$.fn.bgImg = $.backgroundImage
-	
 	function anim() {
 		$.fn.st = $.fn.stop
 		$.fn.fT = $.fn.f2 = $.fn.fadeTo
@@ -716,7 +715,7 @@ function hTags() {
 		$.fn.qu = $.fn.queue
 		$.fn.dq = $.fn.dqu = $.fn.dequeue
 	}
-	 
+	
 	function move() {
 		$.fn.toR = $.fn.moveRight = function (num) {
 			alert('toL')
@@ -755,7 +754,6 @@ function hTags() {
 			return this
 		}
 	}
-	
 	
 	$.fn.H5 = function (a) {
 		return $.h5(a).a2(this)
@@ -1571,7 +1569,6 @@ function ajax() {
 		return new XMLHttpRequest()
 	}
 }
- 
 $.tg = function (a) {
 	return $('<' + a + '>')
 }
@@ -1810,7 +1807,7 @@ $MS = function (ms, cHeader, cBody) {
 	}
 	return $
 }
-$l('webSite')
+ 
 $Ms = function (ms) {
 	//$.h1(ms)
 	return $.d().fS(80).C($r()).col($r()).A(ms)
@@ -1985,32 +1982,35 @@ ll.vwTr = function (ob) {
 	tr.vw = ll.trVw()
 	return tr
 }
-
 $$s = function (ob) {
 	$s({$: ob})
 }
 __ = 'hjkhjkhjk hkjhjkhjk hjkjkhjhjhk hjkkjhjkhjkhjkhjkhjkhjkh  jkkjkjhjhkjhkh '
 $sl = {}
-$.p.ch = function () {}
-$ol = function () {}
-$ul = function () {}
-$.fS = function (num) {return bd.fS(N(num, 30))}
-$.fn.pam = $.fn.par = function (a, b) {this.at('params', a + ': ' + b);
+$.p.ch = function () {
+}
+$ol = function () {
+}
+$ul = function () {
+}
+$.fS = function (num) {
+	return bd.fS(N(num, 30))
+}
+$.fn.pam = $.fn.par = function (a, b) {
+	this.at('params', a + ': ' + b);
 	return this
-} 
-
-$.p.cb = $.p.ch = function () {}
-$.p.sp = function () {}
-
+}
+$.p.cb = $.p.ch = function () {
+}
+$.p.sp = function () {
+}
 $els = function () {
 	return $.sp.apply(null, arguments)
 }
-
 $Fn = function (name, fn) {
 	window[name] = fn;
 	return fn
 }
-
 $.H = function (html) {
 	$(html).A()
 	return $
@@ -2019,13 +2019,12 @@ $.HR = function () {
 	return $.hr().A()
 }
 $.btAf = function (what) {
-	return $.bt().iA(what)}
-
+	return $.bt().iA(what)
+}
 $.fn.op = $.fn.prop
-
 //_rf = function (a) {a.refresh();return q}
-
-$.spSmMdLg = function () {return $.sp().A(
+$.spSmMdLg = function () {
+	return $.sp().A(
 			$.cbDiv('sm', 'Small'),
 			$.cbDiv('md', 'Medium'),
 			$.cbDiv('lg', 'Large')
@@ -2033,7 +2032,7 @@ $.spSmMdLg = function () {return $.sp().A(
 }
 $.fn.iCh = function () {
 	return this.is(":checked")
-} 
+}
 F.pD = function (fn) {
 	return function (ev) {
 		ev.preventDefault()
@@ -2146,7 +2145,6 @@ $.fn.suPD = $.fn.suPrDf = function (fn) {
 $.P$d = function (url, ipId, title) {
 	$.P(url, $.IV(ipId), $cDFn(title))
 }
-
 $.cDFn = function (title) {
 	return function (da) {
 		$cD(title, da)
@@ -2166,12 +2164,10 @@ $.dHr = function () {
 	var d = $.d.apply($, arguments)
 	return $.d().A(d, $.hr())
 }
-
 $.pD = _.pD = function (ev) {
 	ev.preventDefault()
 	return ev
 }
- 
 $.fS = function (size) {
 	$s({$: {fS: (N(size, 40))}})
 	return $
@@ -2185,7 +2181,6 @@ $.E = function () {
 	bd.E.apply(bd, arguments)
 	return $
 }
-
 $.uLE = function (a) {
 	var g = G(arguments)
 	return $.ulE(a, $.li(g.r))
@@ -2193,9 +2188,8 @@ $.uLE = function (a) {
 $tp = window['$tp'] || {}
 $.fn.none = function () {
 	return this.css('display', 'none')
-} 
+}
 Ap = {M: {}, C: {}, V: {}, T: {}}
-   
 Temp = function (i, h) {
 	var s = ''
 	return _.tp($('#' + i).html(), h || {})
@@ -2209,7 +2203,7 @@ Temp = function (i, h) {
 	_str = "<script type='text/template'>" + _str + "</script>"
 	str = $(s)
 	return _.tp($('#' + i).html(), h || {})
-} 
+}
 __ = 'fadsfasasdf'
 $Df = function (ob) {
 	return $M({df: ob})
@@ -2292,7 +2286,7 @@ Temp = function (i, h) {
 }
 listTp = function () {
 	$.d().C('o').id('list-tp').A($.li().A($.a()))
-} 
+}
 $._x = function (col, title) {
 	$.C(col || $r())
 	if (title) {
@@ -3188,7 +3182,6 @@ $.sty = $.Sty = function (h) {
 	}
 	return styleTag
 }
- 
 $sel = function (sel) {
 	if (A(sel)) {
 		sel = '{' + sel[0] + ':' + sel[1] + '; ' + '}'
@@ -4738,7 +4731,6 @@ $.wd("custom.colorize", {
 		wd._super(k, v)
 	}
 })
-  
 // FROM THIS AMAZING VIDEO (not on youtube): https://vimeo.com/22686559
 $.wg("aj.flb", {//filterable
 	options: {k: ''},
@@ -4789,23 +4781,7 @@ $.wg("aj.flb", {//filterable
 		)
 	}
 })
-
-function create() {
-	var wg = this, q = wg.element, op = wg.options
-	q.ch().K("ui-widget-content " + op.k)
-	wg.filterIp = $.ip().iBf(q).wr($.dK('ui-widget-header', op.k))
-	wg.timeout = false
-	wg._on(q.ch(), {
-		mouseenter: "_hover",
-		mouseleave: "_hover"
-	})
-	this._focusable(ip)   // :toggles ui-state-focus
-	// _hoverable works for ui-state-hover,
-	// but we will do something slighty different in our hover
-	this._on(ip, {
-		keyup: "filter"
-	})
-}
+ 
 // book, movement: pleasurable js (or javascript for pleasure)
 Blog = Bb.M.x({
 	idAttribute: "_id",
@@ -4955,7 +4931,6 @@ ko.rg = ko.cm.rg = ko.cm.reg = ko.cm.register
 ko.cm.iR = ko.cm.isRegistered
 ko.o.prototype.rm = ko.o.prototype.remove
 //$.sl.o$ = function (a) {return $.sl().o$(a)}//= OptionBoundSelect = $sl$o = $.sel.op = sel$op = $.sO = $.slO
-
 t$sp = function () {
 }
 v$tI = v$ip = ko.v$tI = ko.v$ip = $.ip$v = function () {

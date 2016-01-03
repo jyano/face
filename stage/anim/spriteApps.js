@@ -105,8 +105,10 @@ STICK = function () {
 	w.rect(600, 200, 50, 50, 'p')
 	w.circ(600, 100, 40, 'b')
 }
-$t=function(fn){T.t(fn)}
-ZNA= ZOENOANIM = function () {
+$t = function (fn) {
+	T.t(fn)
+}
+ZNA = ZOENOANIM = function () {
 	z()
 	spr = cjs.sprite({
 		"framerate": 24,
@@ -121,7 +123,7 @@ ZNA= ZOENOANIM = function () {
 	s = cjs.stg(1000).A()
 	s.A(spr)
 }
-ZFR= ZOEFRAMES = function () {
+ZFR = ZOEFRAMES = function () {
 	z()
 	spr = cjs.sprite({
 		"framerate": 24,
@@ -161,7 +163,7 @@ ZFR= ZOEFRAMES = function () {
 		s.A(spr.drag())
 	}
 }
-CHA=CHAR0 = function () {
+CHA = CHAR0 = function () {
 	showSprite(Sprites.char)
 	function showSprite(sprite) {
 		z()
@@ -192,13 +194,12 @@ STK = function () {
 		this.paused = false;
 	}
 	st = __$St()
-	
 	p = new stick()
 	st.A(p)
 	p.XY(300, 100)
 	p.S()
 }
-KEYBOARDWALK  = SID =SIDE= function () {
+KEYBOARDWALK = SID = SIDE = function () {
 	$sideSp = side = function () {
 		this.initialize();
 	}
@@ -241,24 +242,19 @@ KEYBOARDWALK  = SID =SIDE= function () {
 		if (dnHeld) {
 			sp.y += 4
 		}
-		
-		if (lfHeld && !keyDn  ) {
+		if (lfHeld && !keyDn) {
 			sp.scX(.5).p('walkLeft')
 			keyDn = true
 		}
-		if (rtHeld && !keyDn  ) {
+		if (rtHeld && !keyDn) {
 			sp.scX(-.5).p('walkLeft')
 			keyDn = true
 		}
-		if (upHeld && !keyDn ) {
+		if (upHeld && !keyDn) {
 			sp.p('takeoff')
 			keyDn = true
 		}
-		
 	})
- 
-	
-	
 	function handleKeyDown(e) {
 		switch (e.keyCode) {
 			case 37:
@@ -278,7 +274,8 @@ KEYBOARDWALK  = SID =SIDE= function () {
 	
 	function handleKeyUp(e) {
 		switch (e.keyCode) {
-			case 37:sp.gotoAndStop('walkLeft')
+			case 37:
+				sp.gotoAndStop('walkLeft')
 				keyDn = false;
 				lfHeld = false;
 				break
@@ -300,8 +297,6 @@ KEYBOARDWALK  = SID =SIDE= function () {
 		}
 	}
 }
-
-
 //official examples:
 SSBUILDER = function () {
 	z();

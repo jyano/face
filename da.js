@@ -440,7 +440,7 @@ $Sa = function () {
 }
 $Sa()
 $Mk()
-$mk.css = $s({h1: {C: 'o'}, li: {C: 'o'}, ul: {C: 'gray'}, d: {C: 'r'}, $: {B: '4px dashed pink', M: 20}})
+//$mk.css = $s({h1: {C: 'o'}, li: {C: 'o'}, ul: {C: 'gray'}, d: {C: 'r'}, $: {B: '4px dashed pink', M: 20}})
 $mk.$ = function () {
 	$s($mk.css)
 	return $
@@ -578,4 +578,91 @@ Peep = function () {
 		new Per("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
 		new Per("Charles", ["Cayenne", "Cleopatra"])
 	]
+}
+__ = 'hjkhjkhjk hkjhjkhjk hjkjkhjhjhk hjkkjhjkhjkhjkhjkhjkhjkh  jkkjkjhjhkjhkh '
+$mockPage = function (pageName) {
+	return $.sp(pageName).id(pageName + '-pg').K('pg').fS(50)
+}
+server = {
+	d: 2,
+	n: 2,
+	docs: {
+		1: {text: 'this is a doc', id: 1}
+	},
+	notes: {
+		1: {1: {text: 'note'}, 2: {text: 'another note'}}
+	},
+	get: {
+		'/docs': function (q, p) {
+			var res = []
+			for (var doc in docs) {
+				if (docs.hasOwnProperty(doc)) {
+					res.push(docs[doc])
+				}
+			}
+			p.json(res)
+		},
+		'/docs/:did/notes': function (q, p) {
+			var res = [], n = notes[q.params.id]
+			for (var note in n) {
+				if (n.hasOwnProperty(note)) {
+					res.push(n[notes])
+				}
+			}
+		}
+	},
+	post: {
+		'/docs': function (q, p) {
+			var doc = q.body
+			doc.id = d++
+			docs.doc.id = doc
+			p.json(doc)
+		},
+		'/docs/:did/notes': function (q, p) {
+			var note = q.body, id = q.params.id
+			note.id = n++
+			if (!notes[id]) {
+				notes[id] = {}
+			}
+			notes[id][notes.id] = note
+			p.json(note)
+		}
+	},
+	put: {
+		'docs/:id': function (q, p) {
+			docs[q.params.id] = q.body
+			p.json(q.body)
+		},
+		'docs/:did/notes:nid': function (q, p) {
+			notes[q.params.id][q.params.nid] = q.body
+			p.json(q.body)
+		}
+	}
+}
+yada = function (n) {
+	n = N(n, 20)
+	var str = ''
+	_.t(n, function () {
+		str += 'yada '
+	})
+	return str
+}
+$s.defaults = $s.df = {}
+$s.defaults.Bor = {}
+$s.defaults.Bor.b = '1px blue border'
+$s.d = function () {
+	var g = G(arguments), rulesOb
+	if (g.O) {
+		rulesOb = g.f
+	}
+	else {
+		rulesOb = {}
+		rulesOb[g.f] = g.s
+	}
+	$s('div', rulesOb)
+}
+$default = function (v, k) {
+	return $s.defaults[k] ?
+			$s.defaults[k][_.f(v)] :
+			null
 }

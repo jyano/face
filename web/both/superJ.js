@@ -838,3 +838,9 @@ _.fnEv = function () {
  return _.tN(n, n2)
  }//N = _.isNumber
  */
+$RE = function (rx, flags) {
+	return new RegExp(rx, flags)
+}
+$REi = function (rx) {
+	return new RegExp(rx, 'i')
+}

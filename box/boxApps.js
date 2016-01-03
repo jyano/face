@@ -1,40 +1,3 @@
-BX0 = COUNT = function () {
-	$box()
-	$l('bod count : ' + w.numBods())
-	cF = $cF(50)
-	b = w.cB($bD())
-	b.cF(cF)
-	//b.CreateFixture2(cH)
-	b.SetPosition(V(545 / 30, 195 / 30))
-	$l('bod count again: ' + w.GetBodyCount())
- 
-	 
-}
-BOXW1 = function () {
-	w = $_W()
-	w.SDD($dD($.c('z', 1800, 1500)))
-	_.ev(.1, function () {
-		w.go(1 / 5, '+')
-	})
-	$bi()
-	_.ev(2, function () {
-		$ba()
-	})
-	$l('bodyCOunt:' + w.numBods())
-}
-BOXXX = $box(function () {
-	w.sB(210, 210).cF(
-			_$arr([V(-1, 0), V(0, -1), V(1, 0)], 3).de(1).fr(.5).re(1.5)
-	)
-	w.sB(120, 180).cF(
-			_$arr([V(-1, 0), V(0, -1), V(1, 0)], 3).de(1).fr(.5).re(1.5)
-	)
-	var i = 0;
-	_.ev(.1, function () {
-		var imp = V(i++ % 2 ? 0.5 : -0.5, 0)
-		w.cB($dB(210, 0)).I(imp).cF($fD($cH(45)).de(1).fr(.5).re(1.5))
-	})
-})
 BOX = function () {
 	$('<canvas id="playground" width="500" height="200" ></canvas>').A()
 	world = $_W(0, 10)
@@ -88,6 +51,44 @@ BOX = function () {
 		world.ClearForces();
 	}, 1000 / 60);
 }
+BX0 = COUNT = function () {
+	$box()
+	$l('bod count : ' + w.numBods())
+	cF = $cF(50)
+	b = w.cB($bD())
+	b.cF(cF)
+	//b.CreateFixture2(cH)
+	b.SetPosition(V(545 / 30, 195 / 30))
+	$l('bod count again: ' + w.GetBodyCount())
+ 
+	 
+}
+BOXW1 = function () {
+	w = $_W()
+	w.SDD($dD($.c('z', 1800, 1500)))
+	_.ev(.1, function () {
+		w.go(1 / 5, '+')
+	})
+	$bi()
+	_.ev(2, function () {
+		$ba()
+	})
+	$l('bodyCOunt:' + w.numBods())
+}
+/*
+BOXXX = $box(function () {
+	w.sB(210, 210).cF(
+			_$arr([V(-1, 0), V(0, -1), V(1, 0)], 3).de(1).fr(.5).re(1.5)
+	)
+	w.sB(120, 180).cF(
+			_$arr([V(-1, 0), V(0, -1), V(1, 0)], 3).de(1).fr(.5).re(1.5)
+	)
+	var i = 0;
+	_.ev(.1, function () {
+		var imp = V(i++ % 2 ? 0.5 : -0.5, 0)
+		w.cB($dB(210, 0)).I(imp).cF($fD($cH(45)).de(1).fr(.5).re(1.5))
+	})
+})*/
 BOXX = function () {
 	$('<canvas id="playground" width="500" height="200" ></canvas>').A()
 	world = $_W(0, 10)

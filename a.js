@@ -1,7 +1,7 @@
 console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
-require('./superWeb/both/superUnder')
-require('./superWeb/both/superJ')
-require('./superWeb/both/superTime')
+require('./web/both/superUnder')
+require('./web/both/superJ')
+require('./web/both/superTime')
 $l(' - face - \n')
 require('./server/$superNode$')
 $stc = function () {
@@ -29,7 +29,7 @@ $a.g('/', function (q, p) {
 	p.send('it worked jason..')
 })
 
-require('./$api$/$twitServer$')
+require('./server/$api$/$twitServer$')
 
 require('./$routes$')
 

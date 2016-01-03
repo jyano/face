@@ -1426,42 +1426,7 @@ function boxAgain() {
 	$sen = $snF = $sF = function (h) {
 		return $fD(h, '-')
 	}
-	fD.sen = fD.sensor = fD.iS = function (isSensor) {
-		if (U(isSensor)) {
-			return this.isSensor
-		}
-		this.isSensor = isSensor ? true : false
-		return this
-	}
-	fD.s1 = fD.mS = fD.mSn = fD.mSen = fD.makeSen = function () {
-		this.isSensor = true
-		return this
-	}
-	fD.s0 = function () {
-		this.isSensor = false
-		return this
-	}
-	fD.de = fD.den = fD.d = function (de) {
-		if (U(de)) {
-			return this.density
-		}
-		this.density = de
-		return this
-	}
-	fD.fr = fD.fric = fD.f = function (fr) {
-		if (U(fr)) {
-			return this.friction
-		}
-		this.friction = fr
-		return this
-	}
-	fD.re = fD.rest = fD.r = function (re) {
-		if (U(re)) {
-			return this.restitution
-		}
-		this.restitution = re
-		return this
-	}
+
 	b2d.iF = b2d.iFx = function (f) {
 		return f ? f.constructor.name == "b2Fixture" : false
 	}
@@ -1566,6 +1531,7 @@ function boxAgain() {
 		return __center = center
 	}
 }
+
  function old(){
 	 b2d.p()
 	 i = cjs.DisplayObject.prototype
@@ -1607,3 +1573,39 @@ function boxAgain() {
 		 return o
 	 }
  }
+fD.sen = fD.sensor = fD.iS = function (isSensor) {
+	if (U(isSensor)) {
+		return this.isSensor
+	}
+	this.isSensor = isSensor ? true : false
+	return this
+}
+fD.s1 = fD.mS = fD.mSn = fD.mSen = fD.makeSen = function () {
+	this.isSensor = true
+	return this
+}
+fD.s0 = function () {
+	this.isSensor = false
+	return this
+}
+fD.de = fD.den = fD.d = function (de) {
+	if (U(de)) {
+		return this.density
+	}
+	this.density = de
+	return this
+}
+fD.fr = fD.fric = fD.f = function (fr) {
+	if (U(fr)) {
+		return this.friction
+	}
+	this.friction = fr
+	return this
+}
+fD.re = fD.rest = fD.r = function (re) {
+	if (U(re)) {
+		return this.restitution
+	}
+	this.restitution = re
+	return this
+}

@@ -222,7 +222,6 @@ function worldGenerate() {
 			return this
 		}
 	}
-	
 	function bull() {
 		w.bulBD = w.bul = function (x, y) {
 			return this.B($bulBD(x, y))
@@ -245,7 +244,6 @@ function worldGenerate() {
 			return bul
 		}
 	}
-	
 	w.perch = w.skyPerch = function (col) {
 		var w = this
 		col = col || 't'
@@ -321,8 +319,6 @@ function worldGenerate() {
 				cjs.rect(wd, ht, color).XY(x, y)
 		).linDamp(2)
 	}
-	
- 
 	w.roc = w.rck = w.rock = w.pS = function (x, y) {
 		var w = this, g = G(arguments)
 		var b = w.S(x, y)
@@ -374,7 +370,7 @@ function worldGenerate() {
 		cir.A($cir(N(r, 50)))
 		return cir
 	}
-w.addCirc = function (x, y, radius, color) {//specific to talkjs
+	w.addCirc = function (x, y, radius, color) {//specific to talkjs
 		x = N(x) ? x : parseInt(Math.random() * 2200 - 1000)
 		y = N(y) ? y : parseInt(Math.random() * 1600 - 1000)
 		radius = N(radius) ? radius : _.random(14) + 8
@@ -1006,3 +1002,4 @@ function toFixed() {
 		)
 	}
 }
+$L('worldGenerate','worldMove','bod','shapeTy','spazMath','toFixed')
