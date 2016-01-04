@@ -1,3 +1,5 @@
+_mf = [{id: "myImage", src: "/me.png"}, {id: "guyImage", src: "/guy.png"}]
+_MF = ['me', 'guy', 'chicks', 'sun', 'flame', 'earth']
 $Ld = $ld = cjs.lQ = Q = function () {
 	_$Ld = function () {
 		return new cjs.LoadQueue(true)

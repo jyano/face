@@ -701,11 +701,7 @@ function bmApps() {
 			Q.bm("guy", st, 300, 300)
 		}).mf("me", guyIt)
 	}
-	$.me('ME', function (me) {
-		gx = $St().Gx()
-				.SS().F().dc(200, 200, 200).S().dc(400, 400, 200)
-				.S()._bf(me).dc(400, 400, 200)
-	})
+ 
 }
  
 WINDING = function () {
@@ -752,4 +748,17 @@ WINDING = function () {
 		bm.mask = h.same().X(470)
 	})
 }
- 
+function meFunction(){
+	$.me('ME', function (me) {
+		gx = $St().Gx()
+				.SS().F().dc(200, 200, 200).S().dc(400, 400, 200)
+				.S()._bf(me).dc(400, 400, 200)
+	})
+	$.me = function (name, fn) {
+		if (F(name)) {
+			return $.i('me', name)
+		}
+		window[name] = function () {
+			$.i('me', fn)
+		}
+	}}

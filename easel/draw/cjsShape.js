@@ -278,7 +278,22 @@ h.mt = function () {
 h.same = h.copy = function () {
 	return $h(this)
 } // cjs.shape(this)
- 
+h.f = function (fil, str) {
+	var h = this, gx = h.graphics
+	gx._f(fil)
+	if (S(str)) {
+		gx._s(str)
+	}
+	return h
+}
+h.s = h.C = h.sC = function (str, l) {
+	var h = this, gx = h.graphics
+	if (N(l)) {
+		h.l(l)
+	}
+	gx._s(str)
+	return h
+}
 CJSME=function(){$St()
 	cjs.me = function (fn) {
 		Q(['me'], function (q) {

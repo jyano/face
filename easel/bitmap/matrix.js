@@ -1,3 +1,19 @@
+$Pt = function (x, y) {
+	//=P=  cj.P = cj.Pt
+	if (U(x)) {
+		return new C$.Point
+	}
+	if (O(x) && O(y)) {
+		return new C$.Point(x.x + y.mx() >> 1, x.y + y.my() >> 1)
+	}
+	if (O(x)) {
+		return new cj.Point(
+				x.mx(),
+				x.my()
+		)
+	}
+	return new cj.Pt(x, y)
+}
 $Mf = function (mf, fn) {
 	cjs.manifest = function (fn) {
 		_manifest_ = [{

@@ -133,6 +133,18 @@ gx.pol = function (pts, f, s, w) {
 	}
 	return gx.cp()
 }
+gx._f = function (col) {
+	return this.f(oO('c', col))
+}
+gx._s = function (col, thickness) {
+	// = gx.col = gx.sC
+	var gx = this
+	gx.s(oO('c', col))
+	if (N(thickness)) {
+		gx.SS(thickness)
+	}
+	return gx
+} 
 HGXX = function () {
 	W()
 	h = w.i.h()

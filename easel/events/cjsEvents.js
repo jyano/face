@@ -336,6 +336,19 @@ cjs.watchKeys = function () {
 	})
 //$.space = function (fn) {return $.kD('space', fn)}
 }
+st.hEv = function () {
+	var st = this, g = G(arguments)
+	if (g.u) {
+		return st.handleEvent
+	}
+	st.handleEvent = g.f
+	return st
+}
+st.eDE = function () {
+	var st = this, g = G(arguments)
+	st.enableDOMEvents.apply(st, arguments)
+	return st
+}
 MU = HITC = HITCIRCLES = function () {
 	st = $St(1000, '+') // look no .tick() necesary!! look below :)
 	ct = $Ct()

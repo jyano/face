@@ -1640,3 +1640,7 @@ TWEX =NOTFINISHED= function () {
 		alert('Tween complete')
 	}
 }
+dO.grow = function () {
+	$Tw(this, [{sxy: 10}, 10000]);
+	return this
+}

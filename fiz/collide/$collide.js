@@ -382,3 +382,27 @@ b.cl = b.b = b.collide = function () {
 	})
 	return b
 }
+b.coll = b.collWithKind = function (func, func2) {
+	var that = this
+	if (S(func) && F(func2)) {
+		this.W().begin(function (cx) {
+			if (cx.a() == that && cx.b().is(func)) {
+				func2(cx.b())
+			}
+			if (cx.b() == that && cx.a().is(func)) {
+				func2(cx.a())
+			}
+		})
+	}
+	else {
+		w.begin(function (cx) {
+			if (cx.a() == that) {
+				func(cx.a())
+			}
+			if (cx.b() == that) {
+				func(cx.b())
+			}
+		})
+	}
+	return this
+}

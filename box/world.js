@@ -1,99 +1,4 @@
-function proxy() {
-	b.de = function (den) {
-		if (U(den)) {
-			return this.list().GetDensity()
-		}
-		this.each(function (f) {
-			f.SetDensity(den)
-		})
-		this.ResetMassData()
-		return this
-	}
-	b.fr = function (fric) {
-		if (U(fric)) {
-			return this.list().GetFriction()
-		}
-		this.each(function (f) {
-			f.SetFriction(fric)
-		})
-		return this
-	}
-	b.re = function (rest) {
-		if (U(rest)) {
-			return this.list().GetRestitution()
-		}
-		this.each(function (f) {
-			f.SetRestitution(rest)
-		})
-		return this
-	}
-}
-function xyr() {
-	b.rt = function (angle) {
-		var g = G(arguments),
-				ang = g[0],
-				newAng,
-				currAng = Math.toDegrees(this.GetAngle())
-		if (U(ang)) {
-			return currAng
-		}
-		if (g.p) {
-			newAng = currAng + ang
-		}
-		else if (g.n) {
-			newAng = currAng - ang
-		}
-		else if (g.m) {
-			newAng = currAng * ang
-		}
-		else if (g.d) {
-			newAng = currAng / ang
-		}
-		else {
-			newAng = ang
-		}
-		this.SetAngle(Math.toRadians(newAng))
-		return this
-	}
-	b.fixedRot = b.sFR = b.fR = function (bool) {
-		this.SetFixedRotation(bool ? true : false)
-		return this
-	}
-	b.XY = function (x, y) {
-		var newPos
-		if (x === '*') {
-			x = Math.random() * 10
-		}
-		if (y === '*') {
-			y = Math.random() * 10
-		}
-		if (U(x)) {
-			var pos = this.GetPosition()
-			return pos.mult()
-		}
-		y = N(y) ? y : x
-		newPos = V(x / 30, y / 30)
-		this.SetPosition(newPos)
-		return this
-	}
-	b.X = function (x) {
-		var g = G(arguments), pos = this.XY()
-		if (U(x = g[0])) {
-			return pos.x
-		}
-		this.XY($.update(pos.x, x, g), pos.y)
-		return this
-	}
-	b.Y = function (y) {
-		var g = G(arguments), pos = this.XY()
-		if (U(y = g[0])) {
-			return pos.y
-		}
-		this.XY(pos.x, $.update(pos.y, y, g))
-		return this
-	}
-}
-
+ 
 w.G = function (x, y) {
 	var v, currGrav = this.GetGravity()
 	if (U(x)) {
@@ -108,404 +13,82 @@ w.G = function (x, y) {
 	w.SetGravity(v)
 	return this
 }
-b2d.toBody = function (fixtOrBody) {
-	if (b2d.isBody(fixtOrBody)) {
-		return fixtOrBody
+w.CB = function (bD) {
+	var b = this.CreateBody(bD)
+	return b
+}
+w.cB = function (bD, fD) {
+	var w = this, g = G(arguments), o
+	var b = w.CB(g.f)
+	if (g.s) {
+		b.f(g.s)
 	}
-	if (b2d.isFixt(fixtOrBody)) {
-		return fixtOrBody.body()
+	return b
+}
+w.dB = function (x, y) {
+	return this.CB($dB(x, y))
+}
+w.CF = function () {
+	this.ClearForces();
+	return this
+}
+w.cF = function (bD, fD) {
+	return this.cB(bD).cF(fD)
+}
+w.A = function (bD, fD) {
+	var w = this, g = G(arguments), o
+	w.cB(g.f, g.s)
+	return w
+}
+w._sB = function (x, y, fD) {
+	var b = this.cB($sB(x, y))
+	if (fD) {
+		b.cF(fD)
 	}
-	return false
+	return b
 }
-b2d.bodyX = b2d.bodyDefX = function (x, y) {
-	var bodyDef = new b2BodyDef()
-	x = N(x) ? x : 300
-	y = N(y) ? y : 300
-	bodyDef.xy(x, y)
-	return bodyDef
-}
-b.wC = function () {
-	return this.GWC().m()
-}
-b.coll = b.collWithKind = function (func, func2) {
-	var that = this
-	if (S(func) && F(func2)) {
-		this.W().begin(function (cx) {
-			if (cx.a() == that && cx.b().is(func)) {
-				func2(cx.b())
+w.sB = w.cS = w.cSF = w.sF = w.S = w.stat = function (x, y, fD) {
+	if (!fD) {
+		return this.CB($sB(x, y))
+	}
+	if (O(x)) {
+		fD = y;
+		y = x.y;
+		x = x.x
+	}
+	x = N(x) ? x : 500;
+	y = N(y) ? y : 250
+	return this.cF($sB(x, y), fD)
+	function alt() {
+		w.stat = function (x, y, fD) {
+			var w = this
+			if (O(x)) {
+				fixtDef = y;
+				y = x.y;
+				x = x.x
 			}
-			if (cx.b() == that && cx.a().is(func)) {
-				func2(cx.a())
-			}
+			x = N(x) ? x : 500
+			y = N(y) ? y : 250
+			return w.A($sB(x, y), fD)
+		}
+	}
+}
+//function kill() {
+w.DB = w.DBo = w.DBd = function (b) {
+	this.DestroyBody(b);
+	return this
+}
+w.rmB = w.removeBod = w.xB = w.Xx = w.Xb = function (b) {
+	var w = this
+	if (U(b)) {
+		w.e(function (b) {
+			w.rmB(b)
 		})
 	}
 	else {
-		w.begin(function (cx) {
-			if (cx.a() == that) {
-				func(cx.a())
-			}
-			if (cx.b() == that) {
-				func(cx.b())
-			}
-		})
+		w.DestroyBody(b)
 	}
-	return this
-}
-////////////////////////////////////////////////////////////////////
-function force() {
-	b.I = function self(impulse, point, point2) {
-		if (U(impulse)) {
-			impulse = this.worldVec().div(40)
-		}
-		if (N(point)) {
-			impulse = V(impulse, point)
-			point = point2
-		}
-		if (U(point)) {
-			point = this.GWC()
-		}
-		this.ApplyImpulse(impulse, point)
-		return this
-	}
-	b.F = function (v, c, c2) {
-		if (N(c)) {
-			return this.F(V(v, c), c2)
-		}
-		if (U(c)) {
-			c = this.GWC()
-		}
-		this.ApplyForce(v, c)
-		return this
-	}
- 
-	w.gv = w.G = function (x, y) {
-		var w = this
-		w.GG = function () {
-			return this.GetGravity()
-		}
-		w.SG = function (gv) {
-			this.SetGravity(gv);
-			return this
-		}
-		var gv = w.GG()
-		if (U(x)) {
-			return gv
-		}
-		var v
-		if (N(x)) {
-			v = N(y) ? V(x, y) : V(0, x)
-		}
-		if (x == 'flip') {
-			v = V(-gv.x, -gv.y)
-		}
-		return w.SG(v)
-		function alt() {
-			w.G = function (x, y) {
-				var w = this,
-						v, currG = w.GetGravity()
-				if (U(x)) {
-					return currG
-				}
-				if (N(x)) {
-					v = N(y) ? V(x, y) : V(0, x)
-				}
-				else if (x == 'flip') {
-					v = V(-currG.x, -currG.y)
-				}
-				w.SetGravity(v)
-				return w
-				function alt() {
-					w.G = function (x, y) {
-						var v, currGrav = this.GetGravity()
-						if (U(x)) {
-							return currGrav
-						}
-						if (N(x)) {
-							v = N(y) ? V(x, y) : V(0, x)
-						}
-						if (x == 'flip') {
-							v = V(-currGrav.x, -currGrav.y)
-						}
-						w.SetGravity(v)
-						return this
-					}
-				}
-			}
-		}
-	}
-	bD.lV = function (lV) {
-		bD.SLV = function (lV) {
-			this.linearVelocity = lV;
-			return this
-		}
-		var bD = this
-		return U(lV) ? this.linearVelocity : this.SLV(lV)
-		function alt() {
-			bD.lV = function (vel) {
-				if (U(vel)) {
-					return this.linearVelocity
-				}
-				this.linearVelocity = vel;
-				return this
-			}
-		}
-	}
-	bD.lD = function (lD) {
-		var bD = this
-		bD.SLD = function (lD) {
-			this.linearDamping = lD;
-			return this
-		}
-		return U(lD) ? this.linearDamping : this.SLD(lD)
-		function alt() {
-			bD.lD = function (dm) {
-				var bD = this
-				if (U(dm)) {
-					return bD.linearDamping
-				}
-				bD.linearDamping = dm
-				return bD
-			}
-		}
-	}
-	bD.aD = function (aD) {
-		var bD = this
-		bD.SAD = function (aD) {
-			this.angularDamping = aD;
-			return this
-		}
-		return U(aD) ? this.angularDamping : this.SAD(aD)
-		function alt() {
-			bD.aD = function (damp) {
-				if (U(damp)) {
-					return this.angularDamping
-				}
-				this.angularDamping = damp;
-				return this
-			}
-		}
-	}
-	bD.aV = function (vel) {
-		var bD = this
-		bD.SAV = function (aV) {
-			this.angularVelocity = aV;
-			return this
-		}
-		return U(vel) ? this.angularVelocity : this.SAV(vel)
-		function alt() {
-			bD.aV = function (vel) {
-				if (U(a)) {
-					return this.angularVelocity
-				}
-				this.angularVelocity = vel
-				return this
-			}
-		}
-	}
-	b.lD = function (damp) {
-		if (U(damp)) {
-			return this.GetLinearDamping()
-		}
-		this.SetLinearDamping(damp)
-		return this
-	}
-	b.aD = function () {
-		var b = this, g = G(arguments),
-				d = g[0]
-		if (U(d)) {
-			return b.GetAngularDamping()
-		}
-		if (d == '++') {
-			d = 10000
-		}
-		b.SetAngularDamping(d)
-		return b
-		function alt() {
-			b.aD = function (damp) {
-				if (U(damp)) {
-					return this.GetAngularDamping()
-				}
-				this.SetAngularDamping(damp)
-				return this
-			}
-		}
-	}
-	b.aV = function (vel) {
-		if (U(vel)) {
-			return this.GetAngularVelocity()
-		}
-		this.SetAngularVelocity(vel)
-		return this
-	}
-	b.lV = b.lV$ = function (lV, y) {
-		var b = this
-		var v = this.GetLinearVelocity()
-		if (U(lV)) {
-			return v
-		}
-		if (N(y)) {
-			lV = V(lV, y)
-		}
-		else if (N(lV)) {
-			lV = V(lV, v.y)
-		}
-		else if (g.m) {
-			return this.lV(R() ? 1 : -1, R() ? 1 : -1)
-		}
-		this.SetLinearVelocity(lV)
-		return this.wakeUp()
-		function alt() {
-			b.lV = function () {
-				var b = this, g = G(arguments),
-						v = b.GetLinearVelocity(), o, lV
-				// can pass in V | x,y
-				// or if u pass JUST x, it will set ONLY x, keeping y UNTOUCHED
-				//(same as vX) .. but why? eh.. can be better, if u already hav vX, no need to default to it
-				if (g.u) {
-					return v
-				}
-				lV = U(g[1]) ? V(g[0], v.y) : V(g[0], g[1])
-				b.SetLinearVelocity(lV)
-				return b.wakeUp()
-			}
-			b.lV = function (vel, n2) {
-				if (U(vel)) {
-					return this.GetLinearVelocity()
-				}
-				if (N(vel)) {
-					vel = V(vel, n2)
-				}
-				this.SetLinearVelocity(vel)
-				return this
-			}
-		}
-	}
-	b.AI = function () {
-		this.ApplyImpulse.apply(this, arguments)
-		return this
-	}
-	b.I = function me(i, v, v2) {
-		var b = this, g = G(arguments), o
-		//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
-		if (g.A) {
-			return b.I.apply(b, g.f)
-		}
-		o = N(g.s) ? {i: V(g.f, g.s), v: g.t} : {i: g.f, v: g.s}
-		o.i = o.i || b.v().d(40)
-		o.v = o.v || b.wC()
-		b.ApplyImpulse(o.i, o.v.div())
-		return b
-		function alt() {
-			b.I = function self(impulse, point, point2) {//b.impulse = b.applyImpulse = b.aI  =
-				if (U(impulse)) {
-					impulse = this.worldVec().div(40)
-				}
-				if (N(point)) {
-					impulse = V(impulse, point)
-					point = point2
-				}
-				if (U(point)) {
-					point = this.GetWorldCenter()
-				}
-				this.ApplyImpulse(impulse, point)
-				return this
-			}//apply impulse. pass impulse as two nums, or obj //and pass in location, defaults to body center
-		}
-	}
-	b.F = function () {
-		function alt() {
-			b.F = b.constF = function (v, c, c2) {//b.applyForce = b.aF  =
-				var b = this, g = G(arguments), v = g[0], c = g[1], c2 = g[2]
-				if (N(c)) {
-					return b.F(V(v, c), c2)
-				}
-				if (U(c)) {
-					c = b.worldCenter()
-				} // gotta adjust this
-				b.ApplyForce(v, c)
-				if (g.p) {
-					cjs.tick(function () {
-						b.ApplyForce(v, c)
-					})
-				}
-				return b
-			}      //apply force. pass impulse as two nums, or obj //and pass in location, defaults to body center
-		}
-		
-		//apply force. pass impulse as two nums, or obj
-// and pass in location, defaults to body center
-		var b = this, g = G(arguments), o
-		o = N(g[1]) ? {f: V(g[0], g[1]), wP: g[2]}
-				: {f: V(g[0]), wP: g[1]}
-		o.wP = o.wP || b.wC()
-		b.ApplyForce(o.f, o.wP)
-		if (g.p) {
-			cjs.t(function () {
-				b.ApplyForce(o.f, o.wP)
-			})
-		}
-		return b
-	}
-	b.mass = function (m) {
-		if (U(m)) {
-			return ( this.GetMass() * 900 ) / 100
-		}
-	}
-	b.lVL = function (x, y) {
-		var b = this
-		b.GLVFLP = function (v) {
-			return this.GetLinearVelocityFromLocalPoint(v)
-		}
-		return this.GLVFLP(V(x, y, '-'))
-	}
-	b.lVW = function (x, y) {
-		var b = this
-		b.GLVFWP = function (v) {
-			return this.GetLinearVelocityFromWorldPoint(v)
-		}
-		return this.GLVFWP(V(x, y, '-'))
-	}
-	f.lV = function () {
-		var f = this, b = f.B(), g = G(arguments)
-		b.lV.apply(b, g)
-		return f
-	}
-	bD.inertia = function (ine) {
-		if (U(ine)) {
-			return this.insertiaScale
-		}
-		this.insertiaScale = ine
-		return this
-	}
-}
- 
-function kill() {
-	w.DB = w.DBo = w.DBd = function (b) {
-		this.DestroyBody(b);
-		return this
-	}
-	w.rmB = w.removeBod = w.xB = w.Xx = w.Xb = function (b) {
-		var w = this
-		if (U(b)) {
-			w.e(function (b) {
-				w.rmB(b)
-			})
-		}
-		else {
-			w.DestroyBody(b)
-		}
-		return w
-	}
-	b.sDs = b.setDestroy = b.sDsI = b.setDestroyIf = function (k) {
-//	$l('b.sDs = b.setDestroy = b.sDsI = b.setDestroyIf =')
-		var b = this
-		return b.of(k) ? b.K('ds destroy') : b
-	}
-	b.ds = function () {
-		var b = this
-		b.W().DB(b)
-		return b
-	} //= b.destroy
+	return w
 }
 w.GGB = w.grB = w.gB = w.gGB = w.GGBd = function () {
 	return this.GetGroundBody()
@@ -538,20 +121,340 @@ w.numDB.show = function () {
 		})
 	})
 }
-b.fs = b.e = b.eF = function (fn) {
-	var b = this
-	var arr = []
-	var f = b.f()
-	while (f) {
-		arr.push(f)
-		f = f.N()
+$.xI = function (id, col) {
+	return $.cI(id).C(col)[0].getContext("2d")
+}
+w.N = function (time, a, b) {
+	//= w.St = w.go = w.step = w.draw 
+	w = this, g = G(arguments)
+	w.CF()
+	//if (N(num)) {this.N(num)}
+	w.Step(time, N(a, 8), N(b, 3))
+	if (!g.n) {
+		w.DDD()
+	}//	if (g.p) {w.DDD()}
+	return w
+}
+w.ev = function (a, b, c) {
+	var w = this
+	a = N(a, 1 / 60)
+	c = N(c, N(b, 10))
+	b = N(b, 10)
+	_.ev(a, function () {
+		w.Step(a, b, c)
+		w.DDD();
+		w.CF();
+	})
+	return w
+}
+$_W = function (x, y, bool) {
+	return new bx.W(V(x, y), U(bool) || bool ? true : false)
+}
+$Gv = function () {
+	w = $_W(0, 10).ev()
+	dD = $dD().cv().SF(bx.DD.e_shapeBit)
+			.sc(20).fA(0.5).lT(1)
+	w.SDD(dD)
+	return w
+}
+$box = function (fn) {
+	if (F(fn)) {
+		return function () {
+			ctx = $.xI()
+			w = $_W(0, 10).bug()
+			w.ev(1 / 60, 10, 10)
+			fn()
+		}
 	}
-	if (fn) {
-		_.e(arr, function (it) {
-			fn(it, fn)
-		});
+	ctx = $.xI()
+	w = $_W(0, 10).bug()
+	w.ev(1 / 60, 10, 10)
+	return w
+}
+world = function (x, y, doSleep) {
+	var sleep = U(doSleep) ? true : doSleep ? true : false
+	var grav = V(x * 30, y * 30)
+	return new b2d.World(grav, sleep)
+}
+_$W = function (grav, doSleep) {
+	var doSleep = doSleep || U(doSleep) ? true : false
+	return new b2d.W(grav, doSleep)
+}
+$W = function () {
+	var g = G(arguments)
+	var grav = g.N ? V(0, g.f) : V(g.f, g.s)
+	var sleep = g.n ? false : true
+	return _$W(grav, sleep)
+}
+$boxWorld = $bW = function () {
+	var g = G(arguments), o
+	o = g.O ? g.f : N(g.s) ? {x: g.f, y: g.s, sl: g.t} :
+			N(g.f) ? {y: g.f, sl: g.s} :
+			{sl: g.f}
+	o.x = N(o.x, 0)
+	o.y = N(o.y, 10)
+	return world(o.x, o.y, o.sl)
+}
+function box() {
+	w.step = function () {
+		var args = G(arguments)
+		this.Step.apply(this, args)
+		return this
+	}
+	w.clear = w.clearForces = w.cF = function () {
+		this.ClearForces();
+		return this
+	}
+	w.dB = function (a) {
+		this.DestroyBody(a);
+		return this
+	}
+	w.GBL = w.bLX = function () {
+		return this.GetBodyList()
+	}
+	w.GGB = w.gB = function () {
+		return this.GetGroundBody()
+	}
+}
+box = function (fn) {
+	w = $boxWorld()
+	dD = $dD($.c('z', 1800, 1500))
+	w.sDD(dD) //the_circle = new b2CircleDef()
+	n = 0
+	_.ev(.1, function () {
+		if (F(fn)) {
+			fn(n)
+		}
+		n++
+		w.go(1 / 5, '+')
+	})
+}
+ //walls:
+window.W = window.W || {}
+//the walls themselves are made with w.BOX
+w.wall = function (x, y, wd, ht) {
+	var w = this
+	var b = w.brick(x, y, wd, ht)
+			.stat().fr(0).K('wall')
+	return b
+}
+// soft brick?
+// soft ball?  circle
+// soft bump?
+// soft box  rectangle
+w.thin = function () {
+	var w = this, b
+	return b
+}
+w.flat = function () {
+	var w = this, b
+	return b
+}
+function _post() {
+	W.U = function (g) {
+		W().G(g).roof.kill()
+		return w
+	}
+	W.L = function (g) {
+		W().G(g)
+		w.roof.kill()
+		w.right.kill()
+		return w
+	}
+}
+function alpha() {
+	w.R = function (c, W, H, x, y) {
+		alert('w.R')
+		var w = this, g = G(arguments),
+				wC = w.cen(),
+				r
+		if (!S(g.f)) {
+			y = x;
+			x = H;
+			H = W;
+			W = c;
+			c = 'x'
+		}
+		if (U(W)) {
+			W = 200
+			H = 200
+			x = wC.x - W / 2
+			y = wC.y - H / 2
+		}
+		else if (U(H)) {
+			H = W
+			x = wC.x - W / 2
+			y = wC.y - H / 2
+		}
+		else if (U(x)) {
+			x = wC.x - W / 2;
+			y = wC.y - H / 2
+		}
+		return w.S(
+				x + W / 2,
+				N(y, x) + H / 2,
+				c,
+				W, H
+		)
+		old = function () {
+			/*
+			 x=N(g[0])?g[0]:wC.x
+			 y=N(y)?y:N(g[0])?N(g[0]):wC.y
+			 W=N(W)?W:100
+			 H=N(H)?H:W
+			 */
+		}
+	}
+	w.vW = function (col, H, x, y) {
+		alert('w.vW')
+		var w = this, g = G(arguments),
+				cW = w.can.W(),
+				cH = w.can.H()
+		if (!S(col)) {
+			y = x;
+			x = H;
+			H = col;
+			col = 'x'
+		}
+		H = (H == '+') ? cH : N(H) ? H : cH / 2 - 10
+		if (U(x)) {
+			x = cW / 2;
+			y = cH / 2 - H / 2
+		}
+		else if (U(y)) {
+			x = (x == '+') ? cW - 20 : (x == '-') ? 0 : x
+			y = cH / 2 - H / 2
+		}
+		//x-=10?
+		return w.R(col, 20, H, x, y).bo(.2).K('wall')
+	}
+}// w.R, w.vW
+old = function () {
+	w.rWx = function (col, h) {
+		var w = this
+		if (!S(col)) {
+			h = col;
+			col = 'b'
+		}
+		h = N(h) ? h : w.H()
+		return w.S(10, w.H() - (h), col, 20, h)
+	}
+	w.bWx = function (col, W) {
+		var w = this
+		if (!S(col)) {
+			W = col;
+			col = 'b'
+		}
+		W = N(W) ? W : w.W()
+		return w.S((W / 2), w.H() + (h / 2) - 10, col, W, 20)
+	}
+	w.hWx = function (col, W, x, y) {
+		var w = this, g = G(arguments), cW = w.canvas.width, cH = w.canvas.height
+		if (!S(col)) {
+			y = x;
+			x = W;
+			W = col;
+			col = 'x'
+		}
+		if (U(y)) {
+			y = x;
+			x = null
+		}
+		W = (W == '+') ? cW : N(W) ? W : cW / 3
+		x = N(x) ? x : cW / 2 - W / 2
+		y = (y == '+') ? cH - 10 : (y == '-') ? 10 : N(y) ? y : cH / 2
+		y -= 10
+		return w.R(col, W, 20, x, y).bo(.2).K('wall')     //default bo?
+	}
+	w.boxWallsx = w.xWx = function (col, W, h) {
+		var w = this
+		if (!S(col)) {
+			h = W;
+			W = col;
+			col = 'o'
+		}
+		W = N(W) ? W : w.W()
+		h = N(h) ? h : w.H()
+		w.floor = w.R(col, W, 20, 0, h - 20)
+		w.right = w.R(col, 20, h, W - 20, 0)
+		w.roof = w.R(col, W, 20, 0, 0)
+		w.left = w.R(col, 20, h, 0, 0)
+		w.w = W
+		w.h = h            // if(g.N){ w.camLims(  0,  w.w-w.s.W(),  0, w.h-w.s.H())}
+		return w
+	}
+	w.bodyX = w.AX = function (bD, fD) {
+		var w = this, b
+		if (b2d.isBDef(bD)) {
+			b = w.CreateBody(bD)
+		}
+		if (fD) {
+			b.fixt(fD)
+		}
+		//b.den(1)
 		return b
 	}
-	return arr
+	/*
+	 if (A(o.w)){     c = o.w[0]
+	 if (!S(c)){ h = W;     W = c;     c = 'o'  }
+	 o.c = o.c || 'o'
+	 w.floor = w.R(o.c, w.wW, 20, 0, w.wH - 20)
+	 w.right = w.R(o.c, 20, w.wH, w.Ww - 20, 0)
+	 w.roof = w.R(o.c, w.wW, 20, 0, 0)
+	 w.left = w.R(o.c, 20, w.wH, 0, 0)}*/
 }
- 
+w.gv = w.G = function (x, y) {
+	var w = this
+	w.GG = function () {
+		return this.GetGravity()
+	}
+	w.SG = function (gv) {
+		this.SetGravity(gv);
+		return this
+	}
+	var gv = w.GG()
+	if (U(x)) {
+		return gv
+	}
+	var v
+	if (N(x)) {
+		v = N(y) ? V(x, y) : V(0, x)
+	}
+	if (x == 'flip') {
+		v = V(-gv.x, -gv.y)
+	}
+	return w.SG(v)
+	function alt() {
+		w.G = function (x, y) {
+			var w = this,
+					v, currG = w.GetGravity()
+			if (U(x)) {
+				return currG
+			}
+			if (N(x)) {
+				v = N(y) ? V(x, y) : V(0, x)
+			}
+			else if (x == 'flip') {
+				v = V(-currG.x, -currG.y)
+			}
+			w.SetGravity(v)
+			return w
+			function alt() {
+				w.G = function (x, y) {
+					var v, currGrav = this.GetGravity()
+					if (U(x)) {
+						return currGrav
+					}
+					if (N(x)) {
+						v = N(y) ? V(x, y) : V(0, x)
+					}
+					if (x == 'flip') {
+						v = V(-currGrav.x, -currGrav.y)
+					}
+					w.SetGravity(v)
+					return this
+				}
+			}
+		}
+	}
+} 
