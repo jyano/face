@@ -736,3 +736,23 @@ ANob = {
 	pl: 'paddingLeft', pr: 'paddingRight', pt: 'paddingTop',
 	ws: ' wordSpacing', x: 'backgroundPositionX', y: 'backgroundPositionY'
 }
+//
+$.fn.animloop = function () {
+	var that = this
+	this.show("slow")
+	this.animate({"marginLeft": "300px"}, 2000)
+			.animate({"marginLeft": "0px"}, 2000)
+	this.hide("slow", function () {
+		that.animloop()
+	})
+}
+$.fn.animloop = function () {
+	var that = this
+	this.show("slow")
+	this.animate({"marginLeft": "300px"}, 2000)
+			.animate({"marginLeft": "0px"}, 2000)
+	this.hide("slow", function () {
+		that.animloop()
+	})
+}
+ 

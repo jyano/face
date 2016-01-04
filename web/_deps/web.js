@@ -451,9 +451,11 @@ function old() {
 	oT = function (a) {
 		return oO('t', a)
 	}
+	
 	oE = function (a) {
 		return oO('e', a)
 	}
+	
 	oI = function (a) {
 		return oO('i', a)
 	}

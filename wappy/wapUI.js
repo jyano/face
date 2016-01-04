@@ -1183,3 +1183,8 @@ function msg() {
 		return $.d().fS(80).C($r()).col($r()).A(ms)
 	}
 }
+ ZX = function () {
+	 z()
+	 a = $.editDiv().A().C('a')
+	 b = $.editDiv().A().C('b')
+ }
