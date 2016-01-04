@@ -14,7 +14,7 @@ $.p = function () {
 	p.A()
 	return p
 }
-$.sp = function () {
+$.sp = $.span= function () {
 	var g = G(arguments),
 			sp = $('<span>'), str = '';
 	_.e(g, function (val) {
@@ -486,4 +486,8 @@ $.hr = function (c, h, w) {
 	//  hr = $('<hr>').h(h ||2).C(c||'z');
 	//  if(w ){ hr.W(w ) }
 	return hr.A()
-} 
+}
+$.nav = $.n = function () {
+	return $('<nav>')
+}
+ 

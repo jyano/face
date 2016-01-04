@@ -102,3 +102,40 @@ $.fn.tt = $.fn.ti = function (a) {
 	return this
 }
 $.fn.d = $.fn.da = $.fn.data
+$.fn.v = function (newVal) {
+	var g = G(arguments)
+	if (U(newVal)) {
+		var v = this.val()
+		if (g.n) {
+			this.val('')
+		}
+		return v
+	}
+	this.val(newVal);
+	return this
+}
+$.fn.V = function (newVal) {
+	var g = G(arguments)
+	if (U(newVal)) {
+		var v = this.val()
+		this.val('')
+		return v
+	}
+	this.val(newVal);
+	return this
+}
+$.fn.v = $.fn.val
+$.fn.v_ = function () {
+	var val = this.val();
+	this.val('');
+	return val
+}
+$.v = function (id) {
+	return $('#' + id).val()
+}
+$.V = function (id) {
+	var $el = $('#' + id)
+	var val = $el.val()
+	$el.val('')
+	return val
+}

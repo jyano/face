@@ -113,15 +113,6 @@ $.lb = function () {
 	return lb
 }
 
-$.v = function (id) {
-	return $('#' + id).val()
-}
-$.V = function (id) {
-	var $el = $('#' + id)
-	var val = $el.val()
-	$el.val('')
-	return val
-}
 $.cb = function (n, v, lb) {
 	$._cb = function () {
 		return $.ip().ty('checkbox')

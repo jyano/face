@@ -1,62 +1,81 @@
-$stc('', '../art', '_data',
-		'web/both', 'web', 'web/css', 'web/dom','web/html',
-		'front','graphics',
-	
-		'easel','easel/filter','filter',
-		'easel/bitmap','easel/dob','easel/dobs','easel/draw','easel/events','easel/movieClip',
-		'easel/shapes','easel/sprite',
-		  'stage', 'anim', 'easel/anim', 
-		
-		'wappy',
-		'box','box/bods','box/fixts','box/shapes','box/world'
+$stc('', '../art', 
+
+
+		'web/both', 'web', 'web/css', 'web/dom', 'web/html', 'web/js','login','work',
+		'front',
+		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx',
+		'easel', 'easel/filter', 
+		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events', 'easel/movieClip',
+		'easel/shapes', 'easel/sprite',
+		'wappy','muggy',
+		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world','box/collide', 'box/geo'
 )
 
-Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','pureDa']
 
 
-Web= ['web', 'sJQ', 'webEvents', 'attributes','qAnim','traverse','value',
-	 'media', 'rules', 'style', 'html', 'inputs','lists','submit','root', 'flex','ll']
-	 
-Front= ['sJQUI', 'bone', 'knock','wapUI']
+Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb', 'pureDa']
+Web = [
+	'webColor', 'webCss', 'webFont', 'web', 
+	'rules',  'media', 'flex', 'styles',
+	'sJQ', 'webEvents', 
+	'attributes', 
+	'qAnim',
+	'traverse',
+	'html', 'inputs', 'lists', 'submit',
+	'root', 'nest', 
+	'll',
+	'appy'
+]
 
-Graphics = ['superCan', 'gpcApps']
+Graphics = [
+	'jqGraphics', 'gpClipper', 'superCtx',
+	'ctxDrawImg', 'ctxDraw',
+	'ctxGlobComp', 'ctxGrad','ctxGpc',
+	'ctxLoad','ctxShad', 'ctxPixels',
+	'ctxTransform', 'ctxText',
+	//
+	'superCan', 'canApps','canDemoApp', 'canDraw','canEvents','canGlobComp',
+	'canGpc', 'canGrad','canMug', 'canPixels','canShad',
+	'canText', 'canTransform','drawImage',
+	'parallax'
+]
+
+
+Front = ['sJQUI', 'bone', 'knock', 'social', 'bbApps', 'koApps', 'wappy', 'users']
 Stage = [
-	'createCore', 'cjsEvents','stage','ticker','loader','tran',
-	 'objects','matrix', 'cjsPoly',
-	'cjsGx','cjsShape',	'curve','domElOb', 
-	  'reggy','transform','cjsText',
- 'cjsCir','cjsRec','official','cache','filter',
-	 'alphaMaskFilter','alphaMaskFilter','blurFilter','cache','colorFilter','colorMatrixFilter', 'bitmap'
+	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
+	'objects', 'matrix', 'cjsPoly',
+	'cjsGx', 'cjsShape', 'curve', 'domElOb',
+	'reggy', 'transform', 'cjsText', 'container',
+	'cjsCir', 'cjsRec', 'official', 'cache', 'filter',
+	'alphaMaskFilter', 'alphaMaskFilter', 'blurFilter', 'cache',
+	'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse'
 ]
-Box = ['box' ,  'vec','world', 'worldBod','worldFix', 'debug', 
-
-
-'bodies','bodyDefs','fixtures','fixtureDefs',
-
-	'boxCir','boxPol','boxRec','edges',
-	
-	
-	'bodFix','forces'
-	
+Anim = ['tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData', 'movie', 'timeline', 'gunnertron']
+Box = ['box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
+	'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
+	'boxCir', 'boxPol', 'boxRec', 'edges',
+	'bodFix', 'forces'
 ]
-	
-	
-	
-Apps = [  'bbApps','koApps' ]
 
-Anim=['tween','easing','sprite','ssBuilder','zoe', 'SSData','movie','timeline', 'gunnertron' ]
+jsArrs= [
+	Deps, Web,
+	Graphics,
+	Stage, Anim,
+	Box,
+	Front
+]
+
+
+
 
 
 $a.g('/box/:app*', function (q, p) {
-
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
-
 	html += '<link rel="stylesheet" type="text/css"  href="/jqui.css"></script>'
 	html += '<link rel="stylesheet" type="text/css"  href="/theme.css"></script>'
-	html += $js([Deps,  Web, Front, Graphics, Box,Apps, Stage,Anim])	
-	
-	
+	html += $js(jsArrs)
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })

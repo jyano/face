@@ -1106,3 +1106,8 @@ function bbRtr() {//http://www.codeproject.com/Articles/803073/BackBone-Tutorial
 		}
 	}
 }
+$Df = function (ob) {
+	return $M({df: ob})
+}
+__ = 'fadsfasasdf'
+Ap = {M: {}, C: {}, V: {}, T: {}}

@@ -72,7 +72,13 @@ st.MM = function (fn) {
 st.MU = function (fn) {
 	return this.on('stagemouseup', fn)
 }
-drag = cjs.SL = LS = cjs.bindSlide = SL = function () {
+ 
+ 
+dO.dg = dO.drag = dO.SL = function () {
+
+	cjs.drag(this);return this}
+
+cjs.drag = cjs.SL = LS = cjs.bindSlide = SL = function () {
 	var g = G(arguments)
 	var b = g.f
 	var b2 = g.s || b

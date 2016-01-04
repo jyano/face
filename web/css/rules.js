@@ -1,3 +1,19 @@
+$s = function () {
+	var g = G(arguments), rulesOb
+	if (g.u) {
+		return $l($('style').oh())
+	}
+	if (g.O) {
+		rulesOb = g.f
+	}
+	else if (g.s) {
+		rulesOb = {}
+		rulesOb[g.f] = g.s
+	}
+	var rulesStr = $rules(rulesOb)
+	$('head').A($.sty(rulesStr))
+	return rulesStr
+}
 $.sty = $.Sty = function (h) {
 	var g = G(arguments)
 	var styleTag = $('<style>')
@@ -34,6 +50,9 @@ $rule = function (sel, decs, rulesOb) {
 	return $sel(sel) + ' ' + $decBlk(decs, rulesOb)
 }
 $decBlk = function (decs, ob) {
+	_dec = function (v, k) {
+		return k + ':' + v + '; '
+	}
 	ob = ob || {}
 	var decBlk = ' ',
 			Decs = {}
@@ -57,6 +76,9 @@ $decBlk = function (decs, ob) {
 		decBlk += dec
 	})
 	//$l('decBlk: ' + decBlk)
+	_brace = function (str) {
+		return '{' + (str || '') + '}'
+	}
 	return _brace(decBlk)
 }
 $val = function (v, k) {
@@ -94,6 +116,26 @@ $rules = function (rulesOb) {
 		rulesStr += $rule(sel, decs, rulesOb) + '\n'
 	})
 	return rulesStr + '\n'
+}
+
+
+$L('plugs', 'mixs', 'helps')
+function _pre(){
+	_bor = '5px solid red'
+	_bulls = '&bull; &bull; &bull;'
+}
+function _post(){
+	$CSS = function () {
+		var res = $s.apply(null, arguments)
+		$l(res)
+		return res
+	}
+	$s.bd = function (ob) {
+		$s('body', ob)
+	}
+	$s.bt = function (ob) {
+		$s('button', ob)
+	}
 }
 function plugs() {
 // PLUGINS ARE FUNCTIONS THAT EXTEND THE CSS OBJECT
@@ -225,31 +267,6 @@ function helps() {
 		return $default(v, k)
 	}
 }
-$s = function () {
-	var g = G(arguments), rulesOb
-	if (g.u) {
-		return $l($('style').oh())
-	}
-	if (g.O) {
-		rulesOb = g.f
-	}
-	else if (g.s) {
-		rulesOb = {}
-		rulesOb[g.f] = g.s
-	}
-	var rulesStr = $rules(rulesOb)
-	$('head').A($.sty(rulesStr))
-	return rulesStr
-}
-_dec = function (v, k) {
-	return k + ':' + v + '; '
-}
-_brace = function (str) {
-	return '{' + (str || '') + '}'
-}
-plugs()
-mixs()
-helps()
 RU2 = BORDERED = function () {
 	$s({
 		_bordered: {
@@ -327,4 +344,3 @@ RU4 = SS8 = SIZE = MIXIN = SS9 = EXT = function () {
 	}, '*')
 	$.d().A('hello')
 }
-  

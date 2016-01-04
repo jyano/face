@@ -14,10 +14,8 @@ events = ['drawend',
 	'tickend',
 	'tickstart'
 ] 
-dO.dg = dO.drag = dO.SL = function () {
-	drag(this);
-	return this
-}
+
+ 
 eD.aEL = eD.addEventListener
 eD.hEL = eD.hasEventListener
 eD.O = eD.off

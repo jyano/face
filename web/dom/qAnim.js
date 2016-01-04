@@ -1,3 +1,4 @@
+$L()
 an = function (q, a) {
 	alert('an')
 	if (q.han) {
@@ -19,12 +20,12 @@ an = function (q, a) {
 			q.sFr(a)
 		}, a.r)
 	}
-} 
+}
 $.an = function () {
 	var bd = $.bd();
 	return bd.j.apply(
 			bd, G(arguments))
-} 
+}
 $.aF = $.anFr = $.anf = function (n, w) {
 	var c = 0;
 	n = n || 10;
@@ -38,6 +39,20 @@ $.notAn = function (a) { // sel
 	return a.filter(':not(:animated)')
 }
 $.fn.a = function (a, b, c, d) {
+	ANob = {
+		B: 'bottom', L: 'left', R: 'right', T: 'top',
+		b: 'borderWidth', bb: 'borderBottomWidth',
+		bl: 'borderLeftWidth', br: 'borderRightWidth',
+		bt: 'borderTopWidth', bs: 'borderSpacing',
+		C: 'backgroundColor', f: 'fontSize', h: 'height', w: 'width', H: 'maxHeight', W: 'maxWidth',
+		mh: 'minHeight', mw: 'minWidth',
+		i: 'textIndent', l: 'letterSpacing', lh: ' lineHeight',
+		m: ' margin', mb: 'marginBottom', ml: 'marginLeft', mr: 'marginRight',
+		mt: 'marginTop', o: ' outlineWidth',
+		p: ' padding', pb: 'paddingBottom',
+		pl: 'paddingLeft', pr: 'paddingRight', pt: 'paddingTop',
+		ws: ' wordSpacing', x: 'backgroundPositionX', y: 'backgroundPositionY'
+	}
 	var g = G(arguments), o
 	o = g.f
 	var q = this
@@ -70,23 +85,35 @@ $.fn.a = function (a, b, c, d) {
 		var bd = $.bd();
 		return bd.j.apply(bd, G(arguments))
 	}
-} 
+}
 $.fn.an = function (a, b, c, d) {
 	var g = G(arguments), q = this
 	//if (N(g.s)) {g.s *= 1000}
-	this.animate(
-			$sty(g.f), g.s, g.t, g[3], g[4])
+	this.animate($sty(g.f), g.s, g.t, g[3], g[4])
 	return this
 }
- 
-$.fn.st = $.fn.stop
-$.fn.fT = $.fn.f2 = $.fn.fadeTo
-$.fn.gFr = $.fn.getFrame
-$.fn.sFr = $.fn.setFrame
 $.fn.anFr = $.fn.animateFrames
 $.fn.qu = $.fn.queue
 $.fn.cQ = $.fn.xq = $.fn.xQ = $.fn.clrQ = $.fn.clearQueue
 $.fn.dq = $.fn.dqu = $.fn.dequeue
+function _post() {
+	$.fn.animloop = function () {
+		var that = this
+		this.show("slow")
+		this.animate({"marginLeft": "300px"}, 2000)
+				.animate({"marginLeft": "0px"}, 2000)
+		this.hide("slow", function () {
+			that.animloop()
+		})
+	}
+}
+
+function _pre() {
+	$.fn.st = $.fn.stop
+	$.fn.fdT = $.fn.fd2 = $.fn.f2 = $.fn.fT = $.fn.fadeTo
+	$.fn.gFr = $.fn.getFrame
+	$.fn.sFr = $.fn.setFrame
+}
 JQ0 = BOR = BORDERS = function () {
 	function borders() {
 		BORDERS = function () {
@@ -722,37 +749,3 @@ JQ6 = JQ10 = CORNERS = function () {
 	})
 	i.grow()
 }
-ANob = {
-	B: 'bottom', L: 'left', R: 'right', T: 'top',
-	b: 'borderWidth', bb: 'borderBottomWidth',
-	bl: 'borderLeftWidth', br: 'borderRightWidth',
-	bt: 'borderTopWidth', bs: 'borderSpacing',
-	C: 'backgroundColor', f: 'fontSize', h: 'height', w: 'width', H: 'maxHeight', W: 'maxWidth',
-	mh: 'minHeight', mw: 'minWidth',
-	i: 'textIndent', l: 'letterSpacing', lh: ' lineHeight',
-	m: ' margin', mb: 'marginBottom', ml: 'marginLeft', mr: 'marginRight',
-	mt: 'marginTop', o: ' outlineWidth',
-	p: ' padding', pb: 'paddingBottom',
-	pl: 'paddingLeft', pr: 'paddingRight', pt: 'paddingTop',
-	ws: ' wordSpacing', x: 'backgroundPositionX', y: 'backgroundPositionY'
-}
-//
-$.fn.animloop = function () {
-	var that = this
-	this.show("slow")
-	this.animate({"marginLeft": "300px"}, 2000)
-			.animate({"marginLeft": "0px"}, 2000)
-	this.hide("slow", function () {
-		that.animloop()
-	})
-}
-$.fn.animloop = function () {
-	var that = this
-	this.show("slow")
-	this.animate({"marginLeft": "300px"}, 2000)
-			.animate({"marginLeft": "0px"}, 2000)
-	this.hide("slow", function () {
-		that.animloop()
-	})
-}
- 
