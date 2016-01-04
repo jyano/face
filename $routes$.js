@@ -6,8 +6,14 @@ $stc('', '../art',
 		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events', 'easel/movieClip',
 		'easel/shapes', 'easel/sprite',
 		'wappy','muggy',
-		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world','box/collide', 'box/geo')
-Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb', 'pureDa']
+		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world',
+		'box/collide', 'box/geo')
+
+
+Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 
+	'cjsMC', 'ko', 'bb', 'pureDa']
+
+
 Web = [
 	'webColor', 'webCss', 'webFont', 'web', 
 	'rules',  'media', 'flex', 'styles',
@@ -23,11 +29,16 @@ Web = [
 
 Graphics = [
 	'jqGraphics', 'gpClipper', 'superCtx', 'superCan',
-	'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug','ctxPixels', 'ctxShad', 'ctxText', 'ctxTransform',
-	'canDraw', 'canImg', 'canGlobComp', 'canGrad','canMug', 'canPixels','canShad', 'canText', 'canTransform',
-	'parallax'
-]
-Front = ['sJQUI', 'bone', 'knock', 'social', 'bbApps', 'koApps', 'wappy', 'users','login']
+	'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug','ctxPixels', 'ctxShad', 
+	'ctxText', 'ctxTransform',
+	'canDraw', 'canImg', 'canGlobComp', 'canGrad','canMug', 'canPixels','canShad', 
+	'canText', 'canTransform',
+	'parallax']
+
+Wid = ['mock', 'sJQUI','widgets','widLS']
+Bone = [ 'bone', 'bbRtr', 'bbColl', 'bbView','bbEvt']
+Nok = ['knock','koCustBind','koCustComps','koMenuSeats']
+
 Stage = [
 	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
 	'objects', 'matrix', 'cjsPoly',
@@ -35,27 +46,27 @@ Stage = [
 	'reggy', 'transform', 'cjsText', 'container',
 	'cjsCir', 'cjsRec', 'official', 'cache', 'filter',
 	'alphaMaskFilter', 'alphaMaskFilter', 'blurFilter', 'cache',
-	'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse'
-]
-Anim = ['tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData', 'movie', 'timeline', 'gunnertron']
+	'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse']
+
+Anim = ['tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
+	'movie', 'timeline', 'gunnertron']
+
+Wap = ['wappy', 'users', 'login', 'social', 'koApps']
+
 Box = ['box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
 	'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
 	'boxCir', 'boxPol', 'boxRec', 'edges',
 	'bodFix', 'forces'
 ]
 
-
-
-
-
-
 jsArrs= [
 	Deps, Web,
 	Graphics,
-	Stage, Anim,
-	Box,
-	Front
+	Stage, Anim, Wid,
+	Bone, Nok,Wap,
+	Box
 ]
+
 $a.g('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
