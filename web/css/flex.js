@@ -475,18 +475,21 @@ function vid() {
 	}
 }
 function _pre() {
+
 	ooo.fl = {
 		a: 'auto', b: 'baseline', m: 'center', c: 'column', C: 'column-reverse',
 		i: 'initial', _: 'inherit', r: 'row', R: 'row-reverse',
 		n: 'nowrap', s: 'flex-start', e: 'flex-end', S: 'stretch',
 		sB: 'space-between', sA: 'space-around', w: 'wrap', W: 'wrap-reverse'
 	}
+	
 	_.x(ooo, {
 		dir: {r: 'row', rv: 'row-reverse', c: 'column', cRv: 'column-reverse'},
 		wr: {
 			w: 'wrap', wr: 'wrap',
 			rv: 'wrap-reverse', nw: 'nowrap'
 		},
+		
 		jfC: {
 			st: 'flex-start',
 			end: 'flex-end',
@@ -496,6 +499,7 @@ function _pre() {
 			i: 'initial',
 			_: 'inherit'
 		},
+		
 		alC: {
 			fs: 'flex-start',
 			fe: 'flex-end',
@@ -505,6 +509,7 @@ function _pre() {
 			i: 'initial',
 			_: 'inherit'
 		},
+		
 		alI: {
 			fs: 'flex-start',
 			fe: 'flex-end',
@@ -517,6 +522,8 @@ function _pre() {
 		}
 	})
 }
+
+
 function more() {
 	$.flexy = function () {
 		$s.d({	// cool: $s.d('margin', 10)

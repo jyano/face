@@ -61,7 +61,7 @@ CV19 = TEXTTX = function () {
 		}
 	}
 }
-CANNTX = err = function () {
+CANNTX =  function () {
 	__C()
 	x.setFont('Helsinki 23px')
 	x.f('b').fillText('haffasfsf', 400, 500)

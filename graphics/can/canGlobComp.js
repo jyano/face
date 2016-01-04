@@ -8,7 +8,7 @@ _canGlobComp = function (el) {
 	}
 	return el
 }
-XOR = CANGLOBALCOMP = function () {
+CANXOR = CANGLOBALCOMP = function () {
 	cv = $.c('u', 1000, 800)
 	cv.draw('me', 100, 100)
 	cv.draw('me', 200, 200)

@@ -1,6 +1,4 @@
-$stc('', '../art', 
-
-
+$stc('', '../art',
 		'web/both', 'web', 'web/css', 'web/dom', 'web/html', 'web/js','login','work',
 		'front',
 		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx',
@@ -8,11 +6,7 @@ $stc('', '../art',
 		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events', 'easel/movieClip',
 		'easel/shapes', 'easel/sprite',
 		'wappy','muggy',
-		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world','box/collide', 'box/geo'
-)
-
-
-
+		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world','box/collide', 'box/geo')
 Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb', 'pureDa']
 Web = [
 	'webColor', 'webCss', 'webFont', 'web', 
@@ -28,20 +22,12 @@ Web = [
 ]
 
 Graphics = [
-	'jqGraphics', 'gpClipper', 'superCtx',
-	'ctxDrawImg', 'ctxDraw',
-	'ctxGlobComp', 'ctxGrad','ctxGpc',
-	'ctxLoad','ctxShad', 'ctxPixels',
-	'ctxTransform', 'ctxText',
-	//
-	'superCan', 'canApps','canDemoApp', 'canDraw','canEvents','canGlobComp',
-	'canGpc', 'canGrad','canMug', 'canPixels','canShad',
-	'canText', 'canTransform','drawImage',
+	'jqGraphics', 'gpClipper', 'superCtx', 'superCan',
+	'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug','ctxPixels', 'ctxShad', 'ctxText', 'ctxTransform',
+	'canDraw', 'canImg', 'canGlobComp', 'canGrad','canMug', 'canPixels','canShad', 'canText', 'canTransform',
 	'parallax'
 ]
-
-
-Front = ['sJQUI', 'bone', 'knock', 'social', 'bbApps', 'koApps', 'wappy', 'users']
+Front = ['sJQUI', 'bone', 'knock', 'social', 'bbApps', 'koApps', 'wappy', 'users','login']
 Stage = [
 	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
 	'objects', 'matrix', 'cjsPoly',
@@ -58,6 +44,11 @@ Box = ['box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
 	'bodFix', 'forces'
 ]
 
+
+
+
+
+
 jsArrs= [
 	Deps, Web,
 	Graphics,
@@ -65,11 +56,6 @@ jsArrs= [
 	Box,
 	Front
 ]
-
-
-
-
-
 $a.g('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '

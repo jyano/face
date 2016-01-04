@@ -1,11 +1,7 @@
 $a.PO('/changeMug', function (q, p) {  // could be a put?
-	
 	var ur = q.user
-	
 	ur.mug = q.b.url
-
 	ur.sv( _send(p) )
-	
 })
 
 $myUn = function(q){

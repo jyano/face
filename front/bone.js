@@ -962,6 +962,7 @@ GenView.tr = Bb.V.x({
 		return view
 	}
 })
+bbRtr()
 function bbRtr() {//http://www.codeproject.com/Articles/803073/BackBone-Tutorial-Part-Understanding-Backbone-js-R
 	R$R = $rR = function (fn) {
 		return R$({R: fn})

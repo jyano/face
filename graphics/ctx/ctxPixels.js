@@ -19,7 +19,7 @@ x.pD = function (d, x, y) {
 	this.putImageData(d, N(x, 0), N(y, 0))
 	return this
 }
-XX7 = RAW = PX = function () {
+XX7 =INVERSE= RAW = PX = function () {
 	__C()
 	i = new Image()
 	$(i).load(function (e) {
@@ -37,8 +37,8 @@ XX7 = RAW = PX = function () {
 }
 CV2 = PIX = function () {
 	canvas = c = $.c('b', 900, 500)
-	canvas.draw('sun', 100, 100)
-	_.in(4, function () {
+	canvas.draw('sun', 0, 0)
+	_.in(2, function () {
 		pixels = canvas.gD(100, 100, 500, 500)
 		canvas.pD(pixels, 100, 110)
 		canvas.f("r").fr(10, 10, 50, 50)

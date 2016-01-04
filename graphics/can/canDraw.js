@@ -1,64 +1,5 @@
-_canCurves = function (el) {
-	el.arc = function (a, b, c, d, e, f, g) {
-		el.context.arc(a, b, c, d, e, f, g)
-		return el
-	}
-	el.arcTo = el.a2 = function a2(X) {
-		var g = G(arguments)
-		if (A(X)) {
-			return _a(a2(x), X)
-		}
-		this.arcTox([0] || 50, g[1] || 40, g[2] || 100, g[3] || 100, g[4] || 30)
-		this.stroke()
-		return this
-	}
-	el.bezierCurveTo = function (a, b, c, d, e, f, g) {
-		this.context.quadraticCurveTo(a, b, c, d, e, f, g)
-		return this
-	}
-	el.quadraticCurveTo = function (a, b, c, d, e, f, g) {
-		this.context.quadraticCurveTo(a, b, c, d, e, f, g)
-		return el
-	}
-	el.curveTo = function (a, b, c, d, e, f, g) {
-		if (N(e)) {
-			return this.bezierCurveTo(a, b, c, d, e, f)
-		}
-		else return this.quadraticCurveTo(a, b, c, d, e, f, g)
-	}
-	el.cir = function (X, Y, R, fs, ss) {
-		var g = G(arguments),
-				X = g[0] || 200, Y = g[1] || 200, r = g[2] || 1,
-				fs = g[3],
-				ss = g[4]
-		el.bP()
-		el.arc(X, Y, r, 0, 7, false)
-		el.fS(fs)
-		el.sS(ss)
-		el.s().f()
-		return el
-	}
-	el.paperBag = function (x, y, width, height, blowX, blowY) {
-		x = x || 100
-		y = y || 100
-		width = width || 100
-		height = height || 100
-		blowX = blowX || 100
-		blowY = blowY || 100
-		var lx, ly;
-		this.ctx().strokeStyle = 'Red'
-		this.ctx().beginPath();
-		this.ctx().moveTo(x, y);
-		this.ctx().quadraticCurveTo(x + width / 2 | 0, y + height * blowY | 0, x + width, y);
-		this.ctx().quadraticCurveTo(x + width - width * blowX | 0, y + height / 2 | 0, x + width, y + height);
-		this.ctx().quadraticCurveTo(x + width / 2 | 0, y + height - height * blowY | 0, x, y + height);
-		this.ctx().quadraticCurveTo(x + width * blowX | 0, y + height / 2 | 0, x, y);
-		return this
-	}
-	return el
-}
 _canDraw = function (el) {
-	drawLine = function (el) {
+	_drawLine = function (el) {
 		//draw line ( [x,y],[x,y] || x,y,x,y )
 		//draw multiple unconnected lines ( [[],[]],[[],[]] || [],[] )
 		//fresh start
@@ -151,7 +92,68 @@ _canDraw = function (el) {
 			return el
 		}
 	}
-	drawLine()
+	_canCurves = function (el) {
+		el.arc = function (a, b, c, d, e, f, g) {
+			el.context.arc(a, b, c, d, e, f, g)
+			return el
+		}
+		el.arcTo = el.a2 = function a2(X) {
+			var g = G(arguments)
+			if (A(X)) {
+				return _a(a2(x), X)
+			}
+			this.arcTox([0] || 50, g[1] || 40, g[2] || 100, g[3] || 100, g[4] || 30)
+			this.stroke()
+			return this
+		}
+		el.bezierCurveTo = function (a, b, c, d, e, f, g) {
+			this.context.quadraticCurveTo(a, b, c, d, e, f, g)
+			return this
+		}
+		el.quadraticCurveTo = function (a, b, c, d, e, f, g) {
+			this.context.quadraticCurveTo(a, b, c, d, e, f, g)
+			return el
+		}
+		el.curveTo = function (a, b, c, d, e, f, g) {
+			if (N(e)) {
+				return this.bezierCurveTo(a, b, c, d, e, f)
+			}
+			else return this.quadraticCurveTo(a, b, c, d, e, f, g)
+		}
+		el.cir = function (X, Y, R, fs, ss) {
+			var g = G(arguments),
+					X = g[0] || 200, Y = g[1] || 200, r = g[2] || 1,
+					fs = g[3],
+					ss = g[4]
+			el.bP()
+			el.arc(X, Y, r, 0, 7, false)
+			el.fS(fs)
+			el.sS(ss)
+			el.s().f()
+			return el
+		}
+		el.paperBag = function (x, y, width, height, blowX, blowY) {
+			x = x || 100
+			y = y || 100
+			width = width || 100
+			height = height || 100
+			blowX = blowX || 100
+			blowY = blowY || 100
+			var lx, ly;
+			this.ctx().strokeStyle = 'Red'
+			this.ctx().beginPath();
+			this.ctx().moveTo(x, y);
+			this.ctx().quadraticCurveTo(x + width / 2 | 0, y + height * blowY | 0, x + width, y);
+			this.ctx().quadraticCurveTo(x + width - width * blowX | 0, y + height / 2 | 0, x + width, y + height);
+			this.ctx().quadraticCurveTo(x + width / 2 | 0, y + height - height * blowY | 0, x, y + height);
+			this.ctx().quadraticCurveTo(x + width * blowX | 0, y + height / 2 | 0, x, y);
+			return this
+		}
+		return el
+	}
+	_drawLine(el)
+	_canCurves(el);
+	
 	el.f = el.fS = el.fs = el.fill = function (c) {
 		if (U(c)) {
 			el.context.fill()
@@ -285,8 +287,9 @@ _canDraw = function (el) {
 						: len
 		return x.ln(X, Y, X, Y2)
 	}
-	curves(el);
-	drawLine(el);
+ 
+	
+	
 	return el
 }
 XP2 = DRAWAPP = function () {

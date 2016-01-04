@@ -1,3 +1,15 @@
+_form = function () {
+	var f = $.f().C('g').pad(4).A(
+			bs.fGpD().A(
+					$.lb('un: ', 'un'),
+					$.ip('un')),
+			bs.fGpD().A(
+					$.lb('pw: ', 'pw'),
+					$.ip('pw')),
+			$.sbm('log in')
+	)
+	return f
+}
 $.bt = $.button = function () {
 	var g = G(arguments), o, bt = $('<button>');
 	o = g.F ? {fn: g[0]} : {t: g[0], fn: g[1]};

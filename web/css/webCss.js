@@ -1,4 +1,4 @@
-//fl: 'flex', $: 'flex', dir: 'flex-direction', wr: 'flex-wrap', jfC: 'justify-content', alI: 'align-items', alC: 'align-content', ord: 'order', gr: 'flex-grow', shr: 'flex-shrink', bas: 'flex-basis', alS: 'align-self',flow: 'flex-flow',
+ 
 CSS = {
 	d: "display", dp: "display", ds: "display", cl: "clear",
 	ps: 'position', cu: 'cursor',
@@ -6,6 +6,24 @@ CSS = {
 	ct: 'content', //pseudoelements
 	rs: 'resize' //resizable by user
 }
+
+_.x(CSS, {
+	fl: 'flex', $: 'flex',
+	dir: 'flex-direction',
+	wr: 'flex-wrap',
+	jC: 'justify-content',
+	jfC: 'justify-content',
+	aI: 'align-items', alI: 'align-items',
+	aC: 'align-content', alC: 'align-content',
+	ord: 'order',
+	gr: 'flex-grow',
+	shr: 'flex-shrink',
+	bas: 'flex-basis',
+	alS: 'align-self',
+	flow: 'flex-flow',
+})
+
+
 _.x(CSS, {z: 'z-index', b: "bottom", l: 'left', r: 'right', t: 'top'})
 _.x(CSS, {
 	cs: 'caption-side',

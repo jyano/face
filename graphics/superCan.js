@@ -1,3 +1,356 @@
+$.fn.ctx = function () {
+	return this[0].getContext('2d')
+}
+$.cx = function () {
+	return $.c.apply($, arguments).cx()
+}
+$.fn.Cv = $.fn.Can = function () {
+	var c
+	c = $.c.apply($, G(arguments))
+	this.A(c)
+	return c
+}
+$.c = $.can = function (c, width, h, x, y) {
+	var g = G(arguments), o, el
+	o = g.S_ ?
+	{c: g.f, w: g.s, h: g.t, x: g[3], y: g[4]} :
+	{w: g.f, h: g.s, x: g.t, y: g[3]}
+	o.w = o.w || 1200
+	o.h = o.h || 600
+	o.c = o.c || 'x'
+	el = $('<canvas>')
+	el.attr({width: o.w, height: o.h})
+	el.C(o.c)
+	if (N(o.x)) {
+		el.abs(o.x, o.y)
+	}
+	if (g.p) {
+		el.drag()
+	}
+	el.A().al(.8)
+	el = superCanvas(el)
+	return el
+}
+ 
+$superCan =superCanvas = function (el) {el = $(el) //to be called internally by $.c //works on FIRST canvas in jquery obj
+	el.canvas = el[0]
+	el.context = el.canvas.getContext('2d')
+	//if (O(window['cjs'])) {el.stage = new cjs.Stage(el.canvas)}
+	var cv = el
+	_canBasic(el) 
+ 	
+  
+	_canIndex(el)
+	
+	return el
+
+}
+__C = function () {
+	z();
+	c = $.c('y').drag()
+	x = c.ctx()
+	return c
+}
+$.fn.drag = $.fn.drag || function () {
+	return this
+}
+$.tEl = function (a, b, c) {
+	if (O(a)) {
+		a = O(a.e) ? a.e : O(a.c) ? a.c : a
+		a = $(a)[0]
+		if (_.isElement(a)) {
+			return a
+		}
+	}
+}
+$.tC = $.tCan = function (a) {
+	if (_.isObject(a = $.tEl(a) || a)) {
+		return a.canvas ? a.canvas :
+				s$(a.toString()).contains('Canvas') ? Q(a)[0] : 0
+	}
+}
+$.iC = $.isCan = function (can) {
+	if (O(can)) {
+		return $(can)[0].constructor.name == "HTMLCanvasElement"
+	}
+}
+_canIndex = function (el) {
+	_canDrawImg(el)
+	_canGrad(el)
+	_canEvents(el)
+	_canShadow(el)
+	_canPixel(el)
+	_canText(el)
+	_canTransform(el)
+	_canDraw(el)
+	_canMug(el)
+	return el
+}
+_canBasic = function (el) {
+	el.cx = function () {
+		return this[0].getContext('2d')
+	}
+	el.W = function (width) {
+		var args = G(arguments)
+		width = args[0]
+		if (U(width)) {
+			return this.attr('width')
+		}
+		if (args.N) {
+			var dataUrl = this.toDataURL()
+		}
+		this.attr('width', width)
+		if (args.N) {
+			this.fit(dataUrl)
+		}
+		return this
+	}
+	el.H = function (height) {
+		var args = G(arguments)
+		height = args[0]
+		if (U(height)) {
+			return this.attr('height')
+		}
+		if (args.N) {
+			var dataUrl = this.toDataURL()
+		}
+		this.attr('height', height)
+		if (args.N) {
+			this.fit(dataUrl)
+		}
+		return this
+	}
+	el.WH = function (w, h) {
+		if (U(w)) {
+			var width = this.W(),
+					height = this.H()
+			return {
+				width: width, w: width,
+				height: height, h: height
+			}
+		}
+		h = h || w
+		return this.W(w).H(h)
+	}
+	el.Z = function (d) {
+		d = d || 5;
+		return this.WH(d * 100, d * 100)
+	}
+	el.osL = el.offsetLeft = el.l = function (theOffset) {
+		if (!theOffset) {
+			return offsetLeft(x.q)
+		}
+		return parseInt(theOffset - x.offsetLeft())
+	};
+	//  el.ox=function(){return x.q.q.offset().left}
+	el.osT = el.offsetTop = el.t = function (y) {
+		if (!y) {
+			return offsetTop(y.q)
+		}
+		;
+		return parseInt(y - x.offsetTop())
+	};
+	//  el.oy=function(){return x.q.q.offset().top}
+	el.cp = el.copy = function () {
+		el.img.src(el.toDataURL())
+		return el
+	}
+	el.ps = el.paste = function () {
+		var g = G(arguments)
+		if (g.N) {
+			el.clearRect()
+		}
+		if (g.p) {
+			el.fit(el.img)
+		}
+		else {
+			el.draw(el.img.src())
+		}
+	}
+	el.S = el.save = function () {
+		el.context.save()
+		return el
+	}
+	el.R = el.restore = function () {
+		el.context.restore()
+		return el
+	}
+	el.al = el.globalAlpha = el.alpha = el.op = function (alpha) {
+		//dont mix up with element/jquery alpha //maybe opacity for element and alpha for canvas?
+		if (U(alpha)) {
+			return this.context.globalAlpha
+		}
+		this.context.globalAlpha = alpha
+		return this
+	}
+	return el
+}
+_canEvents = function (el) {
+	el.$ = function (func) {
+		el.click(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.$$ = function (func) {
+		el.dblclick(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.over = el.MV = function (func) {
+		el.mouseover(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.out = el.MO = function (func) {
+		el.mouseout(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.enter = el.ME = function (func) {
+		el.mouseenter(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.leave = el.ML = function (func) {
+		el.mouseleave(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.up = el.MU = function (func) {
+		el.mouseup(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.move = el.MM = function (func) {
+		el.mousemove(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	el.down = el.MD = function (func) {
+		el.mousedown(function (e) {
+			func(e.pageX - $(this).offset().left,
+					e.pageY - $(this).offset().top)
+		})
+	}
+	return el
+}
+CANAPP = BIGCANDEMOAPP = SHOWEDITATONEANDONLYGAMEDEVMEETUP = function () {
+	var picHolder
+	$.format()
+	picHolder = $.sp().id('pics')
+	s2.A(picHolder)
+	$.getJSON('/img', function (i) {
+		_.e(i, withImage)
+	})
+	function withImage(img) {
+		dataUrl = img.d
+		can = $.c(100, 100)
+		can.click(function () {
+			var mouse = $('#mouse')
+			mouse.val('click')
+			mouse.change()
+			mug = img.d
+		})
+		picHolder.A(can)
+		can.fit(dataUrl)
+	}
+	
+	s2.A(
+			c = cv = x = canvas = $.c('y', 1000, 800))
+	//  _.ev(10, function(){x.bc()})
+	s1.A($.lb('mouse'),
+			/*
+			 $.scv('none','click','enter','leave','move').id('mouse').o(
+			 function(s){
+			 x.q.ub()
+			 if(s=='click'){
+			 x.$(function(X,Y){
+			 x.Cd(mug,X,Y)
+			 })}
+			
+			
+			 if(s=='enter'){x.ME(function(X,Y){x.Cd(mug,X,Y)})}
+			 if(s=='leave'){x.ML(function(X,Y){x.Cd(mug,X,Y)})}
+			 if(s=='move'){x.MD(function(){x.MM(function(X,Y){x.Cd(mug,X,Y)})})
+			
+			 x.MU(function(){x.q.ub('mousemove')})}
+			
+			
+			 }),
+			
+			
+			 */
+			$.label('global comp'),
+			//scv.apply(this, V(oO('g')) ).$(function(v){ x.gc(v) }),
+			//gct=tx(),bt('gc:global composition',function(){x.gc(gct.V())}),
+			$.bt('SAVE(sv)', function () {
+				x.sv()
+			}), $.br(2),
+			$.bt('CUT(dots)', function () {
+				x.q.q.unbind()
+				qi('mouse').v('none')
+				x.dots()
+			}), $.br(2),
+			$.bt('RESTORE(R)', function () {
+				x.R()
+			}), $.br(2),
+			$.bt('bc:change background color', function () {
+				x.bc()
+			}), $.br(2),
+			$.bt('cir:make circle', function () {
+				x.cir(100, 100, 100)
+			}), $.br(2),
+			$.bt('d:draw', function () {
+				c.dr(
+						$w['mug'] || 'me'
+				)
+			}), $.br(2),
+			$.bt('dC:draw center', function () {
+				cv.dC(window['mug'] || 'me')
+			}), $.br(2),
+			$.bt('me', function () {
+				x.me()
+			}), $.br(2),
+			$.bt('sh1', function () {
+				x.ln(sh1)
+			}), $.br(2),
+			$.bt('sh2', function () {
+				x.ln(sh2)
+			}), $.br(2),
+			$.bt('tictactoe',
+					function () {
+						x.ln(tictactoe)
+					}), $.br(4),
+			$.bt('sampLinGrad',
+					function () {
+						x.sampLinGrad()
+					}), $.br(2),
+			$.bt('sampRadGrad',
+					function () {
+						x.sampRadGrad()
+					}), $.br(2),
+			$.bt('ctxx',
+					function () {
+						xxx('barney')
+					}), $.br(2),
+			$.bt('bads',
+					function () {
+						bad(x, 200, 8)
+					}), $.br(2),
+			$.bt('coins',
+					function () {
+						coin(x, 200, 8)
+					}), $.br(2)
+	)
+}
 CAN3 = THREECANS = function () {
 	c1 = $.can('r', 800, 400)
 	c2 = $.can('b', 800, 400)
