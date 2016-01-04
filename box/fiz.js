@@ -1,142 +1,4 @@
-bD.inertia = function (inertia) {
-	if (U(inertia)) {
-		return this.insertiaScale
-	}
-	this.insertiaScale = inertia;
-	return this
-}
-bD.sleepy = bD.aS = function (canSleep) {
-	this.allowSleep = canSleep ? true : false
-	return this
-}
-bD.act = bD.setActive = function (isActive) {
-	this.active = isActive ? true : false
-	return this
-}
-Array.prototype.sensor = function (kind) {
-	this.isSensor = kind || true
-	return this
-}
-v.r = v.rt = v.rot = function (rot) {
-	var x = this.x, y = this.y,
-			rot = Math.toRadians(rot),
-			cos = Math.cos, sin = Math.sin
-	return V(
-			x * cos(rot) - y * sin(rot),
-			x * sin(rot) + y * cos(rot)
-	).dec(3)
-}
-bH.rad = function (r) {
-	var bH = this;
-	bH.GR = function () {
-		return this.GetRadius()
-	}
-	bH.SR = function (rad) {
-		this.SetRadius(rad);
-		return this
-	}
-	
-	bH.sRad = function (r) {
-		var bH = this
-		if (bH.ty() == 'c') {
-			return bH.SR(r / 30)
-		}
-		bH.m_radius = r / 30
-		return bH
-	}
-	bH.gRad = function () {
-		var bH = this
-		return bH.ty() == 'c' ? bH.GR() * 30 :
-		bH.m_radius * 30
-	}
-	return U(r) ? bH.gRad() : bH.sRad(r)
-}
-b.GWC = function () {
-	return this.GetWorldCenter()
-}
-b2Color = b2d.Cm.b2Color 
-f.rot = function (rot, g) {
-	return this.B().rot(rot, g)
-}
-f.killBody = function () {
-	this.B().kill()
-}
-f.area = function () {
-	return Math.poly(this.V()).getArea()
-}
-f.cent = f.center = function () {
-	var bounds = this.GetAABB()
-	return Math.lineCenter(bounds.lowerBound, bounds.upperBound).mult()
-}//center point of its BOUNDING BOX
-f.test = f.hit = function (pt, y) {//=f.testPoint= f.tP
-	var f = this, b = f.body(), w = b.wor(),
-			g = G(arguments), v = V(g[0], g[1]),
-			res = f.H().testPoint(b.transform(), v.div())
-	if (g.p) {
-		b.wor().dot(v)
-	}
-	return res
-}//is a point within the fixture // very accurate
-fD.sSAPOld = fD.setShapeAsAPolyOld = function () {
-	return this.H(b2d.polyShape())
-}
-fD.vrt = fD.verts = function () {
-	var h = this.H()
-	var verts = h.vs()
-	return [vs[0].m(), vs[1].m(), vs[2].m(), vs[3].m()]
-	function alt() {
-		fD.vrt = fD.verts = function () {
-			var shape = this.shape,
-					verts = shape.m_vertices,
-					verts = [
-						verts[0].mult(),
-						verts[1].mult(),
-						verts[2].mult(),
-						verts[3].mult()]
-			return $l(verts)
-		}
-	}
-}
-f.killB = f.kB = f.xB = f.xX = f.XX = function () {
-	if (this && this.B()) {
-		this.B().kill()
-	}
-}
-w.S = function (x, y) {
-	var w = this,
-			g = G(arguments),
-			x = g[0], y = g[1],
-			bd, b, fixts, clas
-	if (S(_.last(g))) {
-		clas = g.pop()
-	}
-	if (N(x)) {
-		bd = b2d.stat(x, y)
-		fixts = _.rest(g, 2)
-	}
-	else {
-		if (b2d.isBDef(x)) {
-			bd = x
-		}
-		else {
-			x = V(x);
-			bd = b2d.stat(x.x, x.y)
-		}
-		fixts = _.rest(g)
-	}
-	b = w.CreateBody(bd)
-	if (fixts.length) {
-		b.H.apply(b,
-				fixts
-				//   _.map(fixts, function(f){   return A(f)?f:[f]  })
-		)
-	}
-	if (clas) {
-		b.K(clas)
-	}
-	return b
-}
-$L('worldGenerate','worldMove','bod','shapeTy','spazMath','toFixed')
+$L('worldGenerate', 'worldMove', 'bod', 'shapeTy', 'spazMath', 'toFixed')
 function worldGenerate() {
 	$pC = b2d.polyCirc = function (rad, prec) {
 		rad = N(rad) ? rad : 20
@@ -462,26 +324,6 @@ function worldMove() {
 		})
 	}
 }
-function bod() {
- 
-}
-function shapeTy() {
-	bH.GT = function () {
-		return this.GetType()
-	}
-	bH.ty = function () {
-		return b2d.iH(this)
-	}
-	bH.iP = function () {
-		return b2d.iP(this)
-	}
-	bH.iC = function () {
-		return b2d.iC(this)
-	}
-	bH.iA = function () {
-		return b2d.iA(this)
-	}
-}
 function joint() {
 	$dJt = function (a, b) {
 		var jd = new b2d.DistanceJointDef
@@ -673,5 +515,451 @@ function alpha() {
 		a = N(a) ? a : l
 		this.lD(l).aD(a)
 		return this
+	}
+}
+bD.inertia = function (inertia) {
+	if (U(inertia)) {
+		return this.insertiaScale
+	}
+	this.insertiaScale = inertia;
+	return this
+}
+bD.sleepy = bD.aS = function (canSleep) {
+	this.allowSleep = canSleep ? true : false
+	return this
+}
+bD.act = bD.setActive = function (isActive) {
+	this.active = isActive ? true : false
+	return this
+}
+Array.prototype.sensor = function (kind) {
+	this.isSensor = kind || true
+	return this
+}
+v.r = v.rt = v.rot = function (rot) {
+	var x = this.x, y = this.y,
+			rot = Math.toRadians(rot),
+			cos = Math.cos, sin = Math.sin
+	return V(
+			x * cos(rot) - y * sin(rot),
+			x * sin(rot) + y * cos(rot)
+	).dec(3)
+}
+bH.rad = function (r) {
+	var bH = this;
+	bH.GR = function () {
+		return this.GetRadius()
+	}
+	bH.SR = function (rad) {
+		this.SetRadius(rad);
+		return this
+	}
+	bH.sRad = function (r) {
+		var bH = this
+		if (bH.ty() == 'c') {
+			return bH.SR(r / 30)
+		}
+		bH.m_radius = r / 30
+		return bH
+	}
+	bH.gRad = function () {
+		var bH = this
+		return bH.ty() == 'c' ? bH.GR() * 30 :
+		bH.m_radius * 30
+	}
+	return U(r) ? bH.gRad() : bH.sRad(r)
+}
+b.GWC = function () {
+	return this.GetWorldCenter()
+}
+b2Color = b2d.Cm.b2Color
+f.rot = function (rot, g) {
+	return this.B().rot(rot, g)
+}
+f.killBody = function () {
+	this.B().kill()
+}
+f.area = function () {
+	return Math.poly(this.V()).getArea()
+}
+f.cent = f.center = function () {
+	var bounds = this.GetAABB()
+	return Math.lineCenter(bounds.lowerBound, bounds.upperBound).mult()
+}//center point of its BOUNDING BOX
+f.test = f.hit = function (pt, y) {//=f.testPoint= f.tP
+	var f = this, b = f.body(), w = b.wor(),
+			g = G(arguments), v = V(g[0], g[1]),
+			res = f.H().testPoint(b.transform(), v.div())
+	if (g.p) {
+		b.wor().dot(v)
+	}
+	return res
+}//is a point within the fixture // very accurate
+fD.sSAPOld = fD.setShapeAsAPolyOld = function () {
+	return this.H(b2d.polyShape())
+}
+fD.vrt = fD.verts = function () {
+	var h = this.H()
+	var verts = h.vs()
+	return [vs[0].m(), vs[1].m(), vs[2].m(), vs[3].m()]
+	function alt() {
+		fD.vrt = fD.verts = function () {
+			var shape = this.shape,
+					verts = shape.m_vertices,
+					verts = [
+						verts[0].mult(),
+						verts[1].mult(),
+						verts[2].mult(),
+						verts[3].mult()]
+			return $l(verts)
+		}
+	}
+}
+f.killB = f.kB = f.xB = f.xX = f.XX = function () {
+	if (this && this.B()) {
+		this.B().kill()
+	}
+}
+w.S = function (x, y) {
+	var w = this,
+			g = G(arguments),
+			x = g[0], y = g[1],
+			bd, b, fixts, clas
+	if (S(_.last(g))) {
+		clas = g.pop()
+	}
+	if (N(x)) {
+		bd = b2d.stat(x, y)
+		fixts = _.rest(g, 2)
+	}
+	else {
+		if (b2d.isBDef(x)) {
+			bd = x
+		}
+		else {
+			x = V(x);
+			bd = b2d.stat(x.x, x.y)
+		}
+		fixts = _.rest(g)
+	}
+	b = w.CreateBody(bd)
+	if (fixts.length) {
+		b.H.apply(b,
+				fixts
+				//   _.map(fixts, function(f){   return A(f)?f:[f]  })
+		)
+	}
+	if (clas) {
+		b.K(clas)
+	}
+	return b
+}
+b.GCxL = function () {
+	return this.GetContactList()
+}
+b.GCoL = function () {
+	return this.GetControllerList()
+}
+b.GJL = function () {
+	return this.GetJointList()
+}
+b.M = function () {
+	return this.Merge.apply(this, arguments) || this
+}
+b.S = function () {
+	return this.Split.apply(this, arguments) || this
+}
+b.GMD = function () {
+	return this.GetMassData()
+}
+b.SMD = function (mD) {
+	this.SetMassData(mD);
+	return this
+}
+b.RMD = function () {
+	this.ResetMassData();
+	return this
+}
+b.GM = function () {
+	return this.GetMass()
+}
+b.GLVFLP = b.GlVLP = function () {
+	return this.GetLinearVelocityFromLocalPoint.apply(this, arguments)
+}
+b.GLVFWP = function () {
+	return this.GetLinearVelocityFromWorldPoint.apply(this, arguments)
+}
+b.wV = b.worldVec = function (v, y) {
+	if (N(v) && N(y)) {
+		v = V(v, y)
+	}
+	if (U(v)) {
+		v = V(0, -100)
+	}
+	return this.GetWorldVector(v)
+}
+b.GLV2 = function () {
+	return this.GetLocalVector()
+}
+b.GWV2 = function () {
+	return this.GetWorldVector()
+}
+b.wPt = b.wPoint = b.worldPoint = b.wP = function (x, y) {
+	return this.GetWorldPoint(V(x, y).div()).mult()
+}
+b.GLP = function () {
+	return this.GetLocalPoint.apply(this, arguments)
+}
+b.GWP = b.GWPt = function () {
+	return this.GetWorldPoint.apply(this, arguments)
+}
+w.bal = w.ball = w.cD = w.ba = w.cirB = function () {
+	var w = this, g = G(arguments), o, b
+	if (true) {
+		b = w.D(g.f, g.s)
+		b.cF.apply(b, _.r(arguments, 2))
+	}
+	else {
+		o = {x: g.f, y: g.s, r: g.t}
+		var b = w.D(o.x, o.y)
+		b.f($cF(o.r))
+	}
+	return b.decor(g).K('ball')
+}
+w.ball = w.ba = function (x, y, r) {
+	var w = this,
+			ball
+	if (O(x)) {
+		r = N(x.r) ? x.r : y;
+		y = x.y;
+		x = x.x
+	}
+	x = N(x) ? x : 100 //change to center x
+	y = N(y) ? y : x
+	r = N(r) ? r : 30
+	ball = w.dyn(
+			x, y, b2d.circ(r)
+	)
+	return ball.K('ball')
+}
+w.oMD = function () {
+	var c = $(w.s.HUD.canvas)
+	c.mousedown(function (e) {
+		o.dx = e.clientX - w.s.x
+	})
+}
+// world mouse down vs canvas mouse down!!!
+// canvas mouse down just uses $.oMD
+w.md = function (l) {
+	var w = this
+	$(w.hud.canvas).mousedown(function (e) {
+		l({x: w.mx, y: w.my})
+	})
+	return w
+}
+w.mu = function (l) {
+	var w = this
+	$(w.hud.canvas).mouseup(function (e) {
+		l({x: w.mx, y: w.my})
+	})
+	return w
+}
+w.mm = function (l) {
+	var w = this
+	$(w.hud.canvas).mousemove(function (e) {
+		l({x: w.mx, y: w.my})
+	})
+	return w
+}
+w.m$ = function (l) {
+	var w = this
+	$(w.hud.canvas).click(function (e) {
+		l({x: w.mx, y: w.my})
+	})
+	return w
+}
+w.m$$ = function (l) {
+	var w = this
+	$(w.hud.canvas).dblclick(function (e) {
+		l({x: w.mx, y: w.my})
+	})
+	return w
+}
+w.dev = function () {
+	var w = this,
+			d = $.div('t', 400, 600).abs(1200, 0).A(),
+			d1 = $.div('x', 400, 600).abs(1600, 0).A()
+	d.A($.h1('world stats'))
+	d1.A($.h1('body stats'))
+	return w
+}
+w.mark = function () {
+	var w = this
+	w.C('z')
+	_.times(50, function (i) {
+		w.S(i * 200, 0, 'w', 1, 10000).sensor(true)
+	})
+	_.times(50, function (i) {
+		w.S(0, i * 200, 'w', 10000, 1).sensor(true)
+	})
+	return w
+}
+w.dbLayers = function () {
+	var w = this
+	w.dr(75, 75, 150, 150, '-')
+	w.dr(140, 0, 20, 300)
+	w.dr(0, 150, 300, 20)
+	w.dr(100, 100, 100, 100, '+')
+	return w
+}
+w.dbCross = function (x, y) {
+	var w = this, c = w.cent()
+	x = N(x) ? x : c.x
+	y = N(y) ? y : c.y
+	w.dr('t', -10 + x, -140 + y, 20, 300, '-')
+	w.dr('t', -150 + x, -10 + y, 300, 20, '-')
+	w.dot('r', x, y)
+	return w
+}
+w.back = function () {
+	var w = this,
+			back = w.s.back
+	if (!back.x) {
+		back.x = 10000
+		back.y = 10000
+	}
+	else {
+		back.x = 0
+		back.y = 0
+	}
+	return w
+}
+w.HUD = function () {
+	var w = this,
+			back = w.s.HUD
+	if (!back.x) {
+		back.x = 10000
+		back.y = 10000
+	}
+	else {
+		back.x = 0
+		back.y = 0
+	}
+	return w
+}
+w.lay = function () {
+	var w = this
+	w.back().HUD().db()
+	return w
+}
+DBLAYERS = function () {
+	W([1200, 600, 2400, 1200], {g: 0})
+	w.dbLayers()
+}
+MARK = function () {
+	
+	//no buffer to worry about
+	//it lets u gradually move past the target point.. until hits limit
+	W([1200, // x
+		600,
+		4800, // x
+		1200
+	], {g: 0, t: 0}).mark()
+	w.S(1200, 300, 'r', 400, 100)
+	w.S(1200, 900, 'r', 400, 100)
+	w.S(1200, 600, 'w', [[400, 500, '-']])
+	y = w.ship(200, 200).rot(120).damp(1, 10)
+	w.track(y, 600, 300)
+	w.dot(600, 300)
+	w.hud.dot(600, 300)
+	w.dot(1200, 600)
+	w.hud.dot(1200, 600)
+	y.XY(100, 600).rot(90).lD(0).lV(4)
+}
+function makeWorld() {
+	getBodyAtMouse = function (mX, mY) {
+		$l('getBodyAtMouse')
+		return w.getBodyAtPoint(mX, mY)
+	}
+	handleJointsAlt = 0
+	handleJoints = function () {
+		
+		//if mouse is dont.. make a new mouse joint, if there is none
+		if (_mouseIsDown) {
+			$l('mouseIsDown')
+			if (_mouseJoint) {
+				mj = _mouseJoint
+				//  _mouseJoint.SetTarget(V(mX, mY))
+			}
+			else {
+				_mouseJoint = _mouseJoint || b2d.mouseJoint(w.getBodyAtPoint(mX, mY))
+			}
+		}
+		else {
+			$l('mouseIsDown')
+			if (_mouseJoint) {
+				_mouseJoint.destroy();
+				_mouseJoint = null
+			}
+		}
+	}
+	checkMouseDown = function () {
+	}
+	handleJoints2 = function () {// so far unchanged.. need to think
+		if (_mouseIsDown && !_mouseJoint) {
+			var b = getBodyAtMouse(mX, mY)
+			bb = b
+			if (b) {
+				_mouseJoint = mouseJoint(b.awake(1))
+			}
+			else {
+				bb.aI(10000, 10000)
+			}
+		}
+		if (_mouseJoint) {
+			if (_mouseIsDown) {
+				
+				// _mouseJoint.sT(mX,mY)
+			}
+			else {
+				bb.aI(
+						bbb.x() - MX,
+						bbb.y() - MY
+				)
+				w.dJ(_mouseJoint)
+				_mouseJoint = null
+			}
+		}
+	}
+	makeWallsPinball = function () {
+		bii(10, 300, 20, 1200) //left
+		bii(990, 300, 20, 1200)//right
+		bii(300, 0, 3000, 20)//top
+		// bii(300, 590, 3000, 20)//bottom
+	}
+	makeStage1 = function (X, Y, options) {
+		canvas = c = $can(X, Y).a().bc('z')
+		canvas.id('canvas')
+		stage = s = SuperStage(canvas)
+		T$.removeAllEventListeners()
+		ctx = x = xx(canvas)
+		stage.ob.autoClear = false
+		if (options.bg) {
+			stage.b(options.bg)
+		}
+	}
+	setFixtures = function () {
+		bD = $sB()
+		fD = $fD().de(1).fr(.5).re(.8).H($pF())
+	}
+	makeShapeOnDblClk = function () {
+
+
+//DEMO: add a 'fix' on $$ //DEMO: add 10 dynamic sq or cir to world
+		x.$$(function (x, y) {
+			world.a(
+					yn() ? DynamicBodyDef(x, y) : StaticBodyDef(x, y), fix()
+			)
+		})
 	}
 }

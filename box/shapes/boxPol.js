@@ -1,24 +1,28 @@
-_$pH = function () {
-	return new b2d.PH()
-}
 
-
-$pH_ = function (g, o) {
-	
-	var pH = _$pH()
-	
-	return g.OO_ ? $a(pH, 'arr', g) :
-			g.N_ ? //pH.box(g.f, g.s, g.t, g.fo, g.fi) :
-					pH.SAOB(o.w, o.h, o.xy, o.rt) :
-					pH
-	// this is all you need for all cases (thanks to pH.set) 
-	// pH.set.apply(pol, g)
-}
 
 
 $pH = function (W, H, x, y, a) {
 	//  OR (wd, ht, xy, ang, ang2)
+	$pH_ = function (g, o) {
+		_$pH = function () {
+			return new b2d.PH()
+		}
+		var g = G(arguments)
+		var pH = _$pH()
+		if (g.u) {
+			return pH
+		}
+		return g.OO_ ? $a(pH, 'arr', g) :
+				g.N_ ? //pH.box(g.f, g.s, g.t, g.fo, g.fi) :
+						pH.SAOB(o.w, o.h, o.xy, o.rt) :
+						pH
+		// this is all you need for all cases (thanks to pH.set) 
+		// pH.set.apply(pol, g)
+	}
 	var g = G(arguments), o
+	if (g.u) {
+		return $pH_()
+	}
 	o = O(g.t) ?
 	{w: g.f, h: g.s, xy: g.t, ang: g.fo, ang2: g.fi} :
 	{w: g.f, h: g.s, xy: V(g.t, g.fo), ang: g.fi, ang2: g.si}
@@ -29,11 +33,13 @@ $pH = function (W, H, x, y, a) {
 	return $pH_(g, o)
 }
 
+
 $aH = $ar = $arr = function () {
 	var g = G(arguments)
-	return $pH().arr(g.s ? g : g.f)
+	return $pH().arr( g.s?g : g.f )
 	//alt: return $pF().polA(g)
 }
+
 
 $pF_ = function (kind) {
 	var pF = $pF.apply(null, _.r(arguments))
@@ -139,9 +145,90 @@ w.tri = function (x, y) {
 			.SAA([V(-1, 0), V(0, -1), V(1, 0)], 3))
 }
 w.aTri = function (x, y) {
-	this.cF($sB().Set(x, y), $fD($pH()).SAA([
+	this.cF($sB().Set(x, y), $fD($pH().SAA([
 		V(-1, 0),
 		V(0, -1),
-		V(1, 0)], 3))
+		V(1, 0)], 3)))
 	return this
 }
+pH.SAA = function () {
+	var pH = this
+	var g=G(arguments)
+	pH.SetAsArray.apply( pH, g.A? g.f: g )
+
+	return pH
+}
+
+pH.arr = function (v) {
+	var p = this
+	var g=G(arguments)
+	v= g.A? g.f: g
+	v = _.m(v, function (v) {
+		return V(v).d()
+	})
+	p.SAA(v, v.length)
+	return p
+}
+
+pH.SAV = function () {
+	var pH = this
+	pH.SetAsVector.apply(pH, arguments)
+	return pH
+}
+pH.asV = pH.setAsVec = function (v, sc) {
+	sc = N(sc, 30)
+	var pH = this //used by SepLib
+	return pH.SAV(_.m(v, function (v) {
+		return V(v).d(sc)
+	}))
+}
+arr = [V(-30, 0), V(0, -150), V(120, 0)]
+BX1 = function () {
+	//fD.density = 1.0;fD.friction = 0.5;fD.restitution = 1.5;
+	$box()
+	w.aTri(7, 7).aTri(4, 6)
+	_.ev(.4, function () {
+		w.cB($dB().Set(7, 0))
+				.lV(R() ? 1 : -1, R() ? 1 : -1)
+				.aF($fD($cH(45)))
+	})
+}
+BX2 = function () {
+	$box()
+	w.aTri(7, 7).aTri(4, 6)
+	_.ev(.4, function () {
+		w.dB(210, 0).aF($cF(15)).lV$()
+	})
+} 
+SAAA = function () {
+	$box()
+	aH = $aH([-100, 0], [0, -100], [100, -20], [50, 20])
+	//fD = $fD(aH)
+//	w.D(150, 200).f(fD)
+//	w.D(240, 300).f($fD($aH(verts)))
+//	w.D(434, 400).f($aF((verts)))
+	w.D(534, 300).aF(verts)
+	w.bag(700, 200, verts, '-')
+	w.rock(600, 400, verts)
+}
+TRI = function () {
+	$box()
+	//long way
+	w.D(400, 400).f($fD($aH(verts)))
+	//short way
+	w.D(400, 400, $aF([-100, 0], [0, -100], [100, -20]))
+	//shortest way ?
+	w.arr(400, 400, [-100, 0], [0, -100], [100, -20])
+	w.arr(400, 400, verts)
+	w.D(200, 200, b2d.triangle3)
+	//////////
+	w.D(100, 200, $pF(50, 50))
+	//tri =   $aF[-100,0], [0,-100 ], [100,0] )
+	var h = $pH()
+	h.sAA([V(-100, 0, '-'), V(0, -100, '-'), V(100, -20, '-')], 3)
+	fD = $fD(h)
+	b = w.D(400, 400)
+	f = b.f(fD)
+	// w.dyn(x,y, b2d.triangleFixt2)
+	//w.dyn(x,y, b2d.triangleFixt3)
+} 

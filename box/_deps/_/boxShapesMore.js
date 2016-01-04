@@ -103,31 +103,7 @@ pH.vsA = pH.pts = pH.vsArr = function () {
 	})
 }
 function setAsArrVec() {
-	pH.SAA = function () {
-		var pH = this
-		pH.SetAsArray.apply(pH, arguments)
-		return pH
-	}
-	pH.arr = function (v) {
-		var p = this
-		v = _.m(v, function (v) {
-			return V(v).d()
-		})
-		p.SAA(v, v.length)
-		return p
-	}
-	pH.SAV = function () {
-		var pH = this
-		pH.SetAsVector.apply(pH, arguments)
-		return pH
-	}
-	pH.asV = pH.setAsVec = function (v, sc) {
-		sc = N(sc, 30)
-		var pH = this //used by SepLib
-		return pH.SAV(_.m(v, function (v) {
-			return V(v).d(sc)
-		}))
-	}
+ 
 };
 setAsArrVec()
 $pH = b2d.pH = function (W, H, x, y, a) {

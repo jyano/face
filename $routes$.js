@@ -8,10 +8,10 @@ $stc('', '../art', '_data',
 		  'stage', 'anim', 'easel/anim', 
 		
 		'wappy',
-		'box','box/parts','box/shapes'
+		'box','box/bods','box/fixts','box/shapes','box/world'
 )
 
-Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','setup']
+Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui',  'gpc', 'bx', 'cjs', 'cjsMC', 'ko', 'bb','pureDa']
 
 
 Web= ['web', 'sJQ', 'webEvents', 'attributes','qAnim','traverse','value',
@@ -28,11 +28,21 @@ Stage = [
  'cjsCir','cjsRec','official','cache','filter',
 	 'alphaMaskFilter','alphaMaskFilter','blurFilter','cache','colorFilter','colorMatrixFilter', 'bitmap'
 ]
-Box = ['box' ,  'vec','world', 'debug', 'bodies','bodyDefs','fixtures','fixtureDefs',
-	'boxCir','boxPol','boxRec','edges'
-	]
+Box = ['box' ,  'vec','world', 'worldBod','worldFix', 'debug', 
+
+
+'bodies','bodyDefs','fixtures','fixtureDefs',
+
+	'boxCir','boxPol','boxRec','edges',
 	
-Apps = [    'boxApps','boxShapeApps','bbApps','koApps' ]
+	
+	'bodFix','forces'
+	
+]
+	
+	
+	
+Apps = [  'bbApps','koApps' ]
 
 Anim=['tween','easing','sprite','ssBuilder','zoe', 'SSData','movie','timeline', 'gunnertron' ]
 

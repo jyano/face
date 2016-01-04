@@ -1,4 +1,4 @@
-ColorFilter = $cFl = $cF = function (a, b, c, d, e, f, g, h) {
+ $cFl = ColorFilter =  function (a, b, c, d, e, f, g, h) {
 	return new cjs.ColorFilter(a, b, c, d, e, f, g, h)
 }
 dO.cF = function (a, b, c, d, e, f, g, h) {

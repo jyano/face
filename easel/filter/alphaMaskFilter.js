@@ -20,7 +20,7 @@ dO.aF2 = function (h) {
 	this.fl2($AF(h))
 	return ob
 }
-AlphaMaskFilter = $aFl = $Afl = $AF = $Af = $aF = function (a, b, c, d, e) {
+AlphaMaskFilter = $aFl = $Afl = $AF = $Af =  function (a, b, c, d, e) {
 	//Map an image's alpha channel to the alpha channel of a display object
 	var fl//return new cjs.AlphaMaskFilter(a, b, c, d, e)
 	if (O(a) && a.cacheCanvas) {
