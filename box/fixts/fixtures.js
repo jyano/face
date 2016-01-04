@@ -149,7 +149,9 @@ $cF = function () {
 	
 	return f
 }
-
+f.GN = f.N = f.next = function () {
+	return this.GetNext()
+}
 
 $cFAlt = function () { //r,x,y
 	var g = G(arguments)
