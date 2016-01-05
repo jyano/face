@@ -29,7 +29,6 @@ DOGS = function () {
 	})
 }
 
-
 function mainDlg() {
 	$('.dlg').rm()
 	$.d([

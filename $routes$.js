@@ -24,7 +24,7 @@ Web = [
 	'traverse',
 	'html', 'inputs', 'lists', 'submit',
 	'root', 'nest', 
-	'll', 'appy'
+	'll', 'appy','localStorage'
 ]
 
 Graphics = [
@@ -33,7 +33,11 @@ Graphics = [
 	'ctxText', 'ctxTransform',
 	'canDraw', 'canImg', 'canGlobComp', 'canGrad','canMug', 'canPixels','canShad', 
 	'canText', 'canTransform',
-	'parallax']
+	'gpcCtx',
+	'parallax'
+]
+
+
 Wid = [
 	'mock',
 	  'uiWids','custWids','widLS',
@@ -63,7 +67,8 @@ Anim = [
 	'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
 	'movie', 'timeline', 'gunnertron']
 Wap = [
-	'wappy', 'users', 'login', 'social' 
+	'wappy', 'users', 'login', 'social' ,
+	'widUser'
 	]
 Box = [
 	'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
