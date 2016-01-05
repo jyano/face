@@ -1,5 +1,4 @@
-
-$a.del('/pic', function (q, p) {
+$a.delete('/pic', function (q, p) {
 	$l('remove a pic')//remove a pic
 	$md.pic.remove(q.body, function (z, d) {
 		p.json(d)
@@ -19,20 +18,15 @@ $a.g('/myPics', $w.user, function (q, p) {
 			})
 })
 //remove a pic
-$a.del('/pic', function (q, p) {
+$a.delete('/pic', function (q, p) {
 	Ml.rm(q.b, _json(p))
 })
 //get all pics(files) (everyone's)
 $a.get('/pics', function (q, p) {
 	Fl.fi(_json(p))
 })
-//change to get pics?
-//find all User's pics
-$.G('/myPics', function (q, p) {
-	Fl.fi({user: q.uId}, _json(p))
-})
 //remove a pic
-$a.del('/pic', function (q, p) {
+$a.delete('/pic', function (q, p) {
 	Fl.rm(req.body, function (err, data) {
 		res.json(data)
 	})
@@ -51,7 +45,7 @@ $a.get('/myPics', $w.user, function (q, p) {
 				res.json(pics)
 			})
 })
-$a.del('/pic', function (q, p) {
+$a.delete('/pic', function (q, p) {
 	$l('remove a pic')//remove a pic
 	Fl.remove(q.body, function (z, d) {
 		p.json(d)
@@ -101,7 +95,4 @@ $Mw.pic = $Mw.p = function (q, p, nx) {
 				q.i = i
 				nx()
 			})
-}
-$post('/myPics', function (q, p) {
-	Fl.fi({user: q.userId}, _js(p))
-})
+} 

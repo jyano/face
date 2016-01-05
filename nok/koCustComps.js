@@ -7,14 +7,15 @@ MESSAGE_EDITOR_COMPONENT = KOCM = function () {
 		template: $.d(['Ms:', $.ipV('t'), '(len:', $.spT('t().length'), ')']),
 		// 'Message: <input data-bind="value: text" /> (length: <span data-bind="text: text().length"></span>)'
 		m: function (p) {
-			this.t = ko.o(p && p.initT || '')
+			this.t = $o(p && p.initT || '')
 		},
 		t: $.d([
-			'Ms:',
-			$.ip().v$('t'),
-			'(len:', $.spT('t().length'), ')'
+			'Ms:', 
+			v$('t'),
+			'(len:', T$('t().length'), ')'
 		])
 	})
+	
 	$.z().h4('First instance, without parameters')
 	$.d().cm$('msgEd')
 	$.h4('Second instance, passing parameters')
@@ -275,7 +276,7 @@ CMLDR = function () {
 	$.tp("my-special-list-template").A(
 			$.h3('Here is a special list')
 	)
-	$.ulE("{ data: myItems, as: 'myItem' }").A(
+	$.ul().A("{ data: myItems, as: 'myItem' }").A(
 			$.li().A($.h4('Here is another one of my special items'),
 					$("<!-- ko template: { nodes: $componentTemplateNodes, data: myItem } --><!-- /ko -->")))
 	$.tg('my-special-list').at('params', 'items: PEEP')

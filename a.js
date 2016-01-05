@@ -21,77 +21,72 @@ $stc = function () {
 		function name(dir) {return __dirname + '/' + dir}
 		function use(dir) {$a.use($e.static(dir))}}
 }
+
 require('./server/$xap$')
 require('./server/$goo$')
-require('./server/$mw$')
+
+$w = $Mw = function (q, p, nx) {
+	// regular (pre-user) middleware
+	miniQP = function (q, p) {
+		miniQ(q)
+		miniP(p)
+	}
+	
+	miniQP(q, p)
+	
+	q.loggedIn = isLoggedIn(q)
+	q.un = q.ss.un;
+	// =  p.lc.loggedIn
+	//q.un = q.un; p.lc.lI =q.lI = q.loggedIn
+	nx()
+}
+$ss = require('express-session')
+$cnMg = require('connect-mongo')($ss)
+$ssSt = new $cnMg({url: 'mongodb://localhost/jy'})
+methodOverride = require('method-override')
+$bP = require('body-parser');
+_.e([
+	$ss({store: $ssSt, secret: 'foo', resave: true, saveUninitialized: true}),
+	require('cookie-parser')('xyz'),
+	$bP.urlencoded({extended: false, limit: '50mb'}),
+	$bP.json({limit: '50mb'}),
+	//methodOverride('X-HTTP-Method-Override'),
+	//methodOverride('_method')
+], function (mw) {
+	$a.use(mw)
+})
+/*
+ $a.use(function (q, p, nx) {
+ q.b = q.bd = q.body
+ q.fl = q.f = q.files// q.n  = q.flash
+ q.ss = q.session
+ q.q = q.query
+ q.p = q.pm = q.params// q.p= function(a){return q.params[a]}
+ p.lc.loggedIn = q.loggedIn = (q.ss.un) ? true : false   //=  res.locals.li=  req.li
+ q.un = q.ss.un// $l('MAIN middleware says req.username = ' + req.username)
+
+ //
+ p.lc = p.l = p.locals
+ p.rr = p.ren = p.r = p.render
+ p.s = p.send
+ p.j = p.js = p.json
+ p.rd = p.d = p.redirect
+ nx()
+ })
+ */
+ 
 $a.g('/', function (q, p) {
 	$l('/')
 	$l(q.session)
 	p.json(q.sesson // || 'it worked jason..'
 	)
 })
-$a.get('/user/session', function (q, p) {
-	$l('userSS')
-	var ss = q.session
-	$l('ss: ')
-	$l(ss)
-	if (ss.views) {ss.views++}
-	else {ss.views = 1}
-	p.send(ss)
-})
-$a.g('/user/ses', function(q,p){
-	
-	var ss = q.session
-	$l('ss: ')
-	$l(ss)
-	if (ss.views) {
-		ss.views++
-		p.setHeader('Content-Type', 'text/html')
-		p.write('<p>views: ' + ss.views + '</p>')
-		p.write('<p>expires in: ' + (ss.cookie.maxAge / 1000) + 's</p>')
-		p.write(JSON.stringify(ss, null,'\t'))
-		p.end()
-	}
-	
-	else {
-		ss.views = 1
-		p.end('welcome to the session demo. refresh!')
-	}
-})
-$a.g('/wap/unIsAvail', function(q,p){
-	
-})
-
-$a.g('/wap/allUsers', function (q, p) {
-	User.find(function(z, users){
-		if(z){$l('z')}
-		else {
-			$l(JSON.stringify(users))
-			p.send(users)
-		}
-	})
-}) 
-
-$a.g('/wap/addRndUser', function(q,p){
-	$l('addRndUser')
-	
-	var mockUser= {
-		un: 'larry' + R(1000000),
-		pw: 'password' + R(100)
-	}
-	
-	$l('new user: '+ mockUser.un)
-	
-	
-	User.create(mockUser, function(z,user){
-		if(z){$l("z")}
-		p.send(user)
-	})
-	
-
-})
-
-
+ 
+require('./server/userRtsMW')
+require('./server/socialRts')
+require('./server/mugRts')
+//require('./server/uplodLibRts')
+require('./server/picRtsMW')
 
 require('./server/$api$/$twitServer$')
 require('./$routes$')
@@ -99,7 +94,7 @@ require('./$routes$')
 $htSv = httpServer = $h.createServer($a)
 $htSv.listen(80, lsFn)
 
-require('./server/socket/$kets$')
+require('./server/$api$/$kets$')
 
 function lsFn() {
 	$l('\nserver listening on port 80 \n')

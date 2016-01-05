@@ -1242,9 +1242,7 @@ TASKS = function () {
 	 //  $.Gj('ts', function(d){  o.ts($.map(d, function(i){return  { t: ko.o(i.t), iD: ko.o(i.iD) }}))})
 	 */
 }
-TASK = function () {
-	$.z('r')
-}
+ 
 TASKS1 = function () {
 	$.z().h3('Tasks')
 	$.f().bSb('aT').A().A("Add task: ",

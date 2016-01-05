@@ -149,4 +149,14 @@ _string = function (fn) {
 	$$ = $.$ = $.$js = function (js) {
 		return $.js('$(function(){' + js + '})')
 	}
- 
+$.scrp = function (i, t) {
+	
+	//return $("<script type='text/html'>").id(i)
+	var scr = $("<script type='text/html'>")
+	scr.id(i)
+	if (t) {
+		scr.A(t)
+	}
+	scr.A()
+	return scr
+}

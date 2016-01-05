@@ -844,3 +844,6 @@ $RE = function (rx, flags) {
 $REi = function (rx) {
 	return new RegExp(rx, 'i')
 }
+S.slash = function(str){
+	return S.eR('/', str)
+}

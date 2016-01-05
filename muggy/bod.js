@@ -654,4 +654,4 @@ function flame(){
 		f = Flame1().X(300)
 		s.A(f)
 	}
-}
+} 

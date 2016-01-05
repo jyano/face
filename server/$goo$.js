@@ -1,32 +1,9 @@
- pre()
-$jFn = function (p, str) {// pjdX = function (p) {return function (z, da) {p.j(da)}}
-	return F(str) ? function (z, da) {
-		if (da) {
-			da = str(da);
-			p.j(da)
-		}
-	} :
-			function (z, da) {
-				if (S(str)) {
-					da = da[str]
-				}
-				;
-				p.j(da)
-			}
-} // = $j = jD = pjd = Js = Json
-_pm = function (q, pm) {
-	return q.params[pm]
-}
-_byUn = function (q) {
-	return _un(_pm(q, 'un'))
-}
-_fByUn = function (m) {
-	return function (q, p) {
-		$m[m].fi(_byUn(q), _json(p))
-	}
-} 
- 
-
+$md = $m = {}
+$mg = require('mongoose')
+$Sc= Schema = $mg.Schema
+$mg.connect("mongodb://localhost/final", function () {
+	$l(' - mg - ')
+})
 
 picSchema = new $mg.Schema({
 	user: {type: $mg.Schema.Types.ObjectId, ref: 'user', required: true},
@@ -57,358 +34,225 @@ userSchema = new $mg.Schema({
 })
 
 User = $mg.model('User', userSchema)
+  
+qp = qpn$ = function (fn, q, p, nx) {
+	 q = q$(q)
+	 q.ss = ss$(q.session)
+	 p = p$(p)
+	 nx = nx$(nx)
+	 return function () {
+		 fn(q, p, nx)
+	 }
+ }
 
 
-function moreSchemas(){
-	statusSchema = new $mg.Schema({
-		datetime: {type: Date, default: Date.now},
-		username: {type: String, required: true},
-		text: String
-	})
-	availabilitySchema = new $mg.Schema({
-		datetime: {type: Date, default: Date.now},
-		username: {type: String, required: true},
-		text: String
-	})
-	postSchema = new $mg.Schema({
-		datetime: {type: Date, default: Date.now},
-		username: {type: String, required: true},
-		title: String,
-		text: String,
-		dataURl: String
-	})
-	buddyRequestSchema = new $mg.Schema({
-		from: {type: String, required: true},
-		to: {type: String, required: true},
-		datetime: {type: Date, default: Date.now}
-	})
-	mailSchema = new $mg.Schema({
-		from: {type: String, required: true},
-		to: {type: String, required: true},
-		datetime: {type: Date, default: Date.now},
-		title: String,
-		text: String
-	})
+q$ = $Q = miniQ = req = function (q) {
+
+	q= q||{}
+	 q.auth = function () {
+		 var q = this
+		 q.loggedIn = isLoggedIn(q)
+		 q.un = q.ss.un;
+		 // =  p.lc.loggedIn
+		 //q.un = q.un; p.lc.lI =q.lI = q.loggedIn
+		 return q
+	 }
+	 q.un_ = function () {
+		 return un_(this.pm.un)
+	 }
+	 q.pm = q.params
+	 q.b = q.body
+	 q.un = function () {
+		 return {un: this.un}
+	 }
+	 q.parUr = q.parseUser = function (ur) {
+		 var q = this
+		 if (ur) {
+			 q.user = p.lc.user = ur   //res.locals.U = req.U =
+			 q.un = p.lc.un = ur.un//res.locals.u = req.u =
+			 q.uId = p.lc.urId = ur._id //res.locals.I = req.I =
+		 }
+	 }
+	 q.urs = q.users = function (fn) {
+		 Ur.fi(q.b, fn)
+	 } // q.users( wUrs )
+	 q.a = q.app;
+	 q.p = q.params;
+	 q.q = q.query;
+	 q.b = q.body;
+	 q.u = q.url
+	 q.bU = q.baseUrl;
+	 q.oU = q.originalUrl;
+	 q.h = q.hn = q.hostname
+	 //q.rt = q.route  //q.rt.pt = q.rt.path  // q.pt = q.rt.pt  // q.pt = q.path;
+	 q.pc = q.protocol  //q.s= q.secure;  q.fr= q.fresh; q.st= q.stale;
+	 // q.sd= q.subdomains; q.x= q.xhr  // q.ip= q.ip  // q.ips= q.ips
+	 if (q.session) {
+		 q.s = q.ss = sess(q.session)
+	 }
+	 // q.c= q.ck= q.cookies;
+	 // q.sC= q.signedCookies
+	 return q
+ 
 }
-function pre(){
-	$mg = require('mongoose')
-	Schema = $mg.Schema
-	$mg.connect("mongodb://localhost/final", function () {
-		$l(' - mg - ')
-	})
-	$md = $m = {}
-	}
-function old() {
-	function classic() {
-		SCHEMAS = {
-			user: {
-				username: {type: String, required: true},     //username: {type:String, required:true},
-				password: String,
-				//m: { type: String, default: '/me.png' },
-				//mug: { type: String, default: '/me.png' },  //mugData.. no mugId //mugData.. no mugId
-				mug: {
-					type: String//, default: require('./defaultMug')
-				},
-				status: {type: String, default: 'nothing much'},
-				buds: [String]
-			},
-			pic: {
-				user: {type: $mg.Schema.Types.ObjectId, ref: 'user', required: true},
-				//user: {type: $mg.Schema.Types.ObjectId, ref:'user', required:true},
-				date: {type: Date, default: Date.now},
-				modified: Date,
-				size: Number,
-				name: String,
-				ext: String
-			},
-			img: {
-				username: String, u: String,
-				date: Date,
-				data: String, d: String,
-				name: String,
-				dats: [Number],
-				physicsData: [Number]
-			},
-			thing: {name: String, age: Number},
-			//guy: {n: {type: S, required: true}, m: S, x: N, y: N}, //map:{n:S, guys:O},
-			book: {
-				userId: {
-					type: $mg.Schema.Types.ObjectId,
-					ref: 'user', required: true
-				},
-				title: String,
-				chapters: ['chapter']  // ???
-			},
-			sort: {
-				username: {type: String, required: true},
-				datetime: {type: Date, default: Date.now},
-				title: String,
-				items: {type: [{}], default: []}
-			},
-			status: {
-				datetime: {type: Date, default: Date.now},
-				username: {type: String, required: true},
-				text: String
-			},
-			availability: {
-				datetime: {type: Date, default: Date.now},
-				username: {type: String, required: true},
-				text: String
-			},
-			post: {
-				datetime: {type: Date, default: Date.now},
-				username: {type: String, required: true},
-				title: String,
-				text: String,
-				dataURl: String
-			},
-			message: { //msg
-				from: {type: String, required: true},
-				to: {type: String, required: true},
-				datetime: {type: Date, default: Date.now},
-				title: String,
-				text: String
-			},
-			//buddy request
-			buddyRequest: {
-				from: {type: String, required: true},
-				to: {type: String, required: true},
-				datetime: {type: Date, default: Date.now}
-			},
-			Topic: {
-				topic: String,
-				items: {type: [{}], default: []}
-			}, Message: {
-				topicId: Number, //?
-				topicName: String,
-				text: String,
-				score: Number
-			}, Comment: {},
-			link: {
-				title: String,
-				url: String
-			}
-		}
-		for (var model in SCHEMAS) {
-			
-			//str += (' - ' + model )
-			$md[model] = $mg.model(
-					model,
-					$mg.Schema(SCHEMAS[model])
-			)
-		}
-		//	Profile = $mg.model('Profile', pfSchema)
-		Ml = Mail = $m.mail
-		Req = $m.req
-		Ur = User = $m.user
-		PngFile = Fil = Fl = $m.file
-		Cut = Cutout = $m.cutout
-	}
-	qp = qpn$ = function (fn, q, p, nx) {
-		q = q$(q)
-		q.ss = ss$(q.session)
-		p = p$(p)
-		nx = nx$(nx)
-		return function () {
-			fn(q, p, nx)
-		}
-	}
-//
-	json_ = jD = pjd = function (p, str) {
-		return function (z, da) {
-			S(str) ? p.js(da [str]) : p.js(da)
-		}
-	}
-	_findP = function (m, byOb) {
-		return function (q, p) {
-			p.fi($m[m], byOb)
-		}
-	}
-	_se = __send = function (p) {
-		return _pFn('send')
-	}
-	function helpers() {
-		$post = function (q) {
-			return {
-				un: q.un,
-				title: q.b.title,
-				content: q.b.content,
-				dataURL: q.b.dataURL
-			}
-		}
-		$datetimeMail = $dtMail = $dtMl = function (dt, tx, fr) {
-			return {datetime: dt, text: tx, from: fr}
-		}
-		$datURL = function (q) {
-			return {
-				uId: q.uId, dU: q.du
-			}
-		}
-		f1 = function (m, o, f) {
-			if (!F(f)) {
-				f = function (z, da) {
-					f.j(da)
-				}
-			}
-			// can pass in EITHER p .. or an ACTUAL function BRILLIANT
-			$m[m].f1(o, f)
-		}
-		fById = function (m, o, f) {
-			$m[m].findById(o, F(f) ? f : pjd(f))
-		}
-		ALL = function (route, m) {
-			$a.get(route, function (req, res) {
-				$m[m].find(function (z, data) {
-					return res.json(data)
-				})
-			})
-		}
-		all = function (m, f) {
-			if (!F(f)) {
-				f = function (err, data) {
-					f.json(data)
-				}
-			}
-			$m[m].find(f)
-		}
-		$fi = $find = find = function (m, o, f) {
-			$m[m].find(o, F(f) ? f : json_(f))
-		}
-//it performs a find on a model, and returs results sorted by 'dt:-1'
-//date time from most recently stamped
-		$f1 = f1 = function (m, o, f) {
-			if (!F(f)) {
-				f = function (err, data) {
-					f.json(data)
-				}
-			}
-			$m[m].findOne(o, f)
-		}
-		$fId = $fById = fById = function (m, o, f) {
-			$m[m].findById(o, F(f) ? f : pjd(f))
-		}
-		$ALL = ALL = function (route, model) {
-			$a.get(route, function (req, res) {
-				$m[model].find(function (err, data) {
-					return res.json(data)
-				})
-			})
-		}
-		$all = all = function (m, f) {
-			if (!F(f)) {
-				f = function (err, data) {
-					f.json(data)
-				}
-			}
-			$m[m].find(f)
-		}
-		$find = function () {
-			var g = G(arguments)
-			$m[g.f].find.apply($m[g.f], g.r)
-		}
-		$findAll = function (m, fn) {
-			$find(m, {}, fn)
-		}
-		$findAllP = function (m, p) {
-			$findAll(m, _json(p))
-		}
-		find = function (m, o, f) {
-			if (!F(f)) {
-				f = pjd(f)
-			}
-			$m[m].find(o, f)
-		}
-	}
-	
-	function recent() {
-		$recent = rec = function (m, criteria, fn) {
-			var o = criteria
-			$m[m].fi(o).so({dt: -1}).execFi(F(fn) ? fn : function (z, da) {
-				fn.j(da)
-			})
-		}
-		$recent1 = rec1 = function (a, b, f) {
-			$m[a].f1(b).so({dt: -1}).execFi(f)
-		}
-	}
-	
-	$cr = $create = create = function (m, q, p) {
-		$m[m].create({
-					un: q.un, content: q.body.content
-				}, _json(p)
-		)
-	}
-	$crP = $createP = createP = function (a) {
-		$a.PO('/' + a, function (q, p) {
-			create(a, q, p)
-		})
-	}
-	$cre = cre = function (m, o, f) {
-		if (!F(f)) {
-			f = pjd(f)
-		}
-		$m [m].create(o, f)
-	}
-//rm
-	$rmId = $rmById = rmById = function (m, i, f) {
-		if (O(i)) {
-			i = i._id
-		}
-		if (!F(f)) {
-			f = pjd(f)
-		}
-		$m[m].findByIdAndRemove(
-				i,
-				f
-		)
-	}
-	$rm = $remove = remove = function (m, o, f) {
-		$m[m].remove(o, f)
-	}
-	rmById = function (m, i, f) {
-		if (O(i)) {
-			i = i._id
-		}
-		if (!F(f)) {
-			f = pjd(f)
-		}
-		models[m].findByIdAndRemove(
-				i,
-				f
-		)
-	}
-	remove = function (m, o, f) {
-		models[m].remove(o, f)
-	}
-	/*$js = function (p, da) {
-	 p.j(da)
+
+ss$ = $Ss = function (ss) {
+	ss = ss || {}
+	 ss.sv = ss.save;
+	 ss.s = ss.save
+	 ss.rg = ss.regenerate    // new SID and Session inst initd at q.ss.
+	 ss.rl = ss.reload // ss rl updd in cb
+	 ss.d = ss.destroy
+	 // cannot access session in cb
+	 // Destroys  ss, removing q.ss  (re-gens next req)
+	 //destroy session!!!
+//  ssStor-based ss's has  met  called destroy(),
+//     -used for    destroying ss's from the ssStor
+//       –  proper way of tearing down a ssStor-based ss.
+//     q.ss.destroy(); -accepts an opl cb
+//        ( exd af  ss cleared from  store )
+// q.ss.destroy(function () {  p.s('ss deleted') })
+	 ss.t = ss.touch  // Upds  maxAge prop   (ss mw usually does this).
+	 ss.c = ss.ck = ss.cookie
+	 // s.a= s.maxAge
+	 ss.mA = function (a) {
+		 this.c.maxAge = a
 	 }
-	
-	 _pFn = function (p, met) {
-	 return function (z, da) {
-	 p[met](da)
+	 ss.exp = function (a) {
+		 this.c.expires = new Date(Date.now() + a)
 	 }
+	 return ss
+ }
+
+p$ = $P = miniP = $res = function (p) {
+	p=p ||{}
+	 p.js = p.j = p.json
+	 p.da = function (da, fn) {
+		 fn = fn || function (a) {
+			 return a
+		 }
+		 if (da) {
+			 p.js(fn(da))
+		 }
 	 }
-	
-	 _js = _json = function (p) { return _pFn('json') }
-	 */
-	create = function (model, q, p) {
-		models[model].create(
-				{un: q.un, content: q.body.content},
-				function (z, da) {
-					p.j(da)
-				}
-		)
-	}
-	createP = function (a) {
-		$a.post('/' + a, $w.u, function (q, p) {
-			create(a, q, p)
-		})
-	}
-	cre = function (model, o, f) {
-		if (!F(f)) {
-			f = pjd(f)
-		}
-		models[model].create(o, f)
-	}
-}
+	 p.daFn = function (fn) {
+		 var p = this
+		 return function (z, da) {
+			 p.da(da, fn)
+		 }
+	 }
+	 p.f1 = function (m, ob) {
+		 m.f1(ob, _js(this))
+	 } // ***
+	 p.s = p.send;
+	 p.j = p.json;
+	 p.jp = p.jsonp
+	 p.scrs = function (fns) {
+		 var p = this
+		 async.series(fns, function (z, scrs) {
+			 var str = ''
+			 scrs.forEach(function (js) {
+				 str += js
+			 })
+			 p.s(scrTag(str))
+		 })
+	 }
+	 p.js = function (JS) {
+		 var p = this, fns = []
+		 JS.forEach(function (js) {
+			 fns.push(function (cb) {
+				 $f.u8($tJs(js), function (z, j) {
+					 cb(null, j)
+				 })
+			 })
+		 })
+		 p.scrs(fns)
+	 }
+	 p.lc = p.l = p.locals;
+	 p.r = p.render
+	 p.rd = function (u) {
+		 var p = this;
+		 u = S(u) ? u : 'back';
+		 p.redirect(u)
+	 }
+	 p.xC = p.clearCookie //
+	 p.fm = p.format;
+	 p.a = p.append;
+	 p.e = p.end
+	 p.lc = p.location;
+	 p.lk = p.links
+	 p.f = p.sF = p.sendFile;
+	 p.at = p.attachment;
+	 p.dl = p.download
+	 p.st = p.status;
+	 p.sS = p.sSt = p.sendStatus
+	 p.t = p.ty = p.type;
+	 p.v = p.vary // ?
+	 p.s4 = p.s400 = function () {
+		 return this.STS(400)
+	 }
+	 p.h = p.g = p.hd = function (k, v) {
+		 var p = this
+		 //get/set header
+		 if (U(v)) {
+			 return p.get(k)
+		 }
+		 p.set(k, v)
+		 return p
+	 }
+	 p.cT = function (cT) {
+		 var p = this
+		 p.h('Content-Type', cT)
+		 return p
+	 }
+	 p.wH = function (a) {
+		 this.writeHead(a);
+		 return this
+	 };
+	 p.w = function (a) {
+		 this.write(a);
+		 return this
+	 }
+	 p.wB = function (a) {
+		 return this.write(a, 'binary')
+	 }
+	 p.e = p.end
+	 p.tx = function () {
+		 return this.wH(500, {"Content-Type": "text/plain"})
+	 }
+	 p.z = function (z) {
+		 return this.tx().w(z + "\n").e()
+	 }
+	 p.$p = function () {
+		 var g = G(arguments)
+		 this.s(
+				 _p.apply(null, g)
+		 )
+	 }
+	 p.wHwBE = function (a, b) {
+		 return this.wH(a).wB(b).e()
+	 }
+	 p.s403 = p.s4 = function () {
+		 return this.sTs(403)
+	 }
+	 p.ok = function () {
+		 return this.s('OK')
+		 n()
+	 }
+	 p.c = p.ck = p.cookie;
+	 // p.a = p.app;   // p.hdS = p.headersSent
+	 return p
+ }
+ 
+N$ = n$ = $N = nx$ = function (nx) {
+	nx = nx ||{}
+	 nx.if = function (z) {
+		 if (z) {
+			 this(z)
+		 }
+	 }
+	 
+	 return nx
+ }
+ 
+  
