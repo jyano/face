@@ -1,5 +1,4 @@
 $.fn.dtp = $.fn.datepicker
-
 //https://www.youtube.com/watch?v=fA1NW-T1QXc
 UI1 = NV4 = MENU = function () {
 	$CSS({'.ui-menu': {w: 150}})
@@ -8,7 +7,8 @@ UI1 = NV4 = MENU = function () {
 		$.li(['Football', $.ul([
 			$.li('Iain Hume'),
 			$.li('Del Piero'),
-			$.li('David James')])]),
+			$.li('David James')
+		])]),
 		$.li(['Cricket', $.ul([
 			$.li('Sachin'),
 			$.li('Ganguly'),
@@ -19,6 +19,55 @@ UI1 = NV4 = MENU = function () {
 		$.li(['Tennis', $.ul([$.li().A('Patrick Rafter')])])
 	]).id('menu')
 	$("#menu").menu()
+	$('#menu').on('menuselect', function (ev, ui) {
+		li = ui.item.context
+		$li = $(li)
+		i = ev
+		u = ui
+		$l("text: " + $li.text())
+		$l(ui.item.context.textContent)
+	})
+}
+HZMENU = function () {
+ 
+	 
+	
+	var ul = $.ul()
+	
+	$.dI('jqxWidget').A($.dI('jqxMenu').A(ul))
+	
+	ul.A($.li().A($.a('Home')))
+
+	li1 = $.li().A('About Us',
+			$.ul().A(
+					$.li().A($.a('History')),
+					$.li().A($.a('Our Vision'))))
+
+	li2 = $.li('Services')
+	li3 = $.li()
+	
+	ul1 = $.ul()
+	
+	li3.A('Products', ul1)
+	
+	ul1.A(
+			$.li().A(
+					$.a('New'),
+					$.ul().A(
+							$.li().A($.a('Corparate Use')),
+							$.li().A($.a('Private Use')))),
+			$.li().A($.a('Used'),
+					$.ul().A($.li().A($.a('Corporate')), $.li().A($.a('Private Use')))),
+			$.li().A($.a('Featured')))
+
+	
+	ul.A(li1, li2, li3,
+			$.li().A($.a('Gallery')),
+			$.li().A($.a('Events')),
+			$.li().A($.a('Career')),
+			$.li().A($.a('Contact'))
+	)
+	$("#jqxMenu").menu({width: 600, height: 30});
 }
 UI2 = NV3 = AUTOCP = function () {
 	$.x('x', 'autocp')
@@ -80,7 +129,6 @@ UI2 = NV3 = AUTOCP = function () {
 	}
 }
 UI3 = DIAL = function () {
-
 	$l('dial')
 	$.x(null, 'dialog')
 	$.d([
@@ -93,7 +141,7 @@ UI3 = DIAL = function () {
 		$.dlg('dialog 3')
 		$.dlg('dialog 4')
 	})
-} 
+}
 UI4 = DPB = function () {
 	$.x('b', 'dpb')
 	$CSS({
@@ -219,15 +267,15 @@ UI11 = TIP = function () {
 	])//.tooltip()
 	$(document).tooltip()
 }
-
-
 $.dlg = function (msg) {
-	var  dlg = $.d().A(msg).at({title: "Messaage"}).dialog({
+	var dlg = $.d().A(msg).at({title: "Messaage"}).dialog({
 		autoOpen: true,
 		width: 400, modal: true,
 		closeOnEscape: true,
-		buttons: {Ok: function () {
-			dlg.dialog("close")}
+		buttons: {
+			Ok: function () {
+				dlg.dialog("close")
+			}
 		}
 	})
 }

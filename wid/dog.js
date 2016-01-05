@@ -12,17 +12,21 @@ DOG = function () {
 	})
 }
 DOGS = function () {
-
-
 	$s({
 	
 	bd: {C: $r() },	
 	$: {  M:10}
 	
 	})
-	
 	mainDlg()
-
+	$.ip().id('check').A()
+	$.bt('check', function(){
+		var tryUn = $('#check').V()
+		$.post('/user/unIsAvail', {un: tryUn}, function(un){
+			un? $.h1(un + ' is available'):
+			$.h1(tryUn + ' us TAKEN.. try again..')
+		})
+	})
 }
 
 
@@ -47,19 +51,22 @@ function newAcc() {
 			$.f().A(
 			$.ip().ph('username').id('un'),
 			$.ip().ph('password').id('pw'),
-			$.bt('do it!', function(){
+			$.bt('do it!')
 			
-			})).submit(function(ev){
+			).submit(function(ev){
+			
 						$.pD(ev)
 						var ob = {un: $('#un').V(), pw: $('#pw').V()}
 						$l(ob)
 						
-						$.po('/wap/user', ob, function(da){
 						
-						
+						$.post('/user/user', ob, function(da){
+							$l('da:')
+							$l(da)
 						})
 					
 					}))
+					
 	d.dialog({
 		show: {effect: "blind", duration: 800},
 		hide: {effect: "explode", duration: 1000},

@@ -87,6 +87,7 @@ require('./server/socialRts')
 require('./server/mugRts')
 //require('./server/uplodLibRts')
 require('./server/picRtsMW')
+require('./server/adminRts')
 
 require('./server/$api$/$twitServer$')
 require('./$routes$')

@@ -1,16 +1,21 @@
 $stc('', '../art',
-		'web/both', 'web', 'web/css', 'web/dom', 'web/html', 'web/js','login','work',
-		'web/front',
-		'front', 'wid', 'nok', 'bone',
-		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx', 'easel', 'easel/filter', 
-		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events', 'easel/movieClip',
-		'easel/shapes', 'easel/sprite', 'wappy','muggy',
-		'box', 'box/bods', 'box/fixts', 'box/shapes', 'box/world',
-		'box/collide', 'box/geo')
-
+		'web/both', 'web',
+		 'web/css', 'web/dom', 'web/html', 'web/js',
+		'wid', 'nok', 'bone',
+		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx',
+		'easel',
+		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events',
+		'easel/filter', 'easel/movieClip', 'easel/shapes', 'easel/sprite', 
+		'mashUp','sync',
+		'wappy','wappy/work','muggy',
+		'box',
+		'box/bods', 'box/collide', 'box/fixts',
+		'box/geo', 'box/shapes', 'box/world'
+)
 
 Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 
 	'cjsMC', 'ko', 'bb', 'pureDa']
+	
 Web = [
 	'webColor', 'webCss', 'webFont', 'web', 
 	'rules',  'media', 'flex', 'styles',
@@ -32,12 +37,19 @@ Graphics = [
 Wid = [
 	'mock',
 	  'uiWids','custWids','widLS',
-	   'effects','interactions' ,'dog'
+	   'effects','interactions' ,'dog','wid',
+	   'widLS'
 	]
 Bone = [
-	'bone', 'bbRtr', 'bbColl', 'bbView','bbEvt']
-Nok = [
-	'knock','koCustBind','koCustComps','koList']
+	'bone',
+	'bbColl', 'bbDirt', 'bbEvt', 'bbFiltColl',
+	'bbRtr','bbView',
+	'bbLS','bbServer','bbServerMore'
+]
+
+Nok = ['knock','koCustom','koMore'
+]
+
 Stage = [
 	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
 	'objects', 'matrix', 'cjsPoly',
@@ -51,7 +63,8 @@ Anim = [
 	'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
 	'movie', 'timeline', 'gunnertron']
 Wap = [
-	'wappy', 'users', 'login', 'social' ]
+	'wappy', 'users', 'login', 'social' 
+	]
 Box = [
 	'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
 	'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
@@ -59,12 +72,19 @@ Box = [
 	'bodFix', 'forces']
 
 jsArrs= [
-	Deps, Web,
+	Deps,
+	Web,
 	Graphics,
-	Stage, Anim, Wid,
-	Bone, Nok,Wap,
+	Stage,
+	Anim,
+	Wid,
+	Bone,
+	Nok,
+	Wap,
 	Box
 ]
+
+
 
 $a.get('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()

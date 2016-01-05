@@ -1,5 +1,24 @@
+$a.post('/user/user', function (q, p, nx) {
+	User.create(q.body, function (z, user) {
+		if (z) {p.j('z');
+			nx(z)}
+		else {
+			$l(user)
+			var ss = q.ss = q.session
+			// _.x(q.ss, {un: u.un,  loggedIn: true}).save(function () { p.json(u.un) })
+			//set session u=u.u (user name= user.username)
+			q.ss.un = user.un //set session li=true (loggedIn=true)//q.ss.loggedIn = true
+			//save ss and send back a json obj of username -so a string?
+			//_.x(q.session, {un: u.un, loggedIn: true})
+			q.ss.save(function () {
+				p.json(ss)
+			})
+		}
+	})
+	
+	//$l(z.code == 11000 ? '!!' : '!');//$d(z);
+})
 $a.get('/user/session', function (q, p) {
- 
 	var ss = q.session
 	$l('ss: ')
 	$l(ss)
@@ -11,7 +30,6 @@ $a.get('/user/session', function (q, p) {
 	}
 	p.send(ss)
 })
-
 $a.get('/user/ses', function (q, p) {
 	var ss = q.session
 	$l('ss: ')
@@ -29,54 +47,17 @@ $a.get('/user/ses', function (q, p) {
 		p.end('welcome to the session demo. refresh!')
 	}
 })
-$a.get('/user/unIsAvail', function (q, p) {
-})
-$a.get('/user/allUsers', function (q, p) {
-	User.find(function (z, users) {
-		if (z) {
-			$l('z')
-		}
-		else {
-			$l(JSON.stringify(users))
-			p.send(users)
-		}
-	})
-})
-$a.get('/user/addRndUser', function (q, p) {
-	$l('addRndUser')
-	var mockUser = {
-		un: 'larry' + R(1000000),
-		pw: 'password' + R(100)
-	}
-	$l('new user: ' + mockUser.un)
-	User.create(mockUser, function (z, user) {
-		if (z) {
-			$l("z")
-		}
-		p.send(user)
-	})
-})
-$a.post('/user/user', function (q, p, nx) {
 
-	User.create(q.body, function (z, u) {
-		if (z) {
-			p.j('z');
-			nx(z)
-		}
-		else {
-			q.ss = q.session
-			// _.x(q.ss, {un: u.un,  loggedIn: true}).save(function () { p.json(u.un) })
-			//set session u=u.u (user name= user.username)
-			q.ss.un = user.un //set session li=true (loggedIn=true)//q.ss.loggedIn = true
-			//save ss and send back a json obj of username -so a string?
-			//_.x(q.session, {un: u.un, loggedIn: true})
-			q.ss.sv(function () {
-				p.j(ur.un)
-			})
-		}
+$a.post('/user/unIsAvail', function (q, p) {
+	User.findOne({un: q.body.un}, function(z, user){
+		p.send(user ? false: q.body.un)
+		
 	})
-	
-	//$l(z.code == 11000 ? '!!' : '!');//$d(z);
+
+})
+
+ $a.get('/login', function (q, p) {
+	p.send('fred')
 })
 $a.post('/user/login', function (q, p, nx) {
 	var accountCreds
@@ -105,12 +86,6 @@ $a.post('/user/login', function (q, p, nx) {
 				p.fail()
 	})
 })
-$a.delete('/user', function (q, p) {
-////delete user  
-// does this('del') work like post or get (in terms of express)?
-	Ur.rm(q.b, _json(p))
-})
-
 $a.post('/login', function (q, p) {
 	$l('post /login')
 	var creds = q.body
@@ -127,9 +102,7 @@ $a.post('/login', function (q, p) {
 		}
 	})
 })
-$a.get('/login', function (q, p) {
-	p.send('fred')
-})
+
 $a.post('/dudes', function (q, p) {
 	$l('dudes')
 	$l(q.body)
@@ -152,6 +125,22 @@ $a.post('/un', function (q, p) {
 		p.send(q.session)
 	})
 })
+$a.delete('/user', function (q, p) {
+////delete user  
+// does this('del') work like post or get (in terms of express)?
+	
+	User.remove(q.body, function(z,u){
+		
+		if(!z){
+			p.send(q.body.un)
+		}
+		else{$l('z')}
+		
+	})
+	
+})
+
+
 // 'user' middleware:
 // what can it do?
 // it can see is someone is 'authed'

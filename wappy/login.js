@@ -111,15 +111,28 @@ HOMPAG=function(){$s({$:{M:2,P:2, fS:36, tA:'c'},
  
 SEEUSERS=function(){
 	$.h1('see users')
-	$.get('/wap/allUsers', function(users){
+	$.get('/admin/allUsers', function(users){
 		if(!users){alert('!users')}
-		else{_.e(users, function(user){
+		
+		else{
+		
+			_.e(users, function(user){
+			
 				$.d().C($r()).mar(20).A($.h1(user.un), 
-				$.h5(JSON.stringify(user) )),
-				$.hr()
+				$.h5(J.s(user) )), $.hr()
+
+			$.bt('DELETE', function () {
+				
+				$.ajax({url:'/user', data:{un: user.un}, method:'delete'}, function (user) {
+			
+					
+					$.h1(user.un + ' deleted.')
+				})
 			})
-		}
+			
+		})}
 	})
+	
 	$.bt('add random user', function(){
 		$.get('/wap/addRndUser', function(user){
 			$.h1(user.un)
@@ -142,6 +155,11 @@ UNISAVAIL=function(){
 	
 }
 
+
+ADMIN=function(){
+
+
+}
 
 
 

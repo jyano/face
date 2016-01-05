@@ -108,3 +108,90 @@ $.fn.tIx = function (a, b) {
  :tabbable Selector
  Selects elements which the user can focus via tabbing.
  */
+EF1 = COLORANIM = CANIM = function () {
+	function alt() {
+		JU1 = COLORANIM = CANIM = function () {
+			$.x()
+			$CSS(
+					{
+						$el: {
+							C: '#aaa', c: '#006', fZ: 25,
+							tA: 'c', P: '1em'
+						}
+					}
+			)
+			$.d().id('el').A('-color anim-')
+			$.bt('anim!', function () {
+						$("#el").an({
+							c: 'g',
+							C: "rgb(20,20,20)"
+						})
+					}
+			)
+			/*
+			 Color Animation
+			 jQuery UI effects core adds the ability to animate color properties using rgb(), rgba(), 
+			 hex values, or even color names such as "aqua". Simply include the jQuery UI effects core file and .animate() will gain support for colors.
+			
+			 The following properties are supported:
+			
+			 backgroundColor
+			 borderBottomColor
+			 borderLeftColor
+			 borderRightColor
+			 borderTopColor
+			 color
+			 columnRuleColor
+			 outlineColor
+			 textDecorationColor
+			 textEmphasisColor
+			 Support for color animation comes from the jQuery Color plugin. The Color plugin provides several functions for working with colors. For full documentation, please see the jQuery Color documentation.
+			 Class Animations
+			 While there are use cases for directly animating individual color properties, it is often a better approach to contain the styles in a class. jQuery UI provides a few methods which will animate the addition or removal of a CSS class, specifically .addClass(), .removeClass(), .toggleClass(), and .switchClass(). These methods will automatically determine which properties need to change and apply the appropriate animations.
+			
+			 link
+			 */
+		}
+	}
+	
+	$.x()
+	$CSS(
+			{
+				$el: {
+					C: '#aaa', c: '#006', fZ: 25,
+					tA: 'c', P: '1em'
+				}
+			}
+	)
+	$.d().id('el').A('-color anim-')
+	$.bt('anim!', function () {
+				$("#el").an({
+					c: 'g',
+					C: "rgb(20,20,20)"
+				})
+			}
+	)
+	/*
+	 Color Animation
+	 jQuery UI effects core adds the ability to animate color properties using rgb(), rgba(), 
+	 hex values, or even color names such as "aqua". Simply include the jQuery UI effects core file and .animate() will gain support for colors.
+	
+	 The following properties are supported:
+	
+	 backgroundColor
+	 borderBottomColor
+	 borderLeftColor
+	 borderRightColor
+	 borderTopColor
+	 color
+	 columnRuleColor
+	 outlineColor
+	 textDecorationColor
+	 textEmphasisColor
+	 Support for color animation comes from the jQuery Color plugin. The Color plugin provides several functions for working with colors. For full documentation, please see the jQuery Color documentation.
+	 Class Animations
+	 While there are use cases for directly animating individual color properties, it is often a better approach to contain the styles in a class. jQuery UI provides a few methods which will animate the addition or removal of a CSS class, specifically .addClass(), .removeClass(), .toggleClass(), and .switchClass(). These methods will automatically determine which properties need to change and apply the appropriate animations.
+	
+	 link
+	 */
+}
