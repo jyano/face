@@ -1,7 +1,6 @@
  
 	Box = [
-	
-	'bx',
+		'bx','box0','boxBool',
 	
 		'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
 		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
