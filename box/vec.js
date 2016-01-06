@@ -183,20 +183,21 @@ _vec = function (o, g) {
 	}
 	return v
 }
-_V = function (x, y, x2, y2) {
+
+V = function fn() {//x, y, x2, y2
 	var g = G(arguments)
-	if (g.A_) {
-		return _V.apply(null, g.f)
-	}
+	if (g.A) {return fn.apply(null, g.f)}
 	return N(g.t) ? {
 		x: (g.f - g.t) / 2,
 		y: (g.s - g.fo) / 2
-	} : N(g.f) ? {x: g.f, y: g.s} : x
+	} : O(g.f)? {x: g.f.x, y: g.f.y}: 
+			{x: N(g.f,0), y: N(g.s,0)} 
 }
-V = function (x, y, x2, y2) {
-	var g = G(arguments),
-			x = g.f, y = g.s, x2 = g.t, y2 = g.fo,
-			v, o
+
+
+Vold = function (x, y, x2, y2) {
+	var g = G(arguments), x = g.f, y = g.s, x2 = g.t, y2 = g.fo, v, o
+			
 	o = {x: g.f, y: g.s, x2: g.t, y2: g.fo}
 	if (A(x)) {
 		y2 = x[3]
@@ -205,16 +206,19 @@ V = function (x, y, x2, y2) {
 		x = x[0]
 		o = {x: g.f, y: g.s, x2: g.t, y2: g.fo}
 	}
+	
 	if (N(y2)) {
 		x = (x - x2) / 2
 		y = (y - y2) / 2
 		o = {x: g.f, y: g.s, x2: g.t, y2: g.fo}
 	}
+	
 	else if (O(x)) {
 		o = obX(x)
 		x = o.x
 		y = o.y
 	}
+	
 	o.x = N0(o.x)
 	o.y = N(o.y, o.x)
 	return _vec({x: N0(x), y: N(y, x)}, g)

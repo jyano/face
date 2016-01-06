@@ -1,6 +1,7 @@
 bx.DD = b2DebugDraw = bx.D.b2DebugDraw
 bx.DD.hBit = b2d.DD.e_shapeBit
-dD.ctx = function (ctx) {
+
+dD.SS=dD.ctx = function (ctx) {
 	var dD = this  //it is looking for  a context?
 	if (U(ctx)) {
 		return dD.GetSprite()
@@ -22,7 +23,7 @@ dD.sc = function (sc) {
 	return dD
 	// = dD.dS = dD.scale = dD.drawScale
 }
-dD.al = dD.alpha = dD.fA = function (al) {
+dD.SA=dD.al = dD.alpha = dD.fA = function (al) {
 	var dD = this
 	if (U(al)) {
 		return this.GetAlpha()
@@ -31,7 +32,7 @@ dD.al = dD.alpha = dD.fA = function (al) {
 	return this
 //Get/SetAlpha(al:N)    used for lines
 }
-dD.fA = dD.fAl = function (a) {
+dD.SFA=dD.fA = dD.fAl = function (a) {
 	var dD = this
 	if (U(a)) {
 		return dD.GetFillAlpha()
@@ -40,7 +41,7 @@ dD.fA = dD.fAl = function (a) {
 	return dD
 	//= dD.alpha = dD.fillAlpha
 }
-dD.lT = function (lt) {
+dD.SLT=dD.lT = function (lt) {
 	var dD = this
 	if (U(lt)) {
 		return dD.GetLineThickness()
@@ -49,7 +50,8 @@ dD.lT = function (lt) {
 	return dD
 	// = dD.line
 }
-dD.fl = function (fl) {
+
+dD.SF=dD.fl = function (fl) {
 	var dD = this
 	var DD = b2DebugDraw
 	if (U(fl)) {
@@ -155,11 +157,11 @@ $dD = function (sp, sc) {
 	}
 }
 $dD.aabb = $dD.a = b2d.DD.e_aabbBit //4
-$dD.hBit =$dD.shape = $dD.h = b2d.DD.e_shapeBit //1
-$dD.jt = $dD.j = b2d.DD.e_jointBit //2
+$dD.hBit = $dD.shape = $dD.h = b2d.DD.e_shapeBit //1
+$dD.jBit= $dD.jt = $dD.j = b2d.DD.e_jointBit //2
 $dD.pair = $dD.p = b2d.DD.e_pairBit //8
 $dD.cOM = $dD.c = b2d.DD.e_centerOfMassBit // 10
 $dD.co = b2d.DD.e_controllerBit //20
- 
- 
+bx.hBit = bx.DD.e_shapeBit
+bx.jBit = bx.DD.e_jointBit
  

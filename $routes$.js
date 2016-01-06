@@ -22,7 +22,7 @@
 
 
 $stc('', '../art',
-		'web/both', 'web',
+		'web/both', 'web','web/events',
 		 'web/css', 'web/dom', 'web/html', 'web/js',
 		'wid', 'nok', 'bone',
 		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx',
@@ -62,9 +62,19 @@ function web(){
 	Web = ['jq',
 		'webColor', 'webCss', 'webFont', 'web',
 		'rules', 'media', 'flex', 'styles',
-		'sJQ', 'webEvents', 'attributes', 'qAnim', 'traverse',
+		'sJQ',  'attributes', 'qAnim', 'traverse',
 		'html', 'inputs', 'lists', 'submit',
-		'root', 'nest', 'll', 'appy', 'localStorage'
+		'root', 'nest', 'appy', 'localStorage', 
+		'll','l',
+		
+		'webEvents',
+		'webMouse',
+		 'webDrag',
+		 'press',
+		'webTouch',
+		'webKeys'
+	
+	
 	]
 }
 function mods() {

@@ -88,6 +88,13 @@ fD.H = function (h) {
 	return this
  
 }
+fD.SAB=function(){var fD=this
+	
+	var h =fD.H()
+	
+	h.SAB.apply(h,arguments)
+
+return fD}
 fD.Halt = fD.setShapeAlt = function (shape) {
 	if (U(shape)) {
 		return this.shape

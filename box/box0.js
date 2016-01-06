@@ -11,6 +11,8 @@ bx.FD = b2FixtureDef = bx.D.b2FixtureDef
 bx.F = b2Fixture = bx.D.b2Fixture
 bx.BD = b2BodyDef = bx.D.b2BodyDef
 bx.B = b2Body = bx.D.b2Body
+bx.sB = bx.B.b2_staticBody
+bx.dB = bx.B.b2_dynamicBody
 //mathy
 bx.V = b2Vec2 = bx.Vec = bx.M.b2Vec2
 bx.AABB = b2AABB = bx.C.b2AABB

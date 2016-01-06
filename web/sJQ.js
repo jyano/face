@@ -272,3 +272,40 @@ MGA = MARGINAUTO = function () {
 	i.mar('auto')
 	o.mar('auto')
 }
+$.fn.ps = function () {//rel to document
+	return this.position()
+}
+$.fn._os = function () {
+	return this.offset() //rel to offset parent
+}
+$.fn.os = function () {
+	var os = this.offset()
+	return {x: os.left, y: os.top}
+}
+$.fn.tN = function () {
+	return this[0].tagName
+}
+$.fn.osP = function () {
+	return this[0].offsetParent
+}
+$.fn.osT = function () {
+	return this[0].offsetTop
+}
+$.fn.osT = function () {
+	return this[0].offsetLeft
+}
+i$ = function (id) {
+	return $('#' + id)
+}
+k$ = function (k) {
+	return $('.' + k)
+}
+i$0 = function (id) {
+	return $0('#' + id)
+}
+k$0 = function (k) {
+	return $0('.' + k)
+}
+$.fn.gC = function (context) {
+	return this[0].getContext(context || '2d')
+}

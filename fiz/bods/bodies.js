@@ -525,3 +525,5 @@ function _pre() {
 } 
 
 //b.CF( fD.cH(45) ) 
+
+b.GM=function(){return this.GetMass()}

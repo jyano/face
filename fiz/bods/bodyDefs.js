@@ -1,6 +1,18 @@
 $L('type')
 bD.Set = function () {
-	this.position.Set.apply(this.position, arguments)
+	
+	var bD=this, ps = bD.position
+	
+	ps.Set.apply(ps, arguments)
+	return bD
+}
+
+bD._X = function(x){
+	this.position.x =x 
+	return this
+}
+bD._Y = function (y) {
+	this.position.y = y
 	return this
 }
 bD.X = function (x) {
@@ -13,6 +25,7 @@ bD.X = function (x) {
 		return bD.XY(x, p.y)
 	}
 }
+
 bD.Y = function (y) {
 	return U(y) ? this.XY().y : this.XY(this.XY().x, y)
 	bD.Yalt = function (y) {
@@ -23,106 +36,108 @@ bD.Y = function (y) {
 		return bD.XY(p.x, y)
 	}
 }
+bD.Ps = function (ps) {
+	var bD = this
+	bD.GP = function () {
+		return this.position
+	}
+	bD.SP = function (ps) {
+		this.position = ps;
+		return this
+	}
+	return U(ps) ? this.GP() : this.SP(ps)
+}
 bD.XY = function (x, y) {
 	var bD = this
-	bD.Ps = function (ps) {
-		var bD = this
-		bD.GP = function () {
-			return this.position
+	//= bD.p = bD.ps = bD.xy
+	return U(x) ? this.Ps().m() : 
+	this.Ps(V(x, y).d())
+
+} // will need to fix
+bD.XYalt = function (x, y) {
+	var bD = this, g = G(arguments), p
+	if (g.u) {
+		return bD.position.m()
+	}
+	p = V(g.f, g.s, '-')
+	bD.position.Set(p.x, p.y)
+	return bD
+}
+bD.Xalt = function (x) {
+	var bD = this, p = bD.XY()
+	if (U(x)) {
+		return p.x
+	}
+	return bD.XY(x, p.y)
+	function alt() {
+		bD.X = function (x) {
+			var pos = this.XY()
+			if (U(x)) {
+				return pos.x
+			}
+			return this.XY(x, pos.y)
 		}
-		bD.SP = function (ps) {
-			this.position = ps;
+	}
+}
+bD.Yalt = function (y) {
+	var bD = this, p = bD.XY()
+	if (U(y)) {
+		return p.y
+	}
+	return bD.XY(p.x, y)
+	function alt() {
+		bD.Y = function (y) {
+			var pos = this.XY()
+			if (U(y)) {
+				return pos.y
+			}
+			return this.XY(pos.x, y)
+		}
+	}
+}
+bD.XYalt = bD.p = bD.ps = bD.xy = function (x, y) {
+	var args = G(arguments)
+	args[0] = x;
+	args[1] = y;
+	if (x === '*') {
+		x = Math.random() * 10 * 60
+	}
+	if (y === '*') {
+		y = Math.random() * 10 * 60
+	}
+	var pos = this.position
+	if (U(x)) {
+		return {x: pos.x * 30, y: pos.y * 30}
+	}
+	this.position.Set(x / 30, y / 30)
+	return this
+	function alt() {
+		bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
+			var args = G(arguments)
+			args[0] = x;
+			args[1] = y;
+			if (x === '*') {
+				x = Math.random() * 10 * 60
+			}
+			if (y === '*') {
+				y = Math.random() * 10 * 60
+			}
+			var pos = this.position
+			if (U(x)) {
+				return {x: pos.x * 30, y: pos.y * 30}
+			}
+			//if(O(x)){this.position=x;return this}
+			this.position.Set(x / 30, y / 30)
 			return this
 		}
-		return U(ps) ? this.GP() : this.SP(ps)
-	}
-	//= bD.p = bD.ps = bD.xy
-	return U(x) ? this.Ps().m() : this.Ps(V00(x, y).d())
-	bD.XYalt = function (x, y) {
-		var bD = this, g = G(arguments), p
-		if (g.u) {
-			return bD.position.m()
-		}
-		p = V(g.f, g.s, '-')
-		bD.position.Set(p.x, p.y)
-		return bD
-	}
-	bD.Xalt = function (x) {
-		var bD = this, p = bD.XY()
-		if (U(x)) {
-			return p.x
-		}
-		return bD.XY(x, p.y)
-		function alt() {
-			bD.X = function (x) {
-				var pos = this.XY()
-				if (U(x)) {
-					return pos.x
-				}
-				return this.XY(x, pos.y)
+		bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
+			var bD = this, g = G(arguments), p
+			if (g.u) {
+				return bD.position.m()
 			}
-		}
-	}
-	bD.Yalt = function (y) {
-		var bD = this, p = bD.XY()
-		if (U(y)) {
-			return p.y
-		}
-		return bD.XY(p.x, y)
-		function alt() {
-			bD.Y = function (y) {
-				var pos = this.XY()
-				if (U(y)) {
-					return pos.y
-				}
-				return this.XY(pos.x, y)
-			}
-		}
-	}
-	bD.XYalt = bD.p = bD.ps = bD.xy = function (x, y) {
-		var args = G(arguments)
-		args[0] = x;
-		args[1] = y;
-		if (x === '*') {
-			x = Math.random() * 10 * 60
-		}
-		if (y === '*') {
-			y = Math.random() * 10 * 60
-		}
-		var pos = this.position
-		if (U(x)) {
-			return {x: pos.x * 30, y: pos.y * 30}
-		}
-		this.position.Set(x / 30, y / 30)
-		return this
-		function alt() {
-			bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
-				var args = G(arguments)
-				args[0] = x;
-				args[1] = y;
-				if (x === '*') {
-					x = Math.random() * 10 * 60
-				}
-				if (y === '*') {
-					y = Math.random() * 10 * 60
-				}
-				var pos = this.position
-				if (U(x)) {
-					return {x: pos.x * 30, y: pos.y * 30}
-				}
-				//if(O(x)){this.position=x;return this}
-				this.position.Set(x / 30, y / 30)
-				return this
-			}
-			bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
-				var bD = this, g = G(arguments), p
-				if (g.u) {
-					return bD.position.m()
-				}
-				p = V(g.f, g.s, '-')
-				bD.position.Set(p.x, p.y)
-				return bD
-			}
+			p = V(g.f, g.s, '-')
+			bD.position.Set(p.x, p.y)
+			return bD
 		}
 	}
 }
@@ -353,9 +368,16 @@ function type() {
 }
 $sB = $bD = function (x, y) {
 	//return $bD(x, y).ty(0)
-	var v = V(x, y)
+
+	var g=G(arguments)
+	
 	var bD = new b2d.BD()
-	bD.XY(N(v.x, 0), N(v.y, 0))
+	if(g.u){return bD}
+	
+	var v = V(x, y)
+	bD.XY(N(v.x, 0), N(v.y, 0)
+	
+	)
 //	x = N(x) ? x : 300
 //	y = N(y) ? y : 300
 	return bD
