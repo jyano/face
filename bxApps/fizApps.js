@@ -59,7 +59,7 @@ BOXW1 = function () {
 	})
 	$l('bodyCOunt:' + w.numBods())
 }
-function maze() {
+ 
 	MAZE = BXD = function () {
 		$box()
 		w.grid(maze, 100, 200, 20, 30)
@@ -76,7 +76,7 @@ function maze() {
 		)
 		w.D(400, 300, dick)
 	}
-}
+ 
 VORTEX = function () {
 	w = b2d.W()
 	y = w.ship()
@@ -354,29 +354,7 @@ FSEL = function () {
 		//return true
 	})
 }
-CLICKKILL = function () {
-	box(function () {
-	})
-	w.circle(420, 400, 150)
-	w.circleStat(300, 400, 50)
-	w.circleStat(400, 550, 50)
-	w.circleStat(500, 550, 50)
-	w.circleStat(550, 550, 50)
-	cv.click(function (e) {
-		e.preventDefault();
-		cvPos = cv.position()
-		cvPos.x = cvPos.left
-		cvPos.y = cvPos.top
-		var mouse = {x: e.pageX - cvPos.x, y: e.pageY - cvPos.y}
-		$l('mousex ' + mouse.x)
-		w.qPoint(mouse.x, mouse.y, function (f, b, w) {
-			b.kill()
-			//	w.mj = w.mJ(b, o.x, o.y)
-			//return true
-		})
-		return false
-	})
-}
+ 
 FSEL = function () {
 	n = 0
 	box(function () {

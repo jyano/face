@@ -146,7 +146,7 @@ $.i = $.img = function () {
 	}
 	return $i
 }
-$.can = $.canvas = $.cv = $.c = $.c2 = function (c, width, h, x, y) {
+$.c = $.can = $.canvas = $.cv =  $.c2 = function (c, width, h, x, y) {
 	var g = G(arguments), o, q
 	o = g.S_ ?
 	{c: g.f, w: g.s, h: g.t, x: g[3], y: g[4]} :
@@ -165,8 +165,12 @@ $.can = $.canvas = $.cv = $.c = $.c2 = function (c, width, h, x, y) {
 	if (g.p) {
 		q.dg()
 	}
-	return q.id('canvas').k('canvas can').al(.8)
+
+ q.id('canvas').k('canvas can').al(.8)
+ return q.A()
 }
+
+
 $.cv0 = function () {
 	return $.c2.apply($, arguments)[0]
 }

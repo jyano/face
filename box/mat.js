@@ -1,3 +1,4 @@
+https://en.wikipedia.org/wiki/Bounding_volume
 bx.tMt = function (x, y) {
 	return V(x, y).d()
 }

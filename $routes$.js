@@ -9,10 +9,9 @@
 		
 		'boxApps','bxMouseApps',
 		'bxShapeApps','edgeApps','controlApps','fixApps',
-		'fizApps','forcesApps',
-		'worldApps'
+		'fizApps','forcesApps','mouseJtApps',
+		'worldApps','bxWebsiteExamples'
 			
-	
 	]
 
 

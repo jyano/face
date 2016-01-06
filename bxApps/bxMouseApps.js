@@ -1,21 +1,4 @@
-STACKTHREE = function () {
-	W({m: 'ball', w: 0})
-	w.S(500, 600, 'y', 1000, 20)
-	b = w.B(500, 200, 'o', 40).K('ball')
-	w.boxesStat([350, 260, 880, 30])
-	w.B(310, 120, 't', 60, 60)
-	w.B(320, 120, 't', 60, 60)
-	w.B(340, 120, 't', 60, 60)
-	w.B(350, 120, 't', 60, 60)
-	w.B(370, 120, 't', 60, 60)
-	w.B(380, 120, 't', 60, 60)
-	w.B(550, 120, 't', 60, 60)
-	w.B(570, 120, 't', 60, 60)
-	w.B(580, 120, 't', 60, 60)
-	w.S(1000, 400, 'x', 200, 200)
-	w.S(1200, 200, 'x', 200, 200)
-	w.db()
-}
+ 
 TINYREDBALLS = function () {
 	w = b2d.G(1000, 500, 2000, 1000)
 	y = w.ship(1000, 400//w.H()-100
@@ -98,4 +81,26 @@ GRAVTRAP = function () {
 			w.D(320, 320, 'l', 60).den(1)
 	)
 }
- 
+CLICKKILL = function () {
+	box(function () {
+	})
+	w.circle(420, 400, 150)
+	w.circleStat(300, 400, 50)
+	w.circleStat(400, 550, 50)
+	w.circleStat(500, 550, 50)
+	w.circleStat(550, 550, 50)
+	cv.click(function (e) {
+		e.preventDefault();
+		cvPos = cv.position()
+		cvPos.x = cvPos.left
+		cvPos.y = cvPos.top
+		var mouse = {x: e.pageX - cvPos.x, y: e.pageY - cvPos.y}
+		$l('mousex ' + mouse.x)
+		w.qPoint(mouse.x, mouse.y, function (f, b, w) {
+			b.kill()
+			//	w.mj = w.mJ(b, o.x, o.y)
+			//return true
+		})
+		return false
+	})
+}
