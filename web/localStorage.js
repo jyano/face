@@ -1,3 +1,4 @@
+_lS = localStorage
 $g = $get = function (a) {
 	return _lS.getItem(a)//= lG
 }
@@ -58,7 +59,6 @@ BBLS = function () {
 		localStorage: new bb.LocalStorage('clN')
 	})
 }
-
 BUC51 = BUCKYVID51 = function () {
 //buck is just a local storage example
 //https://www.youtube.com/watch?v=Kn_AIiV6Cp0&index=53&list=PL081AC329706B2953
@@ -216,4 +216,4 @@ function sessionStorageUseless() {
 		}, false)
 	}
 }
-_lS = localStorage
+ 

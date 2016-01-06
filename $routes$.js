@@ -1,3 +1,23 @@
+ 
+	Box = [
+	
+	'bx',
+	
+		'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
+		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
+		'boxCir', 'boxPol', 'boxRec', 'edges',
+		'bodFix', 'forces'
+	
+	
+	
+	]
+
+
+
+
+ 
+
+
 $stc('', '../art',
 		'web/both', 'web',
 		 'web/css', 'web/dom', 'web/html', 'web/js',
@@ -10,87 +30,18 @@ $stc('', '../art',
 		'wappy','wappy/work','muggy',
 		'box',
 		'box/bods', 'box/collide', 'box/fixts',
-		'box/geo', 'box/shapes', 'box/world'
+		'box/geo', 'box/shapes', 'box/world',
+		'worldQuery','collide','joints','control','yip','arcade','games','geo'
 )
 
-Deps = ['superUnder', 'superJ', 'superTime', 'jq', 'jqui', 'gpc', 'bx', 'cjs', 
-	'cjsMC', 'ko', 'bb', 'pureDa']
-	
-Web = [
-	'webColor', 'webCss', 'webFont', 'web', 
-	'rules',  'media', 'flex', 'styles',
-	'sJQ', 'webEvents', 
-	'attributes', 'qAnim',
-	'traverse',
-	'html', 'inputs', 'lists', 'submit',
-	'root', 'nest', 
-	'll', 'appy','localStorage'
-]
-
-Graphics = [
-	'jqGraphics', 'gpClipper', 'superCtx', 'superCan',
-	'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug','ctxPixels', 'ctxShad', 
-	'ctxText', 'ctxTransform',
-	'canDraw', 'canImg', 'canGlobComp', 'canGrad','canMug', 'canPixels','canShad', 
-	'canText', 'canTransform',
-	'gpcCtx',
-	'parallax'
-]
-
-
-Wid = [
-	'mock',
-	  'uiWids','custWids','widLS',
-	   'effects','interactions' ,'dog','wid',
-	   'widLS'
-	]
-Bone = [
-	'bone',
-	'bbColl', 'bbDirt', 'bbEvt', 'bbFiltColl',
-	'bbRtr','bbView',
-	'bbLS','bbServer','bbServerMore'
-]
-
-Nok = ['knock','koCustom','koMore'
-]
-
-Stage = [
-	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
-	'objects', 'matrix', 'cjsPoly',
-	'cjsGx', 'cjsShape', 'curve', 'domElOb',
-	'reggy', 'transform', 'cjsText', 'container',
-	'cjsCir', 'cjsRec', 'official', 'cache', 'filter',
-	'alphaMaskFilter', 'alphaMaskFilter', 'blurFilter', 'cache',
-	'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse']
-Anim = [
-
-	'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
-	'movie', 'timeline', 'gunnertron']
-Wap = [
-	'wappy', 'users', 'login', 'social' ,
-	'widUser'
-	]
-Box = [
-	'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
-	'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
-	'boxCir', 'boxPol', 'boxRec', 'edges',
-	'bodFix', 'forces']
+web()
+ 
 
 jsArrs= [
-	Deps,
-	Web,
-	Graphics,
-	Stage,
-	Anim,
-	Wid,
-	Bone,
-	Nok,
-	Wap,
-	Box
+	Both, Web,
+	
+	Box //, Graphics,Stage, Front, Wap
 ]
-
-
-
 $a.get('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
@@ -100,4 +51,44 @@ $a.get('/box/:app*', function (q, p) {
 	html += '<script> $(function(){ $l("app:  ' + app + '"); ' + app + '()})</script>'
 	p.send(html)
 })
+function web(){
+	Both = ['superUnder', 'superJ', 'superTime']
+	Web = ['jq',
+		'webColor', 'webCss', 'webFont', 'web',
+		'rules', 'media', 'flex', 'styles',
+		'sJQ', 'webEvents', 'attributes', 'qAnim', 'traverse',
+		'html', 'inputs', 'lists', 'submit',
+		'root', 'nest', 'll', 'appy', 'localStorage'
+	]
+}
+function mods() {
+	Graphics = [
+		'gpc',   'pureDa',
+		'jqGraphics', 'gpClipper', 'superCtx', 'superCan',
+		'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug', 'ctxPixels', 'ctxShad',
+		'ctxText', 'ctxTransform',
+		'canDraw', 'canImg', 'canGlobComp', 'canGrad', 'canMug', 'canPixels', 'canShad',
+		'canText', 'canTransform',
+		'gpcCtx',
+		'parallax'
+	]
+	Front = [
+		'mock',
+		'jqui', 'uiWids', 'custWids', 'widLS', 'effects', 'interactions', 'dog', 'wid', 'widLS',
+		'bb', 'bone', 'bbColl', 'bbDirt', 'bbEvt', 'bbFiltColl', 'bbRtr', 'bbView', 'bbLS', 'bbServer', 'bbServerMore',
+		'ko', 'knock', 'koCustom', 'koMore'
+	]
+	Stage = ['cjs', 'cjsMC',
+		'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
+		'objects', 'matrix', 'cjsPoly',
+		'cjsGx', 'cjsShape', 'curve', 'domElOb',
+		'reggy', 'transform', 'cjsText', 'container',
+		'cjsCir', 'cjsRec', 'official', 'cache', 'filter',
+		'alphaMaskFilter', 'alphaMaskFilter', 'blurFilter', 'cache',
+		'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse',
+		'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
+		'movie', 'timeline', 'gunnertron'
+	]
+	Wap = ['wappy', 'users', 'login', 'social', 'widUser']
+}
  

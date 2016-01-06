@@ -417,8 +417,7 @@ BLUE = function () {
 		//}
 	})
 }
-function yip() {
-	FLOCK = function () {
+FLOCK = function () {
 		W({g: 0})//.P()
 		w.D(300, 100, 'r', 50)
 		w.D(500, 100, 'y', 50)
@@ -439,4 +438,4 @@ function yip() {
 			}
 		})
 	}
-}
+ 

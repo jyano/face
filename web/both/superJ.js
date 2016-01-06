@@ -847,3 +847,9 @@ $REi = function (rx) {
 S.slash = function(str){
 	return S.eR('/', str)
 }
+obX = function (o) {
+	var g = G(arguments);
+	return !O(o) ? {}
+			: g.p ? o.clone()
+			: o
+}
