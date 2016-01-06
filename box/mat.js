@@ -1,4 +1,4 @@
-https://en.wikipedia.org/wiki/Bounding_volume
+//https://en.wikipedia.org/wiki/Bounding_volume
 bx.tMt = function (x, y) {
 	return V(x, y).d()
 }
@@ -7,7 +7,9 @@ bx.mat22 = function (v1, v2) {
 	m.SetVV(v1, v2)
 	return m
 }
+bx.AB= bx.C.b2AABB
 ab = bx.C.b2AABB.prototype
+
 ab.lB = ab._lB = function (x, y) {
 	this.lowerBound.Set(x, y)
 	return this

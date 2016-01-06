@@ -1,7 +1,8 @@
-w.QA = w.Q = function (a, b) {
+w.QA = w.Q = w.QAB = function (a, b) {
 	this.QueryAABB(a, b);
 	return this
 }
+
 w.Q = function () {
 	$l('w.Q')
 	var w = this, g = G(arguments), o, fx

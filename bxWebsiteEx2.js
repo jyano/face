@@ -9,7 +9,17 @@ BXEX2 = function () {
 		handleMJt();
 		w.step(1 / 60, 10, 10).DDD().CF()
 	})
-	$.D(handleMDown).U(handleMUp)
+	
+	$.D(function (e) {
+		isMDown = true
+		onMove(e)
+		$.mm(onMove).tm(onMove)
+	}).U(function () {
+		$.mm_(onMove).tm_(onMove)
+		isMDown = mX = mY = undefined;
+	})
+	
+	
 	bD = $bD().ty(bx.sB)
 	fD = $fD().de(1).fr(.5).re(.2).H($pH().SAB(20, 2))
 	
@@ -32,39 +42,50 @@ function handleMJt() {
 	if (!mJt) {if (!isMDown) {return}; makeMJt()}
 	else if (isMDown) {mJt.SetTarget(V(mX, mY))}
 	else {w.DJ(mJt);mJt = null}
+	
 	function makeMJt() {
 		var b = getBodyAtM()
 		if (!b) {return}
+		b.wake()
+		
 		var md = new bx.MJD()
 		md.bodyA = w.GGB()
 		md.bodyB = b
+		
 		md.target.Set(mX, mY)
 		md.collideConnected = true
 		md.maxForce = 300.0 * b.GM()
-		mJt = w.CJ(md)
-		b.SAw(true)
 		
+		mJt = w.CJ(md)
+		 
 	}
 }
 
-function getBodyAtM(aabb, selB) {
+function getBodyAtM() {
+
+	var ab, selB
+
 	mPVec = V(mX, mY)
-	aabb = new b2AABB()
-	aabb.lowerBound.Set(mX - 0.001, mY - 0.001)
-	aabb.upperBound.Set(mX + 0.001, mY + 0.001)
+	
+	ab = new bx.AB()
+	
+	ab.lowerBound.Set(mX - 0.001, mY - 0.001)
+	ab.upperBound.Set(mX + 0.001, mY + 0.001)
+	
 	selB = null
-	w.QueryAABB(function (f) {
-		if (f.GetBody().GetType() == bx.dB &&
-				f.GetShape().TestPoint(f.GetBody().GetTransform(), mPVec)) {
-			selB = f.GetBody()
+	
+	w.QAB(function (f) {
+	
+		if (f.bTy() == bx.dB && f.TP(f.tf(), mPVec)) {
+			selB = f.B()
 		}
-		else {
-			return true
-		}
-	}, aabb)
+		else {return 1}
+	}, ab)
+	
 	return selB
 }
-function onMovement(e) {
+
+function onMove(e) {
 	$.pD(e)
 //if (e.clientX) {
 	var clX = e.clientX;
@@ -81,17 +102,8 @@ function onMovement(e) {
 	// bx x,y !!! (not page/web/$ (px) x,y)
 	mX = (clX - cv._ps.x) / 30;
 	mY = (clY - cv._ps.y) / 30
-}
-function handleMDown(e) {
-	isMDown = true
-	onMovement(e)
-	$.mm(onMovement).tm(onMovement)
-}
-function handleMUp() {
-	$.mm_(onMovement).tm_(onMovement)
-	isMDown = mX = mY = undefined;
-}
-
+} 
+ 
 function videoTut() {
 // https://www.youtube.com/watch?v=Ubfqc983jN8
 // video note: he only uses one body.. so joint is global ('spring')

@@ -82,7 +82,7 @@ function shape() {
 		b.stat.apply(b, arguments);
 		return this
 	}
-	f.bType = function () {
+	f.bTy=f.bType = function () {
 		return this.B().GetType()
 	}
 	f.isBType = f.isType = function (t) {
@@ -197,3 +197,18 @@ $cF6 = function (rad, x, y) {
 	return f
 }
  
+ 
+f.tf = f.gTf = function(tf){
+ 
+	var f=this,b= f.B()
+	
+	if(U(tf)){return b.tf()}
+	b.tf(tf)
+	return f
+ }
+f.TP = function () {
+	var f = this,
+	 h = f.H()
+	
+	return h.TP.apply(h, arguments)
+}

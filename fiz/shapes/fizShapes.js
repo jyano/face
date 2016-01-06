@@ -37,7 +37,7 @@ fD.H = function (h) {
 	return fD
 }
 fD.SAB = function (x, y) {
-	this.SetAsBox(x, y)
+	this.H().SetAsBox(x, y)
 	return this
 }
 fD.SAOB = function (x, y, pos, ang) {
@@ -220,20 +220,21 @@ pH.box_ = function () {
 	var args = (g.A || _.isArguments(g.f)) ? g.f : g
 	return pH.box.apply(pH, args)
 }
-function shapeTy() {
-	bH.GT = function () {
-		return this.GetType()
-	}
-	bH.ty = function () {
-		return b2d.iH(this)
-	}
-	bH.iP = function () {
-		return b2d.iP(this)
-	}
-	bH.iC = function () {
-		return b2d.iC(this)
-	}
-	bH.iA = function () {
-		return b2d.iA(this)
-	}
-} 
+bH.GT = function () {
+	return this.GetType()
+}
+bH.ty = function () {
+	return b2d.iH(this)
+}
+bH.iP = function () {
+	return b2d.iP(this)
+}
+bH.iC = function () {
+	return b2d.iC(this)
+}
+bH.iA = function () {
+	return b2d.iA(this)
+}
+bH.TP = function () {
+	return this.TestPoint.apply(this, arguments)
+}

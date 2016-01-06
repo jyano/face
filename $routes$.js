@@ -4,13 +4,15 @@
 		
 		  'world', 'worldBod', 'worldFix', 'debug',
 		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
+		'fizShapes','edges','walls',
 		'boxCir', 'boxPol', 'boxRec', 'edges',
 		'bodFix', 'forces',
 		
 		'boxApps','bxMouseApps',
 		'bxShapeApps','edgeApps','controlApps','fixApps',
 		'fizApps','forcesApps','mouseJtApps',
-		'worldApps','bxWebsiteEx1', 'bxWebsiteEx2'
+		'worldApps','bxWebsiteEx1', 'bxWebsiteEx2',
+		'boxEach', 'queryAB','queryPoint'
 		
 			
 	]
