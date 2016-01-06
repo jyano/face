@@ -21,26 +21,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/$routes$.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0375">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding>
                 <element signature="n#!!block;n#mods#0" expanded="true" />
-                <element signature="e#1671#1998#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worldFix.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiz/world/worldFix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#25#55#0" expanded="true" />
+                <element signature="e#1763#2090#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,151 +38,136 @@
         <entry file="file://$PROJECT_DIR$/fiz/world/worldBod.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="149" column="1" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#24#88#0" expanded="true" />
-                <element signature="e#1677#1715#0" expanded="true" />
-                <element signature="e#1956#2022#0" expanded="true" />
-                <element signature="e#2051#2224#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="worldApps.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/worldApps.js">
+      <file leaf-file-name="worldFix.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiz/world/worldFix.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
-                <element signature="e#24#497#0" expanded="true" />
-                <element signature="e#518#696#0" expanded="true" />
-                <element signature="e#626#693#0" expanded="true" />
-                <element signature="e#715#783#0" expanded="true" />
-                <element signature="e#858#888#0" expanded="true" />
-                <element signature="e#906#927#0" expanded="true" />
-                <element signature="e#946#973#0" expanded="true" />
+                <element signature="e#25#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fizApps.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fizApps.js">
+      <file leaf-file-name="fixApps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bxApps/fixApps.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bodFix.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiz/bods/bodFix.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="239" column="6" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
+              <caret line="115" column="2" selection-start-line="115" selection-start-column="2" selection-end-line="115" selection-end-column="2" />
               <folding>
-                <element signature="e#117#147#0" expanded="false" />
-                <element signature="e#157#219#0" expanded="false" />
-                <element signature="e#499#516#0" expanded="false" />
-                <element signature="e#523#572#0" expanded="false" />
-                <element signature="e#673#713#0" expanded="false" />
-                <element signature="e#813#950#0" expanded="false" />
-                <element signature="e#885#909#0" expanded="false" />
-                <element signature="e#917#947#0" expanded="false" />
-                <element signature="e#965#1105#0" expanded="false" />
-                <element signature="e#1018#1061#0" expanded="false" />
-                <element signature="e#1069#1102#0" expanded="false" />
-                <element signature="e#1127#1149#0" expanded="false" />
-                <element signature="e#1186#1201#0" expanded="false" />
-                <element signature="e#1212#1256#0" expanded="false" />
-                <element signature="e#1266#1315#0" expanded="false" />
-                <element signature="e#1550#1571#0" expanded="false" />
-                <element signature="e#1764#1790#0" expanded="false" />
-                <element signature="e#2367#2402#0" expanded="false" />
-                <element signature="e#2469#2555#0" expanded="false" />
-                <element signature="e#2581#2623#0" expanded="false" />
-                <element signature="e#2738#2807#0" expanded="false" />
-                <element signature="e#2943#2983#0" expanded="false" />
-                <element signature="e#2996#3017#0" expanded="false" />
-                <element signature="e#3030#3061#0" expanded="false" />
-                <element signature="e#3079#3135#0" expanded="false" />
-                <element signature="e#3149#3350#0" expanded="false" />
-                <element signature="e#3505#3551#0" expanded="false" />
-                <element signature="e#3586#3668#0" expanded="false" />
-                <element signature="e#3704#3786#0" expanded="false" />
-                <element signature="e#3803#3848#0" expanded="false" />
-                <element signature="e#3948#3969#0" expanded="false" />
-                <element signature="e#3981#4050#0" expanded="false" />
-                <element signature="e#4084#4103#0" expanded="false" />
-                <element signature="e#4600#4628#0" expanded="false" />
-                <element signature="e#4980#5007#0" expanded="false" />
-                <element signature="e#5092#5132#0" expanded="false" />
-                <element signature="e#5267#5308#0" expanded="false" />
-                <element signature="e#5422#5466#0" expanded="false" />
-                <element signature="e#5688#5709#0" expanded="false" />
-                <element signature="e#5722#5740#0" expanded="false" />
-                <element signature="e#5847#5872#0" expanded="false" />
-                <element signature="e#5887#5909#0" expanded="false" />
-                <element signature="e#5996#6031#0" expanded="false" />
-                <element signature="e#6157#6202#0" expanded="false" />
-                <element signature="e#6356#6390#0" expanded="false" />
-                <element signature="e#6531#6575#0" expanded="false" />
-                <element signature="e#6806#6854#0" expanded="false" />
-                <element signature="e#6974#7012#0" expanded="false" />
-                <element signature="e#7160#7186#0" expanded="false" />
-                <element signature="e#7729#7769#0" expanded="false" />
-                <element signature="e#7772#7820#0" expanded="false" />
-                <element signature="e#7862#7924#0" expanded="false" />
-                <element signature="e#7994#8340#0" expanded="false" />
-                <element signature="e#8053#8083#0" expanded="false" />
-                <element signature="e#8093#8330#0" expanded="false" />
-                <element signature="e#8114#8217#0" expanded="false" />
-                <element signature="e#8248#8283#0" expanded="false" />
-                <element signature="e#8294#8324#0" expanded="false" />
-                <element signature="e#8385#8406#0" expanded="false" />
-                <element signature="e#8473#8502#0" expanded="false" />
-                <element signature="e#8536#8606#0" expanded="false" />
-                <element signature="e#8550#8572#0" expanded="false" />
-                <element signature="e#8652#8714#0" expanded="false" />
-                <element signature="e#8666#8688#0" expanded="false" />
-                <element signature="e#8734#8796#0" expanded="false" />
-                <element signature="e#8748#8770#0" expanded="false" />
-                <element signature="e#8864#8880#0" expanded="false" />
-                <element signature="e#8904#8920#0" expanded="false" />
-                <element signature="e#9064#9084#0" expanded="false" />
-                <element signature="e#9127#9148#0" expanded="false" />
-                <element signature="e#9253#9286#0" expanded="false" />
-                <element signature="e#9342#9367#0" expanded="false" />
-                <element signature="e#9445#9485#0" expanded="false" />
-                <element signature="e#9540#9568#0" expanded="false" />
-                <element signature="e#10107#10130#0" expanded="false" />
-                <element signature="e#10246#10283#0" expanded="false" />
-                <element signature="e#12463#12506#0" expanded="false" />
-                <element signature="e#12887#12909#0" expanded="false" />
-                <element signature="e#13419#13429#0" expanded="false" />
-                <element signature="e#13934#13961#0" expanded="false" />
-                <element signature="e#14085#14119#0" expanded="false" />
-                <element signature="e#14775#14890#0" expanded="false" />
-                <element signature="e#14898#14927#0" expanded="false" />
-                <element signature="e#15883#15901#0" expanded="false" />
-                <element signature="e#15907#15924#0" expanded="false" />
-                <element signature="e#16452#16486#0" expanded="false" />
-                <element signature="e#16758#16772#0" expanded="false" />
+                <element signature="e#28#549#0" expanded="true" />
+                <element signature="e#230#248#0" expanded="true" />
+                <element signature="e#269#289#0" expanded="true" />
+                <element signature="e#572#641#0" expanded="true" />
+                <element signature="e#671#736#0" expanded="true" />
+                <element signature="e#757#954#0" expanded="true" />
+                <element signature="e#860#951#0" expanded="true" />
+                <element signature="e#982#1617#0" expanded="true" />
+                <element signature="e#1515#1567#0" expanded="true" />
+                <element signature="e#1641#2315#0" expanded="true" />
+                <element signature="e#2223#2275#0" expanded="true" />
+                <element signature="e#2339#2634#0" expanded="true" />
+                <element signature="e#2614#2631#0" expanded="true" />
+                <element signature="e#2655#2850#0" expanded="true" />
+                <element signature="e#2872#2901#0" expanded="true" />
+                <element signature="e#2923#3072#0" expanded="true" />
+                <element signature="e#2949#3069#0" expanded="true" />
+                <element signature="e#3097#3254#0" expanded="true" />
+                <element signature="e#3276#3760#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="boxApps.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/boxApps.js">
+        <entry file="file://$PROJECT_DIR$/bxApps/boxApps.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="188" column="1" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
               <folding>
                 <element signature="e#18#220#0" expanded="true" />
                 <element signature="e#163#217#0" expanded="true" />
+                <element signature="e#241#1237#0" expanded="true" />
+                <element signature="e#584#695#0" expanded="true" />
+                <element signature="e#1258#1833#0" expanded="true" />
+                <element signature="e#1853#2223#0" expanded="true" />
+                <element signature="e#1876#2156#0" expanded="true" />
+                <element signature="e#2243#2471#0" expanded="true" />
+                <element signature="e#2422#2458#0" expanded="true" />
+                <element signature="e#2493#3128#0" expanded="true" />
+                <element signature="e#2761#2777#0" expanded="true" />
+                <element signature="e#2799#2815#0" expanded="true" />
+                <element signature="e#2943#2958#0" expanded="true" />
+                <element signature="e#3152#3440#0" expanded="true" />
+                <element signature="e#3175#3237#0" expanded="true" />
+                <element signature="e#3250#3290#0" expanded="true" />
+                <element signature="e#3341#3358#0" expanded="true" />
+                <element signature="e#3380#3412#0" expanded="true" />
+                <element signature="e#3466#3677#0" expanded="true" />
+                <element signature="e#3578#3674#0" expanded="true" />
+                <element signature="e#3697#4235#0" expanded="true" />
+                <element signature="e#4019#4034#0" expanded="true" />
+                <element signature="e#4260#5011#0" expanded="true" />
+                <element signature="e#4313#4644#0" expanded="true" />
+                <element signature="e#4670#4781#0" expanded="true" />
+                <element signature="e#5031#5219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fizApps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bxApps/fizApps.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="257" column="1" selection-start-line="257" selection-start-column="1" selection-end-line="257" selection-end-column="1" />
+              <folding>
+                <element signature="e#2869#2961#0" expanded="true" />
+                <element signature="e#2891#2914#0" expanded="false" />
+                <element signature="e#2934#2958#0" expanded="false" />
+                <element signature="e#3045#3749#0" expanded="true" />
+                <element signature="e#3681#3684#0" expanded="false" />
+                <element signature="e#4097#4597#0" expanded="false" />
+                <element signature="e#4204#4593#0" expanded="false" />
+                <element signature="e#4528#4582#0" expanded="false" />
+                <element signature="e#4674#5721#0" expanded="true" />
+                <element signature="e#4876#4895#0" expanded="false" />
+                <element signature="e#4978#5614#0" expanded="false" />
+                <element signature="e#5753#5790#0" expanded="false" />
+                <element signature="e#7577#7620#0" expanded="false" />
+                <element signature="e#8001#8023#0" expanded="false" />
+                <element signature="e#8533#8543#0" expanded="false" />
+                <element signature="e#9048#9075#0" expanded="false" />
+                <element signature="e#9199#9233#0" expanded="false" />
+                <element signature="e#9889#10004#0" expanded="false" />
+                <element signature="e#10012#10041#0" expanded="false" />
+                <element signature="e#10997#11015#0" expanded="false" />
+                <element signature="e#11021#11038#0" expanded="false" />
+                <element signature="e#11566#11600#0" expanded="false" />
+                <element signature="e#11872#11886#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flashBOX2DonlineApps.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bxApps/flashBOX2DonlineApps.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9625">
+              <caret line="168" column="1" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
+              <folding>
+                <element signature="e#23#3457#0" expanded="true" />
+                <element signature="e#248#1727#0" expanded="true" />
+                <element signature="e#3412#3423#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -249,12 +222,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/boxApps.js" />
-        <option value="$PROJECT_DIR$/fiz/world/world.js" />
-        <option value="$PROJECT_DIR$/box/world.js" />
-        <option value="$PROJECT_DIR$/fiz/world/worldBod.js" />
-        <option value="$PROJECT_DIR$/worldApps.js" />
+        <option value="$PROJECT_DIR$/fiz/fixts/fixtureDefs.js" />
+        <option value="$PROJECT_DIR$/bxApps/bxMouseApps.js" />
+        <option value="$PROJECT_DIR$/bxApps/controlApps.js" />
         <option value="$PROJECT_DIR$/$routes$.js" />
+        <option value="$PROJECT_DIR$/bxApps/fizApps.js" />
+        <option value="$PROJECT_DIR$/bxApps/flashBOX2DonlineApps.js" />
       </list>
     </option>
   </component>
@@ -323,65 +296,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="world" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shapes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fixts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bods" />
+              <option name="myItemId" value="bxApps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,11 +323,11 @@
       <recent name="$PROJECT_DIR$/superCSS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/box" />
       <recent name="$PROJECT_DIR$/fiz" />
+      <recent name="$PROJECT_DIR$/fiz/shapes/_" />
+      <recent name="$PROJECT_DIR$/bxApps" />
+      <recent name="$PROJECT_DIR$/box" />
       <recent name="$PROJECT_DIR$/box/core" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/box/spaz" />
     </key>
   </component>
   <component name="RunManager">
@@ -495,27 +410,14 @@
     <entry file="file://$PROJECT_DIR$/fiz/world/worldFix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#25#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fiz/world/worldBod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="149" column="1" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
-          <folding>
-            <element signature="e#24#88#0" expanded="true" />
-            <element signature="e#1677#1715#0" expanded="true" />
-            <element signature="e#1956#2022#0" expanded="true" />
-            <element signature="e#2051#2224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/boxKlas.js">
+    <entry file="file://$PROJECT_DIR$/fiz/fixts/fixtureDefs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -523,44 +425,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/worldApps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="e#24#497#0" expanded="true" />
-            <element signature="e#518#696#0" expanded="true" />
-            <element signature="e#626#693#0" expanded="true" />
-            <element signature="e#715#783#0" expanded="true" />
-            <element signature="e#858#888#0" expanded="true" />
-            <element signature="e#906#927#0" expanded="true" />
-            <element signature="e#946#973#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/box/world.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#37#369#0" expanded="true" />
-            <element signature="e#390#437#0" expanded="true" />
-            <element signature="n#!!block;n#can#0" expanded="true" />
-            <element signature="n#!!block;n#grav#0" expanded="true" />
-            <element signature="n#!!block;n#_pre#0" expanded="true" />
-            <element signature="n#!!block;n#_post#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/$routes$.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0375">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
             <element signature="n#!!block;n#mods#0" expanded="true" />
-            <element signature="e#1671#1998#0" expanded="true" />
+            <element signature="e#1763#2090#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bxApps/fizApps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="257" column="1" selection-start-line="257" selection-start-column="1" selection-end-line="257" selection-end-column="1" />
+          <folding>
+            <element signature="e#2869#2961#0" expanded="true" />
+            <element signature="e#2891#2914#0" expanded="false" />
+            <element signature="e#2934#2958#0" expanded="false" />
+            <element signature="e#3045#3749#0" expanded="true" />
+            <element signature="e#3681#3684#0" expanded="false" />
+            <element signature="e#4097#4597#0" expanded="false" />
+            <element signature="e#4204#4593#0" expanded="false" />
+            <element signature="e#4528#4582#0" expanded="false" />
+            <element signature="e#4674#5721#0" expanded="true" />
+            <element signature="e#4876#4895#0" expanded="false" />
+            <element signature="e#4978#5614#0" expanded="false" />
+            <element signature="e#5753#5790#0" expanded="false" />
+            <element signature="e#7577#7620#0" expanded="false" />
+            <element signature="e#8001#8023#0" expanded="false" />
+            <element signature="e#8533#8543#0" expanded="false" />
+            <element signature="e#9048#9075#0" expanded="false" />
+            <element signature="e#9199#9233#0" expanded="false" />
+            <element signature="e#9889#10004#0" expanded="false" />
+            <element signature="e#10012#10041#0" expanded="false" />
+            <element signature="e#10997#11015#0" expanded="false" />
+            <element signature="e#11021#11038#0" expanded="false" />
+            <element signature="e#11566#11600#0" expanded="false" />
+            <element signature="e#11872#11886#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiz/fixts/fixtures.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bxApps/flashBOX2DonlineApps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9625">
+          <caret line="168" column="1" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
+          <folding>
+            <element signature="e#23#3457#0" expanded="true" />
+            <element signature="e#248#1727#0" expanded="true" />
+            <element signature="e#3412#3423#0" expanded="true" />
           </folding>
         </state>
       </provider>

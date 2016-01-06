@@ -7,11 +7,11 @@
 		'boxCir', 'boxPol', 'boxRec', 'edges',
 		'bodFix', 'forces',
 		
-		'boxApps',
-		'fizApps',
+		'boxApps','bxMouseApps',
+		'bxShapeApps','edgeApps','controlApps','fixApps',
+		'fizApps','forcesApps',
 		'worldApps'
-	
-	
+			
 	
 	]
 
@@ -36,7 +36,8 @@ $stc('', '../art',
 		'box/bods', 'box/fixts', 'box/shapes', 'box/world',
 		'fiz/bods', 'fiz/fixts', 'fiz/shapes', 'fiz/world',
 		'box/geo', 'box/collide',
-			'worldQuery','collide','joints','control','yip','arcade','games','geo'
+			'worldQuery','collide','joints','control','yip','arcade','games','geo',
+			'bxApps'
 )
 
 web()
