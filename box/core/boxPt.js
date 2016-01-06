@@ -1,5 +1,4 @@
-$pt = {}
- 
+$pt = {} 
 
 $pt.dD = (bx.DD = bx.D.b2DebugDraw).prototype
 $pt.v = $pt.vc = bx.V.prototype
@@ -32,22 +31,7 @@ $PT = function () {
 	cx = $pt.cx
 }
 $PT.jts = function () {
-	bx.DJD = bx.Jts.b2DistanceJointDef
-	bx.DJ = bDJ = bx.distanceJoint = bx.distanceJoint = bDJ = bx.Jts.b2DistanceJoint //=bx.Js.b2DistanceJoint
-	bx.DJ = bx.distanceJoint = bDJ = bx.Js.b2DistanceJoint
-	bx.MJD = b2MouseJointDef = bx.MouseJointDef = bx.Js.b2MouseJointDef // bx.D.Jts.b2MouseJointDef = bx.Jts.b2MouseJointDef
-	bx.MJD = bx.mouseJointDef = b2MouseJointDef = bx.Js.b2MouseJointDef
-	bx.MJ = bx.MouseJoint = bx.Jts.b2MouseJoint // = bx.Js.b2MouseJoint
-	bx.RJD = bx.RevoluteJointDef = bx.Js.b2RevoluteJointDef
-	bx.RJ = bx.RevoluteJoint = bx.Js.b2RevoluteJoint
-	bx.RevoluteJointDef = bx.Jts.b2RevoluteJointDef
-	bx.RevoluteJoint = bx.Jts.b2RevoluteJoint
-	bx.PrismaticJointDef = bx.Jts.b2PrismaticJointDef
-	bx.PJD = bx.PrismaticJointDef = bx.Js.b2PrismaticJointDef
-	bx.Jts = bx.Js = bx.D.Joints
-	bx.Jt = bx.J = bx.Jts.b2Joint
-	bx.JD = bx.JtD = bx.Jts.b2JointDef
-	bx.Cos = bx.D.Controllers
+ 
 	$pt.jD = $pt.jtD = bx.Jts.b2JtD.prototype //bx.JD.prototype
 	$pt.j = $pt.jt = bx.Jts.b2Jt.prototype //$pt.j = bx.J.prototype
 	$pt.dJD = jd = bx.Jts.b2DistanceJointDef.prototype //$pt.dJD = bx.Jts.b2DistanceJointDef.prototype
@@ -99,6 +83,4 @@ $PT.cos = function () {
 	bCo = $pt.bCo
 }
 $PT()
- 
   
- 

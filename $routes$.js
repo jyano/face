@@ -1,11 +1,15 @@
  
 	Box = [
-		'bx','box0','boxBool',
-	
-		'box', 'vec', 'world', 'worldBod', 'worldFix', 'debug',
+		'bx','box0','boxBool', 'boxPt', 'vec','mat',
+		
+		  'world', 'worldBod', 'worldFix', 'debug',
 		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
 		'boxCir', 'boxPol', 'boxRec', 'edges',
-		'bodFix', 'forces'
+		'bodFix', 'forces',
+		
+		'boxApps',
+		'fizApps',
+		'worldApps'
 	
 	
 	
@@ -27,10 +31,12 @@ $stc('', '../art',
 		'easel/filter', 'easel/movieClip', 'easel/shapes', 'easel/sprite', 
 		'mashUp','sync',
 		'wappy','wappy/work','muggy',
-		'box',
-		'box/bods', 'box/collide', 'box/fixts',
-		'box/geo', 'box/shapes', 'box/world',
-		'worldQuery','collide','joints','control','yip','arcade','games','geo'
+		'box','box/core',
+		
+		'box/bods', 'box/fixts', 'box/shapes', 'box/world',
+		'fiz/bods', 'fiz/fixts', 'fiz/shapes', 'fiz/world',
+		'box/geo', 'box/collide',
+			'worldQuery','collide','joints','control','yip','arcade','games','geo'
 )
 
 web()
