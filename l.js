@@ -163,7 +163,9 @@ l.li = function () {
 	var q = $('<li>')
 	return q
 }
+
 // floating div vid tut: https://www.youtube.com/watch?v=H9FPOJduvts&list=PL6n9fhu94yhVDV697uvHpavA3K_eWGQap&index=52
+
 TAG = {
 
 	a: 'a',

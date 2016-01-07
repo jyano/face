@@ -1,46 +1,32 @@
- 
-	Box = [
-		'bx','box0', 'boxPt', 'vec','mat',
-		
-		  'world', 'worldBod',
-		  
-		    'worldFix',
-		'worldPol',
-		      'debug',
-		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
-		'fixShapes',
-		'bodShapes',
-			'shapes',		
-		'edges','walls',
- 
-		'bodFix', 'forces',
-		 
-		'boxApps','bxMouseApps',
-		'bxShapeApps',
-		 
-		'edgeApps','controlApps','fixApps', 'boxBool',
-		'fizApps','forcesApps','mouseJtApps',
-		'worldApps','bxWebsiteEx1', 'bxWebsiteEx2',
-		'boxEach', 'queryAB','queryPoint',
-		  'joints','distanceJt', 'mouseJt','boxKlas'
-	]
-
-
 
 
  
 
 
 $stc('', '../art',
+
+
+
+
 		'web/both', 'web','web/events',
 		 'web/css', 'web/dom', 'web/html', 'web/js',
-		'wid', 'nok', 'bone',
+		'web/front/wid',
+		  'web/front/nok',
+		    'web/front/bone',
+		'web/front/sync',
 		'graphics', 'graphics/can','graphics/gpc', 'graphics/ctx',
 		'easel',
 		'easel/bitmap', 'easel/dob', 'easel/dobs', 'easel/draw', 'easel/events',
-		'easel/filter', 'easel/movieClip', 'easel/shapes', 'easel/sprite', 
+		'easel/filter', 'easel/shapes',
+		'anim',
+		'anim/flash',
+		  'anim/sprite',
+		   'anim/movieClip',
+		
 		'mashUp','sync',
-		'wappy','wappy/work','muggy',
+		'wappy','wappy/work',
+		'wappy/muggy',
+		'muggy',
 		'fiz/box',
 		'fiz',
 		'box/core',
@@ -55,7 +41,31 @@ $stc('', '../art',
 			'fiz/box/body','fiz/box/fixture','fiz/box/world','fiz/box/core'
 )
 
-web()
+
+
+
+
+	Box = [
+		'bx', 'box0', 'boxPt', 'vec', 'mat',
+		'world', 'worldBod',
+		'worldFix',
+		'worldPol',
+		'debug',
+		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
+		'fixShapes',
+		'bodShapes',
+		'shapes',
+		'edges', 'walls',
+		'bodFix', 'forces',
+		'boxApps', 'bxMouseApps',
+		'bxShapeApps',
+		'edgeApps', 'controlApps', 'fixApps', 'boxBool',
+		'fizApps', 'forcesApps', 'mouseJtApps',
+		'worldApps', 'bxWebsiteEx1', 'bxWebsiteEx2',
+		'boxEach', 'queryAB', 'queryPoint',
+		'joints', 'distanceJt', 'mouseJt', 'boxKlas'
+	]
+	web()
  
 
 jsArrs= [

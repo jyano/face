@@ -107,28 +107,6 @@ ct.qB = ct.bQ = function (name, x, y, sX, sY, rt) {
 	return b
 }
 
-function later() {
-	cjs.mf = cjs.manifest = function () {
-		var g = G(arguments)
-		var mf = []
-		_.e(g, function (i) {
-			mf.push($it(i))
-		})
-		return mf
-	}
-	
-	cjs.handleFileLoad = function (e) {
-		if (e.item.type == "image") {
-			images[e.item.id] = e.result
-		}
-	}
-	
-	cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
-		alert('manifest')
-		return cjs.mf.apply(null, _.m(a.images, function (i) {return _.crs(i)}))}
-
-}
-
 
 
 $Ldr = function (name, fn) {
@@ -149,4 +127,25 @@ $its = function (its) {
 		its = g
 	}
 	return _.m(its, $it)
+}
+function later() {
+	cjs.mf = cjs.manifest = function () {
+		var g = G(arguments)
+		var mf = []
+		_.e(g, function (i) {
+			mf.push($it(i))
+		})
+		return mf
+	}
+	cjs.handleFileLoad = function (e) {
+		if (e.item.type == "image") {
+			images[e.item.id] = e.result
+		}
+	}
+	cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
+		alert('manifest')
+		return cjs.mf.apply(null, _.m(a.images, function (i) {
+			return _.crs(i)
+		}))
+	}
 }

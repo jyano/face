@@ -199,4 +199,193 @@ function _pre() {
 cjs.testCanvas = function () {
 	return $.c(960, 400).id("testCanvas").a2($.d())
 }
-
+WINDING = function () {
+	cjs.Shape.prototype.same = function () {
+		return $h(this)
+	} //h.copy
+	cjs.manifest = function (func) {
+		var q = cjs.loadQueue()
+		q.complete(
+				function () {
+					func(function (getResult) {
+						return q.getResult(getResult)
+					})
+				})
+				.manifest([{
+					id: "chicks", src: "/chicks.png"
+				},
+					{id: "me", src: "/me.png"},
+					{id: "guy", src: "/guy.png"},
+					{id: "sun", src: "/sun.png"}])
+	}
+	cjs.worldsMostInterestingShape = function () {
+		var h = cjs.shape()
+		h.graphics.f("pink").dr(20, 20, 450, 360)
+				.arc(160, 160, 110, 0, Math.PI * 2, true).closePath()
+				.arc(330, 240, 110, 0, Math.PI * 2, true).closePath()
+		return h
+	}
+	cjs.manifest(function (q) {
+		$.hdr().A($.h1('grahics winding')).A()
+		$.d().A($.c(960, 400).id("testCanvas"))
+		st = s = stage = $St(["testCanvas"])
+		h = shape = cjs.worldsMostInterestingShape().a2(stage).drag()
+		cjs.bm = function (img) {
+			var g = G(arguments), img = g[0],
+					bm = new cjs.Bitmap(img)
+			if (g.N) {
+				bm.rC()
+			}
+			return bm
+		} //warning: can't yet change to $Bm!!
+		bm = cjs.bm(q("chicks"), '-')
+				.a2(s).X(470).drag()
+		bm.mask = h.same().X(470)
+	})
+}
+COOL = function () {
+	pt = 0
+	h = $St().mO(1).h()
+	h.graphics._ss('g', 40, 's', 'b', 1)
+	st.MD(function () {
+		pt = st.m()
+	})
+	st.MU(function () {
+		pt = 0
+	})
+	st.MM(function () {
+		if (pt) {
+			h.line(pt, pt = st.m())
+		}
+	})
+	st.bm('chicks', function (b) {
+		b.XY(500, 300).al(.2)
+	})
+}
+PROMOTE = function () {
+	z()
+	cjs.utils()
+	function ClassA(name) {
+		this.name = name
+	}
+	
+	ClassA.prototype.greet = function () {
+		return "Hello " + this.name
+	} //a = new ClassA('john')
+	function ClassB(name, punctuation) {
+		this.ClassA_constructor(name)
+		this.punctuation = punctuation
+	}
+	
+	cjs.extend(ClassB, ClassA)
+	ClassB.prototype.greet = function () {
+		return this.ClassA_greet() + this.punctuation
+	}
+	cjs.promote(ClassB, "ClassA")
+	b = new ClassB("World", "!?!")
+	$l(b.greet())  // Hello World!?!
+}
+TWOSTAGES = function () {
+	z()
+	$.hdr().K("EaselJS").A(
+			$.h1('nextStage'),
+			$.p("This is an example")).A()
+	c1 = $.c('y', 540, 260).id('canvasOne').P('a').top(0)
+			.right(0).bor('1px solid grey').A() // background: 'none',
+	c2 = $.c('o', 540, 260).id('canvasTwo').P('a').left(0).bottom(0).bor('1px solid grey').A()// background: 'none'
+	$.div(960, 400).K("canvasDiv").P('relative').A(c1, c2).A()
+	bottomStage = stageSetup("canvasOne", handleEvt).N("bottomStage").eMO().A(makeSquare(30, 95, "red", handleEvt))
+	//bottomStage.enableDOMEvents(false);	// you can set this if the bottom stage is completely covered by the top stage, to reduce the number of active event listeners.
+	bottomStage.text = new cjs.Text("", "15px monospace", "#111").XY(195, 30).lineH(16.7).a2(bottomStage)
+	topStage = stageSetup("canvasTwo", handleEvt)
+			.N("topStage").eMO()
+			.A(makeSquare(375, 30, "pink", handleEvt))
+			.next(bottomStage)
+	topStage.text = new cjs.Text("", "15px monospace", "#111").XY(30).lineH(16.7).a2(topStage)
+	function stageSetup(canvasName, handler) {
+		s = stage = new cjs.Stage(canvasName).tick()
+		//stage.addEventListener("stagemousemove", handler);	// too noisy
+		_.each(["stagemousedown", "stagemouseup", "mouseleave", "mouseenter"], function (ev) {
+			s.on(ev, handler)
+		})
+		s.log = []
+		return s
+	}
+	
+	function makeSquare(x, y, color, handler) {
+		var shape = cjs.shape().N('square').XY(x, y)
+		shape.graphics.f(color).dr(0, 0, 135, 135)
+		var cont = cjs.ct().N('container').A(shape)
+		_.each(["mouseover", "mouseout", "dblclick", "click"], function (ev) {
+			cont.on(ev, handler)
+		})
+		cont.cursor = "pointer"
+		return cont
+	}
+	
+	function handleEvt(evt) {
+		var target = evt.target,
+				stage = target.getStage(),
+				log = stage.log
+		log.push(evt.type + " on " + target.name + " x:" + evt.stageX.toFixed(0)
+		+ " y:" + evt.stageY.toFixed(0))
+		while (log.length > 12) {
+			log.shift()
+		}
+		stage.text.text = log.join("\n")
+		if (evt.type == "mouseover") {
+			target.alpha = 0.5
+		}
+		if (evt.type == "mouseout") {
+			target.alpha = 1
+		}
+	}
+}
+DISTRACT = function () {
+	z()
+	$.d().A($.c(960, 400).id("testCanvas"))
+	cjs.sharedCode()
+	cjs.utils()
+	cjs.slider()
+	examples.showDistractor()
+	st = new cjs.Stage("testCanvas")
+}
+WINDING1 = function () {
+	cjs.Shape.prototype.same = function () {
+		return $h(this)
+	} //h.copy
+	cjs.manifest = function (func) {
+		var q = cjs.loadQueue()
+		q.complete(
+				function () {
+					func(function (getResult) {
+						return q.getResult(getResult)
+					})
+				})
+				.manifest([{
+					id: "chicks", src: "/chicks.png"
+				},
+					{id: "me", src: "/me.png"},
+					{id: "guy", src: "/guy.png"},
+					{id: "sun", src: "/sun.png"}])
+	}
+	cjs.manifest(function (q) {
+		$.hdr().A($.h1('grahics winding')).A()
+		$.d().A($.c(960, 400)
+				.id("testCanvas"))
+		st = s = stage = $St(["testCanvas"])
+		h = shape = cjs.worldsMostInterestingShape().a2(stage).drag()
+		cjs.bm = function (img) {
+			var g = G(arguments), img = g[0],
+					bm = new cjs.Bitmap(img)
+			if (g.N) {
+				bm.rC()
+			}
+			return bm
+		} //warning: can't yet change to $Bm!!
+		bm = cjs.bm(q("chicks"), '-')
+				.a2(s).X(470).drag()
+		bm.mask = h.same().X(470)
+	})
+} //Uncaught TypeError: Cannot read property 'image' of undefined
+	

@@ -78,7 +78,31 @@ ct.tkCh = function () {
 	ct.tickChildren = g.f ? true : false
 	return ct
 }
-LAYYS = USINGLAYERSINEASEL9 = function () {
+
+//http://www.createjs.com/tutorials/Animation%20and%20Ticker/
+//http://www.createjs.com/tutorials/Animation%20and%20Ticker/timeBased.htmlLAYYS = USINGLAYERSINEASEL9 = function () {
+s = St(500).A()
+s.bm('me', function (bm) {
+	b = bm
+	bm.sXY(3)
+	drawCar()
+	s.tick(function () {
+		b.x(-1 * (g.x() * 2))
+		b.y(-1 * (g.y() * 2))
+	})
+})
+bt = $.button('safd', function () {
+	s.sXY(2)
+}).A()
+function drawCar() {
+	s.bm('guy', function (bm) {
+		g = bm
+		bm.sXY(.5)
+		SL(bm)
+	})
+}
+USINGLAYERSINEASEL9 = function () {
+	z()
 	s = St(500).A()
 	s.bm('me', function (bm) {
 		b = bm
@@ -99,30 +123,5 @@ LAYYS = USINGLAYERSINEASEL9 = function () {
 			SL(bm)
 		})
 	}
-	
-	USINGLAYERSINEASEL9 = function () {
-		z()
-		s = St(500).A()
-		s.bm('me', function (bm) {
-			b = bm
-			bm.sXY(3)
-			drawCar()
-			s.tick(function () {
-				b.x(-1 * (g.x() * 2))
-				b.y(-1 * (g.y() * 2))
-			})
-		})
-		bt = $.button('safd', function () {
-			s.sXY(2)
-		}).A()
-		function drawCar() {
-			s.bm('guy', function (bm) {
-				g = bm
-				bm.sXY(.5)
-				SL(bm)
-			})
-		}
-	}
 }
-//http://www.createjs.com/tutorials/Animation%20and%20Ticker/
-//http://www.createjs.com/tutorials/Animation%20and%20Ticker/timeBased.html
+}
