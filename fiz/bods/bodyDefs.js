@@ -1,8 +1,8 @@
 $L('type')
+
 bD.Set = function () {
-	
-	var bD=this, ps = bD.position
-	
+	var bD=this,
+	 ps = bD.position
 	ps.Set.apply(ps, arguments)
 	return bD
 }
@@ -15,27 +15,7 @@ bD._Y = function (y) {
 	this.position.y = y
 	return this
 }
-bD.X = function (x) {
-	return U(x) ? this.XY().x : this.XY(x, this.XY().y)
-	bD.Xalt = function (x) {
-		var bD = this, p = bD.XY()
-		if (U(x)) {
-			return p.x
-		}
-		return bD.XY(x, p.y)
-	}
-}
 
-bD.Y = function (y) {
-	return U(y) ? this.XY().y : this.XY(this.XY().x, y)
-	bD.Yalt = function (y) {
-		var bD = this, p = bD.XY()
-		if (U(y)) {
-			return p.y
-		}
-		return bD.XY(p.x, y)
-	}
-}
 bD.Ps = function (ps) {
 	var bD = this
 	bD.GP = function () {
@@ -45,15 +25,41 @@ bD.Ps = function (ps) {
 		this.position = ps;
 		return this
 	}
-	return U(ps) ? this.GP() : this.SP(ps)
+	return U(ps) ? bD.GP() :
+			bD.SP(ps)
 }
+
 bD.XY = function (x, y) {
 	var bD = this
 	//= bD.p = bD.ps = bD.xy
 	return U(x) ? this.Ps().m() : 
-	this.Ps(V(x, y).d())
+	v= V(x, y)
+	v=v.d()
+	this.Ps( v  )
 
 } // will need to fix
+
+bD.X = function (x) {
+	return U(x) ? this.XY().x :
+			this.XY(x, this.XY().y)
+}
+bD.Xalt = function (x) {
+	var bD = this, p = bD.XY()
+	if (U(x)) {
+		return p.x
+	}
+	return bD.XY(x, p.y)
+}
+bD.Y = function (y) {
+	return U(y) ? this.XY().y : this.XY(this.XY().x, y)
+}
+bD.Yalt = function (y) {
+	var bD = this, p = bD.XY()
+	if (U(y)) {
+		return p.y
+	}
+	return bD.XY(p.x, y)
+}
 bD.XYalt = function (x, y) {
 	var bD = this, g = G(arguments), p
 	if (g.u) {

@@ -1,27 +1,19 @@
-var mX, mY,  isMDown, selB 
-var mJt
+var mX, mY,  isMDown, selB, mJt
 
 function makeMJt() {
 	var b = getBodyAtM()
-	if (U(b)) {return}
-	var mJD = new bx.MJD()
-	return w.CJ(mJD.bA(w.GGB()).bB(b.wake())
-			.cC(1).mF(300 * b.GM())
-			.ST(mX, mY))
-}
-function getBodyAtM() {
-	var selB
-	w.QAB(qFn, $AB().LB(mX - .1, mY - .1).UB(mX + .1, mY + .1))
-	return selB
-	function qFn(f) {
-		var hit = (f.bTy() == bx.dB) && f.TP(f.tf(), V(mX, mY))
-		if (!hit) {
-			return 1
-		}
-		selB = f.B()
+	if (!b) {
+		return
 	}
+	b.wake()
+	var md = new bx.MJD()
+	md.bodyA = w.GGB()
+	md.bodyB = b
+	md.target.Set(mX, mY)
+	md.collideConnected = true
+	md.maxForce = 300.0 * b.GM()
+	  return w.CJ(md)
 }
-
 
 BXEX2 = function () {
 	cv = l({l: 'c', W: 800, H: 500, a: 1})
@@ -35,10 +27,10 @@ BXEX2 = function () {
 	})
 	$.D(function (e) {
 		isMDown = true
-		logXY(e)
-		$.mm(logXY).tm(logXY)
+		onMove(e)
+		$.mm(onMove).tm(onMove)
 	}).U(function () {
-		$.mm_(logXY).tm_(logXY)
+		$.mm_(onMove).tm_(onMove)
 		isMDown = mX = mY = undefined;
 	})
 	bD = $bD().ty(bx.sB)
@@ -57,19 +49,32 @@ BXEX2 = function () {
 						$cH(M.r() * 30 + 3)))
 	})
 }
-
 function handleMJt() {
+	
 	if (!mJt) {
 		if (!isMDown) {return};
 		mJt =makeMJt()
 	}
-	else if (isMDown) {mJt.ST( V(mX, mY) )} // (  mX, mY ) ok, too
+	
+	else if (isMDown) {mJt.SetTarget(V(mX, mY))}
 	else {w.DJ(mJt);mJt = null}
+	
+}
+
+function getBodyAtM() {
+	var selB
+	w.QAB(qFn, $AB().LB(mX-.1,mY-.1).UB(mX+.1,mY+.1))
+	return selB
+	function qFn(f) {
+		var hit = (f.bTy()==bx.dB) && f.TP(f.tf(), V(mX, mY))
+		if (!hit) {return 1}
+		selB = f.B()
+	}
+
 }
 
 
-
-function logXY(e) {
+function onMove(e) {
 	$.pD(e)
 
 	if (e.clientX) {

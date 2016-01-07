@@ -15,6 +15,13 @@ $pt.l = $pt.cL = bx.D.b2ContactListener.prototype // = bx.CL.prototype
 $pt.cx = bx.Cx.prototype
 $pt.flDa = bx.D.b2FilterData.prototype
 $pt.cxI = bx.D.b2ContactImpulse.prototype
+
+mJD = $pt.mJD=  bx.MJD.prototype
+mJ = $pt.mJ = bx.MJ.prototype
+jt = $jt = bx.Jt.prototype
+ $jD = bx.JtD.prototype
+
+
 $PT = function () {
 	dD = $pt.dD
 	v = $pt.v
@@ -29,6 +36,10 @@ $PT = function () {
 	pH = $pt.pH
 	  cL = $pt.l
 	cx = $pt.cx
+	jD= jtD = $jD
+	j= jt = $jt
+	mJD = $pt.mJD
+	mJ = $pt.mJ
 }
 $PT.jts = function () {
  
@@ -83,4 +94,6 @@ $PT.cos = function () {
 	bCo = $pt.bCo
 }
 $PT()
+  
+  
   

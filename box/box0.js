@@ -28,26 +28,28 @@ bx.MD = b2MassData = bx.Hs.b2MassData
 //contact
 bx.Cxs = bx.D.Contacts
 bx.Cx = bx.Cxs.b2Contact
-//Joints
-bx.Jts = bx.Js = bx.D.Joints
-//joint
-bx.Jt = bx.J = bx.Jts.b2Joint
-bx.JD = bx.JtD = bx.Jts.b2JointDef
+joints()
+function joints(){
 
+//Joints
+	bx.Jts = bx.Js = bx.D.Joints
+//joint
+	bx.Jt = bx.J = bx.Jts.b2Joint
+	bx.JtD = bx.JD = bx.Jts.b2JointDef
 //distance joints
-bx.DJD = bx.Jts.b2DistanceJointDef
-bx.DJ = bDJ = bx.distanceJoint = bx.distanceJoint = bDJ = bx.Jts.b2DistanceJoint //=bx.Jts.b2DistanceJoint
-bx.DJ = bx.distanceJoint = bDJ = bx.Jts.b2DistanceJoint
+	bx.DJD = bx.Jts.b2DistanceJointDef
+	bx.DJ = bDJ = bx.distanceJoint = bx.distanceJoint = bDJ = bx.Jts.b2DistanceJoint //=bx.Jts.b2DistanceJoint
+	bx.DJ = bx.distanceJoint = bDJ = bx.Jts.b2DistanceJoint
 //mouse joints
-bx.MJD = b2MouseJointDef = bx.MouseJointDef = bx.Jts.b2MouseJointDef
-                                 
-bx.MJ = bx.MouseJoint = bx.Jts.b2MouseJoint // = bx.Jts.b2MouseJoint
+	bx.MJD = bx.Jts.b2MouseJointDef
+	bx.MJ = bx.Jts.b2MouseJoint
 //rev joints
-bx.RJD =  bx.RevoluteJointDef = bx.Jts.b2RevoluteJointDef
-bx.RJ = bx.RevoluteJoint = bx.Jts.b2RevoluteJoint
+	bx.RJD = bx.RevoluteJointDef = bx.Jts.b2RevoluteJointDef
+	bx.RJ = bx.RevoluteJoint = bx.Jts.b2RevoluteJoint
 // prismatic jonts
-bx.PrismaticJointDef = bx.Jts.b2PrismaticJointDef
-bx.PJD = bx.PrismaticJointDef = bx.Jts.b2PrismaticJointDef
+	bx.PrismaticJointDef = bx.Jts.b2PrismaticJointDef
+	bx.PJD = bx.PrismaticJointDef = bx.Jts.b2PrismaticJointDef}
  
 //controllers
 bx.Cos = bx.D.Controllers
+

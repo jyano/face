@@ -12,9 +12,8 @@
 		'bxShapeApps','edgeApps','controlApps','fixApps',
 		'fizApps','forcesApps','mouseJtApps',
 		'worldApps','bxWebsiteEx1', 'bxWebsiteEx2',
-		'boxEach', 'queryAB','queryPoint'
-		
-			
+		'boxEach', 'queryAB','queryPoint',
+		  'joints','distanceJt', 'mouseJt'
 	]
 
 
@@ -39,7 +38,8 @@ $stc('', '../art',
 		'fiz/bods', 'fiz/fixts', 'fiz/shapes', 'fiz/world',
 		'box/geo', 'box/collide',
 			'worldQuery','collide','joints','control','yip','arcade','games','geo',
-			'bxApps'
+			'bxApps',
+			'Joints'
 )
 
 web()

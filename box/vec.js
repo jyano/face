@@ -184,16 +184,20 @@ _vec = function (o, g) {
 	return v
 }
 
-V = function fn() {//x, y, x2, y2
+M.V = function fn() {//x, y, x2, y2
 	var g = G(arguments)
 	if (g.A) {return fn.apply(null, g.f)}
+	if (g.O) {return fn(g.f.x, g.f.y )}
 	return N(g.t) ? {
 		x: (g.f - g.t) / 2,
 		y: (g.s - g.fo) / 2
-	} : O(g.f)? {x: g.f.x, y: g.f.y}: 
-			{x: N(g.f,0), y: N(g.s,0)} 
+	} :  {x: N(g.f, 0), y: N(g.s, 0)} 
 }
 
+V= function(){
+	var vec = M.V.apply(null,arguments)
+	return new bx.V(vec.x, vec.y)
+}
 
 Vold = function (x, y, x2, y2) {
 	var g = G(arguments), x = g.f, y = g.s, x2 = g.t, y2 = g.fo, v, o
