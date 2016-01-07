@@ -299,12 +299,40 @@ TRF = TRANSF = function () {
 		stage.update();
 	}
 }
-TFSP = TFSPIN = TRANSFORMSIMPLE = function () {
+
+GROW = function () {
+	$St(500, 500).bm('me', function (bm) {
+		bm.grow().dg()
+	})
+} 
+ 
+STF = SETTRANSFORM = function () {
+	s = $St(800).A()
+	s.bm('me', function (me) {
+		b = me
+		b.setTransform(0, 0, 2, .5, 0, 40, 4, 2, 3)
+		m = b.getMatrix()
+		function tf(a, b, c, d, e, f, g, h, i) {
+			return this.x = a || 0,
+					this.y = b || 0,
+					this.scaleX = null == c ? 1 : c,
+					this.scaleY = null == d ? 1 : d,
+					this.rotation = e || 0,
+					this.skewX = f || 0,
+					this.skewY = g || 0,
+					this.regX = h || 0,
+					this.regY = i || 0,
+					this
+		}
+	})
+}
+TFSP = TFSPIN = TRANSFORMSIMPLE = NOTWORKING = function () {
 	angle = 0
 	img = $.img('me', handleImageLoad)[0]
 	function stop() {
 		cjs.Ticker.removeEventListener("tick", tick)
 	}
+	
 	function handleImageLoad() {
 		canvas = $.canvas('p', 960, 400).id("testCanvas").A()
 		stage = $St(canvas)
@@ -316,12 +344,14 @@ TFSP = TFSPIN = TRANSFORMSIMPLE = function () {
 		cjs.Ticker.timingMode = cjs.Ticker.RAF
 		cjs.tick(tick)
 	}
+	
 	function tick(event) {
 		angle += 0.01
 		var value = Math.sin(angle) * 360
 		bmp.rot(value).sXY(value / 360)
 		stage.update(event)
 	}
+	
 	/*
 	 TFR2 = TRANSFORMSIMPLE = function () {
 	 z()
@@ -351,32 +381,5 @@ TFSP = TFSPIN = TRANSFORMSIMPLE = function () {
 	 }
 	 */
 }
-GROW = function () {
-	$St(500, 500).bm('me', function (bm) {
-		bm.grow().dg()
-	})
-} 
- 
-STF = SETTRANSFORM = function () {
-	s = $St(800).A()
-	s.bm('me', function (me) {
-		b = me
-		b.setTransform(0, 0, 2, .5, 0, 40, 4, 2, 3)
-		m = b.getMatrix()
-		function tf(a, b, c, d, e, f, g, h, i) {
-			return this.x = a || 0,
-					this.y = b || 0,
-					this.scaleX = null == c ? 1 : c,
-					this.scaleY = null == d ? 1 : d,
-					this.rotation = e || 0,
-					this.skewX = f || 0,
-					this.skewY = g || 0,
-					this.regX = h || 0,
-					this.regY = i || 0,
-					this
-		}
-	})
-}
-  
 
  
