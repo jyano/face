@@ -24,10 +24,10 @@ function position(){
 	bD.GY = function () {
 		return this.GP().y
 	}
-	bD.SX = function (x) {
+	bD._X=bD.SX = function (x) {
 		return this.SXY(x, this.GY())
 	}
-	bD.SY = function (y) {
+	bD._Y =bD.SY = function (y) {
 		return this.SXY(this.GX(), y)
 	}
 	bD.gXY = bD.gP = function () {

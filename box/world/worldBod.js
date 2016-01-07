@@ -4,16 +4,18 @@ w.A = function (bD, fD) {
 	return w
 }
 w._sB = function (x, y, fD) {
-	var b = this.cB($sB(x, y))
+	var b = this.CB( $sB(x, y) )
 	if (fD) {
 		b.cF(fD)
 	}
 	return b
 }
+
 w.sB = w.cS = w.cSF = w.sF = w.S = w.stat = function (x, y, fD) {
 	if (!fD) {
-		return this.CB($sB(x, y))
+		return this._sB(x, y) 
 	}
+	
 	if (O(x)) {
 		fD = y;
 		y = x.y;
@@ -21,7 +23,9 @@ w.sB = w.cS = w.cSF = w.sF = w.S = w.stat = function (x, y, fD) {
 	}
 	x = N(x) ? x : 500;
 	y = N(y) ? y : 250
+	
 	return this.cF($sB(x, y), fD)
+	
 	function alt() {
 		w.stat = function (x, y, fD) {
 			var w = this

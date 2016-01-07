@@ -150,39 +150,41 @@ $cF6 = function (rad, x, y) {
 		f.isSensor = true
 	}
 	return f
-	f.tf = f.gTf = function (tf) {
-		var f = this, b = f.B()
-		if (U(tf)) {
-			return b.tf()
-		}
-		b.tf(tf)
-		return f
+
+
+}
+f.TP = function () {
+	var f = this,
+			h = f.H()
+	return h.TP.apply(h, arguments)
+}
+f.vs = f.verts = function () {
+	alert('f.vs verts boxFixt.js')
+	var h = this.GetShape()
+	var verts = h.m_vertices
+	return [verts[0].m(), verts[1].m(), verts[2].m(), verts[3].m()]
+}
+f.rad = function (r) {
+	var f = this, h = f.H()
+	if (U(r)) {
+		return h.rad()
 	}
-	f.TP = function () {
-		var f = this,
-				h = f.H()
-		return h.TP.apply(h, arguments)
+	h.rad(r);
+	return f
+}
+f.tPt = f.tP = function (pt, y) {
+	var f = this, g = G(arguments)
+	var tf = f.B().tf()
+	var pt = N(pt) ? V(pt, y) : pt
+	return f.H().TP(tf, pt)
+}
+f.tf = f.gTf = function (tf) {
+	var f = this, b = f.B()
+	if (U(tf)) {
+		return b.tf()
 	}
-	f.vs = f.verts = function () {
-		alert('f.vs verts boxFixt.js')
-		var h = this.GetShape()
-		var verts = h.m_vertices
-		return [verts[0].m(), verts[1].m(), verts[2].m(), verts[3].m()]
-	}
-	f.rad = function (r) {
-		var f = this, h = f.H()
-		if (U(r)) {
-			return h.rad()
-		}
-		h.rad(r);
-		return f
-	}
-	f.tPt = f.tP = function (pt, y) {
-		var f = this, g = G(arguments)
-		var tf = f.B().tf()
-		var pt = N(pt) ? V(pt, y) : pt
-		return f.H().TP(tf, pt)
-	}
+	b.tf(tf)
+	return f
 }
 $cF = function () {
 	var g = G(arguments)
