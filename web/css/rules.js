@@ -267,22 +267,41 @@ function helps() {
 		return $default(v, k)
 	}
 }
-RU2 = BORDERED = function () {
+RU2 =CSSEXTENDKEYWORD= BORDERED = function () {
+	
+	
 	$s({
-		_bordered: {
-			'border-top': 'dotted 1px red',
-			'border-bottom': 'solid 2px blue'
+	
+		_toBeBordered: {
+			'border-top': 'dotted 10px red',
+			'border-bottom': 'solid 20px blue'
 		},
+		
 		//And we want to use these properties inside other rule-sets.
 		// Well, we just have to drop in the name of the class
 		// where we want the properties, like so:
-		a: {ex: '_bordered', c: 'r'},
-		bt: {c: 'r', ex: '_bordered'}
+		d: {ex: '_toBeBordered', c: 'r'},
+		bt: {c: 'y', ex: '_toBeBordered'}
+	
 	})
-	$.h1().A('bordered').K('bordered')
-	$.bt('fsad')
-	$.a('fasd')
+	
+	
+	l({l: 'bt', k: 'toBeBordered',
+		t: 'BUTTON',
+		a2: 1})
+		
+	l({l: 'h1', k: 'toBeBordered',
+		t: 'border me, please',
+		a2: 1})
+		
+	l({l: 'd', C:'z',c:'w',
+		t:'div',
+		a2:1})
+
 }
+
+
+
 RU1 = SEL = SELECTORS = VAL = RUS = function () {
 	$.h1(ru = $rule('d', {C: 'r', c: 'b'}))
 	$.hr()
@@ -335,12 +354,29 @@ RU3 = SS10 = QFN = LJQFN = HELLOWHYNOTSPAN = function () {
 	// $('body').f('div').C("b").r()
 }
 RU4 = SS8 = SIZE = MIXIN = SS9 = EXT = function () {
-	$CSS({
+	
+	
+	$s({
+	
 		d: {
 			ex: 'icon',
 			C: 'y', c: 'o',
 			mixins: {size: [825]}
 		}
+		
 	}, '*')
-	$.d().A('hello')
+	
+	
+	l({a:'hello', a2:1})
+	l({a: 'hello', a2: 1})
+	ll({a: 'hello', a2: 1})
+	ll({a: 'hello', a2: 1})
+	l({l:'d',a: 'hello', a2: 1})
+	l({l: 6, a: 'hello', a2: 1})
+	l({l: 's', a: 'hello', a2: 1})
+	l({l: 's', a: 'hello', a2: 1})
+	l({l: 'd', a: 'hello', a2: 1})
+	l({l:1, a: 'hello', a2: 1})
 }
+
+

@@ -24,7 +24,9 @@ function getBodyAtM() {
 
 
 BXEX2 = function () {
-	cv = l({l: 'c', W: 800, H: 500, a: 1})
+
+	cv = l({l: 'c', W: 800, H: 500, a2: 1})
+	
 	cv._ps = cv.os()
 	w = new bx.W(V(0, 10), true)  //allow sleep
 	w.SDD($dD().SS(cv.gC()).SDS(30)

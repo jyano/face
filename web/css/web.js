@@ -41,7 +41,6 @@ ooo = {
 	tBl: TEXTBASELINE
 }
 
-
 ooo.R = {
 	C: 'c', f: 'c', s: 'c', dc: 'c',
 	
