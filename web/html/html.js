@@ -14,7 +14,7 @@ $.p = function () {
 	p.A()
 	return p
 }
-$.sp = $.span= function () {
+$.s=$.sp = $.span= function () {
 	var g = G(arguments),
 			sp = $('<span>'), str = '';
 	_.e(g, function (val) {

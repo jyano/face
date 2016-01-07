@@ -57,3 +57,37 @@ bx.iCH = bx.iC = function () {
 bx.iAH = bx.iA = function () {
 	return this.iH() == 'a'
 }
+ 
+bH.ty = function () {
+	return b2d.iH(this)
+}
+bH.iP = function () {
+	return b2d.iP(this)
+}
+bH.iC = function () {
+	return b2d.iC(this)
+}
+bH.iA = function () {
+	return b2d.iA(this)
+}
+bH.TP = function () {
+	return this.TestPoint.apply(this, arguments)
+}
+f.isStat = function () {
+	return this.B().isStat()
+}
+f.isDyn = function () {
+	return this.B().isDyn()
+}
+f.isKin = function () {
+	return this.B().isKin()
+}
+f.bType = function () {
+	return this.B().GetType()
+}
+//f.getType = f.gT = function(someType){var b=this.B(), t=b.GetType(); return  D(someType)?(someType==t):t}
+f.isBType = f.isType = function (t) {
+	if (t) {
+		return this.bType() == t
+	}
+}

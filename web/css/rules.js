@@ -334,25 +334,37 @@ RU1 = SEL = SELECTORS = VAL = RUS = function () {
 }
 RU3 = SS10 = QFN = LJQFN = HELLOWHYNOTSPAN = function () {
 	css_ = {}
+	
 	css_.redDivs = {
+	
 		d: {
 			C: 'v', c: 'p',
-			M: 20, P: 40, h: 420
+			M: 20, P: 40, h: 40
 		},
-		sp: {
+	
+			sp: {
 			C: 'u'
 		}
 	}
+	
 	css_.big = {d: {fZ: 100}}
+	
 	$s(css_.redDivs)
 	$s(css_.big)
+	
 	$.d().A('hello').A($.sp('why not span'))
+	
 	$.d().A('nice day')
+	$.hr()
+	$.hr()
+	
 	$('div').e(function () {
-		$l('this:', this)
+		$.h1('this:'+ $(this).oh())
 	})
+	
 	// $('body').f('div').C("b").r()
 }
+
 RU4 = SS8 = SIZE = MIXIN = SS9 = EXT = function () {
 	
 	
@@ -380,3 +392,4 @@ RU4 = SS8 = SIZE = MIXIN = SS9 = EXT = function () {
 }
 
 
+//The document element is available in the head of the document before loading any other HTML

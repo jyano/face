@@ -1,19 +1,28 @@
  
 	Box = [
-		'bx','box0','boxBool', 'boxPt', 'vec','mat',
+		'bx','box0', 'boxPt', 'vec','mat',
 		
-		  'world', 'worldBod', 'worldFix', 'debug',
+		  'world', 'worldBod',
+		  
+		    'worldFix',
+		'worldPol',
+		      'debug',
 		'bodies', 'bodyDefs', 'fixtures', 'fixtureDefs',
-		'fizShapes','edges','walls',
-		'boxCir', 'boxPol', 'boxRec', 'edges',
+		'fixShapes',
+		'bodShapes',
+			'shapes',		
+		'edges','walls',
+ 
 		'bodFix', 'forces',
-		
+		 
 		'boxApps','bxMouseApps',
-		'bxShapeApps','edgeApps','controlApps','fixApps',
+		'bxShapeApps',
+		 
+		'edgeApps','controlApps','fixApps', 'boxBool',
 		'fizApps','forcesApps','mouseJtApps',
 		'worldApps','bxWebsiteEx1', 'bxWebsiteEx2',
 		'boxEach', 'queryAB','queryPoint',
-		  'joints','distanceJt', 'mouseJt'
+		  'joints','distanceJt', 'mouseJt','boxKlas'
 	]
 
 
@@ -32,14 +41,18 @@ $stc('', '../art',
 		'easel/filter', 'easel/movieClip', 'easel/shapes', 'easel/sprite', 
 		'mashUp','sync',
 		'wappy','wappy/work','muggy',
-		'box','box/core',
+		'fiz/box',
+		'fiz',
+		'box/core',
 		
 		'box/bods', 'box/fixts', 'box/shapes', 'box/world',
 		'fiz/bods', 'fiz/fixts', 'fiz/shapes', 'fiz/world',
 		'box/geo', 'box/collide',
 			'worldQuery','collide','joints','control','yip','arcade','games','geo',
 			'bxApps',
-			'Joints'
+			'Joints',
+			'fiz/body','fiz/fixture','fiz/world','fiz/joint','fiz/query','fiz/collide','fiz/control',
+			'fiz/box/body','fiz/box/fixture','fiz/box/world','fiz/box/core'
 )
 
 web()

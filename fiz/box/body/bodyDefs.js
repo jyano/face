@@ -1,150 +1,69 @@
-$L('type')
-
-bD.Set = function () {
-	var bD=this,
-	 ps = bD.position
-	ps.Set.apply(ps, arguments)
-	return bD
-}
-
-bD._X = function(x){
-	this.position.x =x 
-	return this
-}
-bD._Y = function (y) {
-	this.position.y = y
-	return this
-}
-
-bD.Ps = function (ps) {
-	var bD = this
-	bD.GP = function () {
+$L('position','type')
+ 
+function position(){
+	bD.Set = function () {
+// actual sig: bD.position.Set(x, y)
+		var bD = this
+		bD.position.Set.apply(bD.position, arguments)
+		return bD
+	}
+	bD.GXY = bD.GP = function () {
 		return this.position
 	}
-	bD.SP = function (ps) {
-		this.position = ps;
+	bD.SP = function (x, y) {
+		this.position = V(x, y)
 		return this
 	}
-	return U(ps) ? bD.GP() :
-			bD.SP(ps)
-}
-
-bD.XY = function (x, y) {
-	var bD = this
-	//= bD.p = bD.ps = bD.xy
-	return U(x) ? this.Ps().m() : 
-	v= V(x, y)
-	v=v.d()
-	this.Ps( v  )
-
-} // will need to fix
-
-bD.X = function (x) {
-	return U(x) ? this.XY().x :
-			this.XY(x, this.XY().y)
-}
-bD.Xalt = function (x) {
-	var bD = this, p = bD.XY()
-	if (U(x)) {
-		return p.x
+	bD.SXY = function (x, y) {
+		var v = V(x, y)
+		return this.Set(v.x, v.y)
 	}
-	return bD.XY(x, p.y)
-}
-bD.Y = function (y) {
-	return U(y) ? this.XY().y : this.XY(this.XY().x, y)
-}
-bD.Yalt = function (y) {
-	var bD = this, p = bD.XY()
-	if (U(y)) {
-		return p.y
+	bD.GX = function () {
+		return this.GP().x
 	}
-	return bD.XY(p.x, y)
-}
-bD.XYalt = function (x, y) {
-	var bD = this, g = G(arguments), p
-	if (g.u) {
-		return bD.position.m()
+	bD.GY = function () {
+		return this.GP().y
 	}
-	p = V(g.f, g.s, '-')
-	bD.position.Set(p.x, p.y)
-	return bD
-}
-bD.Xalt = function (x) {
-	var bD = this, p = bD.XY()
-	if (U(x)) {
-		return p.x
+	bD.SX = function (x) {
+		return this.SXY(x, this.GY())
 	}
-	return bD.XY(x, p.y)
-	function alt() {
-		bD.X = function (x) {
-			var pos = this.XY()
-			if (U(x)) {
-				return pos.x
-			}
-			return this.XY(x, pos.y)
-		}
+	bD.SY = function (y) {
+		return this.SXY(this.GX(), y)
 	}
-}
-bD.Yalt = function (y) {
-	var bD = this, p = bD.XY()
-	if (U(y)) {
-		return p.y
+	bD.gXY = bD.gP = function () {
+		return this.GP().m()
 	}
-	return bD.XY(p.x, y)
-	function alt() {
-		bD.Y = function (y) {
-			var pos = this.XY()
-			if (U(y)) {
-				return pos.y
-			}
-			return this.XY(pos.x, y)
-		}
+	bD.gX = function () {
+		return this.gXY().x
 	}
-}
-bD.XYalt = bD.p = bD.ps = bD.xy = function (x, y) {
-	var args = G(arguments)
-	args[0] = x;
-	args[1] = y;
-	if (x === '*') {
-		x = Math.random() * 10 * 60
+	bD.gY = function () {
+		return this.gXY().y
 	}
-	if (y === '*') {
-		y = Math.random() * 10 * 60
+	bD.sXY = bD.set = function (x,y) {
+		var v = V(x, y).d()
+		this.Set(v.x, v.y)
+		return this
 	}
-	var pos = this.position
-	if (U(x)) {
-		return {x: pos.x * 30, y: pos.y * 30}
+	bD.sX = function (x) {
+		return this.sXY(x, this.gY())
 	}
-	this.position.Set(x / 30, y / 30)
-	return this
-	function alt() {
-		bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
-			var args = G(arguments)
-			args[0] = x;
-			args[1] = y;
-			if (x === '*') {
-				x = Math.random() * 10 * 60
-			}
-			if (y === '*') {
-				y = Math.random() * 10 * 60
-			}
-			var pos = this.position
-			if (U(x)) {
-				return {x: pos.x * 30, y: pos.y * 30}
-			}
-			//if(O(x)){this.position=x;return this}
-			this.position.Set(x / 30, y / 30)
-			return this
-		}
-		bD.XY = bD.p = bD.ps = bD.xy = function (x, y) {
-			var bD = this, g = G(arguments), p
-			if (g.u) {
-				return bD.position.m()
-			}
-			p = V(g.f, g.s, '-')
-			bD.position.Set(p.x, p.y)
-			return bD
-		}
+	bD.sY = function (y) {
+		return this.sXY(this.gX(), y)
+	}
+	bD.X = function (x) {
+		return U(x) ? this.gX() :
+				this.sX(x)
+	}
+	bD.Y = function (y) {
+		return U(y) ? this.gY() :
+				this.sY(y)
+	}
+	bD.XY = bD.p = bD.ps = bD.xy = function () {
+		var bD = this, g = G(arguments)
+		return g.u ? bD.gXY() : bD.sXY(g.f, g.s)
+//if (x === '*') {x = M.r() * 10 * 60}
+//if (y === '*') {y = M.r() * 10 * 60}
+//if(O(x)){this.position=x;return this}
 	}
 }
 bD.A = bD.ang = bD.Ang = function (an) {

@@ -1,7 +1,5 @@
 //https://en.wikipedia.org/wiki/Bounding_volume
-bx.tMt = function (x, y) {
-	return V(x, y).d()
-}
+ 
 bx.mat22 = function (v1, v2) {
 	var m = new bx.Mat22()
 	m.SetVV(v1, v2)

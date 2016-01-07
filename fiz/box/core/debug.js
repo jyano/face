@@ -74,6 +74,20 @@ dD.cv = function (cv) {
 	return this.ctx($(cv)[0].getContext("2d"))
 }
 $dD = function (sp, sc) {
+	
+// = b2d.debugDraw
+	//=DebugDraw=dbD
+	var dD = new b2d.DD()
+	if (sp) {
+		dD.sp(sp);
+	}
+	if (N(sc)) {
+		dD.sc(sc)
+	}
+	return dD
+	
+}
+$dDAlt = function () {
 	$dD = function () {
 		var g = G(arguments), o, dbD = new b2DebugDraw()
 		var DD = b2DebugDraw
@@ -119,42 +133,30 @@ $dD = function (sp, sc) {
 			}
 		}
 	}
-// = b2d.debugDraw
-	//=DebugDraw=dbD
-	var dD = new b2d.DD()
-	if (sp) {
-		dD.sp(sp);
+	$_DD = function () {
+		return new b2d.DD
 	}
-	if (N(sc)) {
-		dD.sc(sc)
+	var g = G(arguments), o, dbD = new b2DebugDraw()
+	var DD = b2DebugDraw
+	//var flags= DD.e_shapeBit | DD.e_pairBit | DD.e_aabbBit | DD.e_centerOfMassBit
+	var flags = b2DebugDraw.e_shapeBit// | DD.e_pairBit | DD.e_aabbBit | DD.e_centerOfMassBit
+	o = {cx: g.f, sc: g.s, fl: g.t, al: g[4], l: g[3]}
+	if ($.iC(o.cx)) {
+		o.cx = $(o.cx).ctx()
 	}
-	return dD
-	$dDAlt = function () {
-		$_DD = function () {
-			return new b2d.DD
-		}
-		var g = G(arguments), o, dbD = new b2DebugDraw()
-		var DD = b2DebugDraw
-		//var flags= DD.e_shapeBit | DD.e_pairBit | DD.e_aabbBit | DD.e_centerOfMassBit
-		var flags = b2DebugDraw.e_shapeBit// | DD.e_pairBit | DD.e_aabbBit | DD.e_centerOfMassBit
-		o = {cx: g.f, sc: g.s, fl: g.t, al: g[4], l: g[3]}
-		if ($.iC(o.cx)) {
-			o.cx = $(o.cx).ctx()
-		}
-		o.sc = N(o.sc, 30)
-		o.fl = o.fl || flags
-		o.l = N(o.l, 20)
-		o.al = N(o.al, .95)
-		if (o.cx) {
-			dbD.sprite(o.cx)
-		}
-		if (o.sc) {
-			dbD.scale(o.sc)
-		}
-		dbD.flags(o.fl)
-		dbD.alpha(N(o.al, 0.5))
-		return _dbD = dbD
+	o.sc = N(o.sc, 30)
+	o.fl = o.fl || flags
+	o.l = N(o.l, 20)
+	o.al = N(o.al, .95)
+	if (o.cx) {
+		dbD.sprite(o.cx)
 	}
+	if (o.sc) {
+		dbD.scale(o.sc)
+	}
+	dbD.flags(o.fl)
+	dbD.alpha(N(o.al, 0.5))
+	return _dbD = dbD
 }
 $dD.aabb = $dD.a = b2d.DD.e_aabbBit //4
 $dD.hBit = $dD.shape = $dD.h = b2d.DD.e_shapeBit //1

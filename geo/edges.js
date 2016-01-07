@@ -323,50 +323,6 @@ function more() {
 		}
 	}
 }
-FLR = function () {
-	bD = $dB().Set(0, 20)
-	b = w.CB(bD);
-	pH =  $pH()
-	fD = $fD(pH)
-	var i
-	for (i = 0; i < 4; i++) {
-		// pos= V( sinf(i*90*DEGTORAD), cosf(i*90*DEGTORAD) )
-		pH.box(30, 30, V(10, 10), 0)
-		b.CF(fD)
-	}
-	bD = $sB(0, 0)
-	stB = w.CB(bD)
-	pH.asEdge(V(-15, 0), V(15, 3))
-	stB.CF(fD); //add a fixture to the body
-}
-COEDGE = function () {
-	W()
-	w.rectStat(320, 480, 640, 20)
-	w.rectStat(320, 340, 320, 20)
-	w.rectStat(170, 230, 20, 200)
-	w.rectStat(470, 230, 20, 200)
-	w.rectSensor(320, 245, 280, 170)
-	co = w.buoy(0, -1, 5, 2).os(-6).den(2)
-	cjs.tick(function () {
-		w.each(function (b) {
-			if (b.isDyn()) {
-				
-				// if(b.co()){ co.remove(b) }
-				b.eachCx(function (cx) {
-					
-					// if one is a sensor AND the other has no controllers
-					// then add the other one to the controller
-					// if(cx.A().IsSensor() && !cx.b().co() ){ co.body(cx.b()) }
-					// if(cx.B().IsSensor() && !cx.a().co() ){ co.body(cx.a()) }
-				})
-			}
-		})
-	})
-	// I(function(){
-	b = w.circ(300, 40, 8, 'r').den(1)
-	c = b.cx()
-	// })
-}
  
   function edgePairs(){//b2ControllerEdge "A controller edge is used to connect bodies and controllers together in a bipartite graph.";
 	  b2d.CE = b2d.CoE = b2d.ControllerEdge = b2d.Cos.b2ControllerEdge

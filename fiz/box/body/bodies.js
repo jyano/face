@@ -527,3 +527,8 @@ function _pre() {
 //b.CF( fD.cH(45) ) 
 
 b.GM=function(){return this.GetMass()}
+//
+b.A = function (fD) {
+	this.cF(fD);
+	return this
+}

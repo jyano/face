@@ -94,6 +94,5 @@ $PT.cos = function () {
 	bCo = $pt.bCo
 }
 $PT()
-  
-  
-  
+bH = bx.H.prototype
+arr = [V(-30, 0), V(0, -150), V(120, 0)]

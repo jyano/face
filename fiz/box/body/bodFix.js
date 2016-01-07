@@ -15,9 +15,7 @@ b.fs = b.e = b.eF = function (fn) {
 	}
 	return arr
 }
-b.pol = b.poly = function () {
-	return this.f($pF.apply(null, arguments))
-}
+
 b.DF = b.dsFx = function (fixt) {
 	this.DestroyFixture(fixt)
 	return this
@@ -92,9 +90,25 @@ b.onAddFxt = function () {
 	this.rMD()
 	return this
 }
-b.$fD = function () {
-	return this.CF($fD.apply(null, arguments))
-}
+ 
+b2d.fxPar = $$$cirORpoly$$$ = function (fxs, fn) {
+	var b = this
+	//if its not an array,, assume is fine, and leave it as is
+	fxs = _.m(fxs, function (f) {
+		return !A(f) ? f :
+				f.length == 1 || f.length == 3 ?
+						$cF.apply(null, f) :
+						$pF.apply(null, f)
+	})
+	// fn = _.b(fn, b) ?
+	if (fn) {
+		_.e(fxs, fn);
+		return b
+	}
+	return fxs
+	//if (f.isSensor) {return b2d.polySens.apply(null, f)}
+} 
+
 b.fxPar = function (f) {
 // so how does that work??
 // the array len determines if it is to make 
@@ -105,50 +119,18 @@ b.fxPar = function (f) {
 	})
 	return b
 }
-b.fD = b.fxD = function (fD) {
-	return this.CF( $fD(fD) )
+b.fD = b.fxD = b.$fD = function (fD) {
+//return this.CF( $fD(fD) )
+	return this.CF($fD.apply(null, arguments))
 }
-b.cF = function () {
-	return this.CreateFixture.apply(this, arguments)
-}
-b.aF = function () {
-	this.cF.apply(this, arguments)
-	return this
-}
+
 b.GFL = function () {
 	return this.GetFixtureList()
 }
 b.n = b.num = b.count = function () {
 	return this.m_fixtureCount
 }
-b.f = function (fD) {//b.createFixture = b.cF = b.fixt1 = b.shape =
-	var b = this, f;
-	if (U(fD)) {
-		return this.GetFixtureList()
-	}
-	// can pass a CODED array of fixts (will get parsed)
-	if (A(fD)) {
-		_.each(b2d.fixtParse(fD),
-				function (fd) {
-					b.fixt(fd)
-				})
-		return b
-	}
-	if (!b2d.isFixtDef(fD)) {
-		fD = b2d.fixt.apply(b2d, arguments)
-	}
-	//create the fixt
-	f = this.CreateFixture(fD)
-	//assign it classes specified in the fixt def
-	if (A(fD.classes)) {
-		_.each(fD.classes,
-				function (clas) {
-					f.K(clas)
-				})
-	}
-	return f
-	//= b.fixt = b.list
-}
+
 b.fs = function (fn) {
 	var b = this, g = G(arguments),
 			fl = b.f(), fn = g.f, arr = []
@@ -206,27 +188,15 @@ b.fs = function (fn) {
 	
 	// = b.e
 }
-b.f = function (fD) {
-	var b = this, g = G(arguments)
-	if (g.u) {
-		return b.GFL()
-	}
-	if (g.A_) {
-		_.e(b2d.fxPar(g.f), function (fD) {
-			b.f(fD)
-		})
-		return b
-	}
-	var f = b.CF(g.f)
-	if (g.f.K()) {
-		f.K(g.f.K())
-	}
-	return f
-}
-b.CF = b.CreateFixture
-b.CF = function () {
+b.CF = function () {//b.CF = b.CreateFixture
 	return this.CreateFixture.apply(this, arguments)
 }
+
+b.CF_ = function () {//b.CF = b.CreateFixture
+	 this.CreateFixture.apply(this, arguments)
+	 return this
+}	 
+
 b.CF2 = function () {
 	return this.CreateFixture2.apply(this, arguments)
 }
@@ -426,183 +396,48 @@ function dfr() {
 				b.f() ? b.f().GetRestitution() : false
 	}
 }
-function shapes() {
-	b.H = function (arg) {
-		var b = this, g = G(arguments), arg = g[0],
-				len = length(g)
-		if (U(arg)) {
-			return this.f().H() // return b
-		}
-		//passing a single array, suggest MULTIPLE fixts
-		//[f1,f2,..]
-		if (A(g[0]) && U(g[1])) {
-			_.each(g[0], function (a) {
-				b.H.apply(b, a)
-			})
-		}
-		
-		
-		//[col,[f1,f2,..]]
-		else if (S(g[0]) && A(g[1]) && U(g[2])) {
-			_.each(g[1], function (f) {
-				if (b2d.isFixtDef(f)) {
-					b.fixt(f).C(g[0])
-				}
-				else {
-					if (!S(f[0])) {
-						f = _.map(f, function (a) {
-							return a
-						})
-						//*** ?
-						f.unshift(g[0])
-					}
-					if (b2d.isFixtDef(f[1])) {
-						b.fixt(f[1]).C(f[0])
-					}
-					else {
-						b.H.apply(b, f)
-					}
-				}
-			})
-		}
-		//fixtDef
-		else if (b2d.isFixtDef(g[0])) {
-			b.fixt(g[0])
-		}
-		//['color', fixtDef]
-		else if (S(g[0]) && b2d.isFixtDef(g[1])) {
-			b.fixt(g[1]).C(g[0])
-		}
-		
-		//verts
-		else if (O(g[1])) {
-			if (g.n) {
-				g.push('-')
-			}
-			b.conc(g)
-			//b.convex(g)
-		}
-		
-		//circ
-		else if (len == 1 || len == 3) {
-			if (g.n) {
-				g.push('-')
-			}
-			b.CIRC.apply(b, g)
-		}
-		
-		//rect
-		else {
-			if (g.n) {
-				g.push('-')
-			}
-			b.RECT.apply(b, g)
-		}
-		function length(arr) {
-			var len = arr.length
-			if (S(arr[0])) {
-				len--
-			}
-			if (S(_.last(arr))) {
-				len--
-			}
-			return len
-		}
-		
-		return b
+b.f = function (fD) {//b.createFixture = b.cF = b.fixt1 = b.shape =
+	var b = this, f;
+	if (U(fD)) {
+		return this.GetFixtureList()
 	}
-	b.hit = function (x, y, dot) {
-		var b = this,
-				w = b.W(),
-				g = G(arguments), hit = false
-		if (g.p) {
-			w.dot(x, y)
-		}
-		b.fs(function (f) {
-			if (f.hit(x, y)) {
-				hit = true
-			}
-		})
-		return hit
-		function alt() {
-			b.hit = function (x, y, dot) {
-				var hit
-				if (dot == true) {
-					this.wor().dot(x, y)
-				}
-				this.eachFixt(function (f) {
-					if (f.hit(x, y)) {
-						hit = true
-					}
+	// can pass a CODED array of fixts (will get parsed)
+	if (A(fD)) {
+		_.each(b2d.fixtParse(fD),
+				function (fd) {
+					b.fixt(fd)
 				})
-				return hit
-			}
-		}
-	}
-	b.rad = b._r = function (n) {
-		if (U(n)) {
-			return this.shp().m_radius * 30
-		}
-		n = N(n, 100)
-		h = this.f().H()
-		if (h.SetRadius) {
-			h.SetRadius(n / 30)
-		}
-	}
-	b.h = function () {
-		return this.f().shape
-	}
-	b.cF = b.cFx = b.circ = function () {
-		var cF = $cF.apply(null, arguments)
-		return this.f(cF)
-	}
-	b.rF = b.rect = function () {
-		return this.f($rF.apply(null, arguments))
-	}
-	b.rH = b.rF = function () {
-		var rH = $rH.apply(null, arguments)
-		return this.fD(rH)
-	}
-	b.aF = b.arrr = function () {
-		return this.f($aF.apply(null, arguments))
-	}
-	b.pF = b.poly = function () {
-		return this.f($pF.apply(null, arguments))
-	}
-	b.rad = function (r) {
-		var b = this, h = b.H()
-		if (U(r)) {
-			return h.rad()
-		}
-		h.rad(r);
 		return b
 	}
-	b.H = function () {
-		return this.f() && this.f().H()
+	if (!b2d.isFixtDef(fD)) {
+		fD = b2d.fixt.apply(b2d, arguments)
 	}
+	//create the fixt
+	f = this.CreateFixture(fD)
+	//assign it classes specified in the fixt def
+	if (A(fD.classes)) {
+		_.each(fD.classes,
+				function (clas) {
+					f.K(clas)
+				})
+	}
+	return f
+	//= b.fixt = b.list
 }
- 
-b.aAF = function () {
-	var aF = $aF.apply(null, arguments)
-	this.CF(aF)
-	return this
+b.f = function (fD) {
+	var b = this, g = G(arguments)
+	if (g.u) {
+		return b.GFL()
+	}
+	if (g.A_) {
+		_.e(b2d.fxPar(g.f), function (fD) {
+			b.f(fD)
+		})
+		return b
+	}
+	var f = b.CF(g.f)
+	if (g.f.K()) {
+		f.K(g.f.K())
+	}
+	return f
 }
-b.cAF = function () {
-	var aF = $aF.apply(null, arguments)
-	return this.CF(aF)
-}
-b.aCF = function () {
-	var aF = $cF.apply(null, arguments)
-	this.CF(aF)
-	return this
-}
-b.cCF = function () {
-	
-	var aF = $cF.apply(null, arguments)
-	
-	return this.CF(aF)
-}
-b.cir = function (r) {
-	return this.f($fD($cH(r)))
-}
- 

@@ -78,8 +78,6 @@ lll.tag=function(l){
 	}
 	return l
 }
-
-
 l = function (ob) {
 	var g=G(arguments)
 	if (O(g.s)) {return l(g)}
@@ -100,7 +98,6 @@ l = function (ob) {
 	q = q || l.sp()
 	return lll(q, ob)
 }
-
 ll = function (ob) {
 	var q
 	ob = ob || {}
@@ -112,8 +109,6 @@ ll = function (ob) {
 	q = q || l.d()
 	return lll(q, ob)
 }
-
-
 l.l= function(ob){
 	ob=ob||{}
 	ob.a2 = true
@@ -124,9 +119,6 @@ l.ll = function (ob) {
 	ob.a2 = true
 	return ll(ob)
 }
-
-
-
 l.d  = function(){
 	var q =  $('<div>')
 	return q

@@ -36,6 +36,8 @@ BOX2D = function () {
 	w.me(400, 400)
 	//w.addTenBalls() ..not color yet
 }
+
+
 CUPS = function (o) {
 	$canW(_.extend({g: 20}, o || {}))//.db()
 	cup = [[20, 20], [100, 40, 0, 40, 0], [200, 40, -80, -40, 260], [200, 40, 80, -40, -80]]
