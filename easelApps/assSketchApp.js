@@ -194,7 +194,7 @@ cjs.testCanvas = function () {
 	return $.c(960, 400).id("testCanvas").a2($.d())
 }
 
-COOL = DRAWONCHICKS= function () {
+ASS_SKETCH=COOL = DRAWONCHICKS= function () {
 	pt = 0
 	h = $St().mO(1).h()
 	h.graphics._ss('g', 40, 's', 'b', 1)

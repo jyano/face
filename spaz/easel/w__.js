@@ -1,4 +1,6 @@
-n = 0
-o = {}
-f = function () {
+w._ = function (fn) {
+	Q(function () {
+		fn(w)
+	})
 }
+   
