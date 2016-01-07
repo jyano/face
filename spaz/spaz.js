@@ -2349,42 +2349,7 @@ function dittoMaybe(){
 		w.bg.h().c(c || $r()).dr(0, 0, w.w, w.h)
 		return w
 	}
-	w.cir = w.ball = w.ba = w.circ = function (x, y, r, c) {
-		var w = this, g = G(arguments), b, o
-		o = g.O ? g.f : N(g.s) ? {
-			x: g.f, y: g.s,
-			r: g.t,
-			c: g[3]
-		} : {r: g.f}
-		o.x = N(o.x, w.hW)
-		o.y = N(o.y, w.hH)
-		o.r = N(o.r, 50)
-		o.c = o.c || $r()
-		b = w.D(o.x, o.y, o.c, o.r)
-				.d(.5).fr(0).r(.5)
-				.K('ball cir')
-		if (g.n) {
-			b.sen(true)
-		}
-		return b
-	}
-	w.bump = w.baa = function () {
-		var w = this, g = G(arguments), b, o
-		o = O(g[0]) ? g[0] : N(g[1]) ? {
-			x: g[0],
-			y: g[1],
-			r: g[2]
-		} : {r: g[0]}
-		o.x = _.tN(o.x, w.hW)
-		o.y = _.tN(o.y, w.hH)
-		o.r = _.tN(o.r, 40)
-		o.c = o.c || $r()
-		b = w.S(o.x, o.y, o.c, o.r).K('bump').DFB(0.5, 0, 0.5)
-		if (g.n) {
-			b.sen(true)
-		}
-		return b
-	}
+ 
 	w.d = w.dot = function () {
 		var w = this, g = G(arguments), o
 		if (g.S_) {
@@ -2417,25 +2382,7 @@ function dittoMaybe(){
 		}
 		return w
 	}
-	w.brick = w.bii = function (x, y, W, H) {
-		var w = this, g = G(arguments), b, o
-		o = O(g[0]) ? g[0] : N(g[1]) ? {
-			x: g[0],
-			y: g[1],
-			w: g[2],
-			h: g[3]
-		} : {w: g[0]}
-		o.x = _.tN(o.x, w.hW)
-		o.y = _.tN(o.y, w.hH)
-		o.w = _.tN(o.w, 40)
-		o.h = _.tN(o.h, o.w)
-		o.c = o.c || $r()
-		b = w.S(o.x, o.y, o.c, o.w, o.h).K('brick').DFB(0.5, 0.5, 0)
-		if (g.n) {
-			b.sen(true)
-		}
-		return b
-	}
+ 
 	w.bfR = function () {
 		var w = this, g = G(arguments), b, h, o
 		o = _.x({x: g.f, y: g.s},
@@ -2925,43 +2872,7 @@ w.C = function (c) {
 	w.bg.h().c(c || $r()).dr(0, 0, w.w, w.h)
 	return w
 }
-w.cir = w.ball = w.ba = w.circ = function (x, y, r, c) {
-	 
-	var w = this, g = G(arguments), b, o
-	o = g.O ? g.f : N(g.s) ? {
-		x: g.f, y: g.s,
-		r: g.t,
-		c: g[3]
-	} : {r: g.f}
-	o.x = N(o.x, w.hW)
-	o.y = N(o.y, w.hH)
-	o.r = N(o.r, 50)
-	o.c = o.c || $r()
-	b = w.D(o.x, o.y, o.c, o.r)
-			.d(.5).fr(0).r(.5)
-			.K('ball cir')
-	if (g.n) {
-		b.sen(true)
-	}
-	return b
-}
-w.bump = w.baa = function () {
-	var w = this, g = G(arguments), b, o
-	o = O(g[0]) ? g[0] : N(g[1]) ? {
-		x: g[0],
-		y: g[1],
-		r: g[2]
-	} : {r: g[0]}
-	o.x = _.tN(o.x, w.hW)
-	o.y = _.tN(o.y, w.hH)
-	o.r = _.tN(o.r, 40)
-	o.c = o.c || $r()
-	b = w.S(o.x, o.y, o.c, o.r).K('bump').DFB(0.5, 0, 0.5)
-	if (g.n) {
-		b.sen(true)
-	}
-	return b
-}
+ 
 w.d = w.dot = function () {
 	var w = this, g = G(arguments), o
 	if (g.S_) {
