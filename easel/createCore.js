@@ -89,3 +89,8 @@ function _pre() {
 //http://www.createjs.com/tutorials/Mouse%20Interaction/
 //http://www.createjs.com/tutorials/Inheritance/
 //http://www.createjs.com/tutorials/Mouse%20Interaction/
+$Ldr = function (name, fn) {
+	return window[name] = function () {
+		$Ld(fn)
+	}
+}

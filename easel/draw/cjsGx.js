@@ -11,6 +11,7 @@ gx._ss = function () {	//=0//=0//=10//=false
 	gx.ss(l, caps, jts, mit, ignSc)
 	return gx
 }
+
 gx.F = function (fC) {
 	return this._f(fC || 'z')
 }
@@ -144,15 +145,17 @@ gx._s = function (col, thickness) {
 		gx.SS(thickness)
 	}
 	return gx
-} 
-HGXX = function () {
+}
+function world(){ 
+HGXX = NEEDSWORLD= function () {
 	W()
 	h = w.i.h()
 	h.graphics.ss(40, "round", "round")
 	h.C("rgba(0,0,0,0.2)").mt(100, 100)
 	h.graphics.curveTo(200, 500, 600, 300)
 }
-DISTRACT = function () {
+}
+NOTHING = DISTRACT = function () {
 	$.d().A($.c(960, 400).id("testCanvas"))
 	cjs.sharedCode()
 	cjs.utils()
@@ -160,8 +163,8 @@ DISTRACT = function () {
 	examples.showDistractor()
 	st = new cjs.Stage("testCanvas")
 }
-XX6 = GXTX = GRAPHICSTEST = function () {
-	stage = cjs.stage(800, 500).A()
+AWESOME= XX6 = GRAPHICSTEST = function () {
+	stage = $St()
 	canvas = stage.canvas
 	// grab canvas width and height for later calculations:
 	w = canvas.width
@@ -187,14 +190,14 @@ XX6 = GXTX = GRAPHICSTEST = function () {
 	}
 	
 	function createBorder() {
-		var s = cjs.shape()
+		var s = $H()
 		s.graphics.beginBitmapStroke(img).setStrokeStyle(32).dr(20, 20, 920, 360)
 		return cjs.container().A(s)
 	}
 	
 	function createBitmapFill() {
 		var container = createTile();
-		var s = cjs.shape().XY(12, 10)
+		var s = $H().XY(12, 10)
 		var mtx = new createjs.Matrix2D().rotate(1)
 		s.graphics.beginBitmapFill(img, null, mtx).setStrokeStyle(8)
 				.beginRadialGradientStroke(["#FFF", "#000"], [0, 1], 0, 0, 0, 0, 30, 130).dr(0, 0, 130, 130)
@@ -202,13 +205,13 @@ XX6 = GXTX = GRAPHICSTEST = function () {
 	}
 	
 	function createRectGradientFill() {
-		var s = cjs.shape().XY(12, 10)
+		var s = $H().XY(12, 10)
 		s.graphics.beginLinearGradientFill(["#FFF", "#000"], [0, 1], 0, 0, 0, 130).dr(0, 0, 130, 130)
 		return createTile().A(s)
 	}
 	
 	function createEllipse() {
-		var s = cjs.shape().XY(40, 10)
+		var s = $H().XY(40, 10)
 		s.graphics.f(createjs.Graphics.getRGB(0, 0x66, 0x99, 0.5))
 				.setStrokeStyle(4).beginLinearGradientStroke(["#F00", "#000"], [0, 1], 0, 0, 70, 140)
 				.drawEllipse(0, 0, 70, 140, 8)
@@ -216,21 +219,21 @@ XX6 = GXTX = GRAPHICSTEST = function () {
 	}
 	
 	function createRadialGradientFill() {
-		var s = cjs.shape().XY(80)
+		var s = $H().XY(80)
 		s.graphics.ss(8).beginStroke("#f0f")
 				.beginRadialGradientFill(["#FFF", "#0FF"], [0, 1], 0, 0, 0, 0, 0, 40).dc(0, 0, 40)
 		return createTile().A(s)
 	}
 	
 	function createLineTo() {
-		var s = cjs.shape()
+		var s = $H()
 		s.graphics.setStrokeStyle(16, "round", "round").beginStroke("#f90")
 				.moveTo(20, 10).lineTo(90, 90).lineTo(90, 140)
 		return createTile().A(s)
 	}
 	
 	function createHex() {
-		var s = cjs.shape().XY(80, 40)
+		var s = $H().XY(80, 40)
 		s.graphics.beginFill("pink")
 				.drawPolyStar(0, 0, 40, 6)
 				.drawPolyStar(0, 75, 40, 6)
@@ -239,32 +242,32 @@ XX6 = GXTX = GRAPHICSTEST = function () {
 	}
 	
 	function createStar() {
-		var s = cjs.shape().XY(80, 85)
+		var s = $H().XY(80, 85)
 		s.graphics.setStrokeStyle(1).beginStroke(cjs.Graphics.getRGB(255, 255, 0))
 				.beginFill("yellow").endStroke().drawPolyStar(0, 0, 80, 5, 0.9, -90)
 		return createTile().A(s)
 	}
 	
 	function createRoundRect() {
-		var s = cjs.shape().XY(12)
+		var s = $H().XY(12)
 		s.graphics.setStrokeStyle(6).beginStroke("red").beginFill("green").drawRoundRect(0, 0, 130, 130, 30);
 		return createTile().A(s)
 	}
 	
 	function createTile() {
-		var bg = cjs.shape()
+		var bg = $H()
 		bg.graphics.beginFill('#CCCCCC').dr(0, 0, 155, 155).endFill()
 		bg.alpha = 0.25
 		return cjs.container().A(bg)
 	}
 }
-DSTR = DISTRACTORDOESNOTHING = function () {
+DSTR = ERR= DISTRACTORDOESNOTHING = function () {
 	st = stage = $St()
 	cjs.utils()
 	cjs.slider()
 	examples.showDistractor()
 }
-DRL = DRAWLINE = XX5 = HDL11 = needsOBx = function () {
+NOTHING = DRL = DRAWLINE = XX5 = HDL11 = needsOBx = function () {
 	St()
 	h.dl(50, 50, 200, 200)
 	h.dl(V(300, 500), [500, 200])

@@ -1,8 +1,19 @@
+Stage = ['cjs', 'cjsMC',
+	'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
+	'objects', 'matrix', 'cjsPoly',
+	'cjsGx', 'cjsShape', 'curve', 'domElOb', 'cjsGrad',
+	'reggy', 'transform', 'cjsText', 'container',
+	'cjsCir', 'cjsRec', 'official', 'interesting','cache', 'filter',
+'cjsColor',
 
-
- 
-
-
+	'alphaMaskFilter', 'alphaMapFilter', 'blurFilter','graphTest',
+	
+	 
+	   'cache',
+	'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse',
+	'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
+	'movie', 'timeline', 'gunnertron', 'layers'
+]
 $stc('', '../art',
 
 
@@ -66,13 +77,12 @@ $stc('', '../art',
 		'joints', 'distanceJt', 'mouseJt', 'boxKlas'
 	]
 	web()
- 
+ mods()
 
 jsArrs= [
-	Both, Web,
-	
-	Box //, Graphics,Stage, Front, Wap
+	Both, Web,  Graphics,Stage//, Box, Front, Wap
 ]
+
 $a.get('/box/:app*', function (q, p) {
 	app = q.params.app.toUpperCase()
 	html = ''//' - '
@@ -108,7 +118,7 @@ function mods() {
 		'jqGraphics', 'gpClipper', 'superCtx', 'superCan',
 		'ctxDraw', 'ctxImg', 'ctxGlobComp', 'ctxGrad', 'ctxMug', 'ctxPixels', 'ctxShad',
 		'ctxText', 'ctxTransform',
-		'canDraw', 'canImg', 'canGlobComp', 'canGrad', 'canMug', 'canPixels', 'canShad',
+		'canDraw', 'canImg', 'canGlobComp',   'canMug', 'canPixels', 'canShad',
 		'canText', 'canTransform',
 		'gpcCtx',
 		'parallax'
@@ -119,17 +129,7 @@ function mods() {
 		'bb', 'bone', 'bbColl', 'bbDirt', 'bbEvt', 'bbFiltColl', 'bbRtr', 'bbView', 'bbLS', 'bbServer', 'bbServerMore',
 		'ko', 'knock', 'koCustom', 'koMore'
 	]
-	Stage = ['cjs', 'cjsMC',
-		'createCore', 'cjsEvents', 'stage', 'ticker', 'loader', 'tran',
-		'objects', 'matrix', 'cjsPoly',
-		'cjsGx', 'cjsShape', 'curve', 'domElOb',
-		'reggy', 'transform', 'cjsText', 'container',
-		'cjsCir', 'cjsRec', 'official', 'cache', 'filter',
-		'alphaMaskFilter', 'alphaMaskFilter', 'blurFilter', 'cache',
-		'colorFilter', 'colorMatrixFilter', 'bitmap', 'cjsMouse',
-		'tween', 'easing', 'sprite', 'ssBuilder', 'zoe', 'SSData',
-		'movie', 'timeline', 'gunnertron'
-	]
+
 	Wap = ['wappy', 'users', 'login', 'social', 'widUser']
 }
  

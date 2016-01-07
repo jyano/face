@@ -167,6 +167,7 @@ ct.rec = function () {
 $Rec = function (a, b, c, d) {
 	return new cjs.R(a, b, c, d)
 }
+
 REC = function () {
 	$St()
 	h = st.Sh().dg()
@@ -176,6 +177,8 @@ REC = function () {
 	h.dr(100, 100, 500, 10)
 	st.Gx().FS()._dr(500, 30)
 }
+
+
 GRID = function () {
 	stage = s = $St(1000, 1000)
 	container = c = new createjs.Container()

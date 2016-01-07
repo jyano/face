@@ -169,7 +169,7 @@ MX00 = M2D = CJSM2D = function () {
 	})
 }
   
-MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+MATRIXMUG = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
  
 	$.div('b', 50, 50).A()
 	$.div('blue', 50, 50)
@@ -197,7 +197,7 @@ MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10
 			b.sXY(.4).XY(100, 180)
 			//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
 		})
-		c.b('me', function (b) {
+		c.bm('me', function (b) {
 			b.sXY(1.5)
 			// b.o('$',fL('big'))  //on click, log('big')
 		})
@@ -218,7 +218,7 @@ MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10
 				function (b) {
 					b.sXY(.8).XY(100, 280)
 				})
-		c.mg(
+		c.mug(
 				function (b) {
 					b.sXY(.8).XY(340, 180)
 				})
@@ -232,13 +232,13 @@ MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10
 	})//.MV(40)
 	stage.ct(function (c, s) {
 		c.x(700)
-		c.mg(function (b) {
+		c.mug(function (b) {
 			b.sxy(.8).xy(200, 80)
 		})
-		c.mg(function (b) {
+		c.mug(function (b) {
 			b.sxy(.8).xy(100, 280)
 		})
-		c.mg(function (b) {
+		c.mug(function (b) {
 			b.sxy(.8).xy(340, 180)
 		})
 		//this example shows which sprites are acted upon with over/rollover
@@ -338,7 +338,7 @@ MATRIX1 = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10
 						function (b) {
 							b.sXY(.8).XY(100, 280)
 						})
-				c.mg(
+				c.mug(
 						function (b) {
 							b.sXY(.8).XY(340, 180)
 						})

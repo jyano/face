@@ -97,7 +97,7 @@ _canDraw = function (el) {
 			el.context.arc(a, b, c, d, e, f, g)
 			return el
 		}
-		el.arcTo = el.a2 = function a2(X) {
+		el.arcTo = el.arc2 = function a2(X) {
 			var g = G(arguments)
 			if (A(X)) {
 				return _a(a2(x), X)

@@ -1,3 +1,4 @@
+$L('add','kids')
 ct.t = ct.oT = ct.tick = function (fn) {
 	//cjs.Ticker.addEventListener('tick', this); return this
 	var g = G(arguments)

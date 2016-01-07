@@ -265,7 +265,7 @@ h.rc = h.roundRectComplex = function () {
 	gx.drawRoundRectComplex.apply(gx, arguments)
 	return h
 }
-RR1 = RRR8 = ROUNDREC = function () {//C+
+RR1 = BASIC=RRR8 = ROUNDREC = function () {//C+
 	s = $St()
 	h = s.h()
 	gx = h.graphics.FS()
@@ -281,7 +281,7 @@ RR1 = RRR8 = ROUNDREC = function () {//C+
 	s.dot(500, 200)
 	s.u()
 }
-RR2 = TXH8 = function () {
+RR2 =GOODONE= TXH8 = function () {
 	St()
 	h = $H().a2(st)
 	h.f('red').s('black')
@@ -366,6 +366,6 @@ FL9 = Q21 = function () {
 		}
 	})
 	$.i('chicks', function (i) {
-		st.Bm(i[0]).al(.2)
+		$Bm(i).a2(st).al(.2)
 	})
 }

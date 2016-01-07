@@ -576,29 +576,4 @@ ZX = TESTEDITDIV = function () {
 	$.editDiv().C('b')
 	//$.editDiv2().A()
 }
-$.dg1 = $.dragFrame1 = function (ob) {
-	var oD = $.d('r', '+').pad(10)
-	inD = $.d('y').md(function (e) {
-		e.stopPropagation()
-	})
-	oD.A(inD)
-	return inD.A(ob)
-	var outerD = $.d('r', '+').pad(10)
-	var oD = $.d('y').pad(20).drag()
-	var d = d || $.d('r').mar(20)
-	d.xPrp().a2(oD)
-	d.oD = oD
-	oD.XY(40, 40)
-	var innerD = ob || $.d('y').md(function (e) {
-				e.stopPropagation()
-			})
-//	innerD.on('mousedown', function (e) {e.stopPropagation()})
-	outerD.A(innerD)
-	return innerD.A(ob)
-}
-$.dragStage1 = function (x, y) {
-	var can = $.c('g', 400)
-	$St(can[0])
-	$.dragFrame(can)
-	return st
-}
+  

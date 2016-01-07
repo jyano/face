@@ -176,57 +176,7 @@ function maybeOldMore(){
 		r = w.S(600, 300, 'r', 300, 100, 0, 0, 30)
 		b = w.S(600, 300, 'b', 300, 100).rt(-35)
 	}
-	ct.d = function (c, x, y) {
-		var ct = this, o, d, tw, g = G(arguments)
-		//if (b2d.isGPoly(g.f)) {_.e(g.f.vs(), function (v) {ct.dot(V(v))}); return this}
-		if (g.A) {
-			_.e(c, function (G) {
-				if (A(G)) {
-					ct.dot.apply(ct, G)
-				}
-				else {
-					ct.dot(G)
-				}
-			})
-			return this
-		}
-		o = g.S_ ? (
-				b2d.iB(g.s) ? {c: g.f, x: g.s.sX, y: g.s.sY} :
-						O(g.s) ? {c: g.f, x: g.s.x, y: g.s.y} :
-						{c: g.f, x: g.s, y: g.t}
-		) :
-				b2d.iB(g.f) ? {x: g.f.sX, y: g.f.sY} :
-						g.O_ ? {x: g.f.x, y: g.f.y} :
-						{x: g.f, y: g.s}
-		o.x = N(o.x, ct.W() / 2)
-		o.y = N(o.y, ct.H() / 2)
-		o.c = o.c || 'y'
-		d = this.h(o.x, o.y).cir(8, o.c, 'z', 2).al(.7).drag()
-		tw = d.twL([{sxy: 1.3}, 100], [{sxy: 1}, 100]).$()
-		d.$$(function () {
-			tw.$()
-		})
-		return d.K('dev dot')
-	}
-	META = function () {
-		W([800, 600], {w: 'L'}).C('w')._(function () {
-			$.rulers()
-			//initial me
-			p = w.p(200, 200, 5).stat()
-			//initial balls
-			_.t(5, function Ball() {
-				w.D(R(200, 50), R(-100), $r(), 30)
-			})
-			_.ev(3, MetaBall)
-		})
-		function MetaBall() {
-			var b = w.D(400, 400, 'b', 80)
-			b.$h('x', 'X', 1).c('x', 'X', 1).bf(
-					w.s.cv0,
-					cjs.m2d(.6, .1, .1, .6, -40, 180)
-			).cir(80)
-		}
-	}
+ 
 	
 }
 b.relPos = function () {
@@ -821,37 +771,10 @@ cross = function () {
 	r = w.S(600, 300, 'r', 300, 100, 0, 0, 30)
 	b = w.S(600, 300, 'b', 300, 100).rt(-35)
 }
-ct.d = function (c, x, y) {
-	var ct = this, o, d, tw, g = G(arguments)
-	//if (b2d.isGPoly(g.f)) {_.e(g.f.vs(), function (v) {ct.dot(V(v))}); return this}
-	if (g.A) {
-		_.e(c, function (G) {
-			if (A(G)) {
-				ct.dot.apply(ct, G)
-			}
-			else {
-				ct.dot(G)
-			}
-		})
-		return this
-	}
-	o = g.S_ ? (
-			b2d.iB(g.s) ? {c: g.f, x: g.s.sX, y: g.s.sY} :
-					O(g.s) ? {c: g.f, x: g.s.x, y: g.s.y} :
-					{c: g.f, x: g.s, y: g.t}
-	) :
-			b2d.iB(g.f) ? {x: g.f.sX, y: g.f.sY} :
-					g.O_ ? {x: g.f.x, y: g.f.y} :
-					{x: g.f, y: g.s}
-	o.x = N(o.x, ct.W() / 2)
-	o.y = N(o.y, ct.H() / 2)
-	o.c = o.c || 'y'
-	d = this.h(o.x, o.y).cir(8, o.c, 'z', 2).al(.7).drag()
-	tw = d.twL([{sxy: 1.3}, 100], [{sxy: 1}, 100]).$()
-	d.$$(function () {
-		tw.$()
-	})
-	return d.K('dev dot')
+ 
+//move to x-middle of stage
+b.horizCenter = function () {
+	return this.X(this.wor().s.W() / 2)
 }
 b.stg = function () {
 	return this.wor().s
@@ -866,23 +789,6 @@ b.click = function (func) {
 				},
 				e.rawX, e.rawY)
 	})
-}
-b.dot = function (col) {//b.dot() // dots the center of mass, not xy ??!!!
-	var b = this,
-			s = b.stg(),
-			g = G(arguments)
-	col = oO('c', g[0] || 'y')
-	if (g.p) {
-		s.dot(col, b.cent())
-	}
-	else {
-		s.dot(col, b.X(), b.Y())
-	}
-	return this
-}
-//move to x-middle of stage
-b.horizCenter = function () {
-	return this.X(this.wor().s.W() / 2)
 }
 b.img = b.bindSprite = function (img, scale, startingRotation) { //img is an image name  //rotation is in degerees!
 	var body = this, stage = body.wor().s

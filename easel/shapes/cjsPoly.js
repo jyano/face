@@ -171,27 +171,6 @@ h.$vs = function (polVs, ox, oy) {
 	}
 	return this.vs(polVs, ox, oy)
 }
-function needsStagePoly() {
-	POL2 = XX2 = EASELCONVEX8 = function () {
-		s = $St()
-		s.poly([[-100, -10], [0, 100], [100, 20]], 'red', 'white', 10).XY(200, 300)
-		s.poly([[-20, -80], [-100, -200], [100, 5]]).XY(300, 200)
-		s.poly([[-40, 40], [-40, -40], [40, -40], [40, 30]], 'blue', 'white').XY(200, 200)
-	}
-	POL3 = CPOL4 = function () {
-		St()
-		vs = [V(240, 210), V(450, 410), V(600, 500), V(500, 500)]
-		//h.lt([450, 410],[600, 500], [500, 500])
-		//h.lt([[450, 410], [600, 500], [500, 500]])
-		//h.lt( V(450, 410), V(600, 500), V(500, 500))
-		h.pol({
-			c: 'r',
-			C: 'b',
-			l: 20,
-			v: vs
-		})
-	}
-}
 POL5 = CPOL0 = function () {
 	__St()
 	vs = [V(240, 210), V(450, 410), V(600, 500), V(500, 500)]
@@ -232,12 +211,6 @@ POL4 = POLY = EVEX = EASELCONVEX = function () {
 			[[-40, 40], [-40, -40], [40, -40], [40, 30]],
 			'blue', 'white').XY(200, 200)
 }
-POL = function () {
-	$St().Gx().FS()._mt(100, 300)
-			._lt(300, 100)._lt(500, 200)._lt(800, 200)
-			._lt(100, 300)
-			._pol(vs1)
-}
 GXPOL = ERR = function () {
 	vs1 = [
 		[61, 68],
@@ -252,6 +225,35 @@ GXPOL = ERR = function () {
 	]
 	$St().Gx().FS().pol([vs1])
 }
+function needsStagePoly() {
+	POL2 = XX2 = EASELCONVEX8 = function () {
+		s = $St()
+		s.poly([[-100, -10], [0, 100], [100, 20]], 'red', 'white', 10).XY(200, 300)
+		s.poly([[-20, -80], [-100, -200], [100, 5]]).XY(300, 200)
+		s.poly([[-40, 40], [-40, -40], [40, -40], [40, 30]], 'blue', 'white').XY(200, 200)
+	}
+	POL3 = CPOL4 = function () {
+		St()
+		vs = [V(240, 210), V(450, 410), V(600, 500), V(500, 500)]
+		//h.lt([450, 410],[600, 500], [500, 500])
+		//h.lt([[450, 410], [600, 500], [500, 500]])
+		//h.lt( V(450, 410), V(600, 500), V(500, 500))
+		h.pol({
+			c: 'r',
+			C: 'b',
+			l: 20,
+			v: vs
+		})
+	}
+}
+//
+POL = function () {
+	$St().Gx().FS()._mt(100, 300)
+			._lt(300, 100)._lt(500, 200)._lt(800, 200)
+			._lt(100, 300)
+			._pol(vs1)
+}
+
 CEN = YSTAR = CSH = CENTERSHAPE = function () {
 	stage = $St(500, 600)
 	shape = stage.Sh()
