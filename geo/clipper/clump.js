@@ -1,3 +1,4 @@
+$l('geo/clipper/clump.js says welcome to GEO !')
 f.poly = f.polyVerts = function () {
 	return Math.poly(this.V())
 }

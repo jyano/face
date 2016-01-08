@@ -1,3 +1,4 @@
+$l('easel/createCore.js says welcome to EASEL !')
 $L('proto',    'bool')
 cj.PD = function () {
 	eD = $pt.eD

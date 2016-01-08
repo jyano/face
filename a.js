@@ -1,7 +1,6 @@
 console.log('.\n\n\n\n\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n\n\n')
-require('./web/both/superUnder')
-require('./web/both/superJ')
-require('./web/both/superTime')
+require('./web/both')
+ 
 $l(' - face - \n')
 require('./server/$superNode$')
 $stc = function () {
@@ -52,7 +51,7 @@ $stc = function () {
 		use(name(arg + '/_huh'))
 		use(name(arg + '/_filter'))
 		use(name(arg + '/_transform'))
-		use(name(arg + '/_draw'))
+		 
 		use(name(arg + '/_drawImage'))
 		use(name(arg + '/_gradient'))
 		use(name(arg + '/_events'))
@@ -81,6 +80,13 @@ $stc = function () {
 		use(name(arg + '/_tween'))
 		use(name(arg + '/_sprite'))
 		use(name(arg + '/_movie'))
+		use(name(arg + '/_bone'))
+		use(name(arg + '/_knock'))
+		use(name(arg + '/_nok'))
+		use(name(arg + '/_wid'))
+		use(name(arg + '/_jqUI'))
+		use(name(arg + '/_sync'))
+		use(name(arg + '/_cam'))
 		//
 		
 		use(name(arg + '/_routes'))

@@ -1,3 +1,16 @@
+f.c = f.C = function () {
+	var f = this, b = f.B(), w = b.W(), g = G(arguments),
+			o = g.O ? g.f : {c: g.f, C: g.s, l: g.t}
+	o.c = (o.c == '*') ? $r() : (o.c || 'b');
+	o.C = o.C || o.c
+	return f.rpSp(
+			f.iC() ? b.i = w.st.cir(f.cir(o)) : b.i = w.st.pol(f.pol(o)))
+}
+w.C = function (c) {
+	var w = this
+	w.bg.h().c(c || $r()).dr(0, 0, w.w, w.h)
+	return w
+}
 w.gradBall = function (x, y, r, col1, col2, stop1, stop2) {
 	stop1 = N(stop1) ? stop1 : 0
 	stop2 = N(stop2) ? stop2 : 1

@@ -25,7 +25,8 @@ function getBodyAtM() {
 
 BXEX2 = function () {
 
-	cv = l({l: 'c', W: 800, H: 500, a2: 1})
+	cv = l({
+		l: 'c', W: 800, H: 500, a2: 1})
 	
 	cv._ps = cv.os()
 	w = new bx.W(V(0, 10), true)  //allow sleep
@@ -43,6 +44,7 @@ BXEX2 = function () {
 		$.mm_(logXY).tm_(logXY)
 		isMDown = mX = mY = undefined;
 	})
+	
 	bD = $bD().ty(bx.sB)
 	fD = $fD().de(1).fr(.5).re(.2).H($pH().SAB(20, 2))
 	// walls 

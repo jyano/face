@@ -1,3 +1,4 @@
+$l('front/bone sayd welcome to FRONT !')
 // !!! https://www.youtube.com/watch?v=T4iPnh-qago interacrtive directory tut
 Bb = bb = Backbone
 Bb.U = Bb.Utility

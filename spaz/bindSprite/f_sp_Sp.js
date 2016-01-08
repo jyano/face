@@ -1,13 +1,22 @@
 f.sp = function () {
 	return this.sprites[0]
 }
-f.al = function (al) {
-	var sp = this.sp()
-	if (sp) {
-		sp.al(N(al, .8))
-	}
-	return this
-}
+
+ 
+
 f.sp = function () {
 	return this.sprites[0]
+}
+f.sp = function (sp) {
+	var f = this
+	if (U(sp)) {
+		return f.sprite
+	}
+	f.sprite = sp
+	return f
+}
+f.Sp = function (sp) {
+	var f = this
+	f.sprite = sp
+	return sp
 }

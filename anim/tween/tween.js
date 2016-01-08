@@ -1,3 +1,4 @@
+$l('anim/tween.js says welcome to ANIM !')
 $L()
 cjs.rtSh = cjs.rotateShake = function (bm) {
 	$Tw([bm, 'l'], {r: 0}, [{r: 1}, 1], [{r: -1}, 1])
