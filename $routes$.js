@@ -47,20 +47,13 @@ o.FrontApps = [
 
 ]
 
-o.Box = ['bx', 'box0','bxApps']
-
-
-o.Fiz = [
-	'contact',  'listen', 'boxKlas',
-	'boxEach', 'queryAB', 'queryPoint', 
-	'boxMouse',  'joints', 'edges'
+  o.Fiz = [
+	  'bx', 'box', 'boxMouse', 'contact', 'distanceJt', 
+	  'edges',   'listen',   'queryAB', 'apps'
+	  //, 'yip'
 ]
-
-
-o.FizApps = ['spazStab', 'bxMouseApps', 'bxWebsiteEx2', 'jtsApps',
-	'mouseJtApps', 'edgeApps', 'fixApps', 'fizApps', 'worldApps'
-]	
-
+ 
+ 
 
  //, 'revoluteJt', 'prismaticJt',
 o.Geo = ['clump', 'edges', 'explode', 'geeDfs', 'geo', 'scrape',
@@ -119,13 +112,13 @@ function setPaths() {
 			//Front
 			'front', 'front/apps_', 'front/bone', 'front/wid', 'front/nok', 'front/sync',
 			//Box
-			'box', 'box/apps_', 'box/bods', 'box/fixts',
-			'box/kill', 'box/world',
-			//Fiz
-			'fiz', 'fiz/apps_', 'fiz/klas', 'fiz/collide',
-			'fiz/listen', 'fiz/query',
-			'fiz/userInput',
-			'fiz/joints', //'fiz/yip',
+			
+		
+			'fiz/box', 
+			'fiz', 'fiz/apps_',
+			 'fiz/query', 'fiz/yip',
+			
+			
 			//Geo
 			'geo', 'geo/apps_', 'geo/clipper', 'geo/control', 'geo/joints', 'geo/ray',
 			//Spaz
@@ -147,7 +140,7 @@ function setArrs(){
 	
  
 	o.Web = [  'both', 'jq', 'web', 'l']
-	o.WebApps = ['webApps']
+	o.WebApps = ['waps']
 	o.Graphics = ['gpc',
 		 'superCan', 'gpClipper',
 		'ctxDraw', 'ctxGlobComp',
