@@ -70,11 +70,23 @@ $stc = function () {
 		use(name(arg + '/_world'))
 		use(name(arg + '/_bods'))
 		use(name(arg + '/_query'))
+		use(name(arg + '/_jQuery'))
+		use(name(arg + '/_anim'))
+		use(name(arg + '/_html'))
+		use(name(arg + '/_html5'))
+		use(name(arg + '/_ui'))
+		use(name(arg + '/_control'))
+		use(name(arg + '/_box'))
+		use(name(arg + '/_old'))
+		use(name(arg + '/_tween'))
+		use(name(arg + '/_sprite'))
+		use(name(arg + '/_movie'))
 		//
 		
 		use(name(arg + '/_routes'))
 		use(name(arg + '/_api'))
 		use(name(arg + '/_alpha'))
+		use(name(arg + '/_l'))
 		
 		function name(dir) {return __dirname + '/' + dir}
 		function use(dir) {$a.use($e.static(dir))}}
