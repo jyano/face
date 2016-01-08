@@ -981,7 +981,7 @@ GUN = function () {
 		mc.gotoAndStop('RoboMoveBackward')
 	}
 }
-function usesWorld() {
+ 
 	MC = MOVIECLIP = function () {
 		Q(['me', 'guy'], function () {
 			W()
@@ -1006,5 +1006,6 @@ function usesWorld() {
 					$Cir(50, 'b').Y(200).tw({x: 600}, [{x: 100}, 40], [{x: 600}, 40])
 			).p("middle")
 		})
-	}//A++++++++++
-}
+//A++++++++++\\\
+	}
+ 
