@@ -1554,9 +1554,7 @@ function extensions() {
 		return M.p(vs)
 	}
 }
-function apps(){
  
-}
 b2d.iGP = function (a) {
 //=b2d.isGPoly 
 	return O(a) && F(a.isHole)

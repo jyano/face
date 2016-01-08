@@ -1,7 +1,8 @@
+b2d.polySens = function (kind) {
+	return b2d.poly.apply(null, _.rest(arguments)).sensor(true).K(kind)
+}
 b2d.fixtParse = function (arr) {
-	b2d.polySens = function (kind) {
-		return b2d.poly.apply(null, _.rest(arguments)).sensor(true).K(kind)
-	}
+	
 //takes array of arrays
 //if something in array is NOT array, it assumes it is already a fixt
 //but if it IS an array, it makes it into a fixture

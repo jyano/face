@@ -23,7 +23,7 @@ $stc = function () {
 }
 
 require('./server/$xap$')
-require('./server/$goo$')
+require('./server/goo/$goo$')
 
 $w = $Mw = function (q, p, nx) {
 	// regular (pre-user) middleware
@@ -82,12 +82,12 @@ $a.g('/', function (q, p) {
 	)
 })
  
-require('./server/userRtsMW')
-require('./server/socialRts')
-require('./server/mugRts')
+require('./server/mw/userRtsMW')
+require('./server/routes/socialRts')
+require('./server/routes/mugRts')
 //require('./server/uplodLibRts')
-require('./server/picRtsMW')
-require('./server/adminRts')
+require('./server/mw/picRtsMW')
+require('./server/routes/adminRts')
 
 require('./server/$api$/$twitServer$')
 require('./$routes$')
@@ -95,7 +95,7 @@ require('./$routes$')
 $htSv = httpServer = $h.createServer($a)
 $htSv.listen(80, lsFn)
 
-require('./server/$api$/$kets$')
+require('./server/sock/$kets$')
 
 function lsFn() {
 	$l('\nserver listening on port 80 \n')

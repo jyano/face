@@ -21,20 +21,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="globalComp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/easel/draw/globalComp.js">
+      <file leaf-file-name="$routes$.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/$routes$.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="76" column="25" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="25" />
               <folding>
-                <element signature="e#38#163#0" expanded="true" />
+                <element signature="e#2464#2839#0" expanded="true" />
+                <element signature="e#2856#3170#0" expanded="true" />
+                <element signature="e#3180#3437#0" expanded="true" />
+                <element signature="e#3506#3554#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/easel/draw/filter.js">
+      <file leaf-file-name="boxApps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiz/box/_apps/boxApps.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bxShapeApps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiz/box/fixture/_apps/bxShapeApps.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+              <folding>
+                <element signature="e#38#168#0" expanded="true" />
+                <element signature="e#194#525#0" expanded="true" />
+                <element signature="e#292#522#0" expanded="true" />
+                <element signature="e#1444#1599#0" expanded="true" />
+                <element signature="e#1745#1865#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bxWebsiteEx2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiz/joints/mouseJt/_apps/bxWebsiteEx2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -43,110 +72,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="curve.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/easel/draw/curve.js">
+      <file leaf-file-name="mapFilterApp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/easel/filter/_apps/mapFilterApp.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cjsShape.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/easel/draw/cjsShape.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cjsGx.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/easel/draw/cjsGx.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45218295">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
-                <element signature="e#43#2873#0" expanded="true" />
+                <element signature="e#19#404#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wholeWideWorld_another_dimension_/fix/verts.js">
+      <file leaf-file-name="appyFront.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/nok/_apps/appyFront.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#32#372#0" expanded="true" />
+                <element signature="e#19#240#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="walls.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spaz/tripleStage/walls.js">
+      <file leaf-file-name="libRDP.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/geo/_deps/libRDP.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="296" column="2" selection-start-line="296" selection-start-column="2" selection-end-line="296" selection-end-column="2" />
+              <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding>
-                <element signature="e#31#116#0" expanded="true" />
-                <element signature="e#137#226#0" expanded="true" />
-                <element signature="e#171#213#0" expanded="true" />
-                <element signature="e#260#2113#0" expanded="true" />
-                <element signature="e#1034#1058#0" expanded="true" />
-                <element signature="e#1082#1103#0" expanded="true" />
-                <element signature="e#1123#1224#0" expanded="true" />
-                <element signature="e#1245#1350#0" expanded="true" />
-                <element signature="e#1372#1457#0" expanded="true" />
-                <element signature="e#1479#1619#0" expanded="true" />
-                <element signature="e#1640#1722#0" expanded="true" />
-                <element signature="e#1743#1877#0" expanded="true" />
-                <element signature="e#1896#1992#0" expanded="true" />
-                <element signature="e#2011#2111#0" expanded="true" />
-                <element signature="e#2136#2370#0" expanded="true" />
-                <element signature="e#2244#2368#0" expanded="true" />
-                <element signature="e#2402#2487#0" expanded="true" />
-                <element signature="e#2508#2597#0" expanded="true" />
-                <element signature="e#2542#2584#0" expanded="true" />
-                <element signature="e#2631#4484#0" expanded="true" />
-                <element signature="e#3405#3429#0" expanded="true" />
-                <element signature="e#3453#3474#0" expanded="true" />
-                <element signature="e#3494#3595#0" expanded="true" />
-                <element signature="e#3616#3721#0" expanded="true" />
-                <element signature="e#3743#3828#0" expanded="true" />
-                <element signature="e#3850#3990#0" expanded="true" />
-                <element signature="e#4011#4093#0" expanded="true" />
-                <element signature="e#4114#4248#0" expanded="true" />
-                <element signature="e#4267#4363#0" expanded="true" />
-                <element signature="e#4382#4482#0" expanded="true" />
-                <element signature="e#4507#4741#0" expanded="true" />
-                <element signature="e#4615#4739#0" expanded="true" />
-                <element signature="e#4507#4741#0" expanded="true" />
-                <element signature="e#4808#4823#0" expanded="true" />
+                <element signature="e#151#174#0" expanded="false" />
+                <element signature="e#255#395#0" expanded="false" />
+                <element signature="e#352#391#0" expanded="false" />
+                <element signature="e#418#708#0" expanded="false" />
+                <element signature="e#714#754#0" expanded="false" />
+                <element signature="e#953#976#0" expanded="false" />
+                <element signature="e#1057#1199#0" expanded="false" />
+                <element signature="e#1156#1195#0" expanded="false" />
+                <element signature="e#1222#1514#0" expanded="false" />
+                <element signature="e#1520#1560#0" expanded="false" />
+                <element signature="e#1767#1808#0" expanded="false" />
+                <element signature="e#1814#1996#0" expanded="false" />
+                <element signature="e#2521#2605#0" expanded="false" />
+                <element signature="e#2688#2777#0" expanded="false" />
+                <element signature="e#2851#2950#0" expanded="false" />
+                <element signature="e#3004#3039#0" expanded="false" />
+                <element signature="e#3527#3550#0" expanded="false" />
+                <element signature="e#3631#3771#0" expanded="false" />
+                <element signature="e#3728#3767#0" expanded="false" />
+                <element signature="e#3794#4084#0" expanded="false" />
+                <element signature="e#4090#4130#0" expanded="false" />
+                <element signature="e#4329#4352#0" expanded="false" />
+                <element signature="e#4433#4575#0" expanded="false" />
+                <element signature="e#4532#4571#0" expanded="false" />
+                <element signature="e#4598#4890#0" expanded="false" />
+                <element signature="e#4896#4936#0" expanded="false" />
+                <element signature="e#5143#5184#0" expanded="false" />
+                <element signature="e#5190#5372#0" expanded="false" />
+                <element signature="e#5897#5981#0" expanded="false" />
+                <element signature="e#6064#6153#0" expanded="false" />
+                <element signature="e#6227#6326#0" expanded="false" />
+                <element signature="e#6380#6415#0" expanded="false" />
+                <element signature="e#6749#6763#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="polyCirc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spaz/generate/shapes/pol/polyCirc.js">
+      <file leaf-file-name="l.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/l.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#39#120#0" expanded="true" />
-                <element signature="e#39#120#0" expanded="true" />
+                <element signature="e#23#908#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="dance.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spaz/generate/colorFixts/anim/dance.js">
+        <entry file="file://$PROJECT_DIR$/spaz/bindSprite/ticker/dance.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
@@ -159,7 +166,7 @@
         </entry>
       </file>
       <file leaf-file-name="preKill.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiz/contact/preKill.js">
+        <entry file="file://$PROJECT_DIR$/fiz/query/listen/preKill.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -186,12 +193,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/easel/reggy.js" />
-        <option value="$PROJECT_DIR$/easel/_apps/reggyApp.js" />
-        <option value="$PROJECT_DIR$/easel/dobs/cjsText.js" />
-        <option value="$PROJECT_DIR$/easel/_apps/textApps.js" />
-        <option value="$PROJECT_DIR$/easel/dobs/domElOb.js" />
-        <option value="$PROJECT_DIR$/easel/_apps/domElApps.js" />
+        <option value="$PROJECT_DIR$/a.js" />
+        <option value="$PROJECT_DIR$/geo/_deps/rdpLib/RDPLib.js" />
+        <option value="$PROJECT_DIR$/geo/_deps/rdpLib/libRDP.js" />
+        <option value="$PROJECT_DIR$/web/css/_apps/doorPerspective.js" />
+        <option value="$PROJECT_DIR$/fiz/box/fixture/_apps/bxShapeApps.js" />
+        <option value="$PROJECT_DIR$/$routes$.js" />
       </list>
     </option>
   </component>
@@ -203,9 +210,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="162" />
-    <option name="y" value="39" />
-    <option name="width" value="1044" />
+    <option name="x" value="98" />
+    <option name="y" value="62" />
+    <option name="width" value="1457" />
     <option name="height" value="1033" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -259,7 +266,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="easel" />
+              <option name="myItemId" value="fiz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,33 +280,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="easel" />
+              <option name="myItemId" value="fiz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="games" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="games" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="games" />
+              <option name="myItemId" value="joints" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -313,11 +298,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="easel" />
+              <option name="myItemId" value="fiz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="draw" />
+              <option name="myItemId" value="joints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mouseJt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,11 +320,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="easel" />
+              <option name="myItemId" value="fiz" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dobs" />
+              <option name="myItemId" value="joints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mouseJt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="joints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="distJt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="joints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="box" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -363,11 +422,11 @@
       <recent name="$PROJECT_DIR$/front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/easel/_apps" />
-      <recent name="$PROJECT_DIR$/easel/_" />
-      <recent name="$PROJECT_DIR$/easel/games" />
-      <recent name="$PROJECT_DIR$/anim" />
-      <recent name="$PROJECT_DIR$/geo" />
+      <recent name="$PROJECT_DIR$/fiz/box/fixture/_apps" />
+      <recent name="$PROJECT_DIR$/fiz" />
+      <recent name="$PROJECT_DIR$/easel" />
+      <recent name="$PROJECT_DIR$/front/_deps" />
+      <recent name="$PROJECT_DIR$/web" />
     </key>
   </component>
   <component name="RunManager">
@@ -392,19 +451,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="162" y="39" width="1044" height="1033" extended-state="0" />
+    <frame x="98" y="62" width="1457" height="1033" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28238866" sideWeight="0.49688888" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37438905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37256268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20286885" sideWeight="0.5031111" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2834008" sideWeight="0.49688888" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -447,54 +506,66 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/easel/_apps/layers.js">
+    <entry file="file://$PROJECT_DIR$/fiz/box/_apps/boxApps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easel/filter/_apps/alphaMaskReveal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#34#352#0" expanded="true" />
+            <element signature="e#36#2548#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/easel/draw/curve.js">
+    <entry file="file://$PROJECT_DIR$/fiz/box/fixture/_apps/bxShapeApps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easel/dobs/objects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easel/draw/cjsShape.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easel/dobs/stage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easel/draw/cjsGx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45218295">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
           <folding>
-            <element signature="e#43#2873#0" expanded="true" />
+            <element signature="e#38#168#0" expanded="true" />
+            <element signature="e#194#525#0" expanded="true" />
+            <element signature="e#292#522#0" expanded="true" />
+            <element signature="e#1444#1599#0" expanded="true" />
+            <element signature="e#1745#1865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easel/filter/_apps/filtApps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="192" column="31" selection-start-line="192" selection-start-column="31" selection-end-line="192" selection-end-column="31" />
+          <folding>
+            <element signature="e#19#256#0" expanded="true" />
+            <element signature="n#!!block;n#updateCacheImage#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiz/joints/mouseJt/_apps/bxWebsiteEx2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/$routes$.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#2464#2839#0" expanded="true" />
+            <element signature="e#2856#3170#0" expanded="true" />
+            <element signature="e#3180#3437#0" expanded="true" />
+            <element signature="e#3506#3554#0" expanded="true" />
           </folding>
         </state>
       </provider>
