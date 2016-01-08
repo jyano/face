@@ -11,6 +11,7 @@ b.explosion = b.exp = function () {//alert('b.exp is random!')
 //	return R() ? b2d.sep(b2d.pC(20, 7)).XY(xy) : w.D(xy.x, xy.y).rec( 60, 60).rot(45)
 	return w.D(xy.x, xy.y).rec(60, 60).rot(45)
 }
+
 w.md1 = function (fn) {
 	return this.md(function (a, b, c) {
 		if (self.used) {
@@ -50,14 +51,20 @@ function terr() {
 				w.brick(xy.x, xy.y, 60, 60).rot(45)
 	}
 }
+
 b.expl = function (col) {
+	
 	var b = this
+	
 	b.cl(function (f) {
+	
 		b.subPolAtFxt('expl', f, '-')._colorize(col)
 	})
 	return b
 }
+
 MEETY = function () {
+
 	W([1200, 600], {g: 10})
 	y = w.y(100, 300);
 	t = w.S(500, 300, $r(), 200, 800)
@@ -70,6 +77,8 @@ MEETY = function () {
 	w.i.dot(300, 200)
 	//$l(t.cen())
 }
+
+
 w.cleanup = function () {
 	w.e(function (b) {
 		if (!b.IsActive) {

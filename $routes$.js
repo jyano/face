@@ -1,33 +1,21 @@
 o = {}
 
-o.Easel = ['cjs', 'cjsMC', 'createCore',
-	//dobs
-	'bitmap', 'cjsText', 'container', 'domElOb', 'objects', 'stage',
-	//draw
-	'cjsColor', 'cjsGrad', 'cjsGx', 'cjsShape', 'curve', 'globalComp',
-	//'DOTS',
-	//events
-	'cjsEvents', 'ticker', 'loader', 'cjsMouse',
-	'cache', 'filter',
-	//shapes
-	'cjsCir', 'cjsRec', 'cjsPoly',
-	//trans
-	'reggy', 'tran', 'transform', 'center', 'bounds'
+o.Easel = [
+	'cjs','cjsMC', 'create',
+	'colorShapes','dobs',
+	'easelApps','easelGames'
+	
 ]
-o.EaselApps = ['domElApps', 'eventsApps', 'layers', 'textApps',
-	//bitmap
-	'assSketchApp', 'bitmapApps', 'interesting',
-	//draw
-	'awesomeGx', 'curvApps', 'graphTest', 'radGradApps',
-	'filtApps', 'filteredSprites', 'mapFilterApp', 'alphaMaskReveal',
-	'loaderApps', 'cirApps', 'polApps', 'recApps',
-	'reggyApp', 'setTfApp', 'stgApps', 'tfApp']
+	 
+	 
 o.Anim = ['tween', 'zoe', 'sprite', 'spriteSheet', 'ssBuilder',
 	'easing', 'movie', 'timeline']
 o.AnimApps = [
 	'tweenApps', 'growApp', 'spriteApps', 'movieApps', 'mcApps',//'flashAnimApps'
 	'gunnertron', 'SSData'
 ]
+
+
 o.Front = [
 	'jqui', 'ko', 'bb',
 	'bone',//'bbBook',
@@ -46,8 +34,7 @@ o.FrontApps = [
 	'ko_JQUI', 'bbBlogSap', 'bbTwitSap', 'uiWidSaps'
 
 ]
-
-  o.Fiz = [
+o.Fiz = [
 	  'bx', 'box', 'boxMouse', 'contact', 'distanceJt', 
 	  'edges',   'listen',   'queryAB', 'apps'
 	  //, 'yip'
@@ -104,11 +91,14 @@ function setPaths() {
 			'graphics/ctx',
 			'graphics/clipper',
 			'graphics/can',
-			//Easel
-			'easel', 'easel/apps_',
-			'easel/dobs', 'easel/draw', 'easel/events', 'easel/filter', 'easel/shapes', 'easel/trans',
+		 
+			'easel', 
+			
+			
+		 
 			//Anim
-			'anim', 'anim/apps_', 'anim/tween', 'anim/sprite', 'anim/movie', 'anim/flash',
+			'anim', 'anim/apps_', 'anim/tween', 'anim/sprite',
+			 'anim/movie', 'anim/flash',
 			//Front
 			'front', 'front/apps_', 'front/bone', 'front/wid', 'front/nok', 'front/sync',
 			//Box
@@ -178,31 +168,22 @@ function setArrs(){
 	
 }
 
+
 $a.get('/box/:app*', function (q, p) {
 
 	var jsArrs = _.m([//o.Data, o.Both,
-		o.Web,// o.WebApps, o.Graphics, o.GraphicsApps, o.Easel, o.EaselApps,
-		o.Box, o.BoxApps
+		o.Web,// o.WebApps,
+		o.Graphics, //o.GraphicsApps,
+		o.Easel//,
+		//o.EaselApps,
+		//o.Box, o.BoxApps
 		//o.Anim, o.AnimApps,
 		//o.Front, o.FrontApps,
-		, 
-		
-		o.Fiz, o.FizApps//, o.Geo, o.GeoApps, o.Spaz, o.SpazApps, o.Arcade, o.ArcadeApps, o.Wappy, o.Waps
-		
-		
+		//, o.Fiz//, o.FizApps//, o.Geo, o.GeoApps, o.Spaz, o.SpazApps, o.Arcade, o.ArcadeApps, o.Wappy, o.Waps
+			
 	], function (arr) {
 		return A(arr) ? arr : [arr]
-		forNoReason = jsArrS = [
-		
-			'Both', 'Web', 'WebApps', 'Graphics', 'GraphicsApps',
-			'Easel', 'EaselApps', 'Anim', 'AnimApps',
-			'Front', 'FrontApps',
-			'Box', 'BoxApps', 'Fiz',
-			'FizApps', 'Geo', 'GeoApps',
-			'Spaz', 'SpazApps',
-			'Arcade', 'ArcadeApps',
-			'Wappy'
-		]
+ 
 	})
 	
 	app = q.params.app.toUpperCase()
