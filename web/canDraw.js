@@ -924,7 +924,7 @@ CANGRAD = $$$CONTAINSFOURAPPS$$$ = function () {
 x.pt = x.Pt = function () {
 	return this.createPattern()
 }
-_canPat(el)
+
 _canPat = function (el) {
 	el.pattern = el.createPattern = function (im, pat) {
 		//im = im || $.img('me')[0]
@@ -940,6 +940,8 @@ _canPat = function (el) {
 	}
 	return el
 }
+ 
+
 x.globalCompOp = x.o = x.op = x.cO = function (o) {
 	this.globalCompositeOperation = o;
 	return this

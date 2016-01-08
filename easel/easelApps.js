@@ -1,3 +1,4 @@
+window.examples = window.examples || {}
 function bmapApps() {
 
 	DRG1=DRG_DONT_WORK_BUT_NEXT_ONE_DOES = function () {
@@ -102,6 +103,7 @@ function bmapApps() {
 	}
 	BF8 = BFH = function () {
 		$St()
+		
 		h.bf({
 			i: 'me',
 			hs: [100, 300, 500, 700, 900],
@@ -487,7 +489,10 @@ function bmapApps() {
 	
 	function sketchyAss() {
 		window.examples = window.examples || {}
-		$L('distractor', 'promote', 'slider')
+	 
+		distractor()
+		promote()
+		slider()
 		cjs.utils = function () {
 		}
 		cjs.extend = function (subclass, superclass) {
@@ -679,6 +684,8 @@ function bmapApps() {
 		cjs.testCanvas = function () {
 			return $.c(960, 400).id("testCanvas").a2($.d())
 		}
+		
+		
 		ASS = ASS_SKETCH = COOL = DRAWONCHICKS = function () {
 			pt = 0
 			h = $St().mO(1).h()
@@ -731,6 +738,7 @@ function bmapApps() {
 		}
 	}
 }
+
 function drawApps() {
 	AWESOME = XX6 = GRAPHICSTEST = function () {
 		stage = $St()
@@ -830,6 +838,8 @@ function drawApps() {
 			return cjs.container().A(bg)
 		}
 	}
+	
+	
 	function graphTest() {
 		TWOSTAGES = function () {
 			$.hdr().K("EaselJS").A(
@@ -1480,8 +1490,7 @@ function drawApps() {
 			})
 		}
 	}
-	
-	function shapeApps() {
+	 
 		REC = function () {
 			$St()
 			h = st.Sh().dg()
@@ -1520,7 +1529,7 @@ function drawApps() {
 				return rectangle
 			}
 		}
-		GRIDD = NEEDSDRAWSQUARE = f
+		 
 		CIR5 = HCR = function () {
 			$St()
 			gx = $Gx()
@@ -1950,9 +1959,8 @@ function drawApps() {
 				})
 			}
 		}
-	}
-	
-	function filtApps() {
+ 
+	 
 		CMXF = function () {
 			$St().bm('me', function (bm) {
 				bm.dg()
@@ -2456,7 +2464,7 @@ function drawApps() {
 				})
 			})
 		}
-		function alphaMaskReveal() {
+		 
 			AMR = ALPHAMASKREVEAL = function () {
 				cjs.testCanvas()//  cjs.sharedCode()
 				var stage, isDrawing, drawingCanvas, oldPt, oldMidPt, displayCanvas,
@@ -2541,7 +2549,7 @@ function drawApps() {
 			 channel. It is then applied to the image as
 			 an mask using the <code>AlphaMaskFilter</code> filter. Another copy of
 			 */
-		}
+	 
 		
 		SPRITESWITHFILTERS = function () {
 			stage = $St()
@@ -2594,7 +2602,7 @@ function drawApps() {
 				stage.addChild(grant3);
 			}
 		}
-		function mapFIlter() {
+ 
 			MAPF = function () {
 				$St()
 				$.i('me', function (i) {
@@ -2610,8 +2618,8 @@ function drawApps() {
 					st.addChild(bmp);
 				})
 			}
-		}
-	}
+	 
+	 
 }
 $L(
 

@@ -7,6 +7,8 @@ text()
 domElOb()
 container()
 function dobPt() {
+	
+	
 	dO.X = function (x, duration) {//can add easing :)
 		var g = G(arguments)
 		if (U(x)) {
@@ -25,7 +27,7 @@ function dobPt() {
 			x = this.x / x
 		}
 		if (N(duration)) {
-			tw([this], [{x: x}, duration])
+			$Tw([this], [{x: x}, duration])
 		}
 		//if (N(dur)) {tw([i], [{x: x}, dur]); return i}
 		else {
@@ -49,6 +51,7 @@ function dobPt() {
 			return i
 		}
 	}
+	
 	dO.Y = function (y, dur) {
 		var i = this, g = G(arguments)
 		if (U(y)) {
@@ -1006,39 +1009,7 @@ function bitmap() {
 		})
 		return ct
 	}
-	ct.bm = function () {
-		var ct = this, g = G(arguments), o, bmp
-		o = N(g.s) ?
-		{i: g.f, sc: g.s, fn: g.t} :
-		{i: g.f, fn: g.s}
-		o.sc = N(o.sc) ? o.sc : 1
-		if (_.iDU(o.i)) {
-			//return s$(a).contains('data:')
-			o.i = $.i(o.i)
-		}
-		if (O(o.i)) {
-			bmp = $Bm(o.i).a2(ct)
-			if (o.fn) {
-				o.fn(bmp)
-			}
-			return ct
-		}
-		$.i(o.i, function (i) {
-			bmp = $Bm(i)
-			bmp.a2(ct)
-			bmp.rC()
-			bmp.sXY(o.sc).a2(ct)
-			//bm.XY( that.W()/2, that.H()/2 )
-			// works with stage i guess.. but fucks with 'container' - cant check bounds
-			if (g.n) {
-				bmp.XY(-1000)
-			}
-			if (o.fn) {
-				o.fn(bmp)
-			}
-		})
-		return ct
-	}
+	 
 	ct.Bm = function (i) {
 		return $Bm(i).a2(this)//this.bm.apply(this, arguments)
 	}

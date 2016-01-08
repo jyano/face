@@ -26,6 +26,7 @@ RU2 = CSSEXTENDKEYWORD = BORDERED = function () {
 		a2: 1
 	})
 }
+
 RU1 = SEL = SELECTORS = VAL = RUS = function () {
 	$.h1(ru = $rule('d', {C: 'r', c: 'b'}))
 	$.hr()

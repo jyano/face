@@ -18,9 +18,7 @@ cj.SSB = cj.SpriteSheetBuilder
 cj.Tl = cj.Timeline
 window.$pt = window.$pt || {}
 //$l('easel/createCore.js says welcome to EASEL !')
-proto()
-bool()
-function proto() {
+ 
 	$pt.eD = cj.ED.prototype
 	$pt.gx = cj.Gx.prototype
 	$pt.st = cj.St.prototype
@@ -36,7 +34,7 @@ function proto() {
 	$pt.tl = cj.Timeline.prototype
 	$pt.mx = cjs.Matrix2D.prototype
 	$pt.tx = cj.Tx.prototype
-}
+
 cj.PD = function () {
 	eD = $pt.eD
 	mx = $pt.mx
@@ -49,7 +47,7 @@ cj.PD = function () {
 	gx = $pt.gx
 }
 cj.PD()
-function bool() {
+ 
 	cj.iT = function (t) {
 		if (O(t)) {
 			return (t.textBaseline)
@@ -83,7 +81,7 @@ function bool() {
 	cj.hasDim = function (bm) {
 		return !cj.iH(bm) && !cj.iCt(bm)
 	}
-}
+ 
 //http://www.createjs.com/tutorials/Inheritance/
 //http://www.createjs.com/tutorials/Mouse%20Interaction/
 //http://www.createjs.com/tutorials/Inheritance/
@@ -2098,7 +2096,7 @@ function easelDraw() {
 			s = st = stage = new cjs.Stage("canvas", 420, 500, 30)
 			h = new cjs.Shape().a2(st)
 		}
-		$L('linNeedsFixin', 'radial', 'stroke', 'mick', 'nip')
+		//$L('linNeedsFixin', 'radial', 'stroke', 'mick', 'nip')
 		gx.bLGF = function () {
 			return this.beginLinearGradientFill.apply(this, arguments)
 		}
@@ -2595,6 +2593,7 @@ function filter() {
 		}
 	}
 }
+
 function old() {
 	UGUNSHIP = function () {
 		angleInDegrees = function self(y, x) {
@@ -2689,5 +2688,40 @@ function old() {
 		return h
 	}
 }
+
 h = cjs.Shape.prototype
- 
+ct.bm = function () {
+	var ct = this, g = G(arguments), o, bmp
+	o = N(g.s) ?
+	{i: g.f, sc: g.s, fn: g.t} :
+	{i: g.f, fn: g.s}
+	o.sc = N(o.sc) ? o.sc : 1
+	if (_.iDU(o.i)) {
+		//return s$(a).contains('data:')
+		o.i = $.i(o.i)
+	}
+	if (O(o.i)) {
+		bmp = $Bm(o.i).a2(ct)
+		if (o.fn) {
+			o.fn(bmp)
+		}
+		return ct
+	}
+	
+	$.i(o.i, function (i) {
+		bmp = $Bm(i)
+		bmp.a2(ct)
+		bmp.rC()
+		bmp.sXY(o.sc).a2(ct)
+		//bm.XY( that.W()/2, that.H()/2 )
+		// works with stage i guess.. but fucks with 'container' - cant check bounds
+		if (g.n) {
+			bmp.XY(-1000)
+		}
+		if (o.fn) {
+			o.fn(bmp)
+		}
+	})
+	
+	return ct
+} 

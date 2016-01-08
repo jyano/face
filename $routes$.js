@@ -1,19 +1,55 @@
 o = {}
-
+setPaths()
+function setPaths() {
+	$stc('', '../art',
+			'web',
+			'graphics',
+			'graphics/apps_',
+			'graphics/ctx',
+			'graphics/clipper',
+			'graphics/can',
+			'easel',
+			//Anim
+			'anim', 'anim/apps_', 'anim/tween', 'anim/sprite',
+			'anim/movie', 'anim/flash',
+			//Front
+			'front', 'front/apps_', 'front/bone', 'front/wid', 'front/nok', 'front/sync',
+			//Box
+			'fiz/box',
+			'fiz', 'fiz/apps_',
+			'fiz/query', 'fiz/yip',
+			//Geo
+			'geo', 'geo/apps_', 'geo/clipper', 'geo/control', 'geo/joints', 'geo/ray',
+			//Spaz
+			'spaz', 'spaz/apps_',
+			'spaz/bindSprite', 'spaz/sprites', 'spaz/world',
+			'spaz/makeWorld', 'spaz/bridge',
+			'spazKill',
+			'spaz/easel', 'spaz/easel/color', 'spaz/easel/draw', 'spaz/easel/spriteSheets', 'spaz/easel/stage', 'spaz/easel/ticker',
+			//Arcade
+			'arcade', 'arcade/apps_',
+			'arcade/cam', 'arcade/controls',
+			'arcade/movement', 'arcade/player',
+			'arcade/scrolling', 'arcade/shooter', 'arcade/webMan',
+			//Wappy
+			'wappy', 'wappy/accounts', 'wappy/mug', 'wappy/social', 'wappy/wapUI', 'wappy/work'
+	)
+}
 o.Easel = [
-	'cjs','cjsMC', 'create',
-	'colorShapes','dobs', 
-	'easelApps','easelGames'
-	
+	'cjs','cjsMC', 'create', 'shapes', 
+	'dobs',
+	'easelApps','easelGames','tween',
+
+	'bx', 'box','bxKlas','joints', 'mouseJt', 'bxMouse', 'queryAB', 'apps'
+	//, 'yip'
 ]
-	 
-	 
 o.Anim = ['tween', 'zoe', 'sprite', 'spriteSheet', 'ssBuilder',
 	'easing', 'movie', 'timeline']
 o.AnimApps = [
 	'tweenApps', 'growApp', 'spriteApps', 'movieApps', 'mcApps',//'flashAnimApps'
 	'gunnertron', 'SSData'
 ]
+
 
 
 o.Front = [
@@ -34,13 +70,40 @@ o.FrontApps = [
 	'ko_JQUI', 'bbBlogSap', 'bbTwitSap', 'uiWidSaps'
 
 ]
-o.Fiz = [
-	  'bx', 'box', 'boxMouse', 'contact', 'distanceJt', 
-	  'edges',   'listen',   'queryAB', 'apps'
-	  //, 'yip'
+
+
+o.Web = ['both', 'jq', 'superWeb','superCan','canDraw','waps', 'l']
+
+o.WebApps = ['waps']
+o.Graphics = ['gpc',
+	'superCan', 'gpClipper',
+	'ctxDraw', 'ctxGlobComp',
+	'ctxGrad', 'ctxImg', 'ctxPattern',
+	'ctxPixels', 'ctxShad', 'ctxText', 'ctxTransform',
+	'canDraw', 'canGlobComp', 'canImg',// 'canMug',
+	// 'canPattern',
+	'canPixels', 'canShad', 'canText', 'canTransform',
+	'parallax'
 ]
- 
- 
+o.GraphicsApps = ['canApps', 'clipperCtx',
+	'canDrawApps', 'canGradSuperApp', 'ctxDrawApps',
+	'globCompApps', 'shadowApps',
+	'canDrawingApps',
+	'ctxDrawingApps', 'ctxLoadApps',//'ctxMug',
+	'canPixApps', 'ctxPixelArt', 'canTextApps', 'ctxTfApps'
+]
+o.Arcade = ['camPre', 'cam', 'track', 'scroll', 'makeWorldTrack',
+	'$_con', 'b2d_controls', 'power', 'abovePlayerGlobally', 'towards', 'walking',
+	'levels', 'bike', 'mario', 'playerMath', 'playerWorld',
+	'shooter', 'touchGameShooter', 'boxWeb', 'play'
+]
+o.ArcadeApps = ['_player', 'playerApps', 'spazNice', 'tx']
+o.Wappy = ['wappy', 'users', 'login', 'profile',
+	'social', 'buds', 'posts', 'userCard',
+	'home', 'wapNav'  //'wapInit',
+	//'widUser'
+]
+o.Waps = []
 
  //, 'revoluteJt', 'prismaticJt',
 o.Geo = ['clump', 'edges', 'explode', 'geeDfs', 'geo', 'scrape',
@@ -81,100 +144,14 @@ o.SpazApps = [
 ]
 
 
-setPaths()
-setArrs()
-function setPaths() {
-	$stc('', '../art',
-			'web',
-			'graphics',
-			'graphics/apps_',
-			'graphics/ctx',
-			'graphics/clipper',
-			'graphics/can',
-		 
-			'easel', 
-			
-			
-		 
-			//Anim
-			'anim', 'anim/apps_', 'anim/tween', 'anim/sprite',
-			 'anim/movie', 'anim/flash',
-			//Front
-			'front', 'front/apps_', 'front/bone', 'front/wid', 'front/nok', 'front/sync',
-			//Box
-			
-		
-			'fiz/box', 
-			'fiz', 'fiz/apps_',
-			 'fiz/query', 'fiz/yip',
-			
-			
-			//Geo
-			'geo', 'geo/apps_', 'geo/clipper', 'geo/control', 'geo/joints', 'geo/ray',
-			//Spaz
-			'spaz', 'spaz/apps_',
-			'spaz/bindSprite', 'spaz/sprites', 'spaz/world',
-			'spaz/makeWorld', 'spaz/bridge',
-			'spazKill',
-			'spaz/easel', 'spaz/easel/color', 'spaz/easel/draw', 'spaz/easel/spriteSheets', 'spaz/easel/stage', 'spaz/easel/ticker',
-			//Arcade
-			'arcade', 'arcade/apps_',
-			'arcade/cam', 'arcade/controls',
-			'arcade/movement', 'arcade/player',
-			'arcade/scrolling', 'arcade/shooter', 'arcade/webMan',
-			//Wappy
-			'wappy', 'wappy/accounts', 'wappy/mug', 'wappy/social', 'wappy/wapUI', 'wappy/work'
-	)
-}
-function setArrs(){
-	
- 
-	o.Web = [  'both', 'jq', 'web', 'l']
-	o.WebApps = ['waps']
-	o.Graphics = ['gpc',
-		 'superCan', 'gpClipper',
-		'ctxDraw', 'ctxGlobComp',
-		 'ctxGrad', 'ctxImg', 'ctxPattern',
-		 'ctxPixels', 'ctxShad', 'ctxText', 'ctxTransform',
-		'canDraw', 'canGlobComp', 'canImg',// 'canMug',
-		// 'canPattern',
-		'canPixels', 'canShad', 'canText', 'canTransform',
-		'parallax' 
-	]
-	o.GraphicsApps = ['canApps', 'clipperCtx',
-			'canDrawApps','canGradSuperApp','ctxDrawApps',
-			'globCompApps','shadowApps',
-			'canDrawingApps',
-		'ctxDrawingApps','ctxLoadApps',//'ctxMug',
-		'canPixApps','ctxPixelArt','canTextApps','ctxTfApps'
-	]
-
- 
-	o.Arcade = ['camPre','cam','track','scroll','makeWorldTrack',
-	
-			'$_con','b2d_controls','power','abovePlayerGlobally','towards','walking',
-			
-			'levels','bike','mario','playerMath','playerWorld',
-			'shooter','touchGameShooter','boxWeb','play'
-	]
-	o.ArcadeApps = ['_player','playerApps','spazNice','tx']
-
-	o.Wappy = ['wappy', 'users', 'login', 'profile',
-		'social', 'buds','posts','userCard',
-		'home','wapNav'  //'wapInit',
-		//'widUser'
-	]
-	o.Waps = []
-	
-}
-
-
 $a.get('/box/:app*', function (q, p) {
 
 	var jsArrs = _.m([//o.Data, o.Both,
 		o.Web,// o.WebApps,
-		o.Graphics, //o.GraphicsApps,
-		o.Easel//,
+		//o.Graphics,
+		 //o.GraphicsApps,
+		o.Easel
+		//,
 		//o.EaselApps,
 		//o.Box, o.BoxApps
 		//o.Anim, o.AnimApps,

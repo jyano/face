@@ -1,4 +1,6 @@
-$L('color', 'load')
+$L('color', 'load',
+		'crop', 'clip', 'dataUrl', 'center')
+
 x.cv = x.cv0 = function () {
 	return this.canvas
 }
@@ -66,9 +68,7 @@ function color() {
 		return this
 	}
 }
-function _pre() {
-	x = ctx = CanvasRenderingContext2D.prototype
-}
+ 
 $.fn.ctx = function () {
 	return this[0].getContext('2d')
 }
@@ -1074,7 +1074,7 @@ x.jD = function (img, p1, p2, p3, p4) {
 	i.src = _.src(img)
 	return i
 }
-$L('crop', 'clip', 'dataUrl', 'center')
+ 
 function center() {
 	x.dC = function f(i, x, y) {
 		var that = this
@@ -1768,4 +1768,7 @@ GPC = CTXGPC = function () {
 			pol2 = createPoly(vxs2);
 		}
 	}
+}
+function _pre() {
+	x = ctx = CanvasRenderingContext2D.prototype
 }

@@ -2940,45 +2940,4 @@ DEMO_COLLIDE = function () {
 }
 //
 //
-//
-RAGD = function () {
-	b2d.mW()
-	// world.Spring =
-	w.J(
-			b2d.spring(
-					body1 = w.ball(100, 100, 30),
-					w.ball(100, 200, 40)
-			)
-	)
-	//world.Rod =
-	w.J(
-			b2d.rod(
-					body2 = w.box(100, 400, 30),
-					w.box(100, 500, 40))
-	)
-	player = w.addMe()
-	w.J(
-			b2d.spring(
-					body1, player)
-	)
-	w.J(
-			b2d.spring(body2, player))
-}
-STACKTHREE = function () {
-	W({m: 'ball', w: 0})
-	w.S(500, 600, 'y', 1000, 20)
-	b = w.B(500, 200, 'o', 40).K('ball')
-	w.boxesStat([350, 260, 880, 30])
-	w.B(310, 120, 't', 60, 60)
-	w.B(320, 120, 't', 60, 60)
-	w.B(340, 120, 't', 60, 60)
-	w.B(350, 120, 't', 60, 60)
-	w.B(370, 120, 't', 60, 60)
-	w.B(380, 120, 't', 60, 60)
-	w.B(550, 120, 't', 60, 60)
-	w.B(570, 120, 't', 60, 60)
-	w.B(580, 120, 't', 60, 60)
-	w.S(1000, 400, 'x', 200, 200)
-	w.S(1200, 200, 'x', 200, 200)
-	w.db()
-}
+// 

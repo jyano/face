@@ -1571,6 +1571,7 @@ b.al = function (al) {
 	}
 	return this
 }
+
 f.alx = function (al) {
 	al = N(al, .8)
 //	if ( O(this.sprites)) {this.sprites[0].al(al)}

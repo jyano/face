@@ -167,46 +167,7 @@ ct.xT = function (fn) {
     this.off('tick', fn)
     return this
 }
-
-
-ct.bm = function () {
-
-    var ct = this, g = G(arguments), o, bmp
-
-    o = N(g.s) ?
-    {i: g.f, sc: g.s, fn: g.t} :
-    {i: g.f, fn: g.s}
-    o.sc = N(o.sc) ? o.sc : 1
-
-    if (_.iDU(o.i)) {
-        o.i = $.i(o.i)
-    }
-
-
-    if (O(o.i)) {
-        bmp = $Bm(o.i).a2(ct)
-        if (o.fn) {
-            o.fn(bmp)
-        }
-        return ct
-    }
-    $.i(o.i, function (e, i) {
-        bmp = $Bm(i)
-        bmp.a2(ct)
-        bmp.rC()
-        bmp.sXY(o.sc).a2(ct)
-        //bm.XY( that.W()/2, that.H()/2 )
-        // works with stage i guess.. but fucks with 'container' - cant check bounds
-        if (g.n) {
-            bmp.XY(-1000)
-        }
-        if (o.fn) {
-            o.fn(bmp)
-        }
-    })
-    return ct
-
-}
+ 
 ct.mc = function (x, y) {
     var ct = this, g = G(arguments), mc
     mc = cjs.MovieClip.apply(cjs, g)
