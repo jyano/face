@@ -34,19 +34,4 @@ _canShadow = function (el) {
 		return el
 	}
 	return el
-}
- 
-CANSHAD = function () {
-	c = $.c('b', 700)
-	c.draw('me', 100, 100)
-	c.shadowColor('y')
-			.shadowBlur(100)
-			.shadowOffsetX(300)
-			.shadowOffsetY(100)
-	c.draw('me', 200, 200)
-	c.shadowColor('y').shadowBlur(100).shadowOffsetX(200).shadowOffsetY(100)
-	c.shadowColor('g')
-	c.draw('me', 0, 300)
-	c.shadow('p', 30, 200, 20)
-	c.draw('guy', 400, 200)
-}
+} 
