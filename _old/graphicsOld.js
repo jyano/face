@@ -104,29 +104,7 @@ cjs.iH = function (h) {
     return O(h) && h.graphics
 }
 cir = function () {
-    $H = $h = function () {
-        var g = G(arguments),
-            h = new cjs.Shape(), //if (cjs.iH(x)) {return new cjs.Shape(x.graphics)}
-//pass in your own obj to use 'o.i/o.bf' or 'o.lf' or 'o.rf'
-            o = g.O ? g.f :
-                g.N_ ? ( N(g[3]) ? // 'c-C-l' pattern
-                {x: g.f, y: g.s, C: g.t, l: g[3]} : {x: g.f, y: g.s, c: g.t, C: g[3], l: g[4]} ) :
-                    // 'c-C-l' pattern
-                    N(g.s) ? {C: g.f, l: g.s} :
-                    {c: g.f, C: g.s, l: g.t}
-        h.XY(N(o.x, 0), N(o.y, 0))
-        h.c(o.c || 'z', o.C || 'w', o.l || 8)
-        if (o.C) {
-            h.C(o.C)
-        }
-        if (N(o.l)) {
-            h.l(o.l)
-        }
-        if (g.p) {
-            h.dg()
-        }
-        return h
-    }
+  
     h.dc = function (x, y, r) {
         var h = this, gx = h.graphics, g = G(arguments), o
         h.cp() // i kinda like how it stroke-connects my cirs
@@ -199,13 +177,8 @@ cir = function () {
         })
     }
 };
+ 
 cir()
-b.$h = function () {
-    var h = $H()
-    this.bS(h)
-    h.c.apply(h, G(arguments))
-    return h
-}
 HAIRBALLS = function () {
     W(400, 400)._(function () {
 
@@ -1269,30 +1242,7 @@ ct.cX = function () {
 ct.cY = function () {
     return this.St().cen().y
 }
-b.C = function (c) {
-    this.fs(function (f) {
-        f.C(c)
-    })
-    this._col = c
-    return this
-}
-f.C = function () {
-    var f = this, b = f.B(), w = b.W(), g = G(arguments), o,
-        h
-    o = g.O ? g.f :
-    {c: g.f, C: g.s, l: g[2]}
-    o.c = (o.c == '*') ? $r() : (o.c || 'b')
-    o.C = o.C || o.c
-    f.removeSprites()
-    h = f.iC() ?
-        // if circle?
-        w.s.h().cir(f.pX(), f.pY(), f.rad(), o.c, o.C, o.l) :
-        // if poly
-        w.s.h().pol(f.rV(), o.c, o.C, o.l)
-    f.bS(h)
-    b.i = h
-    return f
-}
+ 
 f.bS = function () {
     var f = this, b = f.B(), w = b.W(), s = f.S(), g = G(arguments), o, j
     if (g.S_) {
@@ -2184,13 +2134,7 @@ function older(){
 			//b.cir('y', 10);b.cir('z', 6)
 			return fs.length > 1 ? fs : fs[0]
 		}
-		b.C = function (c) {
-			this.fs(function (f) {
-				f.C(c)
-			})
-			this._col = c
-			return this
-		}
+ 
 		b.St = b.S = b.stg = function () {
 			return this.W().s
 		}
@@ -2244,12 +2188,7 @@ function older(){
 			}
 			return f
 		}
-		b.$h = function () {
-			var h = $H()
-			this.bS(h)
-			h.c.apply(h, G(arguments))
-			return h
-		}
+	 
 		ct.rec = function () {
 			var ct = this, g = G(arguments), o, ct2, h
 			if (g.OO_) {
@@ -2302,34 +2241,7 @@ function older(){
 			}
 			return p
 		}
-		ct.C = ct.backgroundColor = function (c) {
-			var ct = this
-			$(ct.canvas).C(c)
-			return ct
-		}
-		ct.cX = function () {
-			return this.St().cen().x
-		}
-		ct.cY = function () {
-			return this.St().cen().y
-		}
-		f.C = function () {
-			var f = this, b = f.B(), w = b.W(), g = G(arguments), o,
-					h
-			o = g.O ? g.f :
-			{c: g.f, C: g.s, l: g[2]}
-			o.c = (o.c == '*') ? $r() : (o.c || 'b')
-			o.C = o.C || o.c
-			f.removeSprites()
-			h = f.iC() ?
-				// if circle?
-					w.s.h().cir(f.pX(), f.pY(), f.rad(), o.c, o.C, o.l) :
-				// if poly
-					w.s.h().pol(f.rV(), o.c, o.C, o.l)
-			f.bS(h)
-			b.i = h
-			return f
-		}
+	 
 		f.bS = function () {
 			var f = this, b = f.B(), w = b.W(), s = f.S(), g = G(arguments), o, j
 			if (g.S_) {
@@ -2709,29 +2621,7 @@ function older(){
 	}
 	
 	function cir() {
-		$H = $h = function () {
-			var g = G(arguments),
-					h = new cjs.Shape(), //if (cjs.iH(x)) {return new cjs.Shape(x.graphics)}
-//pass in your own obj to use 'o.i/o.bf' or 'o.lf' or 'o.rf'
-					o = g.O ? g.f :
-							g.N_ ? ( N(g[3]) ? // 'c-C-l' pattern
-							{x: g.f, y: g.s, C: g.t, l: g[3]} : {x: g.f, y: g.s, c: g.t, C: g[3], l: g[4]} ) :
-								// 'c-C-l' pattern
-									N(g.s) ? {C: g.f, l: g.s} :
-									{c: g.f, C: g.s, l: g.t}
-			h.XY(N(o.x, 0), N(o.y, 0))
-			h.c(o.c || 'z', o.C || 'w', o.l || 8)
-			if (o.C) {
-				h.C(o.C)
-			}
-			if (N(o.l)) {
-				h.l(o.l)
-			}
-			if (g.p) {
-				h.dg()
-			}
-			return h
-		}
+ 
 		h.dc = function (x, y, r) {
 			var h = this, gx = h.graphics, g = G(arguments), o
 			h.cp() // i kinda like how it stroke-connects my cirs

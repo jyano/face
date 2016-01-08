@@ -2218,60 +2218,7 @@ gx=function() {
     f.dot = function(c){var f=this, w=f.W(), v=f.mid(); if(S(c)){w.dot(c,v)} else {w.dot(v)}; return f}
     f.dots=function(){var f=this; b2d.polyDot(f.wVerts()); return f}
 
-//ONLY AFFECTS STAGE, NOT WORLD
-    f.C = function () {
-        var f = this, b = f.B(), w = b.W(), g = G(arguments), o,
-            h
-
-
-        o = O(g[0]) ? g[0] : {c: g[0], C: g[1], l: g[2]}
-        o.c = (o.c == '*') ? $r() : o.c || 'b'
-        o.C = o.C || o.c
-
-        f.removeSprites()
-        h = w.s.h()
-        if (f.isCirc()) {
-
-            //should not actually make a whole new fixture..
-            //oh... i'm not ! :)
-            h.cir(
-                f.pX(),
-                f.pY(),
-                f.rad(),
-                o.c,
-                o.C,
-                o.l
-            )
-        }
-
-        else {
-            h.poly(f.verts(), o.c, o.C, o.l)
-        }
-
-        f.bS(h)
-
-        return f
-    };
-    COL = function () {
-        W().C('z')
-
-        b = w.bump({c: 'w', r: 100})
-
-        f = b.f()
-
-        f.C('y')
-
-
-        // f.removeSprites(); h=w.s.h().cir(0,0,100,'y'); f.bS(h)
-
-
-        $.in(1, function () {
-
-            f.C('r')
-            b.dyn()
-        })
-    }
-
+ 
     f.bS = f.bindSprite = function (j, a, x, y, al) {//f.gx= f.spr= f.bindSprite2=
         var f = this, b = f.B(), s = b.wor().s, g = G(arguments), o
         f.sprites = f.sprites || []
@@ -2554,11 +2501,7 @@ b.Xf = b.destroyFixt = b.destroyFixture = b.dF = function (fixt) {
     this.DestroyFixture(fixt)
     return this
 }
-b.C = function (c) {
-    return this.each(function (f) {
-        f.C(c)
-    })
-}
+ 
 b.d=  b.den=function(d){var b=this
 
     if (U(d)) {

@@ -659,11 +659,7 @@ b.Xf = b.destroyFixt = b.destroyFixture = b.dF = function (fixt) {
         this.DestroyFixture(fixt)
         return this
     }
-b.C = function (c) {
-        return this.each(function (f) {
-            f.C(c)
-        })
-    }
+ 
 b.poly = b.polyArr = b.convex = function (c, V, k) {
         var b = this, w = b.W(), g = G(arguments), h, f
 //when and if should i call .conc/.sep ?

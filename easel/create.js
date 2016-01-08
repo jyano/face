@@ -18,7 +18,6 @@ cj.SSB = cj.SpriteSheetBuilder
 cj.Tl = cj.Timeline
 window.$pt = window.$pt || {}
 //$l('easel/createCore.js says welcome to EASEL !')
-
 proto()
 bool()
 function proto() {
@@ -38,7 +37,6 @@ function proto() {
 	$pt.mx = cjs.Matrix2D.prototype
 	$pt.tx = cj.Tx.prototype
 }
-
 cj.PD = function () {
 	eD = $pt.eD
 	mx = $pt.mx
@@ -96,703 +94,699 @@ $Ldr = function (name, fn) {
 	}
 }
 $L('events', 'transf', 'dobs', 'easelDraw')
-function events(){
-
+function events() {
 	ticker()
 	loader()
 	eventDispatcher()
+	function mouse() {
+		st.m = function (ob) {
+			var st = this
+			if (U(ob)) {
+				//return $Pt(this.mX(), this.mY())
+				return $Pt(st.mouseX, st.mouseY)
+			}
+			if (O(ob)) {
+				if (ob.d) {
+					st.MD(ob.d)
+				}
+				if (ob.u) {
+					st.MU(ob.u)
+				}
+				if (ob.m) {
+					st.MM(ob.m)
+				}
+			}
+			return st
+		}
+		st.mX = st.mx = function () {
+			return this.m().x
+		}
+		st.mY = st.my = function () {
+			return this.m().y
+		}
+		ct.moCh = ct.muCh = ct.mouCh = function () {
+			var ct = this, g = G(arguments)
+			if (g.u) {
+				return ct.mouseChildren
+			}
+			ct.mouseChildren = g.f ? true : false
+			return ct
+		}
+		st.eMO = st.mO = function (ms) {
+			var st = this, g = G(arguments)
+			if (U(g[0]) || g[0]) {
+				st.enableMouseOver(N(g[0]) ? g[0] : true)
+			}
+			else {
+				st.enableMouseOver(g.f ? true : false)
+			}
+			return st
+		}
+		st.mMO = function () {
+			var st = this, g = G(arguments)
+			if (g.u) {
+				return st.mouseMoveOutside
+			}
+			st.mouseMoveOutside = g.f ? true : false
+			return st
+		}
+		st.mIB = function () {
+			var st = this, g = G(arguments)
+			if (g.u) {
+				return st.mouseInBounds
+			}
+			st.mouseInBounds = g.f ? true : false
+			return st
+		}
+		ct.gOUPs = function () {
+			return this.getObjectsUnderPoint.apply(this, arguments)
+		}
+		ct.gOUP = function () {
+			return this.getObjectUnderPoint.apply(this, arguments)
+		}
+		st.MD = function (fn) {
+			return this.on('stagemousedown', fn)
+		}
+		st.MM = function (fn) {
+			return this.on('stagemousemove', fn)
+		}
+		st.MU = function (fn) {
+			return this.on('stagemouseup', fn)
+		}
+		dO.dg = dO.drag = dO.SL = function () {
+			cjs.drag(this);
+			return this
+		}
+		cjs.drag = cjs.SL = LS = cjs.bindSlide = SL = function () {
+			var g = G(arguments)
+			var b = g.f
+			var b2 = g.s || b
+			return b.on('mousedown', function (e) {
+				var bx = b2.x - e.rawX
+				var by = b2.y - e.rawY
+				b.on('pressmove', function (e) {
+					if (!g.p) {
+						b2.x = bx + e.rawX
+					}
+					if (!g.n) {
+						b2.y = by + e.rawY
+					}
+				})
+			})
+		}
+	}
 	
-	 function mouse() {
-		
-		  st.m = function (ob) {
-			 var st = this
-			 if (U(ob)) {
-				 //return $Pt(this.mX(), this.mY())
-				 return $Pt(st.mouseX, st.mouseY)
-			 }
-			 if (O(ob)) {
-				 if (ob.d) {
-					 st.MD(ob.d)
-				 }
-				 if (ob.u) {
-					 st.MU(ob.u)
-				 }
-				 if (ob.m) {
-					 st.MM(ob.m)
-				 }
-			 }
-			 return st
-		 }
-		 st.mX = st.mx = function () {
-			 return this.m().x
-		 }
-		 st.mY = st.my = function () {
-			 return this.m().y
-		 }
-		 ct.moCh = ct.muCh = ct.mouCh = function () {
-			 var ct = this, g = G(arguments)
-			 if (g.u) {
-				 return ct.mouseChildren
-			 }
-			 ct.mouseChildren = g.f ? true : false
-			 return ct
-		 }
-		 st.eMO = st.mO = function (ms) {
-			 var st = this, g = G(arguments)
-			 if (U(g[0]) || g[0]) {
-				 st.enableMouseOver(N(g[0]) ? g[0] : true)
-			 }
-			 else {
-				 st.enableMouseOver(g.f ? true : false)
-			 }
-			 return st
-		 }
-		 st.mMO = function () {
-			 var st = this, g = G(arguments)
-			 if (g.u) {
-				 return st.mouseMoveOutside
-			 }
-			 st.mouseMoveOutside = g.f ? true : false
-			 return st
-		 }
-		 st.mIB = function () {
-			 var st = this, g = G(arguments)
-			 if (g.u) {
-				 return st.mouseInBounds
-			 }
-			 st.mouseInBounds = g.f ? true : false
-			 return st
-		 }
-		 ct.gOUPs = function () {
-			 return this.getObjectsUnderPoint.apply(this, arguments)
-		 }
-		 ct.gOUP = function () {
-			 return this.getObjectUnderPoint.apply(this, arguments)
-		 }
-		 st.MD = function (fn) {
-			 return this.on('stagemousedown', fn)
-		 }
-		 st.MM = function (fn) {
-			 return this.on('stagemousemove', fn)
-		 }
-		 st.MU = function (fn) {
-			 return this.on('stagemouseup', fn)
-		 }
-		 dO.dg = dO.drag = dO.SL = function () {
-			 cjs.drag(this);
-			 return this
-		 }
-		 cjs.drag = cjs.SL = LS = cjs.bindSlide = SL = function () {
-			 var g = G(arguments)
-			 var b = g.f
-			 var b2 = g.s || b
-			 return b.on('mousedown', function (e) {
-				 var bx = b2.x - e.rawX
-				 var by = b2.y - e.rawY
-				 b.on('pressmove', function (e) {
-					 if (!g.p) {
-						 b2.x = bx + e.rawX
-					 }
-					 if (!g.n) {
-						 b2.y = by + e.rawY
-					 }
-				 })
-			 })
-		 }
-	 }
-	 function ticker() {
-		 T.t = cjs.t = cjs.tick = function (fn) {
-			 var g = G(arguments)
-			 if (g.F_) {
-				 if (!g.n) {
-					 fn()
-				 }
-				 return T.on('tick', fn) // T.addEventListener? return T?
-			 }
-			 return g.n ? T.t('+') - T.t() :
-					 Number((T.getTime(g.p ? false : true) / 1000).toFixed(2))
-		 }
-		 $t = function (fn) {
-			 T.t(fn)
-		 }
-		 cj.t = cj.tick = function (func) {
-			 func();
-			 cjs.Ticker.on('tick', func)
-		 }
-		 cj.stop = function () {
-			 cjs.Ticker.removeAllEventListeners()
-		 }
-		 cj.stopListening = function () {
-			 cjs.Ticker.removeAllEventListeners()
-		 }
-		 T.p = function () {
-			 T.setPaused(false);
-			 return T
-		 }
-		 T.P = T.s = function () {
-			 T.setPaused(true);
-			 return T
-		 }
-		 T.s = cjs.xL = function () {
-			 T.removeAllEventListeners()
-		 }
-		 T.$ = function () {
-			 T.setPaused(T.getPaused() == false ? true : false)
-			 return T
-		 }
-		 T.i = function () {
-			 //indicates the target time (in ms) between ticks
-			 //default is 50 (20 fps)
-			 //Note: actual time between ticks may be more than specified,
-			 //  depending on CPU load. (but this property is ignored if the ticker is using the RAF timing mode)
-			 return T.interval
-		 }
-		 T.f = function (numTicks) {
-			 var g = G(arguments)  //numTicks:   optional: The number of previous ticks over which to measure the actual frames
+	function ticker() {
+		T.t = cjs.t = cjs.tick = function (fn) {
+			var g = G(arguments)
+			if (g.F_) {
+				if (!g.n) {
+					fn()
+				}
+				return T.on('tick', fn) // T.addEventListener? return T?
+			}
+			return g.n ? T.t('+') - T.t() :
+					Number((T.getTime(g.p ? false : true) / 1000).toFixed(2))
+		}
+		$t = function (fn) {
+			T.t(fn)
+		}
+		cj.t = cj.tick = function (func) {
+			func();
+			cjs.Ticker.on('tick', func)
+		}
+		cj.stop = function () {
+			cjs.Ticker.removeAllEventListeners()
+		}
+		cj.stopListening = function () {
+			cjs.Ticker.removeAllEventListeners()
+		}
+		T.p = function () {
+			T.setPaused(false);
+			return T
+		}
+		T.P = T.s = function () {
+			T.setPaused(true);
+			return T
+		}
+		T.s = cjs.xL = function () {
+			T.removeAllEventListeners()
+		}
+		T.$ = function () {
+			T.setPaused(T.getPaused() == false ? true : false)
+			return T
+		}
+		T.i = function () {
+			//indicates the target time (in ms) between ticks
+			//default is 50 (20 fps)
+			//Note: actual time between ticks may be more than specified,
+			//  depending on CPU load. (but this property is ignored if the ticker is using the RAF timing mode)
+			return T.interval
+		}
+		T.f = function (numTicks) {
+			var g = G(arguments)  //numTicks:   optional: The number of previous ticks over which to measure the actual frames
 // / ticks per second.Defaults to the number of ticks per second.
-			 if (N(numTicks)) {
-				 T.setFPS(numTicks);
-				 return T
-			 }
-			 return g.n ?
-					 T.getFPS() :
-					 T.getMeasuredFPS() //returns *ACTUAL* frames
-			 // / ticks per second//
-			 // Depending on performance,
-			 // this may differ from the target frames per second.
-		 }
-		 T.e = function (runTimePropReturnedInsteadOfTime) {
-			 //Similar to getTime(), but returns the time on the most recent tick event object.
+			if (N(numTicks)) {
+				T.setFPS(numTicks);
+				return T
+			}
+			return g.n ?
+					T.getFPS() :
+					T.getMeasuredFPS() //returns *ACTUAL* frames
+			// / ticks per second//
+			// Depending on performance,
+			// this may differ from the target frames per second.
+		}
+		T.e = function (runTimePropReturnedInsteadOfTime) {
+			//Similar to getTime(), but returns the time on the most recent tick event object.
 // returns the time or runTime property from the most recent tick event or -1.
-			 T.getEventTime(runTimePropReturnedInsteadOfTime)//df: false ( If true, the runTime property will be returned instead of time  )
-		 }
-		 T.m = function (ticks) {
-			 return T.getMeasuredTickTime(ticks)
-		 } //ticks: // optional The number of previous ticks over which to measure the average time spent in a tick.Defaults to the number of ticks per second.To get only the last tick's time, pass in 1.
-		 T.iP = function () {
-			 return T.getPaused()
-		 }
-		 
-		 DRAWCAR = function () {
+			T.getEventTime(runTimePropReturnedInsteadOfTime)//df: false ( If true, the runTime property will be returned instead of time  )
+		}
+		T.m = function (ticks) {
+			return T.getMeasuredTickTime(ticks)
+		} //ticks: // optional The number of previous ticks over which to measure the average time spent in a tick.Defaults to the number of ticks per second.To get only the last tick's time, pass in 1.
+		T.iP = function () {
+			return T.getPaused()
+		}
+		DRAWCAR = function () {
 //http://www.createjs.com/tutorials/Animation%20and%20Ticker/
 //http://www.createjs.com/tutorials/Animation%20and%20Ticker/timeBased.htmlLAYYS = USINGLAYERSINEASEL9 = function () {
-			 s = St(500).A()
-			 s.bm('me', function (bm) {
-				 b = bm
-				 bm.sXY(3)
-				 drawCar()
-				 s.tick(function () {
-					 b.x(-1 * (g.x() * 2))
-					 b.y(-1 * (g.y() * 2))
-				 })
-			 })
-			 bt = $.bt('safd', function () {
-				 s.sXY(2)
-			 }).A()
-			 function drawCar() {
-				 s.bm('guy', function (bm) {
-					 g = bm
-					 bm.sXY(.5)
-					 SL(bm)
-				 })
-			 }
-		 }
-	 }
-	 function loader() {
-		 _mf = [{id: "myImage", src: "/me.png"}, {id: "guyImage", src: "/guy.png"}]
-		 _MF = ['me', 'guy', 'chicks', 'sun', 'flame', 'earth']
-		 $Ld = $ld = cjs.lQ = Q = function () {
-			 _$Ld = function () {
-				 return new cjs.LoadQueue(true)
-			 }
+			s = St(500).A()
+			s.bm('me', function (bm) {
+				b = bm
+				bm.sXY(3)
+				drawCar()
+				s.tick(function () {
+					b.x(-1 * (g.x() * 2))
+					b.y(-1 * (g.y() * 2))
+				})
+			})
+			bt = $.bt('safd', function () {
+				s.sXY(2)
+			}).A()
+			function drawCar() {
+				s.bm('guy', function (bm) {
+					g = bm
+					bm.sXY(.5)
+					SL(bm)
+				})
+			}
+		}
+	}
+	
+	function loader() {
+		_mf = [{id: "myImage", src: "/me.png"}, {id: "guyImage", src: "/guy.png"}]
+		_MF = ['me', 'guy', 'chicks', 'sun', 'flame', 'earth']
+		$Ld = $ld = cjs.lQ = Q = function () {
+			_$Ld = function () {
+				return new cjs.LoadQueue(true)
+			}
 //starts off as a fn (obviously)
 //but ends up as an obj
 // (can use his info to test if its been ran)
-			 var g = G(arguments), o
-			 o = g.F_ ? {done: g.f, file: g.s} :
-					 (g.A_ || g.S_) ? {mf: g.f, done: g.s, file: g.t} :
-							 g.f
-			 o.mf = o.mf || ['me', 'guy', 'chicks', 'sun', 'flame', 'earth']
-			 var ld = _$Ld()
-			 if (o.file) {
-				 ld.file(o.file)
-			 }
-			 if (o.done) {
-				 ld.done(function (e) {
-					 //o.done(function(i) {return ld.i(i)}, e)
-					 o.done(ld)
-				 })
-			 }
-			 if (o.mf) {
-				 ld.mf(o.mf)
-			 }
-			 Q = ld
-			 Q.ran = true
-			 return Q
-		 }
-		 Q.ran = false
-		 Q1 = function (imgs, fn) {
-			 var q = cjs.lq()
-			 mf = []
-			 _.e(imgs, function (v) {
-				 mf.push({
-					 src: cjs.src(v),
-					 id: v
-				 })
-			 })
-			 q.manifest(mf)
-			 q.complete(function () {
-				 fn(q)
-			 })
-		 }
-		 ld.get = ld.g = ld.gR = ld.i = ld.r = function (i) {
-			 i = this.getResult(i);
-			 i.w = i.width;
-			 i.h = i.height;
-			 return i
-		 }
-		 ld.done = ld.rdy = ld.c = ld.complete = function (fn) {
-			 if (F(fn)) {
-				 this.on("complete", fn)
-			 }
-			 return this
-		 }
-		 ld.bm = ld.b = function (i, ct, x, y) {
-			 var ld = this
-			 var bm = _$Bm(ld.get(i))
-			 if (N(ct)) {
-				 bm.XY(ct, x)
-			 }
-			 else if (O(ct)) {
-				 bm.a2(ct, x, y)
-			 }
-			 return bm
-		 }
-		 ld.mf = function (mf) {
-			 // q.mf protosig: 
-			 // (1) 'me',..
-			 // (2)  {src:'me', id:'him'},.. 
-			 // (3) [ {src:*, id:*}, 'me',.. ]		
-			 mf = $its(A(mf) ? mf : G(arguments))
-			 this.loadManifest(mf)
-			 return this
-		 }
-		 function fileLoad() {
-			 ld.dfF = cjs.handleFileLoad = function (e) {
-				 alert('q.dfF = cjs.handleFileLoad in loaderProto.js')
-				 images = window['images'] || {}
-				 if (e.item.type == "image") {
-					 images[e.item.id] = e.result
-				 }
-			 }
-			 ld.file = ld.f = ld.l = ld.fl = ld.fileload = function (fn) {
-				 this.on("fileload", fn)
-				 return this
-			 }
-		 }
+			var g = G(arguments), o
+			o = g.F_ ? {done: g.f, file: g.s} :
+					(g.A_ || g.S_) ? {mf: g.f, done: g.s, file: g.t} :
+							g.f
+			o.mf = o.mf || ['me', 'guy', 'chicks', 'sun', 'flame', 'earth']
+			var ld = _$Ld()
+			if (o.file) {
+				ld.file(o.file)
+			}
+			if (o.done) {
+				ld.done(function (e) {
+					//o.done(function(i) {return ld.i(i)}, e)
+					o.done(ld)
+				})
+			}
+			if (o.mf) {
+				ld.mf(o.mf)
+			}
+			Q = ld
+			Q.ran = true
+			return Q
+		}
+		Q.ran = false
+		Q1 = function (imgs, fn) {
+			var q = cjs.lq()
+			mf = []
+			_.e(imgs, function (v) {
+				mf.push({
+					src: cjs.src(v),
+					id: v
+				})
+			})
+			q.manifest(mf)
+			q.complete(function () {
+				fn(q)
+			})
+		}
+		ld.get = ld.g = ld.gR = ld.i = ld.r = function (i) {
+			i = this.getResult(i);
+			i.w = i.width;
+			i.h = i.height;
+			return i
+		}
+		ld.done = ld.rdy = ld.c = ld.complete = function (fn) {
+			if (F(fn)) {
+				this.on("complete", fn)
+			}
+			return this
+		}
+		ld.bm = ld.b = function (i, ct, x, y) {
+			var ld = this
+			var bm = _$Bm(ld.get(i))
+			if (N(ct)) {
+				bm.XY(ct, x)
+			}
+			else if (O(ct)) {
+				bm.a2(ct, x, y)
+			}
+			return bm
+		}
+		ld.mf = function (mf) {
+			// q.mf protosig: 
+			// (1) 'me',..
+			// (2)  {src:'me', id:'him'},.. 
+			// (3) [ {src:*, id:*}, 'me',.. ]		
+			mf = $its(A(mf) ? mf : G(arguments))
+			this.loadManifest(mf)
+			return this
+		}
+		function fileLoad() {
+			ld.dfF = cjs.handleFileLoad = function (e) {
+				alert('q.dfF = cjs.handleFileLoad in loaderProto.js')
+				images = window['images'] || {}
+				if (e.item.type == "image") {
+					images[e.item.id] = e.result
+				}
+			}
+			ld.file = ld.f = ld.l = ld.fl = ld.fileload = function (fn) {
+				this.on("fileload", fn)
+				return this
+			}
+		}
 		
-		 ld.jQuery = ld.$ = function (i) {
-			 return $(this.i(i))
-		 }
-		 ct.qB = ct.bQ = function (name, x, y, sX, sY, rt) {
-			 var b, g = G(arguments)
-			 b = Q.b(name)
-					 .XY(N(x, 0), N(y, 0))
-					 .sXY(N(sX, 1), N(sY, sX || 1))
-					 .rt(N(rt, 0))
-			 if (!g.n) {
-				 b.rC()
-			 }
-			 if (g.p) {
-				 b.drag()
-			 }
-			 this.A(b);
-			 return b
-		 }
-		 function later() {
-			 cjs.mf = cjs.manifest = function () {
-				 var g = G(arguments)
-				 var mf = []
-				 _.e(g, function (i) {
-					 mf.push($it(i))
-				 })
-				 return mf
-			 }
-			 cjs.handleFileLoad = function (e) {
-				 if (e.item.type == "image") {
-					 images[e.item.id] = e.result
-				 }
-			 }
-			 cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
-				 alert('manifest')
-				 return cjs.mf.apply(null, _.m(a.images, function (i) {
-					 return _.crs(i)
-				 }))
-			 }
-		 }
-	 }
-	 function eventDispatcher() {
-		 events1 = ['added',
-			 'mouseover', 'rollover', 'rollout', 'mouseout',
-			 'mousedown', 'pressmove', 'pressup', 'click', 'dblclick',
-			 'removed',
-			 'tick'
-		 ]
-		 events = ['drawend',
-			 'drawstart',
-			 'mouseenter',
-			 'mouseleave',
-			 'stagemousedown',
-			 'stagemousemove',
-			 'stagemouseup',
-			 'tickend',
-			 'tickstart'
-		 ]
-		 eD.aEL = eD.addEventListener
-		 eD.hEL = eD.hasEventListener
-		 eD.O = eD.off
-		 eD.o = eD.on
-		 eD.dE = eD.dispatchEvent
-		 eD.rAEL = eD.removeAllEventListeners
-		 eD.rEL = eD.removeEventListener
-		 eD.tS = eD.toString
-		 eD.wT = eD.willTrigger
-		 EVob = {$: 'click', $$: 'dblclick', v: 'mouseover'}
-		 eD.init = function () {
-			 //note: 'initialize' is the only STATIC method of eventDispatcher
-			 this.initialize.apply(this, arguments)
-			 return this
-		 }
-		 dO.uM = dO.underMouse = function () {
-			 var dO = this, stg = dO.getStage()
-			 if (stg.mouseInBounds) {
-				 var pt = dO.gTL(stg.mouseX, stg.mouseY)
-				 return dO.hitTest(pt.x, pt.y)
-				 // alt : return hitTest( pt )
-			 }
-		 }
-		 dO.mouEn = function (en) {
-			 var dO = this, g = G(arguments)
-			 if (g.u) {
-				 return dO.mouseEnabled
-			 }
-			 dO.mouseEnabled = g.f ? true : false
-			 return dO
-		 }
-		 dO.$ = dO.click = function (fn) {
-			 return this.on('click', fn)
-		 }
-		 dO.$$ = dO.dblclick = function (fn) {
-			 return this.on('dblclick', fn)
-		 }
-		 st.eDE = function () {
-			 var st = this, g = G(arguments)
-			 st.enableDOMEvents.apply(st, arguments)
-			 return st
-		 }
-	 }
-	 function keyControl() {
-	 
-		 dO.keyControls = function (num) {
-			 var args = G(arguments),
-					 that = this
-			 if (args.P) {
-				 $.kD('left', function () {
-					 that.toL(num)
-				 })
-				 $.kD('right', function () {
-					 that.toR(num)
-				 })
-			 }
-			 if (args.N) {
-				 $.kD('up', function () {
-					 that.toU(num)
-				 })
-				 $.kD('down', function () {
-					 that.toD(num)
-				 })
-			 }
-		 }
-		 $.k = $.key = $.kD = function self(k, fn) {
-			 if (O(k)) {
-				 _.e(k, function (fn, k) {
-					 if (s$(k).isUpper()) {
-						 $.kU(k.toLowerCase(), fn)
-					 }
-					 else {
-						 $.kD(k, fn)
-					 }
-				 })
-				 return
-			 }
-			 if (KEYOB[k]) {
-				 k = KEYOB[k]
-			 }
-			 $('body').on('keydown', function (e) {
-				 if (e.which == k) {
-					 fn(e, $.K)
-				 }
-			 })
-		 }
-		 $.kU = function (k, fn) {
-			 if (keyObj[k]) {
-				 k = keyObj[k]
-			 }
-			 $('body').on('keyup', function (e) {
-				 if (e.which == k) {
-					 fn(e, $.K)
-				 }
-			 })
-		 }
-		 $.spc = function (fn) {
-			 return $.kD('space', fn)
-		 }
-		 K = function (k, fn) {
-			 var g = G(arguments), o, key
-			 if (g.u) {
-				 if (K._loaded) {
-					 return
-				 }
-				 $.kD('l', function () {
-					 if ($.test) {
-						 $l('left pressed')
-					 }
-					 K.l = $.K.l = $.K.left = true
-					 $.K.dir = 'left'
-					 K.l = 1;
-					 K.L = 0
-				 })
-				 $.kU('l', function () {
-					 if ($.test) {
-						 $l('left lifted')
-					 }
-					 K.l = $.K.l = $.K.left = false
-					 K.l = 0;
-					 K.L = 1
-				 })
-				 $.kD('r', function () {
-					 if ($.test) {
-						 $l('right pressed')
-					 }
-					 K.r = $.K.r = $.K.right = true
-					 $.K.dir = 'right'
-					 K.r = 1;
-					 K.R = 0
-				 })
-				 $.kU('r', function () {
-					 if ($.test) {
-						 $l('right lifted')
-					 }
-					 $.K.r = $.K.right = false
-					 K.r = 0;
-					 K.R = 1
-				 })
-				 $.kD('u', function () {
-					 if ($.test) {
-						 $l('up pressed')
-					 }
-					 $.K.u = $.K.up = true
-					 K.u = 1;
-					 K.U = 0
-				 })
-				 $.kU('u', function () {
-					 if ($.test) {
-						 $l('up lifted')
-					 }
-					 $.K.u = $.K.up = false
-					 K.u = 0;
-					 K.U = 1
-				 })
-				 $.kD('d', function () {
-					 if ($.test) {
-						 $l('down pressed')
-					 }
-					 $.K.d = $.K.down = true
-					 K.d = 1;
-					 K.D = 0
-				 })
-				 $.kU('d', function () {
-					 if ($.test) {
-						 $l('down lifted')
-					 }
-					 $.K.d = $.K.down = false
-					 K.d = 0;
-					 K.D = 1
-				 })
-				 K._loaded = 1
-				 return
-			 }
-			 if (O(k)) {
-				 if (g.p) {
-					 if (F(k.u)) {
-						 z(function () {
-							 if (K.u) {
-								 k.u(K.u)
-							 }
-						 })
-					 }
-					 if (F(k.d)) {
-						 z(function () {
-							 if (K.d) {
-								 k.d(K.d)
-							 }
-						 })
-					 }
-					 if (F(k.l)) {
-						 z(function () {
-							 if (K.l) {
-								 k.l(K.l)
-							 }
-						 })
-					 }
-					 if (F(k.r)) {
-						 z(function () {
-							 if (K.r) {
-								 k.r(K.r)
-							 }
-						 })
-					 }
-				 }
-				 else {
-					 _.e(k, function (fn, k) {
-						 K(k, fn)
-					 })
-				 }
-				 return
-			 }
-			 o = s$(k).isUpper() ? {on: 'keyup', k: k.toLowerCase()} : {on: 'keydown', k: k}
-			 if (g.p) {
-				 return z(function () {
-					 if (K[k]) {
-						 fn()
-					 }
-				 })
-			 }
-			 key = Key(o.k)
-			 return $('body').on(o.on, function (e) {
-				 if (e.which == key) {
-					 fn(e)
-				 }
-			 })
-			 function Key(k) {
-				 var ob = {u: 38, d: 40, l: 37, r: 39, s: 32, e: 13};
-				 return ob[k] ? ob[k] : k
-			 }
-		 }
-		 $.K = function (o) {
-			 alert('$.K')
-			 if (!O(o)) {
-				 return
-			 }
-			 if (F(o.u)) {
-				 cjs.tick(function () {
-					 if ($.K.u) {
-						 o.u($.K.u)
-					 }
-				 })
-			 }
-			 if (F(o.d)) {
-				 cjs.tick(function () {
-					 if ($.K.d) {
-						 o.d($.K.d)
-					 }
-				 })
-			 }
-			 if (F(o.l)) {
-				 cjs.tick(function () {
-					 if ($.K.l) {
-						 o.l($.K.l)
-					 }
-				 })
-			 }
-			 if (F(o.r)) {
-				 cjs.tick(function () {
-					 if ($.K.r) {
-						 o.r($.K.r)
-					 }
-				 })
-			 }
-		 }
-		 cjs.watchKeys = function () {
-			 alert('cjs.watchKeys')
-			 $.K.l = $.K.left = false
-			 $.K.r = $.K.right = false
-			 $.K.u = $.K.up = false
-			 $.K.d = $.K.down = false
-			 $.kD('l', function () {
-				 if ($.test) {
-					 $l('left pressed')
-				 }
-				 $.K.l = $.K.left = true
-				 $.K.dir = 'left'
-			 })
-			 $.kU('l', function () {
-				 if ($.test) {
-					 $l('left lifted')
-				 }
-				 $.K.l = $.K.left = false
-			 })
-			 $.kD('r', function () {
-				 if ($.test) {
-					 $l('right pressed')
-				 }
-				 $.K.r = $.K.right = true
-				 $.K.dir = 'right'
-			 })
-			 $.kU('r', function () {
-				 if ($.test) {
-					 $l('right lifted')
-				 }
-				 $.K.r = $.K.right = false
-			 })
-			 $.kD('u', function () {
-				 if ($.test) {
-					 $l('up pressed')
-				 }
-				 $.K.u = $.K.up = true
-			 })
-			 $.kU('u', function () {
-				 if ($.test) {
-					 $l('up lifted')
-				 }
-				 $.K.u = $.K.up = false
-			 })
-			 $.kD('d', function () {
-				 if ($.test) {
-					 $l('down pressed')
-				 }
-				 $.K.d = $.K.down = true
-			 })
-			 $.kU('d', function () {
-				 if ($.test) {
-					 $l('down lifted')
-				 }
-				 $.K.d = $.K.down = false
-			 })
+		ld.jQuery = ld.$ = function (i) {
+			return $(this.i(i))
+		}
+		ct.qB = ct.bQ = function (name, x, y, sX, sY, rt) {
+			var b, g = G(arguments)
+			b = Q.b(name)
+					.XY(N(x, 0), N(y, 0))
+					.sXY(N(sX, 1), N(sY, sX || 1))
+					.rt(N(rt, 0))
+			if (!g.n) {
+				b.rC()
+			}
+			if (g.p) {
+				b.drag()
+			}
+			this.A(b);
+			return b
+		}
+		function later() {
+			cjs.mf = cjs.manifest = function () {
+				var g = G(arguments)
+				var mf = []
+				_.e(g, function (i) {
+					mf.push($it(i))
+				})
+				return mf
+			}
+			cjs.handleFileLoad = function (e) {
+				if (e.item.type == "image") {
+					images[e.item.id] = e.result
+				}
+			}
+			cjs.man = cjs.makeMan = cjs.makeManifest = function (a) {
+				alert('manifest')
+				return cjs.mf.apply(null, _.m(a.images, function (i) {
+					return _.crs(i)
+				}))
+			}
+		}
+	}
+	
+	function eventDispatcher() {
+		events1 = ['added',
+			'mouseover', 'rollover', 'rollout', 'mouseout',
+			'mousedown', 'pressmove', 'pressup', 'click', 'dblclick',
+			'removed',
+			'tick'
+		]
+		events = ['drawend',
+			'drawstart',
+			'mouseenter',
+			'mouseleave',
+			'stagemousedown',
+			'stagemousemove',
+			'stagemouseup',
+			'tickend',
+			'tickstart'
+		]
+		eD.aEL = eD.addEventListener
+		eD.hEL = eD.hasEventListener
+		eD.O = eD.off
+		eD.o = eD.on
+		eD.dE = eD.dispatchEvent
+		eD.rAEL = eD.removeAllEventListeners
+		eD.rEL = eD.removeEventListener
+		eD.tS = eD.toString
+		eD.wT = eD.willTrigger
+		EVob = {$: 'click', $$: 'dblclick', v: 'mouseover'}
+		eD.init = function () {
+			//note: 'initialize' is the only STATIC method of eventDispatcher
+			this.initialize.apply(this, arguments)
+			return this
+		}
+		dO.uM = dO.underMouse = function () {
+			var dO = this, stg = dO.getStage()
+			if (stg.mouseInBounds) {
+				var pt = dO.gTL(stg.mouseX, stg.mouseY)
+				return dO.hitTest(pt.x, pt.y)
+				// alt : return hitTest( pt )
+			}
+		}
+		dO.mouEn = function (en) {
+			var dO = this, g = G(arguments)
+			if (g.u) {
+				return dO.mouseEnabled
+			}
+			dO.mouseEnabled = g.f ? true : false
+			return dO
+		}
+		dO.$ = dO.click = function (fn) {
+			return this.on('click', fn)
+		}
+		dO.$$ = dO.dblclick = function (fn) {
+			return this.on('dblclick', fn)
+		}
+		st.eDE = function () {
+			var st = this, g = G(arguments)
+			st.enableDOMEvents.apply(st, arguments)
+			return st
+		}
+	}
+	
+	function keyControl() {
+		dO.keyControls = function (num) {
+			var args = G(arguments),
+					that = this
+			if (args.P) {
+				$.kD('left', function () {
+					that.toL(num)
+				})
+				$.kD('right', function () {
+					that.toR(num)
+				})
+			}
+			if (args.N) {
+				$.kD('up', function () {
+					that.toU(num)
+				})
+				$.kD('down', function () {
+					that.toD(num)
+				})
+			}
+		}
+		$.k = $.key = $.kD = function self(k, fn) {
+			if (O(k)) {
+				_.e(k, function (fn, k) {
+					if (s$(k).isUpper()) {
+						$.kU(k.toLowerCase(), fn)
+					}
+					else {
+						$.kD(k, fn)
+					}
+				})
+				return
+			}
+			if (KEYOB[k]) {
+				k = KEYOB[k]
+			}
+			$('body').on('keydown', function (e) {
+				if (e.which == k) {
+					fn(e, $.K)
+				}
+			})
+		}
+		$.kU = function (k, fn) {
+			if (keyObj[k]) {
+				k = keyObj[k]
+			}
+			$('body').on('keyup', function (e) {
+				if (e.which == k) {
+					fn(e, $.K)
+				}
+			})
+		}
+		$.spc = function (fn) {
+			return $.kD('space', fn)
+		}
+		K = function (k, fn) {
+			var g = G(arguments), o, key
+			if (g.u) {
+				if (K._loaded) {
+					return
+				}
+				$.kD('l', function () {
+					if ($.test) {
+						$l('left pressed')
+					}
+					K.l = $.K.l = $.K.left = true
+					$.K.dir = 'left'
+					K.l = 1;
+					K.L = 0
+				})
+				$.kU('l', function () {
+					if ($.test) {
+						$l('left lifted')
+					}
+					K.l = $.K.l = $.K.left = false
+					K.l = 0;
+					K.L = 1
+				})
+				$.kD('r', function () {
+					if ($.test) {
+						$l('right pressed')
+					}
+					K.r = $.K.r = $.K.right = true
+					$.K.dir = 'right'
+					K.r = 1;
+					K.R = 0
+				})
+				$.kU('r', function () {
+					if ($.test) {
+						$l('right lifted')
+					}
+					$.K.r = $.K.right = false
+					K.r = 0;
+					K.R = 1
+				})
+				$.kD('u', function () {
+					if ($.test) {
+						$l('up pressed')
+					}
+					$.K.u = $.K.up = true
+					K.u = 1;
+					K.U = 0
+				})
+				$.kU('u', function () {
+					if ($.test) {
+						$l('up lifted')
+					}
+					$.K.u = $.K.up = false
+					K.u = 0;
+					K.U = 1
+				})
+				$.kD('d', function () {
+					if ($.test) {
+						$l('down pressed')
+					}
+					$.K.d = $.K.down = true
+					K.d = 1;
+					K.D = 0
+				})
+				$.kU('d', function () {
+					if ($.test) {
+						$l('down lifted')
+					}
+					$.K.d = $.K.down = false
+					K.d = 0;
+					K.D = 1
+				})
+				K._loaded = 1
+				return
+			}
+			if (O(k)) {
+				if (g.p) {
+					if (F(k.u)) {
+						z(function () {
+							if (K.u) {
+								k.u(K.u)
+							}
+						})
+					}
+					if (F(k.d)) {
+						z(function () {
+							if (K.d) {
+								k.d(K.d)
+							}
+						})
+					}
+					if (F(k.l)) {
+						z(function () {
+							if (K.l) {
+								k.l(K.l)
+							}
+						})
+					}
+					if (F(k.r)) {
+						z(function () {
+							if (K.r) {
+								k.r(K.r)
+							}
+						})
+					}
+				}
+				else {
+					_.e(k, function (fn, k) {
+						K(k, fn)
+					})
+				}
+				return
+			}
+			o = s$(k).isUpper() ? {on: 'keyup', k: k.toLowerCase()} : {on: 'keydown', k: k}
+			if (g.p) {
+				return z(function () {
+					if (K[k]) {
+						fn()
+					}
+				})
+			}
+			key = Key(o.k)
+			return $('body').on(o.on, function (e) {
+				if (e.which == key) {
+					fn(e)
+				}
+			})
+			function Key(k) {
+				var ob = {u: 38, d: 40, l: 37, r: 39, s: 32, e: 13};
+				return ob[k] ? ob[k] : k
+			}
+		}
+		$.K = function (o) {
+			alert('$.K')
+			if (!O(o)) {
+				return
+			}
+			if (F(o.u)) {
+				cjs.tick(function () {
+					if ($.K.u) {
+						o.u($.K.u)
+					}
+				})
+			}
+			if (F(o.d)) {
+				cjs.tick(function () {
+					if ($.K.d) {
+						o.d($.K.d)
+					}
+				})
+			}
+			if (F(o.l)) {
+				cjs.tick(function () {
+					if ($.K.l) {
+						o.l($.K.l)
+					}
+				})
+			}
+			if (F(o.r)) {
+				cjs.tick(function () {
+					if ($.K.r) {
+						o.r($.K.r)
+					}
+				})
+			}
+		}
+		cjs.watchKeys = function () {
+			alert('cjs.watchKeys')
+			$.K.l = $.K.left = false
+			$.K.r = $.K.right = false
+			$.K.u = $.K.up = false
+			$.K.d = $.K.down = false
+			$.kD('l', function () {
+				if ($.test) {
+					$l('left pressed')
+				}
+				$.K.l = $.K.left = true
+				$.K.dir = 'left'
+			})
+			$.kU('l', function () {
+				if ($.test) {
+					$l('left lifted')
+				}
+				$.K.l = $.K.left = false
+			})
+			$.kD('r', function () {
+				if ($.test) {
+					$l('right pressed')
+				}
+				$.K.r = $.K.right = true
+				$.K.dir = 'right'
+			})
+			$.kU('r', function () {
+				if ($.test) {
+					$l('right lifted')
+				}
+				$.K.r = $.K.right = false
+			})
+			$.kD('u', function () {
+				if ($.test) {
+					$l('up pressed')
+				}
+				$.K.u = $.K.up = true
+			})
+			$.kU('u', function () {
+				if ($.test) {
+					$l('up lifted')
+				}
+				$.K.u = $.K.up = false
+			})
+			$.kD('d', function () {
+				if ($.test) {
+					$l('down pressed')
+				}
+				$.K.d = $.K.down = true
+			})
+			$.kU('d', function () {
+				if ($.test) {
+					$l('down lifted')
+				}
+				$.K.d = $.K.down = false
+			})
 //$.space = function (fn) {return $.kD('space', fn)}
-		 }
-		 st.hEv = function () {
-			 var st = this, g = G(arguments)
-			 if (g.u) {
-				 return st.handleEvent
-			 }
-			 st.handleEvent = g.f
-			 return st
-		 }
-	 }
+		}
+		st.hEv = function () {
+			var st = this, g = G(arguments)
+			if (g.u) {
+				return st.handleEvent
+			}
+			st.handleEvent = g.f
+			return st
+		}
+	}
 	
 	// keyControl()
 	mouse()
-	
 }
- 
-function transf(){
-affine()
-bounds()
-center()
-reggy()
-tran()
-
+function transf() {
+	affine()
+	bounds()
+	center()
+	reggy()
+	tran()
 	function affine() {
 		dO.scX = dO.sX = function (n) {
 			var dO = this
@@ -1532,15 +1526,11 @@ tran()
 		}
 	}
 }
- 
-
-function easelDraw(){
+function easelDraw() {
 	shapePt()
 	hCurve()
-	 
 	gxKlas()
 	grad()
- 
 	function shapePt() {
 		h.ef = function () {
 			this.graphics.endFill.apply(
@@ -1917,7 +1907,7 @@ function easelDraw(){
 			return h
 		}
 	}
- 
+	
 	function gxKlas() {
 		gx._ss = function () {	//=0//=0//=10//=false
 			var gx = this, g = G(arguments)
@@ -2322,390 +2312,382 @@ function easelDraw(){
 			}//C
 		}
 	}
-	
- 
-	
-	NEEDS$DF = CJSME = function () {
-		$St()
-		cjs.me = function (fn) {
-			Q(['me'], function (q) {
-				fn(q.getResult('me'))
-			})
-		}
-		cjs.me(function (i) {
-			h.c({
-				l: 200,
-				rf: ['w', 'u', 800],
-				rs: {c1: 'w', c2: 'x', r2: 800}
-			}).dc({x: 0, y: 0, r: 200})
-			st.h().c({
-				l: 200,
-				lf: {c1: 'w', c2: 'u', y2: 200},
-				ls: {c1: 'u', c2: 'w', s1: 0, s2: 1, x1: 0, y1: 0, x2: 0, y2: 200}
-			}).dc({x: 0, y: 0, r: 200})
-			st.h().lf('y', 'r', 10).dc({r: 200}).c({
-				l: 0,
-				c: 'y',
-				//lf: {c1:'u',c2:'w',s1:0,s2:1,x1:0, y1:0,x2:0,y2:200},
-				bs: i, bf: i
-			}).dc({r: 200})
-			st.h(40, 10, 'b', 8).rf({c1: 'r', c2: 'd', r2: 100}).dc(0, 50, 40)
-		})//D
+}
+NEEDS$DF = CJSME = function () {
+	$St()
+	cjs.me = function (fn) {
+		Q(['me'], function (q) {
+			fn(q.getResult('me'))
+		})
 	}
-	function filter() {
-		mapFilt()
-		alphaMask()
-		blurFl()
-		colorFl()
-		colMxFl()
-		caching()
-		function mapFilt() {
-			AlphaMapFilter = $aMFl = $aMF = function (a, b, c, d, e) {
+	cjs.me(function (i) {
+		h.c({
+			l: 200,
+			rf: ['w', 'u', 800],
+			rs: {c1: 'w', c2: 'x', r2: 800}
+		}).dc({x: 0, y: 0, r: 200})
+		st.h().c({
+			l: 200,
+			lf: {c1: 'w', c2: 'u', y2: 200},
+			ls: {c1: 'u', c2: 'w', s1: 0, s2: 1, x1: 0, y1: 0, x2: 0, y2: 200}
+		}).dc({x: 0, y: 0, r: 200})
+		st.h().lf('y', 'r', 10).dc({r: 200}).c({
+			l: 0,
+			c: 'y',
+			//lf: {c1:'u',c2:'w',s1:0,s2:1,x1:0, y1:0,x2:0,y2:200},
+			bs: i, bf: i
+		}).dc({r: 200})
+		st.h(40, 10, 'b', 8).rf({c1: 'r', c2: 'd', r2: 100}).dc(0, 50, 40)
+	})//D
+}
+filter()
+function filter() {
+	mapFilt()
+	alphaMask()
+	blurFl()
+	colorFl()
+	colMxFl()
+	caching()
+	function mapFilt() {
+		AlphaMapFilter = $aMFl = $aMF = function (a, b, c, d, e) {
 
 //Map a greyscale image to the alpha channel of a display object
-				return new cjs.AlphaMapFilter(a, b, c, d, e)
-			}
-			dO.aMF = function (a, b, c, d, e, f, g, h) {
-				var bf = new cjs.AlphaMapFilter(a, b, c, d, e, f, g, h)
-				this.filters = this.filters || []
-				this.filters.push(bf)
-				return bf
-			}
+			return new cjs.AlphaMapFilter(a, b, c, d, e)
 		}
-		
-		function alphaMask() {
-			forMaskFilter = function trx(n) {
-				var g = G(arguments)
-				var a = []
-				//for making mask filter
-				if (g.n) {
-					return 'rgba(0,0,0,' + g[0] || 0 + ')'
-				}
-				_.e(g, function (n) {
-					a.push(trx(n, '-'))
-				})
-				return a
-			}
-			dO.aF = function (h) {
-				var ob = this
-				ob.fl($AF(h))
-				return ob
-			}
-			dO.aF2 = function (h) {
-				var ob = this
-				this.fl2($AF(h))
-				return ob
-			}
-			AlphaMaskFilter = $aFl = $Afl = $AF = $Af = function (a, b, c, d, e) {
-				//Map an image's alpha channel to the alpha channel of a display object
-				var fl//return new cjs.AlphaMaskFilter(a, b, c, d, e)
-				if (O(a) && a.cacheCanvas) {
-					a = a.cacheCanvas
-				}
-				fl = new cjs.AlphaMaskFilter(a, b, c, d, e)
-				return fl
-			}
-			dO.aF = function (a, b, c, d, e, f, g, h) {
-				var bf
-				bf = new cjs.AlphaMaskFilter(a, b, c, d, e, f, g, h)
-				this.filters = this.filters || []
-				this.filters.push(bf)
-				return bf
-			}
+		dO.aMF = function (a, b, c, d, e, f, g, h) {
+			var bf = new cjs.AlphaMapFilter(a, b, c, d, e, f, g, h)
+			this.filters = this.filters || []
+			this.filters.push(bf)
+			return bf
 		}
-		
-		function blurFl() {
-			_$Bfl = function (x, y, q) {
-				return new cjs.BlurFilter(x, y, q)
+	}
+	
+	function alphaMask() {
+		forMaskFilter = function trx(n) {
+			var g = G(arguments)
+			var a = []
+			//for making mask filter
+			if (g.n) {
+				return 'rgba(0,0,0,' + g[0] || 0 + ')'
 			}
-			$Bfl = BlurFilter = $bFl = $BF = $Bf = $FB = $FlB = $bF = function () {
-				var g = G(arguments), fl, o
-				o = {x: g.f, y: g.s, q: g.t}
-				o.y = N(o.y) ? o.y :
-						o.x
-				o.q = o.q || 1
-				return _$Bfl(o.x, o.y, o.q)
-			}
-			dO.flBds = function () {
-				return this.gFl().getBounds()
-			}
-			dO.bF = function (a, b, c, d, e, f, g, h) {
-				var bf
-				bf = new cjs.BlurFilter(a, b, c, d, e, f, g, h)
-				this.filters = this.filters || []
-				this.filters.push(bf)
-				return bf
-			}
+			_.e(g, function (n) {
+				a.push(trx(n, '-'))
+			})
+			return a
 		}
-		
-		function colorFl() {
-			$cFl = ColorFilter = function (a, b, c, d, e, f, g, h) {
-				return new cjs.ColorFilter(a, b, c, d, e, f, g, h)
-			}
-			dO.cF = function (a, b, c, d, e, f, g, h) {
-				var cf = $cF(a, b, c, d, e, f, g, h)
-				this.filters = this.filters || []
-				this.filters.push(cf)
-				return cf
-			}
+		dO.aF = function (h) {
+			var ob = this
+			ob.fl($AF(h))
+			return ob
 		}
-		
-		function colMxFl() {
-			ColorMatrix = $CM = $Cm = $cM = function (a, b, c, d, e) {
-				var m = new cjs.ColorMatrix(a, b, c, d, e)
-				m.b = m.adjustBrightness
-				m.c = m.adjustColor
-				m.C = m.adjustContrast
-				m.h = m.adjustHue
-				m.s = m.adjustSaturation
-				m.cl = m.clone
-				m.cc = m.concat
-				m.m = m.copyMatrix
-				m.r = m.reset
-				m.A = m.toArray
-				m.S = m.toString
-				return m
+		dO.aF2 = function (h) {
+			var ob = this
+			this.fl2($AF(h))
+			return ob
+		}
+		AlphaMaskFilter = $aFl = $Afl = $AF = $Af = function (a, b, c, d, e) {
+			//Map an image's alpha channel to the alpha channel of a display object
+			var fl//return new cjs.AlphaMaskFilter(a, b, c, d, e)
+			if (O(a) && a.cacheCanvas) {
+				a = a.cacheCanvas
 			}
-			cM = cjs.ColorMatrix.prototype
-			cM.s = function (s) {
-				this.adjustSaturation(s)
-				return this
-			}
-			cM.c = function (c) {
-				this.adjustContrast(c)
-				return this
-			}
-			cM.ch = function (c) {
-				this.adjustHue(c)
-				return this
-			}
-			cM.b = function (c) {
-				this.adjustBrightness(c)
-				return this
-			}
-			ColorMatrixFilter = $CMF = $cMFl = $CmF = $cMF = function (a, b, c, d) {
-				return new cjs.ColorMatrixFilter(O(a) ? a : $CM(a, b, c, d))
-			}
-			GREY = function () {
-				Q(function () {
-					Q.b('me').a2($St())
-							.fl($cMF($cM().s(-100)))
-							.ca(0, 0, 1000, 1000)
-				})
-			}
-			FT10 = FILTRS = function () {
-				Q(function () {
-					s = $St().t()
-					i = Q.i('me')
-					b = s.qB('me', .8, '+')
-					/////////////////////////
-					//b._(150,200,'+').fl($cF(.5, 0, 0, 1 ), i)
-					cM = $cM()
-					cM.adjustBrightness(-400)
-					//cM.adjustHue(-180)
-					cM.c(80)
-					//cM.c(-100)
-					b._(400, 200, '+').fl($cMF(cM), i)  //zW
-					///////////////////////
-					// b._(20,200,'+').fl($bF(64,0,1),i)
+			fl = new cjs.AlphaMaskFilter(a, b, c, d, e)
+			return fl
+		}
+		dO.aF = function (a, b, c, d, e, f, g, h) {
+			var bf
+			bf = new cjs.AlphaMaskFilter(a, b, c, d, e, f, g, h)
+			this.filters = this.filters || []
+			this.filters.push(bf)
+			return bf
+		}
+	}
+	
+	function blurFl() {
+		_$Bfl = function (x, y, q) {
+			return new cjs.BlurFilter(x, y, q)
+		}
+		$Bfl = BlurFilter = $bFl = $BF = $Bf = $FB = $FlB = $bF = function () {
+			var g = G(arguments), fl, o
+			o = {x: g.f, y: g.s, q: g.t}
+			o.y = N(o.y) ? o.y :
+					o.x
+			o.q = o.q || 1
+			return _$Bfl(o.x, o.y, o.q)
+		}
+		dO.flBds = function () {
+			return this.gFl().getBounds()
+		}
+		dO.bF = function (a, b, c, d, e, f, g, h) {
+			var bf
+			bf = new cjs.BlurFilter(a, b, c, d, e, f, g, h)
+			this.filters = this.filters || []
+			this.filters.push(bf)
+			return bf
+		}
+	}
+	
+	function colorFl() {
+		$cFl = ColorFilter = function (a, b, c, d, e, f, g, h) {
+			return new cjs.ColorFilter(a, b, c, d, e, f, g, h)
+		}
+		dO.cF = function (a, b, c, d, e, f, g, h) {
+			var cf = $cF(a, b, c, d, e, f, g, h)
+			this.filters = this.filters || []
+			this.filters.push(cf)
+			return cf
+		}
+	}
+	
+	function colMxFl() {
+		ColorMatrix = $CM = $Cm = $cM = function (a, b, c, d, e) {
+			var m = new cjs.ColorMatrix(a, b, c, d, e)
+			m.b = m.adjustBrightness
+			m.c = m.adjustColor
+			m.C = m.adjustContrast
+			m.h = m.adjustHue
+			m.s = m.adjustSaturation
+			m.cl = m.clone
+			m.cc = m.concat
+			m.m = m.copyMatrix
+			m.r = m.reset
+			m.A = m.toArray
+			m.S = m.toString
+			return m
+		}
+		cM = cjs.ColorMatrix.prototype
+		cM.s = function (s) {
+			this.adjustSaturation(s)
+			return this
+		}
+		cM.c = function (c) {
+			this.adjustContrast(c)
+			return this
+		}
+		cM.ch = function (c) {
+			this.adjustHue(c)
+			return this
+		}
+		cM.b = function (c) {
+			this.adjustBrightness(c)
+			return this
+		}
+		ColorMatrixFilter = $CMF = $cMFl = $CmF = $cMF = function (a, b, c, d) {
+			return new cjs.ColorMatrixFilter(O(a) ? a : $CM(a, b, c, d))
+		}
+		GREY = function () {
+			Q(function () {
+				Q.b('me').a2($St())
+						.fl($cMF($cM().s(-100)))
+						.ca(0, 0, 1000, 1000)
+			})
+		}
+		FT10 = FILTRS = function () {
+			Q(function () {
+				s = $St().t()
+				i = Q.i('me')
+				b = s.qB('me', .8, '+')
+				/////////////////////////
+				//b._(150,200,'+').fl($cF(.5, 0, 0, 1 ), i)
+				cM = $cM()
+				cM.adjustBrightness(-400)
+				//cM.adjustHue(-180)
+				cM.c(80)
+				//cM.c(-100)
+				b._(400, 200, '+').fl($cMF(cM), i)  //zW
+				///////////////////////
+				// b._(20,200,'+').fl($bF(64,0,1),i)
 //<- s._(b, 189, 20).fl(zWF).ca(0, 0, i.width, i.height)// b._(189, 20).a2(s).fl(zWF).ca(0, 0, i.width, i.height)
-					// s.h(10).mt(200, 0).lt(200, 400).mt(0, 200).lt(400, 200).Ds()
-				})
-			}
-			dO.cMF = function (cM) {
-				var cf = new cjs.ColorMatrixFilter(cM)
-				this.filters = this.filters || []
-				this.filters.push(cf)
-				return cf
-			}
-			CMXF1 = function () {
-				$St()
-				var shape = new createjs.Shape().set({x: 100, y: 100});
-				shape.graphics.beginFill("#ff0000").drawCircle(0, 0, 50);
-				var matrix = new createjs.ColorMatrix()
-						.adjustHue(180)
-						.adjustSaturation(-100);
-				shape.filters = [
-					new createjs.ColorMatrixFilter(matrix)
-				];
-				shape.cache(-50, -50, 100, 100);
-				$St().A(shape)
-			}
+				// s.h(10).mt(200, 0).lt(200, 400).mt(0, 200).lt(400, 200).Ds()
+			})
 		}
-		
-		function caching() {
-			dO.uCx = dO.updateContext
-			dO.caCv = dO.cC = dO.cc = function () {
-				return this.cacheCanvas
+		dO.cMF = function (cM) {
+			var cf = new cjs.ColorMatrixFilter(cM)
+			this.filters = this.filters || []
+			this.filters.push(cf)
+			return cf
+		}
+		CMXF1 = function () {
+			$St()
+			var shape = new createjs.Shape().set({x: 100, y: 100});
+			shape.graphics.beginFill("#ff0000").drawCircle(0, 0, 50);
+			var matrix = new createjs.ColorMatrix()
+					.adjustHue(180)
+					.adjustSaturation(-100);
+			shape.filters = [
+				new createjs.ColorMatrixFilter(matrix)
+			];
+			shape.cache(-50, -50, 100, 100);
+			$St().A(shape)
+		}
+	}
+	
+	function caching() {
+		dO.uCx = dO.updateContext
+		dO.caCv = dO.cC = dO.cc = function () {
+			return this.cacheCanvas
+		}
+		dO.gCDU = function (ca) {
+			return this.getCacheDataURL(ca)
+		}
+		dO.uCa = dO.updCa = function (ca) {
+			this.updateCache(ca);
+			return this
+		}
+		dO.uc = dO.uncache = function (ca) {
+			this.uncache(ca);
+			return this
+		}
+		dO.__ca = function () {
+			this.cache.apply(this, arguments);
+			return this
+		}
+		dO._ca = function (x, y, w, h) {
+			var dO = this
+			x = N(x, 0)
+			y = N(y, 0)
+			w = N(w, dO.width)
+			h = N(h, dO.height)
+			dO.__ca(x, y, w, h)
+			return dO
+		}
+		dO.ca = function () {
+			var dO = this, g = G(arguments), o
+			var st = dO.getStage()
+			var op
+			if (!g.n && !g.p && O(dO.image)) {
+				dO._ca($(dO.image)[0])
 			}
-			dO.gCDU = function (ca) {
-				return this.getCacheDataURL(ca)
-			}
-			dO.uCa = dO.updCa = function (ca) {
-				this.updateCache(ca);
-				return this
-			}
-			dO.uc = dO.uncache = function (ca) {
-				this.uncache(ca);
-				return this
-			}
-			dO.__ca = function () {
-				this.cache.apply(this, arguments);
-				return this
-			}
-			dO._ca = function (x, y, w, h) {
-				var dO = this
-				x = N(x, 0)
-				y = N(y, 0)
-				w = N(w, dO.width)
-				h = N(h, dO.height)
-				dO.__ca(x, y, w, h)
+			if (passTest(g)) {
+				op = g.f;
+				dO.updCa(op);
 				return dO
 			}
-			dO.ca = function () {
-				var dO = this, g = G(arguments), o
-				var st = dO.getStage()
-				var op
-				if (!g.n && !g.p && O(dO.image)) {
-					dO._ca($(dO.image)[0])
+			o = g.O_ ? {i: g.f, x: g.s, y: g.t} : N(g.t) ?
+			{x: g.f, y: g.s, w: g.t, h: g.f} :
+					N(g.s) ? {w: g.f, h: g.s} : {}
+			if (O(o.i)) {
+				o.i = toImg(o.i)
+				dO = toObImg(dO)
+				if (!g.n) {
+					dO._ca()
 				}
-				if (passTest(g)) {
-					op = g.f;
-					dO.updCa(op);
-					return dO
-				}
-				o = g.O_ ? {i: g.f, x: g.s, y: g.t} : N(g.t) ?
-				{x: g.f, y: g.s, w: g.t, h: g.f} :
-						N(g.s) ? {w: g.f, h: g.s} : {}
-				if (O(o.i)) {
-					o.i = toImg(o.i)
-					dO = toObImg(dO)
-					if (!g.n) {
-						dO._ca()
-					}
-				}
-				o.x = N(o.x, 0)
-				o.y = N(o.y, 0)
-				o.w = N(o.w, O(o.i) ? o.i.width : N(o.h) ? o.h :
-						st ? st.W() : 0)
-				o.h = N(o.h) ? o.h :
-						O(o.i) ? o.i.height :
-								st ? st.H() : 0
-				return dO._ca(o.x, o.y, o.w, o.h)
 			}
-			function passTest(g) {
-				return (!g.p && dO.caCv()) || g.n || g.S_ || g.u
-			}
-			
-			function toObImg(i) {
-				return $(i.image ? i.image : i)[0]
-			}
-			
-			function toImg(i) {
-				return i.image ? i.image : $(i)[0];
-			}
+			o.x = N(o.x, 0)
+			o.y = N(o.y, 0)
+			o.w = N(o.w, O(o.i) ? o.i.width : N(o.h) ? o.h :
+					st ? st.W() : 0)
+			o.h = N(o.h) ? o.h :
+					O(o.i) ? o.i.height :
+							st ? st.H() : 0
+			return dO._ca(o.x, o.y, o.w, o.h)
+		}
+		function passTest(g) {
+			return (!g.p && dO.caCv()) || g.n || g.S_ || g.u
+		}
+		
+		function toObImg(i) {
+			return $(i.image ? i.image : i)[0]
+		}
+		
+		function toImg(i) {
+			return i.image ? i.image : $(i)[0];
 		}
 	}
-	
-	function old() {
-		UGUNSHIP = function () {
-			angleInDegrees = function self(y, x) {
-				if (O(y)) {
-					return self(y.vy, y.vx)
+}
+function old() {
+	UGUNSHIP = function () {
+		angleInDegrees = function self(y, x) {
+			if (O(y)) {
+				return self(y.vy, y.vx)
+			}
+			var d = tDeg(Math.atan(y / x))
+			if (x < 0) {
+				d = Math.abs(d) + 90;
+				if (y < 0) {
+					d = Math.abs(d) + 90
 				}
-				var d = tDeg(Math.atan(y / x))
-				if (x < 0) {
-					d = Math.abs(d) + 90;
-					if (y < 0) {
-						d = Math.abs(d) + 90
+			}
+			return d
+		}
+		ship = function (st) {
+			t = new cjs.Shape().XY(100).rY(20).vX(1).vY(1)
+			t.graphics.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
+			kD('d', function () {
+				t.rt(6, '+')
+			})
+			kD('u', function () {
+				t.rt(6, '-')
+			})
+			if (st) {
+				st.A(t)
+				st.on('stmousedown', function (event) {
+					e = event
+					t.vX((e.rawX - t.x) / 100, '+')
+					t.vY((e.rawY - t.y) / 100, '+')
+					if (t.vx > 10) {
+						t.vX(10)
 					}
-				}
-				return d
-			}
-			ship = function (st) {
-				t = new cjs.Shape().XY(100).rY(20).vX(1).vY(1)
-				t.graphics.f('o').s('z').mt(0, 0).lt(0, 40).lt(80, 20).lt(0, 0)
-				kD('d', function () {
-					t.rt(6, '+')
+					if (t.vy > 10) {
+						t.vY(10)
+					}
 				})
-				kD('u', function () {
-					t.rt(6, '-')
-				})
-				if (st) {
-					st.A(t)
-					st.on('stmousedown', function (event) {
-						e = event
-						t.vX((e.rawX - t.x) / 100, '+')
-						t.vY((e.rawY - t.y) / 100, '+')
-						if (t.vx > 10) {
-							t.vX(10)
-						}
-						if (t.vy > 10) {
-							t.vY(10)
-						}
-					})
-				}
-				setInterval(function () {
-					t.X(t.vx, '+').Y(t.vy, '+')
-					t.rotation = angleInDegrees(t)
-				}, 10)
-				return t
 			}
-			PL = 1;
-			aA = []
-			div = $.d('y').pad(10)
-			div.A(
-					$.h1('controls'),
-					b1 = $.bt('start', function () {
-						PL = 1;
-						b1.hd();
-						b2.sh()
-					}),
-					b2 = $.bt('stop', function () {
-						PL = 0;
-						b2.hd();
-						b1.sh()
-					}).hide(),
-					$.bt('sgun', function () {
-						sgun(guy)
-					})
-			)
-			boot = $.boot()
-			st = createjs.st(800, 600).tick()
-			boot.A(
-					div,
-					st.canvas
-			)
-			guy = ship(st)
-			// kD('s',function(){ $l('bang')})
-			// _.times(100,function(){var a=ast();a.a();a.p()})
-			// st.tick(function(){ if(PL){ _.each(aA,function(a){  a.u()  })}} )
-			sgun(guy)
+			setInterval(function () {
+				t.X(t.vx, '+').Y(t.vy, '+')
+				t.rotation = angleInDegrees(t)
+			}, 10)
+			return t
 		}
-		$rGx = $recGx = classicRecGx = function (width, height, fc, sc) {
-			
-			// =  cjs.rect= cjs.rect2
-			width = width || 50
-			height = height || 50
-			fc = fc || 'green'
-			sc = sc || 'white'
-			halfwidth = width / 2
-			halfheight = height / 2
-			var h = new cjs.Shape()
-			h.graphics.f(fc).s(sc)
-					.mt(-halfwidth, -halfheight)
-					.lt(-halfwidth, halfheight)
-					.lt(halfwidth, halfheight)
-					.lt(halfwidth, -halfheight)
-					.lt(-halfwidth, -halfheight)
-			return h
-		}
+		PL = 1;
+		aA = []
+		div = $.d('y').pad(10)
+		div.A(
+				$.h1('controls'),
+				b1 = $.bt('start', function () {
+					PL = 1;
+					b1.hd();
+					b2.sh()
+				}),
+				b2 = $.bt('stop', function () {
+					PL = 0;
+					b2.hd();
+					b1.sh()
+				}).hide(),
+				$.bt('sgun', function () {
+					sgun(guy)
+				})
+		)
+		boot = $.boot()
+		st = createjs.st(800, 600).tick()
+		boot.A(
+				div,
+				st.canvas
+		)
+		guy = ship(st)
+		// kD('s',function(){ $l('bang')})
+		// _.times(100,function(){var a=ast();a.a();a.p()})
+		// st.tick(function(){ if(PL){ _.each(aA,function(a){  a.u()  })}} )
+		sgun(guy)
 	}
-	
-	ct.h = function () {
-		var ct = this
-		var h = $H.apply($H, arguments)
-		ct.A(h)
+	$rGx = $recGx = classicRecGx = function (width, height, fc, sc) {
+		
+		// =  cjs.rect= cjs.rect2
+		width = width || 50
+		height = height || 50
+		fc = fc || 'green'
+		sc = sc || 'white'
+		halfwidth = width / 2
+		halfheight = height / 2
+		var h = new cjs.Shape()
+		h.graphics.f(fc).s(sc)
+				.mt(-halfwidth, -halfheight)
+				.lt(-halfwidth, halfheight)
+				.lt(halfwidth, halfheight)
+				.lt(halfwidth, -halfheight)
+				.lt(-halfwidth, -halfheight)
 		return h
-	}}
-  
+	}
+}
+h = cjs.Shape.prototype
+ 

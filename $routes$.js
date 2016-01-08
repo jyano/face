@@ -2,7 +2,7 @@ o = {}
 
 o.Easel = [
 	'cjs','cjsMC', 'create',
-	'colorShapes','dobs',
+	'colorShapes','dobs', 
 	'easelApps','easelGames'
 	
 ]

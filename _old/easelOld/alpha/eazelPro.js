@@ -2105,30 +2105,7 @@ df.b=function(){var g=G(arguments),o
     o.i = o.i || 'me'
     return o
 }
-
-df.h=function(o){
-    o=o||{}
-    if (U(o.v)) {
-        o.v = [[-100, 50], [0, -50], [100, 0]]
-    }
-    //o.v= _.m(o.v, function(v){v=V(v);return [v.x,v.y]})
-    o.c = o.c || 'p'
-    o.x = _.tN(o.x)
-    o.y = _.tN(o.y)
-    o.a = _.tN(o.a)
-    o.r = N(o.r, 40)
-    o.w = N(o.w, 50)
-    o.h = N(o.h, o.w || 100)
-    o.d = N(o.d, 0.5)
-    o.b = N(o.b, 0.5)
-    o.f = N(o.f, 0.5)
-    o.s = D(o.s) ? o.s : 0
-    o.o = N(o.o, 1)
-    o.q = D(q) ? o.q : true
-    return o
-}
-
-
+ 
 
 b2d.oDef = function(o){o=o||{}
     o.x =  N(o.x,0)
@@ -2282,17 +2259,7 @@ cir=function(){
             })})
     }
 }; cir()
-
-b.$h=function(){
-    var h = $H()
-    this.bS(h)
-
-    h.c.apply(h, G(arguments))
-    return h
-}
-
-
-
+ 
 HAIRBALLS=function(){W(400,400)._(function(){
 
     //cjs.rulers()
@@ -2834,15 +2801,7 @@ POL=function(){W()
     w.D(500,430).pol('r', [[-100,0],[0,-20],[40,50]]  )
 
 }
-ct.h=function(){var ct=this,
-    h=$H.apply($H, arguments)
-    ct.A(h)
-    return h
-}
-w.$h = function(){
-    return this.i.h.apply(this.i, arguments)
-}
-// h = $h().a2(s).rXY(100, 300).XY(100,300).drag()
+ 
 //  h.rec( 'r','b',600, 200,  600, 200)
 // h.rec( 'g',100, 100,  100, 20)
 h.rec=   function(){var h=this, g=G(arguments), o

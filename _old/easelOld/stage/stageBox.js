@@ -35,12 +35,7 @@
 		fixt.sprite = r
 		return fixt
 	}
-	b.C = function (col) {
-		this.each(function (f) {
-			f.C(col)
-		})
-		return this
-	}
+ 
 	b.RECT = function (col, wd, ht, x, y, rot) {
 		var g = G(arguments),
 				fd,

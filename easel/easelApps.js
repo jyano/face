@@ -1,928 +1,20 @@
-$l('easelApps')
-$L(
-
-		'mouseApps',
-		'loader','layers','dobApps','bmapApps',
-		'drawApps'
-		
-)
-
-function mouseApps(){
-	MU = HITC = HITCIRCLES = function () {
-		st = $St(1000, '+') // look no .tick() necesary!! look below :)
-		ct = $Ct()
-		st.A(ct.XY(150))
-		_.t(25, function () {
-			$H().XY(rndLoc(), rndLoc()).f(rndHSL()).dc(30).a2(ct)
-		})
-		T.on("tick", function (e) {
-			ct.rotation += 3
-			n = ct.getNumChildren()
-			ct.ch(function (ch) {
-				uM = ch.uM()
-				ch.alpha = ch.uM() ? 1 : 0.1
-				pt = ch.globalToLocal(st.m().x, st.m().y)
-				if (st && st.mouseInBounds && ch.hitTest(pt.x, pt.y)) {
-					ch.al(1)
-				}
-			})
-		})
-		function rndLoc() {
-			return M.r() * 300 - 150
-		}
-		
-		function rndHSL() {
-			return cjs.Graphics.getHSL(M.r() * 360, 100, 50)
-		}
-	}
-	MU0 = ENTERST = function () {
-		$St()
-		st.bm('me')
-		st.on('mouseenter', function () {
-			$.br().A()
-			$('body').A('once<br>')
-		}, null, true)
-		st.on('mouseenter', function () {
-			$('body').A('many<br>')
-		}, null, false)
-	}//A-
-	MU1 = MX2 = MATRIX = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
-		st = $St(1600, 1000)
-		// on stage enter, change background color, though you
-		// cant see it here because stage fills screen
-		// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
-		st.on('mouseenter', function () {
-			$('body').C($r())
-		})
-		ct = (new cjs.Container().a2(st)).bm('me', function (bm) {
-			bm.sXY(.2).XY(100, 80)
-			bm.on('click', function () {
-				$l('lit')
-			}, this, true) //just once
-		})
-		//make a container
-		st.ct(function (ct, st) {
-			
-			//the little me clicks do not hit the 'big' me underneath it.  that's normal.
-			//but it does hit the container.  but this example shows off 'remove', so it only hits once
-			//however, it continues to propogate on to the container. hmmm..
-			// the middle size me demonstrates stopPropogation
-			// if you click it, the container does not feel the click
-			ct.bm('me', function (bm) {  //future: c.bm('me', .4, function(bm){})
-				bm.sXY(.4).XY(100, 180)
-				bm.on('click', function (e) {
-					$l('mid')
-					e.stopPropagation()
-				})
-			})
-			ct.bm('me', function (bm) {
-				bm.sXY(1.5)
-						.on('click', function () {
-							$l('big')
-						})
-			})
-			ct.on('click', function () {
-				$l('con')
-			})
-		})
-		function alt() {
-			MU3 = MX0 = MATRIX0 = function () {
-				st = $St(1600, 1000)
-				// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')
-				// SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
-				$.d('b', 50, 50).A()
-				// on stage enter, change background color, though you
-				// cant see it here because stage fills screen
-				// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
-				st.on('mouseenter', function () {
-					$('body').C($r())
-				})
-				st.A(ct = container = c = $Ct())
-				ct.bm('me', function (bm) {
-					//b.sxy(.2).xy(100,80)
-					//b.o('$', fL('lit'), '/')  //on click, log('lit'), just once (remove listener)!
-				})
-				//make a container
-				st.ct(function (c, s) {
-					
-					//the little me clicks do not hit the 'big' me underneath it.  that's normal.
-					//but it does hit the container.  but this example shows off 'remove', so it only hits once
-					//however, it continues to propogate on to the container. hmmm..
-					// the middle size me demonstrates stopPropogation
-					// if you click it, the container does not feel the click
-					ct.bm('me', function (b) {
-						b.sXY(.4).XY(100, 180)
-						//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
-					})
-					ct.b('me', function (b) {
-						b.sXY(1.5)
-						// b.o('$',fL('big'))  //on click, log('big')
-					})
-					//on click, log('con')
-					//c.o('$',  fL('con'))
-				})
-				st.ct(function (c) {
-					var vn = 0,
-							rvn = 0,
-							on = 0,
-							ron = 0
-					c.X(200)
-					c.mug(
-							function (b) {
-								b.sXY(.8).XY(200, 80)
-							})
-					c.mug(
-							function (b) {
-								b.sXY(.8).XY(100, 280)
-							})
-					c.mg(
-							function (b) {
-								b.sXY(.8).XY(340, 180)
-							})
-					//this shows over/out vs rollover/rollout
-					//over/out get retriggered when switching between connected sprites
-					//rollover/rollout does not because it is still touching 'something'
-					// c.o('v',function(){c.x(10,'+');$l('v: '+vn++)})
-					//c.o('rv',function(){c.x(20,'-');$l('rv: '+rvn++)})
-					// c.o('o',function(){c.y(10,'+');$l('o: '+on++)})
-					//  c.o('ro',function(){c.y(20,'-');$l('ro: '+ron++)})
-				})//.MV(40)
-				st.ct(function (c, s) {
-					c.x(700)
-					c.mg(function (b) {
-						b.sxy(.8).xy(200, 80)
-					})
-					c.mg(function (b) {
-						b.sxy(.8).xy(100, 280)
-					})
-					c.mg(function (b) {
-						b.sxy(.8).xy(340, 180)
-					})
-					//this example shows which sprites are acted upon with over/rollover
-					//over only affects one
-					//rollover affects ALL
-					//if you enter a sprite from outside, they all grow (via rollover),
-					//and the one sprite grows double (via over)
-					c.o('v', function (g, e) {
-						$l('v')
-						g.sxy(.01, '+')
-					})
-					c.o('rv', function (g, e) {
-						$l('rv')
-						g.sxy(.01, '+')
-					})
-					c.o('o', function (q, e, g) {
-					})
-					c.o('ro', function (q, e, g) {
-					})
-					// in summary,
-					// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
-					// BUT, they will all recieve events separately
-				}).MV(40)
-				st.ct(function (ct, st) {
-					ct.X(1400)
-					ct.bm('me', function (bm) {
-						
-						//make the little me slide the entire container
-						//it acts as a handle! (for its container)
-						lit = bm.sXY(.2).XY(100, 80)
-						SL(bm, ct)
-						ct.bm('me', function (bm) {
-							//big me will scale the little me
-							big = bm.sXY(2).XY(100, 180)
-							SC(bm, lit)
-							ct.bm('me', function (bm) {
-								bm.sXY(.6).XY(150, 180)
-								SL(bm)
-								RT(bm, big)
-							})
-						})
-					})
-					//guy slides stage
-					ct.bm('guy', function (bm) {
-						bm.sXY(.4).XY(100, 180)
-						SL(bm, stage)
-					})
-				})
-			}
-		}
-	}
-	MU2 = HAN = HANDEV = function () {
-		$St()
-		st.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		st.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-			}
-			b.on('pressmove', b)
-		})
-		st.t()
-		function alt() {
-			MU6 = HANDLEEVENT = function () {
-				St()
-				s.bm('me', function (b) {
-					me = b
-					cb = b.on('pressmove', function () {
-						this.x++
-					})
-				})
-				s.bm('guy', function (b) {
-					b.handleEvent = function () {
-						this.y++
-					}
-					b.on('pressmove', b)
-				})
-			}
-		}
-	}//B+
-	BUB = BUBBLE = function () {
-		stage = $St()
-		output = new createjs.Text(
-				"try clicking on the background vs the label text\n\nthe background & label are both inside of a Container named 'button'",
-				"13px courier").lWH(280, 13).XY(190, 10)
-		background = new createjs.Shape().N("background")
-		background.graphics.f("red").drawRoundRect(0, 0, 150, 60, 10)
-		label = new createjs.Text("click me!", "bold 24px Arial", "#FFFFFF").XY(150 / 2, 60 / 2)
-				.N('label')
-				.tA("center")
-				.tB("middle")
-		button = new createjs.Container().XY(20).N('button').A(background, label)
-		// setting mouseChildren to false will cause events to be dispatched directly from the button instead of its children.
-		// button.mouseChildren = false;
-		stage.A(button, output)
-		// set up listeners for all display objects, for both the non-capture (bubble / target) and capture phases:
-		_.each([stage, button, label, background], function (target) {
-			target.on("click", handleClick, false);
-			target.on("click", handleClick, true)
-		})
-		stage.update()
-	}
-	MU3 = MOUSE = BUB8 = MOUSEVENTS = BUBBBLE = function () {
-		St()
-		output = $T(
-				"try clicking on the background vs the label text\n\nthe background & label are both inside of a Container named 'button'",
-				"13px courier").lWH(280, 13).XY(190, 10)
-		bg = $H().n("background")
-		bg.graphics.f("red").rr(0, 0, 150, 60, 10)
-		lb = $T("click me!", "bold 24px Arial", "#FFFFFF").XY(150 / 2, 60 / 2).n('label').tA("center")//.tB("middle")
-		// setting mouseChildren to false will cause events to be dispatched directly from the button instead of its children.
-		// button.mouseChildren = false;
-		st.A(bt = $Ct().XY(20).n('button').A(bg, lb), output)
-		// set up listeners for all display objects, for both the non-capture (bubble / target) and capture phases:
-		_.e([st, bt, lb, bg], function (tg) {
-			tg.$(handleClick, false);
-			tg.$(handleClick, true)
-		})
-		st.u()
-		function handleClick(e) {
-			if (e.currentTarget == st && e.eventPhase == 1) {
-				output.text = "target : eventPhase : currentTarget\n"
-			}// this is the first dispatch in the event life cycle, clear the output.
-			output.text += e.target.name + " : " + e.eventPhase + " : " + e.currentTarget.name + "\n";
-			if (e.currentTarget == st && e.eventPhase == 3) {
-				st.u()
-			}// this is the last dispatch in the event life cycle, render the stage.
-		}
-	}//B+
-	MU4 = RMEVT8 = function () {
-		function alt() {
-			MU7 = REMOVEEVENT = function () {
-				St()
-				s.bm('me', function (b) {
-					me = b
-					cb = b.on('pressmove', function () {
-						this.x++
-					})
-				})
-				s.bm('guy', function (b) {
-					b.handleEvent = function () {
-						this.y++
-						me.off('pressmove', cb)
-					}
-					b.on('pressmove', b)
-				})
-			}
-		}
-		
-		St()
-		st.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		st.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-				me.off('pressmove', cb)
-			}
-			b.on('pressmove', b)
-		})
-		///////
-		s.can.P('a').XY(300)
-		s.A(h = shape = $h())
-		h.rec(100, 200, 0, 200, 'red')
-				.rec(100, 100, 100, 20, 'green')
-				.rec(145, 120, 10, 80, 'orange')
-				.cir(105, 100, 20, 'blue')
-				.cir(105, 100, 8, 'black')
-				.cir(200, 100, 20, 'blue')
-				.cir(200, 100, 8, 'black')
-				.cir(100, 20, 100, 'green')
-				.rXY(100, 300).XY(100, 300).drag()
-		p = function () {
-			shape.twL(
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
-					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200])
-			shape.twL(
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
-					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200]
-			)
-		}
-		p()
-	}
-	MU5 = MOUSEENTERSTAGE = function () {
-		St()
-		s.bm('me')
-		s.on('mouseenter', function () {
-			$('body').prepend('once<br>')
-		}, null, true)
-		s.on('mouseenter', function () {
-			$('body').prepend('many<br>')
-		}, null, false)
-	}
-	MOUSEENTERSTAGE = function () {
-		z()
-		stage = s = cjs.stage(500, 500).A().tick()
-		s.bm('me')
-		s.on('mouseenter', function () {
-			$('body').prepend('once<br>')
-		}, null, true)
-		s.on('mouseenter', function () {
-			$('body').prepend('many<br>')
-		}, null, false)
-	}
-	HANDLEEVENT = function () {
-		z()
-		s = createjs.stage(500, 500).A().tick()
-		s.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		s.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-			}
-			b.on('pressmove', b)
-		})
-	}
-	REMOVEEVENT = function () {
-		z()
-		s = createjs.stage(500, 500).A().tick()
-		s.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		s.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-				me.off('pressmove', cb)
-			}
-			b.on('pressmove', b)
-		})
-	}
-//
-	testShape = function () {
-		z()
-		stage = createjs.stage(600).tick().A()
-		shape = new createjs.Shape()
-		stage.A(shape)
-		shape.graphics.f('red').s('black').dc(400, 400, 200).dr(100, 0, 200, 200)
-	}
-	MOUSEENTERSTAGE = function () {
-		z()
-		stage = s = cjs.stage(500, 500).A().tick()
-		s.bm('me')
-		s.on('mouseenter', function () {
-			$('body').prepend('once<br>')
-		}, null, true)
-		s.on('mouseenter', function () {
-			$('body').prepend('many<br>')
-		}, null, false)
-	}
-	HANDLEEVENT = function () {
-		z()
-		s = createjs.stage(500, 500).A().tick()
-		s.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		s.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-			}
-			b.on('pressmove', b)
-		})
-	}
-	REMOVEEVENT = function () {
-		z()
-		s = createjs.stage(500, 500).A().tick()
-		s.bm('me', function (b) {
-			me = b
-			cb = b.on('pressmove', function () {
-				this.x++
-			})
-		})
-		s.bm('guy', function (b) {
-			b.handleEvent = function () {
-				this.y++
-				me.off('pressmove', cb)
-			}
-			b.on('pressmove', b)
-		})
-	}
-	function handleClick(e) {
-		if (e.currentTarget == stage && e.eventPhase == 1) {
-			// this is the first dispatch in the event life cycle, clear the output.
-			output.text = "target : eventPhase : currentTarget\n"
-		}
-		output.text += e.target.name + " : " + e.eventPhase + " : " + e.currentTarget.name + "\n";
-		if (e.currentTarget == stage && e.eventPhase == 3) {
-			// this is the last dispatch in the event life cycle, render the stage.
-			stage.update()
-		}
-	}
-}
-function loader() {
-	$it = function (i) {
-		var _$it = function (i) {
-			return {src: _.src(i), id: i}
-		}
-		return S(i) ? _$it(i) : i
-	}
-	$its = function (its) {
-		var g = G(arguments)
-		if (!g.A) {
-			its = g
-		}
-		return _.m(its, $it)
-	}
-	QU = MF = MANIFEST = function () {
-		Q(['me', 'guy'], function (q) {
-			$St().A(me = q.bm('me'))
-			st.A(guy = q.bm('guy'))
-			guy.dg()
-		})
-	}
-	QU0 = function () {
-		Q(mf5, function () {
-			$.A(Q.i('me'))
-		})
-	}
-	QU1 = function () {
-		$Ld(mf3, function (ld) {
-			$St().A(ld.bm("me"), ld.bm("guy", 300, 300))
-		})
-	}
-	QU2 = function () {
-		$Ld(mf1, function (ld) {
-			ld.bm("myImage", $St())
-		})
-	}
-	QU3 = function () {
-		$Ld(mf2, function (ld) {
-			ld.bm("me", $St());
-			ld.bm("guy", st)
-		})
-	}
-	IT = QU4 = function () {
-		$Ld(function (ld) {
-			Q.bm("me", $St());
-			Q.bm("guy", st, 300, 300)
-		}).mf("me", guyIt)
-	}
-	guyIt = {id: "guy", src: "/guy.png"}
-	myIt = {id: "myImage", src: "/me.png"}
-	mf1 = [myIt, guyIt];
-	mf2 = [$it("me"), $it(guyIt)]
-	mf3 = ["me", guyIt];
-	mf4 = [myIt, guyIt];
-	mf5 = ['guy', 'me']
-//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
-//q.b('guy', st).XY(300, 300).spin()
-//st.qB('guy').XY(300, 300).spin()
-//Q('me', function () {$.A( Q.i('me') )})  
-// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
-//https://en.wikipedia.org/wiki/Form_follows_function
-//answer: art follows fiz structure
-//art follows form follows function? form is the art
-//art/fiz ~ form/function
-}
-function layers(){
-	USINGLAYERSINEASEL9 = function () {
-		z()
-		s = St(500).A()
-		s.bm('me', function (bm) {
-			b = bm
-			bm.sXY(3)
-			drawCar()
-			s.tick(function () {
-				b.x(-1 * (g.x() * 2))
-				b.y(-1 * (g.y() * 2))
-			})
-		})
-		bt = $.button('safd', function () {
-			s.sXY(2)
-		}).A()
-		function drawCar() {
-			s.bm('guy', function (bm) {
-				g = bm
-				bm.sXY(.5)
-				SL(bm)
-			})
-		}
-	}
-	LAYZ = PLAX = function () {
-		st = $St(500)
-		st.bm('me', function (bm) {
-			me = bm.sXY(.5)
-			st.bm('guy', function (bm1) {
-				guy = bm1.sXY(.5).drag()//SL(bm)
-				$t(function () {
-					me.X(guy.X() * 1.6).Y(guy.Y() * 1.6)
-				})
-			})
-		})
-		$.bt('safd', function () {
-			st.sXY(2)
-		})
-	}
-	$Ldr('LAYS0', function (q) {
-		me = q.bm('me', $St()).scXY(3);
-		guy = q.bm('guy', st).scXY(.5).dg()
-		$t(function () {
-			me.X(guy.x * 2.2 - 140).Y(guy.y * .2)
-		})
-		$.bt('s.sXY(2)', function () {
-			st.sXY(2)
-		})
-	})}
-function dobApps(){
-
-	domElObApps()
-	textApps()
-	transfApps()
-	function domElObApps() {
-		ELM = ELEMENTS = function () {
-			z()
-			div = $.div('red', 400, 400).P('a').A().A($.input())
-			s = stage = createjs.stage('yellow', 1000).tick().A()
-			elem = new createjs.DOMElement(div[0])
-			//stage.A(el)
-			// tw(el, [{x:300,y:300},2000])
-			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
-		}
-		MENTS = function () {
-			z()
-			div = $.div('red', 400, 400).P('a').A().A($.input())
-			s = stage = createjs.stage('yellow', 1000).tick().A()
-			elem = new createjs.DOMElement(div[0])
-			//stage.A(el)
-			// tw(el, [{x:300,y:300},2000])
-			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
-		}
-		EASELPHYS = function () {
-			i = cjs.DisplayObject.prototype
-			i.vX = function (a) {
-				var g = G(arguments);
-				a = g[0]
-				if (g.p) {
-					this.vx = this.vx + a;
-					return this
-				}
-				else if (g.n) {
-					if (N(a)) {
-						this.vx = this.vx - a
-					}
-					else {
-						this.vx = this.vx * -1
-					}
-					return this
-				}
-				else if (U(g[0])) {
-					return this.vx
-				}
-				this.vx = a;
-				return this
-			}
-			i.vY = function (a) {
-				var g = G(arguments);
-				a = g[0]
-				if (g.p) {
-					this.vy = this.vy + a;
-					return this
-				}
-				else if (g.n) {
-					if (N(a)) {
-						this.vy = this.vy - a
-					}
-					else {
-						this.vy = this.vy * -1
-					}
-					return this
-				}
-				else if (U(g[0])) {
-					return this.vy
-				}
-				this.vy = a
-				return this
-			}
-			i.jX = function (a) {
-				var g = G(arguments);
-				a = g[0]
-				if (g.p) {
-					this.vx = this.vx + a;
-					return this
-				}
-				else if (g.n) {
-					if (N(a)) {
-						this.vx = this.vx - a
-					}
-					else {
-						this.vx = this.vx * -1
-					}
-					return this
-				}
-				else if (U(g[0])) {
-					return this.vx
-				}
-				this.vx = a;
-				return this
-			}
-			i.jY = function (a) {
-				var g = G(arguments);
-				a = g[0]
-				if (g.p) {
-					this.vy = this.vy + a;
-					return this
-				}
-				else if (g.n) {
-					if (N(a)) {
-						this.vy = this.vy - a
-					}
-					else {
-						this.vy = this.vy * -1
-					}
-					return this
-				}
-				else if (U(g[0])) {
-					return this.vy
-				}
-				this.vy = a
-				return this
-			}
-			i.move = function () {
-				return this.X(this.vx || 0, '+').Y(this.vy || 0, '+')
-			}
-			i.go = function () {
-				$t(this.move())
-			}
-			$St().bm('me', function (b) {
-				b.go(10, 10)
-				$.t(function () {
-					$l(b.inStage())
-				})
-			})
-		}
-		ELEMENTS = function () {
-			z()
-			div = $.div('red', 400, 400).P('a').A().A($.input())
-			s = stage = createjs.stage('yellow', 1000).tick().A()
-			elem = new createjs.DOMElement(div[0])
-			//stage.A(el)
-			// tw(el, [{x:300,y:300},2000])
-			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
-		}
-	}
-	
-	function textApps() {
-		TX1 = BAS = BASELINE = function () {
-			s = $St(1000).A()
-			s.bm('me', function (bm) {
-				b = bm
-				bm.XY(300).sXY(.2)
-				s.dot(300, 300)
-			})
-			s.A(t = $Tx('baseline: top').XY(300).sXY(4).drag())
-			s.A(t2 = $Tx('baseline: bottom').XY(300).sXY(4).drag().baseline('bottom'))
-			s.A(t3 = $Tx('baseline: middle').XY(300).sXY(4).drag().baseline('middle'))
-			s.A(t = $T('baseline: top').XY(300).sXY(4).drag())
-			s.A(t2 = $T('baseline: bottom').XY(300).sXY(4).drag().baseline('bottom'))
-			s.A(t3 = $T('baseline: middle').XY(300).sXY(4).drag().baseline('middle'))
-		}
-		TX2 = LINEH = function () {
-			s = $St(1000).A()
-			s.bm('me', function (bm) {
-				b = bm
-				bm.XY(300).sXY(.2)
-			})
-			s.A(
-					t = $T('lineheight -100').XY(300).sXY(4).drag().lineH(-100)
-			)
-			s.A(
-					t2 = $T('lineheight 0').XY(300).sXY(4).drag().baseline('bottom').lH(0)
-			)
-			s.A(
-					t3 = $T('lineheight 100').XY(300).sXY(4).drag().baseline('middle').lH(100)
-			)
-		}
-		TX3 = LINEW = function () {
-			z()
-			s = $St(1000).A()
-			s.bm('me', function (bm) {
-				b = bm
-				bm.XY(300).sXY(.2)
-			})
-			s.A(t = $T('linewidth 0').XY(300).sXY(4).drag().lineW(0))
-			s.A(t2 = $T('linewidth null').XY(300).sXY(4).drag().baseline('bottom'))
-			s.A(t3 = $T('linewidth 100').XY(300).sXY(4).drag().baseline('middle').lW(800))
-		}
-		 
-	}
-	
-	 
-	
-	function transfApps() {
-		TXSH = function () {
-			$St()
-			h = $H()
-			st.A(h)
-			h.graphics.f('red').s('black').dc(400, 400, 200).dr(100, 0, 200, 200)
-		}
-		MTLT = function () {
-			$St()
-			h.graphics.C('r', 'b')
-			h.dg()
-			h.lt(100, 100)
-			h.lt(150, 190)
-			h.lt(300, 300)
-			h.lt(350, 1390)
-			if (R()) {
-				h.cp()
-			}
-			h.mt(240, 210)
-			h.lt(450, 410)
-			h.lt(600, 500)
-			h.lt(500, 500)
-			h.cp()
-		}
-		WACKY = STGG = function () {
-			$.c('y', 300, 100).id('someId')
-			$St('someId').bm('me')
-			$St($.c('o', 400, 200)).bm('me')
-			$St('z', 500, 300).bm('me').GX()._dc()
-			$St(1000, 500)
-					.bm('me', function (bm) {
-						bm.spin().drag()
-					})
-					.bm('me', function (bm) {
-						bm.sXY(0.5, 0.3).spin().drag()
-					})
-					.Sh().XY(200).graphics.FS()._dc(4)
-			_.t(10, function () {
-				$St($r(), 200, 200).bm('me', function (me) {
-					me.drag()
-				})
-			})
-		}
-		INST = INSTAGE = GROWTWEEN = function () {
-			$St().bm('me', function (me) {
-				me.grow()
-				$t(function () {
-					me.x = me.x + 10;
-					$l(me.inStage())
-				})
-			})
-		}
-		TRF = TRANSF = function () {
-			degToRad = Math.PI / 180;
-			cjs.testCanvas()
-			//cjs.sharedCode()
-			cjs.utils()
-			cjs.slider()
-			examples.showDistractor()
-			stage = new createjs.Stage("testCanvas")
-			stage.enableMouseOver();
-			createjs.Touch.enable(stage);
-			stage.mouseMoveOutside = true;
-			var img = new Image();
-			img.onload = handleImageLoad;
-			img.src = "/chicks.png";
-			function handleImageLoad(evt) {
-				examples.hideDistractor();
-				var img = evt.target, imgWidth = img.width, imgHeight = img.height, sliceCount = 6;
-				sliceWidth = imgWidth / sliceCount;
-				sliceContainer = new createjs.Container();
-				sliceContainer.x = stage.canvas.width / 2;
-				for (var i = 0; i < sliceCount; i++) {
-					var slice = new createjs.Bitmap(img);
-					slice.sourceRect = new createjs.Rectangle(sliceWidth * i, 0, sliceWidth, imgHeight);
-					slice.cache(0, 0, sliceWidth, imgHeight);
-					slice.filters = [new createjs.ColorMatrixFilter(new createjs.ColorMatrix())];
-					sliceContainer.addChild(slice);
-				}
-				var slider = new Slider(0, 50, 200, 50).set({x: 20, y: 330, value: 25});
-				slider.on("change", handleSliderChange, this);
-				stage.addChild(sliceContainer, slider);
-				updateEffect(slider.value);
-			}
-			
-			function handleSliderChange(evt) {
-				updateEffect(evt.target.value);
-			}
-			
-			function updateEffect(value) {
-				var l = sliceContainer.getNumChildren();
-				for (var i = 0; i < l; i++) {
-					var slice = sliceContainer.getChildAt(i);
-					slice.y = Math.sin(value * degToRad) * -sliceWidth / 2;
-					if (i % 2) {
-						slice.skewY = value;
-					} else {
-						slice.skewY = -value;
-						slice.y -= sliceWidth * Math.sin(slice.skewY * degToRad);
-					}
-					slice.x = sliceWidth * (i - l / 2) * Math.cos(slice.skewY * degToRad);
-					slice.filters[0].matrix//.setColor(Math.sin(slice.skewY * degToRad) * -80);
-					slice.updateCache();
-				}
-				stage.update();
-			}
-		}
-		STF = SETTRANSFORM = function () {
-			s = $St(800).A()
-			s.bm('me', function (me) {
-				b = me
-				b.setTransform(0, 0, 2, .5, 0, 40, 4, 2, 3)
-				m = b.getMatrix()
-				function tf(a, b, c, d, e, f, g, h, i) {
-					return this.x = a || 0,
-							this.y = b || 0,
-							this.scaleX = null == c ? 1 : c,
-							this.scaleY = null == d ? 1 : d,
-							this.rotation = e || 0,
-							this.skewX = f || 0,
-							this.skewY = g || 0,
-							this.regX = h || 0,
-							this.regY = i || 0,
-							this
-				}
-			})
-		}
-		REG = testImgRegCenter = function () {
-			//mockStage()
-			$St()
-			s.bm('me', function (bm) {
-				b1 = bm
-				bm.spin().drag()
-			})
-			s.bm('me', function (bm) {
-				b2 = bm
-				bm.sXY(0.5, 0.3).spin().drag()
-			})
-			s.A(c = cjs.cir(4).XY(200))
-		}
-	}
-}
 function bmapApps() {
 
-	DRG = function () {
+	DRG1=DRG_DONT_WORK_BUT_NEXT_ONE_DOES = function () {
 		h = $St().h(300, 300)
 		h.bf('me', function (h) {
 			h.dc(300).drag()
 		})
 	}
+	
+	DRG = function () {
+		$St()
+		h.XY(300, 300)
+		h.bf('me', function (h) {
+			h.dc(300).drag()
+		})
+	}
+	
 	$Ldr('LBF0', function (ld) {
 		$St()
 		h.C('z').dr(0, 0, 40, 40)
@@ -1049,6 +141,7 @@ function bmapApps() {
 					.S()._bf(me).dc(400, 400, 200)
 		})
 	}
+	
 	function interesting() { //neads loadque
 		cjs.Shape.prototype.same = function () {
 			return $h(this)
@@ -1391,6 +484,7 @@ function bmapApps() {
 					.mask = cjs.worldsMostInterestingShape().X(470).a2(st).same().dg()
 		})
 	}
+	
 	function sketchyAss() {
 		window.examples = window.examples || {}
 		$L('distractor', 'promote', 'slider')
@@ -1585,7 +679,7 @@ function bmapApps() {
 		cjs.testCanvas = function () {
 			return $.c(960, 400).id("testCanvas").a2($.d())
 		}
-		ASS=ASS_SKETCH = COOL = DRAWONCHICKS = function () {
+		ASS = ASS_SKETCH = COOL = DRAWONCHICKS = function () {
 			pt = 0
 			h = $St().mO(1).h()
 			h.graphics._ss('g', 40, 's', 'b', 1)
@@ -1637,9 +731,7 @@ function bmapApps() {
 		}
 	}
 }
-
-
-function drawApps(){
+function drawApps() {
 	AWESOME = XX6 = GRAPHICSTEST = function () {
 		stage = $St()
 		canvas = stage.canvas
@@ -3519,4 +2611,921 @@ function drawApps(){
 				})
 			}
 		}
-	}}
+	}
+}
+$L(
+
+		'mouseApps',
+		'loader','layers','dobApps','bmapApps',
+		'drawApps'
+		
+)
+
+function mouseApps(){
+	MU = HITC = HITCIRCLES = function () {
+		st = $St(1000, '+') // look no .tick() necesary!! look below :)
+		ct = $Ct()
+		st.A(ct.XY(150))
+		_.t(25, function () {
+			$H().XY(rndLoc(), rndLoc()).f(rndHSL()).dc(30).a2(ct)
+		})
+		T.on("tick", function (e) {
+			ct.rotation += 3
+			n = ct.getNumChildren()
+			ct.ch(function (ch) {
+				uM = ch.uM()
+				ch.alpha = ch.uM() ? 1 : 0.1
+				pt = ch.globalToLocal(st.m().x, st.m().y)
+				if (st && st.mouseInBounds && ch.hitTest(pt.x, pt.y)) {
+					ch.al(1)
+				}
+			})
+		})
+		function rndLoc() {
+			return M.r() * 300 - 150
+		}
+		
+		function rndHSL() {
+			return cjs.Graphics.getHSL(M.r() * 360, 100, 50)
+		}
+	}
+	MU0 = ENTERST = function () {
+		$St()
+		st.bm('me')
+		st.on('mouseenter', function () {
+			$.br().A()
+			$('body').A('once<br>')
+		}, null, true)
+		st.on('mouseenter', function () {
+			$('body').A('many<br>')
+		}, null, false)
+	}//A-
+	MU1 = MX2 = MATRIX = function () {// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')//SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+		st = $St(1600, 1000)
+		// on stage enter, change background color, though you
+		// cant see it here because stage fills screen
+		// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+		st.on('mouseenter', function () {
+			$('body').C($r())
+		})
+		ct = (new cjs.Container().a2(st)).bm('me', function (bm) {
+			bm.sXY(.2).XY(100, 80)
+			bm.on('click', function () {
+				$l('lit')
+			}, this, true) //just once
+		})
+		//make a container
+		st.ct(function (ct, st) {
+			
+			//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+			//but it does hit the container.  but this example shows off 'remove', so it only hits once
+			//however, it continues to propogate on to the container. hmmm..
+			// the middle size me demonstrates stopPropogation
+			// if you click it, the container does not feel the click
+			ct.bm('me', function (bm) {  //future: c.bm('me', .4, function(bm){})
+				bm.sXY(.4).XY(100, 180)
+				bm.on('click', function (e) {
+					$l('mid')
+					e.stopPropagation()
+				})
+			})
+			ct.bm('me', function (bm) {
+				bm.sXY(1.5)
+						.on('click', function () {
+							$l('big')
+						})
+			})
+			ct.on('click', function () {
+				$l('con')
+			})
+		})
+		function alt() {
+			MU3 = MX0 = MATRIX0 = function () {
+				st = $St(1600, 1000)
+				// b2.o('rv',function(q,e){}  ,'-' )//c.uP(e.X, e.Y).y(10,'+')
+				// SL(b2,ct)// SL(mid); //RT(b2,m)// gg= c.uP(e.X, e.Y,'+')
+				$.d('b', 50, 50).A()
+				// on stage enter, change background color, though you
+				// cant see it here because stage fills screen
+				// this lets u see, but messes other stuff up: qq(s.ob.canvas).drg()
+				st.on('mouseenter', function () {
+					$('body').C($r())
+				})
+				st.A(ct = container = c = $Ct())
+				ct.bm('me', function (bm) {
+					//b.sxy(.2).xy(100,80)
+					//b.o('$', fL('lit'), '/')  //on click, log('lit'), just once (remove listener)!
+				})
+				//make a container
+				st.ct(function (c, s) {
+					
+					//the little me clicks do not hit the 'big' me underneath it.  that's normal.
+					//but it does hit the container.  but this example shows off 'remove', so it only hits once
+					//however, it continues to propogate on to the container. hmmm..
+					// the middle size me demonstrates stopPropogation
+					// if you click it, the container does not feel the click
+					ct.bm('me', function (b) {
+						b.sXY(.4).XY(100, 180)
+						//b.o('$', fL('mid'), '-')  //on click, log('mid'), and stop prop
+					})
+					ct.b('me', function (b) {
+						b.sXY(1.5)
+						// b.o('$',fL('big'))  //on click, log('big')
+					})
+					//on click, log('con')
+					//c.o('$',  fL('con'))
+				})
+				st.ct(function (c) {
+					var vn = 0,
+							rvn = 0,
+							on = 0,
+							ron = 0
+					c.X(200)
+					c.mug(
+							function (b) {
+								b.sXY(.8).XY(200, 80)
+							})
+					c.mug(
+							function (b) {
+								b.sXY(.8).XY(100, 280)
+							})
+					c.mg(
+							function (b) {
+								b.sXY(.8).XY(340, 180)
+							})
+					//this shows over/out vs rollover/rollout
+					//over/out get retriggered when switching between connected sprites
+					//rollover/rollout does not because it is still touching 'something'
+					// c.o('v',function(){c.x(10,'+');$l('v: '+vn++)})
+					//c.o('rv',function(){c.x(20,'-');$l('rv: '+rvn++)})
+					// c.o('o',function(){c.y(10,'+');$l('o: '+on++)})
+					//  c.o('ro',function(){c.y(20,'-');$l('ro: '+ron++)})
+				})//.MV(40)
+				st.ct(function (c, s) {
+					c.x(700)
+					c.mg(function (b) {
+						b.sxy(.8).xy(200, 80)
+					})
+					c.mg(function (b) {
+						b.sxy(.8).xy(100, 280)
+					})
+					c.mg(function (b) {
+						b.sxy(.8).xy(340, 180)
+					})
+					//this example shows which sprites are acted upon with over/rollover
+					//over only affects one
+					//rollover affects ALL
+					//if you enter a sprite from outside, they all grow (via rollover),
+					//and the one sprite grows double (via over)
+					c.o('v', function (g, e) {
+						$l('v')
+						g.sxy(.01, '+')
+					})
+					c.o('rv', function (g, e) {
+						$l('rv')
+						g.sxy(.01, '+')
+					})
+					c.o('o', function (q, e, g) {
+					})
+					c.o('ro', function (q, e, g) {
+					})
+					// in summary,
+					// rollover sees all touching sprites as just one sprite, ignoring crossing the mouse over their boundaries..
+					// BUT, they will all recieve events separately
+				}).MV(40)
+				st.ct(function (ct, st) {
+					ct.X(1400)
+					ct.bm('me', function (bm) {
+						
+						//make the little me slide the entire container
+						//it acts as a handle! (for its container)
+						lit = bm.sXY(.2).XY(100, 80)
+						SL(bm, ct)
+						ct.bm('me', function (bm) {
+							//big me will scale the little me
+							big = bm.sXY(2).XY(100, 180)
+							SC(bm, lit)
+							ct.bm('me', function (bm) {
+								bm.sXY(.6).XY(150, 180)
+								SL(bm)
+								RT(bm, big)
+							})
+						})
+					})
+					//guy slides stage
+					ct.bm('guy', function (bm) {
+						bm.sXY(.4).XY(100, 180)
+						SL(bm, stage)
+					})
+				})
+			}
+		}
+	}
+	MU2 = HAN = HANDEV = function () {
+		$St()
+		st.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		st.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+			}
+			b.on('pressmove', b)
+		})
+		st.t()
+		function alt() {
+			MU6 = HANDLEEVENT = function () {
+				St()
+				s.bm('me', function (b) {
+					me = b
+					cb = b.on('pressmove', function () {
+						this.x++
+					})
+				})
+				s.bm('guy', function (b) {
+					b.handleEvent = function () {
+						this.y++
+					}
+					b.on('pressmove', b)
+				})
+			}
+		}
+	}//B+
+	BUB = BUBBLE = function () {
+		stage = $St()
+		output = new createjs.Text(
+				"try clicking on the background vs the label text\n\nthe background & label are both inside of a Container named 'button'",
+				"13px courier").lWH(280, 13).XY(190, 10)
+		background = new createjs.Shape().N("background")
+		background.graphics.f("red").drawRoundRect(0, 0, 150, 60, 10)
+		label = new createjs.Text("click me!", "bold 24px Arial", "#FFFFFF").XY(150 / 2, 60 / 2)
+				.N('label')
+				.tA("center")
+				.tB("middle")
+		button = new createjs.Container().XY(20).N('button').A(background, label)
+		// setting mouseChildren to false will cause events to be dispatched directly from the button instead of its children.
+		// button.mouseChildren = false;
+		stage.A(button, output)
+		// set up listeners for all display objects, for both the non-capture (bubble / target) and capture phases:
+		_.each([stage, button, label, background], function (target) {
+			target.on("click", handleClick, false);
+			target.on("click", handleClick, true)
+		})
+		stage.update()
+	}
+	MU3 = MOUSE = BUB8 = MOUSEVENTS = BUBBBLE = function () {
+		St()
+		output = $T(
+				"try clicking on the background vs the label text\n\nthe background & label are both inside of a Container named 'button'",
+				"13px courier").lWH(280, 13).XY(190, 10)
+		bg = $H().n("background")
+		bg.graphics.f("red").rr(0, 0, 150, 60, 10)
+		lb = $T("click me!", "bold 24px Arial", "#FFFFFF").XY(150 / 2, 60 / 2).n('label').tA("center")//.tB("middle")
+		// setting mouseChildren to false will cause events to be dispatched directly from the button instead of its children.
+		// button.mouseChildren = false;
+		st.A(bt = $Ct().XY(20).n('button').A(bg, lb), output)
+		// set up listeners for all display objects, for both the non-capture (bubble / target) and capture phases:
+		_.e([st, bt, lb, bg], function (tg) {
+			tg.$(handleClick, false);
+			tg.$(handleClick, true)
+		})
+		st.u()
+		function handleClick(e) {
+			if (e.currentTarget == st && e.eventPhase == 1) {
+				output.text = "target : eventPhase : currentTarget\n"
+			}// this is the first dispatch in the event life cycle, clear the output.
+			output.text += e.target.name + " : " + e.eventPhase + " : " + e.currentTarget.name + "\n";
+			if (e.currentTarget == st && e.eventPhase == 3) {
+				st.u()
+			}// this is the last dispatch in the event life cycle, render the stage.
+		}
+	}//B+
+	MU4 = RMEVT8 = function () {
+		function alt() {
+			MU7 = REMOVEEVENT = function () {
+				St()
+				s.bm('me', function (b) {
+					me = b
+					cb = b.on('pressmove', function () {
+						this.x++
+					})
+				})
+				s.bm('guy', function (b) {
+					b.handleEvent = function () {
+						this.y++
+						me.off('pressmove', cb)
+					}
+					b.on('pressmove', b)
+				})
+			}
+		}
+		
+		St()
+		st.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		st.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+				me.off('pressmove', cb)
+			}
+			b.on('pressmove', b)
+		})
+		///////
+		s.can.P('a').XY(300)
+		s.A(h = shape = $h())
+		h.rec(100, 200, 0, 200, 'red')
+				.rec(100, 100, 100, 20, 'green')
+				.rec(145, 120, 10, 80, 'orange')
+				.cir(105, 100, 20, 'blue')
+				.cir(105, 100, 8, 'black')
+				.cir(200, 100, 20, 'blue')
+				.cir(200, 100, 8, 'black')
+				.cir(100, 20, 100, 'green')
+				.rXY(100, 300).XY(100, 300).drag()
+		p = function () {
+			shape.twL(
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200],
+					[{r: 25}, 200], [{r: -25}, 400], [{r: 0}, 200])
+			shape.twL(
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200],
+					[{sxy: 1.5}, 200], [{sxy: .5}, 400], [{sxy: 1}, 200]
+			)
+		}
+		p()
+	}
+	MU5 = MOUSEENTERSTAGE = function () {
+		St()
+		s.bm('me')
+		s.on('mouseenter', function () {
+			$('body').prepend('once<br>')
+		}, null, true)
+		s.on('mouseenter', function () {
+			$('body').prepend('many<br>')
+		}, null, false)
+	}
+	MOUSEENTERSTAGE = function () {
+		z()
+		stage = s = cjs.stage(500, 500).A().tick()
+		s.bm('me')
+		s.on('mouseenter', function () {
+			$('body').prepend('once<br>')
+		}, null, true)
+		s.on('mouseenter', function () {
+			$('body').prepend('many<br>')
+		}, null, false)
+	}
+	HANDLEEVENT = function () {
+		z()
+		s = createjs.stage(500, 500).A().tick()
+		s.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		s.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+			}
+			b.on('pressmove', b)
+		})
+	}
+	REMOVEEVENT = function () {
+		z()
+		s = createjs.stage(500, 500).A().tick()
+		s.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		s.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+				me.off('pressmove', cb)
+			}
+			b.on('pressmove', b)
+		})
+	}
+//
+	testShape = function () {
+		z()
+		stage = createjs.stage(600).tick().A()
+		shape = new createjs.Shape()
+		stage.A(shape)
+		shape.graphics.f('red').s('black').dc(400, 400, 200).dr(100, 0, 200, 200)
+	}
+	MOUSEENTERSTAGE = function () {
+		z()
+		stage = s = cjs.stage(500, 500).A().tick()
+		s.bm('me')
+		s.on('mouseenter', function () {
+			$('body').prepend('once<br>')
+		}, null, true)
+		s.on('mouseenter', function () {
+			$('body').prepend('many<br>')
+		}, null, false)
+	}
+	HANDLEEVENT = function () {
+		z()
+		s = createjs.stage(500, 500).A().tick()
+		s.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		s.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+			}
+			b.on('pressmove', b)
+		})
+	}
+	REMOVEEVENT = function () {
+		z()
+		s = createjs.stage(500, 500).A().tick()
+		s.bm('me', function (b) {
+			me = b
+			cb = b.on('pressmove', function () {
+				this.x++
+			})
+		})
+		s.bm('guy', function (b) {
+			b.handleEvent = function () {
+				this.y++
+				me.off('pressmove', cb)
+			}
+			b.on('pressmove', b)
+		})
+	}
+	function handleClick(e) {
+		if (e.currentTarget == stage && e.eventPhase == 1) {
+			// this is the first dispatch in the event life cycle, clear the output.
+			output.text = "target : eventPhase : currentTarget\n"
+		}
+		output.text += e.target.name + " : " + e.eventPhase + " : " + e.currentTarget.name + "\n";
+		if (e.currentTarget == stage && e.eventPhase == 3) {
+			// this is the last dispatch in the event life cycle, render the stage.
+			stage.update()
+		}
+	}
+}
+function loader() {
+	$it = function (i) {
+		var _$it = function (i) {
+			return {src: _.src(i), id: i}
+		}
+		return S(i) ? _$it(i) : i
+	}
+	$its = function (its) {
+		var g = G(arguments)
+		if (!g.A) {
+			its = g
+		}
+		return _.m(its, $it)
+	}
+	QU = MF = MANIFEST = function () {
+		Q(['me', 'guy'], function (q) {
+			$St().A(me = q.bm('me'))
+			st.A(guy = q.bm('guy'))
+			guy.dg()
+		})
+	}
+	QU0 = function () {
+		Q(mf5, function () {
+			$.A(Q.i('me'))
+		})
+	}
+	QU1 = function () {
+		$Ld(mf3, function (ld) {
+			$St().A(ld.bm("me"), ld.bm("guy", 300, 300))
+		})
+	}
+	QU2 = function () {
+		$Ld(mf1, function (ld) {
+			ld.bm("myImage", $St())
+		})
+	}
+	QU3 = function () {
+		$Ld(mf2, function (ld) {
+			ld.bm("me", $St());
+			ld.bm("guy", st)
+		})
+	}
+	IT = QU4 = function () {
+		$Ld(function (ld) {
+			Q.bm("me", $St());
+			Q.bm("guy", st, 300, 300)
+		}).mf("me", guyIt)
+	}
+	guyIt = {id: "guy", src: "/guy.png"}
+	myIt = {id: "myImage", src: "/me.png"}
+	mf1 = [myIt, guyIt];
+	mf2 = [$it("me"), $it(guyIt)]
+	mf3 = ["me", guyIt];
+	mf4 = [myIt, guyIt];
+	mf5 = ['guy', 'me']
+//st.c = $(st.canvas) //s.bm('me', function(bb){b=bb })
+//q.b('guy', st).XY(300, 300).spin()
+//st.qB('guy').XY(300, 300).spin()
+//Q('me', function () {$.A( Q.i('me') )})  
+// ok: Q([{src: '/me.png', id: 'me'}], function () {$.A(Q.i('me'))})
+//https://en.wikipedia.org/wiki/Form_follows_function
+//answer: art follows fiz structure
+//art follows form follows function? form is the art
+//art/fiz ~ form/function
+}
+function layers(){
+	USINGLAYERSINEASEL9 = function () {
+		z()
+		s = St(500).A()
+		s.bm('me', function (bm) {
+			b = bm
+			bm.sXY(3)
+			drawCar()
+			s.tick(function () {
+				b.x(-1 * (g.x() * 2))
+				b.y(-1 * (g.y() * 2))
+			})
+		})
+		bt = $.button('safd', function () {
+			s.sXY(2)
+		}).A()
+		function drawCar() {
+			s.bm('guy', function (bm) {
+				g = bm
+				bm.sXY(.5)
+				SL(bm)
+			})
+		}
+	}
+	LAYZ = PLAX = function () {
+		st = $St(500)
+		st.bm('me', function (bm) {
+			me = bm.sXY(.5)
+			st.bm('guy', function (bm1) {
+				guy = bm1.sXY(.5).drag()//SL(bm)
+				$t(function () {
+					me.X(guy.X() * 1.6).Y(guy.Y() * 1.6)
+				})
+			})
+		})
+		$.bt('safd', function () {
+			st.sXY(2)
+		})
+	}
+	$Ldr('LAYS0', function (q) {
+		me = q.bm('me', $St()).scXY(3);
+		guy = q.bm('guy', st).scXY(.5).dg()
+		$t(function () {
+			me.X(guy.x * 2.2 - 140).Y(guy.y * .2)
+		})
+		$.bt('s.sXY(2)', function () {
+			st.sXY(2)
+		})
+	})}
+function dobApps(){
+
+	domElObApps()
+	textApps()
+	transfApps()
+	function domElObApps() {
+		ELM = ELEMENTS = function () {
+			z()
+			div = $.div('red', 400, 400).P('a').A().A($.input())
+			s = stage = createjs.stage('yellow', 1000).tick().A()
+			elem = new createjs.DOMElement(div[0])
+			//stage.A(el)
+			// tw(el, [{x:300,y:300},2000])
+			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
+		}
+		MENTS = function () {
+			z()
+			div = $.div('red', 400, 400).P('a').A().A($.input())
+			s = stage = createjs.stage('yellow', 1000).tick().A()
+			elem = new createjs.DOMElement(div[0])
+			//stage.A(el)
+			// tw(el, [{x:300,y:300},2000])
+			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
+		}
+		EASELPHYS = function () {
+			i = cjs.DisplayObject.prototype
+			i.vX = function (a) {
+				var g = G(arguments);
+				a = g[0]
+				if (g.p) {
+					this.vx = this.vx + a;
+					return this
+				}
+				else if (g.n) {
+					if (N(a)) {
+						this.vx = this.vx - a
+					}
+					else {
+						this.vx = this.vx * -1
+					}
+					return this
+				}
+				else if (U(g[0])) {
+					return this.vx
+				}
+				this.vx = a;
+				return this
+			}
+			i.vY = function (a) {
+				var g = G(arguments);
+				a = g[0]
+				if (g.p) {
+					this.vy = this.vy + a;
+					return this
+				}
+				else if (g.n) {
+					if (N(a)) {
+						this.vy = this.vy - a
+					}
+					else {
+						this.vy = this.vy * -1
+					}
+					return this
+				}
+				else if (U(g[0])) {
+					return this.vy
+				}
+				this.vy = a
+				return this
+			}
+			i.jX = function (a) {
+				var g = G(arguments);
+				a = g[0]
+				if (g.p) {
+					this.vx = this.vx + a;
+					return this
+				}
+				else if (g.n) {
+					if (N(a)) {
+						this.vx = this.vx - a
+					}
+					else {
+						this.vx = this.vx * -1
+					}
+					return this
+				}
+				else if (U(g[0])) {
+					return this.vx
+				}
+				this.vx = a;
+				return this
+			}
+			i.jY = function (a) {
+				var g = G(arguments);
+				a = g[0]
+				if (g.p) {
+					this.vy = this.vy + a;
+					return this
+				}
+				else if (g.n) {
+					if (N(a)) {
+						this.vy = this.vy - a
+					}
+					else {
+						this.vy = this.vy * -1
+					}
+					return this
+				}
+				else if (U(g[0])) {
+					return this.vy
+				}
+				this.vy = a
+				return this
+			}
+			i.move = function () {
+				return this.X(this.vx || 0, '+').Y(this.vy || 0, '+')
+			}
+			i.go = function () {
+				$t(this.move())
+			}
+			$St().bm('me', function (b) {
+				b.go(10, 10)
+				$.t(function () {
+					$l(b.inStage())
+				})
+			})
+		}
+		ELEMENTS = function () {
+			z()
+			div = $.div('red', 400, 400).P('a').A().A($.input())
+			s = stage = createjs.stage('yellow', 1000).tick().A()
+			elem = new createjs.DOMElement(div[0])
+			//stage.A(el)
+			// tw(el, [{x:300,y:300},2000])
+			// tw([el,'l'],[{r:360, sx:.5, sy:.5},8000],{r:0},[{r:360, sx:1, sy:1},8000])
+		}
+	}
+	
+	function textApps() {
+		TX1 = BAS = BASELINE = function () {
+			s = $St(1000).A()
+			s.bm('me', function (bm) {
+				b = bm
+				bm.XY(300).sXY(.2)
+				s.dot(300, 300)
+			})
+			s.A(t = $Tx('baseline: top').XY(300).sXY(4).drag())
+			s.A(t2 = $Tx('baseline: bottom').XY(300).sXY(4).drag().baseline('bottom'))
+			s.A(t3 = $Tx('baseline: middle').XY(300).sXY(4).drag().baseline('middle'))
+			s.A(t = $T('baseline: top').XY(300).sXY(4).drag())
+			s.A(t2 = $T('baseline: bottom').XY(300).sXY(4).drag().baseline('bottom'))
+			s.A(t3 = $T('baseline: middle').XY(300).sXY(4).drag().baseline('middle'))
+		}
+		TX2 = LINEH = function () {
+			s = $St(1000).A()
+			s.bm('me', function (bm) {
+				b = bm
+				bm.XY(300).sXY(.2)
+			})
+			s.A(
+					t = $T('lineheight -100').XY(300).sXY(4).drag().lineH(-100)
+			)
+			s.A(
+					t2 = $T('lineheight 0').XY(300).sXY(4).drag().baseline('bottom').lH(0)
+			)
+			s.A(
+					t3 = $T('lineheight 100').XY(300).sXY(4).drag().baseline('middle').lH(100)
+			)
+		}
+		TX3 = LINEW = function () {
+			z()
+			s = $St(1000).A()
+			s.bm('me', function (bm) {
+				b = bm
+				bm.XY(300).sXY(.2)
+			})
+			s.A(t = $T('linewidth 0').XY(300).sXY(4).drag().lineW(0))
+			s.A(t2 = $T('linewidth null').XY(300).sXY(4).drag().baseline('bottom'))
+			s.A(t3 = $T('linewidth 100').XY(300).sXY(4).drag().baseline('middle').lW(800))
+		}
+		 
+	}
+	
+	 
+	
+	function transfApps() {
+		TXSH = function () {
+			$St()
+			h = $H()
+			st.A(h)
+			h.graphics.f('red').s('black').dc(400, 400, 200).dr(100, 0, 200, 200)
+		}
+		MTLT = function () {
+			$St()
+			h.graphics.C('r', 'b')
+			h.dg()
+			h.lt(100, 100)
+			h.lt(150, 190)
+			h.lt(300, 300)
+			h.lt(350, 1390)
+			if (R()) {
+				h.cp()
+			}
+			h.mt(240, 210)
+			h.lt(450, 410)
+			h.lt(600, 500)
+			h.lt(500, 500)
+			h.cp()
+		}
+		WACKY = STGG = function () {
+			$.c('y', 300, 100).id('someId')
+			$St('someId').bm('me')
+			$St($.c('o', 400, 200)).bm('me')
+			$St('z', 500, 300).bm('me').GX()._dc()
+			$St(1000, 500)
+					.bm('me', function (bm) {
+						bm.spin().drag()
+					})
+					.bm('me', function (bm) {
+						bm.sXY(0.5, 0.3).spin().drag()
+					})
+					.Sh().XY(200).graphics.FS()._dc(4)
+			_.t(10, function () {
+				$St($r(), 200, 200).bm('me', function (me) {
+					me.drag()
+				})
+			})
+		}
+		INST = INSTAGE = GROWTWEEN = function () {
+			$St().bm('me', function (me) {
+				me.grow()
+				$t(function () {
+					me.x = me.x + 10;
+					$l(me.inStage())
+				})
+			})
+		}
+		TRF = TRANSF = function () {
+			degToRad = Math.PI / 180;
+			cjs.testCanvas()
+			//cjs.sharedCode()
+			cjs.utils()
+			cjs.slider()
+			examples.showDistractor()
+			stage = new createjs.Stage("testCanvas")
+			stage.enableMouseOver();
+			createjs.Touch.enable(stage);
+			stage.mouseMoveOutside = true;
+			var img = new Image();
+			img.onload = handleImageLoad;
+			img.src = "/chicks.png";
+			function handleImageLoad(evt) {
+				examples.hideDistractor();
+				var img = evt.target, imgWidth = img.width, imgHeight = img.height, sliceCount = 6;
+				sliceWidth = imgWidth / sliceCount;
+				sliceContainer = new createjs.Container();
+				sliceContainer.x = stage.canvas.width / 2;
+				for (var i = 0; i < sliceCount; i++) {
+					var slice = new createjs.Bitmap(img);
+					slice.sourceRect = new createjs.Rectangle(sliceWidth * i, 0, sliceWidth, imgHeight);
+					slice.cache(0, 0, sliceWidth, imgHeight);
+					slice.filters = [new createjs.ColorMatrixFilter(new createjs.ColorMatrix())];
+					sliceContainer.addChild(slice);
+				}
+				var slider = new Slider(0, 50, 200, 50).set({x: 20, y: 330, value: 25});
+				slider.on("change", handleSliderChange, this);
+				stage.addChild(sliceContainer, slider);
+				updateEffect(slider.value);
+			}
+			
+			function handleSliderChange(evt) {
+				updateEffect(evt.target.value);
+			}
+			
+			function updateEffect(value) {
+				var l = sliceContainer.getNumChildren();
+				for (var i = 0; i < l; i++) {
+					var slice = sliceContainer.getChildAt(i);
+					slice.y = Math.sin(value * degToRad) * -sliceWidth / 2;
+					if (i % 2) {
+						slice.skewY = value;
+					} else {
+						slice.skewY = -value;
+						slice.y -= sliceWidth * Math.sin(slice.skewY * degToRad);
+					}
+					slice.x = sliceWidth * (i - l / 2) * Math.cos(slice.skewY * degToRad);
+					slice.filters[0].matrix//.setColor(Math.sin(slice.skewY * degToRad) * -80);
+					slice.updateCache();
+				}
+				stage.update();
+			}
+		}
+		STF = SETTRANSFORM = function () {
+			s = $St(800).A()
+			s.bm('me', function (me) {
+				b = me
+				b.setTransform(0, 0, 2, .5, 0, 40, 4, 2, 3)
+				m = b.getMatrix()
+				function tf(a, b, c, d, e, f, g, h, i) {
+					return this.x = a || 0,
+							this.y = b || 0,
+							this.scaleX = null == c ? 1 : c,
+							this.scaleY = null == d ? 1 : d,
+							this.rotation = e || 0,
+							this.skewX = f || 0,
+							this.skewY = g || 0,
+							this.regX = h || 0,
+							this.regY = i || 0,
+							this
+				}
+			})
+		}
+		REG = testImgRegCenter = function () {
+			//mockStage()
+			$St()
+			s.bm('me', function (bm) {
+				b1 = bm
+				bm.spin().drag()
+			})
+			s.bm('me', function (bm) {
+				b2 = bm
+				bm.sXY(0.5, 0.3).spin().drag()
+			})
+			s.A(c = cjs.cir(4).XY(200))
+		}
+	}
+}
