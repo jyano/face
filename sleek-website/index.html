@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="description" content="A super sleek, modern, responsive website with elegant animations and glassmorphism." />
+
+    <title>Lumen — Super Sleek Modern Web</title>
+
+    <meta property="og:title" content="Lumen — Super Sleek Modern Web" />
+    <meta property="og:description" content="A super sleek, modern, responsive website with elegant animations and glassmorphism." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg fx" aria-hidden="true">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Lumen Home">
+          <span class="logo" aria-hidden="true">◎</span>
+          <span class="brand-text">Lumen</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#work">Showcase</a></li>
+          <li><a href="#testimonials">Voices</a></li>
+          <li><a href="#cta">Get started</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-content">
+          <h1 class="title reveal">
+            Design that feels like the <span class="accent">future</span>
+          </h1>
+          <p class="subtitle reveal">
+            A minimal, high-contrast canvas with soft glass, subtle depth, and motion that whispers.
+          </p>
+          <div class="actions reveal">
+            <a class="btn btn-primary" href="#cta">Start now</a>
+            <a class="btn btn-ghost" href="#features">Explore</a>
+          </div>
+          <div class="stats reveal">
+            <div>
+              <span class="num">120k+</span>
+              <span class="label">creators</span>
+            </div>
+            <div>
+              <span class="num">1.2s</span>
+              <span class="label">first paint</span>
+            </div>
+            <div>
+              <span class="num">A11y</span>
+              <span class="label">focused</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual tilt" aria-hidden="true">
+          <div class="glass card-3d">
+            <div class="card-top">Lumen</div>
+            <div class="card-mid">Sleek by design</div>
+            <div class="card-bottom">
+              <span>2025</span>
+              <span>◎</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features container" id="features">
+        <header class="section-head reveal">
+          <h2>Built different</h2>
+          <p>Precision-crafted interface blocks that snap into place.</p>
+        </header>
+        <div class="grid">
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Grid-first layout</h3>
+            <p>Fluid spacing, responsive by default, no hacks.</p>
+          </article>
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Accessible core</h3>
+            <p>Color contrast, focus states, and semantics baked in.</p>
+          </article>
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Motion that matters</h3>
+            <p>Micro-interactions that guide, not distract.</p>
+          </article>
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Glass depth</h3>
+            <p>Frosted surfaces with elegant light spill.</p>
+          </article>
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 12l2 2 6-6" stroke="currentColor" stroke-width="2"/><path d="M5 13h14v6H5z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Performance</h3>
+            <p>Lean assets, instant load, no build needed.</p>
+          </article>
+          <article class="feature reveal tilt">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M7 4h10M4 17h16M7 20h10" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>Theme aware</h3>
+            <p>Auto dark mode with tasteful contrast ramps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="work container" id="work">
+        <header class="section-head reveal">
+          <h2>Showcase</h2>
+          <p>Composable cards that feel tactile and alive.</p>
+        </header>
+        <div class="cards">
+          <div class="work-card glass reveal tilt">
+            <div class="tag">Concept</div>
+            <h3>Holographic Panels</h3>
+            <p>Reflective layers with subtle parallax.</p>
+          </div>
+          <div class="work-card glass reveal tilt">
+            <div class="tag">UI</div>
+            <h3>Neon Controls</h3>
+            <p>Bright accents on a soft, dark canvas.</p>
+          </div>
+          <div class="work-card glass reveal tilt">
+            <div class="tag">Brand</div>
+            <h3>Soft Geometry</h3>
+            <p>Rounded edges with disciplined rhythm.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials container" id="testimonials">
+        <header class="section-head reveal">
+          <h2>What they say</h2>
+          <p>Praised for restraint, loved for speed.</p>
+        </header>
+        <div class="quotes">
+          <blockquote class="quote glass reveal">
+            <p>“It feels effortless yet intentional.”</p>
+            <cite>— Alex, Product Lead</cite>
+          </blockquote>
+          <blockquote class="quote glass reveal">
+            <p>“Finally a design that gets out of the way.”</p>
+            <cite>— Priya, Designer</cite>
+          </blockquote>
+          <blockquote class="quote glass reveal">
+            <p>“Fast, gorgeous, and accessible — rare.”</p>
+            <cite>— Sam, Engineer</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="cta container" id="cta">
+        <div class="cta-card glass reveal">
+          <h2>Ready when you are</h2>
+          <p>Drop it on any static host. No config, instant results.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#top">Back to top</a>
+            <a class="btn btn-ghost" href="#">Download</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="foot-left">
+        <span class="logo" aria-hidden="true">◎</span>
+        <span>Lumen</span>
+      </div>
+      <div class="foot-right">
+        <a href="#features">Features</a>
+        <a href="#work">Showcase</a>
+        <a href="#testimonials">Voices</a>
+      </div>
+    </footer>
+
+    <button class="to-top" aria-label="Scroll to top">▲</button>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
